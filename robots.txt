@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /*.py$
+Disallow: /*.js$
+
+Sitemap: https://datrey.ma/sitemap.xml
