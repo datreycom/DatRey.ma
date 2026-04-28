@@ -151,23 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 
-    // 1. Hero Parallax & Depth Effect
-    const hero = document.querySelector(".page-hero") || document.querySelector(".hero");
-    if (hero) {
-      gsap.to(hero, {
-        scrollTrigger: {
-          trigger: hero,
-          start: "top top",
-          end: "bottom top",
-          scrub: true
-        },
-        y: 100, // Move down slightly for parallax
-        opacity: 0.8,
-        scale: 0.98,
-        transformOrigin: "center top",
-        ease: "none"
-      });
-    }
+    // 1. Hero Parallax & Depth Effect (REMOVED due to layout collapse)
 
     // 2. Service Cards Staggered Entrance
     const serviceGrids = document.querySelectorAll(".services-grid");

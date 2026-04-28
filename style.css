@@ -184,12 +184,12 @@ h1, h2, h3, h4, h5, h6 {
 .header {
   position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
   padding: 20px 0; transition: var(--transition);
-  background: var(--nuit-950);
+  background: var(--bg-main);
   box-shadow: 0 4px 30px rgba(0,0,0,0.15);
 }
 .header.scrolled {
   padding: 14px 0;
-  background: rgba(5,8,20,0.85);
+  background: var(--card-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
@@ -202,7 +202,7 @@ h1, h2, h3, h4, h5, h6 {
 .logo {
   display: flex; align-items: center; gap: 12px;
   font-family: var(--font-display); font-weight: 700;
-  font-size: 1.8rem; color: #ffffff; letter-spacing: -0.02em;
+  font-size: 1.8rem; color: var(--text-main); letter-spacing: -0.02em;
 }
 .logo-icon {
   width: 42px; height: 42px; border-radius: var(--radius-md);
@@ -213,11 +213,11 @@ h1, h2, h3, h4, h5, h6 {
 .logo-img {
   width: 42px; height: 42px; border-radius: var(--radius-md); object-fit: contain;
 }
-.logo span { color: var(--roi-300); font-style: italic; font-weight: 400; }
-.nav-active { color: #ffffff !important; }
+.logo .logo-blue { color: var(--roi-500); }
+.nav-active { color: var(--roi-500) !important; }
 .nav-links { display: flex; align-items: center; gap: 36px; }
 .nav-links a {
-  color: rgba(255,255,255,0.7); font-size: 0.9rem;
+  color: var(--text-muted); font-size: 0.9rem;
   font-weight: 500; transition: var(--transition);
   position: relative;
 }
@@ -227,16 +227,16 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(90deg, var(--roi-400), var(--roi-300));
   transition: var(--transition); border-radius: 2px;
 }
-.nav-links a:hover { color: #ffffff; }
+.nav-links a:hover { color: var(--text-main); }
 .nav-links a:hover::after { width: 100%; }
 .nav-cta {
   padding: 10px 24px !important;
   font-size: 0.8rem !important;
 }
 .theme-toggle {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  color: #ffffff;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
   width: 42px; height: 42px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; transition: var(--transition);
