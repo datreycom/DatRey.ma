@@ -213,7 +213,12 @@ h1, h2, h3, h4, h5, h6 {
 .logo-img {
   width: 42px; height: 42px; border-radius: var(--radius-md); object-fit: contain;
 }
-.logo .logo-blue { color: var(--roi-500); }
+.logo .logo-blue {
+  background: linear-gradient(135deg, #709FD9 0%, #3A56A6 50%, #231F6B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #3A56A6;
+}
 .nav-active { color: var(--roi-500) !important; }
 .nav-links { display: flex; align-items: center; gap: 36px; }
 .nav-links a {
