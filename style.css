@@ -155,7 +155,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-primary {
   background: linear-gradient(135deg, var(--roi-600), var(--roi-500));
-  color: #ffffff; box-shadow: 0 4px 20px rgba(37,99,235,0.25);
+  color: #ffffff !important; box-shadow: 0 4px 20px rgba(37,99,235,0.25);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
@@ -203,6 +203,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex; align-items: center; gap: 12px;
   font-family: var(--font-display); font-weight: 700;
   font-size: 1.8rem; color: var(--text-main); letter-spacing: -0.02em;
+  flex-shrink: 0; white-space: nowrap;
 }
 .logo-icon {
   width: 42px; height: 42px; border-radius: var(--radius-md);
@@ -220,11 +221,11 @@ h1, h2, h3, h4, h5, h6 {
   color: #3A56A6;
 }
 .nav-active { color: var(--roi-500) !important; }
-.nav-links { display: flex; align-items: center; gap: 36px; }
+.nav-links { display: flex; align-items: center; gap: 20px; }
 .nav-links a {
   color: var(--text-muted); font-size: 0.9rem;
   font-weight: 500; transition: var(--transition);
-  position: relative;
+  position: relative; white-space: nowrap;
 }
 .nav-links a::after {
   content: ''; position: absolute; bottom: -4px; left: 0;
@@ -237,6 +238,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-cta {
   padding: 10px 24px !important;
   font-size: 0.8rem !important;
+  color: #ffffff !important;
 }
 .theme-toggle {
   background: var(--bg-alt);
@@ -518,6 +520,10 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255,255,255,0.55); font-size: 0.9rem;
   line-height: 1.7; margin-top: 16px; max-width: 320px;
 }
+.footer .logo { color: #ffffff; }
+.social-links { display: flex; gap: 16px; margin-top: 24px; }
+.social-links a { color: rgba(255,255,255,0.4); transition: var(--transition); }
+.social-links a:hover { color: var(--roi-300); transform: translateY(-3px); }
 .footer h4 {
   color: #ffffff; font-size: 0.85rem;
   font-weight: 700; text-transform: uppercase;
