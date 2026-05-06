@@ -256,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer; padding: 4px; background: none; border: none;
 }
 .mobile-toggle span {
-  width: 26px; height: 2px; background: #ffffff;
+  width: 26px; height: 2px; background: var(--text-main);
   border-radius: 2px; transition: var(--transition);
 }
 
@@ -372,7 +372,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex; align-items: flex-start; gap: 24px; margin-bottom: 32px;
 }
 .service-detail-header h3 {
-  font-size: 1.4rem; font-weight: 800; color: var(--nuit-900); margin-bottom: 10px;
+  font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin-bottom: 10px;
 }
 .service-detail-intro {
   font-size: 0.95rem; color: var(--text-muted);
@@ -406,7 +406,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .service-feature h4 {
   font-size: 0.95rem; font-weight: 700;
-  color: var(--nuit-900); margin-bottom: 6px;
+  color: var(--text-main); margin-bottom: 6px;
 }
 .service-feature p {
   font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; letter-spacing: 0.01em;
@@ -446,7 +446,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .approach-step h4 {
   font-size: 1.05rem; font-weight: 700;
-  color: var(--nuit-900); margin-bottom: 6px;
+  color: var(--text-main); margin-bottom: 6px;
 }
 .approach-step p {
   font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;
@@ -688,7 +688,7 @@ h1, h2, h3, h4, h5, h6 {
 .legal-content { max-width: 800px; }
 .legal-content h2 {
   font-size: 1.3rem; font-weight: 700;
-  color: var(--nuit-900); margin: 40px 0 12px;
+  color: var(--text-main); margin: 40px 0 12px;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--roi-100);
 }
@@ -764,14 +764,42 @@ h1, h2, h3, h4, h5, h6 {
   filter: brightness(0.85);
 }
 
- 
- . s o c i a l - l i n k s   {   d i s p l a y :   f l e x ;   g a p :   1 2 p x ;   m a r g i n - t o p :   2 4 p x ;   } 
- 
- . s o c i a l - l i n k s   a   {   c o l o r :   v a r ( - - g r a y - 5 0 0 ) ;   t r a n s i t i o n :   v a r ( - - t r a n s i t i o n ) ;   d i s p l a y :   f l e x ;   a l i g n - i t e m s :   c e n t e r ;   j u s t i f y - c o n t e n t :   c e n t e r ;   w i d t h :   4 0 p x ;   h e i g h t :   4 0 p x ;   b o r d e r - r a d i u s :   5 0 % ;   b a c k g r o u n d :   r g b a ( 2 5 5 ,   2 5 5 ,   2 5 5 ,   0 . 0 5 ) ;   } 
- 
- . s o c i a l - l i n k s   a : h o v e r   {   c o l o r :   v a r ( - - w h i t e ) ;   b a c k g r o u n d :   v a r ( - - t e a l - 5 0 0 ) ;   t r a n s f o r m :   t r a n s l a t e Y ( - 3 p x ) ;   } 
- 
- 
+/* --- Dark Mode Comprehensive Overrides --- */
+[data-theme="dark"] .service-feature {
+  background: rgba(15, 23, 42, 0.5);
+  border-color: rgba(59, 109, 232, 0.12);
+}
+[data-theme="dark"] .service-tag {
+  background: rgba(59, 109, 232, 0.15);
+  color: var(--roi-300);
+}
+[data-theme="dark"] .btn-outline {
+  color: var(--roi-300);
+  border-color: var(--roi-400);
+}
+[data-theme="dark"] .btn-outline:hover {
+  background: var(--roi-500);
+  color: #ffffff;
+  border-color: var(--roi-500);
+}
+[data-theme="dark"] .btn-ghost {
+  background: rgba(59, 109, 232, 0.1);
+  color: var(--roi-300);
+  border-color: rgba(59, 109, 232, 0.2);
+}
+[data-theme="dark"] .legal-content p,
+[data-theme="dark"] .legal-content li {
+  color: var(--text-muted);
+}
+[data-theme="dark"] .legal-content a {
+  color: var(--roi-300);
+}
+[data-theme="dark"] .legal-content h2 {
+  border-bottom-color: rgba(59, 109, 232, 0.2);
+}
+[data-theme="dark"] .service-card-link {
+  color: var(--roi-300);
+}
 
 /* ============================================
    ANTIGRAVITY DESIGN SYSTEM
