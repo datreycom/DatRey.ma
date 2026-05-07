@@ -47,8 +47,8 @@
   /* Semantic Theme Variables */
   --bg-main: var(--pure-white);
   --bg-alt: var(--roi-50);
-  --text-main: var(--nuit-900);
-  --text-muted: #1e293b;
+  --text-main: #000000;
+  --text-muted: #000000;
   --card-bg: var(--pure-white);
   --border-color: var(--roi-100);
 
@@ -65,8 +65,8 @@
 [data-theme="dark"] {
   --bg-main: var(--nuit-950);
   --bg-alt: var(--nuit-900);
-  --text-main: #f8fafc;
-  --text-muted: #e2e8f0;
+  --text-main: #ffffff;
+  --text-muted: #ffffff;
   --card-bg: rgba(15, 23, 42, 0.6);
   --border-color: rgba(30, 41, 59, 0.8);
   --shadow-card: 0 8px 32px rgba(0,0,0,0.5);
@@ -884,3 +884,10 @@ h1, h2, h3, h4, h5, h6 {
   background: radial-gradient(circle at top right, rgba(37,99,235,0.15) 0%, transparent 60%);
   pointer-events: none;
 }
+
+/* AJAX Form Feedback */
+.form-feedback { display: flex; align-items: center; gap: 12px; padding: 16px; border-radius: var(--radius-md); margin-bottom: 24px; font-weight: 500; }
+.form-feedback.success { background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); }
+.form-feedback.error { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); }
+.spinner { width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: #fff; animation: spin 1s ease-in-out infinite; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+@keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }

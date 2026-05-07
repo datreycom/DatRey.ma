@@ -191,8 +191,18 @@
         </div>
 
         <!-- Formulaire -->
-        <div class="reveal" style="transition-delay: 0.2s;">
-          <form class="contact-form" action="https://formspree.io/f/xpwrpkjo" method="POST">
+        <div class="reveal" style="transition-delay: 0.2s; position: relative;">
+          <!-- Messages de retour AJAX -->
+          <div id="form-success" class="form-feedback success" style="display: none;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <p><strong>Message envoyé !</strong> Nous vous recontacterons très vite.</p>
+          </div>
+          <div id="form-error" class="form-feedback error" style="display: none;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <p><strong>Erreur :</strong> Impossible d'envoyer le message. Veuillez réessayer.</p>
+          </div>
+
+          <form id="ajax-contact-form" class="contact-form">
             <div class="form-group">
               <label for="name">Nom Complet</label>
               <input type="text" id="name" name="name" class="form-control" placeholder="Votre nom" required />
@@ -223,10 +233,63 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" class="form-control" rows="5" placeholder="Décrivez votre projet..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" style="margin-top: 10px; width: 100%; justify-content: center;">Envoyer le message</button>
+            <button type="submit" id="submit-btn" class="btn btn-primary" style="margin-top: 10px; width: 100%; justify-content: center; position: relative;">
+              <span id="btn-text">Envoyer le message</span>
+              <span id="btn-spinner" class="spinner" style="display: none;"></span>
+            </button>
           </form>
         </div>
       </div>
+
+      <!-- Script AJAX -->
+      <script>
+        document.getElementById('ajax-contact-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          const form = this;
+          const submitBtn = document.getElementById('submit-btn');
+          const btnText = document.getElementById('btn-text');
+          const spinner = document.getElementById('btn-spinner');
+          const successMsg = document.getElementById('form-success');
+          const errorMsg = document.getElementById('form-error');
+		  const WORKER_URL = 'https://contact-datrey.datreycom.workers.dev';
+          
+          // Reset states
+          successMsg.style.display = 'none';
+          errorMsg.style.display = 'none';
+          submitBtn.disabled = true;
+          btnText.style.opacity = '0';
+          spinner.style.display = 'block';
+
+          // Gather data
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+
+          try {
+            // Remplacer par l'URL de votre Cloudflare Worker
+            const WORKER_URL = 'https://contact-datrey.YOUR_SUBDOMAIN.workers.dev';
+            
+            const response = await fetch(WORKER_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+              successMsg.style.display = 'flex';
+              form.reset();
+            } else {
+              throw new Error('Server error');
+            }
+          } catch (error) {
+            errorMsg.style.display = 'flex';
+          } finally {
+            submitBtn.disabled = false;
+            btnText.style.opacity = '1';
+            spinner.style.display = 'none';
+          }
+        });
+      </script>
 
       <!-- Google Maps -->
       <div class="map-container reveal" style="transition-delay: 0.3s;">
