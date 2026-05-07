@@ -43,9 +43,8 @@
     .theme-toggle{background:var(--bg-alt);border:1px solid var(--border-color);color:var(--text-main);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
     @media(max-width:768px){.nav-links{display:none}.mobile-toggle{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}.mobile-toggle span{width:26px;height:2px;background:var(--text-main);border-radius:2px}.container{padding:0 24px}}
   </style>
-  <!-- Full stylesheet loaded async for non-blocking render -->
-  <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="style.css" /></noscript>
+  <!-- Full stylesheet (synchronous to prevent CLS) -->
+  <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="assets/logo.webp" type="image/webp" />
   <meta name="theme-color" content="#050814" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -124,6 +123,8 @@
   <script defer src="shared.js"></script>
 </head>
 <body>
+  <!-- Prevent theme FOUC (major CLS fix) -->
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
 
   <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
 
@@ -131,7 +132,7 @@
   <header class="header" id="header">
     <div class="container">
       <a href="index.html" class="logo" aria-label="DatRey &mdash; Accueil">
-        <img src="assets/logo.webp" alt="DatRey Logo" class="logo-img" />
+        <img src="assets/logo.webp" alt="DatRey Logo" class="logo-img" width="40" height="40" />
         <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
       </a>
       <nav class="nav-links" aria-label="Navigation principale">
