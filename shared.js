@@ -37,14 +37,9 @@
     }
   }
 
-  // Initialize theme
+  // Initialize theme (default to dark for DatRey brand identity)
   const savedTheme = localStorage.getItem('datrey-theme');
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  if (savedTheme) {
-    applyTheme(savedTheme);
-  } else if (prefersDark) {
-    applyTheme('dark');
-  }
+  applyTheme(savedTheme || 'dark');
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {

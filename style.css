@@ -801,6 +801,24 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--roi-300);
 }
 
+/* --- Light Mode Explicit Overrides --- */
+[data-theme="light"] .service-card-body h3,
+[data-theme="light"] .service-detail-header h3,
+[data-theme="light"] .service-feature h4,
+[data-theme="light"] .approach-step h4,
+[data-theme="light"] .legal-content h2 {
+  color: var(--nuit-900);
+}
+[data-theme="light"] .service-feature {
+  background: var(--roi-50);
+  border-color: var(--roi-100);
+}
+[data-theme="light"] .mobile-toggle span {
+  background: var(--nuit-900);
+}
+[data-theme="light"] .header {
+  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+}
 /* ============================================
    ANTIGRAVITY DESIGN SYSTEM
    ============================================ */
