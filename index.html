@@ -12,7 +12,40 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://datrey.ma" />
   <link rel="canonical" href="https://datrey.ma" />
-  <link rel="stylesheet" href="style.css" />
+  <!-- Critical CSS (above-the-fold) inlined for LCP -->
+  <style>
+    :root{--nuit-950:#050814;--nuit-900:#0a0f1f;--nuit-800:#0f172a;--nuit-700:#1e293b;--roi-600:#2563eb;--roi-500:#3b82f6;--roi-400:#60a5fa;--roi-300:#93c5fd;--roi-200:#bfdbfe;--roi-100:#dbeafe;--roi-50:#eff6ff;--pure-white:#fff;--gray-500:#6b7280;--font-display:'DM Serif Display',serif;--font-body:'Poppins',sans-serif;--radius-xl:24px;--shadow-card:0 8px 32px rgba(11,24,50,.08);--transition:.4s cubic-bezier(.16,1,.3,1);--bg-main:var(--pure-white);--bg-alt:var(--roi-50);--text-main:var(--nuit-900);--text-muted:#1e293b;--card-bg:var(--pure-white);--border-color:var(--roi-100)}
+    [data-theme="dark"]{--bg-main:var(--nuit-950);--bg-alt:var(--nuit-900);--text-main:#f8fafc;--text-muted:#e2e8f0;--card-bg:rgba(15,23,42,.6);--border-color:rgba(30,41,59,.8)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:17px}
+    body{font-family:var(--font-body);color:var(--text-main);background:var(--bg-main);line-height:1.9;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:1.05rem;letter-spacing:.03em}
+    img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-display);line-height:1.25;font-weight:700;letter-spacing:.01em}
+    .container{max-width:1280px;margin:0 auto;padding:0 40px}
+    .header{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:var(--transition)}
+    .header .container{display:flex;align-items:center;justify-content:space-between}
+    .header.scrolled{background:rgba(5,8,20,.85);backdrop-filter:blur(20px);padding:10px 0;box-shadow:0 4px 30px rgba(0,0,0,.15)}
+    .logo{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--text-main)}
+    .logo-img{width:40px;height:40px;border-radius:10px;object-fit:contain}
+    .nav-links{display:flex;align-items:center;gap:20px}
+    .nav-links a{color:var(--text-muted);font-size:.95rem;font-weight:500;position:relative;white-space:nowrap;letter-spacing:.03em}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-body);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.88rem;padding:16px 36px;border-radius:50px;cursor:pointer;border:none;position:relative;overflow:hidden}
+    .btn-primary{background:linear-gradient(135deg,var(--roi-600),var(--roi-500));color:#fff!important;box-shadow:0 4px 15px rgba(37,99,235,.4)}
+    .nav-cta{padding:10px 24px!important;font-size:.85rem!important;color:#fff!important;letter-spacing:.08em}
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(160deg,var(--nuit-950) 0%,var(--nuit-900) 30%,var(--nuit-800) 60%,var(--nuit-700) 100%);overflow:hidden}
+    .hero .container{position:relative;z-index:2}
+    .hero-content{max-width:750px;padding-top:40px}
+    .hero-title{font-size:clamp(2.8rem,5.5vw,4.8rem);font-weight:800;color:#fff;line-height:1.12;margin-bottom:24px;letter-spacing:0}
+    .hero-title .highlight{background:linear-gradient(135deg,var(--roi-300),var(--roi-200));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-subtitle{font-size:1.2rem;color:rgba(255,255,255,.6);line-height:1.85;margin-bottom:40px;max-width:580px;font-weight:400;letter-spacing:.02em}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(59,109,232,.1);border:1px solid rgba(59,109,232,.2);border-radius:50px;padding:8px 20px;margin-bottom:28px;font-size:.88rem;color:var(--roi-200);font-weight:500}
+    .mobile-toggle{display:none}
+    .theme-toggle{background:var(--bg-alt);border:1px solid var(--border-color);color:var(--text-main);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
+    @media(max-width:768px){.nav-links{display:none}.mobile-toggle{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}.mobile-toggle span{width:26px;height:2px;background:var(--text-main);border-radius:2px}.container{padding:0 24px}}
+  </style>
+  <!-- Full stylesheet loaded async for non-blocking render -->
+  <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="style.css" /></noscript>
   <link rel="icon" href="assets/logo.webp" type="image/webp" />
   <meta name="theme-color" content="#050814" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
