@@ -902,3 +902,13 @@ h1, h2, h3, h4, h5, h6 {
 .lang-dropdown a:last-child { border-bottom: none; }
 .lang-dropdown a:hover { background: var(--roi-50); color: var(--roi-400); }
 .lang-dropdown a.active { color: var(--roi-500); font-weight: 700; }
+
+/* Hero Background Styling */
+.hero-with-bg { position: relative; background-size: cover; background-position: center; background-repeat: no-repeat; overflow: hidden; }
+.hero-with-bg::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--bg-main) 0%, var(--bg-main) 40%, transparent 100%); z-index: 1; opacity: 0.95; }
+.hero-with-bg .container { position: relative; z-index: 2; }
+[data-theme="light"] .hero-with-bg::before { opacity: 0.90; background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.2) 100%); }
+[data-theme="dark"] .hero-with-bg::before { opacity: 0.90; background: linear-gradient(90deg, rgba(5,8,20,1) 0%, rgba(5,8,20,0.85) 50%, rgba(5,8,20,0.2) 100%); }
+@media (max-width: 768px) { .hero-with-bg::before { background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-main) 60%, transparent 100%); }
+[data-theme="light"] .hero-with-bg::before { background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.4) 100%); }
+[data-theme="dark"] .hero-with-bg::before { background: linear-gradient(180deg, rgba(5,8,20,1) 0%, rgba(5,8,20,0.9) 60%, rgba(5,8,20,0.4) 100%); } }
