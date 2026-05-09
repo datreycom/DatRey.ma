@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agence d'Acquisition Digitale au Maroc | DatRey</title>
+  <meta name="description" content="DatRey est l'agence d'acquisition digitale full-stack au Maroc. Google Ads, Meta Ads, SEO et CRO pour générer des leads qualifiés et scaler vos ventes." />
+  <meta name="keywords" content="agence acquisition digitale Maroc, agence webmarketing, croissance digitale, SEO Maroc, Google Ads Maroc" />
+  <meta property="og:title" content="Agence d'Acquisition Digitale au Maroc | DatRey" />
+  <meta property="og:description" content="DatRey est l'agence d'acquisition digitale full-stack au Maroc. Nous combinons Google Ads, Meta Ads, SEO et CRO." />
+  <meta property="og:image" content="https://datrey.ma/assets/logo.webp" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://datrey.ma" />
+  <link rel="canonical" href="https://datrey.ma" />
+  <!-- Critical CSS (above-the-fold) inlined for LCP -->
+  <style>
+    :root{--nuit-950:#050814;--nuit-900:#0a0f1f;--nuit-800:#0f172a;--nuit-700:#1e293b;--roi-600:#2563eb;--roi-500:#3b82f6;--roi-400:#60a5fa;--roi-300:#93c5fd;--roi-200:#bfdbfe;--roi-100:#dbeafe;--roi-50:#eff6ff;--pure-white:#fff;--gray-500:#6b7280;--font-display:'DM Serif Display',serif;--font-body:'Poppins',sans-serif;--radius-xl:24px;--shadow-card:0 8px 32px rgba(11,24,50,.08);--transition:.4s cubic-bezier(.16,1,.3,1);--bg-main:var(--pure-white);--bg-alt:var(--roi-50);--text-main:var(--nuit-900);--text-muted:#1e293b;--card-bg:var(--pure-white);--border-color:var(--roi-100)}
+    [data-theme="dark"]{--bg-main:var(--nuit-950);--bg-alt:var(--nuit-900);--text-main:#f8fafc;--text-muted:#e2e8f0;--card-bg:rgba(15,23,42,.6);--border-color:rgba(30,41,59,.8)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:17px}
+    body{font-family:var(--font-body);color:var(--text-main);background:var(--bg-main);line-height:1.9;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:1.05rem;letter-spacing:.03em}
+    img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-display);line-height:1.25;font-weight:700;letter-spacing:.01em}
+    .container{max-width:1280px;margin:0 auto;padding:0 40px}
+    .header{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:var(--transition)}
+    .header .container{display:flex;align-items:center;justify-content:space-between}
+    .header.scrolled{background:rgba(5,8,20,.85);backdrop-filter:blur(20px);padding:10px 0;box-shadow:0 4px 30px rgba(0,0,0,.15)}
+    .logo{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--text-main)}
+    .logo-img{width:40px;height:40px;border-radius:10px;object-fit:contain}
+    .nav-links{display:flex;align-items:center;gap:20px}
+    .nav-links a{color:var(--text-muted);font-size:.95rem;font-weight:500;position:relative;white-space:nowrap;letter-spacing:.03em}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-body);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.88rem;padding:16px 36px;border-radius:50px;cursor:pointer;border:none;position:relative;overflow:hidden}
+    .btn-primary{background:linear-gradient(135deg,var(--roi-600),var(--roi-500));color:#fff!important;box-shadow:0 4px 15px rgba(37,99,235,.4)}
+    .nav-cta{padding:10px 24px!important;font-size:.85rem!important;color:#fff!important;letter-spacing:.08em}
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(160deg,var(--nuit-950) 0%,var(--nuit-900) 30%,var(--nuit-800) 60%,var(--nuit-700) 100%);overflow:hidden}
+    .hero .container{position:relative;z-index:2}
+    .hero-content{max-width:750px;padding-top:40px}
+    .hero-title{font-size:clamp(2.8rem,5.5vw,4.8rem);font-weight:800;color:#fff;line-height:1.12;margin-bottom:24px;letter-spacing:0}
+    .hero-title .highlight{background:linear-gradient(135deg,var(--roi-300),var(--roi-200));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-subtitle{font-size:1.2rem;color:rgba(255,255,255,.6);line-height:1.85;margin-bottom:40px;max-width:580px;font-weight:400;letter-spacing:.02em}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(59,109,232,.1);border:1px solid rgba(59,109,232,.2);border-radius:50px;padding:8px 20px;margin-bottom:28px;font-size:.88rem;color:var(--roi-200);font-weight:500}
+    .mobile-toggle{display:none}
+    .theme-toggle{background:var(--bg-alt);border:1px solid var(--border-color);color:var(--text-main);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
+    @media(max-width:768px){.nav-links{display:none}.mobile-toggle{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}.mobile-toggle span{width:26px;height:2px;background:var(--text-main);border-radius:2px}.container{padding:0 24px}}
+  </style>
+  <!-- Full stylesheet (synchronous to prevent CLS) -->
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" href="../assets/logo.webp" type="image/webp" />
+  <meta name="theme-color" content="#050814" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&display=swap" />
+
+  <!-- Schema.org JSON-LD (SEO Invisible) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://datrey.ma/#organization",
+    "name": "DatRey",
+    "alternateName": "DatRey.ma",
+    "description": "Agence d'acquisition digitale full-stack au Maroc. Google Ads, Meta Ads, SEO, CRO et Marketing Automation pour scaler vos ventes.",
+    "url": "https://datrey.ma",
+    "logo": "https://datrey.ma/assets/logo.webp",
+    "image": "https://datrey.ma/assets/logo.webp",
+    "telephone": "+212644443059",
+    "email": "contact@datrey.ma",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "322 Bd Brahim Roudani, R\u00e9s. AR-Rayhane, \u00c9t. 04 N\u00b017",
+      "addressLocality": "Casablanca",
+      "addressRegion": "Casablanca-Settat",
+      "postalCode": "20000",
+      "addressCountry": "MA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.5731,
+      "longitude": -7.5898
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Casablanca"},
+      {"@type": "City", "name": "Rabat"},
+      {"@type": "City", "name": "Tanger"},
+      {"@type": "City", "name": "Marrakech"}
+    ],
+    "priceRange": "$$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "sameAs": [],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services d'Acquisition Digitale",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Google Ads (SEA)", "description": "Campagnes Search et Performance Max orient\u00e9es ROAS."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Meta Ads (Facebook & Instagram)", "description": "Acquisition via Facebook et Instagram avec Creative Testing."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO & R\u00e9f\u00e9rencement Naturel", "description": "Audit technique, cocon s\u00e9mantique et netlinking."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Optimisation de Conversion (CRO)", "description": "Landing pages, A/B testing et heatmaps."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Email Marketing & Automation", "description": "Nurturing B2B, CRM et sc\u00e9narios de fid\u00e9lisation."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Strat\u00e9gie d'Acquisition Digitale", "description": "Audit, roadmap 3/6/12 mois et tracking avanc\u00e9."}}
+      ]
+    }
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70RDR1SSN4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-70RDR1SSN4');
+  </script>
+
+  <!-- Scripts -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="shared.js"></script>
+</head>
+<body>
+  <!-- Prevent theme FOUC (major CLS fix) -->
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
+
+  <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="DatRey &mdash; Accueil">
+        <img src="../assets/logo.webp" alt="DatRey Logo" class="logo-img" width="40" height="40" />
+        <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="index.html" class="nav-active">Accueil</a>
+        <a href="services.html">Nos Services</a>
+        <a href="transformation-digitale.html">Transformation Digitale</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-cta">Audit Gratuit</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div class="lang-selector">
+          <button class="lang-btn" aria-label="Changer de langue">AR ▼</button>
+          <div class="lang-dropdown">
+            <a href="/index.html">Français</a>
+            <a href="/en/index.html">English</a>
+            <a href="/ar/index.html" class="active">العربية</a>
+            <a href="/es/index.html">Español</a>
+          </div>
+        </div>
+
+        <button id="themeToggle" class="theme-toggle" aria-label="Basculer le th&egrave;me">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileClose" aria-label="Fermer le menu">&times;</button>
+    <a href="index.html" onclick="closeMobileNav()">Accueil</a>
+    <a href="services.html" onclick="closeMobileNav()">Nos Services</a>
+    <a href="transformation-digitale.html" onclick="closeMobileNav()">Transformation Digitale</a>
+    <a href="blog.html" onclick="closeMobileNav()">Blog</a>
+        <a href="blog.html">Blog</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+    <a href="contact.html" class="btn btn-primary" onclick="closeMobileNav()">Audit Gratuit</a>
+  </div>
+
+  <main id="main-content">
+
+  <!-- ========== HERO ========== -->
+  <section class="hero antigrav-hero" id="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Agence digitale full-stack bas&eacute;e au Maroc
+        </div>
+        <h1 class="hero-title">
+          Transformez votre trafic en<br /><span class="highlight">chiffre d'affaires pr&eacute;visible</span>.
+        </h1>
+        <p class="hero-subtitle">
+          Nous combinons Google Ads, Meta Ads, SEO et CRO pour g&eacute;n&eacute;rer des leads qualifi&eacute;s et scaler vos ventes. <strong>Arr&ecirc;tez d'acheter des clics, investissez dans la croissance.</strong>
+        </p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Demander un Audit Gratuit
+          </a>
+          <a href="services.html" class="btn btn-outline">D&eacute;couvrir nos services &rarr;</a>
+        </div>
+        <div style="margin-top: 16px; font-size: 0.85rem; color: var(--text-muted); display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap;">
+          <span style="display:flex; align-items:center; gap:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--roi-500)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Sans engagement de dur&eacute;e</span>
+          <span style="display:flex; align-items:center; gap:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--roi-500)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Propri&eacute;t&eacute; totale des comptes</span>
+          <span style="display:flex; align-items:center; gap:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--roi-500)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> 100% Data-Driven</span>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-value" data-count="150">+150%</div>
+            <div class="hero-stat-label">ROAS moyen g&eacute;n&eacute;r&eacute;</div>
+          </div>
+          <div>
+            <div class="hero-stat-value" data-count="10000">+10 000</div>
+            <div class="hero-stat-label">Leads qualifi&eacute;s</div>
+          </div>
+          <div>
+            <div class="hero-stat-value" data-count="98">98%</div>
+            <div class="hero-stat-label">Fid&eacute;lisation client</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES PREVIEW ========== -->
+  <section class="services section-padding" id="services">
+    <div class="container">
+      <div class="services-header reveal">
+        <div class="section-label">Ce que nous faisons</div>
+        <h2 class="section-title">Notre expertise Full-Stack pour <span class="gradient-text">scaler votre business</span></h2>
+        <p class="section-subtitle">
+          Des solutions d'acquisition compl&egrave;tes : de la cr&eacute;ation de la demande jusqu'&agrave; la conversion finale.
+        </p>
+      </div>
+      <div class="services-grid">
+
+        <!-- Card 1: Google Ads -->
+        <a href="services-google-ads.html" class="service-card glass-panel floating-card reveal" id="svc-google-ads">
+          <div class="service-card glass-panel floating-card-body">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg>
+            </div>
+            <h3>Google Ads (SEA)</h3>
+            <p>Captez l'intention d'achat imm&eacute;diate avec des campagnes Search et Performance Max hyper-rentables, orient&eacute;es ROAS.</p>
+            <div class="service-tags" style="margin-bottom: 20px;">
+              <span class="service-tag">Performance Max</span>
+              <span class="service-tag">Search Intent</span>
+              <span class="service-tag">Retargeting</span>
+            </div>
+            <span class="service-card glass-panel floating-card-link">Dominer Google &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Card 2: Meta Ads -->
+        <a href="services-meta-ads.html" class="service-card glass-panel floating-card reveal" id="svc-meta-ads">
+          <div class="service-card glass-panel floating-card-body">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <h3>Meta Ads</h3>
+            <p>Ciblez votre audience id&eacute;ale sur Facebook &amp; Instagram avec des strat&eacute;gies de Creative Testing agressives qui convertissent.</p>
+            <div class="service-tags" style="margin-bottom: 20px;">
+              <span class="service-tag">Creative Testing</span>
+              <span class="service-tag">Instagram Ads</span>
+              <span class="service-tag">CPA cible</span>
+            </div>
+            <span class="service-card glass-panel floating-card-link">G&eacute;n&eacute;rer des Leads &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Card 3: SEO -->
+        <a href="services-seo.html" class="service-card glass-panel floating-card reveal" id="svc-seo">
+          <div class="service-card glass-panel floating-card-body">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>SEO &amp; Contenu</h3>
+            <p>Dominez les r&eacute;sultats de recherche Google sur le long terme gr&acirc;ce &agrave; une approche technique, s&eacute;mantique et des backlinks puissants.</p>
+            <div class="service-tags" style="margin-bottom: 20px;">
+              <span class="service-tag">Audit Technique</span>
+              <span class="service-tag">Cocon S&eacute;mantique</span>
+              <span class="service-tag">Netlinking</span>
+            </div>
+            <span class="service-card glass-panel floating-card-link">Am&eacute;liorer mon trafic &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Card 4: CRO -->
+        <a href="services-cro.html" class="service-card glass-panel floating-card reveal" id="svc-cro">
+          <div class="service-card glass-panel floating-card-body">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            </div>
+            <h3>Optimisation Conversion (CRO)</h3>
+            <p>Ne perdez plus vos visiteurs. Nous concevons des Landing Pages neuro-optimis&eacute;es pour doubler votre taux de conversion (A/B testing).</p>
+            <div class="service-tags" style="margin-bottom: 20px;">
+              <span class="service-tag">A/B Testing</span>
+              <span class="service-tag">Landing Pages</span>
+              <span class="service-tag">Heatmaps</span>
+            </div>
+            <span class="service-card glass-panel floating-card-link">Doubler mes ventes &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Card 5: Email Automation -->
+        <a href="services-emailing.html" class="service-card glass-panel floating-card reveal" id="svc-email">
+          <div class="service-card glass-panel floating-card-body">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <h3>Emailing &amp; Automation</h3>
+            <p>Convertissez vos prospects froids en clients fid&egrave;les. Automatisez vos relances B2B et vos abandons de paniers pour maximiser la LTV.</p>
+            <div class="service-tags" style="margin-bottom: 20px;">
+              <span class="service-tag">Nurturing B2B</span>
+              <span class="service-tag">CRM</span>
+              <span class="service-tag">Fid&eacute;lisation</span>
+            </div>
+            <span class="service-card glass-panel floating-card-link">Automatiser mes ventes &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Card 6: Stratégie -->
+        <a href="services-strategie.html" class="service-card glass-panel floating-card reveal" id="svc-strategie">
+          <div class="service-card glass-panel floating-card-body">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+            <h3>Strat&eacute;gie d'Acquisition</h3>
+            <p>Construction d'une roadmap sur 3, 6 et 12 mois. Audit profond, cartographie du parcours client et r&eacute;partition du budget m&eacute;dia.</p>
+            <div class="service-tags" style="margin-bottom: 20px;">
+              <span class="service-tag">Audit Data Room</span>
+              <span class="service-tag">Roadmap</span>
+              <span class="service-tag">Tracking</span>
+            </div>
+            <span class="service-card glass-panel floating-card-link">Planifier ma croissance &rarr;</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== APPROACH ========== -->
+  <section class="approach section-padding" id="approach">
+    <div class="container">
+      <div class="approach-grid">
+        <div class="approach-visual reveal">
+          <img src="../assets/approach_methodology.webp" alt="&Eacute;quipe DatRey en r&eacute;union strat&eacute;gique analysant les KPIs de performance digitale" width="600" height="400" loading="lazy" decoding="async" />
+        </div>
+        <div class="reveal">
+          <div class="section-label">M&eacute;thodologie Scientifique</div>
+          <h2 class="section-title">Le processus de <span class="gradient-text">croissance pr&eacute;visible</span></h2>
+          <p class="section-subtitle" style="margin-bottom:40px;">
+            Nous n'utilisons pas de formules magiques. Nous appliquons un processus rigoureux et Data-Driven
+            pour d&eacute;risquer vos investissements publicitaires.<br><br>
+            <strong style="color:var(--text-main);">Notre focus :</strong> B2B, E-commerce, Immobilier, et Sant&eacute; au Maroc.
+          </p>
+          <div class="approach-steps">
+            <div class="approach-step">
+              <div class="approach-step-num">01</div>
+              <div>
+                <h4>Audit &amp; Data Room</h4>
+                <p>Analyse de l'existant, configuration du Server-Side Tracking et identification des fuites de budget.</p>
+              </div>
+            </div>
+            <div class="approach-step">
+              <div class="approach-step-num">02</div>
+              <div>
+                <h4>Roadmap Strat&eacute;gique</h4>
+                <p>D&eacute;finition des personas, s&eacute;lection des canaux (Meta, Google, SEO) et projection financi&egrave;re (CPA cible).</p>
+              </div>
+            </div>
+            <div class="approach-step">
+              <div class="approach-step-num">03</div>
+              <div>
+                <h4>Lancement &amp; A/B Testing</h4>
+                <p>D&eacute;ploiement des campagnes avec un testing intensif sur les cr&eacute;atives et les landing pages.</p>
+              </div>
+            </div>
+            <div class="approach-step">
+              <div class="approach-step-num">04</div>
+              <div>
+                <h4>Scale &amp; Reporting</h4>
+                <p>Allocation du budget vers les leviers gagnants. Suivi en temps r&eacute;el via un dashboard transparent.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section section-padding" id="contact">
+    <div class="container">
+      <div class="cta-box reveal" style="text-align:center;">
+        <h2>Pr&ecirc;t &agrave; transformer votre entreprise&nbsp;?</h2>
+        <p>
+          Rencontrons-nous pour discuter de vos objectifs.
+          Nous vous offrons un devis gratuit et sans engagement.
+        </p>
+        <div class="cta-actions">
+          <a href="mailto:contact@datrey.ma" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            contact@datrey.ma
+          </a>
+          <a href="tel:+212644443059" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.3);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            +212 6 44 44 30 59
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+      <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom:4px;">
+            <img src="../assets/logo.webp" alt="DatRey Logo" class="logo-img" />
+            <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
+          </a>
+          <p>
+            Votre partenaire d'acquisition digitale full-stack au Maroc.
+            Google Ads, Meta Ads, SEO et CRO pour scaler vos ventes.
+          </p>
+          <a href="https://datrey.com" target="_blank" rel="noopener" class="footer-saas">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+            Découvrez nos solutions SaaS sur DatRey.com
+          </a>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/datrey-agency/" target="_blank" rel="noopener" aria-label="LinkedIn DatRey">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://x.com/Datrey_Agency" target="_blank" rel="noopener" aria-label="X DatRey">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg>
+            </a>
+            <a href="https://www.instagram.com/datrey.agency/" target="_blank" rel="noopener" aria-label="Instagram DatRey">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.pinterest.com/DatreyAgency" target="_blank" rel="noopener" aria-label="Pinterest DatRey">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="12" x2="12" y2="22"></line><path d="M12 22c-3.5 0-6.5-2.5-7.5-6s.5-7 4-8.5 7-1 9.5 2 2 6-.5 8.5L12 22z"></path><circle cx="12" cy="7" r="1"></circle></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Nos Services</a>
+            <a href="transformation-digitale.html">Transformation Digitale</a>
+        <a href="blog.html">Blog</a>
+            <a href="a-propos.html">&Agrave; propos</a>
+            <a href="cas-clients.html">Cas Clients</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="services-google-ads.html">Google Ads (SEA)</a>
+            <a href="services-meta-ads.html">Meta Ads</a>
+            <a href="services-seo.html">SEO &amp; Contenu</a>
+            <a href="services-cro.html">CRO &amp; Landing Pages</a>
+            <a href="services-emailing.html">Email &amp; Automation</a>
+            <a href="services-strategie.html">Strat&eacute;gie d'Acquisition</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span>322 Bd Brahim Roudani, R&eacute;s. AR-Rayhane,<br>&Eacute;t. 04 N&deg;17, Maarif &mdash; Casablanca</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <a href="mailto:contact@datrey.ma" style="color:inherit;">contact@datrey.ma</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <a href="tel:+212644443059" style="color:inherit;">+212 6 44 44 30 59</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 DatRey. Tous droits r&eacute;serv&eacute;s.</span>
+        <div style="display:flex;gap:20px;">
+          <a href="mentions-legales.html">Mentions l&eacute;gales</a>
+          <a href="politique-confidentialite.html">Politique de confidentialit&eacute;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/212644443059" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Nous contacter sur WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</body>
+</html>

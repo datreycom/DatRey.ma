@@ -891,3 +891,14 @@ h1, h2, h3, h4, h5, h6 {
 .form-feedback.error { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); }
 .spinner { width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: #fff; animation: spin 1s ease-in-out infinite; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 @keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+/* Language Selector */
+.lang-selector { position: relative; display: inline-block; }
+.lang-btn { background: transparent; border: 1px solid var(--border-color); color: var(--text-main); font-family: var(--font-body); font-size: 0.9rem; font-weight: 500; cursor: pointer; padding: 6px 12px; border-radius: 20px; transition: var(--transition); display: flex; align-items: center; gap: 4px; }
+.lang-btn:hover { background: var(--roi-100); }
+.lang-dropdown { position: absolute; top: 110%; right: 0; background: var(--card-bg); min-width: 120px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: 0 4px 16px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s; transform: translateY(10px); z-index: 1000; }
+.lang-selector:hover .lang-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.lang-dropdown a { display: block; padding: 10px 16px; color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: var(--transition); border-bottom: 1px solid var(--border-color); text-align: left; }
+.lang-dropdown a:last-child { border-bottom: none; }
+.lang-dropdown a:hover { background: var(--roi-50); color: var(--roi-400); }
+.lang-dropdown a.active { color: var(--roi-500); font-weight: 700; }

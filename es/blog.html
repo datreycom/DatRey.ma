@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog DatRey | Actualités et Expertise Digitales</title>
+  <meta name="description" content="Découvrez nos articles, guides et études de cas sur l'acquisition digitale, le SEO, les Ads, et la stratégie au Maroc." />
+  <meta property="og:title" content="Blog DatRey | Expertise Full-Stack" />
+  <meta property="og:description" content="Découvrez nos articles, guides et études de cas sur l'acquisition digitale." />
+  <meta property="og:image" content="https://datrey.ma/assets/logo.webp" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://datrey.ma/blog.html" />
+  <link rel="canonical" href="https://datrey.ma/blog.html" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" href="../assets/logo.webp" type="image/webp" />
+  <meta name="theme-color" content="#050814" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="shared.js"></script>
+  <style>
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .blog-card {
+      background: var(--nuit-800);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .blog-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: var(--nuit-900);
+    }
+    .blog-card-content {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card-category {
+      color: var(--blue-400);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .blog-card-title {
+      font-size: 1.25rem;
+      color: var(--text-base);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .blog-card-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .blog-card-link {
+      color: var(--blue-500);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s ease;
+    }
+    .blog-card-link:hover {
+      color: var(--blue-400);
+    }
+  </style>
+</head>
+<body>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
+  
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="DatRey — Accueil">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="40" height="40" />
+        <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Nos Services</a>
+        <a href="blog.html" class="nav-active">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-cta">Audit Gratuit</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div class="lang-selector">
+          <button class="lang-btn" aria-label="Changer de langue">ES ▼</button>
+          <div class="lang-dropdown">
+            <a href="/index.html">Français</a>
+            <a href="/en/index.html">English</a>
+            <a href="/ar/index.html">العربية</a>
+            <a href="/es/index.html" class="active">Español</a>
+          </div>
+        </div>
+
+        <button id="themeToggle" class="theme-toggle" aria-label="Basculer le thème">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileClose" aria-label="Fermer le menu">&times;</button>
+    <a href="index.html" onclick="closeMobileNav()">Accueil</a>
+    <a href="services.html" onclick="closeMobileNav()">Nos Services</a>
+    <a href="blog.html" onclick="closeMobileNav()">Blog</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+    <a href="contact.html" class="btn btn-primary" onclick="closeMobileNav()">Audit Gratuit</a>
+  </div>
+
+  <section class="page-hero antigrav-hero">
+    <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <h1 class="hero-title">Blog <span class="highlight">DatRey</span></h1>
+        <p class="hero-subtitle">Insights, stratégies et guides pratiques pour maximiser votre acquisition digitale.</p>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content" class="section-padding">
+    <div class="container">
+      <div class="blog-grid reveal">
+
+        <article class="blog-card">
+          <img src="../assets/blog/maximiser-roi-google-ads-entreprises-marocaines-1.webp" alt="Maximiser le ROI de vos campagnes Google Ads : 5 stratégies avancées pour les entreprises marocaines" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Google Ads & SEA</span>
+            <h2 class="blog-card-title">Maximiser le ROI de vos campagnes Google Ads : 5 stratégies avancées pour les entreprises marocaines</h2>
+            <p class="blog-card-desc">Découvrez 5 stratégies avancées pour optimiser vos campagnes Google Ads et maximiser votre retour sur investissement au Maroc.</p>
+            <a href="blog/maximiser-roi-google-ads-entreprises-marocaines.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/google-ads-vs-facebook-ads-maroc-1.webp" alt="Google Ads vs Facebook Ads : Quelle plateforme choisir pour votre business au Maroc ?" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Google Ads & SEA</span>
+            <h2 class="blog-card-title">Google Ads vs Facebook Ads : Quelle plateforme choisir pour votre business au Maroc ?</h2>
+            <p class="blog-card-desc">Comparez Google Ads et Facebook Ads pour votre entreprise marocaine. Avantages, inconvénients et conseils pour choisir la meilleure plateforme.</p>
+            <a href="blog/google-ads-vs-facebook-ads-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/erreurs-campagnes-google-ads-corriger-1.webp" alt="5 erreurs fatales à éviter dans vos campagnes Google Ads (et comment les corriger)" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Google Ads & SEA</span>
+            <h2 class="blog-card-title">5 erreurs fatales à éviter dans vos campagnes Google Ads (et comment les corriger)</h2>
+            <p class="blog-card-desc">Évitez ces 5 erreurs courantes dans Google Ads qui ruinent votre budget. Conseils pratiques pour les entreprises marocaines.</p>
+            <a href="blog/erreurs-campagnes-google-ads-corriger.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/guide-optimisation-meta-ads-2025-1.webp" alt="Guide Complet pour Optimiser vos Campagnes Meta Ads en 2025" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Meta Ads & Social Ads</span>
+            <h2 class="blog-card-title">Guide Complet pour Optimiser vos Campagnes Meta Ads en 2025</h2>
+            <p class="blog-card-desc">Découvrez les meilleures pratiques pour optimiser vos campagnes Meta Ads en 2025. Ciblage, budget, créations : maximisez votre ROI avec DatRey.</p>
+            <a href="blog/guide-optimisation-meta-ads-2025.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/social-ads-vs-meta-ads-choix-plateforme-1.webp" alt="Social Ads vs Meta Ads : Quelle Plateforme Choisir pour votre Marque ?" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Meta Ads & Social Ads</span>
+            <h2 class="blog-card-title">Social Ads vs Meta Ads : Quelle Plateforme Choisir pour votre Marque ?</h2>
+            <p class="blog-card-desc">Comparatif détaillé entre Social Ads (LinkedIn, Twitter, TikTok) et Meta Ads (Facebook, Instagram). Quel réseau social privilégier selon vos objectifs marketing ?</p>
+            <a href="blog/social-ads-vs-meta-ads-choix-plateforme.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/10-erreurs-campagnes-social-ads-2025-1.webp" alt="10 Erreurs Fatales à Éviter dans vos Campagnes Social Ads en 2025" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Meta Ads & Social Ads</span>
+            <h2 class="blog-card-title">10 Erreurs Fatales à Éviter dans vos Campagnes Social Ads en 2025</h2>
+            <p class="blog-card-desc">Évitez ces 10 erreurs courantes dans vos campagnes Social Ads (Meta, LinkedIn, TikTok) pour ne pas gaspiller votre budget. Conseils pratiques de DatRey.</p>
+            <a href="blog/10-erreurs-campagnes-social-ads-2025.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/referencement-naturel-seo-maroc-guide-2025-1.webp" alt="Référencement Naturel SEO Maroc : Guide Complet pour 2025" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Référencement Naturel (SEO)</span>
+            <h2 class="blog-card-title">Référencement Naturel SEO Maroc : Guide Complet pour 2025</h2>
+            <p class="blog-card-desc">Découvrez notre guide SEO 2025 pour le Maroc : stratégies locales, optimisation technique et création de contenu pour booster votre visibilité.</p>
+            <a href="blog/referencement-naturel-seo-maroc-guide-2025.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/seo-local-maroc-recherches-geolocalisees-1.webp" alt="SEO Local Maroc : Comment Dominer les Recherches Géolocalisées ?" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Référencement Naturel (SEO)</span>
+            <h2 class="blog-card-title">SEO Local Maroc : Comment Dominer les Recherches Géolocalisées ?</h2>
+            <p class="blog-card-desc">Optimisez votre SEO local au Maroc : Google My Business, avis clients, et contenu géolocalisé pour attirer les clients près de chez vous.</p>
+            <a href="blog/seo-local-maroc-recherches-geolocalisees.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/10-erreurs-seo-eviter-site-web-maroc-1.webp" alt="10 Erreurs SEO à Éviter Absolument pour votre Site Web au Maroc" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Référencement Naturel (SEO)</span>
+            <h2 class="blog-card-title">10 Erreurs SEO à Éviter Absolument pour votre Site Web au Maroc</h2>
+            <p class="blog-card-desc">Évitez ces 10 erreurs SEO courantes au Maroc : contenu dupliqué, mauvaise structure, liens cassés, et optimisez votre site pour Google.</p>
+            <a href="blog/10-erreurs-seo-eviter-site-web-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/augmenter-taux-conversion-cro-1.webp" alt="Comment augmenter votre taux de conversion de 30% grâce au CRO" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Optimisation des Conversions (CRO)</span>
+            <h2 class="blog-card-title">Comment augmenter votre taux de conversion de 30% grâce au CRO</h2>
+            <p class="blog-card-desc">Découvrez des techniques éprouvées de CRO pour booster vos conversions de 30%. Tests A/B, persuasion et data-driven.</p>
+            <a href="blog/augmenter-taux-conversion-cro.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/erreurs-cro-conversions-1.webp" alt="Les 10 erreurs CRO qui ruinent vos conversions (et comment les corriger)" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Optimisation des Conversions (CRO)</span>
+            <h2 class="blog-card-title">Les 10 erreurs CRO qui ruinent vos conversions (et comment les corriger)</h2>
+            <p class="blog-card-desc">Évitez ces 10 pièges courants du CRO qui font fuir vos clients. Améliorez votre taux de conversion avec des correctifs simples.</p>
+            <a href="blog/erreurs-cro-conversions.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/guide-cro-ecommerce-maroc-1.webp" alt="Guide complet du CRO pour e-commerce au Maroc : stratégies et outils" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Optimisation des Conversions (CRO)</span>
+            <h2 class="blog-card-title">Guide complet du CRO pour e-commerce au Maroc : stratégies et outils</h2>
+            <p class="blog-card-desc">Optimisez votre boutique en ligne avec des techniques CRO adaptées au marché marocain. Outils, exemples et bonnes pratiques.</p>
+            <a href="blog/guide-cro-ecommerce-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/automatisation-emails-marketing-guide-1.webp" alt="Comment automatiser vos emails marketing avec succès ? Guide complet 2025" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Emailing & Automation</span>
+            <h2 class="blog-card-title">Comment automatiser vos emails marketing avec succès ? Guide complet 2025</h2>
+            <p class="blog-card-desc">Découvrez comment mettre en place une stratégie d'emailing automation performante : segmentation, scénarios, outils et bonnes pratiques pour booster vos conversions.</p>
+            <a href="blog/automatisation-emails-marketing-guide.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/emailing-vs-automation-strategie-1.webp" alt="Emailing vs Automation : Quelle stratégie choisir pour votre entreprise ?" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Emailing & Automation</span>
+            <h2 class="blog-card-title">Emailing vs Automation : Quelle stratégie choisir pour votre entreprise ?</h2>
+            <p class="blog-card-desc">Comparez les approches d'emailing traditionnel et d'automation : avantages, cas d'usage, et comment les combiner pour maximiser votre ROI.</p>
+            <a href="blog/emailing-vs-automation-strategie.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/outils-email-automation-pme-maroc-1.webp" alt="Top 5 des outils d'email automation pour les PME marocaines en 2025" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Emailing & Automation</span>
+            <h2 class="blog-card-title">Top 5 des outils d'email automation pour les PME marocaines en 2025</h2>
+            <p class="blog-card-desc">Sélection des meilleurs outils d'automatisation email adaptés aux PME au Maroc : fonctionnalités, tarifs, et avis pour vous aider à choisir.</p>
+            <a href="blog/outils-email-automation-pme-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/strategie-digitale-gagnante-maroc-1.webp" alt="Comment élaborer une stratégie digitale gagnante pour votre entreprise au Maroc" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Stratégie Digitale</span>
+            <h2 class="blog-card-title">Comment élaborer une stratégie digitale gagnante pour votre entreprise au Maroc</h2>
+            <p class="blog-card-desc">Découvrez les étapes clés pour créer une stratégie digitale efficace adaptée au marché marocain. Conseils d'experts DatRey.</p>
+            <a href="blog/strategie-digitale-gagnante-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/tendances-marketing-digital-maroc-2025-1.webp" alt="Les tendances du marketing digital au Maroc en 2025" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Stratégie Digitale</span>
+            <h2 class="blog-card-title">Les tendances du marketing digital au Maroc en 2025</h2>
+            <p class="blog-card-desc">Restez à la pointe : découvrez les tendances clés du marketing digital au Maroc pour 2025. DatRey analyse pour vous.</p>
+            <a href="blog/tendances-marketing-digital-maroc-2025.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/strategie-digitale-sur-mesure-maroc-1.webp" alt="Pourquoi votre entreprise au Maroc a besoin d'une stratégie digitale sur mesure" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Stratégie Digitale</span>
+            <h2 class="blog-card-title">Pourquoi votre entreprise au Maroc a besoin d'une stratégie digitale sur mesure</h2>
+            <p class="blog-card-desc">Découvrez les avantages d'une stratégie digitale personnalisée pour votre entreprise au Maroc. DatRey vous explique pourquoi le sur-mesure est essentiel.</p>
+            <a href="blog/strategie-digitale-sur-mesure-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/affichage-dynamique-maroc-booster-visibilite-2024-1.webp" alt="Affichage Dynamique au Maroc : Comment Booster Votre Visibilité en 2024" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Affichage Dynamique</span>
+            <h2 class="blog-card-title">Affichage Dynamique au Maroc : Comment Booster Votre Visibilité en 2024</h2>
+            <p class="blog-card-desc">Découvrez comment l'affichage dynamique transforme la communication visuelle au Maroc. Astuces, tendances et ROI pour votre entreprise.</p>
+            <a href="blog/affichage-dynamique-maroc-booster-visibilite-2024.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/erreurs-affichage-dynamique-corriger-1.webp" alt="5 Erreurs à Éviter avec l'Affichage Dynamique (et Comment les Corriger)" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Affichage Dynamique</span>
+            <h2 class="blog-card-title">5 Erreurs à Éviter avec l'Affichage Dynamique (et Comment les Corriger)</h2>
+            <p class="blog-card-desc">Évitez les pièges courants de l'affichage dynamique : contenu trop chargé, mauvais emplacement, absence de call-to-action. Conseils d'experts.</p>
+            <a href="blog/erreurs-affichage-dynamique-corriger.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/affichage-dynamique-vs-affiches-statiques-roi-1.webp" alt="Affichage Dynamique vs Affiches Statiques : Quel ROI pour votre Marque ?" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Affichage Dynamique</span>
+            <h2 class="blog-card-title">Affichage Dynamique vs Affiches Statiques : Quel ROI pour votre Marque ?</h2>
+            <p class="blog-card-desc">Comparez l'affichage dynamique et les affiches statiques : coûts, impact, flexibilité. Découvrez pourquoi le digital signage est plus rentable à long terme.</p>
+            <a href="blog/affichage-dynamique-vs-affiches-statiques-roi.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/audit-digital-maroc-diagnostic-seo-1.webp" alt="Audit Digital Maroc : Pourquoi votre site a besoin d'un diagnostic SEO complet" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Audit Digital</span>
+            <h2 class="blog-card-title">Audit Digital Maroc : Pourquoi votre site a besoin d'un diagnostic SEO complet</h2>
+            <p class="blog-card-desc">Découvrez pourquoi un audit digital est crucial pour votre site au Maroc. Optimisez votre SEO, UX et performance avec notre guide complet.</p>
+            <a href="blog/audit-digital-maroc-diagnostic-seo.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/indicateurs-cles-audit-seo-ecommerce-1.webp" alt="Les 10 indicateurs clés à analyser dans un audit SEO pour votre site e-commerce" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Audit Digital</span>
+            <h2 class="blog-card-title">Les 10 indicateurs clés à analyser dans un audit SEO pour votre site e-commerce</h2>
+            <p class="blog-card-desc">Découvrez les 10 KPIs essentiels d'un audit SEO pour e-commerce au Maroc. Améliorez votre visibilité et vos ventes avec DatRey.</p>
+            <a href="blog/indicateurs-cles-audit-seo-ecommerce.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/audit-ux-ui-ameliorer-experience-utilisateur-maroc-1.webp" alt="Audit UX/UI : Comment améliorer l'expérience utilisateur de votre site marocain" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Audit Digital</span>
+            <h2 class="blog-card-title">Audit UX/UI : Comment améliorer l'expérience utilisateur de votre site marocain</h2>
+            <p class="blog-card-desc">Optimisez l'expérience utilisateur de votre site web au Maroc grâce à un audit UX/UI professionnel. Augmentez conversions et satisfaction client.</p>
+            <a href="blog/audit-ux-ui-ameliorer-experience-utilisateur-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/importance-design-graphique-strategie-marque-maroc-1.webp" alt="L'importance du design graphique dans la stratégie de marque au Maroc" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Design & Impression</span>
+            <h2 class="blog-card-title">L'importance du design graphique dans la stratégie de marque au Maroc</h2>
+            <p class="blog-card-desc">Découvrez pourquoi le design graphique est crucial pour votre marque au Maroc. Conseils pour un branding réussi avec DatRey.</p>
+            <a href="blog/importance-design-graphique-strategie-marque-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/guide-impression-offset-numerique-entreprises-1.webp" alt="Guide complet de l'impression offset vs numérique pour les entreprises" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Design & Impression</span>
+            <h2 class="blog-card-title">Guide complet de l'impression offset vs numérique pour les entreprises</h2>
+            <p class="blog-card-desc">Comparez l'impression offset et numérique : avantages, coûts, délais. Choisissez la meilleure solution pour vos projets au Maroc avec DatRey.</p>
+            <a href="blog/guide-impression-offset-numerique-entreprises.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/tendances-design-print-2025-supports-marketing-1.webp" alt="5 tendances design print à suivre en 2025 pour vos supports marketing" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Design & Impression</span>
+            <h2 class="blog-card-title">5 tendances design print à suivre en 2025 pour vos supports marketing</h2>
+            <p class="blog-card-desc">Découvrez les 5 tendances design print 2025 : minimalisme, couleurs vives, typographie audacieuse, éco-responsabilité et textures. Inspirez-vous avec DatRey.</p>
+            <a href="blog/tendances-design-print-2025-supports-marketing.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/application-mobile-sur-mesure-maroc-2025-1.webp" alt="Pourquoi votre entreprise marocaine a besoin d'une application mobile sur mesure en 2025" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Développement Web & Mobile</span>
+            <h2 class="blog-card-title">Pourquoi votre entreprise marocaine a besoin d'une application mobile sur mesure en 2025</h2>
+            <p class="blog-card-desc">Découvrez les avantages d'une app mobile sur mesure pour votre entreprise au Maroc : performance, sécurité et expérience utilisateur optimale.</p>
+            <a href="blog/application-mobile-sur-mesure-maroc-2025.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/site-web-vs-application-web-maroc-1.webp" alt="Site web ou application web : lequel choisir pour votre projet digital au Maroc ?" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Développement Web & Mobile</span>
+            <h2 class="blog-card-title">Site web ou application web : lequel choisir pour votre projet digital au Maroc ?</h2>
+            <p class="blog-card-desc">Comparez les avantages d'un site web et d'une application web pour votre entreprise au Maroc. DatRey vous aide à faire le bon choix.</p>
+            <a href="blog/site-web-vs-application-web-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/tendances-developpement-web-mobile-2025-maroc-1.webp" alt="Les tendances du développement web et mobile à suivre en 2025 pour les entreprises marocaines" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Développement Web & Mobile</span>
+            <h2 class="blog-card-title">Les tendances du développement web et mobile à suivre en 2025 pour les entreprises marocaines</h2>
+            <p class="blog-card-desc">Restez compétitif avec les dernières tendances : PWA, IA, 5G et design adaptatif. DatRey vous accompagne dans l'innovation digitale.</p>
+            <a href="blog/tendances-developpement-web-mobile-2025-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/seo-local-maroc-guide-pme-1.webp" alt="Maîtrisez le SEO Local au Maroc : Guide Complet pour les PME" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Formations & Master Classes</span>
+            <h2 class="blog-card-title">Maîtrisez le SEO Local au Maroc : Guide Complet pour les PME</h2>
+            <p class="blog-card-desc">Découvrez comment optimiser votre SEO local au Maroc : Google My Business, avis clients, et stratégies pour attirer plus de clients dans votre région.</p>
+            <a href="blog/seo-local-maroc-guide-pme.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/google-ads-ecommerce-maroc-campagnes-1.webp" alt="Google Ads pour les E-commerçants Marocains : Campagnes Performantes" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Formations & Master Classes</span>
+            <h2 class="blog-card-title">Google Ads pour les E-commerçants Marocains : Campagnes Performantes</h2>
+            <p class="blog-card-desc">Apprenez à lancer des campagnes Google Ads efficaces pour votre e-commerce au Maroc : structure, enchères, ciblage et optimisation du ROI.</p>
+            <a href="blog/google-ads-ecommerce-maroc-campagnes.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="../assets/blog/strategie-contenu-reseaux-sociaux-maroc-1.webp" alt="Stratégie de Contenu sur les Réseaux Sociaux pour les Marques Marocaines" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Formations & Master Classes</span>
+            <h2 class="blog-card-title">Stratégie de Contenu sur les Réseaux Sociaux pour les Marques Marocaines</h2>
+            <p class="blog-card-desc">Découvrez comment créer une stratégie de contenu engageante sur les réseaux sociaux pour les marques au Maroc : plateformes, formats et calendrier éditorial.</p>
+            <a href="blog/strategie-contenu-reseaux-sociaux-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom:4px;">
+            <img src="../assets/logo.webp" alt="DatRey Logo" class="logo-img" width="40" height="40" />
+            <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
+          </a>
+          <p>Votre partenaire d'acquisition digitale full-stack au Maroc.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 DatRey SARL. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
