@@ -265,7 +265,7 @@
           const spinner = document.getElementById('btn-spinner');
           const successMsg = document.getElementById('form-success');
           const errorMsg = document.getElementById('form-error');
-		  const WORKER_URL = 'https://contact-datrey.datreycom.workers.dev';
+		  const WORKER_URL = 'https://script.google.com/macros/s/AKfycbzPaI2SCPsA6II8CbtEfCgSlQVon9x3FhYL6J1QWqgCwikGUW0uUyNN4EqeVD8F0GE8/exec';
           
           // Reset states
           successMsg.style.display = 'none';
@@ -284,7 +284,7 @@
             
             const response = await fetch(WORKER_URL, {
               method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
               body: JSON.stringify(data)
             });
 
