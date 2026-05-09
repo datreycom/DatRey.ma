@@ -511,35 +511,35 @@ h1, h2, h3, h4, h5, h6 {
    FOOTER
    ============================================ */
 .footer {
-  background: var(--nuit-950); padding: 64px 0 0;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  background: var(--bg-main); padding: 64px 0 0;
+  border-top: 1px solid var(--border-color);
 }
 .footer-grid {
   display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-  padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding-bottom: 48px; border-bottom: 1px solid var(--border-color);
 }
 .footer-brand p {
-  color: rgba(255,255,255,0.7); font-size: 0.95rem;
+  color: var(--text-muted); font-size: 0.95rem;
   line-height: 1.8; margin-top: 16px; max-width: 340px; letter-spacing: 0.02em;
 }
-.footer .logo { color: #ffffff; }
+.footer .logo { color: var(--text-main); }
 .social-links { display: flex; gap: 16px; margin-top: 24px; }
-.social-links a { color: rgba(255,255,255,0.55); transition: var(--transition); }
+.social-links a { color: var(--text-muted); transition: var(--transition); }
 .social-links a:hover { color: var(--roi-300); transform: translateY(-3px); }
 .footer h4 {
-  color: #ffffff; font-size: 0.9rem;
+  color: var(--text-main); font-size: 0.9rem;
   font-weight: 700; text-transform: uppercase;
   letter-spacing: 2px; margin-bottom: 20px;
 }
 .footer-links a {
-  display: block; color: rgba(255,255,255,0.6);
+  display: block; color: var(--text-muted);
   font-size: 0.95rem; padding: 6px 0;
   transition: var(--transition); letter-spacing: 0.02em;
 }
 .footer-links a:hover { color: var(--roi-300); transform: translateX(4px); }
 .footer-contact-item {
   display: flex; gap: 10px; align-items: flex-start;
-  color: rgba(255,255,255,0.6); font-size: 0.94rem;
+  color: var(--text-muted); font-size: 0.94rem;
   margin-bottom: 14px; letter-spacing: 0.02em;
 }
 .footer-contact-icon { color: var(--roi-400); font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
@@ -555,9 +555,9 @@ h1, h2, h3, h4, h5, h6 {
 .footer-saas:hover { background: rgba(59,109,232,0.15); }
 .footer-bottom {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 24px 0; color: rgba(255,255,255,0.45); font-size: 0.88rem; letter-spacing: 0.02em;
+  padding: 24px 0; color: var(--text-muted); font-size: 0.88rem; letter-spacing: 0.02em;
 }
-.footer-bottom a { color: rgba(255,255,255,0.55); transition: var(--transition); }
+.footer-bottom a { color: var(--text-muted); transition: var(--transition); }
 .footer-bottom a:hover { color: var(--roi-300); }
 
 /* ============================================
@@ -565,19 +565,19 @@ h1, h2, h3, h4, h5, h6 {
    ============================================ */
 .mobile-nav {
   display: none; position: fixed; inset: 0; z-index: 999;
-  background: rgba(11,24,50,0.97); backdrop-filter: blur(20px);
+  background: var(--bg-main); backdrop-filter: blur(20px);
   flex-direction: column; align-items: center; justify-content: center; gap: 32px;
 }
 .mobile-nav.active { display: flex; }
 .mobile-nav a {
-  color: #ffffff; font-size: 1.45rem;
+  color: var(--text-main); font-size: 1.45rem;
   font-weight: 600; font-family: var(--font-display);
   transition: var(--transition); letter-spacing: 0.03em;
 }
 .mobile-nav a:hover { color: var(--roi-300); }
 .mobile-nav-close {
   position: absolute; top: 24px; right: 24px;
-  background: none; border: none; color: #ffffff;
+  background: none; border: none; color: var(--text-main);
   font-size: 1.6rem; cursor: pointer;
 }
 
@@ -659,7 +659,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px; font-size: 0.92rem; letter-spacing: 0.02em;
 }
 .breadcrumb a {
-  color: rgba(255,255,255,0.45); transition: var(--transition);
+  color: var(--text-muted); transition: var(--transition);
 }
 .breadcrumb a:hover { color: var(--roi-300); }
 .breadcrumb-sep { color: rgba(255,255,255,0.25); }
