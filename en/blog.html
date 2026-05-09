@@ -472,8 +472,44 @@
         </article>
 
       </div>
+
+      <!-- Pagination -->
+      <div class="pagination" id="pagination"></div>
+
     </div>
   </main>
+
+  <script>
+  (function() {
+    const ITEMS_PER_PAGE = 9;
+    const cards = Array.from(document.querySelectorAll('.blog-card'));
+    const totalPages = Math.ceil(cards.length / ITEMS_PER_PAGE);
+    let currentPage = 1;
+
+    function showPage(page) {
+      currentPage = page;
+      cards.forEach((card, i) => {
+        card.style.display = (i >= (page - 1) * ITEMS_PER_PAGE && i < page * ITEMS_PER_PAGE) ? '' : 'none';
+      });
+      renderPagination();
+      window.scrollTo({ top: document.querySelector('.blog-grid').offsetTop - 100, behavior: 'smooth' });
+    }
+
+    function renderPagination() {
+      const container = document.getElementById('pagination');
+      let html = '';
+      html += '<button class="page-btn" ' + (currentPage === 1 ? 'disabled' : '') + ' onclick="window.__blogPage(' + (currentPage - 1) + ')">&laquo; Précédent</button>';
+      for (let i = 1; i <= totalPages; i++) {
+        html += '<button class="page-btn' + (i === currentPage ? ' active' : '') + '" onclick="window.__blogPage(' + i + ')">' + i + '</button>';
+      }
+      html += '<button class="page-btn" ' + (currentPage === totalPages ? 'disabled' : '') + ' onclick="window.__blogPage(' + (currentPage + 1) + ')">Suivant &raquo;</button>';
+      container.innerHTML = html;
+    }
+
+    window.__blogPage = showPage;
+    showPage(1);
+  })();
+  </script>
 
   <footer class="footer">
     <div class="container">

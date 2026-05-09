@@ -912,3 +912,11 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) { .hero-with-bg::before { background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-main) 60%, transparent 100%); }
 [data-theme="light"] .hero-with-bg::before { background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.4) 100%); }
 [data-theme="dark"] .hero-with-bg::before { background: linear-gradient(180deg, rgba(5,8,20,1) 0%, rgba(5,8,20,0.9) 60%, rgba(5,8,20,0.4) 100%); } }
+
+/* --- Blog Pagination --- */
+.pagination { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 48px; flex-wrap: wrap; }
+.page-btn { padding: 10px 18px; border: 1px solid var(--border-color); background: var(--bg-card, var(--nuit-800)); color: var(--text-base); border-radius: var(--radius-md, 8px); cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: all 0.3s ease; }
+.page-btn:hover:not(:disabled):not(.active) { background: var(--blue-500); color: #fff; border-color: var(--blue-500); transform: translateY(-2px); }
+.page-btn.active { background: var(--blue-500); color: #fff; border-color: var(--blue-500); font-weight: 700; }
+.page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
