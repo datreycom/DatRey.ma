@@ -990,16 +990,16 @@ h1, h2, h3, h4, h5, h6 {
     radial-gradient(ellipse at 80% 50%, rgba(37,99,235,0.08) 0%, transparent 60%);
 }
 
-/* Light mode overlay — bright with subtle blue accent */
+/* Light mode overlay — high-contrast frosted glass */
 [data-theme="light"] .hero-with-bg::before {
   background:
     linear-gradient(135deg,
-      rgba(255,255,255,0.95) 0%,
-      rgba(255,255,255,0.82) 35%,
-      rgba(219,234,254,0.25) 65%,
-      rgba(255,255,255,0.45) 100%
+      rgba(255,255,255,0.97) 0%,
+      rgba(255,255,255,0.94) 30%,
+      rgba(240,245,255,0.88) 55%,
+      rgba(219,234,254,0.70) 100%
     ),
-    radial-gradient(ellipse at 80% 50%, rgba(37,99,235,0.06) 0%, transparent 60%);
+    radial-gradient(ellipse at 80% 50%, rgba(37,99,235,0.04) 0%, transparent 60%);
 }
 
 /* Vignette for cinematic depth */
@@ -1012,13 +1012,63 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-with-bg .container { position: relative; z-index: 3; }
 
-/* Text legibility on image backgrounds */
+/* Text legibility on image backgrounds — Dark mode */
 .hero-with-bg .hero-title,
 .hero-with-bg .page-hero-content h1 {
   text-shadow: 0 2px 16px rgba(0,0,0,0.25);
 }
 .hero-with-bg .hero-subtitle {
   text-shadow: 0 1px 8px rgba(0,0,0,0.15);
+}
+
+/* Text legibility on image backgrounds — Light mode */
+[data-theme="light"] .hero-with-bg .hero-title,
+[data-theme="light"] .hero-with-bg .page-hero-content h1 {
+  color: var(--nuit-950);
+  -webkit-text-fill-color: var(--nuit-950);
+  text-shadow: 0 1px 4px rgba(255,255,255,0.6);
+}
+[data-theme="light"] .hero-with-bg .hero-title .highlight {
+  -webkit-text-fill-color: transparent;
+}
+[data-theme="light"] .hero-with-bg .hero-subtitle,
+[data-theme="light"] .hero-with-bg .page-hero-content p {
+  color: var(--nuit-800);
+  text-shadow: 0 1px 3px rgba(255,255,255,0.5);
+}
+[data-theme="light"] .hero-with-bg .breadcrumb a,
+[data-theme="light"] .hero-with-bg .breadcrumb-current,
+[data-theme="light"] .hero-with-bg .breadcrumb-sep {
+  color: var(--nuit-700);
+}
+[data-theme="light"] .hero-with-bg .hero-stat-value {
+  color: var(--roi-600);
+}
+[data-theme="light"] .hero-with-bg .hero-stat-label {
+  color: var(--nuit-700);
+}
+[data-theme="light"] .hero-with-bg .hero-stats {
+  border-top-color: rgba(0,0,0,0.1);
+}
+[data-theme="light"] .hero-with-bg .hero-badge {
+  background: rgba(37,99,235,0.08);
+  border-color: rgba(37,99,235,0.2);
+  color: var(--roi-600);
+}
+[data-theme="light"] .hero-with-bg .btn-outline {
+  color: var(--nuit-800);
+  border-color: var(--nuit-700);
+}
+[data-theme="light"] .hero-with-bg .btn-outline:hover {
+  background: var(--roi-600);
+  color: #fff;
+  border-color: var(--roi-600);
+}
+
+/* Light mode vignette soften */
+[data-theme="light"] .hero-with-bg .hero-grid {
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(255,255,255,0.3) 100%);
+  opacity: 0.5;
 }
 
 /* Ken Burns animation keyframes */
@@ -1045,9 +1095,9 @@ h1, h2, h3, h4, h5, h6 {
   [data-theme="light"] .hero-with-bg::before {
     background:
       linear-gradient(180deg,
-        rgba(255,255,255,0.96) 0%,
-        rgba(255,255,255,0.85) 50%,
-        rgba(255,255,255,0.50) 100%
+        rgba(255,255,255,0.98) 0%,
+        rgba(255,255,255,0.94) 50%,
+        rgba(240,245,255,0.80) 100%
       ) !important;
   }
   .page-hero { min-height: 280px; padding-top: 90px; }
