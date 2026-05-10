@@ -1,0 +1,24 @@
+# DatRey - Agence Digitale & Performance Marketing au Maroc
+> DatRey est une agence de marketing digital basée à Casablanca, experte en Google Ads, Meta Ads, SEO et CRO. Nous aidons les entreprises B2B et B2C à transformer leur trafic en chiffre d'affaires prévisible.
+
+## Services Principaux
+- `Google Ads & SEA -> https://datrey.ma/services-google-ads`: Optimisation du retour sur investissement (ROI) avec des campagnes Search, Display, et Performance Max.
+- `Meta Ads & Social Ads -> https://datrey.ma/services-meta-ads`: Publicité ciblée sur Facebook, Instagram, LinkedIn et TikTok pour la génération de leads.
+- `SEO & Contenu -> https://datrey.ma/services-seo`: Stratégie de référencement naturel pour dominer la recherche organique et attirer du trafic qualifié.
+- `CRO (Optimisation de la Conversion) -> https://datrey.ma/services-cro`: Amélioration des taux de conversion des sites web via l'UX et l'A/B testing.
+- `Emailing B2B -> https://datrey.ma/services-emailing`: Campagnes de prospection à froid (cold emailing) et fidélisation pour le marché B2B.
+- `Stratégie & Conseil -> https://datrey.ma/services-strategie`: Audit complet et feuille de route digitale pour scaler les ventes.
+
+## Expertises & Approche
+- Approche 100% Data-Driven (axée sur les données)
+- Absence d'engagement de durée (contrats flexibles)
+- Propriété totale des comptes par les clients
+- Plus de 150% d'augmentation de ROI moyenne constatée
+
+## Informations de Contact
+- `Contact -> https://datrey.ma/contact`: Formulaire de contact pour demande d'audit gratuit.
+- Téléphone : +212 5 22 XX XX XX (Casablanca, Maroc)
+- E-mail : contact@datrey.ma
+
+## Blog et Ressources
+- `Blog SEO -> https://datrey.ma/blog`: Articles d'experts sur le marketing digital, le SEA, le SEO et la croissance d'entreprise.

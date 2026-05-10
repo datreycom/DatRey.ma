@@ -990,16 +990,15 @@ h1, h2, h3, h4, h5, h6 {
     radial-gradient(ellipse at 80% 50%, rgba(37,99,235,0.08) 0%, transparent 60%);
 }
 
-/* Light mode overlay — high-contrast frosted glass */
+/* Light mode overlay — dark cinematic filter as requested */
 [data-theme="light"] .hero-with-bg::before {
   background:
     linear-gradient(135deg,
-      rgba(255,255,255,0.97) 0%,
-      rgba(255,255,255,0.94) 30%,
-      rgba(240,245,255,0.88) 55%,
-      rgba(219,234,254,0.70) 100%
+      rgba(15,20,35,0.94) 0%,
+      rgba(37,99,235,0.12) 60%,
+      rgba(15,20,35,0.60) 100%
     ),
-    radial-gradient(ellipse at 80% 50%, rgba(37,99,235,0.04) 0%, transparent 60%);
+    radial-gradient(ellipse at 80% 50%, rgba(37,99,235,0.1) 0%, transparent 60%);
 }
 
 /* Vignette for cinematic depth */
@@ -1021,58 +1020,7 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 1px 8px rgba(0,0,0,0.15);
 }
 
-/* Text legibility on image backgrounds — Light mode */
-[data-theme="light"] .hero-with-bg .hero-title,
-[data-theme="light"] .hero-with-bg .page-hero-content h1 {
-  color: var(--nuit-950) !important;
-  -webkit-text-fill-color: var(--nuit-950) !important;
-  text-shadow: 0 1px 6px rgba(255,255,255,0.8);
-}
-[data-theme="light"] .hero-with-bg .hero-title .highlight {
-  background: linear-gradient(135deg, var(--roi-600), var(--roi-500)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-}
-[data-theme="light"] .hero-with-bg .hero-subtitle,
-[data-theme="light"] .hero-with-bg .page-hero-content p {
-  color: var(--nuit-800) !important;
-  text-shadow: 0 1px 3px rgba(255,255,255,0.5);
-}
-[data-theme="light"] .hero-with-bg .breadcrumb a,
-[data-theme="light"] .hero-with-bg .breadcrumb-current,
-[data-theme="light"] .hero-with-bg .breadcrumb-sep {
-  color: var(--nuit-700) !important;
-}
-[data-theme="light"] .hero-with-bg .hero-stat-value {
-  color: var(--roi-600) !important;
-}
-[data-theme="light"] .hero-with-bg .hero-stat-label {
-  color: var(--nuit-700) !important;
-}
-[data-theme="light"] .hero-with-bg .hero-stats {
-  border-top-color: rgba(0,0,0,0.1);
-}
-[data-theme="light"] .hero-with-bg .hero-badge {
-  background: rgba(37,99,235,0.08);
-  border-color: rgba(37,99,235,0.2);
-  color: var(--roi-600);
-}
-[data-theme="light"] .hero-with-bg .btn-outline {
-  color: var(--nuit-800);
-  border-color: var(--nuit-700);
-}
-[data-theme="light"] .hero-with-bg .btn-outline:hover {
-  background: var(--roi-600);
-  color: #fff;
-  border-color: var(--roi-600);
-}
 
-/* Light mode vignette soften */
-[data-theme="light"] .hero-with-bg .hero-grid {
-  background: radial-gradient(ellipse at center, transparent 50%, rgba(255,255,255,0.3) 100%);
-  opacity: 0.5;
-}
 
 /* Ken Burns animation keyframes */
 @keyframes heroKenBurns {
@@ -1098,9 +1046,9 @@ h1, h2, h3, h4, h5, h6 {
   [data-theme="light"] .hero-with-bg::before {
     background:
       linear-gradient(180deg,
-        rgba(255,255,255,0.98) 0%,
-        rgba(255,255,255,0.94) 50%,
-        rgba(240,245,255,0.80) 100%
+        rgba(15,20,35,0.96) 0%,
+        rgba(15,20,35,0.85) 50%,
+        rgba(15,20,35,0.65) 100%
       ) !important;
   }
   .page-hero { min-height: 280px; padding-top: 90px; }
