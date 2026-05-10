@@ -928,15 +928,124 @@ h1, h2, h3, h4, h5, h6 {
 .lang-dropdown a:hover { background: var(--roi-50); color: var(--roi-400); }
 .lang-dropdown a.active { color: var(--roi-500); font-weight: 700; }
 
-/* Hero Background Styling */
-.hero-with-bg { position: relative; background-size: cover; background-position: center; background-repeat: no-repeat; overflow: hidden; }
-.hero-with-bg::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--bg-main) 0%, var(--bg-main) 40%, transparent 100%); z-index: 1; opacity: 0.95; }
-.hero-with-bg .container { position: relative; z-index: 2; }
-[data-theme="light"] .hero-with-bg::before { opacity: 0.90; background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.2) 100%); }
-[data-theme="dark"] .hero-with-bg::before { opacity: 0.90; background: linear-gradient(90deg, rgba(5,8,20,1) 0%, rgba(5,8,20,0.85) 50%, rgba(5,8,20,0.2) 100%); }
-@media (max-width: 768px) { .hero-with-bg::before { background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-main) 60%, transparent 100%); }
-[data-theme="light"] .hero-with-bg::before { background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.4) 100%); }
-[data-theme="dark"] .hero-with-bg::before { background: linear-gradient(180deg, rgba(5,8,20,1) 0%, rgba(5,8,20,0.9) 60%, rgba(5,8,20,0.4) 100%); } }
+/* ============================================
+   PAGE HERO (Sub-pages: services, blog, etc.)
+   ============================================ */
+.page-hero {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(160deg, var(--nuit-950) 0%, var(--nuit-900) 30%, var(--nuit-800) 60%, var(--nuit-700) 100%);
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 48px;
+}
+.page-hero .container { position: relative; z-index: 3; }
+.page-hero-content { max-width: 700px; }
+.page-hero-sm { min-height: 240px; padding-bottom: 32px; }
+
+/* ============================================
+   HERO WITH BACKGROUND IMAGE (Cinematic Slider)
+   ============================================ */
+.hero-with-bg {
+  position: relative;
+  background-color: var(--nuit-950);
+  overflow: hidden;
+}
+
+/* Ken Burns animated background layer */
+.hero-with-bg::after {
+  content: '';
+  position: absolute;
+  inset: -4%;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  animation: heroKenBurns 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Cinematic gradient overlay */
+.hero-with-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Dark mode overlay — rich cinematic depth */
+[data-theme="dark"] .hero-with-bg::before,
+.hero-with-bg::before {
+  background:
+    linear-gradient(135deg,
+      rgba(5,8,20,0.94) 0%,
+      rgba(10,15,31,0.80) 35%,
+      rgba(37,99,235,0.06) 65%,
+      rgba(5,8,20,0.50) 100%
+    ),
+    radial-gradient(ellipse at 80% 50%, rgba(37,99,235,0.08) 0%, transparent 60%);
+}
+
+/* Light mode overlay — bright with subtle blue accent */
+[data-theme="light"] .hero-with-bg::before {
+  background:
+    linear-gradient(135deg,
+      rgba(255,255,255,0.95) 0%,
+      rgba(255,255,255,0.82) 35%,
+      rgba(219,234,254,0.25) 65%,
+      rgba(255,255,255,0.45) 100%
+    ),
+    radial-gradient(ellipse at 80% 50%, rgba(37,99,235,0.06) 0%, transparent 60%);
+}
+
+/* Vignette for cinematic depth */
+.hero-with-bg .hero-grid {
+  position: absolute; inset: 0; z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(5,8,20,0.4) 100%);
+  opacity: 0.6;
+}
+
+.hero-with-bg .container { position: relative; z-index: 3; }
+
+/* Text legibility on image backgrounds */
+.hero-with-bg .hero-title,
+.hero-with-bg .page-hero-content h1 {
+  text-shadow: 0 2px 16px rgba(0,0,0,0.25);
+}
+.hero-with-bg .hero-subtitle {
+  text-shadow: 0 1px 8px rgba(0,0,0,0.15);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-with-bg::after { animation: none; transform: scale(1.02); }
+}
+
+/* Mobile: vertical gradient for readability */
+@media (max-width: 768px) {
+  .hero-with-bg::before {
+    background:
+      linear-gradient(180deg,
+        rgba(5,8,20,0.95) 0%,
+        rgba(5,8,20,0.80) 50%,
+        rgba(5,8,20,0.55) 100%
+      ) !important;
+  }
+  [data-theme="light"] .hero-with-bg::before {
+    background:
+      linear-gradient(180deg,
+        rgba(255,255,255,0.96) 0%,
+        rgba(255,255,255,0.85) 50%,
+        rgba(255,255,255,0.50) 100%
+      ) !important;
+  }
+  .page-hero { min-height: 280px; padding-top: 90px; }
+}
 
 /* --- Blog Pagination --- */
 .pagination { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 48px; flex-wrap: wrap; }
