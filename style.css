@@ -1024,28 +1024,31 @@ h1, h2, h3, h4, h5, h6 {
 /* Text legibility on image backgrounds — Light mode */
 [data-theme="light"] .hero-with-bg .hero-title,
 [data-theme="light"] .hero-with-bg .page-hero-content h1 {
-  color: var(--nuit-950);
-  -webkit-text-fill-color: var(--nuit-950);
-  text-shadow: 0 1px 4px rgba(255,255,255,0.6);
+  color: var(--nuit-950) !important;
+  -webkit-text-fill-color: var(--nuit-950) !important;
+  text-shadow: 0 1px 6px rgba(255,255,255,0.8);
 }
 [data-theme="light"] .hero-with-bg .hero-title .highlight {
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, var(--roi-600), var(--roi-500)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
 }
 [data-theme="light"] .hero-with-bg .hero-subtitle,
 [data-theme="light"] .hero-with-bg .page-hero-content p {
-  color: var(--nuit-800);
+  color: var(--nuit-800) !important;
   text-shadow: 0 1px 3px rgba(255,255,255,0.5);
 }
 [data-theme="light"] .hero-with-bg .breadcrumb a,
 [data-theme="light"] .hero-with-bg .breadcrumb-current,
 [data-theme="light"] .hero-with-bg .breadcrumb-sep {
-  color: var(--nuit-700);
+  color: var(--nuit-700) !important;
 }
 [data-theme="light"] .hero-with-bg .hero-stat-value {
-  color: var(--roi-600);
+  color: var(--roi-600) !important;
 }
 [data-theme="light"] .hero-with-bg .hero-stat-label {
-  color: var(--nuit-700);
+  color: var(--nuit-700) !important;
 }
 [data-theme="light"] .hero-with-bg .hero-stats {
   border-top-color: rgba(0,0,0,0.1);
