@@ -1061,3 +1061,297 @@ h1, h2, h3, h4, h5, h6 {
 .page-btn.active { background: var(--blue-500); color: #fff; border-color: var(--blue-500); font-weight: 700; }
 .page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
+/* ============================================
+   ULTRA-CHIC PREMIUM DESIGN SYSTEM v2
+   ============================================ */
+
+/* 1. Film Grain Cinématique */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 9998;
+  pointer-events: none;
+  opacity: 0.028;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px;
+}
+
+/* 2. Glow Borders — Service Cards Premium */
+.service-card {
+  border: 1px solid rgba(59,109,232,0.07) !important;
+  background: var(--card-bg) !important;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(59,109,232,0.06), transparent 40%);
+  pointer-events: none; z-index: 1;
+}
+.service-card:hover::after { opacity: 1; }
+.service-card:hover {
+  border-color: rgba(59,109,232,0.18) !important;
+  box-shadow:
+    0 0 0 1px rgba(59,109,232,0.08),
+    0 8px 40px rgba(0,0,0,0.12),
+    0 0 60px rgba(37,99,235,0.06) !important;
+}
+[data-theme="dark"] .service-card:hover {
+  box-shadow:
+    0 0 0 1px rgba(59,109,232,0.15),
+    0 8px 40px rgba(0,0,0,0.5),
+    0 0 80px rgba(37,99,235,0.08) !important;
+}
+
+/* 3. Hero Mesh Gradient (replaces bg-image) */
+.hero.chic-hero {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(37,99,235,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(96,165,250,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 90% 50% at 50% 110%, rgba(37,99,235,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at 65% 60%, rgba(147,197,253,0.06) 0%, transparent 50%),
+    linear-gradient(160deg, #050814 0%, #0a0f1f 25%, #0f172a 55%, #1e293b 100%) !important;
+  background-image: none !important;
+}
+.hero.chic-hero::after { display: none !important; }
+.hero.chic-hero .hero-grid {
+  background: none !important;
+  opacity: 1;
+}
+
+/* Animated mesh orbs — extra depth */
+.hero-orb-3 {
+  position: absolute; border-radius: 50%; filter: blur(100px);
+  pointer-events: none; width: 250px; height: 250px;
+  top: 40%; left: 55%;
+  background: rgba(96,165,250,0.08);
+  animation: orbFloat 12s ease-in-out infinite;
+  animation-delay: -5s;
+  will-change: transform;
+}
+
+/* 4. Bento Grid Asymétrique */
+.services-grid.bento {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+  gap: 20px !important;
+}
+.services-grid.bento .service-card:nth-child(1),
+.services-grid.bento .service-card:nth-child(2) {
+  grid-column: span 3;
+}
+.services-grid.bento .service-card:nth-child(3),
+.services-grid.bento .service-card:nth-child(4),
+.services-grid.bento .service-card:nth-child(5) {
+  grid-column: span 2;
+}
+.services-grid.bento .service-card:nth-child(6) {
+  grid-column: span 6;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 32px 40px;
+}
+.services-grid.bento .service-card:nth-child(6) .service-card-body,
+.services-grid.bento .service-card:nth-child(6) .service-card.glass-panel.floating-card-body {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+}
+@media (max-width: 1024px) {
+  .services-grid.bento {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .services-grid.bento .service-card:nth-child(1),
+  .services-grid.bento .service-card:nth-child(2),
+  .services-grid.bento .service-card:nth-child(6) {
+    grid-column: span 2;
+  }
+  .services-grid.bento .service-card:nth-child(3),
+  .services-grid.bento .service-card:nth-child(4),
+  .services-grid.bento .service-card:nth-child(5) {
+    grid-column: span 1;
+  }
+  .services-grid.bento .service-card:nth-child(6) {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .services-grid.bento {
+    grid-template-columns: 1fr !important;
+  }
+  .services-grid.bento .service-card {
+    grid-column: span 1 !important;
+  }
+  .services-grid.bento .service-card:nth-child(6) {
+    display: block;
+  }
+}
+
+/* 5. Section Divider — Animated Line */
+.section-divider {
+  width: 100%; height: 1px; position: relative;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(59,109,232,0.3) 20%,
+    rgba(96,165,250,0.5) 50%,
+    rgba(59,109,232,0.3) 80%,
+    transparent 100%
+  );
+  overflow: visible;
+}
+.section-divider::after {
+  content: '';
+  position: absolute; top: -2px; left: 0;
+  width: 60px; height: 5px;
+  background: linear-gradient(90deg, var(--roi-500), var(--roi-300));
+  border-radius: 3px;
+  animation: dividerGlow 4s ease-in-out infinite;
+  filter: blur(1px);
+}
+@keyframes dividerGlow {
+  0%, 100% { left: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: calc(100% - 60px); opacity: 0; }
+}
+
+/* 6. Social Proof — Infinite Ticker */
+.ticker-track {
+  display: flex;
+  gap: 60px;
+  animation: ticker 25s linear infinite;
+  width: max-content;
+}
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-wrapper {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.ticker-item {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  white-space: nowrap;
+  opacity: 0.5;
+  filter: grayscale(100%);
+  transition: opacity 0.3s, filter 0.3s;
+}
+.ticker-item:hover { opacity: 1; filter: grayscale(0%); }
+.ticker-accent { color: var(--roi-500); }
+
+/* 7. FAQ Premium */
+.faq-item-chic {
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-item-chic:hover {
+  border-color: rgba(59,109,232,0.15);
+  box-shadow: 0 4px 20px rgba(37,99,235,0.06);
+}
+.faq-item-chic summary {
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--text-main); cursor: pointer;
+  padding: 22px 28px;
+  display: flex; justify-content: space-between; align-items: center;
+  list-style: none;
+  transition: background 0.3s;
+}
+.faq-item-chic summary:hover {
+  background: rgba(59,109,232,0.03);
+}
+.faq-item-chic summary::-webkit-details-marker { display: none; }
+.faq-item-chic .faq-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(59,109,232,0.08);
+  color: var(--roi-500);
+  font-size: 1.2rem; font-weight: 400;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s;
+  flex-shrink: 0;
+}
+.faq-item-chic[open] .faq-icon {
+  transform: rotate(45deg);
+  background: var(--roi-500);
+  color: #fff;
+}
+.faq-item-chic .faq-answer {
+  padding: 0 28px 22px;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+
+/* 8. CTA Aurora Glow */
+.cta-box.aurora {
+  position: relative;
+  overflow: hidden;
+}
+.cta-box.aurora::after {
+  content: '';
+  position: absolute;
+  bottom: -50%; left: 10%; right: 10%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(59,109,232,0.15) 0%, transparent 70%);
+  animation: auroraFloat 6s ease-in-out infinite alternate;
+  pointer-events: none; z-index: 0;
+}
+@keyframes auroraFloat {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-20px) scale(1.1); opacity: 1; }
+}
+.cta-box.aurora > * { position: relative; z-index: 1; }
+
+/* 9. Premium spacing */
+.section-padding-chic { padding: 160px 0; }
+
+/* 10. Hero stat upgrade — glow numbers */
+.hero-stat-value {
+  position: relative;
+  text-shadow: 0 0 30px rgba(147,197,253,0.3);
+}
+
+/* 11. Premium badge glow */
+.hero-badge {
+  animation: badgeGlow 3s ease-in-out infinite alternate;
+}
+@keyframes badgeGlow {
+  0% { box-shadow: 0 0 0 rgba(59,109,232,0); }
+  100% { box-shadow: 0 0 20px rgba(59,109,232,0.08); }
+}
+
+/* 12. Premium approach steps — timeline line */
+.approach-steps-chic {
+  position: relative;
+  padding-left: 32px;
+}
+.approach-steps-chic::before {
+  content: '';
+  position: absolute; top: 0; bottom: 0; left: 21px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--roi-500), var(--roi-200), transparent);
+}
+.approach-steps-chic .approach-step {
+  position: relative;
+}
+.approach-steps-chic .approach-step-num {
+  position: relative; z-index: 2;
+  box-shadow: 0 0 0 4px var(--bg-main);
+}

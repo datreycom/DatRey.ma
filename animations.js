@@ -1,146 +1,186 @@
 /**
- * DatRey.ma - Magic UX & Animations
- * Utilise GSAP & ScrollTrigger (chargés via CDN)
+ * DatRey.ma — Ultra-Chic Premium Animations
+ * GSAP & ScrollTrigger — Luxury Tech Agency level
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Initialisation GSAP ScrollTrigger
+    if (typeof gsap === 'undefined') return;
     gsap.registerPlugin(ScrollTrigger);
 
-    // 2. Parallax des Orbes (Hero Section)
+    // ─── 1. HERO CHOREOGRAPHED ENTRANCE ───
+    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    const hero = document.querySelector('.hero');
+
+    if (hero) {
+        // Set initial states
+        gsap.set('.hero-orb', { scale: 0, opacity: 0 });
+        gsap.set('.hero-badge', { y: -20, opacity: 0 });
+        gsap.set('.hero-title', { y: 60, opacity: 0 });
+        gsap.set('.hero-subtitle', { y: 40, opacity: 0 });
+        gsap.set('.hero-actions', { y: 30, opacity: 0 });
+        gsap.set('.hero-stats', { y: 30, opacity: 0 });
+
+        heroTl
+            .to('.hero-orb', {
+                scale: 1, opacity: 1,
+                duration: 1.5, stagger: 0.2,
+                ease: 'elastic.out(1, 0.6)'
+            })
+            .to('.hero-badge', {
+                y: 0, opacity: 1, duration: 0.6
+            }, '-=1')
+            .to('.hero-title', {
+                y: 0, opacity: 1, duration: 0.9,
+                ease: 'power4.out'
+            }, '-=0.6')
+            .to('.hero-subtitle', {
+                y: 0, opacity: 1, duration: 0.7
+            }, '-=0.5')
+            .to('.hero-actions', {
+                y: 0, opacity: 1, duration: 0.6,
+                ease: 'back.out(1.4)'
+            }, '-=0.3')
+            .to('.hero-stats', {
+                y: 0, opacity: 1, duration: 0.6
+            }, '-=0.2');
+    }
+
+    // ─── 2. PARALLAX ORBS (Mouse Reactive) ───
     const orbs = document.querySelectorAll('.hero-orb');
     if (orbs.length > 0) {
         document.addEventListener('mousemove', (e) => {
             const x = (e.clientX / window.innerWidth - 0.5) * 2;
             const y = (e.clientY / window.innerHeight - 0.5) * 2;
-            
-            gsap.to('.hero-orb-1', {
-                x: x * 50,
-                y: y * 50,
-                duration: 2,
-                ease: "power2.out"
-            });
-            
-            gsap.to('.hero-orb-2', {
-                x: x * -40,
-                y: y * -40,
-                duration: 2.5,
-                ease: "power2.out"
-            });
+
+            gsap.to('.hero-orb-1', { x: x * 50, y: y * 50, duration: 2, ease: 'power2.out' });
+            gsap.to('.hero-orb-2', { x: x * -40, y: y * -40, duration: 2.5, ease: 'power2.out' });
+            gsap.to('.hero-orb-3', { x: x * 30, y: y * -20, duration: 3, ease: 'power2.out' });
         });
     }
 
-    // 3. Boutons Magnétiques (Magnetic CTA)
-    const magneticElements = document.querySelectorAll('.btn-primary, .btn-outline, .btn-ghost, .service-card');
-    
-    magneticElements.forEach((el) => {
-        // Seulement pour les boutons, les cartes de service ont leur propre effet Tilt
-        if(el.classList.contains('service-card')) return;
-        
-        el.addEventListener('mousemove', (e) => {
-            const rect = el.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            
-            gsap.to(el, {
-                x: x * 0.2,
-                y: y * 0.2,
-                duration: 0.4,
-                ease: "power2.out"
-            });
-        });
-
-        el.addEventListener('mouseleave', () => {
-            gsap.to(el, {
-                x: 0,
-                y: 0,
-                duration: 0.7,
-                ease: "elastic.out(1, 0.3)"
-            });
-        });
-    });
-
-    // 4. Effet Tilt 3D sur les Cartes de Service (Glassmorphism 2.0)
+    // ─── 3. SPOTLIGHT HOVER ON CARDS ───
     const cards = document.querySelectorAll('.service-card, .service-detail');
-    
+
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left; // x position within the element.
-            const y = e.clientY - rect.top;  // y position within the element.
-            
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Update CSS custom properties for the radial glow
+            card.style.setProperty('--mouse-x', x + 'px');
+            card.style.setProperty('--mouse-y', y + 'px');
+
+            // 3D Tilt
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
-            const rotateX = ((y - centerY) / centerY) * -5; // Max 5 deg
-            const rotateY = ((x - centerX) / centerX) * 5;
-            
+            const rotateX = ((y - centerY) / centerY) * -4;
+            const rotateY = ((x - centerX) / centerX) * 4;
+
             gsap.to(card, {
                 rotateX: rotateX,
                 rotateY: rotateY,
                 transformPerspective: 1000,
-                ease: "power1.out",
+                ease: 'power1.out',
                 duration: 0.4
             });
         });
 
         card.addEventListener('mouseleave', () => {
             gsap.to(card, {
-                rotateX: 0,
-                rotateY: 0,
-                ease: "power2.out",
-                duration: 0.6
+                rotateX: 0, rotateY: 0,
+                ease: 'elastic.out(1, 0.5)',
+                duration: 0.8
             });
         });
     });
 
-    // 5. GSAP Text Reveal (Titres et Sous-titres)
-    // Au lieu de faire un simple fade-in, on anime les éléments un par un quand ils entrent dans le viewport
-    const revealElements = document.querySelectorAll('.section-title, .section-subtitle, .section-label');
-    
-    revealElements.forEach(el => {
-        // Enlève la classe de base si elle existe pour éviter les conflits
-        if(el.classList.contains('reveal')) {
+    // ─── 4. MAGNETIC BUTTONS ───
+    document.querySelectorAll('.btn-primary, .btn-outline, .btn-ghost').forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            gsap.to(el, { x: x * 0.2, y: y * 0.2, duration: 0.4, ease: 'power2.out' });
+        });
+
+        el.addEventListener('mouseleave', () => {
+            gsap.to(el, { x: 0, y: 0, duration: 0.7, ease: 'elastic.out(1, 0.3)' });
+        });
+    });
+
+    // ─── 5. STAGGERED SCROLL REVEALS ───
+    // Section titles
+    document.querySelectorAll('.section-title, .section-subtitle, .section-label').forEach(el => {
+        if (el.classList.contains('reveal')) {
             el.classList.remove('reveal');
             el.style.opacity = 1;
             el.style.transform = 'none';
         }
-        
+
         gsap.from(el, {
-            scrollTrigger: {
-                trigger: el,
-                start: "top 85%",
-                toggleActions: "play none none reverse"
-            },
-            y: 40,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out"
+            scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' },
+            y: 40, opacity: 0, duration: 1, ease: 'power3.out'
         });
     });
-    
-    // Animer les cartes de la grille avec un stagger
-    const grids = document.querySelectorAll('.services-grid, .approach-grid');
-    grids.forEach(grid => {
-        // Enlève les classes reveal des enfants pour laisser GSAP gérer
-        Array.from(grid.children).forEach(child => {
-            if(child.classList.contains('reveal')) {
+
+    // Service grids — stagger entrance
+    document.querySelectorAll('.services-grid').forEach(grid => {
+        const gridCards = grid.querySelectorAll('.service-card');
+        gridCards.forEach(child => {
+            if (child.classList.contains('reveal')) {
                 child.classList.remove('reveal');
                 child.style.opacity = 1;
                 child.style.transform = 'none';
             }
         });
 
-        gsap.from(grid.children, {
-            scrollTrigger: {
-                trigger: grid,
-                start: "top 80%",
+        gsap.set(gridCards, { y: 50, opacity: 0, rotateX: 8 });
+
+        ScrollTrigger.create({
+            trigger: grid,
+            start: 'top 85%',
+            onEnter: () => {
+                gsap.to(gridCards, {
+                    y: 0, opacity: 1, rotateX: 0,
+                    stagger: 0.12, duration: 0.8,
+                    ease: 'back.out(1.5)'
+                });
             },
-            y: 50,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: "back.out(1.2)"
+            once: true
+        });
+    });
+
+    // Approach steps
+    document.querySelectorAll('.approach-step').forEach((step, i) => {
+        gsap.from(step, {
+            scrollTrigger: { trigger: step, start: 'top 88%' },
+            x: -30, opacity: 0, duration: 0.7,
+            delay: i * 0.15,
+            ease: 'power3.out'
+        });
+    });
+
+    // Floating images
+    document.querySelectorAll('.approach-visual img, .service-hero-img img').forEach(img => {
+        gsap.set(img, { y: 30, opacity: 0, scale: 0.95 });
+        ScrollTrigger.create({
+            trigger: img, start: 'top 85%',
+            onEnter: () => {
+                gsap.to(img, { y: 0, opacity: 1, scale: 1, duration: 1, ease: 'power3.out' });
+            },
+            once: true
+        });
+    });
+
+    // FAQ items
+    document.querySelectorAll('.faq-item-chic').forEach((item, i) => {
+        gsap.from(item, {
+            scrollTrigger: { trigger: item, start: 'top 90%' },
+            y: 20, opacity: 0, duration: 0.5,
+            delay: i * 0.08,
+            ease: 'power2.out'
         });
     });
 });
