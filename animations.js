@@ -174,13 +174,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // FAQ items
-    document.querySelectorAll('.faq-item-chic').forEach((item, i) => {
-        gsap.from(item, {
-            scrollTrigger: { trigger: item, start: 'top 90%' },
-            y: 20, opacity: 0, duration: 0.5,
-            delay: i * 0.08,
-            ease: 'power2.out'
+    // FAQ items — set initial state then animate on scroll
+    const faqItems = document.querySelectorAll('.faq-item-chic');
+    if (faqItems.length > 0) {
+        gsap.set(faqItems, { y: 20, opacity: 0 });
+        ScrollTrigger.create({
+            trigger: '.faq-container',
+            start: 'top 88%',
+            onEnter: () => {
+                gsap.to(faqItems, {
+                    y: 0, opacity: 1,
+                    stagger: 0.1, duration: 0.6,
+                    ease: 'power2.out'
+                });
+            },
+            once: true
         });
-    });
+    }
 });
