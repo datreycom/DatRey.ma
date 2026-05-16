@@ -1109,7 +1109,7 @@ body::before {
     0 0 80px rgba(37,99,235,0.08) !important;
 }
 
-/* 3. Hero Mesh Gradient (replaces bg-image) */
+/* 3. Hero Mesh Gradient — ALWAYS dark, both modes */
 .hero.chic-hero {
   background:
     radial-gradient(ellipse 80% 60% at 20% 50%, rgba(37,99,235,0.18) 0%, transparent 60%),
@@ -1117,7 +1117,6 @@ body::before {
     radial-gradient(ellipse 90% 50% at 50% 110%, rgba(37,99,235,0.1) 0%, transparent 50%),
     radial-gradient(ellipse 40% 40% at 65% 60%, rgba(147,197,253,0.06) 0%, transparent 50%),
     linear-gradient(160deg, #050814 0%, #0a0f1f 25%, #0f172a 55%, #1e293b 100%) !important;
-  background-image: none !important;
 }
 .hero.chic-hero::after { display: none !important; }
 .hero.chic-hero .hero-grid {
@@ -1354,4 +1353,117 @@ body::before {
 .approach-steps-chic .approach-step-num {
   position: relative; z-index: 2;
   box-shadow: 0 0 0 4px var(--bg-main);
+}
+
+/* ============================================
+   LIGHT MODE — COMPREHENSIVE TEXT FIX
+   ============================================ */
+
+/* Hero stays dark in light mode — force all hero text white */
+[data-theme="light"] .hero.chic-hero,
+[data-theme="light"] .hero {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(37,99,235,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(96,165,250,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 90% 50% at 50% 110%, rgba(37,99,235,0.1) 0%, transparent 50%),
+    linear-gradient(160deg, #050814 0%, #0a0f1f 25%, #0f172a 55%, #1e293b 100%) !important;
+}
+[data-theme="light"] .hero .hero-title { color: #ffffff !important; }
+[data-theme="light"] .hero .hero-subtitle { color: rgba(255,255,255,0.7) !important; }
+[data-theme="light"] .hero .hero-badge { color: var(--roi-200) !important; }
+[data-theme="light"] .hero .hero-stat-value { color: var(--roi-300) !important; }
+[data-theme="light"] .hero .hero-stat-label { color: rgba(255,255,255,0.78) !important; }
+[data-theme="light"] .hero .btn-outline {
+  color: #fff !important; border-color: rgba(255,255,255,0.3) !important;
+}
+[data-theme="light"] .hero .btn-outline:hover {
+  background: rgba(255,255,255,0.1) !important;
+}
+
+/* Light mode — Section Titles & Subtitles */
+[data-theme="light"] .section-title,
+[data-theme="light"] .section-title .gradient-text {
+  color: #111827;
+}
+[data-theme="light"] .section-title .gradient-text {
+  background: linear-gradient(135deg, var(--roi-600), var(--roi-400));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+[data-theme="light"] .section-subtitle { color: #4b5563; }
+[data-theme="light"] .section-label { color: var(--roi-500); }
+
+/* Light mode — Service Cards */
+[data-theme="light"] .service-card-body h3,
+[data-theme="light"] .service-card h3 { color: #111827 !important; }
+[data-theme="light"] .service-card-body p,
+[data-theme="light"] .service-card p { color: #4b5563 !important; }
+[data-theme="light"] .service-card-link { color: var(--roi-600) !important; }
+[data-theme="light"] .service-tag {
+  background: var(--roi-100); color: var(--roi-600);
+}
+
+/* Light mode — Approach Section */
+[data-theme="light"] .approach-step h4 { color: #111827 !important; }
+[data-theme="light"] .approach-step p { color: #4b5563 !important; }
+[data-theme="light"] .approach-step-num {
+  color: var(--roi-600) !important;
+  box-shadow: 0 0 0 4px var(--pure-white) !important;
+}
+
+/* Light mode — FAQ */
+[data-theme="light"] .faq-item-chic { background: #ffffff; border-color: #e5e7eb; }
+[data-theme="light"] .faq-item-chic summary { color: #111827 !important; }
+[data-theme="light"] .faq-item-chic .faq-answer { color: #4b5563 !important; }
+[data-theme="light"] .faq-item-chic .faq-icon {
+  background: rgba(37,99,235,0.08); color: var(--roi-600);
+}
+[data-theme="light"] .faq-item-chic[open] .faq-icon {
+  background: var(--roi-500); color: #fff;
+}
+
+/* Light mode — Social Proof Ticker */
+[data-theme="light"] .ticker-item { color: #111827; opacity: 0.4; }
+[data-theme="light"] .ticker-accent { color: var(--roi-600); }
+
+/* Light mode — CTA */
+[data-theme="light"] .cta-box h2 { color: #ffffff !important; }
+[data-theme="light"] .cta-box p { color: rgba(255,255,255,0.8) !important; }
+
+/* Light mode — Footer */
+[data-theme="light"] .footer { background: #ffffff; border-top-color: #e5e7eb; }
+[data-theme="light"] .footer h4 { color: #111827; }
+[data-theme="light"] .footer-brand p { color: #4b5563; }
+[data-theme="light"] .footer-links a { color: #4b5563; }
+[data-theme="light"] .footer-links a:hover { color: var(--roi-600); }
+[data-theme="light"] .footer-contact-item { color: #4b5563; }
+[data-theme="light"] .footer-bottom { color: #6b7280; }
+[data-theme="light"] .footer-bottom a { color: #6b7280; }
+[data-theme="light"] .social-links a { color: #6b7280; }
+[data-theme="light"] .social-links a:hover { color: var(--roi-600); }
+
+/* Light mode — Blog Article Cards */
+[data-theme="light"] .service-card h3 { color: #111827 !important; }
+
+/* Light mode — Hero inline trust badges */
+[data-theme="light"] .hero [style*="color: var(--text-muted)"] { color: rgba(255,255,255,0.6) !important; }
+
+/* Light mode — Header */
+[data-theme="light"] .header { background: #ffffff; }
+[data-theme="light"] .header.scrolled { background: rgba(255,255,255,0.92); }
+[data-theme="light"] .nav-links a { color: #374151; }
+[data-theme="light"] .nav-links a:hover { color: #111827; }
+[data-theme="light"] .logo span { color: #111827; }
+
+/* Light mode — Approach visual */
+[data-theme="light"] .approach-steps-chic::before {
+  background: linear-gradient(180deg, var(--roi-500), var(--roi-200), transparent);
+}
+
+/* Light mode — Section Divider */
+[data-theme="light"] .section-divider {
+  background: linear-gradient(90deg,
+    transparent 0%, rgba(37,99,235,0.15) 20%,
+    rgba(37,99,235,0.25) 50%, rgba(37,99,235,0.15) 80%,
+    transparent 100%);
 }
