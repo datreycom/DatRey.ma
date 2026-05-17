@@ -11,7 +11,12 @@
   <meta property="og:image" content="https://datrey.ma/assets/logo.webp" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://datrey.ma" />
-  <link rel="canonical" href="https://datrey.ma" />
+  <link rel="canonical" href="https://datrey.ma/en/"/>
+<link rel="alternate" hreflang="fr" href="https://datrey.ma/" />
+<link rel="alternate" hreflang="en" href="https://datrey.ma/en/" />
+<link rel="alternate" hreflang="ar" href="https://datrey.ma/ar/" />
+<link rel="alternate" hreflang="es" href="https://datrey.ma/es/" />
+<link rel="alternate" hreflang="x-default" href="https://datrey.ma/" />
   <!-- Critical CSS (above-the-fold) inlined for LCP -->
   <style>
     :root{--nuit-950:#050814;--nuit-900:#0a0f1f;--nuit-800:#0f172a;--nuit-700:#1e293b;--roi-600:#2563eb;--roi-500:#3b82f6;--roi-400:#60a5fa;--roi-300:#93c5fd;--roi-200:#bfdbfe;--roi-100:#dbeafe;--roi-50:#eff6ff;--pure-white:#fff;--gray-500:#6b7280;--font-display:'DM Serif Display',serif;--font-body:'Poppins',sans-serif;--radius-xl:24px;--shadow-card:0 8px 32px rgba(11,24,50,.08);--transition:.4s cubic-bezier(.16,1,.3,1);--bg-main:var(--pure-white);--bg-alt:var(--roi-50);--text-main:var(--nuit-900);--text-muted:#1e293b;--card-bg:var(--pure-white);--border-color:var(--roi-100)}
@@ -49,7 +54,8 @@
   <meta name="theme-color" content="#050814" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&display=swap" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&display=swap" />
 
   <!-- Schema.org JSON-LD (SEO Invisible) -->
   <script type="application/ld+json">
@@ -107,20 +113,29 @@
   }
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70RDR1SSN4"></script>
+  <!-- Google tag (gtag.js) - Deferred for performance -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-70RDR1SSN4');
+    function loadGA4() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-70RDR1SSN4';
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', 'G-70RDR1SSN4');
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadGA4);
+    } else {
+      setTimeout(loadGA4, 2000);
+    }
   </script>
 
   <!-- Scripts -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script defer src="shared.js"></script>
+  <script defer src="../shared.js"></script>
 </head>
 <body>
   <!-- Prevent theme FOUC (major CLS fix) -->
@@ -503,5 +518,6 @@
   <a href="https://wa.me/212644443059" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Nous contacter sur WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
+<script src="../animations.js" defer></script>
 </body>
 </html>

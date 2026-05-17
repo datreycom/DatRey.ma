@@ -1,3 +1,11 @@
+/**
+ * DEPRECATED — This Cloudflare Worker is no longer used.
+ * The contact form now submits to Google Apps Script.
+ * See contact.html line 249 for the active endpoint.
+ * 
+ * This file is kept for reference only.
+ * If you need to re-enable, restrict CORS to "https://datrey.ma".
+ */
 export default {
   async fetch(request, env, ctx) {
     // Handling CORS

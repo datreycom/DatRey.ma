@@ -10,16 +10,22 @@
   <meta property="og:image" content="https://datrey.ma/assets/logo.webp" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://datrey.ma/blog.html" />
-  <link rel="canonical" href="https://datrey.ma/blog.html" />
+  <link rel="canonical" href="https://datrey.ma/es/blog"/>
+<link rel="alternate" hreflang="fr" href="https://datrey.ma/blog" />
+<link rel="alternate" hreflang="en" href="https://datrey.ma/en/blog" />
+<link rel="alternate" hreflang="ar" href="https://datrey.ma/ar/blog" />
+<link rel="alternate" hreflang="es" href="https://datrey.ma/es/blog" />
+<link rel="alternate" hreflang="x-default" href="https://datrey.ma/blog" />
   <link rel="stylesheet" href="../style.css" />
   <link rel="icon" href="../assets/logo.webp" type="image/webp" />
   <meta name="theme-color" content="#050814" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" />
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script defer src="shared.js"></script>
+  <script defer src="../shared.js"></script>
   <style>
     .blog-grid {
       display: grid;
@@ -124,6 +130,7 @@
     <a href="contact.html" onclick="closeMobileNav()">Contact</a>
     <a href="contact.html" class="btn btn-primary" onclick="closeMobileNav()">Audit Gratuit</a>
   </div>
+<main id="main-content">
 
   <section class="page-hero antigrav-hero hero-with-bg" style="background-image: url('assets/hero_blog.webp');">
     <div class="hero-grid"></div>
@@ -592,5 +599,6 @@
       </div>
     </div>
   </footer>
+<script src="../animations.js" defer></script>
 </body>
 </html>
