@@ -232,8 +232,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
-});
-  const chicRows = document.querySelectorAll('.chic-row');
+
+    // ─── 7. CHIC ROWS HOVER EFFECT ───
+    const chicRows = document.querySelectorAll('.chic-row');
   const hoverImg = document.getElementById('chicHoverImg');
   
   if (chicRows.length > 0 && hoverImg) {
