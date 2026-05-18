@@ -152,6 +152,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ─── 6. PARALLAX SCROLL FOR CARDS ───
+    document.querySelectorAll('.floating-card .service-card-body').forEach((body) => {
+        gsap.to(body, {
+            scrollTrigger: {
+                trigger: body.parentElement,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1.5
+            },
+            y: -25,
+            ease: 'none'
+        });
+    });
+
     // Approach steps
     document.querySelectorAll('.approach-step').forEach((step, i) => {
         gsap.from(step, {
@@ -179,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (faqItems.length > 0) {
         gsap.set(faqItems, { y: 20, opacity: 0 });
         ScrollTrigger.create({
-            trigger: '.faq-container',
+            trigger: '.faq-list, .faq-container',
             start: 'top 88%',
             onEnter: () => {
                 gsap.to(faqItems, {
@@ -190,5 +204,186 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             once: true
         });
+    });
+
+    // --- Counter Animation (About Page) ---
+    const counters = document.querySelectorAll('.counter');
+    if (counters.length > 0) {
+      ScrollTrigger.create({
+        trigger: '.stats-grid',
+        start: "top 85%",
+        once: true,
+        onEnter: () => {
+          counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            gsap.to(counter, {
+              innerHTML: target,
+              duration: 2.5,
+              ease: "power2.out",
+              snap: { innerHTML: 1 },
+              onUpdate: function() {
+                if (target >= 1000) {
+                  const val = Math.round(this.targets()[0].innerHTML);
+                  counter.innerHTML = val.toLocaleString('fr-FR').replace(/\s/g, ' ');
+                }
+              }
+            });
+          });
+        }
+      });
     }
+});
+  const chicRows = document.querySelectorAll('.chic-row');
+  const hoverImg = document.getElementById('chicHoverImg');
+  
+  if (chicRows.length > 0 && hoverImg) {
+    // Check if it's a desktop device (no touch)
+    const isTouchDevice = (('ontouchstart' in window) || (navigator.maxTouchPoints > 0));
+    
+    if (!isTouchDevice) {
+      chicRows.forEach(row => {
+        row.addEventListener('mouseenter', (e) => {
+          const imgUrl = row.getAttribute('data-image');
+          if (imgUrl) {
+            hoverImg.style.backgroundImage = `url('${imgUrl}')`;
+          }
+          hoverImg.classList.add('active');
+        });
+        
+        row.addEventListener('mousemove', (e) => {
+          // Use GSAP for smooth positioning
+          if (typeof gsap !== 'undefined') {
+            gsap.to(hoverImg, {
+              x: e.clientX,
+              y: e.clientY,
+              duration: 0.6,
+              ease: "power3.out"
+            });
+          } else {
+            // Fallback if GSAP is not loaded yet
+            hoverImg.style.left = e.clientX + 'px';
+            hoverImg.style.top = e.clientY + 'px';
+          }
+        });
+        
+        row.addEventListener('mouseleave', () => {
+          hoverImg.classList.remove('active');
+        });
+      });
+    } else {
+      // On mobile, just show static images or hide the hover element completely
+      hoverImg.style.display = 'none';
+    }
+  }
+
+
+  // --- 8. READING PROGRESS BAR (Blog Articles) ---
+  var blogContent = document.querySelector('.blog-content');
+  if (blogContent) {
+    var progressBar = document.createElement('div');
+    progressBar.className = 'reading-progress';
+    var progressFill = document.createElement('div');
+    progressFill.className = 'reading-progress-fill';
+    progressBar.appendChild(progressFill);
+    document.body.appendChild(progressBar);
+
+    var scrollTicking = false;
+    window.addEventListener('scroll', function() {
+      if (!scrollTicking) {
+        requestAnimationFrame(function() {
+          var rect = blogContent.getBoundingClientRect();
+          var total = blogContent.scrollHeight - window.innerHeight;
+          var scrolled = window.scrollY - blogContent.offsetTop;
+          var pct = Math.min(Math.max(scrolled / total, 0), 1) * 100;
+          progressFill.style.width = pct + '%';
+          if (rect.top < 0 && rect.bottom > 0) {
+            progressBar.classList.add('active');
+          } else {
+            progressBar.classList.remove('active');
+          }
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    }, { passive: true });
+  }
+
+  // --- 9. SOCIAL SHARE BUTTONS (Blog Articles) ---
+  var articleEl = document.querySelector('article.blog-content');
+  if (articleEl) {
+    var shareContainer = document.createElement('div');
+    shareContainer.className = 'blog-share';
+    var shareUrl = encodeURIComponent(window.location.href);
+    var shareTitle = encodeURIComponent(document.title);
+
+    shareContainer.innerHTML = '<span class="blog-share-label">Partager :</span>'
+      + '<a href="https://www.linkedin.com/sharing/share-offsite/?url=' + shareUrl + '" target="_blank" rel="noopener" aria-label="LinkedIn" class="blog-share-btn blog-share-linkedin"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg></a>'
+      + '<a href="https://twitter.com/intent/tweet?url=' + shareUrl + '&text=' + shareTitle + '" target="_blank" rel="noopener" aria-label="X" class="blog-share-btn blog-share-x"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l11.73 16h5L9 4H4z"/></svg></a>'
+      + '<a href="https://api.whatsapp.com/send?text=' + shareTitle + '%20' + shareUrl + '" target="_blank" rel="noopener" aria-label="WhatsApp" class="blog-share-btn blog-share-whatsapp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0012.05 0z"/></svg></a>';
+
+    var metaEl = articleEl.querySelector('.blog-meta');
+    if (metaEl) {
+      metaEl.insertAdjacentElement('afterend', shareContainer);
+    } else {
+      articleEl.prepend(shareContainer);
+    }
+  }
+
+
+
+  // --- 10. EXIT INTENT POPUP — Focus Trap & Accessibility ---
+  var exitPopup = document.getElementById('exitIntentPopup');
+  if (exitPopup) {
+    var popupModal = exitPopup.querySelector('.exit-popup-modal');
+    var closeBtn = exitPopup.querySelector('.exit-popup-close');
+
+    function openExitPopup() {
+      if (sessionStorage.getItem('exitPopupShown')) return;
+      exitPopup.classList.add('active');
+      exitPopup.style.display = 'flex';
+      sessionStorage.setItem('exitPopupShown', 'true');
+      // Trap focus inside popup
+      if (closeBtn) closeBtn.focus();
+      document.addEventListener('keydown', trapFocus);
+    }
+
+    function closeExitPopup() {
+      exitPopup.classList.remove('active');
+      exitPopup.style.display = 'none';
+      document.removeEventListener('keydown', trapFocus);
+    }
+
+    function trapFocus(e) {
+      if (e.key === 'Escape') {
+        closeExitPopup();
+        return;
+      }
+      if (e.key !== 'Tab' || !popupModal) return;
+      var focusable = popupModal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (focusable.length === 0) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    // Close triggers
+    if (closeBtn) closeBtn.addEventListener('click', closeExitPopup);
+    exitPopup.addEventListener('click', function(e) {
+      if (e.target === exitPopup) closeExitPopup();
+    });
+
+    // Exit intent trigger (mouse leaves viewport top)
+    document.addEventListener('mouseout', function(e) {
+      if (!e.relatedTarget && e.clientY < 10) {
+        openExitPopup();
+      }
+    });
+  }
+
 });

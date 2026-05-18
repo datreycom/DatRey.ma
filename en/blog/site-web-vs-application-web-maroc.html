@@ -47,8 +47,10 @@
     .blog-content p { color: var(--text-base); line-height: 1.8; margin-bottom: 16px; }
     .blog-img { width: 100%; height: auto; border-radius: var(--radius-lg); margin: 24px 0; }
   </style>
+<script defer="" src="../../animations.js"></script>
 </head>
 <body>
+<a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" onblur="this.style.position='absolute';this.style.left='-9999px'">Aller au contenu principal</a>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
   
   <header class="header" id="header">
@@ -104,7 +106,16 @@
   <main id="main-content" class="section-padding">
     <div class="container" style="max-width: 800px; margin: 0 auto;">
       <article class="blog-content reveal">
-        <h2>Comprendre les différences</h2><p>Un site web est accessible via un navigateur, tandis qu'une application web nécessite une installation. Le choix dépend de vos objectifs et de votre public cible.</p><img src="../../assets/blog/site-web-vs-application-web-maroc-1.webp" alt="Comparaison entre site web et application web" class="blog-img"><h2>Avantages d'un site web</h2><h3>Accessibilité immédiate</h3><p>Un site web responsive est accessible sur tous les appareils sans téléchargement, idéal pour une large audience.</p><h3>SEO optimisé</h3><p>Les sites web sont mieux indexés par les moteurs de recherche, augmentant votre visibilité en ligne.</p><img src="../../assets/blog/site-web-vs-application-web-maroc-2.webp" alt="Site web responsive sur différents écrans" class="blog-img"><h2>Avantages d'une application web</h2><h3>Expérience utilisateur enrichie</h3><p>Les applications web offrent des fonctionnalités avancées (notifications push, accès hors ligne) et une performance supérieure.</p><h3>Engagement client</h3><p>Grâce aux notifications et à une interface dédiée, les applications web fidélisent mieux les utilisateurs.</p><img src="../../assets/blog/site-web-vs-application-web-maroc-3.webp" alt="Application web avec notifications push" class="blog-img"><h2>Quel choix pour le Maroc ?</h2><p>Pour une entreprise marocaine, un site web est souvent le premier pas. Une application web convient aux services nécessitant une interaction fréquente (e-commerce, banque).</p><img src="../../assets/blog/site-web-vs-application-web-maroc-4.webp" alt="Entreprise marocaine utilisant une application web" class="blog-img"><h2>Conclusion</h2><p>DatRey vous conseille selon vos besoins. Contactez-nous pour une analyse personnalisée de votre projet digital.</p>
+        <h2 id="section-comprendre-les-différences">Comprendre les différences</h2><p>Un site web est accessible via un navigateur, tandis qu'une application web nécessite une installation. Le choix dépend de vos objectifs et de votre public cible.</p><img decoding="async" width="1200" height="675" src="../../assets/blog/site-web-vs-application-web-maroc-1.webp" alt="Comparaison entre site web et application web" class="blog-img"><h2 id="section-avantages-dun-site-web">Avantages d'un site web</h2><h3>Accessibilité immédiate</h3><p>Un site web responsive est accessible sur tous les appareils sans téléchargement, idéal pour une large audience.</p>
+
+<div class="blog-inline-cta">
+  <div class="blog-inline-cta-icon">&#128640;</div>
+  <div class="blog-inline-cta-text">
+    <p>Want to implement these strategies effortlessly? <strong>Our DatRey experts handle it for you.</strong></p>
+  </div>
+  <a href="../../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn">Request a free audit</a>
+</div>
+<h3>SEO optimisé</h3><p>Les sites web sont mieux indexés par les moteurs de recherche, augmentant votre visibilité en ligne.</p><img decoding="async" width="1200" height="675" src="../../assets/blog/site-web-vs-application-web-maroc-2.webp" alt="Site web responsive sur différents écrans" class="blog-img"><h2 id="section-avantages-dune-application-web">Avantages d'une application web</h2><h3>Expérience utilisateur enrichie</h3><p>Les applications web offrent des fonctionnalités avancées (notifications push, accès hors ligne) et une performance supérieure.</p><h3>Engagement client</h3><p>Grâce aux notifications et à une interface dédiée, les applications web fidélisent mieux les utilisateurs.</p><img decoding="async" width="1200" height="675" src="../../assets/blog/site-web-vs-application-web-maroc-3.webp" alt="Application web avec notifications push" class="blog-img"><h2 id="section-quel-choix-pour-le-maroc">Quel choix pour le Maroc ?</h2><p>Pour une entreprise marocaine, un site web est souvent le premier pas. Une application web convient aux services nécessitant une interaction fréquente (e-commerce, banque).</p><img decoding="async" width="1200" height="675" src="../../assets/blog/site-web-vs-application-web-maroc-4.webp" alt="Entreprise marocaine utilisant une application web" class="blog-img"><h2 id="section-conclusion">Conclusion</h2><p>DatRey vous conseille selon vos besoins. Contactez-nous pour une analyse personnalisée de votre projet digital.</p>
       </article>
     </div>
   </main>
@@ -114,7 +125,7 @@
       <p style="text-align:center; color:var(--text-muted);">&copy; 2026 DatRey SARL. Tous droits réservés.</p>
     </div>
   </footer>
-<div class="mobile-nav" id="mobileNav">
+<div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Navigation mobile">
     <button class="mobile-nav-close" id="mobileClose" aria-label="Fermer le menu">&times;</button>
     <a href="../index.html" onclick="closeMobileNav()">Accueil</a>
     <a href="../services.html" onclick="closeMobileNav()">Nos Services</a>
@@ -124,5 +135,19 @@
     <a href="../contact.html" onclick="closeMobileNav()">Contact</a>
     <a href="../contact.html" class="btn btn-primary" onclick="closeMobileNav()">Audit Gratuit</a>
   </div>
+
+  <!-- Exit Intent Popup -->
+  <div id="exitIntentPopup" class="exit-popup-overlay" >
+    <div class="exit-popup-modal">
+      <button class="exit-popup-close" aria-label="Fermer">×</button>
+      <div class="exit-popup-content">
+        <h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Don't leave empty-handed!</h3>
+        <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Get a <strong>Free UX/UI & SEO Audit</strong> of your website. Discover how to boost your conversions today.</p>
+        <a href="../../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn" style="width: 100%; justify-content: center;">I want my free audit</a>
+        <p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">No commitment. Analysis delivered in 48h.</p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

@@ -29,12 +29,14 @@
 <link href="../style.css" rel="stylesheet"/>
 <link href="../assets/logo.webp" rel="icon" type="image/webp"/>
 <meta content="#050814" name="theme-color"/>
+<link rel="manifest" href="/manifest.json"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&display=swap" />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet"/>
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script defer="" src="../animations.js"></script>
 <script defer="" src="../shared.js"></script>
 <style>
     .blog-content { color: var(--text-base); }
@@ -125,6 +127,7 @@
 }</script>
 </head>
 <body>
+<a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" onblur="this.style.position='absolute';this.style.left='-9999px'">Aller au contenu principal</a>
 <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
 <header class="header" id="header">
 <div class="container">
@@ -160,7 +163,7 @@
 </div>
 </div>
 </header>
-<div class="mobile-nav" id="mobileNav">
+<div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Navigation mobile">
 <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
 <a href="../index.html" onclick="closeMobileNav()">Accueil</a>
 <a class="" href="../services.html" onclick="closeMobileNav()">Nos Services</a>
@@ -190,12 +193,60 @@
 <span>⏱ 7 min de lecture</span>
 <span>📌 Développement Web &amp; Mobile</span>
 </div>
-<p>Le développement web et mobile évolue à un rythme effréné, et 2025 s'annonce comme une année charnière pour les entreprises marocaines. Chez DatRey, agence digitale basée à Casablanca, nous suivons de près ces tendances pour vous offrir des solutions innovantes. Que vous cherchiez à créer une application mobile performante ou un site web moderne, cet article vous guide à travers les innovations clés. Découvrez comment l'IA, les Progressive Web Apps (PWA) et les frameworks comme Next.js ou Flutter redéfinissent les standards. Prêt à booster votre présence digitale ?</p><h2>1. L'IA au Cœur du Développement</h2><p>L'intelligence artificielle (IA) n'est plus une option, c'est une nécessité. En 2025, les outils d'IA générative (comme GitHub Copilot) et les API de machine learning s'intègrent nativement dans les projets web et mobile. Au Maroc, les entreprises adoptent ces technologies pour automatiser des tâches, personnaliser l'expérience utilisateur et optimiser les performances.</p><h3>1.1. Chatbots et Assistants Vocaux</h3><p>Les chatbots alimentés par l'IA (GPT-4, Claude) offrent un support client 24/7. Pour une application mobile, intégrer un assistant vocal améliore l'accessibilité. DatRey peut vous aider à déployer ces solutions sur mesure.</p><h3>1.2. Personnalisation Dynamique</h3><p>Grâce à l'IA, les sites web adaptent leur contenu en temps réel selon le comportement de l'utilisateur. Résultat : un taux de conversion accru. Selon une étude, 72% des consommateurs marocains préfèrent les marques qui offrent une expérience personnalisée.</p><figure style="margin: 32px 0;"><img alt="Illustration pour tendances dev 2025 web mobile maroc partie 1" class="blog-img" loading="lazy" src="../assets/blog/tendances-dev-2025-web-mobile-maroc-1.webp"/></figure><h2>2. Progressive Web Apps (PWA) : Le Standard Mobile</h2><p>Les PWA combinent le meilleur du web et des applications natives. En 2025, elles deviennent le choix privilégié pour les entreprises marocaines souhaitant offrir une expérience rapide et engageante sans passer par les stores. Performantes, fiables et installables, elles réduisent les coûts de développement.</p><ul><li>Avantages : temps de chargement instantané, fonctionnement hors ligne, notifications push.</li><li>Exemple : une PWA e-commerce peut augmenter les ventes de 20%.</li></ul><h2>3. Frameworks Modernes : Next.js, Flutter et React Native</h2><p>Les frameworks évoluent pour répondre aux exigences de performance et de scalabilité. Next.js (pour le web) et Flutter/React Native (pour le mobile) dominent le marché.</p><table><thead><tr><th>Framework</th><th>Usage</th><th>Avantage clé</th></tr></thead><tbody><tr><td>Next.js</td><td>Web (SSR, SSG)</td><td>SEO optimisé, performances</td></tr><tr><td>Flutter</td><td>Mobile (iOS/Android)</td><td>UI cohérente, hot reload</td></tr><tr><td>React Native</td><td>Mobile</td><td>Code partagé, large communauté</td></tr></tbody></table><p>Pour un projet au Maroc, choisir le bon framework dépend de vos objectifs. DatRey maîtrise ces technologies et vous conseille.</p><h2>4. Cybersécurité et RGPD Maroc</h2><p>Avec la digitalisation, la sécurité est primordiale. En 2025, les réglementations (Loi 09-08) imposent des normes strictes. Les développeurs intègrent dès la conception des mesures comme l'authentification multifacteur, le chiffrement de bout en bout et les audits réguliers.</p><figure style="margin: 32px 0;"><img alt="Illustration pour tendances dev 2025 web mobile maroc partie 2" class="blog-img" loading="lazy" src="../assets/blog/tendances-dev-2025-web-mobile-maroc-2.webp"/></figure><ul><li>Statistique : 60% des PME marocaines ont subi une cyberattaque en 2024.</li><li>Conseil : optez pour un hébergement sécurisé et des mises à jour régulières.</li></ul><h2>5. Low-Code et No-Code : Accessibilité</h2><p>Les plateformes low-code/no-code (Bubble, Webflow) permettent de créer des applications sans compétences techniques poussées. Idéal pour les startups marocaines avec des budgets limités. Cependant, pour des projets complexes, le développement sur mesure reste recommandé.</p><h2>6. Web3 et Blockchain</h2><p>La blockchain trouve des applications concrètes : traçabilité, smart contracts, NFT. Au Maroc, le secteur financier explore ces technologies. DatRey peut vous aider à intégrer des solutions décentralisées dans votre projet.</p><h2>7. Performance et Green IT</h2><p>Les utilisateurs exigent des sites rapides (moins de 2 secondes de chargement). Parallèlement, l'éco-conception web réduit l'empreinte carbone. Optimisez les images, utilisez un hébergement vert et minimisez le code.</p><figure style="margin: 32px 0;"><img alt="Illustration pour tendances dev 2025 web mobile maroc partie 3" class="blog-img" loading="lazy" src="../assets/blog/tendances-dev-2025-web-mobile-maroc-3.webp"/></figure><h2>FAQ</h2><h3>Quelles sont les tendances majeures en développement web pour 2025 ?</h3><p>Les tendances incluent l'IA intégrée, les PWA, les frameworks modernes (Next.js, Flutter), la cybersécurité renforcée, le low-code, la blockchain et l'éco-conception.</p><h3>Comment choisir entre une application native et une PWA ?</h3><p>Si vous avez besoin de fonctionnalités avancées (capteurs, stockage local), choisissez une app native. Pour une solution économique et rapide, la PWA est idéale. DatRey vous aide à évaluer vos besoins.</p><h3>DatRey propose-t-il des services de développement web et mobile au Maroc ?</h3><p>Oui, en tant qu'agence digitale à Casablanca, nous offrons des services de développement sur mesure, du conseil à la maintenance. Contactez-nous pour un devis.</p><h2>Comment aller plus loin ?</h2><p>Les tendances 2025 offrent des opportunités uniques pour les entreprises marocaines. Que vous souhaitiez adopter l'IA, lancer une PWA ou sécuriser votre application, DatRey est votre partenaire de confiance à Casablanca. <a href="../services-seo.html">Découvrez nos services SEO</a> pour optimiser votre visibilité, ou <a href="../services-google-ads.html">nos campagnes Google Ads</a> pour booster votre trafic. <a href="../contact.html">Contactez-nous dès aujourd'hui</a> pour concrétiser votre projet.</p><figure style="margin: 32px 0;"><img alt="Illustration pour tendances dev 2025 web mobile maroc partie 4" class="blog-img" loading="lazy" src="../assets/blog/tendances-dev-2025-web-mobile-maroc-4.webp"/></figure>
+
+<nav class="blog-toc" aria-label="Sommaire de l'article">
+  <div class="blog-toc-title">Sommaire de l'article</div>
+  <ol>
+    <li><a href="#section-lia-au-cœur-du-développement">1. L'IA au Cœur du Développement</a></li>
+<li><a href="#section-progressive-web-apps-pwa-le-standard-mobile">2. Progressive Web Apps (PWA) : Le Standard Mobile</a></li>
+<li><a href="#section-frameworks-modernes-nextjs-flutter-et-react-native">3. Frameworks Modernes : Next.js, Flutter et React Native</a></li>
+<li><a href="#section-cybersécurité-et-rgpd-maroc">4. Cybersécurité et RGPD Maroc</a></li>
+<li><a href="#section-low-code-et-no-code-accessibilité">5. Low-Code et No-Code : Accessibilité</a></li>
+<li><a href="#section-web3-et-blockchain">6. Web3 et Blockchain</a></li>
+<li><a href="#section-performance-et-green-it">7. Performance et Green IT</a></li>
+<li><a href="#section-faq">FAQ</a></li>
+<li><a href="#section-comment-aller-plus-loin">Comment aller plus loin ?</a></li>
+
+  </ol>
+</nav>
+
+<p>Le développement web et mobile évolue à un rythme effréné, et 2025 s'annonce comme une année charnière pour les entreprises marocaines. Chez DatRey, agence digitale basée à Casablanca, nous suivons de près ces tendances pour vous offrir des solutions innovantes. Que vous cherchiez à créer une application mobile performante ou un site web moderne, cet article vous guide à travers les innovations clés. Découvrez comment l'IA, les Progressive Web Apps (PWA) et les frameworks comme Next.js ou Flutter redéfinissent les standards. Prêt à booster votre présence digitale ?</p><h2 id="section-lia-au-cœur-du-développement">1. L'IA au Cœur du Développement</h2><p>L'intelligence artificielle (IA) n'est plus une option, c'est une nécessité. En 2025, les outils d'IA générative (comme GitHub Copilot) et les API de machine learning s'intègrent nativement dans les projets web et mobile. Au Maroc, les entreprises adoptent ces technologies pour automatiser des tâches, personnaliser l'expérience utilisateur et optimiser les performances.</p><h3>1.1. Chatbots et Assistants Vocaux</h3><p>Les chatbots alimentés par l'IA (GPT-4, Claude) offrent un support client 24/7. Pour une application mobile, intégrer un assistant vocal améliore l'accessibilité. DatRey peut vous aider à déployer ces solutions sur mesure.</p><h3>1.2. Personnalisation Dynamique</h3><p>Grâce à l'IA, les sites web adaptent leur contenu en temps réel selon le comportement de l'utilisateur. Résultat : un taux de conversion accru. Selon une étude, 72% des consommateurs marocains préfèrent les marques qui offrent une expérience personnalisée.</p><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour tendances dev 2025 web mobile maroc partie 1" class="blog-img" loading="lazy" src="../assets/blog/tendances-dev-2025-web-mobile-maroc-1.webp"/></figure><h2 id="section-progressive-web-apps-pwa-le-standard-mobile">2. Progressive Web Apps (PWA) : Le Standard Mobile</h2><p>Les PWA combinent le meilleur du web et des applications natives. En 2025, elles deviennent le choix privilégié pour les entreprises marocaines souhaitant offrir une expérience rapide et engageante sans passer par les stores. Performantes, fiables et installables, elles réduisent les coûts de développement.</p>
+
+<div class="blog-inline-cta">
+  <div class="blog-inline-cta-icon">&#128640;</div>
+  <div class="blog-inline-cta-text">
+    <p>Vous souhaitez appliquer ces strategies sans effort ? <strong>Nos experts DatRey s'en chargent.</strong></p>
+  </div>
+  <a href="../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn">Demander un audit gratuit</a>
+</div>
+<ul><li>Avantages : temps de chargement instantané, fonctionnement hors ligne, notifications push.</li><li>Exemple : une PWA e-commerce peut augmenter les ventes de 20%.</li></ul><h2 id="section-frameworks-modernes-nextjs-flutter-et-react-native">3. Frameworks Modernes : Next.js, Flutter et React Native</h2><p>Les frameworks évoluent pour répondre aux exigences de performance et de scalabilité. Next.js (pour le web) et Flutter/React Native (pour le mobile) dominent le marché.</p><table><thead><tr><th>Framework</th><th>Usage</th><th>Avantage clé</th></tr></thead><tbody><tr><td>Next.js</td><td>Web (SSR, SSG)</td><td>SEO optimisé, performances</td></tr><tr><td>Flutter</td><td>Mobile (iOS/Android)</td><td>UI cohérente, hot reload</td></tr><tr><td>React Native</td><td>Mobile</td><td>Code partagé, large communauté</td></tr></tbody></table><p>Pour un projet au Maroc, choisir le bon framework dépend de vos objectifs. DatRey maîtrise ces technologies et vous conseille.</p><h2 id="section-cybersécurité-et-rgpd-maroc">4. Cybersécurité et RGPD Maroc</h2><p>Avec la digitalisation, la sécurité est primordiale. En 2025, les réglementations (Loi 09-08) imposent des normes strictes. Les développeurs intègrent dès la conception des mesures comme l'authentification multifacteur, le chiffrement de bout en bout et les audits réguliers.</p><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour tendances dev 2025 web mobile maroc partie 2" class="blog-img" loading="lazy" src="../assets/blog/tendances-dev-2025-web-mobile-maroc-2.webp"/></figure><ul><li>Statistique : 60% des PME marocaines ont subi une cyberattaque en 2024.</li><li>Conseil : optez pour un hébergement sécurisé et des mises à jour régulières.</li></ul><h2 id="section-low-code-et-no-code-accessibilité">5. Low-Code et No-Code : Accessibilité</h2><p>Les plateformes low-code/no-code (Bubble, Webflow) permettent de créer des applications sans compétences techniques poussées. Idéal pour les startups marocaines avec des budgets limités. Cependant, pour des projets complexes, le développement sur mesure reste recommandé.</p><h2 id="section-web3-et-blockchain">6. Web3 et Blockchain</h2><p>La blockchain trouve des applications concrètes : traçabilité, smart contracts, NFT. Au Maroc, le secteur financier explore ces technologies. DatRey peut vous aider à intégrer des solutions décentralisées dans votre projet.</p><h2 id="section-performance-et-green-it">7. Performance et Green IT</h2><p>Les utilisateurs exigent des sites rapides (moins de 2 secondes de chargement). Parallèlement, l'éco-conception web réduit l'empreinte carbone. Optimisez les images, utilisez un hébergement vert et minimisez le code.</p><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour tendances dev 2025 web mobile maroc partie 3" class="blog-img" loading="lazy" src="../assets/blog/tendances-dev-2025-web-mobile-maroc-3.webp"/></figure><h2 id="section-faq">FAQ</h2><h3>Quelles sont les tendances majeures en développement web pour 2025 ?</h3><p>Les tendances incluent l'IA intégrée, les PWA, les frameworks modernes (Next.js, Flutter), la cybersécurité renforcée, le low-code, la blockchain et l'éco-conception.</p><h3>Comment choisir entre une application native et une PWA ?</h3><p>Si vous avez besoin de fonctionnalités avancées (capteurs, stockage local), choisissez une app native. Pour une solution économique et rapide, la PWA est idéale. DatRey vous aide à évaluer vos besoins.</p><h3>DatRey propose-t-il des services de développement web et mobile au Maroc ?</h3><p>Oui, en tant qu'agence digitale à Casablanca, nous offrons des services de développement sur mesure, du conseil à la maintenance. Contactez-nous pour un devis.</p><h2 id="section-comment-aller-plus-loin">Comment aller plus loin ?</h2><p>Les tendances 2025 offrent des opportunités uniques pour les entreprises marocaines. Que vous souhaitiez adopter l'IA, lancer une PWA ou sécuriser votre application, DatRey est votre partenaire de confiance à Casablanca. <a href="../services-seo.html">Découvrez nos services SEO</a> pour optimiser votre visibilité, ou <a href="../services-google-ads.html">nos campagnes Google Ads</a> pour booster votre trafic. <a href="../contact.html">Contactez-nous dès aujourd'hui</a> pour concrétiser votre projet.</p><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour tendances dev 2025 web mobile maroc partie 4" class="blog-img" loading="lazy" src="../assets/blog/tendances-dev-2025-web-mobile-maroc-4.webp"/></figure>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
 <p>Les experts DatRey vous aident à atteindre vos objectifs digitaux au Maroc.</p>
-<a href="../contact.html">Demander un audit gratuit →</a>
+<a href="../contact.html?subject=AuditGratuit class="magnetic-btn"">Demander un audit gratuit →</a>
 </div>
+
+      <section class="blog-related" >
+        <h3 class="blog-related-title">Articles similaires</h3>
+        <div class="blog-related-grid">
+          
+        <a href="../blog/app-mobile-sur-mesure-maroc.html" class="blog-related-card">
+          <img src="../assets/blog/app-mobile-sur-mesure-maroc-1.webp" alt="App mobile sur mesure : boostez votre business au Maroc" loading="lazy" width="400" height="225" decoding="async">
+          <div class="blog-related-card-body">
+            <div class="blog-related-card-cat">Développement Web & Mobile</div>
+            <div class="blog-related-card-title">App mobile sur mesure : boostez votre business au Maroc</div>
+          </div>
+        </a>
+        <a href="../blog/site-vs-application-web-choisir-business.html" class="blog-related-card">
+          <img src="../assets/blog/site-vs-application-web-choisir-business-1.webp" alt="Site vs Application Web : Lequel Choisir pour votre Business ?" loading="lazy" width="400" height="225" decoding="async">
+          <div class="blog-related-card-body">
+            <div class="blog-related-card-cat">Développement Web & Mobile</div>
+            <div class="blog-related-card-title">Site vs Application Web : Lequel Choisir pour votre Business ?</div>
+          </div>
+        </a>
+        </div>
+      </section>
+
 </article>
 </div>
 </main>
@@ -204,28 +255,28 @@
 <div class="footer-grid">
 <div class="footer-brand">
 <a class="logo" href="../index.html" style="margin-bottom:4px;">
-<img alt="DatRey Logo" class="logo-img" height="40" src="../assets/logo.webp" width="40"/>
+<img loading="lazy" decoding="async" alt="DatRey Logo" class="logo-img" height="40" src="../assets/logo.webp" width="40"/>
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
 </a>
 <p>
             Votre partenaire d'acquisition digitale full-stack au Maroc.
             Google Ads, Meta Ads, SEO et CRO pour scaler vos ventes.
           </p>
-<a class="footer-saas" href="https://datrey.com" rel="noopener" target="_blank">
+<a class="footer-saas" href="https://datrey.com" rel="noopener noreferrer" target="_blank">
 <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path></svg>
             Découvrez nos solutions SaaS sur DatRey.com
           </a>
 <div class="social-links">
-<a aria-label="LinkedIn DatRey" href="https://www.linkedin.com/in/datrey-agency/" rel="noopener" target="_blank">
+<a aria-label="LinkedIn DatRey" href="https://www.linkedin.com/in/datrey-agency/" rel="noopener noreferrer" target="_blank">
 <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
 </a>
-<a aria-label="X DatRey" href="https://x.com/Datrey_Agency" rel="noopener" target="_blank">
+<a aria-label="X DatRey" href="https://x.com/Datrey_Agency" rel="noopener noreferrer" target="_blank">
 <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg>
 </a>
-<a aria-label="Instagram DatRey" href="https://www.instagram.com/datrey.agency/" rel="noopener" target="_blank">
+<a aria-label="Instagram DatRey" href="https://www.instagram.com/datrey.agency/" rel="noopener noreferrer" target="_blank">
 <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
 </a>
-<a aria-label="Pinterest DatRey" href="https://www.pinterest.com/DatreyAgency" rel="noopener" target="_blank">
+<a aria-label="Pinterest DatRey" href="https://www.pinterest.com/DatreyAgency" rel="noopener noreferrer" target="_blank">
 <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><line x1="12" x2="12" y1="12" y2="22"></line><path d="M12 22c-3.5 0-6.5-2.5-7.5-6s.5-7 4-8.5 7-1 9.5 2 2 6-.5 8.5L12 22z"></path><circle cx="12" cy="7" r="1"></circle></svg>
 </a>
 </div>
@@ -279,5 +330,19 @@
 </div>
 </div>
 </footer>
+
+  <!-- Exit Intent Popup -->
+  <div id="exitIntentPopup" class="exit-popup-overlay" >
+    <div class="exit-popup-modal">
+      <button class="exit-popup-close" aria-label="Fermer">×</button>
+      <div class="exit-popup-content">
+        <h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Ne partez pas les mains vides !</h3>
+        <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtenez un <strong>Audit UX/UI & SEO gratuit</strong> de votre site web. Découvrez comment augmenter vos conversions dès aujourd'hui.</p>
+        <a href="../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn" style="width: 100%; justify-content: center;">Je veux mon audit gratuit</a>
+        <p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sans engagement. Analyse livrée en 48h.</p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

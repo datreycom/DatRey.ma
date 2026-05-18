@@ -47,8 +47,10 @@
     .blog-content p { color: var(--text-base); line-height: 1.8; margin-bottom: 16px; }
     .blog-img { width: 100%; height: auto; border-radius: var(--radius-lg); margin: 24px 0; }
   </style>
+<script defer="" src="../../animations.js"></script>
 </head>
 <body>
+<a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" onblur="this.style.position='absolute';this.style.left='-9999px'">Aller au contenu principal</a>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
   
   <header class="header" id="header">
@@ -104,7 +106,16 @@
   <main id="main-content" class="section-padding">
     <div class="container" style="max-width: 800px; margin: 0 auto;">
       <article class="blog-content reveal">
-        <h2>Erreur n°1 : Un contenu trop dense et illisible</h2><p>Beaucoup d'entreprises veulent tout dire sur un seul écran. Résultat : le message principal se perd. Privilégiez un texte concis, des visuels impactants et une hiérarchie claire. Utilisez la règle des 3 secondes pour capter l'attention.</p><img src="../../assets/blog/erreurs-affichage-dynamique-corriger-1.webp" alt="Exemple d'écran d'affichage dynamique avec texte trop chargé" class="blog-img"><h3>Solution : Adoptez un design épuré</h3><p>Limitez-vous à un message clé par écran. Utilisez des polices lisibles et des contrastes élevés. Testez votre contenu sur l'écran réel avant déploiement.</p><img src="../../assets/blog/erreurs-affichage-dynamique-corriger-2.webp" alt="Design épuré d'affichage dynamique avec un seul message" class="blog-img"><h2>Erreur n°2 : Ignorer l'emplacement des écrans</h2><p>Un écran mal placé ne sera pas vu. Évitez les zones de passage trop rapide ou les angles morts. Analysez le flux de vos clients pour positionner vos écrans au niveau des yeux et dans les zones d'attente.</p><img src="../../assets/blog/erreurs-affichage-dynamique-corriger-3.webp" alt="Schéma d'emplacement optimal d'écran d'affichage dynamique" class="blog-img"><h3>Solution : Réalisez une étude de flux</h3><p>Utilisez des caméras ou des observations pour cartographier les déplacements. Placez vos écrans aux points de décision (caisses, entrées, files d'attente).</p><img src="../../assets/blog/erreurs-affichage-dynamique-corriger-4.webp" alt="Client regardant un écran d'affichage dynamique bien positionné" class="blog-img"><h2>Erreur n°3 : Absence de call-to-action (CTA)</h2><p>Vos écrans doivent inciter à l'action. Sans CTA, l'impact est réduit. Ajoutez des QR codes, des promotions limitées ou des invitations à visiter votre site.</p><h2>Erreur n°4 : Négliger la maintenance</h2><p>Un écran défectueux ou un contenu obsolète nuit à votre image. Planifiez des mises à jour régulières et vérifiez le bon fonctionnement des équipements.</p><h2>Erreur n°5 : Ne pas mesurer les performances</h2><p>Sans analytics, vous ne savez pas si votre affichage fonctionne. Utilisez des outils de suivi pour ajuster votre stratégie en continu.</p>
+        <h2 id="section-erreur-n1-un-contenu-trop-dense-et-illisible">Erreur n°1 : Un contenu trop dense et illisible</h2><p>Beaucoup d'entreprises veulent tout dire sur un seul écran. Résultat : le message principal se perd. Privilégiez un texte concis, des visuels impactants et une hiérarchie claire. Utilisez la règle des 3 secondes pour capter l'attention.</p><img decoding="async" width="1200" height="675" src="../../assets/blog/erreurs-affichage-dynamique-corriger-1.webp" alt="Exemple d'écran d'affichage dynamique avec texte trop chargé" class="blog-img"><h3>Solution : Adoptez un design épuré</h3><p>Limitez-vous à un message clé par écran. Utilisez des polices lisibles et des contrastes élevés. Testez votre contenu sur l'écran réel avant déploiement.</p><img decoding="async" width="1200" height="675" src="../../assets/blog/erreurs-affichage-dynamique-corriger-2.webp" alt="Design épuré d'affichage dynamique avec un seul message" class="blog-img"><h2 id="section-erreur-n2-ignorer-lemplacement-des-écrans">Erreur n°2 : Ignorer l'emplacement des écrans</h2><p>Un écran mal placé ne sera pas vu. Évitez les zones de passage trop rapide ou les angles morts. Analysez le flux de vos clients pour positionner vos écrans au niveau des yeux et dans les zones d'attente.</p>
+
+<div class="blog-inline-cta">
+  <div class="blog-inline-cta-icon">&#128640;</div>
+  <div class="blog-inline-cta-text">
+    <p>Want to implement these strategies effortlessly? <strong>Our DatRey experts handle it for you.</strong></p>
+  </div>
+  <a href="../../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn">Request a free audit</a>
+</div>
+<img decoding="async" width="1200" height="675" src="../../assets/blog/erreurs-affichage-dynamique-corriger-3.webp" alt="Schéma d'emplacement optimal d'écran d'affichage dynamique" class="blog-img"><h3>Solution : Réalisez une étude de flux</h3><p>Utilisez des caméras ou des observations pour cartographier les déplacements. Placez vos écrans aux points de décision (caisses, entrées, files d'attente).</p><img decoding="async" width="1200" height="675" src="../../assets/blog/erreurs-affichage-dynamique-corriger-4.webp" alt="Client regardant un écran d'affichage dynamique bien positionné" class="blog-img"><h2 id="section-erreur-n3-absence-de-call-to-action-cta">Erreur n°3 : Absence de call-to-action (CTA)</h2><p>Vos écrans doivent inciter à l'action. Sans CTA, l'impact est réduit. Ajoutez des QR codes, des promotions limitées ou des invitations à visiter votre site.</p><h2 id="section-erreur-n4-négliger-la-maintenance">Erreur n°4 : Négliger la maintenance</h2><p>Un écran défectueux ou un contenu obsolète nuit à votre image. Planifiez des mises à jour régulières et vérifiez le bon fonctionnement des équipements.</p><h2 id="section-erreur-n5-ne-pas-mesurer-les-performances">Erreur n°5 : Ne pas mesurer les performances</h2><p>Sans analytics, vous ne savez pas si votre affichage fonctionne. Utilisez des outils de suivi pour ajuster votre stratégie en continu.</p>
       </article>
     </div>
   </main>
@@ -114,7 +125,7 @@
       <p style="text-align:center; color:var(--text-muted);">&copy; 2026 DatRey SARL. Tous droits réservés.</p>
     </div>
   </footer>
-<div class="mobile-nav" id="mobileNav">
+<div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Navigation mobile">
     <button class="mobile-nav-close" id="mobileClose" aria-label="Fermer le menu">&times;</button>
     <a href="../index.html" onclick="closeMobileNav()">Accueil</a>
     <a href="../services.html" onclick="closeMobileNav()">Nos Services</a>
@@ -124,5 +135,19 @@
     <a href="../contact.html" onclick="closeMobileNav()">Contact</a>
     <a href="../contact.html" class="btn btn-primary" onclick="closeMobileNav()">Audit Gratuit</a>
   </div>
+
+  <!-- Exit Intent Popup -->
+  <div id="exitIntentPopup" class="exit-popup-overlay" >
+    <div class="exit-popup-modal">
+      <button class="exit-popup-close" aria-label="Fermer">×</button>
+      <div class="exit-popup-content">
+        <h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Don't leave empty-handed!</h3>
+        <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Get a <strong>Free UX/UI & SEO Audit</strong> of your website. Discover how to boost your conversions today.</p>
+        <a href="../../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn" style="width: 100%; justify-content: center;">I want my free audit</a>
+        <p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">No commitment. Analysis delivered in 48h.</p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

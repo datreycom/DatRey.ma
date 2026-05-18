@@ -122,8 +122,10 @@
   ]
 }
   </script>
+<script defer="" src="../../animations.js"></script>
 </head>
 <body>
+<a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" onblur="this.style.position='absolute';this.style.left='-9999px'">Aller au contenu principal</a>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
 
   <header class="header" id="header">
@@ -159,7 +161,7 @@
     </div>
   </header>
 
-  <div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Navigation mobile">
     <button class="mobile-nav-close" id="mobileClose" aria-label="Fermer le menu">&times;</button>
     <a href="../index.html" onclick="closeMobileNav()">Accueil</a>
     <a href="../services.html" onclick="closeMobileNav()">Nos Services</a>
@@ -191,13 +193,58 @@
           <span>&#9201; 7 min de lecture</span>
           <span>&#128204; Stratégie Digitale</span>
         </div>
-        <h2>Pourquoi une Stratégie Digitale est Essentielle pour les PME Marocaines</h2><p>Dans un marché en pleine digitalisation, les PME marocaines doivent adopter une stratégie digitale pour rester compétitives. Selon une étude récente, 70% des consommateurs marocains recherchent en ligne avant d'acheter. Sans présence digitale, vous passez à côté d'opportunités de croissance. Chez DatRey, nous accompagnons les PME de Casablanca à transformer leur activité grâce à une stratégie digitale sur mesure.</p><h2>Les Piliers d'une Stratégie Digitale Performante</h2><h3>1. SEO Local : Soyez Visible à Casablanca</h3><p>Le référencement naturel local est crucial pour attirer des clients près de chez vous. Optimisez votre site avec des mots-clés comme "agence digitale Casablanca" ou "stratégie digitale Maroc". Une fiche Google My Business complète augmente votre visibilité de 50%.</p><h3>2. Publicité Google Ads : Résultats Immédiats</h3><p>Les campagnes Google Ads permettent de cibler précisément vos clients potentiels. Avec un budget maîtrisé, vous pouvez générer des leads qualifiés en quelques jours. Nos experts créent des annonces adaptées au marché marocain.</p><h3>3. Réseaux Sociaux : Engagez Votre Communauté</h3><p>Les Marocains passent en moyenne 3 heures par jour sur les réseaux sociaux. Une stratégie de contenu sur Instagram, Facebook ou LinkedIn renforce votre notoriété et fidélise vos clients.</p><h2>Comment DatRey Transforme les PME</h2><p>Notre méthode en 4 étapes :</p><ul><li><strong>Audit</strong> : Analyse de votre marché et de votre concurrence.</li><li><strong>Stratégie</strong> : Définition des actions prioritaires (SEO, SEA, réseaux sociaux).</li><li><strong>Mise en œuvre</strong> : Création de contenu, optimisation technique, campagnes publicitaires.</li><li><strong>Suivi</strong> : Rapports mensuels et ajustements pour maximiser le ROI.</li></ul><h2>Tableau Comparatif : Avant vs Après DatRey</h2><table><thead><tr><th>Indicateur</th><th>Avant</th><th>Après (6 mois)</th></tr></thead><tbody><tr><td>Visiteurs mensuels</td><td>500</td><td>3 500</td></tr><tr><td>Leads générés</td><td>10</td><td>80</td></tr><tr><td>Chiffre d'affaires en ligne</td><td>50 000 MAD</td><td>300 000 MAD</td></tr></tbody></table><h2>FAQ : Stratégie Digitale pour PME</h2><h3>Quel budget prévoir pour une stratégie digitale au Maroc ?</h3><p>Le budget dépend de vos objectifs. Pour une PME, comptez entre 5 000 et 20 000 MAD par mois pour une stratégie complète incluant SEO et Google Ads. Nous adaptons nos offres à votre taille.</p><h3>Combien de temps avant de voir des résultats ?</h3><p>Les résultats SEO sont visibles en 3 à 6 mois, tandis que Google Ads donne des résultats immédiats. Nous recommandons une approche combinée pour des effets durables.</p><h3>Pourquoi choisir DatRey plutôt qu'une autre agence ?</h3><p>Nous sommes une agence locale basée à Casablanca, spécialisée dans les PME marocaines. Notre équipe maîtrise le marché local et propose des solutions personnalisées avec un suivi transparent.</p><h2>Conclusion</h2><p>Investir dans une stratégie digitale est indispensable pour la croissance de votre PME au Maroc. Chez DatRey, nous vous accompagnons de la conception à l'exécution. <a href="../services-seo.html">Découvrez nos services SEO</a> ou <a href="../services-google-ads.html">nos campagnes Google Ads</a>. Contactez-nous dès aujourd'hui pour un audit gratuit !</p><img src="../../assets/blog/strategie-digitale-pme-casablanca-1.webp" alt="Stratégie digitale pour PME à Casablanca avec DatRey" class="blog-img" width="1200" height="675" loading="lazy"><img src="../../assets/blog/strategie-digitale-pme-casablanca-2.webp" alt="Consultation stratégique digitale pour PME marocaine" class="blog-img" width="1200" height="675" loading="lazy"><img src="../../assets/blog/strategie-digitale-pme-casablanca-3.webp" alt="Résultats SEO et Google Ads pour PME" class="blog-img" width="1200" height="675" loading="lazy"><img src="../../assets/blog/strategie-digitale-pme-casablanca-4.webp" alt="DatRey agence digitale Casablanca Maroc" class="blog-img" width="1200" height="675" loading="lazy">
+
+<nav class="blog-toc" aria-label="Tabla de contenidos">
+  <div class="blog-toc-title">Tabla de contenidos</div>
+  <ol>
+    <li><a href="#section-pourquoi-une-stratégie-digitale-est-essentielle-pour-les-pme">Pourquoi une Stratégie Digitale est Essentielle pour les PME Marocaines</a></li>
+<li><a href="#section-les-piliers-dune-stratégie-digitale-performante">Les Piliers d'une Stratégie Digitale Performante</a></li>
+<li><a href="#section-comment-datrey-transforme-les-pme">Comment DatRey Transforme les PME</a></li>
+<li><a href="#section-tableau-comparatif-avant-vs-après-datrey">Tableau Comparatif : Avant vs Après DatRey</a></li>
+<li><a href="#section-faq-stratégie-digitale-pour-pme">FAQ : Stratégie Digitale pour PME</a></li>
+<li><a href="#section-conclusion">Conclusion</a></li>
+
+  </ol>
+</nav>
+
+        <h2 id="section-pourquoi-une-stratégie-digitale-est-essentielle-pour-les-pme">Pourquoi une Stratégie Digitale est Essentielle pour les PME Marocaines</h2><p>Dans un marché en pleine digitalisation, les PME marocaines doivent adopter une stratégie digitale pour rester compétitives. Selon une étude récente, 70% des consommateurs marocains recherchent en ligne avant d'acheter. Sans présence digitale, vous passez à côté d'opportunités de croissance. Chez DatRey, nous accompagnons les PME de Casablanca à transformer leur activité grâce à une stratégie digitale sur mesure.</p><h2 id="section-les-piliers-dune-stratégie-digitale-performante">Les Piliers d'une Stratégie Digitale Performante</h2><h3>1. SEO Local : Soyez Visible à Casablanca</h3><p>Le référencement naturel local est crucial pour attirer des clients près de chez vous. Optimisez votre site avec des mots-clés comme "agence digitale Casablanca" ou "stratégie digitale Maroc". Une fiche Google My Business complète augmente votre visibilité de 50%.</p>
+
+<div class="blog-inline-cta">
+  <div class="blog-inline-cta-icon">&#128640;</div>
+  <div class="blog-inline-cta-text">
+    <p>Quieres aplicar estas estrategias sin esfuerzo? <strong>Nuestros expertos de DatRey se encargan.</strong></p>
+  </div>
+  <a href="../../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn">Solicitar una auditoria gratuita</a>
+</div>
+<h3>2. Publicité Google Ads : Résultats Immédiats</h3><p>Les campagnes Google Ads permettent de cibler précisément vos clients potentiels. Avec un budget maîtrisé, vous pouvez générer des leads qualifiés en quelques jours. Nos experts créent des annonces adaptées au marché marocain.</p><h3>3. Réseaux Sociaux : Engagez Votre Communauté</h3><p>Les Marocains passent en moyenne 3 heures par jour sur les réseaux sociaux. Une stratégie de contenu sur Instagram, Facebook ou LinkedIn renforce votre notoriété et fidélise vos clients.</p><h2 id="section-comment-datrey-transforme-les-pme">Comment DatRey Transforme les PME</h2><p>Notre méthode en 4 étapes :</p><ul><li><strong>Audit</strong> : Analyse de votre marché et de votre concurrence.</li><li><strong>Stratégie</strong> : Définition des actions prioritaires (SEO, SEA, réseaux sociaux).</li><li><strong>Mise en œuvre</strong> : Création de contenu, optimisation technique, campagnes publicitaires.</li><li><strong>Suivi</strong> : Rapports mensuels et ajustements pour maximiser le ROI.</li></ul><h2 id="section-tableau-comparatif-avant-vs-après-datrey">Tableau Comparatif : Avant vs Après DatRey</h2><table><thead><tr><th>Indicateur</th><th>Avant</th><th>Après (6 mois)</th></tr></thead><tbody><tr><td>Visiteurs mensuels</td><td>500</td><td>3 500</td></tr><tr><td>Leads générés</td><td>10</td><td>80</td></tr><tr><td>Chiffre d'affaires en ligne</td><td>50 000 MAD</td><td>300 000 MAD</td></tr></tbody></table><h2 id="section-faq-stratégie-digitale-pour-pme">FAQ : Stratégie Digitale pour PME</h2><h3>Quel budget prévoir pour une stratégie digitale au Maroc ?</h3><p>Le budget dépend de vos objectifs. Pour une PME, comptez entre 5 000 et 20 000 MAD par mois pour une stratégie complète incluant SEO et Google Ads. Nous adaptons nos offres à votre taille.</p><h3>Combien de temps avant de voir des résultats ?</h3><p>Les résultats SEO sont visibles en 3 à 6 mois, tandis que Google Ads donne des résultats immédiats. Nous recommandons une approche combinée pour des effets durables.</p><h3>Pourquoi choisir DatRey plutôt qu'une autre agence ?</h3><p>Nous sommes une agence locale basée à Casablanca, spécialisée dans les PME marocaines. Notre équipe maîtrise le marché local et propose des solutions personnalisées avec un suivi transparent.</p><h2 id="section-conclusion">Conclusion</h2><p>Investir dans une stratégie digitale est indispensable pour la croissance de votre PME au Maroc. Chez DatRey, nous vous accompagnons de la conception à l'exécution. <a href="../services-seo.html">Découvrez nos services SEO</a> ou <a href="../services-google-ads.html">nos campagnes Google Ads</a>. Contactez-nous dès aujourd'hui pour un audit gratuit !</p><img decoding="async" src="../../assets/blog/strategie-digitale-pme-casablanca-1.webp" alt="Stratégie digitale pour PME à Casablanca avec DatRey" class="blog-img" width="1200" height="675" loading="lazy"><img decoding="async" src="../../assets/blog/strategie-digitale-pme-casablanca-2.webp" alt="Consultation stratégique digitale pour PME marocaine" class="blog-img" width="1200" height="675" loading="lazy"><img decoding="async" src="../../assets/blog/strategie-digitale-pme-casablanca-3.webp" alt="Résultats SEO et Google Ads pour PME" class="blog-img" width="1200" height="675" loading="lazy"><img decoding="async" src="../../assets/blog/strategie-digitale-pme-casablanca-4.webp" alt="DatRey agence digitale Casablanca Maroc" class="blog-img" width="1200" height="675" loading="lazy">
         <div class="blog-cta">
           <h3>Besoin d'accompagnement ?</h3>
           <p>Les experts DatRey vous aident à atteindre vos objectifs digitaux au Maroc.</p>
-          <a href="../contact.html">Demander un audit gratuit &rarr;</a>
+          <a href="../contact.html?subject=AuditGratuit class="magnetic-btn"">Demander un audit gratuit &rarr;</a>
         </div>
-      </article>
+      
+      <section class="blog-related" >
+        <h3 class="blog-related-title">Articulos relacionados</h3>
+        <div class="blog-related-grid">
+          
+        <a href="../../blog/strategie-digitale-plan-digital-maroc.html" class="blog-related-card">
+          <img src="../../assets/blog/strategie-digitale-plan-digital-maroc-1.webp" alt="Stratégie digitale : construisez votre plan digital gagnant" loading="lazy" width="400" height="225" decoding="async">
+          <div class="blog-related-card-body">
+            <div class="blog-related-card-cat">Stratégie Digitale</div>
+            <div class="blog-related-card-title">Stratégie digitale : construisez votre plan digital gagnant</div>
+          </div>
+        </a>
+        <a href="../../blog/strategie-digitale-2025-tendances-maroc.html" class="blog-related-card">
+          <img src="../../assets/blog/strategie-digitale-2025-tendances-maroc-1.webp" alt="Stratégie digitale 2025 : les tendances incontournables au Maroc" loading="lazy" width="400" height="225" decoding="async">
+          <div class="blog-related-card-body">
+            <div class="blog-related-card-cat">Stratégie Digitale</div>
+            <div class="blog-related-card-title">Stratégie digitale 2025 : les tendances incontournables au Maroc</div>
+          </div>
+        </a>
+        </div>
+      </section>
+
+</article>
     </div>
   </main>
 
@@ -206,7 +253,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="logo" style="margin-bottom:4px;">
-            <img src="../../assets/logo.webp" alt="DatRey Logo" class="logo-img" width="40" height="40" />
+            <img loading="lazy" decoding="async" src="../../assets/logo.webp" alt="DatRey Logo" class="logo-img" width="40" height="40" />
             <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
           </a>
           <p>Votre partenaire d'acquisition digitale full-stack au Maroc.</p>
@@ -217,5 +264,19 @@
       </div>
     </div>
   </footer>
+
+  <!-- Exit Intent Popup -->
+  <div id="exitIntentPopup" class="exit-popup-overlay" >
+    <div class="exit-popup-modal">
+      <button class="exit-popup-close" aria-label="Fermer">×</button>
+      <div class="exit-popup-content">
+        <h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">¡No te vayas con las manos vacías!</h3>
+        <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtén una <strong>Auditoría UX/UI y SEO gratuita</strong> de tu sitio web. Descubre cómo aumentar tus conversiones hoy mismo.</p>
+        <a href="../../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn" style="width: 100%; justify-content: center;">Quiero mi auditoría gratuita</a>
+        <p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sin compromiso. Análisis entregado en 48h.</p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

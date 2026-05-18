@@ -20,7 +20,7 @@
   <!-- Critical CSS (above-the-fold) inlined for LCP -->
   <style>
     :root{--nuit-950:#050814;--nuit-900:#0a0f1f;--nuit-800:#0f172a;--nuit-700:#1e293b;--roi-600:#2563eb;--roi-500:#3b82f6;--roi-400:#60a5fa;--roi-300:#93c5fd;--roi-200:#bfdbfe;--roi-100:#dbeafe;--roi-50:#eff6ff;--pure-white:#fff;--gray-500:#6b7280;--font-display:'DM Serif Display',serif;--font-body:'Poppins',sans-serif;--radius-xl:24px;--shadow-card:0 8px 32px rgba(11,24,50,.08);--transition:.4s cubic-bezier(.16,1,.3,1);--bg-main:var(--pure-white);--bg-alt:var(--roi-50);--text-main:var(--nuit-900);--text-muted:#1e293b;--card-bg:var(--pure-white);--border-color:var(--roi-100)}
-    [data-theme="dark"]{--bg-main:var(--nuit-950);--bg-alt:var(--nuit-900);--text-main:#f8fafc;--text-muted:#e2e8f0;--card-bg:rgba(15,23,42,.6);--border-color:rgba(30,41,59,.8)}
+    [data-theme="dark"]{--bg-main:var(--nuit-950);--bg-alt:var(--nuit-900);--text-main:#f1f5f9;--text-muted:#94a3b8;--card-bg:rgba(15,23,42,.6);--border-color:rgba(30,41,59,.8)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;font-size:17px}
     body{font-family:var(--font-body);color:var(--text-main);background:var(--bg-main);line-height:1.9;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:1.05rem;letter-spacing:.03em}
@@ -54,8 +54,7 @@
   <meta name="theme-color" content="#050814" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&display=swap" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&display=swap" />
 
   <!-- Schema.org JSON-LD (SEO Invisible) -->
   <script type="application/ld+json">
@@ -152,6 +151,7 @@
       </a>
       <nav class="nav-links" aria-label="Navigation principale">
         <a href="index.html" class="nav-active">Accueil</a>
+<a href="creation-site-web.html">Web Design</a>
         <a href="services.html">Nos Services</a>
         <a href="transformation-digitale.html">Transformation Digitale</a>
         <a href="blog.html">Blog</a>
@@ -181,15 +181,16 @@
   </header>
 
   <!-- Mobile Nav -->
-  <div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Navigation mobile">
     <button class="mobile-nav-close" id="mobileClose" aria-label="Fermer le menu">&times;</button>
     <a href="index.html" onclick="closeMobileNav()">Accueil</a>
+<a href="creation-site-web.html" onclick="closeMobileNav()">Web Design</a>
     <a href="services.html" onclick="closeMobileNav()">Nos Services</a>
     <a href="transformation-digitale.html" onclick="closeMobileNav()">Transformation Digitale</a>
     <a href="blog.html" onclick="closeMobileNav()">Blog</a>
         <a href="blog.html">Blog</a>
     <a href="contact.html" onclick="closeMobileNav()">Contact</a>
-    <a href="contact.html" class="btn btn-primary" onclick="closeMobileNav()">Audit Gratuit</a>
+    <a href="contact.html" class="btn btn-primary magnetic-btn" onclick="closeMobileNav()">Audit Gratuit</a>
   </div>
 
   <main id="main-content">
@@ -212,7 +213,7 @@
           Nous combinons Google Ads, Meta Ads, SEO et CRO pour g&eacute;n&eacute;rer des leads qualifi&eacute;s et scaler vos ventes. <strong>Arr&ecirc;tez d'acheter des clics, investissez dans la croissance.</strong>
         </p>
         <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">
+          <a href="contact.html" class="btn btn-primary magnetic-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             Demander un Audit Gratuit
           </a>
@@ -240,6 +241,21 @@
       </div>
     </div>
   </section>
+
+  <!-- ========== TECH STACK BANNER ========== -->
+  <div class="tech-stack-banner">
+    <div class="tech-stack-track">
+      <span>Partners & Technologies:</span>
+      <img src="../assets/tech/google-partner.svg" alt="Google Partner" style="height:30px; opacity:0.7;">
+      <img src="../assets/tech/meta-partner.svg" alt="Meta Business Partner" style="height:30px; opacity:0.7;">
+      <img src="../assets/tech/hubspot.svg" alt="HubSpot" style="height:30px; opacity:0.7;">
+      <img src="../assets/tech/shopify.svg" alt="Shopify" style="height:30px; opacity:0.7;">
+      <img src="../assets/tech/wordpress.svg" alt="WordPress" style="height:30px; opacity:0.7;">
+      <img src="../assets/tech/figma.svg" alt="Figma" style="height:30px; opacity:0.7;">
+      <span style="color:var(--blue-400); font-weight:600;">+250 Projects Delivered</span>
+    </div>
+  </div>
+
 
   <!-- ========== SERVICES PREVIEW ========== -->
   <section class="services section-padding" id="services">
@@ -419,7 +435,7 @@
           Nous vous offrons un devis gratuit et sans engagement.
         </p>
         <div class="cta-actions">
-          <a href="mailto:contact@datrey.ma" class="btn btn-primary">
+          <a href="mailto:contact@datrey.ma" class="btn btn-primary magnetic-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             contact@datrey.ma
           </a>
@@ -439,28 +455,28 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo" style="margin-bottom:4px;">
-            <img src="../assets/logo.webp" alt="DatRey Logo" class="logo-img" />
+            <img loading="lazy" decoding="async" src="../assets/logo.webp" alt="DatRey Logo" class="logo-img" />
             <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
           </a>
           <p>
             Votre partenaire d'acquisition digitale full-stack au Maroc.
             Google Ads, Meta Ads, SEO et CRO pour scaler vos ventes.
           </p>
-          <a href="https://datrey.com" target="_blank" rel="noopener" class="footer-saas">
+          <a href="https://datrey.com" target="_blank" rel="noopener noreferrer" class="footer-saas">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
             Découvrez nos solutions SaaS sur DatRey.com
           </a>
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/datrey-agency/" target="_blank" rel="noopener" aria-label="LinkedIn DatRey">
+            <a href="https://www.linkedin.com/in/datrey-agency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn DatRey">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
             </a>
-            <a href="https://x.com/Datrey_Agency" target="_blank" rel="noopener" aria-label="X DatRey">
+            <a href="https://x.com/Datrey_Agency" target="_blank" rel="noopener noreferrer" aria-label="X DatRey">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg>
             </a>
-            <a href="https://www.instagram.com/datrey.agency/" target="_blank" rel="noopener" aria-label="Instagram DatRey">
+            <a href="https://www.instagram.com/datrey.agency/" target="_blank" rel="noopener noreferrer" aria-label="Instagram DatRey">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             </a>
-            <a href="https://www.pinterest.com/DatreyAgency" target="_blank" rel="noopener" aria-label="Pinterest DatRey">
+            <a href="https://www.pinterest.com/DatreyAgency" target="_blank" rel="noopener noreferrer" aria-label="Pinterest DatRey">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="12" x2="12" y2="22"></line><path d="M12 22c-3.5 0-6.5-2.5-7.5-6s.5-7 4-8.5 7-1 9.5 2 2 6-.5 8.5L12 22z"></path><circle cx="12" cy="7" r="1"></circle></svg>
             </a>
           </div>
@@ -469,6 +485,7 @@
           <h4>Navigation</h4>
           <div class="footer-links">
             <a href="index.html">Accueil</a>
+<a href="creation-site-web.html">Web Design</a>
             <a href="services.html">Nos Services</a>
             <a href="transformation-digitale.html">Transformation Digitale</a>
         <a href="blog.html">Blog</a>
@@ -515,9 +532,23 @@
   </footer>
 
   <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/212644443059" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Nous contacter sur WhatsApp">
+  <a href="https://wa.me/212644443059" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Nous contacter sur WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 <script src="../animations.js" defer></script>
+
+  <!-- Exit Intent Popup -->
+  <div id="exitIntentPopup" class="exit-popup-overlay" >
+    <div class="exit-popup-modal">
+      <button class="exit-popup-close" aria-label="Fermer">×</button>
+      <div class="exit-popup-content">
+        <h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Don't leave empty-handed!</h3>
+        <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Get a <strong>Free UX/UI & SEO Audit</strong> of your website. Discover how to boost your conversions today.</p>
+        <a href="../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn" style="width: 100%; justify-content: center;">I want my free audit</a>
+        <p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">No commitment. Analysis delivered in 48h.</p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

@@ -122,8 +122,10 @@
   ]
 }
   </script>
+<script defer="" src="../../animations.js"></script>
 </head>
 <body>
+<a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" onblur="this.style.position='absolute';this.style.left='-9999px'">Aller au contenu principal</a>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
 
   <header class="header" id="header">
@@ -159,7 +161,7 @@
     </div>
   </header>
 
-  <div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Navigation mobile">
     <button class="mobile-nav-close" id="mobileClose" aria-label="Fermer le menu">&times;</button>
     <a href="../index.html" onclick="closeMobileNav()">Accueil</a>
     <a href="../services.html" onclick="closeMobileNav()">Nos Services</a>
@@ -191,13 +193,62 @@
           <span>&#9201; 7 min de lecture</span>
           <span>&#128204; Emailing & Automation</span>
         </div>
-        <h2>Introduction</h2><p>La délivrabilité des emails est un enjeu crucial pour toute entreprise marocaine souhaitant communiquer efficacement avec ses clients. Envoyer un email ne garantit pas qu'il arrive dans la boîte de réception ; il peut être redirigé vers les spams ou bloqué par les filtres. Chez DatRey, agence digitale à Casablanca, nous savons que sans une bonne délivrabilité, vos efforts d'emailing sont vains. Dans cet article, nous vous dévoilons 7 étapes concrètes pour maximiser le taux de réception de vos campagnes et ainsi améliorer votre retour sur investissement.</p><h2>1. Comprendre les Facteurs de Délivrabilité</h2><p>La délivrabilité dépend de plusieurs éléments : la réputation de l'expéditeur, l'authentification, la qualité des listes et le contenu. Au Maroc, les fournisseurs d'accès (IAM, Orange, Maroc Telecom) utilisent des filtres stricts. Pour réussir, il faut maîtriser ces facteurs.</p><h3>Réputation de l'Expéditeur</h3><p>Votre adresse IP et votre domaine doivent avoir une bonne réputation. Utilisez un service d'emailing professionnel comme Mailchimp ou Sendinblue, et évitez les envois massifs depuis un serveur mutualisé.</p><h3>Authentification (SPF, DKIM, DMARC)</h3><p>Configurez ces protocoles pour prouver que vous êtes bien l'expéditeur légitime. Sans eux, vos emails risquent d'être rejetés.</p><h2>2. Nettoyer et Segmenter votre Base de Données</h2><p>Envoyer à des adresses inactives ou invalides nuit à votre réputation. Au Maroc, les bases achetées sont souvent de mauvaise qualité. Préférez une collecte organique via des formulaires sur votre site.</p><ul><li>Supprimez les adresses qui rebondissent (hard bounces).</li><li>Identifiez les inactifs (pas d'ouverture depuis 6 mois) et réactivez-les.</li><li>Segmentez par comportement : nouveaux abonnés, clients fidèles, prospects.</li></ul><h2>3. Soigner l'Objet et le Contenu</h2><p>Les filtres antispam analysent les mots-clés. Évitez les termes comme "gratuit", "urgent", "promotion" en majuscules. Personnalisez l'objet avec le prénom du destinataire.</p><table><thead><tr><th>Bon objet</th><th>Mauvais objet</th></tr></thead><tbody><tr><td>Votre devis personnalisé, Ahmed</td><td>OFFRE EXCEPTIONNELLE !!!</td></tr><tr><td>Rappel : votre rendez-vous demain</td><td>Gagnez de l'argent facilement</td></tr></tbody></table><h2>4. Optimiser le Taux d'Engagement</h2><p>Les fournisseurs d'accès marocains favorisent les emails qui génèrent des clics et des ouvertures. Incitez à l'action avec des boutons clairs.</p><ul><li>Utilisez un design responsive (mobile-first).</li><li>Ajoutez un lien de désabonnement visible (obligatoire légalement).</li><li>Testez vos emails sur différents clients (Gmail, Outlook, Yahoo).</li></ul><h2>5. Gérer les Plaintes et les Rebonds</h2><p>Un taux de plainte (spam) supérieur à 0,1% peut bloquer vos envois. Surveillez les feedback loops et retirez immédiatement les plaignants.</p><h3>Rebonds Doux vs Durs</h3><p>Les soft bounces (boîte pleine) peuvent être réessayés, mais les hard bounces (adresse invalide) doivent être supprimés définitivement.</p><h2>6. Planifier des Envois Progressifs</h2><p>Pour une nouvelle IP, augmentez le volume progressivement (warm-up). Commencez par 500 emails/jour, puis doublez chaque semaine. Cela construit une réputation positive.</p><h2>7. Analyser et Ajuster</h2><p>Utilisez des outils comme Google Postmaster ou les rapports de votre plateforme d'emailing. Surveillez le taux d'ouverture, de clic, de rebond et de plainte. Ajustez votre stratégie en fonction.</p><p>Chez DatRey, nous proposons un audit complet de votre stratégie emailing. <a href="../services-seo.html">Découvrez nos services SEO</a> pour améliorer votre visibilité en ligne. Pour des campagnes Google Ads performantes, consultez <a href="../services-google-ads.html">notre offre Google Ads</a>. Enfin, notre <a href="../services-emailing.html">service d'emailing automation</a> vous garantit une délivrabilité optimale.</p><h2>FAQ</h2><h3>Qu'est-ce que la délivrabilité email ?</h3><p>La délivrabilité mesure la capacité d'un email à atteindre la boîte de réception du destinataire, sans être filtré comme spam.</p><h3>Pourquoi mes emails arrivent-ils dans les spams au Maroc ?</h3><p>Cela peut être dû à une mauvaise réputation d'expéditeur, un manque d'authentification, un contenu jugé promotionnel ou une liste non nettoyée.</p><h3>Comment améliorer la délivrabilité rapidement ?</h3><p>Nettoyez votre base, configurez SPF/DKIM/DMARC, personnalisez vos emails et évitez les mots déclencheurs de spam. Contactez DatRey pour un accompagnement personnalisé.</p><h2>Conclusion</h2><p>La délivrabilité est un pilier de l'email marketing au Maroc. En suivant ces 7 étapes, vous augmenterez significativement vos chances d'atteindre vos clients. Besoin d'aide ? L'agence DatRey à Casablanca vous accompagne dans la mise en place de campagnes performantes. <a href="../contact.html">Contactez-nous dès aujourd'hui</a> pour un audit gratuit de votre stratégie emailing.</p><img src="../../assets/blog/delivrabilite-email-etapes-boite-reception-1.webp" alt="Infographie des 7 étapes pour améliorer la délivrabilité des emails au Maroc" class="blog-img" width="1200" height="675" loading="lazy"><img src="../../assets/blog/delivrabilite-email-etapes-boite-reception-2.webp" alt="Tableau comparatif des facteurs de délivrabilité email" class="blog-img" width="1200" height="675" loading="lazy"><img src="../../assets/blog/delivrabilite-email-etapes-boite-reception-3.webp" alt="Exemple de configuration SPF et DKIM pour emailing" class="blog-img" width="1200" height="675" loading="lazy"><img src="../../assets/blog/delivrabilite-email-etapes-boite-reception-4.webp" alt="Graphique montrant l'impact du nettoyage de base sur la délivrabilité" class="blog-img" width="1200" height="675" loading="lazy">
+
+<nav class="blog-toc" aria-label="Tabla de contenidos">
+  <div class="blog-toc-title">Tabla de contenidos</div>
+  <ol>
+    <li><a href="#section-introduction">Introduction</a></li>
+<li><a href="#section-comprendre-les-facteurs-de-délivrabilité">1. Comprendre les Facteurs de Délivrabilité</a></li>
+<li><a href="#section-nettoyer-et-segmenter-votre-base-de-données">2. Nettoyer et Segmenter votre Base de Données</a></li>
+<li><a href="#section-soigner-lobjet-et-le-contenu">3. Soigner l'Objet et le Contenu</a></li>
+<li><a href="#section-optimiser-le-taux-dengagement">4. Optimiser le Taux d'Engagement</a></li>
+<li><a href="#section-gérer-les-plaintes-et-les-rebonds">5. Gérer les Plaintes et les Rebonds</a></li>
+<li><a href="#section-planifier-des-envois-progressifs">6. Planifier des Envois Progressifs</a></li>
+<li><a href="#section-analyser-et-ajuster">7. Analyser et Ajuster</a></li>
+<li><a href="#section-faq">FAQ</a></li>
+<li><a href="#section-conclusion">Conclusion</a></li>
+
+  </ol>
+</nav>
+
+        <h2 id="section-introduction">Introduction</h2><p>La délivrabilité des emails est un enjeu crucial pour toute entreprise marocaine souhaitant communiquer efficacement avec ses clients. Envoyer un email ne garantit pas qu'il arrive dans la boîte de réception ; il peut être redirigé vers les spams ou bloqué par les filtres. Chez DatRey, agence digitale à Casablanca, nous savons que sans une bonne délivrabilité, vos efforts d'emailing sont vains. Dans cet article, nous vous dévoilons 7 étapes concrètes pour maximiser le taux de réception de vos campagnes et ainsi améliorer votre retour sur investissement.</p><h2 id="section-comprendre-les-facteurs-de-délivrabilité">1. Comprendre les Facteurs de Délivrabilité</h2><p>La délivrabilité dépend de plusieurs éléments : la réputation de l'expéditeur, l'authentification, la qualité des listes et le contenu. Au Maroc, les fournisseurs d'accès (IAM, Orange, Maroc Telecom) utilisent des filtres stricts. Pour réussir, il faut maîtriser ces facteurs.</p>
+
+<div class="blog-inline-cta">
+  <div class="blog-inline-cta-icon">&#128640;</div>
+  <div class="blog-inline-cta-text">
+    <p>Quieres aplicar estas estrategias sin esfuerzo? <strong>Nuestros expertos de DatRey se encargan.</strong></p>
+  </div>
+  <a href="../../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn">Solicitar una auditoria gratuita</a>
+</div>
+<h3>Réputation de l'Expéditeur</h3><p>Votre adresse IP et votre domaine doivent avoir une bonne réputation. Utilisez un service d'emailing professionnel comme Mailchimp ou Sendinblue, et évitez les envois massifs depuis un serveur mutualisé.</p><h3>Authentification (SPF, DKIM, DMARC)</h3><p>Configurez ces protocoles pour prouver que vous êtes bien l'expéditeur légitime. Sans eux, vos emails risquent d'être rejetés.</p><h2 id="section-nettoyer-et-segmenter-votre-base-de-données">2. Nettoyer et Segmenter votre Base de Données</h2><p>Envoyer à des adresses inactives ou invalides nuit à votre réputation. Au Maroc, les bases achetées sont souvent de mauvaise qualité. Préférez une collecte organique via des formulaires sur votre site.</p><ul><li>Supprimez les adresses qui rebondissent (hard bounces).</li><li>Identifiez les inactifs (pas d'ouverture depuis 6 mois) et réactivez-les.</li><li>Segmentez par comportement : nouveaux abonnés, clients fidèles, prospects.</li></ul><h2 id="section-soigner-lobjet-et-le-contenu">3. Soigner l'Objet et le Contenu</h2><p>Les filtres antispam analysent les mots-clés. Évitez les termes comme "gratuit", "urgent", "promotion" en majuscules. Personnalisez l'objet avec le prénom du destinataire.</p><table><thead><tr><th>Bon objet</th><th>Mauvais objet</th></tr></thead><tbody><tr><td>Votre devis personnalisé, Ahmed</td><td>OFFRE EXCEPTIONNELLE !!!</td></tr><tr><td>Rappel : votre rendez-vous demain</td><td>Gagnez de l'argent facilement</td></tr></tbody></table><h2 id="section-optimiser-le-taux-dengagement">4. Optimiser le Taux d'Engagement</h2><p>Les fournisseurs d'accès marocains favorisent les emails qui génèrent des clics et des ouvertures. Incitez à l'action avec des boutons clairs.</p><ul><li>Utilisez un design responsive (mobile-first).</li><li>Ajoutez un lien de désabonnement visible (obligatoire légalement).</li><li>Testez vos emails sur différents clients (Gmail, Outlook, Yahoo).</li></ul><h2 id="section-gérer-les-plaintes-et-les-rebonds">5. Gérer les Plaintes et les Rebonds</h2><p>Un taux de plainte (spam) supérieur à 0,1% peut bloquer vos envois. Surveillez les feedback loops et retirez immédiatement les plaignants.</p><h3>Rebonds Doux vs Durs</h3><p>Les soft bounces (boîte pleine) peuvent être réessayés, mais les hard bounces (adresse invalide) doivent être supprimés définitivement.</p><h2 id="section-planifier-des-envois-progressifs">6. Planifier des Envois Progressifs</h2><p>Pour une nouvelle IP, augmentez le volume progressivement (warm-up). Commencez par 500 emails/jour, puis doublez chaque semaine. Cela construit une réputation positive.</p><h2 id="section-analyser-et-ajuster">7. Analyser et Ajuster</h2><p>Utilisez des outils comme Google Postmaster ou les rapports de votre plateforme d'emailing. Surveillez le taux d'ouverture, de clic, de rebond et de plainte. Ajustez votre stratégie en fonction.</p><p>Chez DatRey, nous proposons un audit complet de votre stratégie emailing. <a href="../services-seo.html">Découvrez nos services SEO</a> pour améliorer votre visibilité en ligne. Pour des campagnes Google Ads performantes, consultez <a href="../services-google-ads.html">notre offre Google Ads</a>. Enfin, notre <a href="../services-emailing.html">service d'emailing automation</a> vous garantit une délivrabilité optimale.</p><h2 id="section-faq">FAQ</h2><h3>Qu'est-ce que la délivrabilité email ?</h3><p>La délivrabilité mesure la capacité d'un email à atteindre la boîte de réception du destinataire, sans être filtré comme spam.</p><h3>Pourquoi mes emails arrivent-ils dans les spams au Maroc ?</h3><p>Cela peut être dû à une mauvaise réputation d'expéditeur, un manque d'authentification, un contenu jugé promotionnel ou une liste non nettoyée.</p><h3>Comment améliorer la délivrabilité rapidement ?</h3><p>Nettoyez votre base, configurez SPF/DKIM/DMARC, personnalisez vos emails et évitez les mots déclencheurs de spam. Contactez DatRey pour un accompagnement personnalisé.</p><h2 id="section-conclusion">Conclusion</h2><p>La délivrabilité est un pilier de l'email marketing au Maroc. En suivant ces 7 étapes, vous augmenterez significativement vos chances d'atteindre vos clients. Besoin d'aide ? L'agence DatRey à Casablanca vous accompagne dans la mise en place de campagnes performantes. <a href="../contact.html">Contactez-nous dès aujourd'hui</a> pour un audit gratuit de votre stratégie emailing.</p><img decoding="async" src="../../assets/blog/delivrabilite-email-etapes-boite-reception-1.webp" alt="Infographie des 7 étapes pour améliorer la délivrabilité des emails au Maroc" class="blog-img" width="1200" height="675" loading="lazy"><img decoding="async" src="../../assets/blog/delivrabilite-email-etapes-boite-reception-2.webp" alt="Tableau comparatif des facteurs de délivrabilité email" class="blog-img" width="1200" height="675" loading="lazy"><img decoding="async" src="../../assets/blog/delivrabilite-email-etapes-boite-reception-3.webp" alt="Exemple de configuration SPF et DKIM pour emailing" class="blog-img" width="1200" height="675" loading="lazy"><img decoding="async" src="../../assets/blog/delivrabilite-email-etapes-boite-reception-4.webp" alt="Graphique montrant l'impact du nettoyage de base sur la délivrabilité" class="blog-img" width="1200" height="675" loading="lazy">
         <div class="blog-cta">
           <h3>Besoin d'accompagnement ?</h3>
           <p>Les experts DatRey vous aident à atteindre vos objectifs digitaux au Maroc.</p>
-          <a href="../contact.html">Demander un audit gratuit &rarr;</a>
+          <a href="../contact.html?subject=AuditGratuit class="magnetic-btn"">Demander un audit gratuit &rarr;</a>
         </div>
-      </article>
+      
+      <section class="blog-related" >
+        <h3 class="blog-related-title">Articulos relacionados</h3>
+        <div class="blog-related-grid">
+          
+        <a href="../../blog/sequences-automatisees-emailing-maroc.html" class="blog-related-card">
+          <img src="../../assets/blog/sequences-automatisees-emailing-maroc-1.webp" alt="Séquences automatisées : boostez votre emailing au Maroc" loading="lazy" width="400" height="225" decoding="async">
+          <div class="blog-related-card-body">
+            <div class="blog-related-card-cat">Emailing & Automation</div>
+            <div class="blog-related-card-title">Séquences automatisées : boostez votre emailing au Maroc</div>
+          </div>
+        </a>
+        <a href="../../blog/segmentation-emailing-boostez-campagnes-maroc.html" class="blog-related-card">
+          <img src="../../assets/blog/segmentation-emailing-boostez-campagnes-maroc-1.webp" alt="Segmentation emailing : boostez vos campagnes au Maroc" loading="lazy" width="400" height="225" decoding="async">
+          <div class="blog-related-card-body">
+            <div class="blog-related-card-cat">Emailing & Automation</div>
+            <div class="blog-related-card-title">Segmentation emailing : boostez vos campagnes au Maroc</div>
+          </div>
+        </a>
+        </div>
+      </section>
+
+</article>
     </div>
   </main>
 
@@ -206,7 +257,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="logo" style="margin-bottom:4px;">
-            <img src="../../assets/logo.webp" alt="DatRey Logo" class="logo-img" width="40" height="40" />
+            <img loading="lazy" decoding="async" src="../../assets/logo.webp" alt="DatRey Logo" class="logo-img" width="40" height="40" />
             <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
           </a>
           <p>Votre partenaire d'acquisition digitale full-stack au Maroc.</p>
@@ -217,5 +268,19 @@
       </div>
     </div>
   </footer>
+
+  <!-- Exit Intent Popup -->
+  <div id="exitIntentPopup" class="exit-popup-overlay" >
+    <div class="exit-popup-modal">
+      <button class="exit-popup-close" aria-label="Fermer">×</button>
+      <div class="exit-popup-content">
+        <h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">¡No te vayas con las manos vacías!</h3>
+        <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtén una <strong>Auditoría UX/UI y SEO gratuita</strong> de tu sitio web. Descubre cómo aumentar tus conversiones hoy mismo.</p>
+        <a href="../../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn" style="width: 100%; justify-content: center;">Quiero mi auditoría gratuita</a>
+        <p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sin compromiso. Análisis entregado en 48h.</p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
