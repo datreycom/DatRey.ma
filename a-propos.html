@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html dir="ltr" lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -13,13 +14,13 @@
 <meta content="website" property="og:type"/>
 <meta content="https://datrey.ma/a-propos.html" property="og:url"/>
 <link href="https://datrey.ma/a-propos.html" rel="canonical"/>
-<link rel="alternate" hreflang="fr" href="https://datrey.ma/a-propos.html" />
-<link rel="alternate" hreflang="x-default" href="https://datrey.ma/a-propos.html" />
+<link href="https://datrey.ma/a-propos.html" hreflang="fr" rel="alternate"/>
+<link href="https://datrey.ma/a-propos.html" hreflang="x-default" rel="alternate"/>
 <link href="style.css" rel="stylesheet"/>
 <link href="assets/logo.webp" rel="icon" type="image/webp"/>
-<link href="favicon.ico" rel="icon" type="image/x-icon" sizes="32x32"/>
+<link href="favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
 <meta content="#050814" name="theme-color"/>
-<link rel="manifest" href="/manifest.json"/>
+<link href="/manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -72,7 +73,7 @@
 </head>
 <body>
 <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
-<a class="skip-to-content" href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" onblur="this.style.position='absolute';this.style.left='-9999px'">Aller au contenu principal</a>
+<a class="skip-to-content" href="#main-content" onblur="this.style.position='absolute';this.style.left='-9999px'" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;">Aller au contenu principal</a>
 <!-- ========== HEADER ========== -->
 <header class="header" id="header">
 <div class="container">
@@ -84,7 +85,7 @@
 <a href="index.html">Accueil</a>
 <a href="creation-site-web.html">Création Site Web</a>
 <a href="services.html">Nos Services</a>
-<a href="transformation-digitale.html">Transformation Digitale</a>
+
 <a href="blog.html">Blog</a>
 <a href="contact.html">Contact</a>
 <a class="btn btn-primary nav-cta" href="contact.html">Audit Gratuit</a>
@@ -100,8 +101,8 @@
 </div>
 </div>
 <button aria-label="Basculer le thème" class="theme-toggle" id="themeToggle">
-<svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
-<svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
+<svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
 <button aria-label="Ouvrir le menu de navigation" class="mobile-toggle" id="mobileToggle">
 <span></span><span></span><span></span>
@@ -110,12 +111,12 @@
 </div>
 </header>
 <!-- Mobile Nav -->
-<div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Navigation mobile">
+<div aria-label="Navigation mobile" class="mobile-nav" id="mobileNav" role="navigation">
 <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
 <a href="index.html" onclick="closeMobileNav()">Accueil</a>
 <a href="creation-site-web.html" onclick="closeMobileNav()">Création Site Web</a>
 <a href="services.html" onclick="closeMobileNav()">Nos Services</a>
-<a href="transformation-digitale.html" onclick="closeMobileNav()">Transformation Digitale</a>
+
 <a href="blog.html" onclick="closeMobileNav()">Blog</a>
 <a href="contact.html" onclick="closeMobileNav()">Contact</a>
 <a class="btn btn-primary magnetic-btn" href="contact.html" onclick="closeMobileNav()">Audit Gratuit</a>
@@ -137,7 +138,6 @@
 </div>
 </div>
 </section>
-
 <!-- ========== MISSION ========== -->
 <section class="section-padding">
 <div class="container">
@@ -148,7 +148,6 @@
 </div>
 </div>
 </section>
-
 <!-- ========== STATS ========== -->
 <section class="section-padding" style="background: var(--bg-alt);">
 <div class="container">
@@ -167,12 +166,11 @@
 </div>
 <div class="reveal">
 <div class="hero-stat-value" style="font-size: 2.5rem; font-weight: 800; color: var(--roi-500);">24/7</div>
-<div class="hero-stat-label">Support & Monitoring</div>
+<div class="hero-stat-label">Support &amp; Monitoring</div>
 </div>
 </div>
 </div>
 </section>
-
 <!-- ========== ÉQUIPE ========== -->
 <section class="section-padding">
 <div class="container">
@@ -181,42 +179,36 @@
 <h2 class="section-title">Les experts derrière <span class="gradient-text">DatRey</span></h2>
 <p class="section-subtitle">Une équipe pluridisciplinaire, passionnée par la performance digitale.</p>
 </div>
-
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; max-width: 900px; margin: 0 auto;">
-
 <!-- Team Member 1 -->
 <div class="glass-panel reveal" style="padding: 32px; text-align: center; border-radius: var(--radius-xl);">
 <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--roi-500), var(--roi-300)); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #fff; font-weight: 800;">O</div>
 <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 4px;">Omar El Ouardi</h3>
-<p style="color: var(--roi-400); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px;">Fondateur & CEO</p>
-<p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">Expert en acquisition digitale et stratégie data-driven. Spécialiste Google Ads & SEO avec +8 ans d'expérience dans la performance marketing au Maroc et à l'international.</p>
+<p style="color: var(--roi-400); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px;">Fondateur &amp; CEO</p>
+<p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">Expert en acquisition digitale et stratégie data-driven. Spécialiste Google Ads &amp; SEO avec +8 ans d'expérience dans la performance marketing au Maroc et à l'international.</p>
 <div style="margin-top: 16px; display: flex; gap: 12px; justify-content: center;">
-<a href="https://www.linkedin.com/in/datrey-agency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Omar" style="color: var(--text-muted); transition: color 0.3s;">
-<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+<a aria-label="LinkedIn Omar" href="https://www.linkedin.com/in/datrey-agency/" rel="noopener noreferrer" style="color: var(--text-muted); transition: color 0.3s;" target="_blank">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
 </a>
 </div>
 </div>
-
 <!-- Team Member 2 -->
 <div class="glass-panel reveal" style="padding: 32px; text-align: center; border-radius: var(--radius-xl);">
 <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--roi-400), var(--roi-200)); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #fff; font-weight: 800;">S</div>
 <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 4px;">Sarah Benali</h3>
-<p style="color: var(--roi-400); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px;">Directrice SEO & Contenu</p>
+<p style="color: var(--roi-400); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px;">Directrice SEO &amp; Contenu</p>
 <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">Spécialiste en référencement naturel et stratégie de contenu. Expertise en audit technique, cocon sémantique et rédaction SEO optimisée pour le marché marocain.</p>
 </div>
-
 <!-- Team Member 3 -->
 <div class="glass-panel reveal" style="padding: 32px; text-align: center; border-radius: var(--radius-xl);">
 <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #8b5cf6, #a78bfa); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #fff; font-weight: 800;">K</div>
 <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 4px;">Karim Tazi</h3>
-<p style="color: var(--roi-400); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px;">Lead Developer & CRO</p>
+<p style="color: var(--roi-400); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px;">Lead Developer &amp; CRO</p>
 <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">Développeur fullstack et expert en optimisation de conversion. Conception de landing pages haute performance et intégration de systèmes de tracking avancés.</p>
 </div>
-
 </div>
 </div>
 </section>
-
 <!-- ========== VALEURS ========== -->
 <section class="section-padding" style="background: var(--bg-alt);">
 <div class="container">
@@ -242,7 +234,6 @@
 </div>
 </div>
 </section>
-
 <!-- ========== CTA ========== -->
 <section class="cta-section section-padding" id="contact">
 <div class="container">
@@ -251,7 +242,7 @@
 <p>Que vous soyez un futur client ou un futur collaborateur, parlons de vos ambitions.</p>
 <div class="cta-actions">
 <a class="btn btn-primary magnetic-btn" href="contact.html?subject=AuditGratuit">
-<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
 Discutons de votre projet
 </a>
 </div>
@@ -265,14 +256,14 @@ Discutons de votre projet
 <div class="footer-grid">
 <div class="footer-brand">
 <a class="logo" href="index.html" style="margin-bottom:4px;">
-<img loading="lazy" decoding="async" alt="DatRey Logo" class="logo-img" height="40" src="assets/logo.webp" width="40"/>
+<img alt="DatRey Logo" class="logo-img" decoding="async" height="40" loading="lazy" src="assets/logo.webp" width="40"/>
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
 </a>
 <p>Votre partenaire d'acquisition digitale full-stack au Maroc. Google Ads, Meta Ads, SEO et CRO pour scaler vos ventes.</p>
 <div class="social-links">
-<a aria-label="LinkedIn DatRey" href="https://www.linkedin.com/in/datrey-agency/" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-<a aria-label="X DatRey" href="https://x.com/Datrey_Agency" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg></a>
-<a aria-label="Instagram DatRey" href="https://www.instagram.com/datrey.agency/" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+<a aria-label="LinkedIn DatRey" href="https://www.linkedin.com/in/datrey-agency/" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+<a aria-label="X DatRey" href="https://x.com/Datrey_Agency" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg></a>
+<a aria-label="Instagram DatRey" href="https://www.instagram.com/datrey.agency/" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
 </div>
 </div>
 <div>
@@ -308,8 +299,8 @@ Discutons de votre projet
 </div>
 </footer>
 <a aria-label="Nous contacter sur WhatsApp" class="whatsapp-float" href="https://wa.me/212644443059" rel="noopener noreferrer" target="_blank">
-<svg fill="currentColor" height="28" viewBox="0 0 24 24" width="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+<svg fill="currentColor" height="28" viewbox="0 0 24 24" width="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
 </a>
-<script src="animations.js" defer></script>
+<script defer="" src="animations.js"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@
 <link href="../style.css" rel="stylesheet"/>
 <link href="../assets/logo.webp" rel="icon" type="image/webp"/>
 <meta content="#050814" name="theme-color"/>
-<link rel="manifest" href="/manifest.json"/>
+<link href="/manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -127,18 +127,18 @@
 }</script>
 </head>
 <body>
-<a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" onblur="this.style.position='absolute';this.style.left='-9999px'">Aller au contenu principal</a>
+<a class="skip-to-content" href="#main-content" onblur="this.style.position='absolute';this.style.left='-9999px'" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;">Aller au contenu principal</a>
 <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
 <header class="header" id="header">
 <div class="container">
 <a aria-label="DatRey — Accueil" class="logo" href="../index.html">
-<img loading="lazy" decoding="async" alt="DatRey Logo" class="logo-img" height="40" src="../assets/logo.webp" width="40"/>
+<img alt="DatRey Logo" class="logo-img" decoding="async" height="40" loading="lazy" src="../assets/logo.webp" width="40"/>
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
 </a>
 <nav aria-label="Navigation principale" class="nav-links">
 <a href="../index.html">Accueil</a>
 <a class="" href="../services.html">Nos Services</a>
-<a href="../transformation-digitale.html">Transformation Digitale</a>
+
 <a class="nav-active" href="../blog.html">Blog</a>
 <a href="../contact.html">Contact</a>
 <a class="btn btn-primary nav-cta" href="../contact.html">Audit Gratuit</a>
@@ -154,8 +154,8 @@
 </div>
 </div>
 <button aria-label="Basculer le thème" class="theme-toggle" id="themeToggle">
-<svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
-<svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
+<svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
 <button aria-label="Menu" class="mobile-toggle" id="mobileToggle">
 <span></span><span></span><span></span>
@@ -163,11 +163,11 @@
 </div>
 </div>
 </header>
-<div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Navigation mobile">
+<div aria-label="Navigation mobile" class="mobile-nav" id="mobileNav" role="navigation">
 <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
 <a href="../index.html" onclick="closeMobileNav()">Accueil</a>
 <a class="" href="../services.html" onclick="closeMobileNav()">Nos Services</a>
-<a href="../transformation-digitale.html" onclick="closeMobileNav()">Transformation Digitale</a>
+
 <a class="nav-active" href="../blog.html" onclick="closeMobileNav()">Blog</a>
 <a href="../contact.html" onclick="closeMobileNav()">Contact</a>
 <a class="btn btn-primary" href="../contact.html" onclick="closeMobileNav()">Audit Gratuit</a>
@@ -193,37 +193,32 @@
 <span>⏱ 7 min de lecture</span>
 <span>📌 Référencement Naturel (SEO)</span>
 </div>
-
-<nav class="blog-toc" aria-label="Sommaire de l'article">
-  <div class="blog-toc-title">Sommaire de l'article</div>
-  <ol>
-    <li><a href="#section-pourquoi-une-stratégie-de-contenu-seo-est-indispensable-pour">Pourquoi une stratégie de contenu SEO est indispensable pour votre entreprise au Maroc</a></li>
+<nav aria-label="Sommaire de l'article" class="blog-toc">
+<div class="blog-toc-title">Sommaire de l'article</div>
+<ol>
+<li><a href="#section-pourquoi-une-stratégie-de-contenu-seo-est-indispensable-pour">Pourquoi une stratégie de contenu SEO est indispensable pour votre entreprise au Maroc</a></li>
 <li><a href="#section-les-piliers-dune-stratégie-de-contenu-seo-gagnante">Les piliers d'une stratégie de contenu SEO gagnante</a></li>
 <li><a href="#section-comment-mettre-en-place-votre-stratégie-de-contenu-seo">Comment mettre en place votre stratégie de contenu SEO ?</a></li>
 <li><a href="#section-exemple-de-tableau-comparatif-seo-vs-sea">Exemple de tableau comparatif : SEO vs SEA</a></li>
 <li><a href="#section-les-erreurs-à-éviter-dans-votre-stratégie-de-contenu">Les erreurs à éviter dans votre stratégie de contenu</a></li>
 <li><a href="#section-faq---stratégie-de-contenu-seo">FAQ - Stratégie de contenu SEO</a></li>
 <li><a href="#section-comment-aller-plus-loin">Comment aller plus loin ?</a></li>
-
-  </ol>
+</ol>
 </nav>
-
 <h2 id="section-pourquoi-une-stratégie-de-contenu-seo-est-indispensable-pour">Pourquoi une stratégie de contenu SEO est indispensable pour votre entreprise au Maroc</h2>
 <p>Dans un marché digital marocain en pleine expansion, le référencement naturel (SEO) est le levier le plus rentable pour attirer des clients qualifiés. Une stratégie de contenu bien conçue vous permet de répondre aux intentions de recherche de vos prospects tout en renforçant l'autorité de votre site aux yeux de Google. Chez DatRey, agence digitale à Casablanca, nous maîtrisons les spécificités du SEO local pour vous aider à dominer les SERP.</p>
 <h2 id="section-les-piliers-dune-stratégie-de-contenu-seo-gagnante">Les piliers d'une stratégie de contenu SEO gagnante</h2>
 <h3>1. Recherche de mots-clés adaptée au marché marocain</h3>
 <p>Identifiez les requêtes que vos clients utilisent réellement. Utilisez des outils comme Google Keyword Planner en filtrant par région Maroc. Privilégiez les mots-clés longue traîne (ex: "agence SEO Casablanca prix") qui convertissent mieux.</p>
-
 <div class="blog-inline-cta">
-  <div class="blog-inline-cta-icon">&#128640;</div>
-  <div class="blog-inline-cta-text">
-    <p>Vous souhaitez appliquer ces strategies sans effort ? <strong>Nos experts DatRey s'en chargent.</strong></p>
-  </div>
-  <a href="../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn">Demander un audit gratuit</a>
+<div class="blog-inline-cta-icon">🚀</div>
+<div class="blog-inline-cta-text">
+<p>Vous souhaitez appliquer ces strategies sans effort ? <strong>Nos experts DatRey s'en chargent.</strong></p>
 </div>
-
+<a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit">Demander un audit gratuit</a>
+</div>
 <h3>2. Création de contenu à forte valeur ajoutée</h3>
-<p>Produisez des articles de blog, guides, études de cas et pages produits qui répondent précisément aux questions de votre audience. Google privilégie le contenu original et utile. Intégrez des données chiffrées : 70% des marocains recherchent des avis avant d'acheter (source : Hootsuite 2023).</p><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour strategie de contenu seo maroc partie 1" class="blog-img" loading="lazy" src="../assets/blog/strategie-de-contenu-seo-maroc-1.webp"/></figure>
+<p>Produisez des articles de blog, guides, études de cas et pages produits qui répondent précisément aux questions de votre audience. Google privilégie le contenu original et utile. Intégrez des données chiffrées : 70% des marocains recherchent des avis avant d'acheter (source : Hootsuite 2023).</p><figure style="margin: 32px 0;"><img alt="Illustration pour strategie de contenu seo maroc partie 1" class="blog-img" decoding="async" height="675" loading="lazy" src="../assets/blog/strategie-de-contenu-seo-maroc-1.webp" width="1200"/></figure>
 <h3>3. Optimisation technique on-page</h3>
 <p>Structurez vos articles avec des balises H1, H2, H3. Utilisez des méta-descriptions accrocheuses, des URLs courtes et des images optimisées. Assurez-vous que votre site est mobile-friendly : 80% du trafic web au Maroc provient du mobile (source : DataReportal 2024).</p>
 <h3>4. Stratégie de maillage interne</h3>
@@ -235,7 +230,7 @@
 <li>Rédigez des articles longs (1500+ mots) pour les sujets clés.</li>
 <li>Utilisez des synonymes et variantes de votre mot-clé principal.</li>
 <li>Incluez des appels à l'action (CTA) pour convertir les visiteurs.</li>
-</ul><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour strategie de contenu seo maroc partie 2" class="blog-img" loading="lazy" src="../assets/blog/strategie-de-contenu-seo-maroc-2.webp"/></figure>
+</ul><figure style="margin: 32px 0;"><img alt="Illustration pour strategie de contenu seo maroc partie 2" class="blog-img" decoding="async" height="675" loading="lazy" src="../assets/blog/strategie-de-contenu-seo-maroc-2.webp" width="1200"/></figure>
 <h2 id="section-exemple-de-tableau-comparatif-seo-vs-sea">Exemple de tableau comparatif : SEO vs SEA</h2>
 <table>
 <thead>
@@ -255,43 +250,40 @@
 <li>Oublier d'optimiser les balises alt des images.</li>
 <li>Ignorer les Core Web Vitals (vitesse de chargement).</li>
 <li>Ne pas suivre les performances avec Google Search Console.</li>
-</ul><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour strategie de contenu seo maroc partie 3" class="blog-img" loading="lazy" src="../assets/blog/strategie-de-contenu-seo-maroc-3.webp"/></figure>
+</ul><figure style="margin: 32px 0;"><img alt="Illustration pour strategie de contenu seo maroc partie 3" class="blog-img" decoding="async" height="675" loading="lazy" src="../assets/blog/strategie-de-contenu-seo-maroc-3.webp" width="1200"/></figure>
 <h2 id="section-faq---stratégie-de-contenu-seo">FAQ - Stratégie de contenu SEO</h2>
 <h3>Quelle est la différence entre SEO et contenu marketing ?</h3>
 <p>Le SEO technique optimise la structure de votre site, tandis que la stratégie de contenu vise à créer des pages utiles pour les utilisateurs et les moteurs de recherche. Les deux sont complémentaires.</p>
 <h3>Combien de temps faut-il pour voir des résultats ?</h3>
 <p>En général, les premiers résultats apparaissent entre 3 et 6 mois. Cela dépend de la concurrence et de la qualité de votre contenu. Une stratégie cohérente accélère le processus.</p>
 <h3>Faut-il engager une agence SEO à Casablanca ?</h3>
-<p>Oui, une agence experte comme DatRey maîtrise le marché local et les dernières mises à jour Google. Nous vous aidons à éviter les erreurs coûteuses et à maximiser votre ROI.</p><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour strategie de contenu seo maroc partie 4" class="blog-img" loading="lazy" src="../assets/blog/strategie-de-contenu-seo-maroc-4.webp"/></figure>
+<p>Oui, une agence experte comme DatRey maîtrise le marché local et les dernières mises à jour Google. Nous vous aidons à éviter les erreurs coûteuses et à maximiser votre ROI.</p><figure style="margin: 32px 0;"><img alt="Illustration pour strategie de contenu seo maroc partie 4" class="blog-img" decoding="async" height="675" loading="lazy" src="../assets/blog/strategie-de-contenu-seo-maroc-4.webp" width="1200"/></figure>
 <h2 id="section-comment-aller-plus-loin">Comment aller plus loin ?</h2>
 <p>Une stratégie de contenu SEO solide est la clé pour attirer un trafic qualifié et durable au Maroc. En combinant recherche de mots-clés, contenu de qualité et optimisation technique, vous pouvez atteindre la première page de Google. Confiez votre référencement naturel à DatRey, votre agence digitale à Casablanca. <a href="../contact.html">Contactez-nous dès aujourd'hui</a> pour un audit gratuit de votre site.</p>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
 <p>Les experts DatRey vous aident à atteindre vos objectifs digitaux au Maroc.</p>
-<a href="../contact.html?subject=AuditGratuit class="magnetic-btn"">Demander un audit gratuit →</a>
+<a href="../contact.html?subject=AuditGratuit class=" magnetic-btn""="">Demander un audit gratuit →</a>
 </div>
-
-      <section class="blog-related" >
-        <h3 class="blog-related-title">Articles similaires</h3>
-        <div class="blog-related-grid">
-          
-        <a href="../blog/seo-technique-optimisations-essentielles.html" class="blog-related-card">
-          <img src="../assets/blog/seo-technique-optimisations-essentielles-1.webp" alt="SEO technique : 7 optimisations essentielles pour votre site" loading="lazy" width="400" height="225" decoding="async">
-          <div class="blog-related-card-body">
-            <div class="blog-related-card-cat">Référencement Naturel (SEO)</div>
-            <div class="blog-related-card-title">SEO technique : 7 optimisations essentielles pour votre site</div>
-          </div>
-        </a>
-        <a href="../blog/referencement-naturel-seo-local-maroc.html" class="blog-related-card">
-          <img src="../assets/blog/referencement-naturel-seo-local-maroc-1.webp" alt="Référencement Naturel SEO Local Maroc : Boostez votre visibilité" loading="lazy" width="400" height="225" decoding="async">
-          <div class="blog-related-card-body">
-            <div class="blog-related-card-cat">Référencement Naturel (SEO)</div>
-            <div class="blog-related-card-title">Référencement Naturel SEO Local Maroc : Boostez votre visibilité</div>
-          </div>
-        </a>
-        </div>
-      </section>
-
+<section class="blog-related">
+<h3 class="blog-related-title">Articles similaires</h3>
+<div class="blog-related-grid">
+<a class="blog-related-card" href="../blog/seo-technique-optimisations-essentielles.html">
+<img alt="SEO technique : 7 optimisations essentielles pour votre site" decoding="async" height="225" loading="lazy" src="../assets/blog/seo-technique-optimisations-essentielles-1.webp" width="400"/>
+<div class="blog-related-card-body">
+<div class="blog-related-card-cat">Référencement Naturel (SEO)</div>
+<div class="blog-related-card-title">SEO technique : 7 optimisations essentielles pour votre site</div>
+</div>
+</a>
+<a class="blog-related-card" href="../blog/referencement-naturel-seo-local-maroc.html">
+<img alt="Référencement Naturel SEO Local Maroc : Boostez votre visibilité" decoding="async" height="225" loading="lazy" src="../assets/blog/referencement-naturel-seo-local-maroc-1.webp" width="400"/>
+<div class="blog-related-card-body">
+<div class="blog-related-card-cat">Référencement Naturel (SEO)</div>
+<div class="blog-related-card-title">Référencement Naturel SEO Local Maroc : Boostez votre visibilité</div>
+</div>
+</a>
+</div>
+</section>
 </article>
 </div>
 </main>
@@ -300,29 +292,29 @@
 <div class="footer-grid">
 <div class="footer-brand">
 <a class="logo" href="../index.html" style="margin-bottom:4px;">
-<img loading="lazy" decoding="async" alt="DatRey Logo" class="logo-img" height="40" src="../assets/logo.webp" width="40"/>
+<img alt="DatRey Logo" class="logo-img" decoding="async" height="40" loading="lazy" src="../assets/logo.webp" width="40">
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
-</a>
+</img></a>
 <p>
             Votre partenaire d'acquisition digitale full-stack au Maroc.
             Google Ads, Meta Ads, SEO et CRO pour scaler vos ventes.
           </p>
 <a class="footer-saas" href="https://datrey.com" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path></svg>
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path></svg>
             Découvrez nos solutions SaaS sur DatRey.com
           </a>
 <div class="social-links">
 <a aria-label="LinkedIn DatRey" href="https://www.linkedin.com/in/datrey-agency/" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
 </a>
 <a aria-label="X DatRey" href="https://x.com/Datrey_Agency" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg>
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg>
 </a>
 <a aria-label="Instagram DatRey" href="https://www.instagram.com/datrey.agency/" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
 </a>
 <a aria-label="Pinterest DatRey" href="https://www.pinterest.com/DatreyAgency" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><line x1="12" x2="12" y1="12" y2="22"></line><path d="M12 22c-3.5 0-6.5-2.5-7.5-6s.5-7 4-8.5 7-1 9.5 2 2 6-.5 8.5L12 22z"></path><circle cx="12" cy="7" r="1"></circle></svg>
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="12" x2="12" y1="12" y2="22"></line><path d="M12 22c-3.5 0-6.5-2.5-7.5-6s.5-7 4-8.5 7-1 9.5 2 2 6-.5 8.5L12 22z"></path><circle cx="12" cy="7" r="1"></circle></svg>
 </a>
 </div>
 </div>
@@ -353,15 +345,15 @@
 <div>
 <h4>Contact</h4>
 <div class="footer-contact-item">
-<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
 <span>322 Bd Brahim Roudani, Rés. AR-Rayhane,<br/>Ét. 04 N°17, Maarif — Casablanca</span>
 </div>
 <div class="footer-contact-item">
-<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
 <a href="mailto:contact@datrey.ma" style="color:inherit;">contact@datrey.ma</a>
 </div>
 <div class="footer-contact-item">
-<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
 <a href="tel:+212644443059" style="color:inherit;">+212 6 44 44 30 59</a>
 </div>
 </div>
@@ -375,19 +367,17 @@
 </div>
 </div>
 </footer>
-
-  <!-- Exit Intent Popup -->
-  <div id="exitIntentPopup" class="exit-popup-overlay" >
-    <div class="exit-popup-modal">
-      <button class="exit-popup-close" aria-label="Fermer">×</button>
-      <div class="exit-popup-content">
-        <h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Ne partez pas les mains vides !</h3>
-        <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtenez un <strong>Audit UX/UI & SEO gratuit</strong> de votre site web. Découvrez comment augmenter vos conversions dès aujourd'hui.</p>
-        <a href="../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn" style="width: 100%; justify-content: center;">Je veux mon audit gratuit</a>
-        <p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sans engagement. Analyse livrée en 48h.</p>
-      </div>
-    </div>
-  </div>
-
+<!-- Exit Intent Popup -->
+<div class="exit-popup-overlay" id="exitIntentPopup">
+<div class="exit-popup-modal">
+<button aria-label="Fermer" class="exit-popup-close">×</button>
+<div class="exit-popup-content">
+<h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Ne partez pas les mains vides !</h3>
+<p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtenez un <strong>Audit UX/UI &amp; SEO gratuit</strong> de votre site web. Découvrez comment augmenter vos conversions dès aujourd'hui.</p>
+<a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit" style="width: 100%; justify-content: center;">Je veux mon audit gratuit</a>
+<p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sans engagement. Analyse livrée en 48h.</p>
+</div>
+</div>
+</div>
 </body>
 </html>

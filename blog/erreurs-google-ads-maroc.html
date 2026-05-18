@@ -29,7 +29,7 @@
 <link href="../style.css" rel="stylesheet"/>
 <link href="../assets/logo.webp" rel="icon" type="image/webp"/>
 <meta content="#050814" name="theme-color"/>
-<link rel="manifest" href="/manifest.json"/>
+<link href="/manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -127,18 +127,18 @@
 }</script>
 </head>
 <body>
-<a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" onblur="this.style.position='absolute';this.style.left='-9999px'">Aller au contenu principal</a>
+<a class="skip-to-content" href="#main-content" onblur="this.style.position='absolute';this.style.left='-9999px'" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;">Aller au contenu principal</a>
 <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
 <header class="header" id="header">
 <div class="container">
 <a aria-label="DatRey — Accueil" class="logo" href="../index.html">
-<img loading="lazy" decoding="async" alt="DatRey Logo" class="logo-img" height="40" src="../assets/logo.webp" width="40"/>
+<img alt="DatRey Logo" class="logo-img" decoding="async" height="40" loading="lazy" src="../assets/logo.webp" width="40"/>
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
 </a>
 <nav aria-label="Navigation principale" class="nav-links">
 <a href="../index.html">Accueil</a>
 <a class="" href="../services.html">Nos Services</a>
-<a href="../transformation-digitale.html">Transformation Digitale</a>
+
 <a class="nav-active" href="../blog.html">Blog</a>
 <a href="../contact.html">Contact</a>
 <a class="btn btn-primary nav-cta" href="../contact.html">Audit Gratuit</a>
@@ -154,8 +154,8 @@
 </div>
 </div>
 <button aria-label="Basculer le thème" class="theme-toggle" id="themeToggle">
-<svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
-<svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
+<svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
 <button aria-label="Menu" class="mobile-toggle" id="mobileToggle">
 <span></span><span></span><span></span>
@@ -163,11 +163,11 @@
 </div>
 </div>
 </header>
-<div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Navigation mobile">
+<div aria-label="Navigation mobile" class="mobile-nav" id="mobileNav" role="navigation">
 <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
 <a href="../index.html" onclick="closeMobileNav()">Accueil</a>
 <a class="" href="../services.html" onclick="closeMobileNav()">Nos Services</a>
-<a href="../transformation-digitale.html" onclick="closeMobileNav()">Transformation Digitale</a>
+
 <a class="nav-active" href="../blog.html" onclick="closeMobileNav()">Blog</a>
 <a href="../contact.html" onclick="closeMobileNav()">Contact</a>
 <a class="btn btn-primary" href="../contact.html" onclick="closeMobileNav()">Audit Gratuit</a>
@@ -193,11 +193,10 @@
 <span>⏱ 8 min de lecture</span>
 <span>📌 Google Ads &amp; SEA</span>
 </div>
-
-<nav class="blog-toc" aria-label="Sommaire de l'article">
-  <div class="blog-toc-title">Sommaire de l'article</div>
-  <ol>
-    <li><a href="#section-négliger-la-recherche-de-mots-clés">1. Négliger la recherche de mots-clés</a></li>
+<nav aria-label="Sommaire de l'article" class="blog-toc">
+<div class="blog-toc-title">Sommaire de l'article</div>
+<ol>
+<li><a href="#section-négliger-la-recherche-de-mots-clés">1. Négliger la recherche de mots-clés</a></li>
 <li><a href="#section-ignorer-le-ciblage-géographique">2. Ignorer le ciblage géographique</a></li>
 <li><a href="#section-négliger-les-extensions-dannonces">3. Négliger les extensions d'annonces</a></li>
 <li><a href="#section-ne-pas-optimiser-les-pages-de-destination">4. Ne pas optimiser les pages de destination</a></li>
@@ -206,47 +205,41 @@
 <li><a href="#section-négliger-le-remarketing">7. Négliger le remarketing</a></li>
 <li><a href="#section-faq">FAQ</a></li>
 <li><a href="#section-comment-aller-plus-loin">Comment aller plus loin ?</a></li>
-
-  </ol>
+</ol>
 </nav>
-
 <p>Google Ads est un levier puissant pour générer du trafic et des conversions, mais au Maroc, de nombreuses entreprises commettent des erreurs qui ruinent leur budget. Que vous soyez à Casablanca, Rabat ou Marrakech, une campagne SEA mal optimisée peut coûter cher.  Chez <a href="../services-google-ads.html">DatRey</a>, nous accompagnons les annonceurs marocains à chaque étape.</p><h2 id="section-négliger-la-recherche-de-mots-clés">1. Négliger la recherche de mots-clés</h2><p>Beaucoup d'annonceurs choisissent des mots-clés trop génériques ou sans lien avec leur activité. Par exemple, un restaurant à Casablanca qui cible « restaurant » sans spécifier la ville gaspille son budget.</p><ul><li>Utilisez le Planificateur de mots-clés pour trouver des termes locaux.</li><li>Privilégiez les mots-clés de longue traîne comme « meilleur restaurant italien Casablanca ».</li><li>Excluez les termes non pertinents avec des mots-clés négatifs.</li></ul><h2 id="section-ignorer-le-ciblage-géographique">2. Ignorer le ciblage géographique</h2><p>Au Maroc, les habitudes d'achat varient d'une ville à l'autre. Cibler tout le pays sans distinction dilue votre message.</p>
-
 <div class="blog-inline-cta">
-  <div class="blog-inline-cta-icon">&#128640;</div>
-  <div class="blog-inline-cta-text">
-    <p>Vous souhaitez appliquer ces strategies sans effort ? <strong>Nos experts DatRey s'en chargent.</strong></p>
-  </div>
-  <a href="../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn">Demander un audit gratuit</a>
+<div class="blog-inline-cta-icon">🚀</div>
+<div class="blog-inline-cta-text">
+<p>Vous souhaitez appliquer ces strategies sans effort ? <strong>Nos experts DatRey s'en chargent.</strong></p>
 </div>
-<table><tr><th>Erreur</th><th>Solution</th></tr><tr><td>Cibler tout le Maroc</td><td>Définir des rayons de 20 km autour de Casablanca</td></tr><tr><td>Ignorer les paramètres de lieu</td><td>Activer « Présence : personnes dans votre zone cible »</td></tr></table><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour erreurs google ads maroc partie 1" class="blog-img" loading="lazy" src="../assets/blog/erreurs-google-ads-maroc-1.webp"/></figure><h2 id="section-négliger-les-extensions-dannonces">3. Négliger les extensions d'annonces</h2><p>Les extensions (liens annexes, accroches, numéro de téléphone) améliorent le taux de clic. Au Maroc, l'extension d'appel est cruciale pour les services locaux.</p><ul><li>Ajoutez au moins 4 liens annexes vers vos pages clés.</li><li>Utilisez l'extension d'accroche pour mettre en avant une promotion.</li><li>Pour un service comme le nôtre, l'extension de formulaire de leads est idéale.</li></ul><h2 id="section-ne-pas-optimiser-les-pages-de-destination">4. Ne pas optimiser les pages de destination</h2><p>Envoyer les clics vers une page d'accueil générique fait fuir les visiteurs. Chaque annonce doit pointer vers une page spécifique et pertinente.</p><ul><li>Créez des landing pages dédiées pour chaque campagne.</li><li>Assurez-vous que la page se charge en moins de 3 secondes.</li><li>Intégrez un appel à l'action clair, comme « Demandez un devis gratuit ».</li></ul><h2 id="section-oublier-le-suivi-des-conversions">5. Oublier le suivi des conversions</h2><p>Sans suivi, vous ne savez pas ce qui fonctionne. Installez le tag Google Ads et définissez des conversions (appels, formulaires, ventes).</p><p>Selon une étude, 60% des annonceurs marocains ne suivent pas leurs conversions. Résultat : ils continuent à investir dans des mots-clés non rentables.</p><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour erreurs google ads maroc partie 2" class="blog-img" loading="lazy" src="../assets/blog/erreurs-google-ads-maroc-2.webp"/></figure><h2 id="section-ne-pas-tester-les-annonces">6. Ne pas tester les annonces</h2><p>Lancer une seule annonce et l'oublier est une erreur. Testez plusieurs titres, descriptions et appels à l'action.</p><ul><li>Créez 3 à 4 variantes par groupe d'annonces.</li><li>Utilisez les tests A/B pour identifier la meilleure performance.</li><li>Pausez les annonces sous-performantes après 2 semaines.</li></ul><h2 id="section-négliger-le-remarketing">7. Négliger le remarketing</h2><p>Le remarketing permet de cibler les visiteurs déjà intéressés. Au Maroc, le taux d'abandon de panier est élevé ; une campagne de remarketing peut récupérer jusqu'à 30% des ventes perdues.</p><p>Chez <a href="../services-seo.html">DatRey</a>, nous intégrons le remarketing dans toutes nos stratégies SEA pour maximiser les conversions.</p><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour erreurs google ads maroc partie 3" class="blog-img" loading="lazy" src="../assets/blog/erreurs-google-ads-maroc-3.webp"/></figure><h2 id="section-faq">FAQ</h2><h3>Quel budget minimum pour Google Ads au Maroc ?</h3><p>Il n'y a pas de minimum, mais nous recommandons 5 000 MAD par mois pour obtenir des données significatives.</p><h3>Combien de temps faut-il pour voir des résultats ?</h3><p>Les premiers clics arrivent dès le lancement, mais il faut 2 à 4 semaines pour optimiser et stabiliser les performances.</p><h3>Faut-il confier Google Ads à une agence ?</h3><p>Oui, car une agence comme <a href="../services-google-ads.html">DatRey</a> dispose de l'expertise pour éviter les erreurs et optimiser votre budget.</p><h2 id="section-comment-aller-plus-loin">Comment aller plus loin ?</h2><p>Éviter ces 7 erreurs vous permettra de lancer des campagnes Google Ads performantes au Maroc. Pour un accompagnement personnalisé, contactez DatRey, votre agence digitale à Casablanca. <a href="../contact.html">Demandez un audit gratuit</a> dès aujourd'hui !</p><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour erreurs google ads maroc partie 4" class="blog-img" loading="lazy" src="../assets/blog/erreurs-google-ads-maroc-4.webp"/></figure>
+<a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit">Demander un audit gratuit</a>
+</div>
+<table><tr><th>Erreur</th><th>Solution</th></tr><tr><td>Cibler tout le Maroc</td><td>Définir des rayons de 20 km autour de Casablanca</td></tr><tr><td>Ignorer les paramètres de lieu</td><td>Activer « Présence : personnes dans votre zone cible »</td></tr></table><figure style="margin: 32px 0;"><img alt="Illustration pour erreurs google ads maroc partie 1" class="blog-img" decoding="async" height="675" loading="lazy" src="../assets/blog/erreurs-google-ads-maroc-1.webp" width="1200"/></figure><h2 id="section-négliger-les-extensions-dannonces">3. Négliger les extensions d'annonces</h2><p>Les extensions (liens annexes, accroches, numéro de téléphone) améliorent le taux de clic. Au Maroc, l'extension d'appel est cruciale pour les services locaux.</p><ul><li>Ajoutez au moins 4 liens annexes vers vos pages clés.</li><li>Utilisez l'extension d'accroche pour mettre en avant une promotion.</li><li>Pour un service comme le nôtre, l'extension de formulaire de leads est idéale.</li></ul><h2 id="section-ne-pas-optimiser-les-pages-de-destination">4. Ne pas optimiser les pages de destination</h2><p>Envoyer les clics vers une page d'accueil générique fait fuir les visiteurs. Chaque annonce doit pointer vers une page spécifique et pertinente.</p><ul><li>Créez des landing pages dédiées pour chaque campagne.</li><li>Assurez-vous que la page se charge en moins de 3 secondes.</li><li>Intégrez un appel à l'action clair, comme « Demandez un devis gratuit ».</li></ul><h2 id="section-oublier-le-suivi-des-conversions">5. Oublier le suivi des conversions</h2><p>Sans suivi, vous ne savez pas ce qui fonctionne. Installez le tag Google Ads et définissez des conversions (appels, formulaires, ventes).</p><p>Selon une étude, 60% des annonceurs marocains ne suivent pas leurs conversions. Résultat : ils continuent à investir dans des mots-clés non rentables.</p><figure style="margin: 32px 0;"><img alt="Illustration pour erreurs google ads maroc partie 2" class="blog-img" decoding="async" height="675" loading="lazy" src="../assets/blog/erreurs-google-ads-maroc-2.webp" width="1200"/></figure><h2 id="section-ne-pas-tester-les-annonces">6. Ne pas tester les annonces</h2><p>Lancer une seule annonce et l'oublier est une erreur. Testez plusieurs titres, descriptions et appels à l'action.</p><ul><li>Créez 3 à 4 variantes par groupe d'annonces.</li><li>Utilisez les tests A/B pour identifier la meilleure performance.</li><li>Pausez les annonces sous-performantes après 2 semaines.</li></ul><h2 id="section-négliger-le-remarketing">7. Négliger le remarketing</h2><p>Le remarketing permet de cibler les visiteurs déjà intéressés. Au Maroc, le taux d'abandon de panier est élevé ; une campagne de remarketing peut récupérer jusqu'à 30% des ventes perdues.</p><p>Chez <a href="../services-seo.html">DatRey</a>, nous intégrons le remarketing dans toutes nos stratégies SEA pour maximiser les conversions.</p><figure style="margin: 32px 0;"><img alt="Illustration pour erreurs google ads maroc partie 3" class="blog-img" decoding="async" height="675" loading="lazy" src="../assets/blog/erreurs-google-ads-maroc-3.webp" width="1200"/></figure><h2 id="section-faq">FAQ</h2><h3>Quel budget minimum pour Google Ads au Maroc ?</h3><p>Il n'y a pas de minimum, mais nous recommandons 5 000 MAD par mois pour obtenir des données significatives.</p><h3>Combien de temps faut-il pour voir des résultats ?</h3><p>Les premiers clics arrivent dès le lancement, mais il faut 2 à 4 semaines pour optimiser et stabiliser les performances.</p><h3>Faut-il confier Google Ads à une agence ?</h3><p>Oui, car une agence comme <a href="../services-google-ads.html">DatRey</a> dispose de l'expertise pour éviter les erreurs et optimiser votre budget.</p><h2 id="section-comment-aller-plus-loin">Comment aller plus loin ?</h2><p>Éviter ces 7 erreurs vous permettra de lancer des campagnes Google Ads performantes au Maroc. Pour un accompagnement personnalisé, contactez DatRey, votre agence digitale à Casablanca. <a href="../contact.html">Demandez un audit gratuit</a> dès aujourd'hui !</p><figure style="margin: 32px 0;"><img alt="Illustration pour erreurs google ads maroc partie 4" class="blog-img" decoding="async" height="675" loading="lazy" src="../assets/blog/erreurs-google-ads-maroc-4.webp" width="1200"/></figure>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
 <p>Les experts DatRey vous aident à atteindre vos objectifs digitaux au Maroc.</p>
-<a href="../contact.html?subject=AuditGratuit class="magnetic-btn"">Demander un audit gratuit →</a>
+<a href="../contact.html?subject=AuditGratuit class=" magnetic-btn""="">Demander un audit gratuit →</a>
 </div>
-
-      <section class="blog-related" >
-        <h3 class="blog-related-title">Articles similaires</h3>
-        <div class="blog-related-grid">
-          
-        <a href="../blog/google-ads-sea-optimiser-roi-campagnes.html" class="blog-related-card">
-          <img src="../assets/blog/google-ads-sea-optimiser-roi-campagnes-1.webp" alt="Google Ads & SEA : Optimiser le ROI de vos campagnes" loading="lazy" width="400" height="225" decoding="async">
-          <div class="blog-related-card-body">
-            <div class="blog-related-card-cat">Google Ads & SEA</div>
-            <div class="blog-related-card-title">Google Ads & SEA : Optimiser le ROI de vos campagnes</div>
-          </div>
-        </a>
-        <a href="../blog/google-ads-debutants-guide.html" class="blog-related-card">
-          <img src="../assets/blog/google-ads-debutants-guide-1.webp" alt="Google Ads pour débutants : guide complet pour réussir vos campagnes" loading="lazy" width="400" height="225" decoding="async">
-          <div class="blog-related-card-body">
-            <div class="blog-related-card-cat">Google Ads & SEA</div>
-            <div class="blog-related-card-title">Google Ads pour débutants : guide complet pour réussir vos campagnes</div>
-          </div>
-        </a>
-        </div>
-      </section>
-
+<section class="blog-related">
+<h3 class="blog-related-title">Articles similaires</h3>
+<div class="blog-related-grid">
+<a class="blog-related-card" href="../blog/google-ads-sea-optimiser-roi-campagnes.html">
+<img alt="Google Ads &amp; SEA : Optimiser le ROI de vos campagnes" decoding="async" height="225" loading="lazy" src="../assets/blog/google-ads-sea-optimiser-roi-campagnes-1.webp" width="400"/>
+<div class="blog-related-card-body">
+<div class="blog-related-card-cat">Google Ads &amp; SEA</div>
+<div class="blog-related-card-title">Google Ads &amp; SEA : Optimiser le ROI de vos campagnes</div>
+</div>
+</a>
+<a class="blog-related-card" href="../blog/google-ads-debutants-guide.html">
+<img alt="Google Ads pour débutants : guide complet pour réussir vos campagnes" decoding="async" height="225" loading="lazy" src="../assets/blog/google-ads-debutants-guide-1.webp" width="400"/>
+<div class="blog-related-card-body">
+<div class="blog-related-card-cat">Google Ads &amp; SEA</div>
+<div class="blog-related-card-title">Google Ads pour débutants : guide complet pour réussir vos campagnes</div>
+</div>
+</a>
+</div>
+</section>
 </article>
 </div>
 </main>
@@ -255,29 +248,29 @@
 <div class="footer-grid">
 <div class="footer-brand">
 <a class="logo" href="../index.html" style="margin-bottom:4px;">
-<img loading="lazy" decoding="async" alt="DatRey Logo" class="logo-img" height="40" src="../assets/logo.webp" width="40"/>
+<img alt="DatRey Logo" class="logo-img" decoding="async" height="40" loading="lazy" src="../assets/logo.webp" width="40">
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
-</a>
+</img></a>
 <p>
             Votre partenaire d'acquisition digitale full-stack au Maroc.
             Google Ads, Meta Ads, SEO et CRO pour scaler vos ventes.
           </p>
 <a class="footer-saas" href="https://datrey.com" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path></svg>
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path></svg>
             Découvrez nos solutions SaaS sur DatRey.com
           </a>
 <div class="social-links">
 <a aria-label="LinkedIn DatRey" href="https://www.linkedin.com/in/datrey-agency/" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
 </a>
 <a aria-label="X DatRey" href="https://x.com/Datrey_Agency" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg>
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg>
 </a>
 <a aria-label="Instagram DatRey" href="https://www.instagram.com/datrey.agency/" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
 </a>
 <a aria-label="Pinterest DatRey" href="https://www.pinterest.com/DatreyAgency" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><line x1="12" x2="12" y1="12" y2="22"></line><path d="M12 22c-3.5 0-6.5-2.5-7.5-6s.5-7 4-8.5 7-1 9.5 2 2 6-.5 8.5L12 22z"></path><circle cx="12" cy="7" r="1"></circle></svg>
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="12" x2="12" y1="12" y2="22"></line><path d="M12 22c-3.5 0-6.5-2.5-7.5-6s.5-7 4-8.5 7-1 9.5 2 2 6-.5 8.5L12 22z"></path><circle cx="12" cy="7" r="1"></circle></svg>
 </a>
 </div>
 </div>
@@ -308,15 +301,15 @@
 <div>
 <h4>Contact</h4>
 <div class="footer-contact-item">
-<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
 <span>322 Bd Brahim Roudani, Rés. AR-Rayhane,<br/>Ét. 04 N°17, Maarif — Casablanca</span>
 </div>
 <div class="footer-contact-item">
-<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
 <a href="mailto:contact@datrey.ma" style="color:inherit;">contact@datrey.ma</a>
 </div>
 <div class="footer-contact-item">
-<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
 <a href="tel:+212644443059" style="color:inherit;">+212 6 44 44 30 59</a>
 </div>
 </div>
@@ -330,19 +323,17 @@
 </div>
 </div>
 </footer>
-
-  <!-- Exit Intent Popup -->
-  <div id="exitIntentPopup" class="exit-popup-overlay" >
-    <div class="exit-popup-modal">
-      <button class="exit-popup-close" aria-label="Fermer">×</button>
-      <div class="exit-popup-content">
-        <h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Ne partez pas les mains vides !</h3>
-        <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtenez un <strong>Audit UX/UI & SEO gratuit</strong> de votre site web. Découvrez comment augmenter vos conversions dès aujourd'hui.</p>
-        <a href="../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn" style="width: 100%; justify-content: center;">Je veux mon audit gratuit</a>
-        <p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sans engagement. Analyse livrée en 48h.</p>
-      </div>
-    </div>
-  </div>
-
+<!-- Exit Intent Popup -->
+<div class="exit-popup-overlay" id="exitIntentPopup">
+<div class="exit-popup-modal">
+<button aria-label="Fermer" class="exit-popup-close">×</button>
+<div class="exit-popup-content">
+<h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Ne partez pas les mains vides !</h3>
+<p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtenez un <strong>Audit UX/UI &amp; SEO gratuit</strong> de votre site web. Découvrez comment augmenter vos conversions dès aujourd'hui.</p>
+<a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit" style="width: 100%; justify-content: center;">Je veux mon audit gratuit</a>
+<p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sans engagement. Analyse livrée en 48h.</p>
+</div>
+</div>
+</div>
 </body>
 </html>

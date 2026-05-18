@@ -29,7 +29,7 @@
 <link href="../style.css" rel="stylesheet"/>
 <link href="../assets/logo.webp" rel="icon" type="image/webp"/>
 <meta content="#050814" name="theme-color"/>
-<link rel="manifest" href="/manifest.json"/>
+<link href="/manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -127,18 +127,18 @@
 }</script>
 </head>
 <body>
-<a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" onblur="this.style.position='absolute';this.style.left='-9999px'">Aller au contenu principal</a>
+<a class="skip-to-content" href="#main-content" onblur="this.style.position='absolute';this.style.left='-9999px'" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;">Aller au contenu principal</a>
 <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
 <header class="header" id="header">
 <div class="container">
 <a aria-label="DatRey — Accueil" class="logo" href="../index.html">
-<img loading="lazy" decoding="async" alt="DatRey Logo" class="logo-img" height="40" src="../assets/logo.webp" width="40"/>
+<img alt="DatRey Logo" class="logo-img" decoding="async" height="40" loading="lazy" src="../assets/logo.webp" width="40"/>
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
 </a>
 <nav aria-label="Navigation principale" class="nav-links">
 <a href="../index.html">Accueil</a>
 <a class="" href="../services.html">Nos Services</a>
-<a href="../transformation-digitale.html">Transformation Digitale</a>
+
 <a class="nav-active" href="../blog.html">Blog</a>
 <a href="../contact.html">Contact</a>
 <a class="btn btn-primary nav-cta" href="../contact.html">Audit Gratuit</a>
@@ -154,8 +154,8 @@
 </div>
 </div>
 <button aria-label="Basculer le thème" class="theme-toggle" id="themeToggle">
-<svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
-<svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
+<svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
 <button aria-label="Menu" class="mobile-toggle" id="mobileToggle">
 <span></span><span></span><span></span>
@@ -163,11 +163,11 @@
 </div>
 </div>
 </header>
-<div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Navigation mobile">
+<div aria-label="Navigation mobile" class="mobile-nav" id="mobileNav" role="navigation">
 <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
 <a href="../index.html" onclick="closeMobileNav()">Accueil</a>
 <a class="" href="../services.html" onclick="closeMobileNav()">Nos Services</a>
-<a href="../transformation-digitale.html" onclick="closeMobileNav()">Transformation Digitale</a>
+
 <a class="nav-active" href="../blog.html" onclick="closeMobileNav()">Blog</a>
 <a href="../contact.html" onclick="closeMobileNav()">Contact</a>
 <a class="btn btn-primary" href="../contact.html" onclick="closeMobileNav()">Audit Gratuit</a>
@@ -193,57 +193,50 @@
 <span>⏱ 7 min de lecture</span>
 <span>📌 Audit Digital</span>
 </div>
-
-<nav class="blog-toc" aria-label="Sommaire de l'article">
-  <div class="blog-toc-title">Sommaire de l'article</div>
-  <ol>
-    <li><a href="#section-pourquoi-un-audit-seo-complet-est-essentiel-pour-votre-entre">Pourquoi un audit SEO complet est essentiel pour votre entreprise au Maroc</a></li>
+<nav aria-label="Sommaire de l'article" class="blog-toc">
+<div class="blog-toc-title">Sommaire de l'article</div>
+<ol>
+<li><a href="#section-pourquoi-un-audit-seo-complet-est-essentiel-pour-votre-entre">Pourquoi un audit SEO complet est essentiel pour votre entreprise au Maroc</a></li>
 <li><a href="#section-les-5-piliers-dun-audit-seo-complet">Les 5 piliers d'un audit SEO complet</a></li>
 <li><a href="#section-étapes-clés-dun-audit-seo-complet">Étapes clés d'un audit SEO complet</a></li>
 <li><a href="#section-bénéfices-concrets-dun-audit-seo-pour-votre-entreprise">Bénéfices concrets d'un audit SEO pour votre entreprise</a></li>
 <li><a href="#section-faq-sur-laudit-seo-complet">FAQ sur l'audit SEO complet</a></li>
 <li><a href="#section-conclusion-prêt-à-dominer-google-au-maroc">Conclusion : prêt à dominer Google au Maroc ?</a></li>
-
-  </ol>
+</ol>
 </nav>
-
 <h2 id="section-pourquoi-un-audit-seo-complet-est-essentiel-pour-votre-entre">Pourquoi un audit SEO complet est essentiel pour votre entreprise au Maroc</h2><p>Dans un environnement digital de plus en plus concurrentiel, un <strong>audit SEO complet</strong> est la première étape pour améliorer votre visibilité sur Google. Chez DatRey, agence digitale à Casablanca, nous analysons chaque aspect de votre site pour identifier les freins à votre classement. Saviez-vous que 75% des utilisateurs ne dépassent pas la première page de résultats ? Un audit SEO vous permet de comprendre pourquoi votre site n'atteint pas son potentiel et comment y remédier.</p><h2 id="section-les-5-piliers-dun-audit-seo-complet">Les 5 piliers d'un audit SEO complet</h2><h3>1. Analyse technique du site</h3><p>L'audit technique vérifie la crawlability, l'indexation, la vitesse de chargement et la compatibilité mobile. Au Maroc, avec l'augmentation du trafic mobile (plus de 60% des recherches), un site non optimisé pour mobile perd des opportunités. Nous utilisons des outils comme Google Search Console et Screaming Frog pour détecter les erreurs 404, les redirections incorrectes et les balises manquantes.</p>
-
 <div class="blog-inline-cta">
-  <div class="blog-inline-cta-icon">&#128640;</div>
-  <div class="blog-inline-cta-text">
-    <p>Vous souhaitez appliquer ces strategies sans effort ? <strong>Nos experts DatRey s'en chargent.</strong></p>
-  </div>
-  <a href="../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn">Demander un audit gratuit</a>
+<div class="blog-inline-cta-icon">🚀</div>
+<div class="blog-inline-cta-text">
+<p>Vous souhaitez appliquer ces strategies sans effort ? <strong>Nos experts DatRey s'en chargent.</strong></p>
 </div>
-<h3>2. Audit du contenu et des mots-clés</h3><p>Nous analysons la pertinence de votre contenu par rapport aux intentions de recherche de vos clients marocains. Par exemple, pour une agence immobilière à Casablanca, les mots-clés "appartement à vendre Casablanca" ou "agence immobilière Maroc" doivent être stratégiquement placés. Nous évaluons également la densité des mots-clés, la qualité des textes et la présence de contenu dupliqué.</p><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour audit seo complet partie 1" class="blog-img" loading="lazy" src="../assets/blog/audit-seo-complet-1.webp"/></figure><h3>3. Analyse du netlinking</h3><p>Les backlinks restent un facteur de classement majeur. Nous examinons la qualité et la pertinence des liens pointant vers votre site. Un profil de liens toxiques peut entraîner une pénalité Google. Nous recommandons des stratégies de création de liens locaux, comme des partenariats avec des sites marocains de confiance.</p><h3>4. Audit de l'expérience utilisateur (UX)</h3><p>Google prend en compte des signaux UX comme le taux de rebond et le temps passé sur le site. Un site lent ou difficile à naviguer fait fuir les visiteurs. Nous optimisons la structure, les appels à l'action et la hiérarchie de l'information pour améliorer l'engagement.</p><h3>5. Analyse concurrentielle</h3><p>Nous comparons votre site à ceux de vos concurrents directs au Maroc. Quels mots-clés ciblent-ils ? Quelles sont leurs forces et faiblesses ? Cette analyse permet de dégager des opportunités uniques pour vous démarquer.</p><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour audit seo complet partie 2" class="blog-img" loading="lazy" src="../assets/blog/audit-seo-complet-2.webp"/></figure><h2 id="section-étapes-clés-dun-audit-seo-complet">Étapes clés d'un audit SEO complet</h2><table><thead><tr><th>Étape</th><th>Description</th><th>Durée estimée</th></tr></thead><tbody><tr><td>1. Collecte des données</td><td>Analyse des logs, crawl du site, extraction des données Google Analytics et Search Console</td><td>1-2 jours</td></tr><tr><td>2. Analyse technique</td><td>Vérification des balises, sitemap, robots.txt, vitesse, mobile-friendliness</td><td>1 jour</td></tr><tr><td>3. Audit de contenu</td><td>Évaluation des pages, mots-clés, contenu dupliqué, maillage interne</td><td>2 jours</td></tr><tr><td>4. Analyse des backlinks</td><td>Identification des liens entrants, qualité, désaveu si nécessaire</td><td>1 jour</td></tr><tr><td>5. Rapport et recommandations</td><td>Synthèse des problèmes et plan d'action priorisé</td><td>1 jour</td></tr></tbody></table><p>Un audit complet prend généralement 5 à 7 jours ouvrés, selon la taille du site.</p><h2 id="section-bénéfices-concrets-dun-audit-seo-pour-votre-entreprise">Bénéfices concrets d'un audit SEO pour votre entreprise</h2><ul><li><strong>Augmentation du trafic organique</strong> : en moyenne +30% après correction des erreurs techniques.</li><li><strong>Meilleur taux de conversion</strong> : un site optimisé convertit mieux les visiteurs en clients.</li><li><strong>Réduction des coûts publicitaires</strong> : un bon référencement naturel diminue la dépendance aux annonces payantes.</li><li><strong>Avantage concurrentiel</strong> : devancez vos concurrents sur les requêtes clés au Maroc.</li></ul><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour audit seo complet partie 3" class="blog-img" loading="lazy" src="../assets/blog/audit-seo-complet-3.webp"/></figure><h2 id="section-faq-sur-laudit-seo-complet">FAQ sur l'audit SEO complet</h2><h3>Quelle est la différence entre un audit SEO technique et un audit complet ?</h3><p>Un audit technique se concentre uniquement sur les aspects techniques (vitesse, indexation, balises), tandis qu'un audit complet inclut également l'analyse du contenu, des backlinks, de l'expérience utilisateur et de la concurrence. Pour une stratégie SEO efficace, l'audit complet est recommandé.</p><h3>À quelle fréquence devrais-je réaliser un audit SEO ?</h3><p>Idéalement, un audit complet tous les 6 à 12 mois, ou après une refonte de site, un changement d'algorithme majeur, ou une baisse soudaine de trafic. Un audit technique peut être fait plus régulièrement, par exemple tous les trimestres.</p><h3>Combien coûte un audit SEO complet au Maroc ?</h3><p>Les tarifs varient selon la taille du site et la profondeur de l'analyse. Chez DatRey, nous proposons des audits à partir de 5 000 DH pour les sites vitrines, jusqu'à 15 000 DH pour les sites e-commerce complexes. Contactez-nous pour un devis personnalisé.</p><figure style="margin: 32px 0;"><img decoding="async" width="1200" height="675" alt="Illustration pour audit seo complet partie 4" class="blog-img" loading="lazy" src="../assets/blog/audit-seo-complet-4.webp"/></figure><h2 id="section-conclusion-prêt-à-dominer-google-au-maroc">Conclusion : prêt à dominer Google au Maroc ?</h2><p>Un <strong>audit SEO complet</strong> est le premier pas vers une visibilité durable. En identifiant les problèmes et en mettant en œuvre les recommandations, vous pouvez transformer votre site en un aimant à trafic qualifié. Chez DatRey, nous accompagnons les entreprises marocaines dans leur stratégie digitale. Découvrez également nos services <a href="../services-seo.html">SEO</a> et <a href="../services-google-ads.html">Google Ads</a> pour une approche 360°. <a href="../contact.html">Contactez-nous dès aujourd'hui</a> pour un audit gratuit de votre site.</p>
+<a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit">Demander un audit gratuit</a>
+</div>
+<h3>2. Audit du contenu et des mots-clés</h3><p>Nous analysons la pertinence de votre contenu par rapport aux intentions de recherche de vos clients marocains. Par exemple, pour une agence immobilière à Casablanca, les mots-clés "appartement à vendre Casablanca" ou "agence immobilière Maroc" doivent être stratégiquement placés. Nous évaluons également la densité des mots-clés, la qualité des textes et la présence de contenu dupliqué.</p><figure style="margin: 32px 0;"><img alt="Illustration pour audit seo complet partie 1" class="blog-img" decoding="async" height="675" loading="lazy" src="../assets/blog/audit-seo-complet-1.webp" width="1200"/></figure><h3>3. Analyse du netlinking</h3><p>Les backlinks restent un facteur de classement majeur. Nous examinons la qualité et la pertinence des liens pointant vers votre site. Un profil de liens toxiques peut entraîner une pénalité Google. Nous recommandons des stratégies de création de liens locaux, comme des partenariats avec des sites marocains de confiance.</p><h3>4. Audit de l'expérience utilisateur (UX)</h3><p>Google prend en compte des signaux UX comme le taux de rebond et le temps passé sur le site. Un site lent ou difficile à naviguer fait fuir les visiteurs. Nous optimisons la structure, les appels à l'action et la hiérarchie de l'information pour améliorer l'engagement.</p><h3>5. Analyse concurrentielle</h3><p>Nous comparons votre site à ceux de vos concurrents directs au Maroc. Quels mots-clés ciblent-ils ? Quelles sont leurs forces et faiblesses ? Cette analyse permet de dégager des opportunités uniques pour vous démarquer.</p><figure style="margin: 32px 0;"><img alt="Illustration pour audit seo complet partie 2" class="blog-img" decoding="async" height="675" loading="lazy" src="../assets/blog/audit-seo-complet-2.webp" width="1200"/></figure><h2 id="section-étapes-clés-dun-audit-seo-complet">Étapes clés d'un audit SEO complet</h2><table><thead><tr><th>Étape</th><th>Description</th><th>Durée estimée</th></tr></thead><tbody><tr><td>1. Collecte des données</td><td>Analyse des logs, crawl du site, extraction des données Google Analytics et Search Console</td><td>1-2 jours</td></tr><tr><td>2. Analyse technique</td><td>Vérification des balises, sitemap, robots.txt, vitesse, mobile-friendliness</td><td>1 jour</td></tr><tr><td>3. Audit de contenu</td><td>Évaluation des pages, mots-clés, contenu dupliqué, maillage interne</td><td>2 jours</td></tr><tr><td>4. Analyse des backlinks</td><td>Identification des liens entrants, qualité, désaveu si nécessaire</td><td>1 jour</td></tr><tr><td>5. Rapport et recommandations</td><td>Synthèse des problèmes et plan d'action priorisé</td><td>1 jour</td></tr></tbody></table><p>Un audit complet prend généralement 5 à 7 jours ouvrés, selon la taille du site.</p><h2 id="section-bénéfices-concrets-dun-audit-seo-pour-votre-entreprise">Bénéfices concrets d'un audit SEO pour votre entreprise</h2><ul><li><strong>Augmentation du trafic organique</strong> : en moyenne +30% après correction des erreurs techniques.</li><li><strong>Meilleur taux de conversion</strong> : un site optimisé convertit mieux les visiteurs en clients.</li><li><strong>Réduction des coûts publicitaires</strong> : un bon référencement naturel diminue la dépendance aux annonces payantes.</li><li><strong>Avantage concurrentiel</strong> : devancez vos concurrents sur les requêtes clés au Maroc.</li></ul><figure style="margin: 32px 0;"><img alt="Illustration pour audit seo complet partie 3" class="blog-img" decoding="async" height="675" loading="lazy" src="../assets/blog/audit-seo-complet-3.webp" width="1200"/></figure><h2 id="section-faq-sur-laudit-seo-complet">FAQ sur l'audit SEO complet</h2><h3>Quelle est la différence entre un audit SEO technique et un audit complet ?</h3><p>Un audit technique se concentre uniquement sur les aspects techniques (vitesse, indexation, balises), tandis qu'un audit complet inclut également l'analyse du contenu, des backlinks, de l'expérience utilisateur et de la concurrence. Pour une stratégie SEO efficace, l'audit complet est recommandé.</p><h3>À quelle fréquence devrais-je réaliser un audit SEO ?</h3><p>Idéalement, un audit complet tous les 6 à 12 mois, ou après une refonte de site, un changement d'algorithme majeur, ou une baisse soudaine de trafic. Un audit technique peut être fait plus régulièrement, par exemple tous les trimestres.</p><h3>Combien coûte un audit SEO complet au Maroc ?</h3><p>Les tarifs varient selon la taille du site et la profondeur de l'analyse. Chez DatRey, nous proposons des audits à partir de 5 000 DH pour les sites vitrines, jusqu'à 15 000 DH pour les sites e-commerce complexes. Contactez-nous pour un devis personnalisé.</p><figure style="margin: 32px 0;"><img alt="Illustration pour audit seo complet partie 4" class="blog-img" decoding="async" height="675" loading="lazy" src="../assets/blog/audit-seo-complet-4.webp" width="1200"/></figure><h2 id="section-conclusion-prêt-à-dominer-google-au-maroc">Conclusion : prêt à dominer Google au Maroc ?</h2><p>Un <strong>audit SEO complet</strong> est le premier pas vers une visibilité durable. En identifiant les problèmes et en mettant en œuvre les recommandations, vous pouvez transformer votre site en un aimant à trafic qualifié. Chez DatRey, nous accompagnons les entreprises marocaines dans leur stratégie digitale. Découvrez également nos services <a href="../services-seo.html">SEO</a> et <a href="../services-google-ads.html">Google Ads</a> pour une approche 360°. <a href="../contact.html">Contactez-nous dès aujourd'hui</a> pour un audit gratuit de votre site.</p>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
 <p>Les experts DatRey vous aident à atteindre vos objectifs digitaux au Maroc.</p>
-<a href="../contact.html?subject=AuditGratuit class="magnetic-btn"">Demander un audit gratuit →</a>
+<a href="../contact.html?subject=AuditGratuit class=" magnetic-btn""="">Demander un audit gratuit →</a>
 </div>
-
-      <section class="blog-related" >
-        <h3 class="blog-related-title">Articles similaires</h3>
-        <div class="blog-related-grid">
-          
-        <a href="../blog/audit-ux-ui-optimisation-experience-utilisateur.html" class="blog-related-card">
-          <img src="../assets/blog/audit-ux-ui-optimisation-experience-utilisateur-1.webp" alt="Audit UX/UI : Optimisez l'Expérience Utilisateur de Votre Site" loading="lazy" width="400" height="225" decoding="async">
-          <div class="blog-related-card-body">
-            <div class="blog-related-card-cat">Audit Digital</div>
-            <div class="blog-related-card-title">Audit UX/UI : Optimisez l'Expérience Utilisateur de Votre Site</div>
-          </div>
-        </a>
-        <a href="../blog/audit-digital-indicateurs-cles.html" class="blog-related-card">
-          <img src="../assets/blog/audit-digital-indicateurs-cles-1.webp" alt="Audit Digital : 7 Indicateurs Clés pour Booster votre Performance" loading="lazy" width="400" height="225" decoding="async">
-          <div class="blog-related-card-body">
-            <div class="blog-related-card-cat">Audit Digital</div>
-            <div class="blog-related-card-title">Audit Digital : 7 Indicateurs Clés pour Booster votre Performance</div>
-          </div>
-        </a>
-        </div>
-      </section>
-
+<section class="blog-related">
+<h3 class="blog-related-title">Articles similaires</h3>
+<div class="blog-related-grid">
+<a class="blog-related-card" href="../blog/audit-ux-ui-optimisation-experience-utilisateur.html">
+<img alt="Audit UX/UI : Optimisez l'Expérience Utilisateur de Votre Site" decoding="async" height="225" loading="lazy" src="../assets/blog/audit-ux-ui-optimisation-experience-utilisateur-1.webp" width="400"/>
+<div class="blog-related-card-body">
+<div class="blog-related-card-cat">Audit Digital</div>
+<div class="blog-related-card-title">Audit UX/UI : Optimisez l'Expérience Utilisateur de Votre Site</div>
+</div>
+</a>
+<a class="blog-related-card" href="../blog/audit-digital-indicateurs-cles.html">
+<img alt="Audit Digital : 7 Indicateurs Clés pour Booster votre Performance" decoding="async" height="225" loading="lazy" src="../assets/blog/audit-digital-indicateurs-cles-1.webp" width="400"/>
+<div class="blog-related-card-body">
+<div class="blog-related-card-cat">Audit Digital</div>
+<div class="blog-related-card-title">Audit Digital : 7 Indicateurs Clés pour Booster votre Performance</div>
+</div>
+</a>
+</div>
+</section>
 </article>
 </div>
 </main>
@@ -252,29 +245,29 @@
 <div class="footer-grid">
 <div class="footer-brand">
 <a class="logo" href="../index.html" style="margin-bottom:4px;">
-<img loading="lazy" decoding="async" alt="DatRey Logo" class="logo-img" height="40" src="../assets/logo.webp" width="40"/>
+<img alt="DatRey Logo" class="logo-img" decoding="async" height="40" loading="lazy" src="../assets/logo.webp" width="40">
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
-</a>
+</img></a>
 <p>
             Votre partenaire d'acquisition digitale full-stack au Maroc.
             Google Ads, Meta Ads, SEO et CRO pour scaler vos ventes.
           </p>
 <a class="footer-saas" href="https://datrey.com" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path></svg>
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path></svg>
             Découvrez nos solutions SaaS sur DatRey.com
           </a>
 <div class="social-links">
 <a aria-label="LinkedIn DatRey" href="https://www.linkedin.com/in/datrey-agency/" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
 </a>
 <a aria-label="X DatRey" href="https://x.com/Datrey_Agency" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg>
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg>
 </a>
 <a aria-label="Instagram DatRey" href="https://www.instagram.com/datrey.agency/" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
 </a>
 <a aria-label="Pinterest DatRey" href="https://www.pinterest.com/DatreyAgency" rel="noopener noreferrer" target="_blank">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><line x1="12" x2="12" y1="12" y2="22"></line><path d="M12 22c-3.5 0-6.5-2.5-7.5-6s.5-7 4-8.5 7-1 9.5 2 2 6-.5 8.5L12 22z"></path><circle cx="12" cy="7" r="1"></circle></svg>
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="12" x2="12" y1="12" y2="22"></line><path d="M12 22c-3.5 0-6.5-2.5-7.5-6s.5-7 4-8.5 7-1 9.5 2 2 6-.5 8.5L12 22z"></path><circle cx="12" cy="7" r="1"></circle></svg>
 </a>
 </div>
 </div>
@@ -305,15 +298,15 @@
 <div>
 <h4>Contact</h4>
 <div class="footer-contact-item">
-<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
 <span>322 Bd Brahim Roudani, Rés. AR-Rayhane,<br/>Ét. 04 N°17, Maarif — Casablanca</span>
 </div>
 <div class="footer-contact-item">
-<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
 <a href="mailto:contact@datrey.ma" style="color:inherit;">contact@datrey.ma</a>
 </div>
 <div class="footer-contact-item">
-<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
 <a href="tel:+212644443059" style="color:inherit;">+212 6 44 44 30 59</a>
 </div>
 </div>
@@ -327,19 +320,17 @@
 </div>
 </div>
 </footer>
-
-  <!-- Exit Intent Popup -->
-  <div id="exitIntentPopup" class="exit-popup-overlay" >
-    <div class="exit-popup-modal">
-      <button class="exit-popup-close" aria-label="Fermer">×</button>
-      <div class="exit-popup-content">
-        <h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Ne partez pas les mains vides !</h3>
-        <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtenez un <strong>Audit UX/UI & SEO gratuit</strong> de votre site web. Découvrez comment augmenter vos conversions dès aujourd'hui.</p>
-        <a href="../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn" style="width: 100%; justify-content: center;">Je veux mon audit gratuit</a>
-        <p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sans engagement. Analyse livrée en 48h.</p>
-      </div>
-    </div>
-  </div>
-
+<!-- Exit Intent Popup -->
+<div class="exit-popup-overlay" id="exitIntentPopup">
+<div class="exit-popup-modal">
+<button aria-label="Fermer" class="exit-popup-close">×</button>
+<div class="exit-popup-content">
+<h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Ne partez pas les mains vides !</h3>
+<p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtenez un <strong>Audit UX/UI &amp; SEO gratuit</strong> de votre site web. Découvrez comment augmenter vos conversions dès aujourd'hui.</p>
+<a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit" style="width: 100%; justify-content: center;">Je veux mon audit gratuit</a>
+<p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sans engagement. Analyse livrée en 48h.</p>
+</div>
+</div>
+</div>
 </body>
 </html>
