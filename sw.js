@@ -2,13 +2,15 @@
  * DatRey.ma — Service Worker v1
  * Cache-first for static assets, network-first for HTML
  */
-const CACHE_NAME = 'datrey-v1';
+const CACHE_NAME = 'datrey-v2';
 const STATIC_ASSETS = [
   '/style.css',
   '/shared.js',
   '/animations.js',
   '/assets/logo.webp',
-  '/favicon.ico'
+  '/assets/og-image.png',
+  '/favicon.ico',
+  '/manifest.json'
 ];
 
 // Install: pre-cache critical assets

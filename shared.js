@@ -20,6 +20,11 @@
   if (mobileToggle && mobileNav && mobileClose) {
     mobileToggle.addEventListener('click', () => mobileNav.classList.add('active'));
     mobileClose.addEventListener('click', () => mobileNav.classList.remove('active'));
+    // Close nav when any link inside it is clicked (replaces inline onclick)
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileNav.classList.remove('active'));
+    });
+    // Keep global for backward compatibility with inline onclick attributes
     window.closeMobileNav = () => mobileNav.classList.remove('active');
   }
 
