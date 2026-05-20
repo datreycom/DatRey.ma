@@ -452,6 +452,68 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
+   TECH STACK BANNER (Partners)
+   ============================================ */
+.tech-stack-banner {
+  width: 100%;
+  padding: 24px 0;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-stack-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.tech-stack-track span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.tech-stack-track img {
+  height: 32px;
+  width: auto;
+  opacity: 0.6 !important;
+  filter: grayscale(100%);
+  transition: opacity 0.3s, filter 0.3s, transform 0.3s;
+}
+
+.tech-stack-track img:hover {
+  opacity: 1 !important;
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .tech-stack-track {
+    gap: 24px;
+    justify-content: center;
+  }
+  .tech-stack-track span:first-child,
+  .tech-stack-track span:last-child {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+}
+
+/* ============================================
    FEATURE LIST (Service Pages)
    ============================================ */
 .feature-list-item {
