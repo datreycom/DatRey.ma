@@ -1698,6 +1698,174 @@ body::before {
 [data-theme="light"] .chic-features li { color: #111827; }
 
 /* ============================================
+   MISSING UI COMPONENTS (Audit Fixes)
+   ============================================ */
+
+/* --- Global Utilities --- */
+.bg-main { background-color: var(--bg-main) !important; }
+.bg-alt { background-color: var(--bg-alt) !important; }
+.section-header { text-align: center; margin-bottom: 48px; max-width: 800px; margin-left: auto; margin-right: auto; }
+.hero-cta { font-weight: 700; padding: 14px 32px; font-size: 1.1rem; }
+.faq-content { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+/* --- Blog Grid & Cards --- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+.blog-card-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin: 16px 0 12px;
+  line-height: 1.4;
+}
+.blog-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  font-family: var(--font-body);
+}
+.blog-cta, .blog-card-link {
+  display: inline-block;
+  color: var(--roi-300);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+  margin-top: auto;
+}
+.blog-cta:hover, .blog-card-link:hover {
+  color: var(--roi-400);
+  text-decoration: underline;
+}
+
+/* --- Timeline (Notre Méthode) --- */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 24px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 48px;
+  padding-left: 70px;
+}
+.timeline-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: var(--bg-alt);
+  border: 2px solid var(--roi-300);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--roi-300);
+  font-size: 1.2rem;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(78, 205, 196, 0.2);
+}
+.timeline-content {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 24px 32px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s, background 0.3s, border-color 0.3s;
+}
+.timeline-content:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.timeline-content h3 { margin-top: 0; font-size: 1.3rem; margin-bottom: 12px; }
+
+/* --- Contact Form --- */
+.contact-form {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+}
+.form-control {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: var(--font-body);
+}
+.form-control:focus {
+  outline: none;
+  border-color: var(--roi-300);
+  box-shadow: 0 0 15px rgba(78, 205, 196, 0.15);
+}
+.form-control::placeholder { color: rgba(255, 255, 255, 0.4); }
+textarea.form-control { min-height: 150px; resize: vertical; }
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.contact-info-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(78, 205, 196, 0.1);
+  color: var(--roi-300);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+.contact-info-text h4 { margin: 0 0 4px; font-size: 1.1rem; }
+.contact-info-text p { margin: 0; color: var(--text-muted); font-size: 0.95rem; }
+
+/* --- Exit Popup Actions --- */
+.exit-popup-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 24px;
+}
+.exit-popup-modal {
+  background: var(--bg-alt);
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  max-width: 500px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
    Accessibility: Reduced Motion
    ============================================ */
 @media (prefers-reduced-motion: reduce) {
