@@ -1,0 +1,26 @@
+--- BROKEN_ASSETS ---
+- es/creation-site-web.html: Missing asset assets/logo.webp (resolved to es/assets/logo.webp)
+- ar/creation-site-web.html: Missing asset assets/logo.webp (resolved to ar/assets/logo.webp)
+- en/creation-site-web.html: Missing asset assets/logo.webp (resolved to en/assets/logo.webp)
+
+--- DUPLICATE_IDS ---
+No issues found.
+
+--- EMPTY_LINKS_BUTTONS ---
+No issues found.
+
+--- JS_ISSUES ---
+No issues found.
+
+--- MISSING_ELEMENTS_FOR_JS ---
+- 404.html: Missing #mobileNav
+- es/blog_cards.html: Missing #mobileNav
+- blog_cards.html: Missing #mobileNav
+- es/blog_cards.html: Missing #mobileToggle
+- ar/blog_cards.html: Missing #mobileToggle
+- blog_cards.html: Missing #mobileToggle
+- ar/blog_cards.html: Missing #mobileNav
+- en/blog_cards.html: Missing #mobileNav
+- en/blog_cards.html: Missing #mobileToggle
+- 404.html: Missing #mobileToggle
+

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="es">
+<html dir="ltr" lang="fr">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -10,9 +10,11 @@
 <meta content="Agence SEO au Maroc — Référencement Naturel | DatRey" property="og:title"/>
 <meta content="Audit technique, cocon sémantique et netlinking pour dominer Google durablement au Maroc." property="og:description"/>
 <meta content="https://datrey.ma/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
 <meta content="website" property="og:type"/>
-<meta content="https://datrey.ma/services-seo.html" property="og:url"/>
-<link href="https://datrey.ma/es/services-seo.html" rel="canonical"/>
+<meta content="https://datrey.ma/services-seo" property="og:url"/>
+<link href="https://datrey.ma/services-seo" rel="canonical"/>
 <link href="https://datrey.ma/services-seo.html" hreflang="fr" rel="alternate"/>
 <link href="https://datrey.ma/en/services-seo.html" hreflang="en" rel="alternate"/>
 <link href="https://datrey.ma/ar/services-seo.html" hreflang="ar" rel="alternate"/>
@@ -20,7 +22,10 @@
 <link href="https://datrey.ma/services-seo.html" hreflang="x-default" rel="alternate"/>
 <link href="../style.css" rel="stylesheet"/>
 <link href="../assets/logo.webp" rel="icon" type="image/webp"/>
+<link href="../favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
 <meta content="#050814" name="theme-color"/>
+<link href="../manifest.json" rel="manifest"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/>
@@ -67,7 +72,34 @@
 <!-- Scripts -->
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
 <script defer="" src="../shared.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://datrey.ma/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Nos Services",
+      "item": "https://datrey.ma/services.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Agence SEO au Maroc"
+    }
+  ]
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -75,26 +107,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "&iquest;C&oacute;mo funciona la colaboraci&oacute;n con DatRey?",
+      "name": "Comment se déroule l'accompagnement avec DatRey ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Todo comienza con una auditor&iacute;a gratuita de su situaci&oacute;n actual. Luego, definimos juntos una estrategia a medida (KPIs, presupuesto, canales). Una vez aprobada, nuestro equipo despliega las campa&ntilde;as y le proporciona informes regulares para rastrear su ROI."
+        "text": "Tout commence par un audit gratuit de votre existant. Ensuite, nous définissons ensemble une stratégie sur-mesure (KPIs, budget, canaux). Une fois validée, notre équipe déploie les campagnes et vous fournit un reporting régulier pour suivre la rentabilité de vos investissements."
       }
     },
     {
       "@type": "Question",
-      "name": "&iquest;Existe un presupuesto m&iacute;nimo para trabajar con ustedes?",
+      "name": "Faut-il un budget minimum pour travailler avec vous ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Adaptamos nuestras estrategias a sus objetivos. Sin embargo, para la adquisici&oacute;n de pago (Google Ads, Meta Ads), se recomienda un presupuesto publicitario mensual m&iacute;nimo de 5,000 MAD para recopilar suficientes datos y optimizar el ROI r&aacute;pidamente."
+        "text": "Nous adaptons nos stratégies à vos objectifs. Cependant, pour l'acquisition payante (Google Ads, Meta Ads), un budget publicitaire mensuel d'au moins 5 000 MAD est recommandé pour récolter suffisamment de données et optimiser le ROI rapidement."
       }
     },
     {
       "@type": "Question",
-      "name": "&iquest;Cu&aacute;ndo ver&eacute; los primeros resultados?",
+      "name": "Quand verrai-je les premiers résultats ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Para SEA y Social Ads, los primeros leads o ventas suelen llegar durante la primera semana de emisi&oacute;n. Para SEO, es una estrategia a largo plazo: las primeras mejoras se observan despu&eacute;s de 2 a 3 meses de optimizaci&oacute;n constante."
+        "text": "Pour le SEA et les Social Ads, les premiers leads ou ventes arrivent généralement dans la première semaine de diffusion. Pour le SEO, c'est une stratégie de fond : les premiers frémissements s'observent après 2 à 3 mois d'optimisations régulières."
       }
     }
   ]
@@ -114,7 +146,7 @@
 </a>
 <nav aria-label="Navigation principale" class="nav-links">
 <a href="index.html">Accueil</a>
-<a href="creation-site-web.html">Diseño Web</a>
+<a href="creation-site-web.html">Création Site Web</a>
 <a class="nav-active" href="services.html">Nos Services</a>
 
 <a href="blog.html">Blog</a>
@@ -125,10 +157,10 @@
 <div class="lang-selector">
 <button aria-label="Changer de langue" class="lang-btn">ES ▼</button>
 <div class="lang-dropdown">
-<a href="/index.html">Français</a>
-<a href="/en/index.html">English</a>
-<a href="/ar/index.html">العربية</a>
-<a class="active" href="/es/index.html">Español</a>
+<a class="active" href="/services-seo.html">Français</a>
+<a href="/en/services-seo.html">English</a>
+<a href="/ar/services-seo.html">العربية</a>
+<a href="/es/services-seo.html">Español</a>
 </div>
 </div>
 <button aria-label="Basculer le thème" class="theme-toggle" id="themeToggle">
@@ -145,11 +177,10 @@
 <div aria-label="Navigation mobile" class="mobile-nav" id="mobileNav" role="navigation">
 <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
 <a href="index.html" onclick="closeMobileNav()">Accueil</a>
-<a href="creation-site-web.html" onclick="closeMobileNav()">Diseño Web</a>
+<a href="creation-site-web.html" onclick="closeMobileNav()">Création Site Web</a>
 <a class="nav-active" href="services.html" onclick="closeMobileNav()">Nos Services</a>
 
 <a href="blog.html" onclick="closeMobileNav()">Blog</a>
-<a href="blog.html">Blog</a>
 <a href="contact.html" onclick="closeMobileNav()">Contact</a>
 <a class="btn btn-primary magnetic-btn" href="contact.html" onclick="closeMobileNav()">Audit Gratuit</a>
 </div>
@@ -174,7 +205,7 @@
 </section>
 <!-- ========== TECH STACK / PARTNERS BANNER ========== -->
 <div class="tech-stack-banner" style="background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 1.5rem 0; overflow: hidden; position: relative;">
-<div style="text-align: center; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Socios y Tecnologías</div>
+<div style="text-align: center; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Partenaires &amp; Technologies</div>
 <div class="tech-stack-track" style="display: flex; gap: 3rem; align-items: center; white-space: nowrap; animation: scroll-left 30s linear infinite; width: max-content;">
 <span style="font-weight: 600; font-size: 1.2rem; color: var(--text-color);">Google Partner</span>
 <span style="font-weight: 600; font-size: 1.2rem; color: var(--text-color);">Meta Business</span>
@@ -182,6 +213,7 @@
 <span style="font-weight: 600; font-size: 1.2rem; color: var(--text-color);">WordPress</span>
 <span style="font-weight: 600; font-size: 1.2rem; color: var(--text-color);">React</span>
 <span style="font-weight: 600; font-size: 1.2rem; color: var(--text-color);">Google Analytics</span>
+<!-- Duplication for infinite scroll illusion -->
 <span style="font-weight: 600; font-size: 1.2rem; color: var(--text-color);">Google Partner</span>
 <span style="font-weight: 600; font-size: 1.2rem; color: var(--text-color);">Meta Business</span>
 <span style="font-weight: 600; font-size: 1.2rem; color: var(--text-color);">Shopify Partner</span>
@@ -224,26 +256,26 @@
 <section class="section-padding" style="background: var(--bg-alt);">
 <div class="container">
 <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-<h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Preguntas <span class="gradient-text">Frecuentes</span></h2>
-<p style="color: var(--text-muted);">Todo lo que necesitas saber sobre nuestra colaboración.</p>
+<h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Questions <span class="gradient-text">Fréquentes</span></h2>
+<p style="color: var(--text-muted);">Tout ce que vous devez savoir sur notre accompagnement.</p>
 </div>
 <div class="faq-list" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
 <details class="faq-item-chic">
-<summary>¿Cómo funciona la colaboración con DatRey?</summary>
+<summary>Comment se déroule l'accompagnement avec DatRey ?</summary>
 <div class="faq-content">
-<p>Todo comienza con una auditoría gratuita de su situación actual. Luego, definimos juntos una estrategia a medida (KPIs, presupuesto, canales). Una vez aprobada, nuestro equipo despliega las campañas y le proporciona informes regulares para rastrear su ROI.</p>
+<p>Tout commence par un audit gratuit de votre existant. Ensuite, nous définissons ensemble une stratégie sur-mesure (KPIs, budget, canaux). Une fois validée, notre équipe déploie les campagnes et vous fournit un reporting régulier pour suivre la rentabilité de vos investissements.</p>
 </div>
 </details>
 <details class="faq-item-chic">
-<summary>¿Existe un presupuesto mínimo para trabajar con ustedes?</summary>
+<summary>Faut-il un budget minimum pour travailler avec vous ?</summary>
 <div class="faq-content">
-<p>Adaptamos nuestras estrategias a sus objetivos. Sin embargo, para la adquisición de pago (Google Ads, Meta Ads), se recomienda un presupuesto publicitario mensual mínimo de 5,000 MAD para recopilar suficientes datos y optimizar el ROI rápidamente.</p>
+<p>Nous adaptons nos stratégies à vos objectifs. Cependant, pour l'acquisition payante (Google Ads, Meta Ads), un budget publicitaire mensuel d'au moins 5 000 MAD est recommandé pour récolter suffisamment de données et optimiser le ROI rapidement.</p>
 </div>
 </details>
 <details class="faq-item-chic">
-<summary>¿Cuándo veré los primeros resultados?</summary>
+<summary>Quand verrai-je les premiers résultats ?</summary>
 <div class="faq-content">
-<p>Para SEA y Social Ads, los primeros leads o ventas suelen llegar durante la primera semana de emisión. Para SEO, es una estrategia a largo plazo: las primeras mejoras se observan después de 2 a 3 meses de optimización constante.</p>
+<p>Pour le SEA et les Social Ads, les premiers leads ou ventes arrivent généralement dans la première semaine de diffusion. Pour le SEO, c'est une stratégie de fond : les premiers frémissements s'observent après 2 à 3 mois d'optimisations régulières.</p>
 </div>
 </details>
 </div>
@@ -308,7 +340,7 @@
 <h4>Navigation</h4>
 <div class="footer-links">
 <a href="index.html">Accueil</a>
-<a href="creation-site-web.html">Diseño Web</a>
+<a href="creation-site-web.html">Création Site Web</a>
 <a href="services.html">Nos Services</a>
 <a href="transformation-digitale.html">Transformation Digitale</a>
 <a href="blog.html">Blog</a>
@@ -326,6 +358,7 @@
 <a href="services-cro.html">CRO &amp; Landing Pages</a>
 <a href="services-emailing.html">Email &amp; Automation</a>
 <a href="services-strategie.html">Stratégie d'Acquisition</a>
+<a href="services-gmb-360.html">Visite Virtuelle 360°</a>
 </div>
 </div>
 <div>
@@ -360,13 +393,13 @@
 <!-- ========== EXIT INTENT POPUP ========== -->
 <div aria-modal="true" class="exit-popup-overlay" id="exitPopup" role="dialog" style="display: none;">
 <div class="exit-popup-content glass-panel">
-<button aria-label="Cerrar" class="exit-popup-close" id="closeExitPopup">×</button>
+<button aria-label="Fermer" class="exit-popup-close" id="closeExitPopup">×</button>
 <div class="exit-popup-body">
-<h3>¡No te vayas con las manos vacías!</h3>
-<p>Obtén una <strong>Auditoría UX/UI Gratuita</strong> de tu sitio actual o un boceto conceptual para tu futuro proyecto. Sin compromiso.</p>
+<h3>Ne partez pas les mains vides !</h3>
+<p>Obtenez un <strong>Audit UX/UI Gratuit</strong> de votre site actuel ou une première maquette conceptuelle pour votre futur projet. Sans engagement.</p>
 <div class="exit-popup-actions">
-<a class="btn btn-primary magnetic-btn" href="contact.html?subject=AuditGratuit">Obtener mi Auditoría Gratuita</a>
-<button class="btn btn-ghost decline-btn" id="declineExitPopup">No gracias, paso</button>
+<a class="btn btn-primary magnetic-btn" href="contact.html?subject=AuditGratuit">Obtenir mon Audit Gratuit</a>
+<button class="btn btn-ghost decline-btn" id="declineExitPopup">Non merci, je passe mon tour</button>
 </div>
 </div>
 </div>

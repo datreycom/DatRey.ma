@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="es">
+<html dir="ltr" lang="fr">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -10,9 +10,11 @@
 <meta content="Études de Cas — Résultats Clients | DatRey" property="og:title"/>
 <meta content="Découvrez les résultats concrets obtenus par nos clients : +312% de ventes e-commerce, 85 leads/mois en immobilier, et plus." property="og:description"/>
 <meta content="https://datrey.ma/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
 <meta content="website" property="og:type"/>
-<meta content="https://datrey.ma/cas-clients.html" property="og:url"/>
-<link href="https://datrey.ma/es/cas-clients.html" rel="canonical"/>
+<meta content="https://datrey.ma/cas-clients" property="og:url"/>
+<link href="https://datrey.ma/cas-clients" rel="canonical"/>
 <link href="https://datrey.ma/cas-clients.html" hreflang="fr" rel="alternate"/>
 <link href="https://datrey.ma/en/cas-clients.html" hreflang="en" rel="alternate"/>
 <link href="https://datrey.ma/ar/cas-clients.html" hreflang="ar" rel="alternate"/>
@@ -20,7 +22,10 @@
 <link href="https://datrey.ma/cas-clients.html" hreflang="x-default" rel="alternate"/>
 <link href="../style.css" rel="stylesheet"/>
 <link href="../assets/logo.webp" rel="icon" type="image/webp"/>
+<link href="../favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
 <meta content="#050814" name="theme-color"/>
+<link href="../manifest.json" rel="manifest"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/>
@@ -67,7 +72,28 @@
 <!-- Scripts -->
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
 <script defer="" src="../shared.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://datrey.ma/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cas Clients"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <!-- Prevent theme FOUC -->
@@ -82,8 +108,8 @@
 </a>
 <nav aria-label="Navigation principale" class="nav-links">
 <a href="index.html">Accueil</a>
-<a href="creation-site-web.html">Diseño Web</a>
-<a href="services.html">Nos Services</a>
+<a href="creation-site-web.html">Création Site Web</a>
+<a class="" href="services.html">Nos Services</a>
 
 <a href="blog.html">Blog</a>
 <a href="contact.html">Contact</a>
@@ -93,10 +119,10 @@
 <div class="lang-selector">
 <button aria-label="Changer de langue" class="lang-btn">ES ▼</button>
 <div class="lang-dropdown">
-<a href="/index.html">Français</a>
-<a href="/en/index.html">English</a>
-<a href="/ar/index.html">العربية</a>
-<a class="active" href="/es/index.html">Español</a>
+<a class="active" href="/cas-clients.html">Français</a>
+<a href="/en/cas-clients.html">English</a>
+<a href="/ar/cas-clients.html">العربية</a>
+<a href="/es/cas-clients.html">Español</a>
 </div>
 </div>
 <button aria-label="Basculer le thème" class="theme-toggle" id="themeToggle">
@@ -113,11 +139,10 @@
 <div aria-label="Navigation mobile" class="mobile-nav" id="mobileNav" role="navigation">
 <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
 <a href="index.html" onclick="closeMobileNav()">Accueil</a>
-<a href="creation-site-web.html" onclick="closeMobileNav()">Diseño Web</a>
-<a href="services.html" onclick="closeMobileNav()">Nos Services</a>
+<a href="creation-site-web.html" onclick="closeMobileNav()">Création Site Web</a>
+<a class="" href="services.html" onclick="closeMobileNav()">Nos Services</a>
 
 <a href="blog.html" onclick="closeMobileNav()">Blog</a>
-<a href="blog.html">Blog</a>
 <a href="contact.html" onclick="closeMobileNav()">Contact</a>
 <a class="btn btn-primary magnetic-btn" href="contact.html" onclick="closeMobileNav()">Audit Gratuit</a>
 </div>
@@ -142,14 +167,14 @@
 <!-- ========== TECH STACK BANNER ========== -->
 <div class="tech-stack-banner">
 <div class="tech-stack-track">
-<span>Socios y Tecnologías:</span>
+<span>Partenaires &amp; Technologies :</span>
 <img alt="Google Partner" src="../assets/tech/google-partner.svg" style="height:30px; opacity:0.7;"/>
 <img alt="Meta Business Partner" src="../assets/tech/meta-partner.svg" style="height:30px; opacity:0.7;"/>
 <img alt="HubSpot" src="../assets/tech/hubspot.svg" style="height:30px; opacity:0.7;"/>
 <img alt="Shopify" src="../assets/tech/shopify.svg" style="height:30px; opacity:0.7;"/>
 <img alt="WordPress" src="../assets/tech/wordpress.svg" style="height:30px; opacity:0.7;"/>
 <img alt="Figma" src="../assets/tech/figma.svg" style="height:30px; opacity:0.7;"/>
-<span style="color:var(--blue-400); font-weight:600;">+250 Proyectos Entregados</span>
+<span style="color:var(--blue-400); font-weight:600;">+250 Projets Livrés</span>
 </div>
 </div>
 <!-- ========== INTRO ========== -->
@@ -169,7 +194,7 @@
 <div class="approach-grid">
 <div class="approach-visual reveal" style="border-radius: 16px; overflow: hidden;">
 <img alt="Tableau de bord e-commerce montrant +312% de croissance des ventes après optimisation par DatRey" decoding="async" height="400" loading="lazy" src="../assets/case_ecommerce.webp" style="width:100%; height:auto; display:block; border-radius: 12px;" width="600">
-</img></div>
+</div>
 <div class="reveal">
 <div class="service-tags" style="margin-bottom: 16px;">
 <span class="service-tag">E-Commerce</span>
@@ -197,7 +222,7 @@
 <div class="approach-grid" style="direction: rtl;">
 <div class="approach-visual reveal" style="border-radius: 16px; overflow: hidden; direction: ltr;">
 <img alt="Campagne de génération de leads immobiliers avec Google Ads montrant 85 leads qualifiés par mois" decoding="async" height="400" loading="lazy" src="../assets/case_realestate.webp" style="width:100%; height:auto; display:block; border-radius: 12px;" width="600">
-</img></div>
+</div>
 <div class="reveal" style="direction: ltr;">
 <div class="service-tags" style="margin-bottom: 16px;">
 <span class="service-tag">Immobilier</span>
@@ -225,7 +250,7 @@
 <div class="approach-grid">
 <div class="approach-visual reveal" style="border-radius: 16px; overflow: hidden;">
 <img alt="Pipeline CRM B2B montrant la génération de leads qualifiés via SEO et emailing automatisé" decoding="async" height="400" loading="lazy" src="../assets/case_b2b.webp" style="width:100%; height:auto; display:block; border-radius: 12px;" width="600">
-</img></div>
+</div>
 <div class="reveal">
 <div class="service-tags" style="margin-bottom: 16px;">
 <span class="service-tag">B2B / SaaS</span>
@@ -277,7 +302,7 @@
 <a class="logo" href="index.html" style="margin-bottom:4px;">
 <img alt="DatRey Logo" class="logo-img" decoding="async" height="40" loading="lazy" src="../assets/logo.webp" width="40">
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
-</img></a>
+</a>
 <p>
             Votre partenaire d'acquisition digitale full-stack au Maroc.
             Google Ads, Meta Ads, SEO et CRO pour scaler vos ventes.
@@ -305,7 +330,7 @@
 <h4>Navigation</h4>
 <div class="footer-links">
 <a href="index.html">Accueil</a>
-<a href="creation-site-web.html">Diseño Web</a>
+<a href="creation-site-web.html">Création Site Web</a>
 <a href="services.html">Nos Services</a>
 <a href="transformation-digitale.html">Transformation Digitale</a>
 <a href="blog.html">Blog</a>
@@ -323,6 +348,7 @@
 <a href="services-cro.html">CRO &amp; Landing Pages</a>
 <a href="services-emailing.html">Email &amp; Automation</a>
 <a href="services-strategie.html">Stratégie d'Acquisition</a>
+<a href="services-gmb-360.html">Visite Virtuelle 360°</a>
 </div>
 </div>
 <div>
@@ -360,10 +386,10 @@
 <div class="exit-popup-modal">
 <button aria-label="Fermer" class="exit-popup-close">×</button>
 <div class="exit-popup-content">
-<h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">¡No te vayas con las manos vacías!</h3>
-<p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtén una <strong>Auditoría UX/UI y SEO gratuita</strong> de tu sitio web. Descubre cómo aumentar tus conversiones hoy mismo.</p>
-<a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit" style="width: 100%; justify-content: center;">Quiero mi auditoría gratuita</a>
-<p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sin compromiso. Análisis entregado en 48h.</p>
+<h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Ne partez pas les mains vides !</h3>
+<p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtenez un <strong>Audit UX/UI &amp; SEO gratuit</strong> de votre site web. Découvrez comment augmenter vos conversions dès aujourd'hui.</p>
+<a class="btn btn-primary magnetic-btn" href="contact.html?subject=AuditGratuit" style="width: 100%; justify-content: center;">Je veux mon audit gratuit</a>
+<p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sans engagement. Analyse livrée en 48h.</p>
 </div>
 </div>
 </div>

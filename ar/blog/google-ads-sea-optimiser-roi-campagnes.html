@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html dir="rtl" lang="ar">
+<html dir="ltr" lang="fr">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Google Ads &amp; SEA : Optimiser le ROI de vos campagnes | Blog DatRey</title>
 <meta content="Découvrez comment optimiser le ROI de vos campagnes Google Ads &amp; SEA avec DatRey. Stratégies, conseils et astuces pour maximiser vos performances au Maroc." name="description"/>
-<meta content="DatRey" name="author"/>
+<meta content="Farah Sekkat" name="author"/>
 <meta content="index, follow, max-snippet:-1, max-image-preview:large" name="robots"/>
 <meta content="Google Ads &amp; SEA : Optimiser le ROI de vos campagnes" property="og:title"/>
 <meta content="Découvrez comment optimiser le ROI de vos campagnes Google Ads &amp; SEA avec DatRey. Stratégies, conseils et astuces pour maximiser vos performances au Maroc." property="og:description"/>
@@ -19,7 +19,7 @@
 <meta content="fr_MA" property="og:locale"/>
 <meta content="2026-03-15" property="article:published_time"/>
 <meta content="2026-03-15" property="article:modified_time"/>
-<meta content="DatRey" property="article:author"/>
+<meta content="Farah Sekkat" property="article:author"/>
 <meta content="Google Ads &amp; SEA" property="article:section"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Google Ads &amp; SEA : Optimiser le ROI de vos campagnes" name="twitter:title"/>
@@ -29,12 +29,17 @@
 <link href="../../style.css" rel="stylesheet"/>
 <link href="../../assets/logo.webp" rel="icon" type="image/webp"/>
 <meta content="#050814" name="theme-color"/>
+<link href="/manifest.json" rel="manifest"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet"/>
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script defer="" src="../shared.js"></script>
+  <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+<script defer="" src="../../animations.js"></script>
+<script defer="" src="../../shared.js"></script>
 <style>
     .blog-content { color: var(--text-base); }
     .blog-content h2 { color: var(--text-main); margin-top: 40px; margin-bottom: 16px; font-size: 1.6rem; }
@@ -58,8 +63,7 @@
     .faq-item h3 { margin: 0 0 8px 0; font-size: 1.1rem; }
     .faq-item p { margin: 0; }
   </style>
-<script type="application/ld+json">
-  {
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -76,9 +80,10 @@
       "datePublished": "2026-03-15",
       "dateModified": "2026-03-15",
       "author": {
-        "@type": "Organization",
-        "name": "DatRey",
-        "url": "https://datrey.ma"
+        "@type": "Person",
+        "name": "Farah Sekkat",
+        "email": "Farah_Sekkat@datrey.ma",
+        "url": "https://www.linkedin.com/in/farah-sekkat/"
       },
       "publisher": {
         "@type": "Organization",
@@ -121,9 +126,7 @@
       ]
     }
   ]
-}
-  </script>
-<script defer="" src="../../animations.js"></script>
+}</script>
 </head>
 <body>
 <a class="skip-to-content" href="#main-content" onblur="this.style.position='absolute';this.style.left='-9999px'" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;">Aller au contenu principal</a>
@@ -136,7 +139,7 @@
 </a>
 <nav aria-label="Navigation principale" class="nav-links">
 <a href="../index.html">Accueil</a>
-<a href="../services.html">Nos Services</a>
+<a class="" href="../services.html">Nos Services</a>
 
 <a class="nav-active" href="../blog.html">Blog</a>
 <a href="../contact.html">Contact</a>
@@ -144,11 +147,11 @@
 </nav>
 <div style="display: flex; align-items: center; gap: 16px;">
 <div class="lang-selector">
-<button aria-label="Changer de langue" class="lang-btn">FR ▼</button>
+<button aria-label="Changer de langue" class="lang-btn">AR ▼</button>
 <div class="lang-dropdown">
 <a class="active" href="/index.html">Français</a>
 <a href="/en/index.html">English</a>
-<a href="/ar/index.html">العربية</a>
+<a href="/ar/index.html" class="active">العربية</a>
 <a href="/es/index.html">Español</a>
 </div>
 </div>
@@ -156,20 +159,22 @@
 <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
 <svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
-<button aria-label="Menu" class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+<button aria-label="Menu" class="mobile-toggle" id="mobileToggle">
+<span></span><span></span><span></span>
+</button>
 </div>
 </div>
 </header>
 <div aria-label="Navigation mobile" class="mobile-nav" id="mobileNav" role="navigation">
 <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
 <a href="../index.html" onclick="closeMobileNav()">Accueil</a>
-<a href="../services.html" onclick="closeMobileNav()">Nos Services</a>
+<a class="" href="../services.html" onclick="closeMobileNav()">Nos Services</a>
 
-<a href="../blog.html" onclick="closeMobileNav()">Blog</a>
+<a class="nav-active" href="../blog.html" onclick="closeMobileNav()">Blog</a>
 <a href="../contact.html" onclick="closeMobileNav()">Contact</a>
 <a class="btn btn-primary" href="../contact.html" onclick="closeMobileNav()">Audit Gratuit</a>
 </div>
-<section class="page-hero antigrav-hero hero-with-bg" style="background-image: url(\'../assets/blog/google-ads-sea-optimiser-roi-campagnes-1.webp\');">
+<section class="page-hero antigrav-hero hero-with-bg" style="background-image: url('../assets/blog/google-ads-sea-optimiser-roi-campagnes-1.webp');">
 <div class="container">
 <div class="page-hero-content">
 <nav aria-label="Fil d'Ariane" class="breadcrumb">
@@ -184,14 +189,14 @@
 </section>
 <main class="section-padding" id="main-content">
 <div class="container" style="max-width: 800px; margin: 0 auto;">
-<article class="blog-content reveal">
+<article class="blog-content">
 <div class="blog-meta">
 <span>📅 Publié le 15/03/2026</span>
 <span>⏱ 7 min de lecture</span>
 <span>📌 Google Ads &amp; SEA</span>
 </div>
-<nav aria-label="فهرس المقال" class="blog-toc">
-<div class="blog-toc-title">فهرس المقال</div>
+<nav aria-label="Sommaire de l'article" class="blog-toc">
+<div class="blog-toc-title">Sommaire de l'article</div>
 <ol>
 <li><a href="#section-comprendre-les-fondamentaux-du-roi-dans-google-ads">1. Comprendre les fondamentaux du ROI dans Google Ads</a></li>
 <li><a href="#section-structurer-vos-campagnes-pour-une-performance-maximale">2. Structurer vos campagnes pour une performance maximale</a></li>
@@ -202,7 +207,7 @@
 <li><a href="#section-exploiter-les-données-pour-une-segmentation-avancée">7. Exploiter les données pour une segmentation avancée</a></li>
 <li><a href="#section-tableau-comparatif-avantages-des-stratégies-denchères">8. Tableau comparatif : avantages des stratégies d'enchères</a></li>
 <li><a href="#section-faq">FAQ</a></li>
-<li><a href="#section-conclusion">Conclusion</a></li>
+<li><a href="#section-comment-aller-plus-loin">Comment aller plus loin ?</a></li>
 </ol>
 </nav>
 <p>Dans un environnement digital de plus en plus concurrentiel au Maroc, maîtriser vos campagnes Google Ads &amp; SEA est essentiel pour générer un retour sur investissement (ROI) optimal. Chez DatRey, agence digitale à Casablanca, nous vous aidons à transformer chaque dirham dépensé en résultat concret. Dans cet article, découvrez les stratégies clés pour optimiser vos campagnes et maximiser votre ROI.</p>
@@ -213,12 +218,12 @@
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
 <div class="blog-inline-cta-text">
-<p>تريد تطبيق هذه الاستراتيجيات بدون جهد؟ <strong>خبراء DatRey يتولون الأمر.</strong></p>
+<p>Vous souhaitez appliquer ces strategies sans effort ? <strong>Nos experts DatRey s'en chargent.</strong></p>
 </div>
-<a class="btn btn-primary magnetic-btn" href="../../contact.html?subject=AuditGratuit">طلب تدقيق مجاني</a>
+<a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit">Demander un audit gratuit</a>
 </div>
 <h3>2.1 Utiliser les mots-clés négatifs</h3>
-<p>Les mots-clés négatifs empêchent vos annonces de s'afficher pour des recherches non pertinentes, réduisant ainsi le gaspillage budgétaire. Par exemple, si vous vendez des chaussures de luxe, excluez « pas cher » ou « discount ».</p>
+<p>Les mots-clés négatifs empêchent vos annonces de s'afficher pour des recherches non pertinentes, réduisant ainsi le gaspillage budgétaire. Par exemple, si vous vendez des chaussures de luxe, excluez « pas cher » ou « discount ».</p><figure style="margin: 32px 0;"><img alt="Illustration pour google ads sea optimiser roi campagnes partie 1" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/google-ads-sea-optimiser-roi-campagnes-1.webp" width="1200"/></figure>
 <h2 id="section-optimiser-les-enchères-et-le-budget">3. Optimiser les enchères et le budget</h2>
 <p>Les stratégies d'enchères automatisées (comme le CPA cible ou le ROAS cible) peuvent améliorer vos performances. Commencez par des enchères manuelles pour collecter des données, puis passez à l'automatisation. Allouez 80 % de votre budget aux campagnes les plus performantes et 20 % aux tests.</p>
 <h2 id="section-améliorer-la-qualité-des-annonces-et-des-landing-pages">4. Améliorer la qualité des annonces et des landing pages</h2>
@@ -226,7 +231,7 @@
 <h2 id="section-analyser-et-ajuster-en-continu">5. Analyser et ajuster en continu</h2>
 <p>L'optimisation est un processus itératif. Utilisez les rapports de Google Ads pour identifier les mots-clés performants, les heures de conversion et les appareils utilisés. Ajustez vos enchères en fonction des données. Par exemple, si vos conversions sont plus élevées le soir, augmentez vos enchères à ce moment.</p>
 <h3>5.1 Tests A/B</h3>
-<p>Testez différentes versions de vos annonces (titres, descriptions, CTA) pour déterminer ce qui fonctionne le mieux. Un simple changement de CTA peut augmenter le taux de conversion de 15 %.</p>
+<p>Testez différentes versions de vos annonces (titres, descriptions, CTA) pour déterminer ce qui fonctionne le mieux. Un simple changement de CTA peut augmenter le taux de conversion de 15 %.</p><figure style="margin: 32px 0;"><img alt="Illustration pour google ads sea optimiser roi campagnes partie 2" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/google-ads-sea-optimiser-roi-campagnes-2.webp" width="1200"/></figure>
 <h2 id="section-utiliser-le-remarketing-pour-fidéliser">6. Utiliser le remarketing pour fidéliser</h2>
 <p>Le remarketing permet de cibler les visiteurs déjà intéressés. Créez des listes d'audience basées sur le comportement (pages visitées, temps passé) et proposez des offres personnalisées. Le coût par clic est souvent inférieur et le taux de conversion plus élevé.</p>
 <h2 id="section-exploiter-les-données-pour-une-segmentation-avancée">7. Exploiter les données pour une segmentation avancée</h2>
@@ -241,37 +246,33 @@
 <tr><td>CPA cible</td><td>Automatisation, optimisation du coût par conversion</td><td>Nécessite un historique de conversions</td></tr>
 <tr><td>ROAS cible</td><td>Maximise le retour sur investissement</td><td>Complexe à configurer pour les petits budgets</td></tr>
 </tbody>
-</table>
+</table><figure style="margin: 32px 0;"><img alt="Illustration pour google ads sea optimiser roi campagnes partie 3" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/google-ads-sea-optimiser-roi-campagnes-3.webp" width="1200"/></figure>
 <h2 id="section-faq">FAQ</h2>
 <h3>1. Quel budget minimum pour une campagne Google Ads au Maroc ?</h3>
 <p>Il n'y a pas de budget minimum, mais pour obtenir des résultats significatifs, nous recommandons au moins 5 000 MAD par mois. Cela permet de collecter suffisamment de données pour optimiser.</p>
 <h3>2. Combien de temps faut-il pour voir un ROI positif ?</h3>
 <p>En moyenne, il faut compter 3 à 6 mois pour atteindre un ROI positif, en fonction de la concurrence et de l'optimisation continue.</p>
 <h3>3. Quels sont les KPIs les plus importants à suivre ?</h3>
-<p>Les KPIs essentiels sont le taux de clics (CTR), le coût par clic (CPC), le taux de conversion et le retour sur investissement publicitaire (ROAS).</p>
-<h2 id="section-conclusion">Conclusion</h2>
+<p>Les KPIs essentiels sont le taux de clics (CTR), le coût par clic (CPC), le taux de conversion et le retour sur investissement publicitaire (ROAS).</p><figure style="margin: 32px 0;"><img alt="Illustration pour google ads sea optimiser roi campagnes partie 4" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/google-ads-sea-optimiser-roi-campagnes-4.webp" width="1200"/></figure>
+<h2 id="section-comment-aller-plus-loin">Comment aller plus loin ?</h2>
 <p>Optimiser le ROI de vos campagnes Google Ads &amp; SEA demande une approche structurée, des analyses régulières et une adaptation aux spécificités du marché marocain. Chez DatRey, nous vous accompagnons dans chaque étape pour maximiser vos performances. <a href="../services-google-ads.html">Contactez-nous dès aujourd'hui</a> pour un audit gratuit de vos campagnes et découvrez comment nous pouvons booster votre retour sur investissement.</p>
-<img alt="Optimisation des campagnes Google Ads pour améliorer le ROI au Maroc" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/google-ads-sea-optimiser-roi-campagnes-1.webp" width="1200"/>
-<img alt="Stratégies d'enchères automatisées pour maximiser le retour sur investissement" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/google-ads-sea-optimiser-roi-campagnes-2.webp" width="1200"/>
-<img alt="Analyse des performances des annonces Google Ads avec des graphiques" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/google-ads-sea-optimiser-roi-campagnes-3.webp" width="1200"/>
-<img alt="Remarketing et segmentation avancée pour les campagnes SEA" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/google-ads-sea-optimiser-roi-campagnes-4.webp" width="1200"/>
 <p>Pour approfondir, découvrez nos <a href="../services-seo.html">services SEO</a> et notre <a href="../services-design.html">expertise en web design</a> pour compléter votre stratégie digitale.</p>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
 <p>Les experts DatRey vous aident à atteindre vos objectifs digitaux au Maroc.</p>
-<a href="../contact.html?subject=AuditGratuit class=" magnetic-btn""="">Demander un audit gratuit →</a>
+<a href="../contact.html?subject=AuditGratuit" class="magnetic-btn">Demander un audit gratuit →</a>
 </div>
-<section class="blog-related" dir="rtl">
-<h3 class="blog-related-title">مقالات ذات صلة</h3>
+<section class="blog-related">
+<h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
-<a class="blog-related-card" href="../../blog/erreurs-google-ads-maroc.html">
+<a class="blog-related-card" href="../blog/erreurs-google-ads-maroc.html">
 <img alt="Google Ads au Maroc : 7 erreurs à éviter pour vos campagnes SEA" decoding="async" height="225" loading="lazy" src="../../assets/blog/erreurs-google-ads-maroc-1.webp" width="400"/>
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Google Ads &amp; SEA</div>
 <div class="blog-related-card-title">Google Ads au Maroc : 7 erreurs à éviter pour vos campagnes SEA</div>
 </div>
 </a>
-<a class="blog-related-card" href="../../blog/google-ads-debutants-guide.html">
+<a class="blog-related-card" href="../blog/google-ads-debutants-guide.html">
 <img alt="Google Ads pour débutants : guide complet pour réussir vos campagnes" decoding="async" height="225" loading="lazy" src="../../assets/blog/google-ads-debutants-guide-1.webp" width="400"/>
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Google Ads &amp; SEA</div>
@@ -290,24 +291,88 @@
 <a class="logo" href="../index.html" style="margin-bottom:4px;">
 <img alt="DatRey Logo" class="logo-img" decoding="async" height="40" loading="lazy" src="../../assets/logo.webp" width="40">
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
-</img></a>
-<p>Votre partenaire d'acquisition digitale full-stack au Maroc.</p>
+</a>
+<p>
+            Votre partenaire d'acquisition digitale full-stack au Maroc.
+            Google Ads, Meta Ads, SEO et CRO pour scaler vos ventes.
+          </p>
+<a class="footer-saas" href="https://datrey.com" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path></svg>
+            Découvrez nos solutions SaaS sur DatRey.com
+          </a>
+<div class="social-links">
+<a aria-label="LinkedIn DatRey" href="https://www.linkedin.com/in/datrey-agency/" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+</a>
+<a aria-label="X DatRey" href="https://x.com/Datrey_Agency" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg>
+</a>
+<a aria-label="Instagram DatRey" href="https://www.instagram.com/datrey.agency/" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+</a>
+<a aria-label="Pinterest DatRey" href="https://www.pinterest.com/DatreyAgency" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="12" x2="12" y1="12" y2="22"></line><path d="M12 22c-3.5 0-6.5-2.5-7.5-6s.5-7 4-8.5 7-1 9.5 2 2 6-.5 8.5L12 22z"></path><circle cx="12" cy="7" r="1"></circle></svg>
+</a>
+</div>
+</div>
+<div>
+<h4>Navigation</h4>
+<div class="footer-links">
+<a href="../index.html">Accueil</a>
+<a href="../services.html">Nos Services</a>
+<a href="../transformation-digitale.html">Transformation Digitale</a>
+<a href="../blog.html">Blog</a>
+<a href="../a-propos.html">À propos</a>
+<a href="../cas-clients.html">Cas Clients</a>
+<a href="../contact.html">Contact</a>
+</div>
+</div>
+<div>
+<h4>Services</h4>
+<div class="footer-links">
+<a href="../services-google-ads.html">Google Ads (SEA)</a>
+<a href="../services-meta-ads.html">Meta Ads</a>
+<a href="../services-seo.html">SEO &amp; Contenu</a>
+<a href="../services-cro.html">CRO &amp; Landing Pages</a>
+<a href="../services-emailing.html">Email &amp; Automation</a>
+<a href="../services-strategie.html">Stratégie d'Acquisition</a>
+<a href="../services-gmb-360.html">Visite Virtuelle 360°</a>
+</div>
+</div>
+<div>
+<h4>Contact</h4>
+<div class="footer-contact-item">
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+<span>322 Bd Brahim Roudani, Rés. AR-Rayhane,<br/>Ét. 04 N°17, Maarif — Casablanca</span>
+</div>
+<div class="footer-contact-item">
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+<a href="mailto:contact@datrey.ma" style="color:inherit;">contact@datrey.ma</a>
+</div>
+<div class="footer-contact-item">
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+<a href="tel:+212644443059" style="color:inherit;">+212 6 44 44 30 59</a>
+</div>
 </div>
 </div>
 <div class="footer-bottom">
-<p>© 2026 DatRey SARL. Tous droits réservés.</p>
+<span>© 2026 DatRey. Tous droits réservés.</span>
+<div style="display:flex;gap:20px;">
+<a href="../mentions-legales.html">Mentions légales</a>
+<a href="../politique-confidentialite.html">Politique de confidentialité</a>
+</div>
 </div>
 </div>
 </footer>
 <!-- Exit Intent Popup -->
-<div class="exit-popup-overlay" dir="rtl" id="exitIntentPopup">
+<div class="exit-popup-overlay" id="exitIntentPopup">
 <div class="exit-popup-modal">
 <button aria-label="Fermer" class="exit-popup-close">×</button>
 <div class="exit-popup-content">
-<h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">لا تغادر ويداك فارغتان!</h3>
-<p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">احصل على <strong>تدقيق UX/UI و SEO مجاني</strong> لموقعك. اكتشف كيف تزيد تحويلاتك اليوم.</p>
-<a class="btn btn-primary magnetic-btn" href="../../contact.html?subject=AuditGratuit" style="width: 100%; justify-content: center;">أريد تدقيقي المجاني</a>
-<p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">بدون التزام. تقرير في 48 ساعة.</p>
+<h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Ne partez pas les mains vides !</h3>
+<p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtenez un <strong>Audit UX/UI &amp; SEO gratuit</strong> de votre site web. Découvrez comment augmenter vos conversions dès aujourd'hui.</p>
+<a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit" style="width: 100%; justify-content: center;">Je veux mon audit gratuit</a>
+<p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sans engagement. Analyse livrée en 48h.</p>
 </div>
 </div>
 </div>

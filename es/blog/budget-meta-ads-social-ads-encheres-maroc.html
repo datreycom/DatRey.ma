@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="es">
+<html dir="ltr" lang="fr">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Budget Meta Ads &amp; Social Ads : Optimisez vos enchères au Maroc | Blog DatRey</title>
 <meta content="Découvrez comment optimiser votre budget Meta Ads et Social Ads au Maroc. Stratégies d'enchères, conseils pratiques et astuces pour maximiser votre ROI. Contactez DatRey !" name="description"/>
-<meta content="DatRey" name="author"/>
+<meta content="Farah Sekkat" name="author"/>
 <meta content="index, follow, max-snippet:-1, max-image-preview:large" name="robots"/>
 <meta content="Budget Meta Ads &amp; Social Ads : Optimisez vos enchères au Maroc" property="og:title"/>
 <meta content="Découvrez comment optimiser votre budget Meta Ads et Social Ads au Maroc. Stratégies d'enchères, conseils pratiques et astuces pour maximiser votre ROI. Contactez DatRey !" property="og:description"/>
@@ -19,7 +19,7 @@
 <meta content="fr_MA" property="og:locale"/>
 <meta content="2026-04-09" property="article:published_time"/>
 <meta content="2026-04-09" property="article:modified_time"/>
-<meta content="DatRey" property="article:author"/>
+<meta content="Farah Sekkat" property="article:author"/>
 <meta content="Meta Ads &amp; Social Ads" property="article:section"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Budget Meta Ads &amp; Social Ads : Optimisez vos enchères au Maroc" name="twitter:title"/>
@@ -29,12 +29,17 @@
 <link href="../../style.css" rel="stylesheet"/>
 <link href="../../assets/logo.webp" rel="icon" type="image/webp"/>
 <meta content="#050814" name="theme-color"/>
+<link href="/manifest.json" rel="manifest"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet"/>
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script defer="" src="../shared.js"></script>
+  <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+<script defer="" src="../../animations.js"></script>
+<script defer="" src="../../shared.js"></script>
 <style>
     .blog-content { color: var(--text-base); }
     .blog-content h2 { color: var(--text-main); margin-top: 40px; margin-bottom: 16px; font-size: 1.6rem; }
@@ -58,8 +63,7 @@
     .faq-item h3 { margin: 0 0 8px 0; font-size: 1.1rem; }
     .faq-item p { margin: 0; }
   </style>
-<script type="application/ld+json">
-  {
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -76,9 +80,10 @@
       "datePublished": "2026-04-09",
       "dateModified": "2026-04-09",
       "author": {
-        "@type": "Organization",
-        "name": "DatRey",
-        "url": "https://datrey.ma"
+        "@type": "Person",
+        "name": "Farah Sekkat",
+        "email": "Farah_Sekkat@datrey.ma",
+        "url": "https://www.linkedin.com/in/farah-sekkat/"
       },
       "publisher": {
         "@type": "Organization",
@@ -121,9 +126,7 @@
       ]
     }
   ]
-}
-  </script>
-<script defer="" src="../../animations.js"></script>
+}</script>
 </head>
 <body>
 <a class="skip-to-content" href="#main-content" onblur="this.style.position='absolute';this.style.left='-9999px'" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:var(--roi-500);color:#fff;font-weight:600;text-decoration:none;border-radius:4px;font-size:0.9rem;">Aller au contenu principal</a>
@@ -136,7 +139,7 @@
 </a>
 <nav aria-label="Navigation principale" class="nav-links">
 <a href="../index.html">Accueil</a>
-<a href="../services.html">Nos Services</a>
+<a class="" href="../services.html">Nos Services</a>
 
 <a class="nav-active" href="../blog.html">Blog</a>
 <a href="../contact.html">Contact</a>
@@ -144,32 +147,34 @@
 </nav>
 <div style="display: flex; align-items: center; gap: 16px;">
 <div class="lang-selector">
-<button aria-label="Changer de langue" class="lang-btn">FR ▼</button>
+<button aria-label="Changer de langue" class="lang-btn">ES ▼</button>
 <div class="lang-dropdown">
 <a class="active" href="/index.html">Français</a>
 <a href="/en/index.html">English</a>
 <a href="/ar/index.html">العربية</a>
-<a href="/es/index.html">Español</a>
+<a href="/es/index.html" class="active">Español</a>
 </div>
 </div>
 <button aria-label="Basculer le thème" class="theme-toggle" id="themeToggle">
 <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
 <svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
-<button aria-label="Menu" class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+<button aria-label="Menu" class="mobile-toggle" id="mobileToggle">
+<span></span><span></span><span></span>
+</button>
 </div>
 </div>
 </header>
 <div aria-label="Navigation mobile" class="mobile-nav" id="mobileNav" role="navigation">
 <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
 <a href="../index.html" onclick="closeMobileNav()">Accueil</a>
-<a href="../services.html" onclick="closeMobileNav()">Nos Services</a>
+<a class="" href="../services.html" onclick="closeMobileNav()">Nos Services</a>
 
-<a href="../blog.html" onclick="closeMobileNav()">Blog</a>
+<a class="nav-active" href="../blog.html" onclick="closeMobileNav()">Blog</a>
 <a href="../contact.html" onclick="closeMobileNav()">Contact</a>
 <a class="btn btn-primary" href="../contact.html" onclick="closeMobileNav()">Audit Gratuit</a>
 </div>
-<section class="page-hero antigrav-hero hero-with-bg" style="background-image: url(\'../assets/blog/budget-meta-ads-social-ads-encheres-maroc-1.webp\');">
+<section class="page-hero antigrav-hero hero-with-bg" style="background-image: url('../assets/blog/budget-meta-ads-social-ads-encheres-maroc-1.webp');">
 <div class="container">
 <div class="page-hero-content">
 <nav aria-label="Fil d'Ariane" class="breadcrumb">
@@ -184,16 +189,15 @@
 </section>
 <main class="section-padding" id="main-content">
 <div class="container" style="max-width: 800px; margin: 0 auto;">
-<article class="blog-content reveal">
+<article class="blog-content">
 <div class="blog-meta">
 <span>📅 Publié le 09/04/2026</span>
 <span>⏱ 7 min de lecture</span>
 <span>📌 Meta Ads &amp; Social Ads</span>
 </div>
-<nav aria-label="Tabla de contenidos" class="blog-toc">
-<div class="blog-toc-title">Tabla de contenidos</div>
+<nav aria-label="Sommaire de l'article" class="blog-toc">
+<div class="blog-toc-title">Sommaire de l'article</div>
 <ol>
-<li><a href="#section-introduction">Introduction</a></li>
 <li><a href="#section-comprendre-le-système-denchères-meta-ads">1. Comprendre le système d'enchères Meta Ads</a></li>
 <li><a href="#section-stratégies-de-budget-pour-les-social-ads-au-maroc">2. Stratégies de budget pour les Social Ads au Maroc</a></li>
 <li><a href="#section-optimisation-des-enchères-pour-le-marché-marocain">3. Optimisation des enchères pour le marché marocain</a></li>
@@ -201,34 +205,34 @@
 <li><a href="#section-étude-de-cas-campagne-réussie-au-maroc">5. Étude de cas : Campagne réussie au Maroc</a></li>
 <li><a href="#section-erreurs-courantes-à-éviter">6. Erreurs courantes à éviter</a></li>
 <li><a href="#section-faq">FAQ</a></li>
-<li><a href="#section-conclusion">Conclusion</a></li>
+<li><a href="#section-comment-aller-plus-loin">Comment aller plus loin ?</a></li>
 </ol>
 </nav>
-<h2 id="section-introduction">Introduction</h2><p>Dans un marché marocain en pleine digitalisation, la maîtrise de votre budget <strong>Meta Ads &amp; Social Ads</strong> est cruciale pour obtenir un retour sur investissement optimal. Les enchères publicitaires sur Facebook, Instagram et autres plateformes sociales déterminent directement le coût par clic (CPC) et le coût par acquisition (CPA). Chez <a href="../services-seo.html">DatRey</a>, agence digitale à Casablanca, nous vous accompagnons pour allouer efficacement votre budget et remporter les enchères clés. Cet article vous livre les secrets d'une gestion budgétaire performante adaptée au contexte marocain.</p><h2 id="section-comprendre-le-système-denchères-meta-ads">1. Comprendre le système d'enchères Meta Ads</h2><p>Meta utilise un système d'enchères où les annonceurs fixent un montant maximum qu'ils sont prêts à payer pour une action (clic, impression, conversion). L'algorithme prend en compte la qualité de l'annonce, la pertinence et l'enchère pour déterminer le gagnant.</p>
+<p>Dans un marché marocain en pleine digitalisation, la maîtrise de votre budget <strong>Meta Ads &amp; Social Ads</strong> est cruciale pour obtenir un retour sur investissement optimal. Les enchères publicitaires sur Facebook, Instagram et autres plateformes sociales déterminent directement le coût par clic (CPC) et le coût par acquisition (CPA). Chez <a href="../services-seo.html">DatRey</a>, agence digitale à Casablanca, nous vous accompagnons pour allouer efficacement votre budget et remporter les enchères clés. Cet article vous livre les secrets d'une gestion budgétaire performante adaptée au contexte marocain.</p><h2 id="section-comprendre-le-système-denchères-meta-ads">1. Comprendre le système d'enchères Meta Ads</h2><p>Meta utilise un système d'enchères où les annonceurs fixent un montant maximum qu'ils sont prêts à payer pour une action (clic, impression, conversion). L'algorithme prend en compte la qualité de l'annonce, la pertinence et l'enchère pour déterminer le gagnant.</p><h3>1.1 Types d'enchères</h3><ul><li><strong>Enchères au coût par clic (CPC)</strong> : Vous payez pour chaque clic. Idéal pour le trafic site web.</li><li><strong>Enchères au coût par mille impressions (CPM)</strong> : Vous payez pour 1000 affichages. Utile pour la notoriété.</li><li><strong>Enchères au coût par action (CPA)</strong> : Vous payez pour une conversion définie (achat, inscription).</li></ul><h3>1.2 Facteurs influençant le coût</h3><p>Au Maroc, le CPC moyen sur Facebook Ads varie entre 0,30 et 1,50 MAD selon le secteur. Les enchères sont influencées par la concurrence, le ciblage, la qualité de l'annonce et le moment de diffusion.</p><figure style="margin: 32px 0;"><img alt="Illustration pour budget meta ads social ads encheres maroc partie 1" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/budget-meta-ads-social-ads-encheres-maroc-1.webp" width="1200"/></figure><h2 id="section-stratégies-de-budget-pour-les-social-ads-au-maroc">2. Stratégies de budget pour les Social Ads au Maroc</h2><p>Pour optimiser votre budget, commencez par définir des objectifs clairs : notoriété, trafic, conversions. Allouez 70% de votre budget aux campagnes performantes et 30% aux tests.</p>
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
 <div class="blog-inline-cta-text">
-<p>Quieres aplicar estas estrategias sin esfuerzo? <strong>Nuestros expertos de DatRey se encargan.</strong></p>
+<p>Vous souhaitez appliquer ces strategies sans effort ? <strong>Nos experts DatRey s'en chargent.</strong></p>
 </div>
-<a class="btn btn-primary magnetic-btn" href="../../contact.html?subject=AuditGratuit">Solicitar una auditoria gratuita</a>
+<a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit">Demander un audit gratuit</a>
 </div>
-<h3>1.1 Types d'enchères</h3><ul><li><strong>Enchères au coût par clic (CPC)</strong> : Vous payez pour chaque clic. Idéal pour le trafic site web.</li><li><strong>Enchères au coût par mille impressions (CPM)</strong> : Vous payez pour 1000 affichages. Utile pour la notoriété.</li><li><strong>Enchères au coût par action (CPA)</strong> : Vous payez pour une conversion définie (achat, inscription).</li></ul><h3>1.2 Facteurs influençant le coût</h3><p>Au Maroc, le CPC moyen sur Facebook Ads varie entre 0,30 et 1,50 MAD selon le secteur. Les enchères sont influencées par la concurrence, le ciblage, la qualité de l'annonce et le moment de diffusion.</p><h2 id="section-stratégies-de-budget-pour-les-social-ads-au-maroc">2. Stratégies de budget pour les Social Ads au Maroc</h2><p>Pour optimiser votre budget, commencez par définir des objectifs clairs : notoriété, trafic, conversions. Allouez 70% de votre budget aux campagnes performantes et 30% aux tests.</p><h3>2.1 Budget journalier vs budget total</h3><p>Préférez un budget journalier pour un contrôle régulier. Au Maroc, un budget de 200 à 500 MAD par jour peut suffire pour une PME locale.</p><h3>2.2 Périodes clés</h3><p>Profitez des périodes de forte activité (Aïd, rentrée scolaire, Black Friday) pour augmenter temporairement votre budget.</p><h2 id="section-optimisation-des-enchères-pour-le-marché-marocain">3. Optimisation des enchères pour le marché marocain</h2><p>Utilisez l'enchère au coût le plus bas pour maximiser les résultats dans la limite de votre budget. Testez l'enchère plafonnée pour maîtriser le coût par action.</p><table><thead><tr><th>Type d'enchère</th><th>Avantage</th><th>Inconvénient</th></tr></thead><tbody><tr><td>Coût le plus bas</td><td>Maximise les résultats</td><td>Coût variable</td></tr><tr><td>Plafond de coût</td><td>Contrôle du CPA</td><td>Volume réduit</td></tr><tr><td>Plafond d'enchère</td><td>Contrôle du CPC</td><td>Risque de sous-enchère</td></tr></tbody></table><h2 id="section-conseils-pratiques-pour-réduire-vos-coûts">4. Conseils pratiques pour réduire vos coûts</h2><ul><li>Ciblez géographiquement avec précision (villes, quartiers).</li><li>Utilisez des audiences personnalisées (fichiers clients, trafic site).</li><li>Testez plusieurs créations et textes pour améliorer le score de pertinence.</li><li>Planifiez la diffusion aux heures de pointe (18h-22h).</li></ul><h2 id="section-étude-de-cas-campagne-réussie-au-maroc">5. Étude de cas : Campagne réussie au Maroc</h2><p>Un client e-commerce marocain a réduit son CPA de 40% en passant d'une enchère au CPC à une enchère au coût le plus bas, avec un ciblage affiné sur Casablanca et Rabat. Le budget mensuel de 15 000 MAD a généré 120 000 MAD de chiffre d'affaires.</p><h2 id="section-erreurs-courantes-à-éviter">6. Erreurs courantes à éviter</h2><ul><li>Ne pas définir de limite de budget quotidienne.</li><li>Ignorer les tests A/B sur les enchères.</li><li>Négliger le suivi des conversions (pixel Meta).</li></ul><h2 id="section-faq">FAQ</h2><h3>Quel budget minimum pour commencer Meta Ads au Maroc ?</h3><p>Un budget de 100 MAD par jour peut suffire pour tester, mais 300-500 MAD par jour est recommandé pour obtenir des données exploitables.</p><h3>Comment choisir entre enchère manuelle et automatique ?</h3><p>L'enchère automatique (coût le plus bas) est idéale pour les débutants. L'enchère manuelle offre plus de contrôle aux experts.</p><h3>Quels sont les meilleurs moments pour diffuser des Social Ads au Maroc ?</h3><p>En semaine, privilégiez les soirées (18h-22h). Le week-end, les matinées (10h-13h) fonctionnent bien.</p><h2 id="section-conclusion">Conclusion</h2><p>Maîtriser votre budget <strong>Meta Ads &amp; Social Ads</strong> est essentiel pour réussir votre marketing digital au Maroc. En appliquant ces stratégies d'enchères et d'optimisation, vous maximiserez votre ROI. Besoin d'un accompagnement personnalisé ? <a href="../services-google-ads.html">Contactez DatRey</a>, votre agence digitale à Casablanca, pour une analyse gratuite de vos campagnes.</p><img alt="Gestion budget publicitaire Meta Ads Maroc stratégie enchères" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/budget-meta-ads-social-ads-encheres-maroc-1.webp" width="1200"/><img alt="Optimisation enchères Facebook Ads Casablanca agence DatRey" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/budget-meta-ads-social-ads-encheres-maroc-2.webp" width="1200"/><img alt="Conseils budget Social Ads Maroc retour sur investissement" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/budget-meta-ads-social-ads-encheres-maroc-3.webp" width="1200"/><img alt="Analyse coût par clic publicités Instagram Maroc" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/budget-meta-ads-social-ads-encheres-maroc-4.webp" width="1200"/>
+<h3>2.1 Budget journalier vs budget total</h3><p>Préférez un budget journalier pour un contrôle régulier. Au Maroc, un budget de 200 à 500 MAD par jour peut suffire pour une PME locale.</p><h3>2.2 Périodes clés</h3><p>Profitez des périodes de forte activité (Aïd, rentrée scolaire, Black Friday) pour augmenter temporairement votre budget.</p><h2 id="section-optimisation-des-enchères-pour-le-marché-marocain">3. Optimisation des enchères pour le marché marocain</h2><p>Utilisez l'enchère au coût le plus bas pour maximiser les résultats dans la limite de votre budget. Testez l'enchère plafonnée pour maîtriser le coût par action.</p><table><thead><tr><th>Type d'enchère</th><th>Avantage</th><th>Inconvénient</th></tr></thead><tbody><tr><td>Coût le plus bas</td><td>Maximise les résultats</td><td>Coût variable</td></tr><tr><td>Plafond de coût</td><td>Contrôle du CPA</td><td>Volume réduit</td></tr><tr><td>Plafond d'enchère</td><td>Contrôle du CPC</td><td>Risque de sous-enchère</td></tr></tbody></table><figure style="margin: 32px 0;"><img alt="Illustration pour budget meta ads social ads encheres maroc partie 2" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/budget-meta-ads-social-ads-encheres-maroc-2.webp" width="1200"/></figure><h2 id="section-conseils-pratiques-pour-réduire-vos-coûts">4. Conseils pratiques pour réduire vos coûts</h2><ul><li>Ciblez géographiquement avec précision (villes, quartiers).</li><li>Utilisez des audiences personnalisées (fichiers clients, trafic site).</li><li>Testez plusieurs créations et textes pour améliorer le score de pertinence.</li><li>Planifiez la diffusion aux heures de pointe (18h-22h).</li></ul><h2 id="section-étude-de-cas-campagne-réussie-au-maroc">5. Étude de cas : Campagne réussie au Maroc</h2><p>Un client e-commerce marocain a réduit son CPA de 40% en passant d'une enchère au CPC à une enchère au coût le plus bas, avec un ciblage affiné sur Casablanca et Rabat. Le budget mensuel de 15 000 MAD a généré 120 000 MAD de chiffre d'affaires.</p><h2 id="section-erreurs-courantes-à-éviter">6. Erreurs courantes à éviter</h2><ul><li>Ne pas définir de limite de budget quotidienne.</li><li>Ignorer les tests A/B sur les enchères.</li><li>Négliger le suivi des conversions (pixel Meta).</li></ul><figure style="margin: 32px 0;"><img alt="Illustration pour budget meta ads social ads encheres maroc partie 3" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/budget-meta-ads-social-ads-encheres-maroc-3.webp" width="1200"/></figure><h2 id="section-faq">FAQ</h2><h3>Quel budget minimum pour commencer Meta Ads au Maroc ?</h3><p>Un budget de 100 MAD par jour peut suffire pour tester, mais 300-500 MAD par jour est recommandé pour obtenir des données exploitables.</p><h3>Comment choisir entre enchère manuelle et automatique ?</h3><p>L'enchère automatique (coût le plus bas) est idéale pour les débutants. L'enchère manuelle offre plus de contrôle aux experts.</p><h3>Quels sont les meilleurs moments pour diffuser des Social Ads au Maroc ?</h3><p>En semaine, privilégiez les soirées (18h-22h). Le week-end, les matinées (10h-13h) fonctionnent bien.</p><h2 id="section-comment-aller-plus-loin">Comment aller plus loin ?</h2><p>Maîtriser votre budget <strong>Meta Ads &amp; Social Ads</strong> est essentiel pour réussir votre marketing digital au Maroc. En appliquant ces stratégies d'enchères et d'optimisation, vous maximiserez votre ROI. Besoin d'un accompagnement personnalisé ? <a href="../services-google-ads.html">Contactez DatRey</a>, votre agence digitale à Casablanca, pour une analyse gratuite de vos campagnes.</p><figure style="margin: 32px 0;"><img alt="Illustration pour budget meta ads social ads encheres maroc partie 4" class="blog-img" decoding="async" height="675" loading="lazy" src="../../assets/blog/budget-meta-ads-social-ads-encheres-maroc-4.webp" width="1200"/></figure>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
 <p>Les experts DatRey vous aident à atteindre vos objectifs digitaux au Maroc.</p>
-<a href="../contact.html?subject=AuditGratuit class=" magnetic-btn""="">Demander un audit gratuit →</a>
+<a href="../contact.html?subject=AuditGratuit" class="magnetic-btn">Demander un audit gratuit →</a>
 </div>
 <section class="blog-related">
-<h3 class="blog-related-title">Articulos relacionados</h3>
+<h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
-<a class="blog-related-card" href="../../blog/ciblage-audience-meta-ads-guide.html">
+<a class="blog-related-card" href="../blog/ciblage-audience-meta-ads-guide.html">
 <img alt="Ciblage Audience Meta Ads : Guide pour Maximiser vos Campagnes Social Ads" decoding="async" height="225" loading="lazy" src="../../assets/blog/ciblage-audience-meta-ads-guide-1.webp" width="400"/>
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Meta Ads &amp; Social Ads</div>
 <div class="blog-related-card-title">Ciblage Audience Meta Ads : Guide pour Maximiser vos Campagnes Social Ads</div>
 </div>
 </a>
-<a class="blog-related-card" href="../../blog/creations-publicitaires-meta-ads-social-ads.html">
+<a class="blog-related-card" href="../blog/creations-publicitaires-meta-ads-social-ads.html">
 <img alt="Créations publicitaires Meta Ads &amp; Social Ads : boostez votre ROI" decoding="async" height="225" loading="lazy" src="../../assets/blog/creations-publicitaires-meta-ads-social-ads-1.webp" width="400"/>
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Meta Ads &amp; Social Ads</div>
@@ -247,12 +251,76 @@
 <a class="logo" href="../index.html" style="margin-bottom:4px;">
 <img alt="DatRey Logo" class="logo-img" decoding="async" height="40" loading="lazy" src="../../assets/logo.webp" width="40">
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
-</img></a>
-<p>Votre partenaire d'acquisition digitale full-stack au Maroc.</p>
+</a>
+<p>
+            Votre partenaire d'acquisition digitale full-stack au Maroc.
+            Google Ads, Meta Ads, SEO et CRO pour scaler vos ventes.
+          </p>
+<a class="footer-saas" href="https://datrey.com" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path></svg>
+            Découvrez nos solutions SaaS sur DatRey.com
+          </a>
+<div class="social-links">
+<a aria-label="LinkedIn DatRey" href="https://www.linkedin.com/in/datrey-agency/" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+</a>
+<a aria-label="X DatRey" href="https://x.com/Datrey_Agency" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg>
+</a>
+<a aria-label="Instagram DatRey" href="https://www.instagram.com/datrey.agency/" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+</a>
+<a aria-label="Pinterest DatRey" href="https://www.pinterest.com/DatreyAgency" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="12" x2="12" y1="12" y2="22"></line><path d="M12 22c-3.5 0-6.5-2.5-7.5-6s.5-7 4-8.5 7-1 9.5 2 2 6-.5 8.5L12 22z"></path><circle cx="12" cy="7" r="1"></circle></svg>
+</a>
+</div>
+</div>
+<div>
+<h4>Navigation</h4>
+<div class="footer-links">
+<a href="../index.html">Accueil</a>
+<a href="../services.html">Nos Services</a>
+<a href="../transformation-digitale.html">Transformation Digitale</a>
+<a href="../blog.html">Blog</a>
+<a href="../a-propos.html">À propos</a>
+<a href="../cas-clients.html">Cas Clients</a>
+<a href="../contact.html">Contact</a>
+</div>
+</div>
+<div>
+<h4>Services</h4>
+<div class="footer-links">
+<a href="../services-google-ads.html">Google Ads (SEA)</a>
+<a href="../services-meta-ads.html">Meta Ads</a>
+<a href="../services-seo.html">SEO &amp; Contenu</a>
+<a href="../services-cro.html">CRO &amp; Landing Pages</a>
+<a href="../services-emailing.html">Email &amp; Automation</a>
+<a href="../services-strategie.html">Stratégie d'Acquisition</a>
+<a href="../services-gmb-360.html">Visite Virtuelle 360°</a>
+</div>
+</div>
+<div>
+<h4>Contact</h4>
+<div class="footer-contact-item">
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+<span>322 Bd Brahim Roudani, Rés. AR-Rayhane,<br/>Ét. 04 N°17, Maarif — Casablanca</span>
+</div>
+<div class="footer-contact-item">
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+<a href="mailto:contact@datrey.ma" style="color:inherit;">contact@datrey.ma</a>
+</div>
+<div class="footer-contact-item">
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+<a href="tel:+212644443059" style="color:inherit;">+212 6 44 44 30 59</a>
+</div>
 </div>
 </div>
 <div class="footer-bottom">
-<p>© 2026 DatRey SARL. Tous droits réservés.</p>
+<span>© 2026 DatRey. Tous droits réservés.</span>
+<div style="display:flex;gap:20px;">
+<a href="../mentions-legales.html">Mentions légales</a>
+<a href="../politique-confidentialite.html">Politique de confidentialité</a>
+</div>
 </div>
 </div>
 </footer>
@@ -261,10 +329,10 @@
 <div class="exit-popup-modal">
 <button aria-label="Fermer" class="exit-popup-close">×</button>
 <div class="exit-popup-content">
-<h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">¡No te vayas con las manos vacías!</h3>
-<p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtén una <strong>Auditoría UX/UI y SEO gratuita</strong> de tu sitio web. Descubre cómo aumentar tus conversiones hoy mismo.</p>
-<a class="btn btn-primary magnetic-btn" href="../../contact.html?subject=AuditGratuit" style="width: 100%; justify-content: center;">Quiero mi auditoría gratuita</a>
-<p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sin compromiso. Análisis entregado en 48h.</p>
+<h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Ne partez pas les mains vides !</h3>
+<p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtenez un <strong>Audit UX/UI &amp; SEO gratuit</strong> de votre site web. Découvrez comment augmenter vos conversions dès aujourd'hui.</p>
+<a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit" style="width: 100%; justify-content: center;">Je veux mon audit gratuit</a>
+<p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sans engagement. Analyse livrée en 48h.</p>
 </div>
 </div>
 </div>

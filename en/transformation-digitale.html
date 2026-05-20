@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="fr">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -9,9 +9,11 @@
 <meta content="Transformation Digitale — DatRey.ma" property="og:title"/>
 <meta content="Accompagnement complet pour la transformation digitale des entreprises marocaines." property="og:description"/>
 <meta content="https://datrey.ma/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
 <meta content="website" property="og:type"/>
-<meta content="https://datrey.ma/transformation-digitale.html" property="og:url"/>
-<link href="https://datrey.ma/en/transformation-digitale.html" rel="canonical"/>
+<meta content="https://datrey.ma/transformation-digitale" property="og:url"/>
+<link href="https://datrey.ma/transformation-digitale" rel="canonical"/>
 <link href="https://datrey.ma/transformation-digitale.html" hreflang="fr" rel="alternate"/>
 <link href="https://datrey.ma/en/transformation-digitale.html" hreflang="en" rel="alternate"/>
 <link href="https://datrey.ma/ar/transformation-digitale.html" hreflang="ar" rel="alternate"/>
@@ -19,7 +21,10 @@
 <link href="https://datrey.ma/transformation-digitale.html" hreflang="x-default" rel="alternate"/>
 <link href="../style.css" rel="stylesheet"/>
 <link href="../assets/logo.webp" rel="icon" type="image/webp"/>
+<link href="../favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
 <meta content="#050814" name="theme-color"/>
+<link href="../manifest.json" rel="manifest"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/>
@@ -83,7 +88,28 @@
 <!-- Scripts -->
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
 <script defer="" src="../shared.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://datrey.ma/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Transformation Digitale"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <!-- Prevent theme FOUC -->
@@ -98,8 +124,8 @@
 </a>
 <nav aria-label="Navigation principale" class="nav-links">
 <a href="index.html">Accueil</a>
-<a href="creation-site-web.html">Web Design</a>
-<a href="services.html">Nos Services</a>
+<a href="creation-site-web.html">Création Site Web</a>
+<a class="" href="services.html">Nos Services</a>
 
 <a href="blog.html">Blog</a>
 <a href="contact.html">Contact</a>
@@ -109,10 +135,10 @@
 <div class="lang-selector">
 <button aria-label="Changer de langue" class="lang-btn">EN ▼</button>
 <div class="lang-dropdown">
-<a href="/index.html">Français</a>
-<a class="active" href="/en/index.html">English</a>
-<a href="/ar/index.html">العربية</a>
-<a href="/es/index.html">Español</a>
+<a class="active" href="/transformation-digitale.html">Français</a>
+<a href="/en/transformation-digitale.html">English</a>
+<a href="/ar/transformation-digitale.html">العربية</a>
+<a href="/es/transformation-digitale.html">Español</a>
 </div>
 </div>
 <button aria-label="Basculer le thème" class="theme-toggle" id="themeToggle">
@@ -129,11 +155,10 @@
 <div aria-label="Navigation mobile" class="mobile-nav" id="mobileNav" role="navigation">
 <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
 <a href="index.html" onclick="closeMobileNav()">Accueil</a>
-<a href="creation-site-web.html" onclick="closeMobileNav()">Web Design</a>
-<a href="services.html" onclick="closeMobileNav()">Nos Services</a>
+<a href="creation-site-web.html" onclick="closeMobileNav()">Création Site Web</a>
+<a class="" href="services.html" onclick="closeMobileNav()">Nos Services</a>
 
 <a href="blog.html" onclick="closeMobileNav()">Blog</a>
-<a href="blog.html">Blog</a>
 <a href="contact.html" onclick="closeMobileNav()">Contact</a>
 <a class="btn btn-primary magnetic-btn" href="contact.html" onclick="closeMobileNav()">Audit Gratuit</a>
 </div>
@@ -157,14 +182,14 @@
 <!-- ========== TECH STACK BANNER ========== -->
 <div class="tech-stack-banner">
 <div class="tech-stack-track">
-<span>Partners &amp; Technologies:</span>
+<span>Partenaires &amp; Technologies :</span>
 <img alt="Google Partner" src="../assets/tech/google-partner.svg" style="height:30px; opacity:0.7;"/>
 <img alt="Meta Business Partner" src="../assets/tech/meta-partner.svg" style="height:30px; opacity:0.7;"/>
 <img alt="HubSpot" src="../assets/tech/hubspot.svg" style="height:30px; opacity:0.7;"/>
 <img alt="Shopify" src="../assets/tech/shopify.svg" style="height:30px; opacity:0.7;"/>
 <img alt="WordPress" src="../assets/tech/wordpress.svg" style="height:30px; opacity:0.7;"/>
 <img alt="Figma" src="../assets/tech/figma.svg" style="height:30px; opacity:0.7;"/>
-<span style="color:var(--blue-400); font-weight:600;">+250 Projects Delivered</span>
+<span style="color:var(--blue-400); font-weight:600;">+250 Projets Livrés</span>
 </div>
 </div>
 <!-- ========== PAGE VISUAL ========== -->
@@ -172,7 +197,7 @@
 <div class="container">
 <div class="service-hero-img reveal" style="border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
 <img alt="Transformation Digitale et Innovation - Stratégie B2B" decoding="async" height="675" loading="lazy" src="../assets/transfo_digitale_hero.webp" style="width:100%; height:auto; display:block;" width="1200">
-</img></div>
+</div>
 </div>
 </section>
 <!-- ========== METHODOLOGY ========== -->
@@ -246,7 +271,7 @@
 <a class="logo" href="index.html" style="margin-bottom:4px;">
 <img alt="DatRey Logo" class="logo-img" decoding="async" height="40" loading="lazy" src="../assets/logo.webp" width="40">
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
-</img></a>
+</a>
 <p>
             Votre partenaire d'acquisition digitale full-stack au Maroc.
             Google Ads, Meta Ads, SEO et CRO pour scaler vos ventes.
@@ -274,7 +299,7 @@
 <h4>Navigation</h4>
 <div class="footer-links">
 <a href="index.html">Accueil</a>
-<a href="creation-site-web.html">Web Design</a>
+<a href="creation-site-web.html">Création Site Web</a>
 <a href="services.html">Nos Services</a>
 <a href="transformation-digitale.html">Transformation Digitale</a>
 <a href="blog.html">Blog</a>
@@ -292,6 +317,7 @@
 <a href="services-cro.html">CRO &amp; Landing Pages</a>
 <a href="services-emailing.html">Email &amp; Automation</a>
 <a href="services-strategie.html">Stratégie d'Acquisition</a>
+<a href="services-gmb-360.html">Visite Virtuelle 360°</a>
 </div>
 </div>
 <div>
@@ -329,10 +355,10 @@
 <div class="exit-popup-modal">
 <button aria-label="Fermer" class="exit-popup-close">×</button>
 <div class="exit-popup-content">
-<h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Don't leave empty-handed!</h3>
-<p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Get a <strong>Free UX/UI &amp; SEO Audit</strong> of your website. Discover how to boost your conversions today.</p>
-<a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit" style="width: 100%; justify-content: center;">I want my free audit</a>
-<p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">No commitment. Analysis delivered in 48h.</p>
+<h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Ne partez pas les mains vides !</h3>
+<p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtenez un <strong>Audit UX/UI &amp; SEO gratuit</strong> de votre site web. Découvrez comment augmenter vos conversions dès aujourd'hui.</p>
+<a class="btn btn-primary magnetic-btn" href="contact.html?subject=AuditGratuit" style="width: 100%; justify-content: center;">Je veux mon audit gratuit</a>
+<p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sans engagement. Analyse livrée en 48h.</p>
 </div>
 </div>
 </div>

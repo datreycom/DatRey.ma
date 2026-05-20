@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="fr">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -10,9 +10,11 @@
 <meta content="Agence d'Acquisition Digitale au Maroc | DatRey" property="og:title"/>
 <meta content="DatRey est l'agence d'acquisition digitale full-stack au Maroc. Nous combinons Google Ads, Meta Ads, SEO et CRO." property="og:description"/>
 <meta content="https://datrey.ma/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
 <meta content="website" property="og:type"/>
 <meta content="https://datrey.ma" property="og:url"/>
-<link href="https://datrey.ma/en/" rel="canonical"/>
+<link href="https://datrey.ma/" rel="canonical"/>
 <link href="https://datrey.ma/" hreflang="fr" rel="alternate"/>
 <link href="https://datrey.ma/en/" hreflang="en" rel="alternate"/>
 <link href="https://datrey.ma/ar/" hreflang="ar" rel="alternate"/>
@@ -52,7 +54,10 @@
 <!-- Full stylesheet (synchronous to prevent CLS) -->
 <link href="../style.css" rel="stylesheet"/>
 <link href="../assets/logo.webp" rel="icon" type="image/webp"/>
+<link href="../favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
 <meta content="#050814" name="theme-color"/>
+<link href="../manifest.json" rel="manifest"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/>
@@ -60,55 +65,103 @@
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://datrey.ma/#organization",
-    "name": "DatRey",
-    "alternateName": "DatRey.ma",
-    "description": "Agence d'acquisition digitale full-stack au Maroc. Google Ads, Meta Ads, SEO, CRO et Marketing Automation pour scaler vos ventes.",
-    "url": "https://datrey.ma",
-    "logo": "https://datrey.ma/assets/logo.webp",
-    "image": "https://datrey.ma/assets/logo.webp",
-    "telephone": "+212644443059",
-    "email": "contact@datrey.ma",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "322 Bd Brahim Roudani, R\u00e9s. AR-Rayhane, \u00c9t. 04 N\u00b017",
-      "addressLocality": "Casablanca",
-      "addressRegion": "Casablanca-Settat",
-      "postalCode": "20000",
-      "addressCountry": "MA"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 33.5731,
-      "longitude": -7.5898
-    },
-    "areaServed": [
-      {"@type": "City", "name": "Casablanca"},
-      {"@type": "City", "name": "Rabat"},
-      {"@type": "City", "name": "Tanger"},
-      {"@type": "City", "name": "Marrakech"}
-    ],
-    "priceRange": "$$",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    "sameAs": [],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Services d'Acquisition Digitale",
-      "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Google Ads (SEA)", "description": "Campagnes Search et Performance Max orient\u00e9es ROAS."}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Meta Ads (Facebook & Instagram)", "description": "Acquisition via Facebook et Instagram avec Creative Testing."}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO & R\u00e9f\u00e9rencement Naturel", "description": "Audit technique, cocon s\u00e9mantique et netlinking."}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Optimisation de Conversion (CRO)", "description": "Landing pages, A/B testing et heatmaps."}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Email Marketing & Automation", "description": "Nurturing B2B, CRM et sc\u00e9narios de fid\u00e9lisation."}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Strat\u00e9gie d'Acquisition Digitale", "description": "Audit, roadmap 3/6/12 mois et tracking avanc\u00e9."}}
-      ]
-    }
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://datrey.ma/#organization",
+        "name": "DatRey",
+        "alternateName": "DatRey.ma",
+        "description": "Agence d'acquisition digitale full-stack au Maroc. Google Ads, Meta Ads, SEO, CRO et Marketing Automation pour scaler vos ventes.",
+        "url": "https://datrey.ma",
+        "logo": "https://datrey.ma/assets/logo.webp",
+        "image": "https://datrey.ma/assets/logo.webp",
+        "telephone": "+212644443059",
+        "email": "contact@datrey.ma",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "322 Bd Brahim Roudani, R\u00e9s. AR-Rayhane, \u00c9t. 04 N\u00b017",
+          "addressLocality": "Casablanca",
+          "addressRegion": "Casablanca-Settat",
+          "postalCode": "20000",
+          "addressCountry": "MA"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 33.5731,
+          "longitude": -7.5898
+        },
+        "areaServed": [
+          {"@type": "City", "name": "Casablanca"},
+          {"@type": "City", "name": "Rabat"},
+          {"@type": "City", "name": "Tanger"},
+          {"@type": "City", "name": "Marrakech"}
+        ],
+        "priceRange": "$$",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "47",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services d'Acquisition Digitale",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Google Ads (SEA)", "description": "Campagnes Search et Performance Max orient\u00e9es ROAS."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Meta Ads (Facebook & Instagram)", "description": "Acquisition via Facebook et Instagram avec Creative Testing."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO & R\u00e9f\u00e9rencement Naturel", "description": "Audit technique, cocon s\u00e9mantique et netlinking."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Optimisation de Conversion (CRO)", "description": "Landing pages, A/B testing et heatmaps."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Email Marketing & Automation", "description": "Nurturing B2B, CRM et sc\u00e9narios de fid\u00e9lisation."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Strat\u00e9gie d'Acquisition Digitale", "description": "Audit, roadmap 3/6/12 mois et tracking avanc\u00e9."}}
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://datrey.ma/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quel est le budget minimum pour travailler avec DatRey ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nous recommandons un budget publicitaire (hors frais d'agence) d'au moins 10 000 MAD / mois pour Google Ads ou Meta Ads afin d'avoir suffisamment de data pour optimiser et scaler vos campagnes efficacement."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "En combien de temps puis-je esp\u00e9rer un ROI positif ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pour l'acquisition payante (Google/Meta Ads), les premiers r\u00e9sultats arrivent g\u00e9n\u00e9ralement entre le 1er et le 3\u00e8me mois (phase de testing et machine learning). Pour le SEO, il faut compter entre 3 et 6 mois pour voir un impact significatif sur le trafic organique."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ai-je acc\u00e8s \u00e0 mes comptes publicitaires ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolument. Contrairement \u00e0 beaucoup d'agences, vous restez l'unique propri\u00e9taire de vos comptes publicitaires (Google Ads, Meta Business Manager) et de vos donn\u00e9es. Nous travaillons en tant que partenaire avec des acc\u00e8s administrateurs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vos contrats ont-ils une dur\u00e9e d'engagement ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non, nous travaillons sans engagement de dur\u00e9e pour nos prestations r\u00e9currentes (Ads & CRO). Nous croyons que la performance de nos campagnes est la meilleure garantie de notre collaboration sur le long terme."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 <!-- Google tag (gtag.js) - Deferred for performance -->
@@ -132,6 +185,8 @@
 <!-- Scripts -->
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
 <script defer="" src="../shared.js"></script>
 </head>
 <body>
@@ -147,8 +202,8 @@
 </a>
 <nav aria-label="Navigation principale" class="nav-links">
 <a class="nav-active" href="index.html">Accueil</a>
-<a href="creation-site-web.html">Web Design</a>
-<a href="services.html">Nos Services</a>
+<a href="creation-site-web.html">Création Site Web</a>
+<a class="" href="services.html">Nos Services</a>
 
 <a href="blog.html">Blog</a>
 <a href="contact.html">Contact</a>
@@ -158,8 +213,8 @@
 <div class="lang-selector">
 <button aria-label="Changer de langue" class="lang-btn">EN ▼</button>
 <div class="lang-dropdown">
-<a href="/index.html">Français</a>
-<a class="active" href="/en/index.html">English</a>
+<a class="active" href="/index.html">Français</a>
+<a href="/en/index.html" class="active">English</a>
 <a href="/ar/index.html">العربية</a>
 <a href="/es/index.html">Español</a>
 </div>
@@ -177,21 +232,21 @@
 <!-- Mobile Nav -->
 <div aria-label="Navigation mobile" class="mobile-nav" id="mobileNav" role="navigation">
 <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
-<a href="index.html" onclick="closeMobileNav()">Accueil</a>
-<a href="creation-site-web.html" onclick="closeMobileNav()">Web Design</a>
-<a href="services.html" onclick="closeMobileNav()">Nos Services</a>
+<a class="nav-active" href="index.html" onclick="closeMobileNav()">Accueil</a>
+<a href="creation-site-web.html" onclick="closeMobileNav()">Création Site Web</a>
+<a class="" href="services.html" onclick="closeMobileNav()">Nos Services</a>
 
 <a href="blog.html" onclick="closeMobileNav()">Blog</a>
-<a href="blog.html">Blog</a>
 <a href="contact.html" onclick="closeMobileNav()">Contact</a>
 <a class="btn btn-primary magnetic-btn" href="contact.html" onclick="closeMobileNav()">Audit Gratuit</a>
 </div>
 <main id="main-content">
 <!-- ========== HERO ========== -->
-<section class="hero antigrav-hero hero-with-bg" id="hero" style="background-image: url('assets/hero_homepage.webp');">
+<section class="hero antigrav-hero chic-hero" id="hero">
 <div class="hero-grid"></div>
 <div class="hero-orb hero-orb-1"></div>
 <div class="hero-orb hero-orb-2"></div>
+<div class="hero-orb hero-orb-3"></div>
 <div class="container">
 <div class="hero-content">
 <div class="hero-badge">
@@ -232,20 +287,43 @@
 </div>
 </div>
 </div>
+
 </section>
 <!-- ========== TECH STACK BANNER ========== -->
 <div class="tech-stack-banner">
 <div class="tech-stack-track">
-<span>Partners &amp; Technologies:</span>
+<span>Partenaires &amp; Technologies :</span>
 <img alt="Google Partner" src="../assets/tech/google-partner.svg" style="height:30px; opacity:0.7;"/>
 <img alt="Meta Business Partner" src="../assets/tech/meta-partner.svg" style="height:30px; opacity:0.7;"/>
 <img alt="HubSpot" src="../assets/tech/hubspot.svg" style="height:30px; opacity:0.7;"/>
 <img alt="Shopify" src="../assets/tech/shopify.svg" style="height:30px; opacity:0.7;"/>
 <img alt="WordPress" src="../assets/tech/wordpress.svg" style="height:30px; opacity:0.7;"/>
 <img alt="Figma" src="../assets/tech/figma.svg" style="height:30px; opacity:0.7;"/>
-<span style="color:var(--blue-400); font-weight:600;">+250 Projects Delivered</span>
+<span style="color:var(--blue-400); font-weight:600;">+250 Projets Livrés</span>
 </div>
 </div>
+<div class="section-divider"></div>
+<!-- ========== SOCIAL PROOF ========== -->
+<section class="social-proof" style="padding: 60px 0; background: var(--bg-main); overflow: hidden;">
+<div class="container" style="text-align: center;">
+<p style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 30px;">Ils nous font confiance pour scaler leur croissance</p>
+<div class="ticker-wrapper">
+<div class="ticker-track">
+<div class="ticker-item">GROUPE<span class="ticker-accent"> ATLAS</span></div>
+<div class="ticker-item">MED<span class="ticker-accent">CLINIC</span></div>
+<div class="ticker-item">CASA<span class="ticker-accent"> INVEST</span></div>
+<div class="ticker-item">NOOR<span class="ticker-accent"> DIGITAL</span></div>
+<div class="ticker-item">IMMO<span class="ticker-accent"> PREMIUM</span></div>
+<div class="ticker-item">GROUPE<span class="ticker-accent"> ATLAS</span></div>
+<div class="ticker-item">MED<span class="ticker-accent">CLINIC</span></div>
+<div class="ticker-item">CASA<span class="ticker-accent"> INVEST</span></div>
+<div class="ticker-item">NOOR<span class="ticker-accent"> DIGITAL</span></div>
+<div class="ticker-item">IMMO<span class="ticker-accent"> PREMIUM</span></div>
+</div>
+</div>
+</div>
+</section>
+<div class="section-divider"></div>
 <!-- ========== SERVICES PREVIEW ========== -->
 <section class="services section-padding" id="services">
 <div class="container">
@@ -256,7 +334,7 @@
           Des solutions d'acquisition complètes : de la création de la demande jusqu'à la conversion finale.
         </p>
 </div>
-<div class="services-grid">
+<div class="services-grid bento">
 <!-- Card 1: Google Ads -->
 <a class="service-card glass-panel floating-card reveal" href="services-google-ads.html" id="svc-google-ads">
 <div class="service-card glass-panel floating-card-body">
@@ -362,7 +440,7 @@
 <div class="approach-grid">
 <div class="approach-visual reveal">
 <img alt="Équipe DatRey en réunion stratégique analysant les KPIs de performance digitale" decoding="async" height="400" loading="lazy" src="../assets/approach_methodology.webp" width="600">
-</img></div>
+</div>
 <div class="reveal">
 <div class="section-label">Méthodologie Scientifique</div>
 <h2 class="section-title">Le processus de <span class="gradient-text">croissance prévisible</span></h2>
@@ -371,7 +449,7 @@
             pour dérisquer vos investissements publicitaires.<br/><br/>
 <strong style="color:var(--text-main);">Notre focus :</strong> B2B, E-commerce, Immobilier, et Santé au Maroc.
           </p>
-<div class="approach-steps">
+<div class="approach-steps approach-steps-chic">
 <div class="approach-step">
 <div class="approach-step-num">01</div>
 <div>
@@ -405,10 +483,96 @@
 </div>
 </div>
 </section>
+<!-- ========== LATEST ARTICLES ========== -->
+<section class="latest-articles section-padding" id="latest-articles" style="background: var(--bg-alt);">
+<div class="container">
+<div class="services-header reveal">
+<div class="section-label">Ressources &amp; Expertise</div>
+<h2 class="section-title">Nos derniers <span class="gradient-text">Insights</span></h2>
+<p class="section-subtitle">Découvrez nos dernières stratégies en acquisition et conversion.</p>
+</div>
+<div class="services-grid" id="blog-grid-home">
+<a class="service-card glass-panel floating-card reveal" href="blog/erreurs-google-ads-maroc.html">
+<div class="service-hero-img" style="margin-bottom: 20px; height: 180px;">
+<img alt="Erreurs Google Ads à éviter" class="blog-img" decoding="async" height="200" loading="lazy" src="../assets/blog/erreurs-google-ads-maroc-1.webp" width="300" style="height:100%; object-fit:cover;"/>
+</div>
+<h3>Les 5 erreurs fatales en Google Ads au Maroc</h3>
+<p style="font-size: 0.9rem;">Découvrez pourquoi vos campagnes ne convertissent pas et comment y remédier rapidement.</p>
+<span class="service-card-link" style="margin-top: 10px;">Lire l'article →</span>
+</a>
+<a class="service-card glass-panel floating-card reveal" href="blog/budget-meta-ads-social-ads-encheres-maroc.html">
+<div class="service-hero-img" style="margin-bottom: 20px; height: 180px;">
+<img alt="Optimiser ROAS Meta Ads" height="180" loading="lazy" src="../assets/blog/guide-optimisation-meta-ads-2025-1.webp" style="height:100%; object-fit:cover;" width="380"/>
+</div>
+<h3>Comment doubler votre ROAS sur Meta Ads</h3>
+<p style="font-size: 0.9rem;">La structure de campagne exacte que nous utilisons pour scaler les e-commerces marocains.</p>
+<span class="service-card-link" style="margin-top: 10px;">Lire l'article →</span>
+</a>
+<a class="service-card glass-panel floating-card reveal" href="blog/seo-technique-optimisations-essentielles.html">
+<div class="service-hero-img" style="margin-bottom: 20px; height: 180px;">
+<img alt="Importance SEO Technique" height="180" loading="lazy" src="../assets/blog/seo-technique-optimisations-essentielles-1.webp" style="height:100%; object-fit:cover;" width="380"/>
+</div>
+<h3>Le SEO Technique : Le pilier oublié</h3>
+<p style="font-size: 0.9rem;">Pourquoi un site rapide et bien structuré est indispensable avant même de créer du contenu.</p>
+<span class="service-card-link" style="margin-top: 10px;">Lire l'article →</span>
+</a>
+</div>
+<div class="reveal" style="text-align: center; margin-top: 40px;">
+<a class="btn btn-outline" href="blog.html">Voir tous les articles</a>
+</div>
+</div>
+</section>
+<!-- ========== FAQ ========== -->
+<section class="faq-section section-padding" id="faq" style="background: var(--bg-main);">
+<div class="container">
+<div class="services-header reveal">
+<div class="section-label">Transparence totale</div>
+<h2 class="section-title">Questions <span class="gradient-text">Fréquentes</span></h2>
+<p class="section-subtitle">Tout ce que vous devez savoir avant de travailler avec nous.</p>
+</div>
+<div class="faq-container" style="max-width: 800px; margin: 0 auto;">
+<details class="faq-item-chic">
+<summary>
+          Quel est le budget minimum pour travailler avec DatRey ?
+          <span class="faq-icon">+</span>
+</summary>
+<p class="faq-answer">
+          Nous recommandons un budget publicitaire (hors frais d'agence) d'au moins 10 000 MAD / mois pour Google Ads ou Meta Ads afin d'avoir suffisamment de data pour optimiser et scaler vos campagnes efficacement.
+        </p>
+</details>
+<details class="faq-item-chic">
+<summary>
+          En combien de temps puis-je espérer un ROI positif ?
+          <span class="faq-icon">+</span>
+</summary>
+<p class="faq-answer">
+          Pour l'acquisition payante (Google/Meta Ads), les premiers résultats arrivent généralement entre le 1er et le 3ème mois (phase de testing et machine learning). Pour le SEO, il faut compter entre 3 et 6 mois pour voir un impact significatif sur le trafic organique.
+        </p>
+</details>
+<details class="faq-item-chic">
+<summary>
+          Ai-je accès à mes comptes publicitaires ?
+          <span class="faq-icon">+</span>
+</summary>
+<p class="faq-answer">
+          Absolument. Contrairement à beaucoup d'agences, vous restez l'unique propriétaire de vos comptes publicitaires (Google Ads, Meta Business Manager) et de vos données. Nous travaillons en tant que partenaire avec des accès administrateurs.
+        </p>
+</details>
+<details class="faq-item-chic">
+<summary>
+          Vos contrats ont-ils une durée d'engagement ?
+          <span class="faq-icon">+</span>
+</summary>
+<p class="faq-answer">
+          Non, nous travaillons sans engagement de durée pour nos prestations récurrentes (Ads &amp; CRO). Nous croyons que la performance de nos campagnes est la meilleure garantie de notre collaboration sur le long terme.
+        </p>
+</details>
+</div>
+</div></section>
 <!-- ========== CTA ========== -->
 <section class="cta-section section-padding" id="contact">
 <div class="container">
-<div class="cta-box reveal" style="text-align:center;">
+<div class="cta-box aurora reveal" style="text-align:center;">
 <h2>Prêt à transformer votre entreprise ?</h2>
 <p>
           Rencontrons-nous pour discuter de vos objectifs.
@@ -434,9 +598,9 @@
 <div class="footer-grid">
 <div class="footer-brand">
 <a class="logo" href="index.html" style="margin-bottom:4px;">
-<img alt="DatRey Logo" class="logo-img" decoding="async" loading="lazy" src="../assets/logo.webp">
+<img alt="DatRey Logo" class="logo-img" decoding="async" height="40" loading="lazy" src="../assets/logo.webp" width="40">
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
-</img></a>
+</a>
 <p>
             Votre partenaire d'acquisition digitale full-stack au Maroc.
             Google Ads, Meta Ads, SEO et CRO pour scaler vos ventes.
@@ -464,7 +628,7 @@
 <h4>Navigation</h4>
 <div class="footer-links">
 <a href="index.html">Accueil</a>
-<a href="creation-site-web.html">Web Design</a>
+<a href="creation-site-web.html">Création Site Web</a>
 <a href="services.html">Nos Services</a>
 <a href="transformation-digitale.html">Transformation Digitale</a>
 <a href="blog.html">Blog</a>
@@ -482,6 +646,7 @@
 <a href="services-cro.html">CRO &amp; Landing Pages</a>
 <a href="services-emailing.html">Email &amp; Automation</a>
 <a href="services-strategie.html">Stratégie d'Acquisition</a>
+<a href="services-gmb-360.html">Visite Virtuelle 360°</a>
 </div>
 </div>
 <div>
@@ -519,10 +684,10 @@
 <div class="exit-popup-modal">
 <button aria-label="Fermer" class="exit-popup-close">×</button>
 <div class="exit-popup-content">
-<h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Don't leave empty-handed!</h3>
-<p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Get a <strong>Free UX/UI &amp; SEO Audit</strong> of your website. Discover how to boost your conversions today.</p>
-<a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit" style="width: 100%; justify-content: center;">I want my free audit</a>
-<p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">No commitment. Analysis delivered in 48h.</p>
+<h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Ne partez pas les mains vides !</h3>
+<p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtenez un <strong>Audit UX/UI &amp; SEO gratuit</strong> de votre site web. Découvrez comment augmenter vos conversions dès aujourd'hui.</p>
+<a class="btn btn-primary magnetic-btn" href="contact.html?subject=AuditGratuit" style="width: 100%; justify-content: center;">Je veux mon audit gratuit</a>
+<p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sans engagement. Analyse livrée en 48h.</p>
 </div>
 </div>
 </div>

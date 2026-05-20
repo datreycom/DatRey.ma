@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html dir="rtl" lang="ar">
+<html dir="ltr" lang="fr">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -9,9 +9,11 @@
 <meta content="Nos Services — DatRey.ma" property="og:title"/>
 <meta content="Marketing digital, développement web, design, impression et affichage dynamique. Solutions complètes pour votre croissance." property="og:description"/>
 <meta content="https://datrey.ma/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
 <meta content="website" property="og:type"/>
-<meta content="https://datrey.ma/services.html" property="og:url"/>
-<link href="https://datrey.ma/ar/services-developpement.html" rel="canonical"/>
+<meta content="https://datrey.ma/services" property="og:url"/>
+<link href="https://datrey.ma/services-developpement" rel="canonical"/>
 <link href="https://datrey.ma/services-developpement.html" hreflang="fr" rel="alternate"/>
 <link href="https://datrey.ma/en/services-developpement.html" hreflang="en" rel="alternate"/>
 <link href="https://datrey.ma/ar/services-developpement.html" hreflang="ar" rel="alternate"/>
@@ -19,7 +21,10 @@
 <link href="https://datrey.ma/services-developpement.html" hreflang="x-default" rel="alternate"/>
 <link href="../style.css" rel="stylesheet"/>
 <link href="../assets/logo.webp" rel="icon" type="image/webp"/>
+<link href="../favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
 <meta content="#050814" name="theme-color"/>
+<link href="../manifest.json" rel="manifest"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/>
@@ -44,7 +49,34 @@
 <!-- Scripts -->
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
 <script defer="" src="../shared.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://datrey.ma/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Nos Services",
+      "item": "https://datrey.ma/services.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Développement Web &amp; Mobile"
+    }
+  ]
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -52,26 +84,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "كيف تسير عملية الدعم مع DatRey؟",
+      "name": "Comment se déroule l'accompagnement avec DatRey ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "يبدأ كل شيء بمراجعة مجانية لحالتك الحالية. بعد ذلك، نحدد معًا استراتيجية مخصصة (مؤشرات الأداء، الميزانية، القنوات). بمجرد الموافقة، ينشر فريقنا الحملات ويقدم لك تقارير منتظمة لتتبع عائد الاستثمار."
+        "text": "Tout commence par un audit gratuit de votre existant. Ensuite, nous définissons ensemble une stratégie sur-mesure (KPIs, budget, canaux). Une fois validée, notre équipe déploie les campagnes et vous fournit un reporting régulier pour suivre la rentabilité de vos investissements."
       }
     },
     {
       "@type": "Question",
-      "name": "هل هناك ميزانية دنيا للعمل معكم؟",
+      "name": "Faut-il un budget minimum pour travailler avec vous ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "نحن نكيف استراتيجياتنا لتناسب أهدافك. ومع ذلك، بالنسبة للإعلانات المدفوعة (Google Ads، Meta Ads)، يُنصح بميزانية إعلانية شهرية لا تقل عن 5000 درهم لجمع بيانات كافية وتحسين العائد على الاستثمار بسرعة."
+        "text": "Nous adaptons nos stratégies à vos objectifs. Cependant, pour l'acquisition payante (Google Ads, Meta Ads), un budget publicitaire mensuel d'au moins 5 000 MAD est recommandé pour récolter suffisamment de données et optimiser le ROI rapidement."
       }
     },
     {
       "@type": "Question",
-      "name": "متى سأرى النتائج الأولى؟",
+      "name": "Quand verrai-je les premiers résultats ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "بالنسبة للإعلانات عبر محركات البحث والإعلانات الاجتماعية، تصل الخيوط أو المبيعات الأولى عادة في الأسبوع الأول من البث. بالنسبة لـ SEO، إنها استراتيجية طويلة الأمد: تُلاحظ التحسينات الأولية بعد شهرين إلى 3 أشهر من التحسين المنتظم."
+        "text": "Pour le SEA et les Social Ads, les premiers leads ou ventes arrivent généralement dans la première semaine de diffusion. Pour le SEO, c'est une stratégie de fond : les premiers frémissements s'observent après 2 à 3 mois d'optimisations régulières."
       }
     }
   ]
@@ -91,7 +123,7 @@
 </a>
 <nav aria-label="Navigation principale" class="nav-links">
 <a href="index.html">Accueil</a>
-<a href="creation-site-web.html">تصميم المواقع</a>
+<a href="creation-site-web.html">Création Site Web</a>
 <a class="nav-active" href="services.html">Nos Services</a>
 
 <a href="blog.html">Blog</a>
@@ -102,10 +134,10 @@
 <div class="lang-selector">
 <button aria-label="Changer de langue" class="lang-btn">AR ▼</button>
 <div class="lang-dropdown">
-<a href="/index.html">Français</a>
-<a href="/en/index.html">English</a>
-<a class="active" href="/ar/index.html">العربية</a>
-<a href="/es/index.html">Español</a>
+<a class="active" href="/services-developpement.html">Français</a>
+<a href="/en/services-developpement.html">English</a>
+<a href="/ar/services-developpement.html">العربية</a>
+<a href="/es/services-developpement.html">Español</a>
 </div>
 </div>
 <button aria-label="Basculer le thème" class="theme-toggle" id="themeToggle">
@@ -122,11 +154,10 @@
 <div aria-label="Navigation mobile" class="mobile-nav" id="mobileNav" role="navigation">
 <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
 <a href="index.html" onclick="closeMobileNav()">Accueil</a>
-<a href="creation-site-web.html" onclick="closeMobileNav()">تصميم المواقع</a>
-<a href="services.html" onclick="closeMobileNav()">Nos Services</a>
+<a href="creation-site-web.html" onclick="closeMobileNav()">Création Site Web</a>
+<a class="nav-active" href="services.html" onclick="closeMobileNav()">Nos Services</a>
 
 <a href="blog.html" onclick="closeMobileNav()">Blog</a>
-<a href="blog.html">Blog</a>
 <a href="contact.html" onclick="closeMobileNav()">Contact</a>
 <a class="btn btn-primary magnetic-btn" href="contact.html" onclick="closeMobileNav()">Audit Gratuit</a>
 </div>
@@ -166,34 +197,78 @@
             </p>
 </div>
 </div>
-<div class="service-detail-grid">
-<div class="service-feature">
-<div class="service-feature-icon">âœ“</div>
-<div><h4>Sites Vitrines Professionnels</h4><p>Design moderne et responsive, contenu optimisé SEO, formulaires de contact, intégration réseaux sociaux, certificat SSL et hébergement haute performance.</p></div>
+<div class="chic-pricing-list">
+<!-- ROW 1 -->
+<div class="chic-row reveal" data-image="assets/photo_dev.webp">
+<div class="chic-row-left">
+<span class="chic-index">01</span>
+<h3 class="chic-title">Site Vitrine</h3>
 </div>
-<div class="service-feature">
-<div class="service-feature-icon">âœ“</div>
-<div><h4>E-Commerce &amp; Boutiques en Ligne</h4><p>Développement sur WooCommerce, Shopify ou sur mesure. Catalogue produits, panier d'achat, paiement sécurisé (CMI, PayPal, virement), gestion des stocks et factures automatiques.</p></div>
+<div class="chic-row-right">
+<div class="chic-price-block">
+<span class="chic-price">1 999 <span>MAD</span></span>
+<span class="chic-discount">-30% inclus</span>
 </div>
-<div class="service-feature">
-<div class="service-feature-icon">âœ“</div>
-<div><h4>Applications Mobile (iOS &amp; Android)</h4><p>Développement natif ou cross-platform (React Native, Flutter), UX/UI mobile-first, notifications push, intégration API, publication sur App Store et Google Play.</p></div>
-</div>
-<div class="service-feature">
-<div class="service-feature-icon">âœ“</div>
-<div><h4>Applications Web Sur Mesure</h4><p>Plateformes de gestion interne, CRM, ERP, portails clients, tableaux de bord interactifs et outils métier avec architecture scalable et sécurisée.</p></div>
-</div>
-<div class="service-feature">
-<div class="service-feature-icon">âœ“</div>
-<div><h4>Maintenance &amp; Hébergement</h4><p>Contrats de maintenance préventive et corrective, mises à jour de sécurité, sauvegardes automatiques, monitoring 24/7, hébergement cloud haute disponibilité.</p></div>
-</div>
-<div class="service-feature">
-<div class="service-feature-icon">âœ“</div>
-<div><h4>Refonte &amp; Migration</h4><p>Modernisation de sites existants, migration de CMS, transfert de données, redirection SEO-friendly et amélioration des performances sans perte de trafic.</p></div>
+<p class="chic-desc">Idéal pour les entreprises souhaitant une présence en ligne élégante et professionnelle.</p>
+<ul class="chic-features">
+<li>Design responsive sur-mesure</li>
+<li>1 à 3 pages (Accueil, Services, Contact)</li>
+<li>Optimisation SEO de base &amp; Hébergement</li>
+</ul>
+<a class="btn btn-primary btn-sm chic-btn" href="contact.html">Demander ce pack</a>
 </div>
 </div>
-<div class="service-tags">
-<span class="service-tag">Sites Vitrines</span><span class="service-tag">E-Commerce</span><span class="service-tag">Apps Mobile</span><span class="service-tag">Apps Sur Mesure</span><span class="service-tag">Maintenance</span><span class="service-tag">Hébergement</span>
+<!-- ROW 2 -->
+<div class="chic-row reveal" data-image="assets/hero_services.webp">
+<div class="chic-row-left">
+<span class="chic-index">02</span>
+<h3 class="chic-title">Site Multipage</h3>
+</div>
+<div class="chic-row-right">
+<div class="chic-price-block">
+<span class="chic-price">3 999 <span>MAD</span></span>
+<span class="chic-discount">-30% inclus</span>
+</div>
+<p class="chic-desc">Pour les sociétés cherchant à détailler leur expertise et générer des leads B2B.</p>
+<ul class="chic-features">
+<li>Jusqu'à 10 pages + Module Blog</li>
+<li>Système de prise de rendez-vous / Devis</li>
+<li>SEO Avancé &amp; Analytics (GA4) intégré</li>
+</ul>
+<a class="btn btn-primary btn-sm chic-btn" href="contact.html">Demander ce pack</a>
+</div>
+</div>
+<!-- ROW 3 -->
+<div class="chic-row reveal" data-image="assets/case_ecommerce.webp">
+<div class="chic-row-left">
+<span class="chic-index">03</span>
+<h3 class="chic-title">E-Commerce</h3>
+</div>
+<div class="chic-row-right">
+<div class="chic-price-block">
+<span class="chic-price">7 999 <span>MAD</span></span>
+<span class="chic-discount">-30% inclus</span>
+</div>
+<p class="chic-desc">Lancez votre boutique en ligne avec une plateforme taillée pour la conversion.</p>
+<ul class="chic-features">
+<li>Boutique complète (WooCommerce / Shopify)</li>
+<li>Intégration de paiement (CMI, PayPal, Stripe)</li>
+<li>Formation à la gestion du catalogue &amp; stocks</li>
+</ul>
+<a class="btn btn-primary btn-sm chic-btn" href="contact.html">Demander ce pack</a>
+</div>
+</div>
+</div>
+<!-- SUR MESURE CTA -->
+<div class="chic-custom-block reveal">
+<div class="chic-custom-content">
+<h3>Développement Sur-Mesure &amp; Apps Mobile</h3>
+<p>Vous avez un projet complexe ? Portail B2B, SaaS, CRM sur-mesure ou application mobile native (iOS/Android). Nous concevons une architecture robuste, évolutive et sécurisée.</p>
+</div>
+<div class="chic-custom-action">
+<span class="chic-custom-price">Sur devis</span>
+<a class="btn btn-outline chic-btn-outline" href="contact.html">Parler à un architecte</a>
+</div>
 </div>
 </div>
 <div class="service-detail-img reveal">
@@ -202,29 +277,29 @@
 </div>
 </section>
 <!-- ========== FAQ AGENCE ========== -->
-<section class="section-padding" dir="rtl" style="background: var(--bg-alt);">
+<section class="section-padding" style="background: var(--bg-alt);">
 <div class="container">
 <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-<h2 style="font-size: 2.5rem; margin-bottom: 1rem;">الأسئلة <span class="gradient-text">الشائعة</span></h2>
-<p style="color: var(--text-muted);">كل ما تحتاج معرفته عن شراكتنا.</p>
+<h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Questions <span class="gradient-text">Fréquentes</span></h2>
+<p style="color: var(--text-muted);">Tout ce que vous devez savoir sur notre accompagnement.</p>
 </div>
 <div class="faq-list" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
 <details class="faq-item-chic">
-<summary>كيف تسير عملية الدعم مع DatRey؟</summary>
+<summary>Comment se déroule l'accompagnement avec DatRey ?</summary>
 <div class="faq-content">
-<p>يبدأ كل شيء بمراجعة مجانية لحالتك الحالية. بعد ذلك، نحدد معًا استراتيجية مخصصة (مؤشرات الأداء، الميزانية، القنوات). بمجرد الموافقة، ينشر فريقنا الحملات ويقدم لك تقارير منتظمة لتتبع عائد الاستثمار.</p>
+<p>Tout commence par un audit gratuit de votre existant. Ensuite, nous définissons ensemble une stratégie sur-mesure (KPIs, budget, canaux). Une fois validée, notre équipe déploie les campagnes et vous fournit un reporting régulier pour suivre la rentabilité de vos investissements.</p>
 </div>
 </details>
 <details class="faq-item-chic">
-<summary>هل هناك ميزانية دنيا للعمل معكم؟</summary>
+<summary>Faut-il un budget minimum pour travailler avec vous ?</summary>
 <div class="faq-content">
-<p>نحن نكيف استراتيجياتنا لتناسب أهدافك. ومع ذلك، بالنسبة للإعلانات المدفوعة (Google Ads، Meta Ads)، يُنصح بميزانية إعلانية شهرية لا تقل عن 5000 درهم لجمع بيانات كافية وتحسين العائد على الاستثمار بسرعة.</p>
+<p>Nous adaptons nos stratégies à vos objectifs. Cependant, pour l'acquisition payante (Google Ads, Meta Ads), un budget publicitaire mensuel d'au moins 5 000 MAD est recommandé pour récolter suffisamment de données et optimiser le ROI rapidement.</p>
 </div>
 </details>
 <details class="faq-item-chic">
-<summary>متى سأرى النتائج الأولى؟</summary>
+<summary>Quand verrai-je les premiers résultats ?</summary>
 <div class="faq-content">
-<p>بالنسبة للإعلانات عبر محركات البحث والإعلانات الاجتماعية، تصل الخيوط أو المبيعات الأولى عادة في الأسبوع الأول من البث. بالنسبة لـ SEO، إنها استراتيجية طويلة الأمد: تُلاحظ التحسينات الأولية بعد شهرين إلى 3 أشهر من التحسين المنتظم.</p>
+<p>Pour le SEA et les Social Ads, les premiers leads ou ventes arrivent généralement dans la première semaine de diffusion. Pour le SEO, c'est une stratégie de fond : les premiers frémissements s'observent après 2 à 3 mois d'optimisations régulières.</p>
 </div>
 </details>
 </div>
@@ -286,7 +361,7 @@
 <h4>Navigation</h4>
 <div class="footer-links">
 <a href="index.html">Accueil</a>
-<a href="creation-site-web.html">تصميم المواقع</a>
+<a href="creation-site-web.html">Création Site Web</a>
 <a href="services.html">Nos Services</a>
 <a href="transformation-digitale.html">Transformation Digitale</a>
 <a href="blog.html">Blog</a>
@@ -304,6 +379,7 @@
 <a href="services-cro.html">CRO &amp; Landing Pages</a>
 <a href="services-emailing.html">Email &amp; Automation</a>
 <a href="services-strategie.html">Stratégie d'Acquisition</a>
+<a href="services-gmb-360.html">Visite Virtuelle 360°</a>
 </div>
 </div>
 <div>
@@ -336,15 +412,15 @@
 <svg fill="currentColor" height="28" viewbox="0 0 24 24" width="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
 </a>
 <!-- ========== EXIT INTENT POPUP ========== -->
-<div aria-modal="true" class="exit-popup-overlay" dir="rtl" id="exitPopup" role="dialog" style="display: none;">
+<div aria-modal="true" class="exit-popup-overlay" id="exitPopup" role="dialog" style="display: none;">
 <div class="exit-popup-content glass-panel">
-<button aria-label="إغلاق" class="exit-popup-close" id="closeExitPopup">×</button>
+<button aria-label="Fermer" class="exit-popup-close" id="closeExitPopup">×</button>
 <div class="exit-popup-body">
-<h3>لا تغادر خالي الوفاض!</h3>
-<p>احصل على <strong>مراجعة مجانية لتجربة وواجهة المستخدم</strong> لموقعك الحالي أو نموذج أولي لمشروعك المستقبلي. بدون التزام.</p>
+<h3>Ne partez pas les mains vides !</h3>
+<p>Obtenez un <strong>Audit UX/UI Gratuit</strong> de votre site actuel ou une première maquette conceptuelle pour votre futur projet. Sans engagement.</p>
 <div class="exit-popup-actions">
-<a class="btn btn-primary magnetic-btn" href="contact.html?subject=AuditGratuit">احصل على المراجعة المجانية</a>
-<button class="btn btn-ghost decline-btn" id="declineExitPopup">لا شكراً، سأتجاوز</button>
+<a class="btn btn-primary magnetic-btn" href="contact.html?subject=AuditGratuit">Obtenir mon Audit Gratuit</a>
+<button class="btn btn-ghost decline-btn" id="declineExitPopup">Non merci, je passe mon tour</button>
 </div>
 </div>
 </div>

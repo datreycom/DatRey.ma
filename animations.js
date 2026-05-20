@@ -7,6 +7,80 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap === 'undefined') return;
     gsap.registerPlugin(ScrollTrigger);
 
+    // ─── 0. LENIS SMOOTH SCROLL ───
+    if (typeof Lenis !== 'undefined') {
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        })
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+        
+        // Sync Lenis with ScrollTrigger
+        lenis.on('scroll', ScrollTrigger.update)
+        gsap.ticker.add((time)=>{
+            lenis.raf(time * 1000)
+        })
+        gsap.ticker.lagSmoothing(0)
+    }
+
+    // ─── 0.1 CUSTOM DYNAMIC CURSOR & NOISE ───
+    // Create cursor elements dynamically
+    const cursorDot = document.createElement('div');
+    cursorDot.className = 'cursor-dot';
+    const cursorRing = document.createElement('div');
+    cursorRing.className = 'cursor-ring';
+    
+    const noiseOverlay = document.createElement('div');
+    noiseOverlay.className = 'noise-overlay';
+    
+    document.body.appendChild(cursorDot);
+    document.body.appendChild(cursorRing);
+    document.body.appendChild(noiseOverlay);
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let cursorX = mouseX;
+    let cursorY = mouseY;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        // Dot follows instantly
+        gsap.to(cursorDot, { x: mouseX, y: mouseY, duration: 0 });
+    });
+
+    // Ring follows with slight lag
+    gsap.ticker.add(() => {
+        const dt = 1.0 - Math.pow(1.0 - 0.2, gsap.ticker.deltaRatio());
+        cursorX += (mouseX - cursorX) * dt;
+        cursorY += (mouseY - cursorY) * dt;
+        gsap.set(cursorRing, { x: cursorX, y: cursorY });
+    });
+
+    // Hover states for cursor
+    const interactiveElements = document.querySelectorAll('a, button, .service-card, .blog-card');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursorRing.classList.add('hovered');
+            cursorDot.classList.add('hovered');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursorRing.classList.remove('hovered');
+            cursorDot.classList.remove('hovered');
+        });
+    });
+
     // ─── 1. HERO CHOREOGRAPHED ENTRANCE ───
     const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     const hero = document.querySelector('.hero');
@@ -111,18 +185,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ─── 5. STAGGERED SCROLL REVEALS ───
-    // Section titles
-    document.querySelectorAll('.section-title, .section-subtitle, .section-label').forEach(el => {
+    // Section titles & typography stagger
+    document.querySelectorAll('.section-title, .section-subtitle, .section-label, h2.blog-grid-title').forEach(el => {
         if (el.classList.contains('reveal')) {
             el.classList.remove('reveal');
             el.style.opacity = 1;
             el.style.transform = 'none';
         }
 
-        gsap.from(el, {
-            scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' },
-            y: 40, opacity: 0, duration: 1, ease: 'power3.out'
-        });
+        // Simple text split for staggered effect
+        // We only split if it hasn't been split yet and doesn't contain HTML tags that would break
+        if (!el.classList.contains('split-done') && !el.querySelector('*')) {
+            const words = el.innerText.split(' ');
+            el.innerHTML = '';
+            words.forEach(word => {
+                const wrapper = document.createElement('span');
+                wrapper.style.display = 'inline-block';
+                wrapper.style.overflow = 'hidden';
+                wrapper.style.verticalAlign = 'top';
+                wrapper.style.marginRight = '0.3em'; // Space between words
+
+                const inner = document.createElement('span');
+                inner.innerText = word;
+                inner.style.display = 'inline-block';
+                inner.style.transform = 'translateY(100%)'; // Hidden initially
+                inner.classList.add('stagger-word');
+                
+                wrapper.appendChild(inner);
+                el.appendChild(wrapper);
+            });
+            el.classList.add('split-done');
+
+            gsap.to(el.querySelectorAll('.stagger-word'), {
+                scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' },
+                y: '0%', duration: 0.8, stagger: 0.05, ease: 'power4.out'
+            });
+        } else {
+            // Fallback for elements with HTML inside
+            gsap.from(el, {
+                scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' },
+                y: 40, opacity: 0, duration: 1, ease: 'power3.out'
+            });
+        }
     });
 
     // Service grids — stagger entrance

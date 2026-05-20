@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="fr">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -14,13 +14,13 @@
 <meta content="website" property="og:type"/>
 <meta content="https://datrey.ma/a-propos.html" property="og:url"/>
 <link href="https://datrey.ma/a-propos.html" rel="canonical"/>
-<link href="https://datrey.ma/a-propos.html" hreflang="en" rel="alternate"/>
+<link href="https://datrey.ma/a-propos.html" hreflang="fr" rel="alternate"/>
 <link href="https://datrey.ma/a-propos.html" hreflang="x-default" rel="alternate"/>
 <link href="../style.css" rel="stylesheet"/>
 <link href="../assets/logo.webp" rel="icon" type="image/webp"/>
 <link href="../favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
 <meta content="#050814" name="theme-color"/>
-<link href="..//manifest.json" rel="manifest"/>
+<link href="../manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -69,6 +69,8 @@
 </script>
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
 <script defer="" src="../shared.js"></script>
 </head>
 <body>
@@ -77,27 +79,27 @@
 <!-- ========== HEADER ========== -->
 <header class="header" id="header">
 <div class="container">
-<a aria-label="DatRey — Accueil" class="logo" href="../index.html">
+<a aria-label="DatRey — Accueil" class="logo" href="index.html">
 <img alt="DatRey Logo" class="logo-img" height="40" src="../assets/logo.webp" width="40"/>
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
 </a>
 <nav aria-label="Navigation principale" class="nav-links">
-<a href="../index.html">Accueil</a>
-<a href="../creation-site-web.html">Création Site Web</a>
-<a href="../services.html">Nos Services</a>
+<a href="index.html">Accueil</a>
+<a href="creation-site-web.html">Création Site Web</a>
+<a href="services.html">Nos Services</a>
 
-<a href="../blog.html">Blog</a>
-<a href="../contact.html">Contact</a>
-<a class="btn btn-primary nav-cta" href="../contact.html">Audit Gratuit</a>
+<a href="blog.html">Blog</a>
+<a href="contact.html">Contact</a>
+<a class="btn btn-primary nav-cta" href="contact.html">Audit Gratuit</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 16px;">
 <div class="lang-selector">
-<button aria-label="Changer de langue" class="lang-btn">FR ▼</button>
+<button aria-label="Changer de langue" class="lang-btn">EN ▼</button>
 <div class="lang-dropdown">
-<a class="active" href="..//a-propos.html">Français</a>
-<a href="..//en/a-propos.html">English</a>
-<a href="..//ar/a-propos.html">العربية</a>
-<a href="..//es/a-propos.html">Español</a>
+<a class="active" href="/a-propos.html">Français</a>
+<a href="/en/a-propos.html">English</a>
+<a href="/ar/a-propos.html">العربية</a>
+<a href="/es/a-propos.html">Español</a>
 </div>
 </div>
 <button aria-label="Basculer le thème" class="theme-toggle" id="themeToggle">
@@ -113,13 +115,13 @@
 <!-- Mobile Nav -->
 <div aria-label="Navigation mobile" class="mobile-nav" id="mobileNav" role="navigation">
 <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
-<a href="../index.html" onclick="closeMobileNav()">Accueil</a>
-<a href="../creation-site-web.html" onclick="closeMobileNav()">Création Site Web</a>
-<a href="../services.html" onclick="closeMobileNav()">Nos Services</a>
+<a href="index.html" onclick="closeMobileNav()">Accueil</a>
+<a href="creation-site-web.html" onclick="closeMobileNav()">Création Site Web</a>
+<a href="services.html" onclick="closeMobileNav()">Nos Services</a>
 
-<a href="../blog.html" onclick="closeMobileNav()">Blog</a>
-<a href="../contact.html" onclick="closeMobileNav()">Contact</a>
-<a class="btn btn-primary magnetic-btn" href="../contact.html" onclick="closeMobileNav()">Audit Gratuit</a>
+<a href="blog.html" onclick="closeMobileNav()">Blog</a>
+<a href="contact.html" onclick="closeMobileNav()">Contact</a>
+<a class="btn btn-primary magnetic-btn" href="contact.html" onclick="closeMobileNav()">Audit Gratuit</a>
 </div>
 <main id="main-content">
 <!-- ========== PAGE HERO ========== -->
@@ -130,7 +132,7 @@
 <div class="container">
 <div class="page-hero-content">
 <nav aria-label="Fil d'Ariane" class="breadcrumb">
-<a href="../index.html">Accueil</a>
+<a href="index.html">Accueil</a>
 <span class="breadcrumb-sep">›</span>
 <span class="breadcrumb-current">À Propos</span>
 </nav>
@@ -241,7 +243,7 @@
 <h2>Envie de rejoindre l'aventure ?</h2>
 <p>Que vous soyez un futur client ou un futur collaborateur, parlons de vos ambitions.</p>
 <div class="cta-actions">
-<a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit">
+<a class="btn btn-primary magnetic-btn" href="contact.html?subject=AuditGratuit">
 <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
 Discutons de votre projet
 </a>
@@ -255,7 +257,7 @@ Discutons de votre projet
 <div class="container">
 <div class="footer-grid">
 <div class="footer-brand">
-<a class="logo" href="../index.html" style="margin-bottom:4px;">
+<a class="logo" href="index.html" style="margin-bottom:4px;">
 <img alt="DatRey Logo" class="logo-img" decoding="async" height="40" loading="lazy" src="../assets/logo.webp" width="40"/>
 <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
 </a>
@@ -269,11 +271,11 @@ Discutons de votre projet
 <div>
 <h4>Navigation</h4>
 <div class="footer-links">
-<a href="../index.html">Accueil</a>
-<a href="../creation-site-web.html">Création Site Web</a>
-<a href="../services.html">Nos Services</a>
-<a href="../blog.html">Blog</a>
-<a href="../contact.html">Contact</a>
+<a href="index.html">Accueil</a>
+<a href="creation-site-web.html">Création Site Web</a>
+<a href="services.html">Nos Services</a>
+<a href="blog.html">Blog</a>
+<a href="contact.html">Contact</a>
 </div>
 </div>
 <div>
@@ -292,8 +294,8 @@ Discutons de votre projet
 <div class="footer-bottom">
 <span>© 2026 DatRey. Tous droits réservés.</span>
 <div style="display:flex;gap:20px;">
-<a href="../mentions-legales.html">Mentions légales</a>
-<a href="../politique-confidentialite.html">Politique de confidentialité</a>
+<a href="mentions-legales.html">Mentions légales</a>
+<a href="politique-confidentialite.html">Politique de confidentialité</a>
 </div>
 </div>
 </div>
