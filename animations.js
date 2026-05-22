@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             once: true
         });
-    });
+    }
 
     // --- Counter Animation (About Page) ---
     const counters = document.querySelectorAll('.counter');
