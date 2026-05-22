@@ -1,27 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /node_modules/
-Disallow: /scripts/
-Disallow: /*.py$
-
-# AI Search Crawlers (Allowed for GEO)
-User-agent: GPTBot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-# Block generic scraping
-User-agent: CCBot
-Disallow: /
 
 Sitemap: https://datrey.ma/sitemap.xml
-
-# IndexNow (Bing/Yandex instant indexing)
-# Key: https://datrey.ma/2751d7c0b152850a97cfa531bace4218.txt
