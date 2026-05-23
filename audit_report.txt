@@ -1,8 +1,0 @@
-[Code Quality] console.log found in add_final_images.js at line 20
-[Code Quality] console.log found in add_final_images.js at line 26
-[Code Quality] console.log found in add_final_images.js at line 32
-[Code Quality] console.log found in convert-webp.js at line 16
-[Code Quality] console.log found in convert-webp.js at line 19
-[Code Quality] console.log found in convert_new_images.js at line 21
-[Code Quality] console.log found in convert_new_images.js at line 25
-[Code Quality] console.log found in convert_new_images.js at line 27
