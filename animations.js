@@ -34,52 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.ticker.lagSmoothing(0)
     }
 
-    // ─── 0.1 CUSTOM DYNAMIC CURSOR & NOISE ───
-    // Create cursor elements dynamically
-    const cursorDot = document.createElement('div');
-    cursorDot.className = 'cursor-dot';
-    const cursorRing = document.createElement('div');
-    cursorRing.className = 'cursor-ring';
-    
-    const noiseOverlay = document.createElement('div');
-    noiseOverlay.className = 'noise-overlay';
-    
-    document.body.appendChild(cursorDot);
-    document.body.appendChild(cursorRing);
-    document.body.appendChild(noiseOverlay);
+    // Custom cursor removed — using native browser cursor
 
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let cursorX = mouseX;
-    let cursorY = mouseY;
 
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        // Dot follows instantly
-        gsap.to(cursorDot, { x: mouseX, y: mouseY, duration: 0 });
-    });
-
-    // Ring follows with slight lag
-    gsap.ticker.add(() => {
-        const dt = 1.0 - Math.pow(1.0 - 0.2, gsap.ticker.deltaRatio());
-        cursorX += (mouseX - cursorX) * dt;
-        cursorY += (mouseY - cursorY) * dt;
-        gsap.set(cursorRing, { x: cursorX, y: cursorY });
-    });
-
-    // Hover states for cursor
-    const interactiveElements = document.querySelectorAll('a, button, .service-card, .blog-card');
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursorRing.classList.add('hovered');
-            cursorDot.classList.add('hovered');
-        });
-        el.addEventListener('mouseleave', () => {
-            cursorRing.classList.remove('hovered');
-            cursorDot.classList.remove('hovered');
-        });
-    });
 
     // ─── 1. HERO CHOREOGRAPHED ENTRANCE ───
     const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });

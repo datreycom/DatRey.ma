@@ -138,63 +138,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* --- Ultra-Creative Additions --- */
-@media (pointer: fine) {
-  body {
-    cursor: none; /* Hide default cursor on desktop */
-  }
-  a, button, input, select, textarea {
-    cursor: none;
-  }
-}
 
-.cursor-dot {
-  position: fixed;
-  top: 0; left: 0;
-  width: 8px; height: 8px;
-  background-color: var(--roi-500);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, background-color 0.3s;
-}
 
-.cursor-ring {
-  position: fixed;
-  top: 0; left: 0;
-  width: 32px; height: 32px;
-  border: 1px solid rgba(59, 130, 246, 0.4);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99998;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, border-color 0.3s;
-  backdrop-filter: blur(2px); /* Glassmorphism on cursor */
-}
-
-.cursor-dot.hovered {
-  width: 0; height: 0; /* Hide dot */
-}
-
-.cursor-ring.hovered {
-  width: 64px; height: 64px;
-  border-color: var(--roi-400);
-  background-color: rgba(59, 130, 246, 0.1);
-  backdrop-filter: blur(4px);
-}
-
-.noise-overlay {
-  position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.03; /* Subliminal noise */
-  background: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
-}
-[data-theme="dark"] .noise-overlay {
-  opacity: 0.05;
-}
 
 /* Spotlight Glow effect on cards */
 .service-card, .blog-card {
