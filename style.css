@@ -941,13 +941,123 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--roi-300);
 }
 
+/* --- Dark Mode — Extended Contrast Overrides --- */
+[data-theme="dark"] .section-label {
+  color: var(--roi-400);
+}
+[data-theme="dark"] .section-label::before {
+  background: linear-gradient(90deg, var(--roi-400), var(--roi-300));
+}
+[data-theme="dark"] .section-title {
+  color: #f1f5f9;
+}
+[data-theme="dark"] .section-subtitle {
+  color: #94a3b8;
+}
+[data-theme="dark"] .service-card {
+  background: rgba(15, 23, 42, 0.5);
+  border-color: rgba(59, 109, 232, 0.1);
+}
+[data-theme="dark"] .service-card h3 {
+  color: #f1f5f9;
+}
+[data-theme="dark"] .service-card p {
+  color: #94a3b8;
+}
+[data-theme="dark"] .service-detail {
+  background: rgba(15, 23, 42, 0.5);
+  border-color: rgba(59, 109, 232, 0.1);
+}
+[data-theme="dark"] .service-detail-header h3 {
+  color: #f1f5f9;
+}
+[data-theme="dark"] .service-detail-intro {
+  color: #cbd5e1;
+}
+[data-theme="dark"] .approach-step h3,
+[data-theme="dark"] .approach-step h4 {
+  color: #f1f5f9;
+}
+[data-theme="dark"] .approach-step p {
+  color: #94a3b8;
+}
+[data-theme="dark"] .faq-item-chic summary {
+  color: #e2e8f0;
+}
+[data-theme="dark"] .faq-answer {
+  color: #94a3b8;
+}
+[data-theme="dark"] .footer h3,
+[data-theme="dark"] .footer h4 {
+  color: #f1f5f9;
+}
+[data-theme="dark"] .footer-links a {
+  color: #94a3b8;
+}
+[data-theme="dark"] .footer-links a:hover {
+  color: var(--roi-300);
+}
+[data-theme="dark"] .footer-brand p {
+  color: #94a3b8;
+}
+[data-theme="dark"] .footer-contact-item {
+  color: #94a3b8;
+}
+[data-theme="dark"] .footer-bottom {
+  color: #64748b;
+}
+[data-theme="dark"] .breadcrumb a {
+  color: #94a3b8;
+}
+[data-theme="dark"] .breadcrumb-current {
+  color: var(--roi-300);
+}
+[data-theme="dark"] .cta-box h2 {
+  color: #ffffff;
+}
+[data-theme="dark"] .cta-box p {
+  color: rgba(255, 255, 255, 0.75);
+}
+[data-theme="dark"] .hero-badge {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.25);
+}
+[data-theme="dark"] .feature-list-item {
+  border-bottom-color: rgba(59, 109, 232, 0.1);
+  color: #cbd5e1;
+}
+[data-theme="dark"] .service-feature h4 {
+  color: #e2e8f0;
+}
+[data-theme="dark"] .ticker-item {
+  color: #94a3b8;
+}
+[data-theme="dark"] .ticker-accent {
+  color: var(--roi-300);
+}
+[data-theme="dark"] .exit-popup-modal {
+  background: var(--nuit-900);
+  border: 1px solid rgba(59, 109, 232, 0.15);
+}
+[data-theme="dark"] .lang-dropdown {
+  background: var(--nuit-900);
+  border-color: rgba(59, 109, 232, 0.15);
+}
+[data-theme="dark"] .lang-dropdown a {
+  color: #cbd5e1;
+}
+[data-theme="dark"] .lang-dropdown a:hover {
+  background: rgba(59, 109, 232, 0.1);
+  color: var(--roi-300);
+}
+
 /* --- Light Mode Explicit Overrides --- */
 [data-theme="light"] .service-card-body h3,
 [data-theme="light"] .service-detail-header h3,
 [data-theme="light"] .service-feature h4,
 [data-theme="light"] .approach-step h4,
 [data-theme="light"] .legal-content h2 {
-  color: var(--nuit-900);
+  color: var(--text-main);
 }
 [data-theme="light"] .service-feature {
   background: var(--roi-50);
