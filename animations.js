@@ -77,69 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ─── 2. PARALLAX ORBS (Mouse Reactive) ───
+    // Mouse effect removed as requested
     const orbs = document.querySelectorAll('.hero-orb');
-    if (orbs.length > 0) {
-        document.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth - 0.5) * 2;
-            const y = (e.clientY / window.innerHeight - 0.5) * 2;
-
-            gsap.to('.hero-orb-1', { x: x * 50, y: y * 50, duration: 2, ease: 'power2.out' });
-            gsap.to('.hero-orb-2', { x: x * -40, y: y * -40, duration: 2.5, ease: 'power2.out' });
-            gsap.to('.hero-orb-3', { x: x * 30, y: y * -20, duration: 3, ease: 'power2.out' });
-        });
-    }
 
     // ─── 3. SPOTLIGHT HOVER ON CARDS ───
-    const cards = document.querySelectorAll('.service-card, .service-detail');
-
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            // Update CSS custom properties for the radial glow
-            card.style.setProperty('--mouse-x', x + 'px');
-            card.style.setProperty('--mouse-y', y + 'px');
-
-            // 3D Tilt
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -4;
-            const rotateY = ((x - centerX) / centerX) * 4;
-
-            gsap.to(card, {
-                rotateX: rotateX,
-                rotateY: rotateY,
-                transformPerspective: 1000,
-                ease: 'power1.out',
-                duration: 0.4
-            });
-        });
-
-        card.addEventListener('mouseleave', () => {
-            gsap.to(card, {
-                rotateX: 0, rotateY: 0,
-                ease: 'elastic.out(1, 0.5)',
-                duration: 0.8
-            });
-        });
-    });
+    // Mouse tilt effect removed as requested
 
     // ─── 4. MAGNETIC BUTTONS ───
-    document.querySelectorAll('.btn-primary, .btn-outline, .btn-ghost').forEach(el => {
-        el.addEventListener('mousemove', (e) => {
-            const rect = el.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-
-            gsap.to(el, { x: x * 0.2, y: y * 0.2, duration: 0.4, ease: 'power2.out' });
-        });
-
-        el.addEventListener('mouseleave', () => {
-            gsap.to(el, { x: 0, y: 0, duration: 0.7, ease: 'elastic.out(1, 0.3)' });
-        });
-    });
+    // Magnetic mouse effect removed as requested
 
     // ─── 5. STAGGERED SCROLL REVEALS ───
     // Section titles & typography stagger
@@ -294,52 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // ─── 7. CHIC ROWS HOVER EFFECT ───
-    const chicRows = document.querySelectorAll('.chic-row');
-  const hoverImg = document.getElementById('chicHoverImg');
-  
-  if (chicRows.length > 0 && hoverImg) {
-    // Check if it's a desktop device (no touch)
-    const isTouchDevice = (('ontouchstart' in window) || (navigator.maxTouchPoints > 0));
-    
-    if (!isTouchDevice) {
-      chicRows.forEach(row => {
-        row.addEventListener('mouseenter', (e) => {
-          const imgUrl = row.getAttribute('data-image');
-          if (imgUrl) {
-            hoverImg.style.backgroundImage = `url('${imgUrl}')`;
-          }
-          hoverImg.classList.add('active');
-        });
-        
-        row.addEventListener('mousemove', (e) => {
-          // Use GSAP for smooth positioning
-          if (typeof gsap !== 'undefined') {
-            gsap.to(hoverImg, {
-              x: e.clientX,
-              y: e.clientY,
-              duration: 0.6,
-              ease: "power3.out"
-            });
-          } else {
-            // Fallback if GSAP is not loaded yet
-            hoverImg.style.left = e.clientX + 'px';
-            hoverImg.style.top = e.clientY + 'px';
-          }
-        });
-        
-        row.addEventListener('mouseleave', () => {
-          hoverImg.classList.remove('active');
-        });
-      });
-    } else {
-      // On mobile, just show static images or hide the hover element completely
-      hoverImg.style.display = 'none';
-    }
-  }
-
-
-  // --- 8. READING PROGRESS BAR (Blog Articles) ---
+    // --- 8. READING PROGRESS BAR (Blog Articles) ---
   var blogContent = document.querySelector('.blog-content');
   if (blogContent) {
     var progressBar = document.createElement('div');
