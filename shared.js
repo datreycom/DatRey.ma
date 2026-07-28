@@ -5,6 +5,14 @@
 (function () {
   'use strict';
 
+  // --- Force Page Scroll Reset to Top on Load ---
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+  });
+
   // --- Header scroll effect ---
   const header = document.getElementById('header');
   if (header) {
@@ -20,11 +28,9 @@
   if (mobileToggle && mobileNav && mobileClose) {
     mobileToggle.addEventListener('click', () => mobileNav.classList.add('active'));
     mobileClose.addEventListener('click', () => mobileNav.classList.remove('active'));
-    // Close nav when any link inside it is clicked (replaces inline onclick)
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => mobileNav.classList.remove('active'));
     });
-    // Keep global for backward compatibility with inline onclick attributes
     window.closeMobileNav = () => mobileNav.classList.remove('active');
   }
 
@@ -36,7 +42,6 @@
     localStorage.setItem('datrey-theme', 'light');
   }
 
-  // Always force light mode
   applyTheme();
 
   if (themeToggle) {
@@ -61,7 +66,6 @@
       }
     }
   }
-
 
   // --- Scroll reveal ---
   const revealElements = document.querySelectorAll('.reveal');
@@ -100,7 +104,7 @@
     stats.forEach(el => counterObserver.observe(el));
   }
 
-  // --- Slider (only if slider elements exist) ---
+  // --- Slider ---
   const slides = document.querySelectorAll('.slider-slide');
   const dots = document.querySelectorAll('.slider-dot');
   const prevBtn = document.getElementById('sliderPrev');
