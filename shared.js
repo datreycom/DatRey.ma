@@ -28,7 +28,7 @@
     window.closeMobileNav = () => mobileNav.classList.remove('active');
   }
 
-  // --- Theme Toggle (Dark Mode) ---
+  // --- Theme Toggle (Light/Dark Mode) ---
   const themeToggle = document.getElementById('themeToggle');
   const sunIcon = document.querySelector('.sun-icon');
   const moonIcon = document.querySelector('.moon-icon');
@@ -42,9 +42,9 @@
     }
   }
 
-  // Initialize theme (default to dark for DatRey brand identity)
+  // Initialize theme (default to light mode)
   const savedTheme = localStorage.getItem('datrey-theme');
-  applyTheme(savedTheme || 'dark');
+  applyTheme(savedTheme || 'light');
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
@@ -53,7 +53,7 @@
     });
   }
 
-  // --- Language Auto-Detect ---
+  // --- Language Auto-Detect (FR/EN) ---
   const langLinks = document.querySelectorAll('.lang-dropdown a');
   langLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -63,11 +63,11 @@
 
   if (!localStorage.getItem('datrey-lang-override')) {
     const path = window.location.pathname;
-    if (!path.startsWith('/en/') && !path.startsWith('/ar/') && !path.startsWith('/es/')) {
+    if (!path.startsWith('/en/')) {
       const userLang = (navigator.language || navigator.userLanguage).slice(0, 2).toLowerCase();
-      if (['en', 'es', 'ar'].includes(userLang) && !path.includes('404')) {
+      if (userLang === 'en' && !path.includes('404')) {
         let newPath = path === '/' ? '/index.html' : path;
-        window.location.replace(`/${userLang}${newPath}`);
+        window.location.replace(`/en${newPath}`);
       }
     }
   }
