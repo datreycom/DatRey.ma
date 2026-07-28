@@ -38,21 +38,64 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
       --border-color: #e2e8f0;
     }}
     body {{
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }}
+    .site-header {{
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }}
+    .site-header-container {{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }}
+    .site-logo {{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }}
+    .site-nav {{
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }}
+    .site-nav a {{
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }}
+    .site-nav a:hover {{
+      color: #2563eb;
     }}
     .article-container {{
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }}
     .hero-title {{
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }}
     .hero-meta {{
@@ -76,25 +119,25 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
     .blog-content h2 {{
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }}
     .blog-content h3 {{
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }}
     .blog-content p {{
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }}
     .blog-content ul, .blog-content ol {{
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }}
     .blog-content li {{
       margin-bottom: 8px;
@@ -114,41 +157,45 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
       object-fit: cover;
       display: block;
     }}
-    .geo-definition-box {{
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {{
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }}
+    .geo-definition strong, .geo-definition-box strong {{
+      color: #2563eb !important;
     }}
     .cta-article-box {{
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }}
     .cta-article-box h3 {{
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }}
     .cta-article-box p {{
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }}
     .cta-btn {{
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -180,16 +227,24 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">{category}</span>
       </div>
       <h1 class="hero-title">{title}</h1>
@@ -212,7 +267,9 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>
@@ -223,6 +280,7 @@ def inject_inbody_images(content_html, slug, title):
     Injects 4 in-body images ([slug]-2.webp to [slug]-5.webp) evenly into the HTML content,
     guaranteeing AT LEAST 250 words / 1500 characters of text spacing between consecutive images!
     """
+    clean_title = re.sub(r'\s*\|\s*Blog\s*DatRey.*$', '', title, flags=re.IGNORECASE).strip()
     elements = re.split(r'(</p>|</h2>|</h3>)', content_html, flags=re.IGNORECASE)
     if len(elements) <= 1:
         return content_html
@@ -240,7 +298,7 @@ def inject_inbody_images(content_html, slug, title):
         if img_idx <= 5 and current_word_count >= MIN_WORD_SPACING and (element.lower() == '</p>' or element.lower() == '</h2>'):
             img_tag = (
                 f'\n<div class="article-body-img-wrap">'
-                f'<img src="../assets/blog/{slug}-{img_idx}.webp" alt="{title} - Illustration {img_idx-1}" class="blog-img" loading="lazy" />'
+                f'<img src="../assets/blog/{slug}-{img_idx}.webp" alt="{clean_title} - Illustration {img_idx-1}" class="blog-img" loading="lazy" />'
                 f'</div>\n'
             )
             result.append(img_tag)
@@ -254,15 +312,18 @@ def build_article_page(article_data):
     Compiles article HTML, injects body images with >=250 word spacing, and writes file to blog/{slug}.html.
     """
     slug = article_data["slug"]
-    title = article_data["title"]
+    raw_title = article_data["title"]
     desc = article_data["description"]
     cat = article_data["category"]
     content_raw = article_data["content"]
 
-    content_with_images = inject_inbody_images(content_raw, slug, title)
+    # Strip any trailing "| Blog DatRey" from title
+    clean_title = re.sub(r'\s*\|\s*Blog\s*DatRey.*$', '', raw_title, flags=re.IGNORECASE).strip()
+
+    content_with_images = inject_inbody_images(content_raw, slug, clean_title)
 
     full_html = ARTICLE_TEMPLATE.format(
-        title=title,
+        title=clean_title,
         description=desc,
         slug=slug,
         category=cat,
@@ -276,7 +337,7 @@ def build_article_page(article_data):
         f.write(full_html)
 
     print(f"[Site Builder] Article HTML created -> blog/{slug}.html")
-    update_blog_data_json(article_data)
+    update_blog_data_json({**article_data, "title": clean_title})
     rebuild_blog_index_and_sitemaps()
 
     return out_path
@@ -294,8 +355,10 @@ def update_blog_data_json(article_data):
     # Remove existing entry if slug matches
     entries = [e for e in entries if e.get("slug") != article_data["slug"]]
 
+    clean_title = re.sub(r'\s*\|\s*Blog\s*DatRey.*$', '', article_data["title"], flags=re.IGNORECASE).strip()
+
     new_entry = {
-        "title": article_data["title"],
+        "title": clean_title,
         "slug": article_data["slug"],
         "description": article_data["description"],
         "category": article_data["category"],
@@ -318,7 +381,7 @@ def rebuild_blog_index_and_sitemaps():
         print(f"[Site Builder] Error building blog index: {e}")
 
     try:
-        from generate_sitemap_index import generate_sitemaps
-        generate_sitemaps()
+        from generate_sitemap_index import generate_sitemap_index
+        generate_sitemap_index()
     except Exception as e:
         print(f"[Site Builder] Error building sitemaps: {e}")

@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -169,16 +216,24 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">Google Ads & SEA: Maximize ROI in Morocco</h1>
@@ -216,6 +271,7 @@ Voici le code HTML réécrit selon le protocole HUMANIZER‑v2.5.1, en conservan
 <p>Au Maroc, le digital est devenu un champ de bataille. Si vous lancez des campagnes Google Ads &amp; SEA sans stratégie claire, vous brûlez votre budget. Chez DatRey, à Casablanca, on vous aide à faire en sorte que chaque dirham dépensé rapporte quelque chose de concret. Voici comment optimiser vos campagnes pour ne plus jeter l'argent par les fenêtres.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/google-ads-sea-optimiser-roi-campagnes-2.webp" alt="Google Ads & SEA: Maximize ROI in Morocco - Illustration 1" class="blog-img" loading="lazy" /></div>
 
+
 <h2 id="section-comprendre-les-fondamentaux-du-roi-dans-google-ads">1. Ce qu'il faut vraiment comprendre sur le ROI dans Google Ads</h2>
 <p>Le ROI, c'est la mesure de ce que vos campagnes vous rapportent par rapport à ce qu'elles vous coûtent. Pour l'améliorer, regardez des chiffres précis : le coût par acquisition (CPA), le taux de conversion, et la valeur moyenne des commandes. Une campagne bien réglée peut multiplier votre mise de départ par trois.</p>
 <h2 id="section-structurer-vos-campagnes-pour-une-performance-maximale">2. Organiser vos campagnes pour qu'elles marchent vraiment</h2>
@@ -230,6 +286,8 @@ Voici le code HTML réécrit selon le protocole HUMANIZER‑v2.5.1, en conservan
 <h3>2.1 Les mots-clés négatifs, vos meilleurs amis</h3>
 <p>Les mots-clés négatifs empêchent vos annonces de sortir pour des recherches qui ne vous concernent pas. Vous vendez des chaussures de luxe ? Excluez « pas cher » ou « discount ». Simple et efficace.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/google-ads-sea-optimiser-roi-campagnes-3.webp" alt="Google Ads & SEA: Maximize ROI in Morocco - Illustration 2" class="blog-img" loading="lazy" /></div>
+
+
 <figure style="margin: 32px 0;"></figure>
 <h2 id="section-optimiser-les-enchères-et-le-budget">3. Enchères et budget : ne laissez pas l'argent filer</h2>
 <p>Les enchères automatisées (CPA cible, ROAS cible) peuvent faire des merveilles, mais commencez par les enchères manuelles pour collecter des données. Ensuite, passez à l'automatisation. Un bon réflexe : 80 % de votre budget sur les campagnes qui marchent, 20 % pour tester des choses nouvelles.</p>
@@ -241,6 +299,7 @@ Voici le code HTML réécrit selon le protocole HUMANIZER‑v2.5.1, en conservan
 <p>Testez plusieurs versions de vos annonces (titres, descriptions, CTA). Parfois, un simple changement de bouton peut faire grimper le taux de conversion de 15 %.</p><figure style="margin: 32px 0;"></figure>
 <h2 id="section-utiliser-le-remarketing-pour-fidéliser">6. Le remarketing pour ne pas perdre ceux qui sont déjà venus</h2>
 <div class="article-body-img-wrap"><img src="../assets/blog/google-ads-sea-optimiser-roi-campagnes-4.webp" alt="Google Ads & SEA: Maximize ROI in Morocco - Illustration 3" class="blog-img" loading="lazy" /></div>
+
 
 <p>Le remarketing cible les visiteurs qui ont déjà montré de l'intérêt. Créez des listes basées sur leur comportement (pages vues, temps passé) et proposez-leur des offres personnalisées. Le coût par clic est souvent plus bas, et le taux de conversion, plus haut.</p>
 <h2 id="section-exploiter-les-données-pour-une-segmentation-avancée">7. Segmentez vos audiences avec les bonnes données</h2>
@@ -261,6 +320,7 @@ Voici le code HTML réécrit selon le protocole HUMANIZER‑v2.5.1, en conservan
 <p>Pas de minimum officiel, mais pour voir des résultats sérieux, visez au moins 5 000 MAD par mois. En dessous, vous aurez du mal à collecter assez de données pour optimiser.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/google-ads-sea-optimiser-roi-campagnes-5.webp" alt="Google Ads & SEA: Maximize ROI in Morocco - Illustration 4" class="blog-img" loading="lazy" /></div>
 
+
 <h3>2. Combien de temps faut-il pour voir un ROI positif ?</h3>
 <p>Comptez 3 à 6 mois en moyenne, selon la concurrence et la qualité de votre optimisation.</p>
 <h3>3. Quels sont les KPIs les plus importants à suivre ?</h3>
@@ -277,14 +337,12 @@ Voici le code HTML réécrit selon le protocole HUMANIZER‑v2.5.1, en conservan
 <h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
 <a class="blog-related-card" href="../blog/erreurs-google-ads-maroc.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Google Ads &amp; SEA</div>
 <div class="blog-related-card-title">Google Ads au Maroc : 7 erreurs à éviter pour vos campagnes SEA</div>
 </div>
 </a>
 <a class="blog-related-card" href="../blog/google-ads-debutants-guide.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Google Ads &amp; SEA</div>
 <div class="blog-related-card-title">Google Ads pour débutants : guide complet pour réussir vos campagnes</div>
@@ -304,7 +362,9 @@ Voici le code HTML réécrit selon le protocole HUMANIZER‑v2.5.1, en conservan
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>

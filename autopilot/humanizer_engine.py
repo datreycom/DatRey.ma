@@ -36,12 +36,15 @@ def apply_humanizer_audit(content_html):
 def verify_geo_intro(content_html, title, service_name):
     """
     Ensures that the first content section contains a 40-60 word clear GEO definition box.
+    Enforces crisp light-mode background and high-contrast typography.
     """
-    # If GEO definition block is missing, inject a structured definition box after the first paragraph or H2
-    if 'class="geo-definition"' not in content_html:
+    # Strip any trailing "| Blog DatRey" from title inside GEO box
+    clean_title = re.sub(r'\s*\|\s*Blog\s*DatRey.*$', '', title, flags=re.IGNORECASE).strip()
+
+    if 'class="geo-definition"' not in content_html and 'class="geo-definition-box"' not in content_html:
         geo_box = (
-            f'<div class="geo-definition" style="background:var(--nuit-800); border-left:4px solid var(--blue-500); padding:16px 20px; border-radius:8px; margin:24px 0; font-size:1rem; line-height:1.6; color:var(--text-base);">'
-            f'<strong>En résumé :</strong> {title} est une démarche stratégique clé dans le domaine du {service_name}. '
+            f'<div class="geo-definition" style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #2563eb; padding:20px 24px; border-radius:8px; margin:28px 0; font-size:1.05rem; line-height:1.7; color:#0f172a;">'
+            f'<strong style="color:#2563eb;">En résumé :</strong> {clean_title} est une démarche stratégique clé dans le domaine du {service_name}. '
             f'Elle permet aux entreprises au Maroc d’optimiser durablement leurs performances digitales, d’augmenter leur visibilité et de maximiser le retour sur investissement (ROI) de leurs campagnes.'
             f'</div>'
         )

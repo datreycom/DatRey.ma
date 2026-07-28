@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -169,16 +216,24 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">Design & Print: Create Impactful Visual Identity in Morocco</h1>
@@ -209,6 +264,8 @@
 </nav>
 <h2 id="section-pourquoi-lidentité-visuelle-est-cruciale-pour-votre-entrepri">Pourquoi l'identité visuelle est cruciale pour votre entreprise au Maroc</h2><p>Dans un marché marocain qui bouge vite, votre identité visuelle dépasse le simple logo : c'est la toute première chose que vos clients voient. Une identité bien ficelée vous sort du lot, inspire confiance et reste en tête. Chez DatRey, agence digitale à Casablanca, on marie <strong>design graphique</strong> et impression de qualité pour bâtir une image de marque cohérente et pro.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/design-impression-identite-visuelle-2.webp" alt="Design & Print: Create Impactful Visual Identity in Morocco - Illustration 1" class="blog-img" loading="lazy" /></div>
+
+
 <p>Une étude de l'Université de Princeton montre qu'un internaute se fait une opinion sur votre site en 50 millisecondes. Au Maroc, où le digital explose, soigner votre identité visuelle est un vrai investissement stratégique.</p><h2 id="section-notre-service-design-amp-impression-de-lidée-au-support-prin">Notre service Design &amp; Impression : de l'idée au support print</h2><h3>Création d'une charte graphique complète</h3><p>On conçoit votre charte graphique : logo, palette de couleurs, typographies, éléments graphiques. Chaque détail est pensé pour coller à vos valeurs et parler à votre cible marocaine.</p>
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
@@ -219,8 +276,12 @@
 </div>
 <figure style="margin: 32px 0;"></figure><h3>Impression haut de gamme</h3><p>De la carte de visite au roll-up, on imprime sur plein de supports : papier, bâche, vinyle. Nos partenaires imprimeurs à Casablanca assurent des finitions impeccables.</p><h2 id="section-raisons-de-choisir-datrey-pour-votre-identité-visuelle">5 raisons de choisir DatRey pour votre identité visuelle</h2><ul><li><strong>Expertise locale</strong> : on connaît le marché marocain et ses spécificités culturelles.</li><li><strong>Créativité tailored</strong> : chaque projet est unique, pas de templates génériques.</li><li><strong>Qualité d'impression</strong> : matériaux durables, couleurs fidèles, délais respectés.</li><li><strong>Accompagnement complet</strong> : du brief à la livraison, on vous guide.</li><li><strong>Rapport qualité-prix</strong> : des tarifs compétitifs pour les TPE et PME marocaines.</li></ul><h2 id="section-tableau-comparatif-supports-print-essentiels-pour-votre-entr">Tableau comparatif : supports print essentiels pour votre entreprise</h2>
 <div class="article-body-img-wrap"><img src="../assets/blog/design-impression-identite-visuelle-3.webp" alt="Design & Print: Create Impactful Visual Identity in Morocco - Illustration 2" class="blog-img" loading="lazy" /></div>
+
+
 <table><thead><tr><th>Support</th><th>Utilisation</th><th>Impact</th><th>Budget indicatif</th></tr></thead><tbody><tr><td>Carte de visite</td><td>Réseautage, rendez-vous</td><td>Fort</td><td>200-500 DH les 100</td></tr><tr><td>Flyer A5</td><td>Distribution, événements</td><td>Moyen</td><td>300-800 DH les 500</td></tr><tr><td>Roll-up 80x200</td><td>Salons, accueil</td><td>Très fort</td><td>400-900 DH</td></tr><tr><td>Brochure A4 pliée</td><td>Présentation détaillée</td><td>Fort</td><td>500-1500 DH les 100</td></tr></tbody></table><figure style="margin: 32px 0;"></figure><h2 id="section-comment-notre-processus-booste-votre-marque">Comment notre processus booste votre marque</h2><p>Step 1 : <strong>Brief</strong> – On analyse votre secteur, vos concurrents et vos objectifs. Step 2 : <strong>Création</strong> – Nos designers proposent 3 concepts visuels. Step 3 : <strong>Validation</strong> – Vous choisissez et ajustez. Step 4 : <strong>Impression</strong> – On produit vos supports. Résultat : une identité visuelle cohérente qui marque les esprits.</p><p>Saviez-vous que 60% des consommateurs marocains préfèrent acheter auprès de marques à l'image professionnelle ? (Source : étude interne DatRey, 2024). Investir dans le design et l'impression, c'est investir dans votre crédibilité.</p><h2 id="section-faq-design-amp-impression-pour-votre-identité-visuelle">FAQ : Design &amp; Impression pour votre identité visuelle</h2><h3>Quels sont les délais pour créer une identité visuelle complète ?</h3><p>Comptez 2 à 3 semaines pour la création de la charte graphique, puis 1 semaine supplémentaire pour l'impression des premiers supports. On s'adapte aux urgences.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/design-impression-identite-visuelle-4.webp" alt="Design & Print: Create Impactful Visual Identity in Morocco - Illustration 3" class="blog-img" loading="lazy" /></div>
+
+
 <figure style="margin: 32px 0;"></figure><h3>Proposez-vous des impressions en petites quantités ?</h3><p>Oui, on travaille avec des imprimeurs flexibles. Que vous ayez besoin de 50 cartes ou de 1000 flyers, on a une solution adaptée.</p><h3>Comment intégrer mon identité visuelle sur mon site web ?</h3><p>On peut aussi décliner votre charte graphique sur votre site. Discover our <a href="../services-seo.html">service SEO</a> et <a href="../services-google-ads.html">Google Ads</a> pour a strategy digitale complète.</p><h2 id="section-conclusion-passez-à-laction-avec-datrey">Conclusion : Passez à l'action avec DatRey</h2><p>Votre identité visuelle est la clé de votre succès au Maroc. Avec notre service Design &amp; Impression, vous obtenez des supports professionnels qui reflètent votre excellence. <strong>Contact Us dès aujourd'hui pour un devis gratuit et personnalisé.</strong> Ensemble, faisons rayonner votre marque à Casablanca et partout au Maroc.</p><p>Pour en savoir plus sur nos autres prestations, visitez notre page <a href="../services-developpement.html">création de site web</a>.</p><figure style="margin: 32px 0;"></figure>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
@@ -231,14 +292,12 @@
 <h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
 <a class="blog-related-card" href="../blog/impression-offset-vs-numerique.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Design &amp; Impression</div>
 <div class="blog-related-card-title">Impression Offset vs Numérique : Quel Choix pour Votre Projet ?</div>
 </div>
 </a>
 <a class="blog-related-card" href="../blog/tendances-design-impression-maroc.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Design &amp; Impression</div>
 <div class="blog-related-card-title">Tendances Design &amp; Impression : Boostez Votre Marque au Maroc</div>
@@ -258,7 +317,9 @@
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>

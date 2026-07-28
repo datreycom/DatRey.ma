@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -169,16 +216,24 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">Complete SEO Audit: Boost Your Web Visibility in Morocco</h1>
@@ -208,6 +263,8 @@
 </nav>
 <h2 id="section-pourquoi-un-audit-seo-complet-est-essentiel-pour-votre-entre">Pourquoi un audit SEO complet est essentiel pour votre entreprise au Maroc</h2><p>Dans un environnement digital de plus en plus concurrentiel, un <strong>audit SEO complet</strong> est la première étape pour améliorer votre visibilité sur Google. Chez DatRey, agence digitale à Casablanca, nous analysons chaque aspect de votre site pour identifier les freins à votre classement. Saviez-vous que 75% des utilisateurs ne dépassent pas la première page de résultats ? Un audit SEO vous permet de comprendre pourquoi votre site n'atteint pas son potentiel et comment y remédier.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/audit-seo-complet-2.webp" alt="Complete SEO Audit: Boost Your Web Visibility in Morocco - Illustration 1" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-les-5-piliers-dun-audit-seo-complet">Les 5 piliers d'un audit SEO complet</h2><h3>1. Analyse technique du site</h3><p>L'audit technique vérifie la crawlability, l'indexation, la vitesse de chargement et la compatibilité mobile. Au Maroc, avec l'augmentation du trafic mobile (plus de 60% des recherches), un site non optimisé pour mobile perd des opportunités. Nous utilisons des outils comme Google Search Console et Screaming Frog pour détecter les erreurs 404, les redirections incorrectes et les balises manquantes.</p>
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
@@ -218,10 +275,16 @@
 </div>
 <h3>2. Audit du contenu et des mots-clés</h3><p>We analyze la pertinence de votre content by rapport aux intentions de recherche de vos clients marocains. Par exemple, pour une agence immobilière à Casablanca, les mots-clés "appartement à vendre Casablanca" ou "agence immobilière Maroc" doivent être stratégiquement placés. Nous évaluons également la densité des mots-clés, la qualité des textes et la présence de contenu dupliqué.</p><figure style="margin: 32px 0;"></figure><h3>3. Analyse du netlinking</h3><p>Les backlinks restent un facteur de classement majeur. Nous examinons la qualité et la pertinence des liens pointant vers votre site. Un profil de liens toxiques peut entraîner une pénalité Google. We recommend des stratégies de création de liens locaux, comme des partenariats avec des sites marocains de confiance.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/audit-seo-complet-3.webp" alt="Complete SEO Audit: Boost Your Web Visibility in Morocco - Illustration 2" class="blog-img" loading="lazy" /></div>
+
+
 <h3>4. Audit de l'expérience utilisateur (UX)</h3><p>Google prend en compte des signaux UX comme le taux de rebond et le temps passé sur le site. Un site lent ou difficile à naviguer fait fuir les visiteurs. Nous optimisons la structure, les appels à l'action et la hiérarchie de l'information pour améliorer l'engagement.</p><h3>5. Analyse concurrentielle</h3><p>Nous comparons votre site à ceux de vos concurrents directs au Maroc. Quels mots-clés ciblent-ils ? Quelles sont leurs forces et faiblesses ? Cette analyse permet de dégager des opportunités uniques pour vous démarquer.</p><figure style="margin: 32px 0;"></figure><h2 id="section-étapes-clés-dun-audit-seo-complet">Steps clés d'un audit SEO complet</h2><table><thead><tr><th>Step</th><th>Description</th><th>Durée estimée</th></tr></thead><tbody><tr><td>1. Collecte des données</td><td>Analyse des logs, crawl du site, extraction des données Google Analytics et Search Console</td><td>1-2 jours</td></tr><tr><td>2. Analyse technique</td><td>Vérification des balises, sitemap, robots.txt, vitesse, mobile-friendliness</td><td>1 jour</td></tr><tr><td>3. Audit de contenu</td><td>Évaluation des pages, mots-clés, contenu dupliqué, maillage interne</td><td>2 jours</td></tr><tr><td>4. Analyse des backlinks</td><td>Identification des liens entrants, qualité, désaveu si nécessaire</td><td>1 jour</td></tr><tr><td>5. Rapport et recommandations</td><td>Synthèse des problèmes et plan d'action priorisé</td><td>1 jour</td></tr></tbody></table><p>Un audit complet prend généralement 5 à 7 jours ouvrés, selon la taille du site.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/audit-seo-complet-4.webp" alt="Complete SEO Audit: Boost Your Web Visibility in Morocco - Illustration 3" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-bénéfices-concrets-dun-audit-seo-pour-votre-entreprise">Bénéfices concrets d'un audit SEO pour votre entreprise</h2><ul><li><strong>Augmentation du trafic organique</strong> : en moyenne +30% après correction des erreurs techniques.</li><li><strong>Meilleur taux de conversion</strong> : un site optimisé convertit mieux les visiteurs en clients.</li><li><strong>Réduction des coûts advertising</strong> : un bon référencement naturel diminue la dépendance aux annonces payantes.</li><li><strong>Avantage concurrentiel</strong> : devancez vos concurrents sur les requêtes clés au Maroc.</li></ul><figure style="margin: 32px 0;"></figure><h2 id="section-faq-sur-laudit-seo-complet">FAQ sur l'audit SEO complet</h2><h3>Quelle est la différence entre un audit SEO technique et un audit complet ?</h3><p>Un audit technique se concentre uniquement sur les aspects techniques (vitesse, indexation, balises), tandis qu'un audit complet inclut également l'analyse du contenu, des backlinks, de l'expérience utilisateur et de la concurrence. Pour a strategy SEO efficace, l'audit complet est recommandé.</p><h3>À quelle fréquence devrais-je réaliser un audit SEO ?</h3><p>Idéalement, un audit complet tous les 6 à 12 mois, ou après une refonte de site, un changement d'algorithme majeur, ou une baisse soudaine de trafic. Un audit technique peut être fait plus régulièrement, par exemple tous les trimestres.</p><h3>Combien coûte un audit SEO complet au Maroc ?</h3><p>Les tarifs varient selon la taille du site et la profondeur de l'analyse. Chez DatRey, nous proposons des audits à partir de 5 000 DH pour les sites vitrines, jusqu'à 15 000 DH pour les sites e-commerce complexes. Contact Us pour un devis personnalisé.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/audit-seo-complet-5.webp" alt="Complete SEO Audit: Boost Your Web Visibility in Morocco - Illustration 4" class="blog-img" loading="lazy" /></div>
+
+
 <figure style="margin: 32px 0;"></figure><h2 id="section-conclusion-prêt-à-dominer-google-au-maroc">Conclusion : prêt à dominer Google au Maroc ?</h2><p>Un <strong>audit SEO complet</strong> est le premier pas vers une visibilité durable. En identifiant les problèmes et en mettant en œuvre les recommandations, vous pouvez transformer votre site en un aimant à trafic qualifié. Chez DatRey, nous accompagnons les entreprises marocaines dans leur stratégie digitale. Découvrez également nos services <a href="../services-seo.html">SEO</a> et <a href="../services-google-ads.html">Google Ads</a> pour une approche 360°. <a href="../contact.html">Contact Us dès aujourd'hui</a> pour un audit gratuit de votre site.</p>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
@@ -232,14 +295,12 @@
 <h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
 <a class="blog-related-card" href="../blog/audit-ux-ui-optimisation-experience-utilisateur.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Audit Digital</div>
 <div class="blog-related-card-title">Audit UX/UI : Optimisez l'Expérience Utilisateur de Votre Site</div>
 </div>
 </a>
 <a class="blog-related-card" href="../blog/audit-digital-indicateurs-cles.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Audit Digital</div>
 <div class="blog-related-card-title">Audit Digital : 7 Indicateurs Clés pour Booster votre Performance</div>
@@ -259,7 +320,9 @@
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>

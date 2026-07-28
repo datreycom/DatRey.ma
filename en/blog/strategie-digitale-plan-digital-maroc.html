@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -169,16 +216,24 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">Master Digital Strategy in Morocco Agency Guide</h1>
@@ -210,6 +265,8 @@
 </nav>
 <p>Le numérique transforme tous les secteurs, et une <strong>stratégie digitale</strong> solide n'est plus une option mais une nécessité. Un bon <strong>plan digital</strong> permet à votre entreprise de se démarquer, d'attirer des clients qualifiés et d'optimiser vos investissements marketing. Chez DatRey, agence digitale basée à Casablanca, nous aidons les entreprises marocaines à construire leur feuille de route digitale. Voici les étapes clés pour créer un plan digital performant, adapté au marché marocain.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/strategie-digitale-plan-digital-maroc-2.webp" alt="Master Digital Strategy in Morocco Agency Guide - Illustration 1" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-quest-ce-quune-stratégie-digitale-et-pourquoi-est-elle-cruci">1. Qu'est-ce qu'a strategy digitale et pourquoi est-elle cruciale ?</h2><p>La <strong>stratégie digitale</strong>, c'est un ensemble d'actions coordonnées pour atteindre des objectifs commerciaux via les canaux numériques : SEO, SEA, réseaux sociaux, emailing, etc. Sans elle, vos efforts en ligne risquent d'être dispersés et inefficaces.</p><h3>Les piliers d'a strategy digitale réussie</h3><ul><li><strong>Objectifs clairs</strong> : augmenter le trafic, générer des leads, améliorer la notoriété.</li><li><strong>Audience ciblée</strong> : connaître les personas marocains (âge, localisation, comportement).</li><li><strong>Canaux adaptés</strong> : choisir les plateformes utilisées par vos clients (Google, Instagram, WhatsApp).</li><li><strong>Mesure des résultats</strong> : suivre les KPI (taux de conversion, ROI).</li></ul><h2 id="section-les-étapes-pour-élaborer-un-plan-digital-efficace">2. Les étapes pour élaborer un plan digital efficace</h2><p>Un <strong>plan digital</strong> se construit méthodiquement. Voici les étapes incontournables :</p>
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
@@ -220,10 +277,16 @@
 </div>
 <figure style="margin: 32px 0;"></figure><h3>Audit de votre présence en ligne</h3><p>Analysez votre site web, vos réseaux sociaux et votre référencement naturel. Identifiez les forces et faiblesses. Par exemple, 70% des entreprises marocaines n'ont pas de site optimisé mobile (source : étude DatRey 2023).</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/strategie-digitale-plan-digital-maroc-3.webp" alt="Master Digital Strategy in Morocco Agency Guide - Illustration 2" class="blog-img" loading="lazy" /></div>
+
+
 <h3>Définition des objectifs SMART</h3><p>Spécifiques, Mesurables, Atteignables, Réalistes, Temporels. Exemple : augmenter le trafic organique de 30% en 6 mois.</p><h3>Choix des leviers digitaux</h3><p>Selon votre secteur, privilégiez :</p><ul><li><strong>SEO</strong> pour une visibilité durable.</li><li><strong>Google Ads</strong> pour des résultats rapides.</li><li><strong>Réseaux sociaux</strong> pour l'engagement (Instagram, LinkedIn, TikTok).</li><li><strong>Email marketing</strong> pour la fidélisation.</li></ul><h2 id="section-les-outils-indispensables-pour-piloter-votre-stratégie">3. Les outils indispensables pour piloter votre stratégie</h2><p>Pour suivre votre <strong>plan digital</strong>, utilisez des outils comme Google Analytics, SEMrush, ou Hootsuite. Au Maroc, des solutions locales comme <a href="../services-seo.html">nos services SEO</a> vous aident à optimiser votre présence.</p><figure style="margin: 32px 0;"></figure><h2 id="section-cas-pratique-plan-digital-pour-une-pme-marocaine">4. Cas pratique : plan digital pour une PME marocaine</h2><p>Prenons l'exemple d'une boutique de vêtements à Casablanca. Objectif : augmenter les ventes en ligne de 20% en 3 mois.</p><table><thead><tr><th>Action</th><th>Budget</th><th>Résultat attendu</th></tr></thead><tbody><tr><td>SEO local</td><td>5000 MAD</td><td>+15% de trafic</td></tr><tr><td>Google Ads</td><td>8000 MAD</td><td>+25% de conversions</td></tr><tr><td>Instagram Ads</td><td>3000 MAD</td><td>+10% de followers</td></tr></tbody></table><h2 id="section-erreurs-à-éviter-dans-votre-plan-digital">5. Erreurs à éviter dans votre plan digital</h2>
 <div class="article-body-img-wrap"><img src="../assets/blog/strategie-digitale-plan-digital-maroc-4.webp" alt="Master Digital Strategy in Morocco Agency Guide - Illustration 3" class="blog-img" loading="lazy" /></div>
+
+
 <ul><li><strong>Ignorer le mobile</strong> : 80% des Marocains surfent sur smartphone.</li><li><strong>Négliger le référencement local</strong> : Google My Business est crucial.</li><li><strong>Manquer de constance</strong> : publier régulièrement sur les réseaux.</li><li><strong>Ne pas mesurer</strong> : sans analyse, impossible d'optimiser.</li></ul><h2 id="section-comment-datrey-peut-vous-aider">6. Comment DatRey peut vous aider</h2><p>Notre agence à Casablanca propose un accompagnement complet : audit, définition de <strong>stratégie digitale</strong>, déploiement et suivi. Nous avons aidé plus de 50 entreprises marocaines à booster leur présence en ligne. Découvrez <a href="../services-google-ads.html">nos services Google Ads</a> et <a href="../services-meta-ads.html">nos solutions réseaux sociaux</a>.</p><figure style="margin: 32px 0;"></figure><h2 id="section-faq">FAQ</h2><h3>Quel est le budget minimum pour un plan digital au Maroc ?</h3><p>Il varie selon les objectifs. Comptez à partir de 10 000 MAD par mois pour a strategy complète incluant SEO et Google Ads.</p><h3>Combien de temps faut-il pour voir des résultats ?</h3><p>Le SEO demande 3 à 6 mois, tandis que Google Ads peut générer des leads dès le premier jour.</p><h3>Faut-il externaliser sa stratégie digitale ?</h3><p>Oui, pour bénéficier d'une expertise pointue et gagner du temps. DatRey vous offre un accompagnement tailored.</p><h2 id="section-comment-aller-plus-loin">Comment aller plus loin ?</h2><p>Élaborer un <strong>plan digital</strong> solide est la clé du succès en ligne. En suivant ces étapes et en vous faisant accompagner par des experts comme DatRey, vous maximisez vos chances de croissance. Contact Us dès aujourd'hui pour un audit gratuit de votre stratégie digitale.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/strategie-digitale-plan-digital-maroc-5.webp" alt="Master Digital Strategy in Morocco Agency Guide - Illustration 4" class="blog-img" loading="lazy" /></div>
+
+
 <figure style="margin: 32px 0;"></figure>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
@@ -234,14 +297,12 @@
 <h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
 <a class="blog-related-card" href="../blog/strategie-digitale-2025-tendances-maroc.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Stratégie Digitale</div>
 <div class="blog-related-card-title">Stratégie digitale 2025 : les tendances incontournables au Maroc</div>
 </div>
 </a>
 <a class="blog-related-card" href="../blog/strategie-digitale-pme-casablanca.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Stratégie Digitale</div>
 <div class="blog-related-card-title">Stratégie Digitale pour PME : Boostez Votre Croissance</div>
@@ -261,7 +322,9 @@
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>

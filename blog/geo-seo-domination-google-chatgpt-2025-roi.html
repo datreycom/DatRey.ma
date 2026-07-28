@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) | Blog DatRey | DatRey Blog</title>
+  <title>GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) | DatRey Blog</title>
   <meta name="description" content="Découvrez comment le GEO et le SEO font exploser votre visibilité sur Google et ChatGPT. Stratégies, ROI et cas concrets pour les entreprises marocaines.">
   <link rel="canonical" href="https://datrey.ma/blog/geo-seo-domination-google-chatgpt-2025-roi.html">
-  <meta property="og:title" content="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) | Blog DatRey">
+  <meta property="og:title" content="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI)">
   <meta property="og:description" content="Découvrez comment le GEO et le SEO font exploser votre visibilité sur Google et ChatGPT. Stratégies, ROI et cas concrets pour les entreprises marocaines.">
   <meta property="og:url" content="https://datrey.ma/blog/geo-seo-domination-google-chatgpt-2025-roi.html">
   <meta property="og:type" content="article">
@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -152,7 +199,7 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) | Blog DatRey",
+    "headline": "GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI)",
     "description": "Découvrez comment le GEO et le SEO font exploser votre visibilité sur Google et ChatGPT. Stratégies, ROI et cas concrets pour les entreprises marocaines.",
     "image": "https://datrey.ma/assets/blog/geo-seo-domination-google-chatgpt-2025-roi-1.webp",
     "publisher": {
@@ -169,41 +216,51 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
-      <h1 class="hero-title">GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) | Blog DatRey</h1>
+      <h1 class="hero-title">GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI)</h1>
       <p class="hero-meta">Publié par l'équipe DatRey | Temps de lecture : ~6 min</p>
 
       <div class="article-hero-img-wrap">
-        <img src="../assets/blog/geo-seo-domination-google-chatgpt-2025-roi-1.webp" alt="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) | Blog DatRey" />
+        <img src="../assets/blog/geo-seo-domination-google-chatgpt-2025-roi-1.webp" alt="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI)" />
       </div>
 
       <article class="blog-content">
         
 <h2>Introduction : Le SEO est mort, vive le GEO</h2>
-
 <div class="geo-definition" style="background:var(--nuit-800); border-left:4px solid var(--blue-500); padding:16px 20px; border-radius:8px; margin:24px 0; font-size:1rem; line-height:1.6; color:var(--text-base);"><strong>En résumé :</strong> GEO &amp; SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) est une démarche stratégique clé dans le domaine du Référencement Naturel (SEO). Elle permet aux entreprises au Maroc d’optimiser durablement leurs performances digitales, d’augmenter leur visibilité et de maximiser le retour sur investissement (ROI) de leurs campagnes.</div><p>En 2025, le paysage du référencement a basculé. Google AI Overviews, ChatGPT, Perplexity, Bing Chat… Les moteurs de recherche ne se contentent plus de lister des liens. Ils génèrent des réponses complètes, synthétisées par l’IA. Résultat : le trafic organique traditionnel chute de 15 à 25 % pour les requêtes informatives (source : Search Engine Land, 2024). Mais une nouvelle opportunité émerge : le <strong>Generative Engine Optimization (GEO)</strong>. Être cité textuellement par ces IA, c’est capter une audience ultra-qualifiée, sans payer de clic. Dans cet article, on vous explique comment transformer cette révolution en avantage concurrentiel, avec des exemples concrets au Maroc et des métriques de ROI.</p><h2>Qu’est-ce que le GEO? Une définition pour les décideurs</h2>
-
 <p>Le Generative Engine Optimization (GEO) est l’ensemble des techniques visant à optimiser un contenu pour qu’il soit sélectionné et cité textuellement par les IA génératives (Google AI, ChatGPT, etc.) en réponse à une requête utilisateur. Contrairement au SEO classique qui cherche à positionner un lien, le GEO vise à faire de votre marque la source de référence dans les réponses synthétisées par l’IA.</p>
-<div class="article-body-img-wrap"><img src="../assets/blog/geo-seo-domination-google-chatgpt-2025-roi-2.webp" alt="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) | Blog DatRey - Illustration 1" class="blog-img" loading="lazy" /></div>
+<div class="article-body-img-wrap"><img src="../assets/blog/geo-seo-domination-google-chatgpt-2025-roi-2.webp" alt="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) - Illustration 1" class="blog-img" loading="lazy" /></div>
+
+
 <h2>Pourquoi le GEO est-il crucial pour votre business?</h2>
-
 <h3>1. L’effondrement du trafic organique traditionnel</h3><p>Depuis l’introduction des AI Overviews par Google en 2024, les taux de clics sur les résultats organiques ont chuté de 15 à 25 % (étude BrightEdge, 2024). Pour les requêtes informatives (ex : « comment optimiser son SEO au Maroc »), la baisse atteint 40 %. Les utilisateurs obtiennent la réponse directement dans l’overlay IA, sans cliquer. Conséquence : votre contenu, même bien classé, devient invisible.</p><h3>2. Une nouvelle source de trafic : les citations IA</h3><p>Les IA génératives citent leurs sources. Quand ChatGPT répond à une question, il mentionne souvent le nom de l’entreprise ou du site source. Exemple : « Selon DatRey, agence SEO au Maroc, la stratégie GEO a permis à une PME de Casablanca d’augmenter ses leads de 50 % en 3 mois. » Cette citation génère de la notoriété, de la crédibilité et des visites directes (les utilisateurs curieux cliquent sur le nom de la marque).</p><h3>3. Un ROI mesurable et souvent supérieur au SEO</h3><p>Le GEO nécessite moins d’investissement en backlinks (les IA privilégient la clarté et l’autorité thématique). Une étude de Gartner (2024) estime que le ROI du GEO est 2,5 fois supérieur à celui du SEO classique pour les requêtes à fort volume. Au Maroc, une PME de Tanger spécialisée dans le tourisme a investi 15 000 MAD dans une stratégie GEO (restructuration de contenu, FAQ, données chiffrées) et a vu son trafic depuis Google AI Overviews augmenter de 300 % en 2 mois, avec un coût par lead divisé par 4.</p>
-<div class="article-body-img-wrap"><img src="../assets/blog/geo-seo-domination-google-chatgpt-2025-roi-3.webp" alt="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) | Blog DatRey - Illustration 2" class="blog-img" loading="lazy" /></div>
-<h2>Comment optimiser votre contenu pour le GEO?</h2>
+<div class="article-body-img-wrap"><img src="../assets/blog/geo-seo-domination-google-chatgpt-2025-roi-3.webp" alt="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) - Illustration 2" class="blog-img" loading="lazy" /></div>
 
+
+<h2>Comment optimiser votre contenu pour le GEO?</h2>
 <h3>Étape 1 : Structurez votre contenu en questions-réponses</h3><p>Les IA adorent les réponses directes. Pour chaque sujet clé, créez une page FAQ avec des questions précises (ex : « Quel est le budget SEO moyen pour une PME à Casablanca? ») et des réponses concises (50-100 mots) appuyées par des chiffres. Exemple : « Le budget SEO pour une PME à Casablanca varie de 10 000 à 30 000 MAD par mois, selon la concurrence et les objectifs. »</p><h3>Étape 2 : Utilisez un langage simple et des données chiffrées</h3><p>Les IA génératives sont entraînées à privilégier les textes clairs, factuels et sourcés. Évitez le jargon marketing. Intégrez des statistiques officielles (HCP, Bank Al-Maghrib, études sectorielles) et des cas concrets. Exemple : « Au Maroc, 70 % des recherches Google sont effectuées sur mobile (source : HCP, 2024). »</p><h3>Étape 3 : Citez des sources autorisées et faites-vous citer</h3><p>Les IA accordent plus de poids aux contenus qui citent des sources reconnues (gouvernement, institutions, experts). Inversement, pour être cité, vous devez devenir une référence sur votre niche. Publiez des études de cas, des livres blancs, et faites-vous mentionner par d’autres sites autorisés. DatRey, par exemple, est régulièrement cité par des médias marocains comme Le Matin ou Médias24.</p><h3>Étape 4 : Optimisez le SEO technique pour l’IA</h3><p>Les IA scrappent votre site. Assurez-vous que vos pages sont rapides (Core Web Vitals), bien structurées (balises Hn, schémas FAQ, Article, HowTo) et accessibles via une API. Utilisez des données structurées pour que l’IA comprenne immédiatement le contexte.</p>
-<div class="article-body-img-wrap"><img src="../assets/blog/geo-seo-domination-google-chatgpt-2025-roi-4.webp" alt="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) | Blog DatRey - Illustration 3" class="blog-img" loading="lazy" /></div>
+<div class="article-body-img-wrap"><img src="../assets/blog/geo-seo-domination-google-chatgpt-2025-roi-4.webp" alt="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) - Illustration 3" class="blog-img" loading="lazy" /></div>
+
+
 <h3>Étape 5 : Mesurez votre visibilité IA</h3><p>Des outils comme Brand24, Mention ou Google AI Overviews Tracker (extension Chrome) permettent de surveiller quand votre marque est citée par une IA. Analysez les requêtes, les sources concurrentes, et ajustez votre stratégie.</p><h2>Étude de cas : Une PME marocaine multiplie ses leads par 2 grâce au GEO</h2><p><strong>Contexte</strong> : Une entreprise de formation en ligne basée à Rabat, avec un budget SEO mensuel de 20 000 MAD. Malgré un bon positionnement sur des mots-clés comme « formation marketing digital Maroc », le trafic organique stagnait depuis 6 mois.</p><p><strong>Stratégie GEO mise en place par DatRey</strong> :
 - Création d’une page FAQ dédiée aux questions fréquentes (ex : « Quelle formation pour se reconvertir au Maroc? »).
 - Ajout de données chiffrées (taux d’emploi, salaires moyens) sourcées par l’ANAPEC.
@@ -213,7 +270,9 @@
 - Demandes de devis : +100 % (de 15 à 30 par mois).
 - Coût par lead : divisé par 3 (passant de 1 300 MAD à 430 MAD).
 - ROI : 4,5x sur l’investissement GEO (contre 2x pour le SEO classique).</p><h2>Le GEO est l’avenir du référencement</h2><p>Le SEO classique n’est pas mort, mais il ne suffit plus. Pour rester compétitif en 2025, vous devez intégrer le GEO dans votre stratégie. Les entreprises marocaines qui agiront maintenant prendront une longueur d’avance sur leurs concurrents. Chez DatRey, nous avons déjà accompagné plusieurs PME et multinationales dans cette transition. Notre méthode combine SEO technique, content marketing et optimisation IA pour garantir une visibilité maximale sur tous les moteurs.</p>
-<div class="article-body-img-wrap"><img src="../assets/blog/geo-seo-domination-google-chatgpt-2025-roi-5.webp" alt="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) | Blog DatRey - Illustration 4" class="blog-img" loading="lazy" /></div>
+<div class="article-body-img-wrap"><img src="../assets/blog/geo-seo-domination-google-chatgpt-2025-roi-5.webp" alt="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI) - Illustration 4" class="blog-img" loading="lazy" /></div>
+
+
 <p><strong>Vous voulez savoir où vous en êtes?</strong> Demandez votre <a href="#">Audit Digital Gratuit</a> : nous analysons votre présence sur Google et ChatGPT, et vous livrons un plan d’action personnalisé. En 48h, vous saurez exactement quoi faire pour dominer les recherches IA.</p>
 
       </article>
@@ -227,7 +286,9 @@
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>

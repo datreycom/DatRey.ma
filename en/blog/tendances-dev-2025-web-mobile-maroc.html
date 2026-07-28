@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -169,16 +216,24 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">Top Web & Mobile Development Trends 2025 in Morocco</h1>
@@ -211,8 +266,11 @@
 </nav>
 <p>Le développement web et mobile bouge vite, et 2025 s'annonce comme une année importante pour les boîtes marocaines. Chez DatRey, agence digitale à Casablanca, on garde un œil sur ces évolutions pour vous proposer des solutions qui marchent. Que vous vouliez lancer une app mobile performante ou un site web moderne, voici ce qui va compter cette année : l'IA, les Progressive Web Apps (PWA), et des frameworks comme Next.js ou Flutter. Prêt à passer à la vitesse supérieure ?</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/tendances-dev-2025-web-mobile-maroc-2.webp" alt="Top Web & Mobile Development Trends 2025 in Morocco - Illustration 1" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-lia-au-cœur-du-développement">1. L'IA au cœur du développement</h2><p>L'intelligence artificielle, ce n'est plus un gadget, c'est un passage obligé. En 2025, des outils comme GitHub Copilot et les API de machine learning s'intègrent directement dans vos projets web et mobile. Au Maroc, les entreprises commencent à s'en servir pour automatiser des tâches, personnaliser l'expérience utilisateur et améliorer les performances.</p><h3>1.1. Chatbots et assistants vocaux</h3><p>Les chatbots boostés à l'IA (GPT-4, Claude) assurent un support client 24h/24 et 7j/7. Ajouter un assistant vocal à votre app mobile, c'est aussi un bon moyen d'améliorer l'accessibilité. DatRey peut vous aider à mettre tout ça en place.</p><h3>1.2. Personnalisation dynamique</h3><p>Avec l'IA, les sites web ajustent leur contenu en temps réel selon ce que fait l'utilisateur. Résultat : plus de conversions. D'après une étude, 72% des consommateurs marocains préfèrent les marques qui leur offrent une expérience tailored.</p><figure style="margin: 32px 0;"></figure><h2 id="section-progressive-web-apps-pwa-le-standard-mobile">2. Progressive Web Apps (PWA) : le standard mobile</h2><p>Les PWA mélangent le meilleur du web et des applis natives. En 2025, elles deviennent le choix numéro un pour les entreprises marocaines qui veulent une expérience rapide et engageante sans passer par les stores. Performantes, fiables et installables, elles coûtent moins cher à développer.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/tendances-dev-2025-web-mobile-maroc-3.webp" alt="Top Web & Mobile Development Trends 2025 in Morocco - Illustration 2" class="blog-img" loading="lazy" /></div>
+
 
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
@@ -223,8 +281,12 @@
 </div>
 <ul><li>Avantages : chargement instantané, fonctionnement hors ligne, notifications push.</li><li>Exemple : une PWA e-commerce peut faire grimper les ventes de 20%.</li></ul><h2 id="section-frameworks-modernes-nextjs-flutter-et-react-native">3. Frameworks modernes : Next.js, Flutter et React Native</h2><p>Les frameworks évoluent pour répondre aux besoins de performance et de scalabilité. Next.js (pour le web) et Flutter/React Native (pour le mobile) dominent le marché.</p><table><thead><tr><th>Framework</th><th>Usage</th><th>Avantage clé</th></tr></thead><tbody><tr><td>Next.js</td><td>Web (SSR, SSG)</td><td>SEO optimisé, performances</td></tr><tr><td>Flutter</td><td>Mobile (iOS/Android)</td><td>UI cohérente, hot reload</td></tr><tr><td>React Native</td><td>Mobile</td><td>Code partagé, large communauté</td></tr></tbody></table><p>Pour un projet au Maroc, le choix du framework dépend de vos objectifs. DatRey maîtrise ces technologies et vous conseille.</p><h2 id="section-cybersécurité-et-rgpd-maroc">4. Cybersécurité et RGPD Maroc</h2><p>Avec la digitalisation, la sécurité devient cruciale. En 2025, la loi 09-08 impose des normes strictes. Les développeurs intègrent dès le départ des mesures comme l'authentification multifacteur, le chiffrement de bout en bout et des audits réguliers.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/tendances-dev-2025-web-mobile-maroc-4.webp" alt="Top Web & Mobile Development Trends 2025 in Morocco - Illustration 3" class="blog-img" loading="lazy" /></div>
+
+
 <figure style="margin: 32px 0;"></figure><ul><li>Statistique : 60% des PME marocaines ont subi une cyberattaque en 2024.</li><li>Conseil : optez pour un hébergement sécurisé et des mises à jour régulières.</li></ul><h2 id="section-low-code-et-no-code-accessibilité">5. Low-Code et No-Code : accessibilité</h2><p>Les plateformes low-code/no-code (Bubble, Webflow) permettent de créer des applications sans être un expert technique. Parfait pour les startups marocaines au budget serré. Mais pour des projets complexes, mieux vaut rester sur du développement tailored.</p><h2 id="section-web3-et-blockchain">6. Web3 et Blockchain</h2><p>La blockchain trouve des applications concrètes : traçabilité, smart contracts, NFT. Au Maroc, le secteur financier commence à explorer ces technologies. DatRey peut vous aider à intégrer des solutions décentralisées dans votre projet.</p><h2 id="section-performance-et-green-it">7. Performance et Green IT</h2><p>Les utilisateurs veulent des sites rapides (moins de 2 secondes de chargement). En parallèle, l'éco-conception web réduit l'empreinte carbone. Optimisez les images, utilisez un hébergement vert et allégez le code.</p><figure style="margin: 32px 0;"></figure><h2 id="section-faq">FAQ</h2><h3>Quelles sont les tendances majeures en développement web pour 2025 ?</h3><p>Les tendances incluent l'IA intégrée, les PWA, les frameworks modernes (Next.js, Flutter), la cybersécurité renforcée, le low-code, la blockchain et l'éco-conception.</p><h3>Comment choisir entre une application native et une PWA ?</h3><p>Si vous avez besoin de fonctionnalités avancées (capteurs, stockage local), choisissez une app native. Pour une solution économique et rapide, la PWA est idéale. DatRey vous aide à évaluer vos besoins.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/tendances-dev-2025-web-mobile-maroc-5.webp" alt="Top Web & Mobile Development Trends 2025 in Morocco - Illustration 4" class="blog-img" loading="lazy" /></div>
+
+
 <h3>DatRey propose-t-il des services de développement web et mobile au Maroc ?</h3><p>Oui, en tant qu'agence digitale à Casablanca, nous offrons des services de développement tailored, du conseil à la maintenance. Contact Us pour un devis.</p><h2 id="section-comment-aller-plus-loin">Comment aller plus loin ?</h2><p>Les tendances 2025 offrent des opportunités uniques pour les entreprises marocaines. Que vous souhaitiez adopter l'IA, lancer une PWA ou sécuriser votre application, DatRey est votre partenaire de confiance à Casablanca. <a href="../services-seo.html">Discover our services SEO</a> pour optimiser votre visibilité, ou <a href="../services-google-ads.html">nos campagnes Google Ads</a> pour booster votre trafic. <a href="../contact.html">Contact Us dès aujourd'hui</a> pour concrétiser votre projet.</p><figure style="margin: 32px 0;"></figure>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
@@ -235,14 +297,12 @@
 <h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
 <a class="blog-related-card" href="../blog/app-mobile-tailored-maroc.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Développement Web &amp; Mobile</div>
 <div class="blog-related-card-title">App mobile tailored : boostez votre business au Maroc</div>
 </div>
 </a>
 <a class="blog-related-card" href="../blog/site-vs-application-web-choisir-business.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Développement Web &amp; Mobile</div>
 <div class="blog-related-card-title">Site vs Application Web : Lequel Choisir pour votre Business ?</div>
@@ -262,7 +322,9 @@
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>

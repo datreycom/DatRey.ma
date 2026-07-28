@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -169,16 +216,24 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">CRO & User Journey: Boost Conversions in Morocco</h1>
@@ -212,6 +267,8 @@ Voici la version humanisée de votre contenu HTML, en conservant strictement tou
 ```html
 <p>Optimiser vos conversions, c'est le moyen le plus direct de rentabiliser votre site. Au Maroc, la concurrence en ligne explose. Comprendre comment vos visiteurs naviguent et où ils butent, c'est ce qui fera la différence entre un simple visiteur et un client.</p><p>Que vous soyez une PME à Casablanca ou une startup à Rabat, chaque étape du parcours client compte. Moins de friction, plus d'actions. Voici des techniques qui marchent, avec des chiffres à l'appui.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/optimisation-conversions-cro-parcours-utilisateur-2.webp" alt="CRO & User Journey: Boost Conversions in Morocco - Illustration 1" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-quest-ce-que-loptimisation-des-conversions-cro">Qu'est-ce que l'optimisation des conversions (CRO) ?</h2><p>Le CRO, c'est l'art de faire en sorte que plus de visiteurs fassent ce que vous voulez sur votre site : acheter, s'inscrire, demander un devis. Ce n'est pas juste changer la couleur d'un bouton. C'est une méthode complète qui observe comment les gens se comportent pour améliorer chaque interaction.</p><p>Forrester a montré qu'une bonne expérience utilisateur peut multiplier les taux de conversion par 2 à 4. Au Maroc, l'e-commerce grimpe de 25 % chaque année. Investir dans le CRO, c'est prendre une longueur d'avance.</p><h2 id="section-le-parcours-utilisateur-fondement-du-cro">Le parcours utilisateur : fondement du CRO</h2><p>Le parcours utilisateur, c'est le chemin que quelqu'un emprunte de sa première rencontre avec votre marque jusqu'à l'achat. Pour l'optimiser, il faut le cartographier et repérer ce qui coince.</p>
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
@@ -222,10 +279,16 @@ Voici la version humanisée de votre contenu HTML, en conservant strictement tou
 </div>
 <h3>Les étapes clés du parcours</h3><ul><li><strong>Découverte</strong> : l'utilisateur arrive sur votre site via Google, les réseaux sociaux ou une publicité.</li><li><strong>Engagement</strong> : il navigue, consulte des pages et évalue votre offre.</li><li><strong>Conversion</strong> : il effectue l'action souhaitée (achat, inscription).</li><li><strong>Fidélisation</strong> : après conversion, il revient ou recommande votre service.</li></ul><figure style="margin: 32px 0;"></figure><p>Chaque étape doit être fluide. Un exemple : si votre site met plus de 3 secondes à charger, vous perdez 53 % de vos visiteurs mobiles (Google).</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/optimisation-conversions-cro-parcours-utilisateur-3.webp" alt="CRO & User Journey: Boost Conversions in Morocco - Illustration 2" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-techniques-cro-pour-optimiser-votre-parcours-utilisateur">5 techniques CRO pour optimiser votre parcours utilisateur</h2><h3>1. Améliorer la vitesse de chargement</h3><p>La technique, c'est la base. Utilisez Google PageSpeed Insights pour trouver ce qui ralentit votre site. Compressez les images, activez le cache, réduisez le JavaScript.</p><h3>2. Simplifier les formulaires</h3><p>Les formulaires trop longs font fuir les gens. Gardez le minimum de champs obligatoires, activez l'autocomplétion, proposez une connexion via les réseaux sociaux. HubSpot a calculé que passer de 4 à 3 champs peut augmenter les conversions de 50 %.</p><h3>3. Utiliser des appels à l'action (CTA) clairs</h3><p>Vos CTA doivent sauter aux yeux et promettre un bénéfice. « Obtenez votre devis gratuit » marche mieux qu'un simple « Envoyer ». Testez différentes couleurs et emplacements.</p><figure style="margin: 32px 0;"></figure><h3>4. Personnaliser l'expérience</h3><p>Utilisez l'historique de navigation pour proposer des recommandations tailored. Au Maroc, les visiteurs aiment les offres locales et les prix en dirhams. Des outils comme Dynamic Yield simplifient la segmentation.</p><h3>5. Optimiser pour le mobile</h3><p>Plus de 70 % du trafic web marocain vient du mobile. Votre site doit être responsive : boutons faciles à cliquer, texte lisible sans zoom.</p><h2 id="section-tableau-comparatif-avant-et-après-optimisation-cro">Tableau comparatif : avant et après optimisation CRO</h2><table><thead><tr><th>Indicateur</th><th>Avant optimisation</th><th>Après optimisation</th></tr></thead><tbody><tr><td>Taux de conversion</td><td>1,5 %</td><td>4,2 %</td></tr><tr><td>Taux de rebond</td><td>65 %</td><td>42 %</td></tr><tr><td>Temps moyen sur le site</td><td>1 min 30</td><td>3 min 10</td></tr><tr><td>Panier moyen</td><td>450 MAD</td><td>620 MAD</td></tr></tbody></table><p>Ces chiffres viennent d'une campagne récente de DatRey pour un e-commerce marocain. Résultat : le chiffre d'affaires a grimpé de 180 %.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/optimisation-conversions-cro-parcours-utilisateur-4.webp" alt="CRO & User Journey: Boost Conversions in Morocco - Illustration 3" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-outils-cro-recommandés">Outils CRO recommandés</h2><ul><li>Google Analytics : pour analyser le comportement des utilisateurs.</li><li>Hotjar : pour les cartes de chaleur et les enregistrements de sessions.</li><li>Optimizely : pour les tests A/B.</li><li>Crazy Egg : pour visualiser les zones de clics.</li></ul><p>Avec ces outils, vous repérerez les pages à améliorer et testerez vos idées.</p><figure style="margin: 32px 0;"></figure><h2 id="section-faq">FAQ</h2><h3>1. Combien de temps faut-il pour voir des résultats avec le CRO ?</h3><p>Les premiers résultats peuvent arriver en quelques semaines, mais une optimisation continue est nécessaire pour des gains durables. En moyenne, comptez 3 à 6 mois pour une amélioration significative.</p><h3>2. Le CRO est-il adapté aux petits budgets ?</h3><p>Oui, beaucoup d'optimisations sont gratuites ou peu coûteuses (vitesse, formulaires). L'important est de prioriser les actions qui ont le plus d'impact.</p><h3>3. Faut-il refaire tout le site pour optimiser les conversions ?</h3><p>Non, le CRO se fait par petites touches. Commencez par les pages qui attirent le plus de trafic (accueil, fiches produits) et testez des changements progressifs.</p><h2 id="section-comment-aller-plus-loin">Comment aller plus loin ?</h2><p>Optimiser vos conversions en travaillant sur le parcours utilisateur, c'est un investissement qui rapporte. Vous vendez plus, et vos clients sont plus satisfaits. Chez DatRey, on aide les entreprises de Casablanca et du Maroc à mettre en place ces stratégies. <a href="../services-seo.html">Discover our services SEO</a> pour attirer plus de visiteurs qualifiés, <a href="../services-google-ads.html">nos campagnes Google Ads</a> pour générer du trafic ciblé, et <a href="../services-design.html">notre expertise en design UX</a> pour créer des parcours fluides. Contact Us pour un audit gratuit de votre site.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/optimisation-conversions-cro-parcours-utilisateur-5.webp" alt="CRO & User Journey: Boost Conversions in Morocco - Illustration 4" class="blog-img" loading="lazy" /></div>
+
+
 <figure style="margin: 32px 0;"></figure>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
@@ -236,14 +299,12 @@ Voici la version humanisée de votre contenu HTML, en conservant strictement tou
 <h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
 <a class="blog-related-card" href="../blog/tests-ab-optimisation-conversions.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Optimisation des Conversions (CRO)</div>
 <div class="blog-related-card-title">Tests A/B : Optimisez vos conversions avec DatRey</div>
 </div>
 </a>
 <a class="blog-related-card" href="../blog/optimisation-conversions-landing-pages.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Optimisation des Conversions (CRO)</div>
 <div class="blog-related-card-title">Optimisation des Conversions : Boostez vos Landing Pages</div>
@@ -263,7 +324,9 @@ Voici la version humanisée de votre contenu HTML, en conservant strictement tou
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>

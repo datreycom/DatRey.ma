@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -169,16 +216,24 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">Conversion Optimisation for Landing Pages in Morocco</h1>
@@ -252,6 +307,8 @@
 
 <p>Optimiser vos conversions, c'est transformer vos visiteurs en clients. Au Maroc, la concurrence digitale est rude, et chaque clic compte. Une landing page bien fichue peut faire passer votre taux de conversion de 2% à 8%, voire plus. On va voir comment améliorer vos pages d'atterrissage avec des techniques qui marchent vraiment.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/optimisation-conversions-landing-pages-2.webp" alt="Conversion Optimisation for Landing Pages in Morocco - Illustration 1" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-quest-ce-que-loptimisation-des-conversions">Qu'est-ce que l'Optimisation des Conversions ?</h2><p>Le CRO (Conversion Rate Optimization) est le pourcentage de visiteurs qui font ce que vous voulez : acheter, s'inscrire, télécharger. Ça se fait avec des tests A/B, du design centré sur l'utilisateur et de l'analyse de données.</p><h2 id="section-pourquoi-les-landing-pages-sont-elles-cruciales">Pourquoi les Landing Pages sont-elles Cruciales ?</h2><p>Les landing pages sont des pages dédiées à une offre précise. Contrairement à un site généraliste, elles enlèvent les distractions. Une étude de HubSpot montre que les entreprises avec 30+ landing pages génèrent 7 fois plus de leads.</p>
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
@@ -262,8 +319,12 @@
 </div>
 <h2 id="section-éléments-clés-dune-landing-page-performante">Éléments Clés d'une Landing Page Performante</h2><h3>Titre Accrocheur</h3><p>Le titre doit capter l'attention en moins de 5 secondes. Utilisez des mots puissants et une proposition de valeur claire.</p><figure style="margin: 32px 0;"></figure><h3>Appel à l'Action (CTA) Visible</h3><p>Placez votre CTA au-dessus de la ligne de flottaison. Utilisez des couleurs contrastées et un texte orienté action : "Obtenez votre devis gratuit".</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/optimisation-conversions-landing-pages-3.webp" alt="Conversion Optimisation for Landing Pages in Morocco - Illustration 2" class="blog-img" loading="lazy" /></div>
+
+
 <h3>Preuve Sociale</h3><p>Intégrez des témoignages, des logos clients ou des statistiques. 92% des consommateurs lisent des avis avant d'acheter.</p><h3>Formulaire Simplifié</h3><p>Limitez le nombre de champs. Chaque champ supplémentaire réduit le taux de conversion de 10%.</p><h2 id="section-techniques-avancées-de-cro">Techniques Avancées de CRO</h2><h3>Tests A/B</h3><p>Testez différentes versions de vos landing pages : titres, images, CTA. Un simple changement de couleur peut augmenter les conversions de 21%.</p><figure style="margin: 32px 0;"></figure><h3>Personnalisation</h3><p>Adaptez le contenu en fonction de la source de trafic. Par exemple, une annonce Facebook doit mener à une page cohérente avec l'annonce.</p><h3>Vitesse de Chargement</h3><p>Un délai d'une seconde supplémentaire réduit les conversions de 7%. Optimisez vos images et utilisez un hébergement rapide.</p><h2 id="section-exemples-de-landing-pages-réussies">Exemples de Landing Pages Réussies</h2><table><thead><tr><th>Élément</th><th>Avant</th><th>Après</th></tr></thead><tbody><tr><td>Titre</td><td>"Our Services"</td><td>"Boostez vos ventes de 50% en 30 jours"</td></tr><tr><td>CTA</td><td>"Envoyer"</td><td>"Obtenez votre audit gratuit"</td></tr><tr><td>Formulaire</td><td>10 champs</td><td>3 champs</td></tr><tr><td>Résultat</td><td>Taux de conversion : 2%</td><td>Taux de conversion : 8%</td></tr></tbody></table><h2 id="section-erreurs-à-éviter">Erreurs à Éviter</h2>
 <div class="article-body-img-wrap"><img src="../assets/blog/optimisation-conversions-landing-pages-4.webp" alt="Conversion Optimisation for Landing Pages in Morocco - Illustration 3" class="blog-img" loading="lazy" /></div>
+
+
 <ul><li>Navigation multiple : ne donnez pas de liens vers d'autres pages.</li><li>Texte trop long : allez à l'essentiel.</li><li>Absence de preuve sociale : rassurez vos visiteurs.</li><li>CTA peu clair : soyez direct.</li></ul><figure style="margin: 32px 0;"></figure><h2 id="section-faq">FAQ</h2><h3>Qu'est-ce que le CRO ?</h3><p>Le CRO est l'optimisation du taux de conversion, visant à améliorer le pourcentage de visiteurs accomplissant une action souhaitée.</p><h3>Combien de temps pour voir des résultats ?</h3><p>Les premiers résultats peuvent apparaître après quelques semaines de tests A/B, mais l'optimisation est continue.</p><h3>Quels outils utiliser pour le CRO ?</h3><p>Des outils comme Google Optimize, Hotjar ou Optimizely permettent de réaliser des tests et d'analyser le comportement utilisateur.</p><h2 id="section-comment-aller-plus-loin">Comment aller plus loin ?</h2><p>L'optimisation des conversions est un levier puissant pour rentabiliser votre trafic. En améliorant vos landing pages, vous maximisez le retour sur investissement de vos campagnes marketing. Chez <a href="../services-seo.html">DatRey</a>, nous vous accompagnons dans cette démarche. Contact Us pour un audit gratuit de vos pages.</p><p>Découvrez aussi nos services <a href="../services-google-ads.html">Google Ads</a> et <a href="../services-design.html">Web Design</a> pour compléter votre stratégie digitale.</p><figure style="margin: 32px 0;"></figure>
 
 **Anti-AI Audit question:** What makes the below so obviously AI generated?
@@ -272,6 +333,8 @@
 
 <p>Optimiser vos conversions, c'est transformer vos visiteurs en clients. Au Maroc, la concurrence digitale est rude, et chaque clic compte. Une landing page bien fichue peut faire passer votre taux de conversion de 2% à 8%, voire plus. On va voir comment améliorer vos pages d'atterrissage avec des techniques qui marchent vraiment.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/optimisation-conversions-landing-pages-5.webp" alt="Conversion Optimisation for Landing Pages in Morocco - Illustration 4" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-quest-ce-que-loptimisation-des-conversions-2">Qu'est-ce que l'Optimisation des Conversions ?</h2><p>Le CRO (Conversion Rate Optimization), c'est le pourcentage de visiteurs qui font ce que vous voulez : acheter, s'inscrire, télécharger un truc. Ça se fait avec des tests A/B, du design centré sur l'utilisateur et un peu d'analyse de données.</p><h2 id="section-pourquoi-les-landing-pages-sont-elles-cruciales-2">Pourquoi les Landing Pages sont-elles Cruciales ?</h2><p>Les landing pages sont des pages dédiées à une offre précise. Contrairement à un site généraliste, elles enlèvent les distractions. Une étude de HubSpot montre que les entreprises avec 30+ landing pages génèrent 7 fois plus de leads.</p>
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
@@ -303,14 +366,12 @@
 <h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
 <a class="blog-related-card" href="../blog/tests-ab-optimisation-conversions.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Optimisation des Conversions (CRO)</div>
 <div class="blog-related-card-title">Tests A/B : Optimisez vos conversions avec DatRey</div>
 </div>
 </a>
 <a class="blog-related-card" href="../blog/optimisation-conversions-cro-parcours-utilisateur.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Optimisation des Conversions (CRO)</div>
 <div class="blog-related-card-title">Optimisation des conversions CRO : améliorez votre parcours utilisateur</div>
@@ -330,7 +391,9 @@
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>

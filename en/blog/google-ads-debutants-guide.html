@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -169,16 +216,24 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">Google Ads for Beginners in Morocco: Complete Guide</h1>
@@ -209,6 +264,8 @@
 </nav>
 <p>Vous voulez faire connaître votre entreprise au Maroc et attirer plus de clients ? <strong>Google Ads</strong> (anciennement AdWords) est l'outil publicitaire le plus puissant pour apparaître en tête des résultats de recherche. Ce guide débutant vous explique pas à pas comment créer et optimiser vos campagnes SEA. Que vous soyez à Casablanca, Rabat ou Marrakech, maîtrisez les bases pour un retour sur investissement maximal. Chez DatRey, agence digitale marocaine, nous vous accompagnons dans cette aventure.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/google-ads-debutants-guide-2.webp" alt="Google Ads for Beginners in Morocco: Complete Guide - Illustration 1" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-quest-ce-que-google-ads-et-pourquoi-lutiliser">Qu'est-ce que Google Ads et pourquoi l'utiliser ?</h2><p>Google Ads est une plateforme de publicité en ligne qui permet d'afficher vos annonces sur Google et ses partenaires. Vous payez uniquement lorsqu'un internaute clique sur votre annonce (modèle PPC). Au Maroc, plus de 90% des recherches en ligne passent par Google. Avec Google Ads, vous touchez vos clients au moment précis où ils cherchent vos produits ou services.</p><h3>Les avantages pour les entreprises marocaines</h3><ul><li>Ciblage géographique : choisissez des villes comme Casablanca, Marrakech ou Fès.</li><li>Contrôle du budget : fixez un budget journalier adapté à votre taille.</li><li>Mesure précise : suivez chaque clic, appel ou vente générée.</li><li>Rapidité : vos annonces sont visibles en quelques heures.</li></ul><h2 id="section-comment-créer-votre-première-campagne-google-ads">Comment créer votre première campagne Google Ads</h2><p>Suivez ces étapes pour lancer votre campagne en toute sérénité.</p>
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
@@ -219,10 +276,16 @@
 </div>
 <h3>1. Définir vos objectifs</h3><p>Avant tout, déterminez ce que vous voulez : ventes, appels téléphoniques, visites en magasin ou inscriptions. Choisissez l'objectif dans Google Ads : ventes, prospects, trafic vers le site web, notoriété de la marque.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/google-ads-debutants-guide-3.webp" alt="Google Ads for Beginners in Morocco: Complete Guide - Illustration 2" class="blog-img" loading="lazy" /></div>
+
+
 <figure style="margin: 32px 0;"></figure><h3>2. Choisir le type de campagne</h3><p>Pour un débutant, la campagne <strong>Search</strong> (Réseau de Recherche) est idéale. Vos annonces textuelles apparaissent sur les résultats de recherche Google. Vous pouvez aussi tester les campagnes Display (bannières) ou Shopping (pour le e-commerce).</p><h3>3. Configurer le ciblage</h3><p>Indiquez la localisation : Maroc, puis sélectionnez les villes où vous opérez. Définissez la langue (français ou arabe) et les mots-clés pertinents. Par exemple, si vous êtes un restaurant à Casablanca, ciblez "restaurant Casablanca", "meilleur restaurant" etc.</p><h3>4. Définir votre budget</h3><p>Google Ads fonctionne aux enchères. Fixez un budget journalier (ex: 100 MAD) et un coût par clic (CPC) maximum. Commencez modestement, puis ajustez selon les performances.</p><h3>5. Rédiger vos annonces</h3><p>Créez des titres accrocheurs (30 caractères max) et des descriptions (90 caractères). Incluez un appel à l'action : "Appelez maintenant", "Get a devis gratuit". Utilisez des extensions d'annonces pour ajouter numéro de téléphone, adresse ou liens supplémentaires.</p><h2 id="section-optimiser-vos-campagnes-pour-le-marché-marocain">Optimiser vos campagnes pour le marché marocain</h2><p>Le Maroc a ses spécificités. Adaptez votre stratégie.</p><ul><li><strong>Langue</strong> : Testez des annonces en français et en arabe (dialectal ou littéraire). Les internautes marocains sont bilingues.</li><li><strong>Mobile</strong> : Plus de 70% des recherches se font sur mobile. Assurez-vous que votre site est responsive.</li><li><strong>Heures de diffusion</strong> : Programmez vos annonces aux heures de pointe (9h-12h et 15h-18h).</li><li><strong>Mots-clés locaux</strong> : Ajoutez des termes comme "pas cher", "livraison", "prix maroc".</li></ul><figure style="margin: 32px 0;"></figure><h2 id="section-mesurer-et-améliorer-vos-performances">Mesurer et améliorer vos performances</h2>
 <div class="article-body-img-wrap"><img src="../assets/blog/google-ads-debutants-guide-4.webp" alt="Google Ads for Beginners in Morocco: Complete Guide - Illustration 3" class="blog-img" loading="lazy" /></div>
+
+
 <p>Utilisez les indicateurs clés : impressions, clics, CTR (taux de clics), conversions, coût par conversion. Un bon CTR est supérieur à 3%. Si vos résultats sont faibles, testez de nouveaux mots-clés ou améliorez vos annonces. Pensez aux tests A/B.</p><h3>Tableau comparatif : Google Ads vs Référencement naturel (SEO)</h3><table><thead><tr><th>Critère</th><th>Google Ads</th><th>SEO</th></tr></thead><tbody><tr><td>Délai de résultats</td><td>Immédiat</td><td>3-6 mois</td></tr><tr><td>Coût</td><td>Payant par clic</td><td>Gratuit (mais temps/ressources)</td></tr><tr><td>Visibilité</td><td>En haut des résultats</td><td>Résultats naturels</td></tr><tr><td>Contrôle</td><td>Total (budget, ciblage)</td><td>Limité (dépend de Google)</td></tr><tr><td>Durabilité</td><td>Stop = fin des annonces</td><td>Effet durable</td></tr></tbody></table><p>Pour a strategy complète, combinez Google Ads et SEO. Discover our <a href="../services-seo.html">services SEO</a> et <a href="../services-google-ads.html">services Google Ads</a>.</p><h2 id="section-erreurs-courantes-à-éviter">Erreurs courantes à éviter</h2><ul><li>Ignorer les mots-clés négatifs (exclure les termes non pertinents).</li><li>Négliger le suivi des conversions (installez le tag Google Ads).</li><li>Choisir des mots-clés trop génériques (ex: "chaussures" au lieu de "chaussures de sport Casablanca").</li><li>Ne pas optimiser les pages de destination (landing pages).</li></ul><h2 id="section-faq---questions-fréquentes-sur-google-ads">FAQ - Frequently fréquentes sur Google Ads</h2>
 <div class="article-body-img-wrap"><img src="../assets/blog/google-ads-debutants-guide-5.webp" alt="Google Ads for Beginners in Morocco: Complete Guide - Illustration 4" class="blog-img" loading="lazy" /></div>
+
+
 <h3>Quel budget minimum pour Google Ads au Maroc ?</h3><p>Il n'y a pas de minimum, mais nous recommandons au moins 50 MAD par jour pour obtenir des données significatives. Commencez petit et augmentez progressivement.</p><figure style="margin: 32px 0;"></figure><h3>Combien de temps faut-il pour voir des résultats ?</h3><p>Dès le lancement, vos annonces peuvent apparaître. Cependant, Google Ads a une phase d'apprentissage (1 à 2 semaines) pour optimiser les enchères. Soyez patient et analysez les performances après 2 semaines.</p><h3>Dois-je faire appel à une agence pour gérer mes campagnes ?</h3><p>Si vous manquez de temps ou d'expertise, une agence comme <a href="../services-google-ads.html">DatRey</a> peut optimiser votre budget et vos résultats. Nous proposons des audits gratuits.</p><h2 id="section-comment-aller-plus-loin">Comment aller plus loin ?</h2><p>Google Ads est un levier puissant pour développer votre activité au Maroc. En suivant ce guide débutant, vous avez les bases pour lancer des campagnes efficaces. N'oubliez pas de tester, mesurer et ajuster. Pour aller plus loin, confiez votre SEA à des experts. Contactez DatRey dès aujourd'hui pour un devis personnalisé !</p><p>Image : </p><p>Image : </p><p>Image : </p><p>Image : </p><figure style="margin: 32px 0;"></figure>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
@@ -233,14 +296,12 @@
 <h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
 <a class="blog-related-card" href="../blog/google-ads-sea-optimiser-roi-campagnes.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Google Ads &amp; SEA</div>
 <div class="blog-related-card-title">Google Ads &amp; SEA : Optimiser le ROI de vos campagnes</div>
 </div>
 </a>
 <a class="blog-related-card" href="../blog/erreurs-google-ads-maroc.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Google Ads &amp; SEA</div>
 <div class="blog-related-card-title">Google Ads au Maroc : 7 erreurs à éviter pour vos campagnes SEA</div>
@@ -260,7 +321,9 @@
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>

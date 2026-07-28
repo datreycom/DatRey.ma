@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -169,16 +216,24 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">Automated Email Sequences: Boost Sales in Morocco - DatRey</h1>
@@ -210,6 +265,8 @@
 </nav>
 <p>L'<strong>emailing automatisé</strong> est devenu un levier incontournable pour les entreprises marocaines qui veulent optimiser leur communication digitale. Avec l'essor du e-commerce et du marketing digital au Maroc, les séquences automatisées permettent d'envoyer des messages personnalisés au bon moment, sans effort manuel. Que vous soyez à Casablanca, Rabat ou Marrakech, cette stratégie booste l'engagement et les conversions.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/sequences-automatisees-emailing-maroc-2.webp" alt="Automated Email Sequences: Boost Sales in Morocco - DatRey - Illustration 1" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-quest-ce-quune-séquence-automatisée">Qu'est-ce qu'une séquence automatisée ?</h2><p>Une séquence automatisée est une série d'emails déclenchés par des actions spécifiques d'un prospect ou client. Par exemple, un email de bienvenue après une inscription, un suivi après un achat, ou une relance après un abandon de panier. Ces séquences sont programmées via des outils comme Mailchimp, ActiveCampaign ou HubSpot, et permettent de nourrir la relation client de manière scalable.</p><h3>Types de séquences courantes</h3><ul><li><strong>Séquence de bienvenue</strong> : 3 à 5 emails pour présenter votre marque et offrir un avantage.</li><li><strong>Séquence de nurturing</strong> : éduquer le prospect jusqu'à la conversion.</li><li><strong>Séquence de fidélisation</strong> : remercier et proposer des offres exclusives.</li><li><strong>Séquence de réactivation</strong> : relancer les clients inactifs.</li></ul><figure style="margin: 32px 0;"></figure><h2 id="section-pourquoi-les-séquences-automatisées-sont-cruciales-pour-votr">Pourquoi les séquences automatisées sont cruciales pour votre entreprise au Maroc</h2><p>Avec un taux d'ouverture moyen de 20% au Maroc (source : étude locale), l'emailing reste un canal rentable. Les séquences automatisées augmentent ce taux de 30% en moyenne. Elles permettent de gagner du temps, d'améliorer la pertinence des messages et de maximiser le ROI. De plus, elles s'intègrent parfaitement avec d'autres canaux comme le SEO et Google Ads, que nous proposons chez DatRey.</p>
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
@@ -217,13 +274,17 @@
 <p>Vous souhaitez appliquer ces strategies sans effort ? <strong>Nos experts DatRey s'en chargent.</strong></p>
 <div class="article-body-img-wrap"><img src="../assets/blog/sequences-automatisees-emailing-maroc-3.webp" alt="Automated Email Sequences: Boost Sales in Morocco - DatRey - Illustration 2" class="blog-img" loading="lazy" /></div>
 
+
 </div>
 <a class="btn btn-primary magnetic-btn" href="../contact.html?subject=AuditGratuit">Request a free audit</a>
 </div>
 <h2 id="section-comment-créer-une-séquence-automatisée-performante">Comment créer une séquence automatisée performante</h2><p>Suivez ces étapes pour a strategy gagnante :</p><ol><li><strong>Définir un objectif</strong> : vente, éducation, fidélisation.</li><li><strong>Segmenter votre audience</strong> : par comportement, centre d'intérêt, localisation.</li><li><strong>Rédiger des emails personnalisés</strong> avec un ton professionnel et des appels à l'action clairs.</li><li><strong>Planifier le timing</strong> : 24h après inscription, puis J+3, J+7, etc.</li><li><strong>Tester et optimiser</strong> : A/B testing sur les objets et contenus.</li></ol><h2 id="section-exemple-de-séquence-de-bienvenue-pour-une-agence-digitale">Exemple de séquence de bienvenue pour une agence digitale</h2><table><thead><tr><th>Email</th><th>Objet</th><th>Contenu</th></tr></thead><tbody><tr><td>1</td><td>Bienvenue chez DatRey</td><td>Présentation de l'agence, lien vers services SEO</td></tr><tr><td>2</td><td>Nos conseils SEO</td><td>Article de blog sur les tendances SEO au Maroc</td></tr><tr><td>3</td><td>Offre exclusive</td><td>Réduction sur un audit SEO</td></tr></tbody></table><figure style="margin: 32px 0;"></figure><h2 id="section-outils-recommandés-pour-lautomatisation">Outils recommandés pour l'automatisation</h2><ul><li><strong>Mailchimp</strong> : idéal pour les débutants, plans gratuits disponibles.</li><li><strong>ActiveCampaign</strong> : puissant pour les séquences avancées et CRM intégré.</li><li><strong>HubSpot</strong> : solution complète avec marketing automation.</li><li><strong>Brevo (Sendinblue)</strong> : bon rapport qualité-prix, adapté aux PME marocaines.</li></ul><h2 id="section-mesurer-le-succès-de-vos-séquences">Mesurer le succès de vos séquences</h2>
 <div class="article-body-img-wrap"><img src="../assets/blog/sequences-automatisees-emailing-maroc-4.webp" alt="Automated Email Sequences: Boost Sales in Morocco - DatRey - Illustration 3" class="blog-img" loading="lazy" /></div>
+
+
 <p>Les KPIs clés : taux d'ouverture, taux de clic, taux de conversion, désabonnements. Un bon taux d'ouverture au Maroc se situe entre 20 et 30%. Utilisez des outils d'analyse pour ajuster vos campagnes. Chez DatRey, nous accompagnons nos clients dans l'optimisation continue de leurs séquences.</p><figure style="margin: 32px 0;"></figure><h2 id="section-faq">FAQ</h2><h3>Quelle est la durée idéale d'une séquence automatisée ?</h3><p>Entre 3 et 7 emails, espacés de 2 à 5 jours. Adaptez selon l'objectif et la réaction de l'audience.</p><h3>Faut-il utiliser un outil payant pour l'automatisation ?</h3><p>Non, des outils gratuits comme Mailchimp (jusqu'à 500 contacts) suffisent pour débuter. Pour plus de fonctionnalités, un abonnement payant est recommandé.</p><h3>Comment éviter que mes emails soient considérés comme spam ?</h3><p>Utilisez un nom d'expéditeur reconnu, évitez les mots pièges, personnalisez vos messages et segmentez votre liste. Assurez-vous d'avoir un consentement explicite.</p><figure style="margin: 32px 0;"></figure><h2 id="section-comment-aller-plus-loin">Comment aller plus loin ?</h2><p>Les séquences automatisées sont un atout majeur pour toute entreprise marocaine souhaitant améliorer son emailing. En automatisant vos campagnes, vous gagnez en efficacité et en pertinence. Pour une mise en place tailored, faites appel à DatRey, votre agence digitale à Casablanca. Nous vous aidons à intégrer ces séquences avec vos autres actions marketing, comme le <a href="../services-seo.html">SEO</a> ou les <a href="../services-google-ads.html">Google Ads</a>. Contact Us dès aujourd'hui pour un audit gratuit de votre stratégie emailing.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/sequences-automatisees-emailing-maroc-5.webp" alt="Automated Email Sequences: Boost Sales in Morocco - DatRey - Illustration 4" class="blog-img" loading="lazy" /></div>
+
 
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
@@ -234,14 +295,12 @@
 <h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
 <a class="blog-related-card" href="../blog/segmentation-emailing-boostez-campagnes-maroc.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Emailing &amp; Automation</div>
 <div class="blog-related-card-title">Segmentation emailing : boostez vos campagnes au Maroc</div>
 </div>
 </a>
 <a class="blog-related-card" href="../blog/delivrabilite-email-etapes-boite-reception.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Emailing &amp; Automation</div>
 <div class="blog-related-card-title">Délivrabilité Email : 7 Steps pour Atteindre la Boîte de Réception</div>
@@ -261,7 +320,9 @@
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>

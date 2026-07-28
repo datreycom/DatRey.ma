@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -169,16 +216,24 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">Email Segmentation: Boost Your Campaigns in Morocco</h1>
@@ -210,6 +265,8 @@
 </nav>
 <p>La segmentation emailing, c'est le truc qui fait vraiment la différence pour vos campagnes au Maroc. Vous découpez votre liste en petits groupes homogènes, et vous envoyez des messages taillés tailored pour chacun. Résultat ? Des taux d'ouverture qui grimpent jusqu'à 50% de plus, et un retour sur investissement qui peut tripler.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/segmentation-emailing-boostez-campagnes-maroc-2.webp" alt="Email Segmentation: Boost Your Campaigns in Morocco - Illustration 1" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-pourquoi-la-segmentation-est-cruciale-pour-vos-campagnes-ema">Pourquoi la segmentation est cruciale pour vos campagnes emailing</h2><p>Au Maroc, les boîtes de réception débordent d'emails promotionnels. Sans segmentation, votre message se perd. En segmentant, vous gagnez en pertinence : 78% des consommateurs marocains disent qu'ils se désabonnent d'une marque qui envoie des trucs qui ne les intéressent pas. Et selon Campaign Monitor, les campagnes segmentées génèrent 760% de revenus en plus.</p><h2 id="section-les-5-critères-de-segmentation-les-plus-efficaces">Les 5 critères de segmentation les plus efficaces</h2><h3>1. Segmentation démographique</h3><p>Âge, sexe, ville (Casablanca, Rabat, Marrakech...), métier. Exemple : une agence immobilière à Casablanca envoie des offres de logements étudiants aux 18-25 ans, et des villas de luxe aux 40-60 ans.</p>
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
@@ -220,10 +277,16 @@
 </div>
 <h3>2. Segmentation comportementale</h3><p>Basée sur ce que font vos contacts : historique d'achat, navigation sur le site, ouverture de vos précédents emails. Un e-commerçant marocain peut par exemple relancer les paniers abandonnés avec une offre spéciale livraison gratuite.</p><figure style="margin: 32px 0;"></figure><h3>3. Segmentation géographique</h3><p>Les différences régionales sont nettes au Maroc. Un email pour une promo à Casablanca n'intéressera pas quelqu'un d'Agadir. Utilisez la localisation pour proposer des événements ou offres spécifiques.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/segmentation-emailing-boostez-campagnes-maroc-3.webp" alt="Email Segmentation: Boost Your Campaigns in Morocco - Illustration 2" class="blog-img" loading="lazy" /></div>
+
+
 <h3>4. Segmentation par engagement</h3><p>Séparez vos abonnés actifs (ils ouvrent régulièrement) des inactifs (pas d'ouverture depuis 3 mois). Pour les inactifs, une campagne de réengagement avec un code promo peut les ranimer.</p><h3>5. Segmentation par centre d'intérêt</h3><p>Demandez-leur via un questionnaire ou analysez leurs clics. Une marque de vêtements peut segmenter entre mode homme, femme, enfant, et envoyer des lookbooks ciblés.</p><h2 id="section-comment-mettre-en-place-une-stratégie-de-segmentation-emaili">Comment mettre en place a strategy de segmentation emailing</h2><p>Step 1 : collectez les données via formulaires d'inscription, enquêtes, et tracking. Step 2 : utilisez un outil comme Mailchimp ou Sendinblue qui permet de créer des segments dynamiques. Step 3 : testez A/B vos segments pour affiner. Step 4 : automatisez l'envoi selon des déclencheurs (anniversaire, achat, abandon de panier).</p><figure style="margin: 32px 0;"></figure><h2 id="section-exemple-concret-campagne-segmentée-pour-une-pme-marocaine">Exemple concret : campagne segmentée pour une PME marocaine</h2><p>Prenez une boutique de thé à Marrakech. Elle segmente ses clients en trois groupes : les locaux (achats en magasin), les touristes (achats uniques), et les fans de thé vert (via questionnaire). Elle envoie aux locaux des offres de fidélité, aux touristes des recettes de thé marocain, et aux fans de thé vert des nouveautés. Résultat : taux d'ouverture de 45% (contre 20% avant), chiffre d'affaires email +150%.</p><h2 id="section-les-erreurs-à-éviter-dans-la-segmentation">Les erreurs à éviter dans la segmentation</h2>
 <div class="article-body-img-wrap"><img src="../assets/blog/segmentation-emailing-boostez-campagnes-maroc-4.webp" alt="Email Segmentation: Boost Your Campaigns in Morocco - Illustration 3" class="blog-img" loading="lazy" /></div>
+
+
 <ul><li>Segments trop larges : ne regroupez pas des profils trop différents.</li><li>Données obsolètes : nettoyez votre base régulièrement.</li><li>Ignorer le mobile : 80% des Marocains lisent leurs emails sur smartphone.</li><li>Ne pas tester : chaque segment peut réagir différemment.</li></ul><h2 id="section-outils-recommandés-pour-lemailing-automatisé-au-maroc">Outils recommandés pour l'emailing automatisé au Maroc</h2><table><tr><th>Outil</th><th>Fonctionnalités segmentation</th><th>Prix</th></tr><tr><td>Mailchimp</td><td>Segments dynamiques, tags, automatisation</td><td>À partir de 13€/mois</td></tr><tr><td>Sendinblue</td><td>Segmentation avancée, CRM intégré</td><td>À partir de 25€/mois</td></tr><tr><td>ActiveCampaign</td><td>Segmentation comportementale, scoring</td><td>À partir de 29€/mois</td></tr></table><p>Pour une solution tailored au Maroc, <a href="../services-emailing.html">DatRey propose des services d'emailing et automation</a> adaptés à votre audience locale.</p><figure style="margin: 32px 0;"></figure><h2 id="section-faq">FAQ</h2><h3>Qu'est-ce que la segmentation emailing ?</h3><p>C'est diviser votre liste de contacts en sous-groupes basés sur des critères communs (âge, localisation, comportement) pour envoyer des messages personnalisés.</p><h3>Combien de segments dois-je créer ?</h3><p>Commencez par 3 à 5 segments principaux. Trop de segments compliquent la gestion. L'essentiel, c'est la pertinence.</p><h3>La segmentation est-elle adaptée aux petites entreprises marocaines ?</h3><p>Oui, carrément. Même avec une petite liste, segmenter par centre d'intérêt ou localisation améliore nettement les performances.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/segmentation-emailing-boostez-campagnes-maroc-5.webp" alt="Email Segmentation: Boost Your Campaigns in Morocco - Illustration 4" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-comment-aller-plus-loin">Comment aller plus loin ?</h2><p>La segmentation emailing est un levier puissant pour vos campagnes au Maroc. En personnalisant vos messages, vous gagnez en engagement et en ventes. Chez DatRey, on vous accompagne pour mettre en place des stratégies d'emailing automatisé qui marchent. <a href="../contact.html">Contact Us dès aujourd'hui</a> pour un audit gratuit de votre base de données. Et si vous voulez optimiser votre SEO, jetez un œil à <a href="../services-seo.html">nos services SEO</a> ou <a href="../services-google-ads.html">Google Ads</a> pour compléter votre stratégie digitale.</p><figure style="margin: 32px 0;"></figure>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
@@ -234,14 +297,12 @@
 <h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
 <a class="blog-related-card" href="../blog/sequences-automatisees-emailing-maroc.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Emailing &amp; Automation</div>
 <div class="blog-related-card-title">Séquences automatisées : boostez votre emailing au Maroc</div>
 </div>
 </a>
 <a class="blog-related-card" href="../blog/delivrabilite-email-etapes-boite-reception.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Emailing &amp; Automation</div>
 <div class="blog-related-card-title">Délivrabilité Email : 7 Steps pour Atteindre la Boîte de Réception</div>
@@ -261,7 +322,9 @@
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>

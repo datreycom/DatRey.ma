@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -169,16 +216,24 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">Formation en stratégie réseaux sociaux au Maroc</h1>
@@ -208,6 +263,8 @@
 </nav>
 <p>Dans un monde digital en constante évolution, maîtriser les réseaux sociaux est devenu indispensable pour toute entreprise souhaitant se démarquer. Que vous soyez une startup, une PME ou une grande enseigne au Maroc, une stratégie réseaux sociaux bien définie peut transformer votre présence en ligne et générer des résultats concrets. Chez DatRey, agence digitale à Casablanca, nous proposons des formations et master classes pour vous aider à élaborer et exécuter une stratégie gagnante. Cet article vous guide à travers les étapes clés pour optimiser votre présence sur les réseaux sociaux et atteindre vos objectifs commerciaux.</p><p>Les réseaux sociaux ne sont plus une option, mais une nécessité. Selon une étude récente, 78% des consommateurs marocains les utilisent pour découvrir de nouveaux produits et services. Pourtant, beaucoup d'entreprises peinent à en tirer parti faute de stratégie claire. C'est là que notre formation intervient : vous apprendrez à définir vos objectifs, à choisir les bonnes plateformes et à créer un contenu engageant qui résonne avec votre audience.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/strategie-reseaux-sociaux-formation-2.webp" alt="Formation en stratégie réseaux sociaux au Maroc - Illustration 1" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-pourquoi-une-stratégie-réseaux-sociaux-est-cruciale-pour-vot">Pourquoi une stratégie réseaux sociaux est cruciale pour votre entreprise</h2><p>Une stratégie réseaux sociaux bien conçue permet de :</p><ul><li>Augmenter la notoriété de votre marque</li><li>Générer des leads qualifiés</li><li>Fidéliser votre clientèle</li><li>Améliorer votre référencement naturel (SEO)</li><li>Obtenir un retour sur investissement mesurable</li></ul><p>Au Maroc, le paysage digital est en pleine expansion. Avec plus de 20 millions d'utilisateurs actifs sur les réseaux sociaux, le potentiel est immense. Cependant, sans stratégie, vos efforts risquent d'être dispersés et inefficaces. Une formation dédiée vous permet d'acquérir les compétences nécessaires pour maximiser votre impact.</p><h2 id="section-les-piliers-dune-stratégie-réseaux-sociaux-efficace">Les piliers d'une stratégie réseaux sociaux efficace</h2><h3>1. Définir des objectifs SMART</h3><p>Avant de commencer, il est essentiel de fixer des objectifs spécifiques, mesurables, atteignables, réalistes et temporels. Par exemple : augmenter le nombre d'abonnés de 20% en 3 mois, ou générer 50 leads par mois via Instagram.</p>
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
@@ -218,10 +275,16 @@
 </div>
 <figure style="margin: 32px 0;"></figure><h3>2. Connaître votre audience cible</h3><p>Qui sont vos clients idéaux ? Quels sont leurs intérêts, leurs comportements en ligne ? Au Maroc, les tranches d'âge 18-34 ans sont les plus actives sur Instagram et TikTok, tandis que Facebook reste populaire auprès des 35-55 ans. Adaptez votre contenu en conséquence.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/strategie-reseaux-sociaux-formation-3.webp" alt="Formation en stratégie réseaux sociaux au Maroc - Illustration 2" class="blog-img" loading="lazy" /></div>
+
+
 <h3>3. Choisir les bonnes plateformes</h3><p>Inutile d'être partout à la fois. Concentrez-vous sur les plateformes où se trouve votre audience. Voici un tableau comparatif :</p><table><thead><tr><th>Plateforme</th><th>Avantages</th><th>Inconvénients</th></tr></thead><tbody><tr><td>Facebook</td><td>Large audience, ciblage avancé</td><td>Portée organique en baisse</td></tr><tr><td>Instagram</td><td>Visuel, engagement élevé</td><td>Nécessite du contenu de qualité</td></tr><tr><td>LinkedIn</td><td>B2B, networking professionnel</td><td>Moins adapté au B2C</td></tr><tr><td>TikTok</td><td>Viral, jeune audience</td><td>Algorithme exigeant</td></tr></tbody></table><h3>4. Créer un calendrier éditorial</h3><p>Planifiez vos publications à l'avance pour assurer une présence régulière. Variez les formats : images, vidéos, stories, lives. Au Maroc, les contenus locaux et authentiques performent mieux.</p><h3>5. Mesurer et ajuster</h3><p>Utilisez des outils d'analyse comme Google Analytics ou les insights natifs pour suivre vos performances. Ajustez votre stratégie en fonction des données.</p><figure style="margin: 32px 0;"></figure><h2 id="section-les-erreurs-courantes-à-éviter">Les erreurs courantes à éviter</h2><ul><li>Publier sans stratégie</li><li>Ignorer les commentaires et messages</li><li>Négliger la qualité visuelle</li><li>Copier les concurrents sans originalité</li><li>Ne pas investir dans la publicité payante</li></ul><p>Notre formation vous aide à éviter ces pièges et à adopter les bonnes pratiques.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/strategie-reseaux-sociaux-formation-4.webp" alt="Formation en stratégie réseaux sociaux au Maroc - Illustration 3" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-comment-notre-formation-peut-vous-aider">Comment notre formation peut vous aider</h2><p>Chez DatRey, nous proposons des <a href="../services-seo.html">formations en SEO</a> et stratégie digitale. Notre master class en stratégie réseaux sociaux couvre :</p><ul><li>Analyse de votre marché et concurrence</li><li>Création de persona</li><li>Storytelling et copywriting</li><li>Publicité sur les réseaux sociaux (Facebook Ads, Instagram Ads)</li><li>Mesure de la performance (KPI)</li></ul><p>Nous adaptons nos programmes au contexte marocain, avec des exemples concrets et des études de cas locales. De plus, nous offrons un suivi personnalisé pour garantir votre réussite.</p><p>Pour aller plus loin, découvrez également nos <a href="../services-google-ads.html">services Google Ads</a> et <a href="../services-developpement.html">création de sites web</a>.</p><figure style="margin: 32px 0;"></figure><h2 id="section-faq">FAQ</h2><h3>Quelle est la durée de la formation en stratégie réseaux sociaux ?</h3><p>Notre master class dure généralement 2 jours (14 heures), avec des sessions intensives et pratiques. Nous proposons également des formats en ligne.</p><h3>À qui s'adresse cette formation ?</h3><p>Elle est destinée aux entrepreneurs, responsables marketing, community managers et toute personne souhaitant maîtriser les réseaux sociaux pour son entreprise au Maroc.</p><h3>Quels sont les prérequis ?</h3><p>Aucun prérequis technique. Une connaissance de base des réseaux sociaux est un plus, mais nous vous guidons pas à pas.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/strategie-reseaux-sociaux-formation-5.webp" alt="Formation en stratégie réseaux sociaux au Maroc - Illustration 4" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-comment-aller-plus-loin">Comment aller plus loin ?</h2><p>Investir dans une stratégie réseaux sociaux solide est un levier de croissance incontournable pour votre entreprise au Maroc. Avec la formation de DatRey, vous acquerrez les compétences nécessaires pour créer, déployer et optimiser votre présence en ligne. N'attendez plus : contactez-nous dès aujourd'hui pour réserver votre place et booster votre activité !</p><figure style="margin: 32px 0;"></figure>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
@@ -232,14 +295,12 @@
 <h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
 <a class="blog-related-card" href="../blog/seo-local-pme-formation-maroc.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Formations &amp; Master Classes</div>
 <div class="blog-related-card-title">SEO local PME : formation pour dominer le marché marocain</div>
 </div>
 </a>
 <a class="blog-related-card" href="../blog/google-ads-e-commerce-formation.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Formations &amp; Master Classes</div>
 <div class="blog-related-card-title">Google Ads e-commerce : formation pour booster vos ventes</div>
@@ -259,7 +320,9 @@
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>

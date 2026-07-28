@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -169,16 +216,24 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">UX/UI Audit Morocco: Optimize Your Website's User Experience</h1>
@@ -209,6 +264,8 @@
 </nav>
 <h2 id="section-quest-ce-quun-audit-uxui-et-pourquoi-est-il-crucial-pour-vot">Qu'est-ce qu'un audit UX/UI et pourquoi est-il crucial pour votre site web ?</h2><p>Un audit UX/UI, c'est une analyse complète de l'expérience utilisateur et de l'interface de votre site. Le but ? Trouver ce qui coince : navigation bancale, visuels qui déçoivent, tout ce qui pousse vos visiteurs à partir. Au Maroc, où le digital explose, une expérience fluide fait la différence.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/audit-ux-ui-optimisation-experience-utilisateur-2.webp" alt="UX/UI Audit Morocco: Optimize Your Website's User Experience - Illustration 1" class="blog-img" loading="lazy" /></div>
+
+
 <p>Forrester a montré qu'une bonne interface peut faire grimper les conversions de 200 %. Chez DatRey, on audite les sites marocains en profondeur : temps de chargement, hiérarchie visuelle, accessibilité, cohérence graphique. Rien n'est laissé au hasard.</p><h2 id="section-les-5-piliers-dun-audit-uxui-réussi">Les 5 piliers d'un audit UX/UI réussi</h2><h3>1. Analyse de la navigation et de l'architecture de l'information</h3><p>Une navigation claire, c'est la base. On regarde la structure des menus, le nombre de clics pour arriver à une info, et si les libellés sont compréhensibles. Un site e-commerce marocain, par exemple, doit permettre de trouver un produit en moins de 3 clics.</p>
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
@@ -219,10 +276,16 @@
 </div>
 <h3>2. Évaluation du design visuel et de la charte graphique</h3><p>L'interface doit refléter votre marque tout en restant accessible. On vérifie les contrastes, la taille des polices, et si les éléments graphiques sont cohérents. Un design vieillot peut faire fuir 38 % des visiteurs (source : Adobe).</p><figure style="margin: 32px 0;"></figure><h3>3. Test de l'expérience mobile</h3><p>Au Maroc, plus de 70 % du trafic web vient du mobile. Votre site doit être irréprochable sur tous les écrans. On teste la fluidité sur plusieurs appareils et tailles d'écran.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/audit-ux-ui-optimisation-experience-utilisateur-3.webp" alt="UX/UI Audit Morocco: Optimize Your Website's User Experience - Illustration 2" class="blog-img" loading="lazy" /></div>
+
+
 <h3>4. Analyse des performances et temps de chargement</h3><p>Un site lent, c'est l'ennemi de l'expérience utilisateur. Google conseille un temps de chargement sous les 3 secondes. On utilise PageSpeed Insights pour dénicher les goulots d'étranglement.</p><h3>5. Audit de l'accessibilité et conformité WCAG</h3><p>Rendre votre site accessible aux personnes handicapées, c'est à la fois éthique et bon pour le SEO. On vérifie les balises alt, la navigation au clavier, et les contrastes.</p><h2 id="section-tableau-comparatif-avant-vs-après-un-audit-uxui">Tableau comparatif : Avant vs Après un audit UX/UI</h2><table><thead><tr><th>Critère</th><th>Avant audit</th><th>Après audit</th></tr></thead><tbody><tr><td>Taux de rebond</td><td>65 %</td><td>40 %</td></tr><tr><td>Temps moyen sur le site</td><td>1 min 30</td><td>3 min 15</td></tr><tr><td>Taux de conversion</td><td>1,2 %</td><td>3,8 %</td></tr><tr><td>Pages vues par session</td><td>2,1</td><td>4,5</td></tr></tbody></table><figure style="margin: 32px 0;"></figure><h2 id="section-comment-se-déroule-un-audit-uxui-chez-datrey">Comment se déroule un audit UX/UI chez DatRey ?</h2><p>Voici notre processus en 4 étapes :</p><ul><li><strong>Collecte de données</strong> : On analyse les analytics, les heatmaps et les enregistrements de sessions.</li><li><strong>Évaluation experte</strong> : Inspection basée sur les heuristiques de Nielsen et les bonnes pratiques UI.</li><li><strong>Tests utilisateurs</strong> : On recrute des panels marocains pour des tests d'utilisabilité.</li><li><strong>Rapport détaillé</strong> : Recommandations priorisées avec maquettes correctives.</li></ul><p>Vous recevez un rapport complet avec des captures d'écran annotées et un plan d'action chiffré.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/audit-ux-ui-optimisation-experience-utilisateur-4.webp" alt="UX/UI Audit Morocco: Optimize Your Website's User Experience - Illustration 3" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-les-bénéfices-concrets-pour-votre-entreprise">Les bénéfices concrets pour votre entreprise</h2><p>Un audit UX/UI, ce n'est pas une dépense, c'est un investissement. Voici ce que vous y gagnez :</p><ul><li>Augmentation du taux de conversion de 20 à 200 %</li><li>Réduction du taux de rebond de 15 à 30 %</li><li>Meilleur référencement naturel (Google aime les sites avec une bonne UX)</li><li>Des clients plus fidèles</li></ul><p>Au Maroc, des entreprises comme <a href="../services-seo.html">notre agence SEO</a> ont vu leur trafic organique doubler après un audit UX/UI.</p><figure style="margin: 32px 0;"></figure><h2 id="section-faq-sur-laudit-uxui">FAQ sur l'audit UX/UI</h2><h3>Quelle est la différence entre audit UX et audit UI ?</h3><p>L'audit UX se concentre sur l'expérience globale : navigation, parcours utilisateur, accessibilité. L'audit UI porte sur le design visuel : couleurs, typographie, cohérence graphique. Chez DatRey, on combine les deux pour un résultat optimal.</p><h3>Combien de temps dure un audit UX/UI ?</h3><p>En moyenne, un audit complet prend 2 à 4 semaines, selon la taille du site. Pour un site vitrine, comptez 2 semaines ; pour un e-commerce, 3 à 4 semaines.</p><h3>Mon site est déjà performant, ai-je besoin d'un audit ?</h3><p>Même les meilleurs sites peuvent être optimisés. Les attentes des utilisateurs changent, et un audit régulier (tous les 6 à 12 mois) permet de rester dans la course. Sans oublier que les mises à jour de Google peuvent impacter votre classement.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/audit-ux-ui-optimisation-experience-utilisateur-5.webp" alt="UX/UI Audit Morocco: Optimize Your Website's User Experience - Illustration 4" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-conclusion-prêt-à-offrir-une-expérience-utilisateur-exceptio">Conclusion : Prêt à offrir une expérience utilisateur exceptionnelle ?</h2><p>Un audit UX/UI, c'est la première marche vers un site web performant et centré sur l'utilisateur. Chez DatRey, agence digitale à Casablanca, on accompagne les entreprises marocaines dans cette démarche. Contact Us dès aujourd'hui pour un devis personnalisé.</p><figure style="margin: 32px 0;"></figure><p>Découvrez aussi nos autres services : <a href="../services-google-ads.html">Google Ads</a> et <a href="../services-meta-ads.html">réseaux sociaux</a>.</p>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
@@ -233,14 +296,12 @@
 <h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
 <a class="blog-related-card" href="../blog/audit-seo-complet.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Audit Digital</div>
 <div class="blog-related-card-title">Audit SEO complet : boostez votre visibilité web au Maroc</div>
 </div>
 </a>
 <a class="blog-related-card" href="../blog/audit-digital-indicateurs-cles.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Audit Digital</div>
 <div class="blog-related-card-title">Audit Digital : 7 Indicateurs Clés pour Booster votre Performance</div>
@@ -260,7 +321,9 @@
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>

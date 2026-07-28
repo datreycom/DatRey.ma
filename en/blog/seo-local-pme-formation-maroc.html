@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -169,16 +216,24 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">Local SEO for SMEs: Training to Dominate the Moroccan Market</h1>
@@ -209,6 +264,8 @@
 </nav>
 <h2 id="section-pourquoi-le-seo-local-est-indispensable-pour-votre-pme-au-ma">Pourquoi le SEO local est indispensable pour votre PME au Maroc</h2><p>Le marché marocain est de plus en plus concurrentiel. Le SEO local est un levier incontournable pour les PME. En optimisant votre présence en ligne pour les recherches locales, vous attirez des clients situés à proximité de votre établissement, prêts à acheter. Selon une étude, 46% des recherches Google ont une intention locale. Ignorer cette opportunité, c'est laisser vos concurrents capter cette clientèle.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/seo-local-pme-formation-maroc-2.webp" alt="Local SEO for SMEs: Training to Dominate the Moroccan Market - Illustration 1" class="blog-img" loading="lazy" /></div>
+
+
 <p>Notre formation <strong>SEO local PME</strong> vous donne les clés pour apparaître en tête des résultats de recherche à Casablanca, Rabat, Marrakech ou toute autre ville du Royaume. Vous apprendrez à optimiser votre fiche Google My Business, à obtenir des avis positifs et à créer du contenu local pertinent.</p><h2 id="section-les-fondamentaux-du-seo-local-pour-les-pme-marocaines">Les fondamentaux du SEO local pour les PME marocaines</h2><h3>Google My Business : votre vitrine gratuite</h3><p>La première étape est de revendiquer et optimiser votre fiche Google My Business. Assurez-vous que vos informations (nom, adresse, téléphone) sont exactes et cohérentes avec celles de votre site web. Ajoutez des photos de qualité, des horaires à jour et répondez aux avis clients. Une fiche complète augmente vos chances d'apparaître dans le Google Local Pack.</p>
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
@@ -219,10 +276,16 @@
 </div>
 <h3>Citations et annuaires locaux</h3><p>Les citations (mentions de votre entreprise sur d'autres sites) sont essentielles. Inscrivez votre PME sur des annuaires marocains comme <em>pagesjaunes.ma</em>, <em>annuaire.ma</em> ou <em>societe.ma</em>. Veillez à la cohérence du NAP (Nom, Adresse, Phone) sur toutes les plateformes. Une étude montre que les entreprises avec des citations cohérentes ont 2,5 fois plus de chances d'être trouvées.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/seo-local-pme-formation-maroc-3.webp" alt="Local SEO for SMEs: Training to Dominate the Moroccan Market - Illustration 2" class="blog-img" loading="lazy" /></div>
+
+
 <figure style="margin: 32px 0;"></figure><h3>Contenu localisé</h3><p>Créez du contenu qui parle à votre audience marocaine. Par exemple, un article sur "Les meilleurs restaurants de Casablanca" si vous êtes un traiteur. Utilisez des mots-clés avec des variantes locales (ex: "agence digitale à Casablanca" plutôt que "agence digitale"). Les blogs, pages de services et témoignages clients enrichis de références locales améliorent votre pertinence.</p><h2 id="section-stratégies-avancées-de-seo-local-pour-pme">Stratégies avancées de SEO local pour PME</h2><h3>Optimisation pour la recherche vocale</h3><p>Avec l'essor des assistants vocaux, les recherches locales sont souvent formulées en langage naturel. Intégrez des questions fréquentes dans votre contenu, comme "Où trouver un plombier à Marrakech ?". Notre formation vous apprend à structurer vos données pour répondre à ces requêtes.</p><h3>Gestion des avis en ligne</h3><p>Les avis Google influencent directement votre classement local. Encouragez vos clients satisfaits à laisser un avis et répondez à tous les commentaires, positifs ou négatifs, de manière professionnelle. Une note moyenne élevée et des réponses rapides améliorent votre crédibilité.</p><h3>Backlinks locaux</h3><p>Obtenez des liens depuis des sites web marocains de confiance : partenaires, chambres de commerce, médias locaux. Un backlink depuis un site comme <em>lematin.ma</em> ou <em>h24info.ma</em> renforce votre autorité locale.</p><figure style="margin: 32px 0;"></figure><h2 id="section-comparatif-seo-local-vs-seo-traditionnel">Comparatif : SEO local vs SEO traditionnel</h2><table><thead><tr><th>Critère</th><th>SEO local</th><th>SEO traditionnel</th></tr></thead><tbody><tr><td>Cible</td><td>Clients à proximité géographique</td><td>Audience nationale ou mondiale</td></tr><tr><td>Outil principal</td><td>Google My Business</td><td>Balises meta, netlinking</td></tr><tr><td>Mots-clés</td><td>"près de moi", "à Casablanca"</td><td>Génériques, longue traîne</td></tr><tr><td>Résultats</td><td>Local Pack, Google Maps</td><td>Pages de résultats classiques</td></tr><tr><td>Coût</td><td>Souvent moins cher</td><td>Peut être plus élevé</td></tr></tbody></table><p>Pour une PME marocaine, le SEO local offre un retour sur investissement plus rapide car il cible des clients prêts à acheter.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/seo-local-pme-formation-maroc-4.webp" alt="Local SEO for SMEs: Training to Dominate the Moroccan Market - Illustration 3" class="blog-img" loading="lazy" /></div>
+
+
 <h2 id="section-étapes-clés-pour-lancer-votre-seo-local">Steps clés pour lancer votre SEO local</h2><ul><li>Auditez votre présence en ligne actuelle (fiche GMB, site, avis).</li><li>Optimisez votre fiche Google My Business avec photos et horaires.</li><li>Créez des pages de services spécifiques à chaque ville où vous opérez.</li><li>Sélectionnez 5 annuaires marocains et inscrivez-vous.</li><li>Mettez en place a strategy de collecte d'avis.</li><li>Suivez vos performances avec Google Search Console et Google Analytics.</li></ul><h2 id="section-faq-seo-local-pour-pme">FAQ SEO local pour PME</h2><h3>Combien de temps faut-il pour voir des résultats en SEO local ?</h3><p>Généralement, les premiers résultats apparaissent sous 3 à 6 mois. Cependant, l'optimisation de votre fiche GMB peut générer des clics dès les premières semaines.</p><figure style="margin: 32px 0;"></figure><h3>Le SEO local fonctionne-t-il pour les entreprises sans boutique physique ?</h3><p>Oui, si vous servez une zone géographique précise (ex: plombier, consultant). Vous pouvez masquer votre adresse dans GMB et définir un rayon de service.</p><h3>Quel est le budget minimum pour une formation SEO local ?</h3><p>Notre formation est accessible à partir de 1500 DH. Contact Us pour un devis personnalisé.</p><h2 id="section-conclusion-passez-à-laction-avec-datrey">Conclusion : passez à l'action avec DatRey</h2><p>Le SEO local est un investissement rentable pour toute PME marocaine souhaitant accroître sa visibilité et attirer plus de clients. Avec notre formation <strong>SEO local PME</strong>, vous acquerrez des compétences pratiques et directement applicables.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/seo-local-pme-formation-maroc-5.webp" alt="Local SEO for SMEs: Training to Dominate the Moroccan Market - Illustration 4" class="blog-img" loading="lazy" /></div>
+
+
 <p>Ne laissez pas vos concurrents dominer votre marché local. <a href="../services-formations.html">Inscrivez-vous dès maintenant</a> à notre prochaine session ou <a href="../contact.html">contactez-nous</a> pour une formation tailored. Découvrez aussi nos autres services : <a href="../services-seo.html">SEO global</a> et <a href="../services-google-ads.html">Google Ads</a>.</p><figure style="margin: 32px 0;"></figure>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
@@ -233,14 +296,12 @@
 <h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
 <a class="blog-related-card" href="../blog/google-ads-e-commerce-formation.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Formations &amp; Master Classes</div>
 <div class="blog-related-card-title">Google Ads e-commerce : formation pour booster vos ventes</div>
 </div>
 </a>
 <a class="blog-related-card" href="../blog/strategie-reseaux-sociaux-formation.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Formations &amp; Master Classes</div>
 <div class="blog-related-card-title">Stratégie réseaux sociaux : boostez votre présence en ligne</div>
@@ -260,7 +321,9 @@
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>

@@ -27,21 +27,64 @@
       --border-color: #e2e8f0;
     }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+    }
+    .site-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: #475569;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: #2563eb;
     }
     .article-container {
       max-width: 820px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 24px;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.75rem;
+      font-size: 2.65rem;
       line-height: 1.25;
-      color: #0f172a;
+      color: #0f172a !important;
+      margin-top: 12px;
       margin-bottom: 16px;
     }
     .hero-meta {
@@ -65,25 +108,25 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.85rem;
-      color: #0f172a;
-      margin-top: 40px;
+      color: #0f172a !important;
+      margin-top: 44px;
       margin-bottom: 16px;
     }
     .blog-content h3 {
       font-size: 1.35rem;
-      color: #1e293b;
+      color: #1e293b !important;
       margin-top: 28px;
       margin-bottom: 12px;
     }
     .blog-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: #334155 !important;
       margin-bottom: 20px;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 24px;
       padding-left: 24px;
-      color: #334155;
+      color: #334155 !important;
     }
     .blog-content li {
       margin-bottom: 8px;
@@ -103,41 +146,45 @@
       object-fit: cover;
       display: block;
     }
-    .geo-definition-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border-left: 4px solid #2563eb;
-      padding: 24px;
-      border-radius: 8px;
-      margin: 28px 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #1e293b;
+    .geo-definition, .geo-definition-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #2563eb !important;
+      padding: 20px 24px !important;
+      border-radius: 8px !important;
+      margin: 28px 0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+      color: #0f172a !important;
+    }
+    .geo-definition strong, .geo-definition-box strong {
+      color: #2563eb !important;
     }
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
       padding: 36px;
       border-radius: 16px;
-      margin-top: 48px;
+      margin-top: 52px;
       text-align: center;
     }
     .cta-article-box h3 {
-      color: #ffffff;
+      color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 1.8rem;
       margin-bottom: 12px;
     }
     .cta-article-box p {
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 1.05rem;
       margin-bottom: 24px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
-      color: #ffffff;
+      color: #ffffff !important;
       font-weight: 600;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
@@ -169,16 +216,24 @@
   </script>
 </head>
 <body>
-  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
-    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
-      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
-      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
+  <header class="site-header">
+    <div class="site-header-container">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">Accueil</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 16px;">
+      <div style="margin-bottom: 12px;">
         <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">Affichage Dynamique LED au Maroc : Guide Complet pour Entreprises</h1>
@@ -211,8 +266,12 @@ Voici le contenu HTML réécrit avec un style plus humain, tout en conservant l'
 
 <p>Les écrans LED changent la donne pour la communication visuelle au Maroc. Que vous soyez à Casablanca, Rabat ou Marrakech, ils offrent une flexibilité et un impact que les supports classiques n'ont pas. Voyons comment l'affichage dynamique LED peut vraiment booster votre visibilité et vous rapporter.</p><h2 id="section-quest-ce-que-laffichage-dynamique-led">C'est quoi, l'Affichage Dynamique LED ?</h2><p>L'affichage dynamique LED, c'est l'utilisation d'écrans à diodes électroluminescentes pour diffuser du contenu multimédia en temps réel. Contrairement aux affiches statiques, ces écrans peuvent programmer des messages, des vidéos, des animations et des flux d'infos. Au Maroc, on les voit de plus en plus dans les centres commerciaux, les gares, les aéroports et les espaces publics.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/affichage-dynamique-led-maroc-2.webp" alt="Affichage Dynamique LED au Maroc : Guide Complet pour Entreprises - Illustration 1" class="blog-img" loading="lazy" /></div>
+
+
 <h3>Comment ça marche, ces écrans LED ?</h3><p>Les écrans LED sont faits de modules de diodes qui produisent une lumière intense et une haute résolution. Un logiciel de gestion de contenu (CMS) les contrôle, permettant de planifier et de mettre à jour les affichages à distance. Ils consomment moins d'énergie que les écrans LCD traditionnels, ce qui en fait une solution durable.</p><figure style="margin: 32px 0;"></figure><h2 id="section-avantages-de-laffichage-dynamique-led-pour-les-entreprises-m">Pourquoi les entreprises marocaines devraient passer aux écrans LED</h2><ul><li><strong>Impact visuel maximal :</strong> Les couleurs vives et la forte luminosité attirent l'œil, même en plein soleil.</li><li><strong>Flexibilité de contenu :</strong> Vous pouvez changer vos messages, promotions ou infos en un instant.</li><li><strong>Engagement client :</strong> Les vidéos et animations retiennent l'attention 40% plus longtemps (source : Nielsen).</li><li><strong>Réduction des coûts :</strong> Fini l'impression de bannières ou d'affiches à chaque changement.</li><li><strong>Image de marque moderne :</strong> Ça donne une image innovante et technologique.</li></ul><h2 id="section-applications-pratiques-au-maroc">Exemples concrets au Maroc</h2><table><thead><tr><th>Secteur</th><th>Utilisation</th><th>Exemple</th></tr></thead><tbody><tr><td>Commerce de détail</td><td>Promotions en temps réel, vitrines interactives</td><td>Centre commercial Morocco Mall</td></tr><tr><td>Hôtellerie</td><td>Affichage des menus, événements, directions</td><td>Hôtel Farah Casablanca</td></tr><tr><td>Transport</td><td>Horaires, annonces, publicités</td><td>Aéroport Mohammed V</td></tr><tr><td>Santé</td><td>Files d'attente, informations patients</td><td>Clinique Agdal Rabat</td></tr></tbody></table><figure style="margin: 32px 0;"></figure><h2 id="section-comment-choisir-votre-écran-led">Comment choisir votre écran LED ?</h2>
 <div class="article-body-img-wrap"><img src="../assets/blog/affichage-dynamique-led-maroc-3.webp" alt="Affichage Dynamique LED au Maroc : Guide Complet pour Entreprises - Illustration 2" class="blog-img" loading="lazy" /></div>
+
+
 <p>Plusieurs critères comptent : la taille de l'écran, la résolution (le pixel pitch), la luminosité (en nits), et l'emplacement (intérieur ou extérieur). Pour un usage extérieur au Maroc, visez une luminosité supérieure à 5000 nits pour lutter contre l'éblouissement du soleil. Le pixel pitch (la distance entre deux pixels) détermine la netteté : un pitch de 2-3 mm pour une vue rapprochée, 6-10 mm pour une vue éloignée.</p>
 <div class="blog-inline-cta">
 <div class="blog-inline-cta-icon">🚀</div>
@@ -223,6 +282,8 @@ Voici le contenu HTML réécrit avec un style plus humain, tout en conservant l'
 </div>
 <h2 id="section-intégration-avec-dautres-services-digitaux">Intégration avec vos autres outils digitaux</h2><p>L'affichage dynamique LED s'intègre facilement avec vos autres canaux marketing. Par exemple, synchronisez vos écrans avec vos campagnes <a href="../services-google-ads.html">Google Ads</a> pour renforcer le message. Combinez-le avec une stratégie <a href="../services-seo.html">SEO</a> pour attirer du trafic vers votre point de vente. DatRey propose des solutions clé en main pour une expérience omnicanale.</p><figure style="margin: 32px 0;"></figure><h2 id="section-faq">FAQ</h2><h3>Combien coûte un écran LED au Maroc ?</h3><p>Le prix varie selon la taille et la technologie. Comptez entre 15 000 et 100 000 MAD pour un écran professionnel. DatRey vous fait un devis sur mesure.</p>
 <div class="article-body-img-wrap"><img src="../assets/blog/affichage-dynamique-led-maroc-4.webp" alt="Affichage Dynamique LED au Maroc : Guide Complet pour Entreprises - Illustration 3" class="blog-img" loading="lazy" /></div>
+
+
 <h3>Est-ce que ça vaut le coup pour une petite entreprise ?</h3><p>Oui, il existe des solutions abordables, comme des écrans plus petits pour les vitrines ou l'intérieur. L'investissement est vite rentabilisé par l'augmentation des ventes.</p><h3>Quel entretien ça demande ?</h3><p>Les écrans LED demandent peu d'entretien : un nettoyage régulier et des mises à jour logicielles. DatRey propose des contrats de maintenance.</p><figure style="margin: 32px 0;"></figure><h2 id="section-comment-aller-plus-loin">Et ensuite ?</h2><p>L'affichage dynamique LED est un investissement stratégique pour toute entreprise marocaine qui veut se démarquer. Sa flexibilité, son impact visuel et son intégration avec d'autres services digitaux comme <a href="../services-meta-ads.html">les réseaux sociaux</a> transforment votre communication. Contactez DatRey, agence digitale à Casablanca, pour une étude personnalisée et un déploiement professionnel. Boostez votre visibilité dès aujourd'hui !</p>
 <div class="blog-cta">
 <h3>Besoin d'accompagnement ?</h3>
@@ -233,14 +294,12 @@ Voici le contenu HTML réécrit avec un style plus humain, tout en conservant l'
 <h3 class="blog-related-title">Articles similaires</h3>
 <div class="blog-related-grid">
 <a class="blog-related-card" href="../blog/affichage-dynamique-contenu-dynamique.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Affichage Dynamique</div>
 <div class="blog-related-card-title">Affichage Dynamique : Boostez Votre Communication avec du Contenu Dynamique</div>
 </div>
 </a>
 <a class="blog-related-card" href="../blog/roi-affichage-dynamique-maroc.html">
-
 <div class="blog-related-card-body">
 <div class="blog-related-card-cat">Affichage Dynamique</div>
 <div class="blog-related-card-title">ROI affichage dynamique : boostez vos ventes au Maroc</div>
@@ -260,7 +319,9 @@ Voici le contenu HTML réécrit avec un style plus humain, tout en conservant l'
   </main>
 
   <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
-    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    <div class="site-header-container" style="justify-content:center;">
+      <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
+    </div>
   </footer>
 </body>
 </html>
