@@ -1,217 +1,324 @@
 import os
-import sys
 import json
 import re
-from datetime import datetime
+import sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
-from autopilot.config import BLOG_DIR, BLOG_DATA_JSON
-from build_blog_index import build_blog_index
-from generate_sitemap_index import generate_sitemap_index
+from autopilot.config import BLOG_DIR, BLOG_DATA_JSON, BASE_DIR
 
-HTML_ARTICLE_TEMPLATE = """<!DOCTYPE html>
-<html lang="fr" dir="ltr">
+ARTICLE_TEMPLATE = """<!DOCTYPE html>
+<html lang="fr" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title} | Blog DatRey</title>
-  <meta name="description" content="{description}" />
-  <meta property="og:title" content="{title} | Blog DatRey" />
-  <meta property="og:description" content="{description}" />
-  <meta property="og:image" content="https://datrey.ma/assets/blog/{slug}-1.webp" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://datrey.ma/blog/{slug}.html" />
-  <link rel="canonical" href="https://datrey.ma/blog/{slug}.html" />
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="icon" href="../assets/logo.webp" type="image/webp" />
-  <meta name="theme-color" content="#ffffff" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" />
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script defer src="../shared.js"></script>
-  <script defer src="../animations.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title} | DatRey Blog</title>
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="https://datrey.ma/blog/{slug}.html">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="https://datrey.ma/blog/{slug}.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://datrey.ma/assets/blog/{slug}-1.webp">
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  
+  <style>
+    :root {{
+      --bg-main: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --card-bg: #f8fafc;
+      --accent: #2563eb;
+      --border-color: #e2e8f0;
+    }}
+    body {{
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.8;
+    }}
+    .article-container {{
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }}
+    .hero-title {{
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.75rem;
+      line-height: 1.25;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }}
+    .hero-meta {{
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-bottom: 28px;
+    }}
+    .article-hero-img-wrap {{
+      margin-bottom: 36px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+    }}
+    .article-hero-img-wrap img {{
+      width: 100%;
+      height: auto;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+    }}
+    .blog-content h2 {{
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.85rem;
+      color: #0f172a;
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }}
+    .blog-content h3 {{
+      font-size: 1.35rem;
+      color: #1e293b;
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }}
+    .blog-content p {{
+      font-size: 1.1rem;
+      color: #334155;
+      margin-bottom: 20px;
+    }}
+    .blog-content ul, .blog-content ol {{
+      margin-bottom: 24px;
+      padding-left: 24px;
+      color: #334155;
+    }}
+    .blog-content li {{
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }}
+    .article-body-img-wrap {{
+      margin: 40px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      background-color: #f1f5f9;
+    }}
+    .article-body-img-wrap img {{
+      width: 100%;
+      height: auto;
+      max-height: 440px;
+      object-fit: cover;
+      display: block;
+    }}
+    .geo-definition-box {{
+      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+      border-left: 4px solid #2563eb;
+      padding: 24px;
+      border-radius: 8px;
+      margin: 28px 0;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #1e293b;
+    }}
+    .cta-article-box {{
+      background: #0f172a;
+      color: #ffffff;
+      padding: 36px;
+      border-radius: 16px;
+      margin-top: 48px;
+      text-align: center;
+    }}
+    .cta-article-box h3 {{
+      color: #ffffff;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }}
+    .cta-article-box p {{
+      color: #94a3b8;
+      font-size: 1.05rem;
+      margin-bottom: 24px;
+    }}
+    .cta-btn {{
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }}
+    .cta-btn:hover {{
+      background: #1d4ed8;
+    }}
+  </style>
+
+  <!-- Schema.org BlogPosting -->
   <script type="application/ld+json">
-  {schema_json}
+  {{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{title}",
+    "description": "{description}",
+    "image": "https://datrey.ma/assets/blog/{slug}-1.webp",
+    "publisher": {{
+      "@type": "Organization",
+      "name": "DatRey SARL",
+      "logo": {{
+        "@type": "ImageObject",
+        "url": "https://datrey.ma/assets/logo.png"
+      }}
+    }},
+    "url": "https://datrey.ma/blog/{slug}.html",
+    "inLanguage": "fr-MA"
+  }}
   </script>
 </head>
 <body>
-  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'light');</script>
-  
-  <header class="header" id="header">
-    <div class="container">
-      <a href="../index.html" class="logo" aria-label="DatRey — Accueil">
-        <img src="../assets/logo.webp" alt="DatRey Logo" width="40" height="40" />
-        <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
-      </a>
-      <nav class="nav-links" aria-label="Navigation principale">
-        <a href="../index.html">Accueil</a>
-        <a href="../services.html">Nos Services</a>
-        <a href="../blog.html" class="nav-active">Blog</a>
-        <a href="../contact.html">Contact</a>
-        <a href="../contact.html" class="btn btn-primary nav-cta">Audit Gratuit</a>
-      </nav>
-      <div style="display: flex; align-items: center; gap: 16px;">
-        <button id="themeToggle" class="theme-toggle" aria-label="Basculer le thème">
-          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        </button>
-      </div>
+  <header style="border-bottom: 1px solid #e2e8f0; padding: 16px 0;">
+    <div class="article-container" style="padding-top:0; padding-bottom:0; display:flex; justify-size:space-between; align-items:center;">
+      <a href="../index.html" style="font-weight:700; font-size:1.25rem; color:#0f172a; text-decoration:none;">DatRey</a>
+      <a href="../blog.html" style="color:#2563eb; font-weight:500; text-decoration:none;">&larr; Retour au Blog</a>
     </div>
   </header>
 
-  <section class="page-hero antigrav-hero">
-    <div class="container">
-      <div class="page-hero-content">
-        <nav class="breadcrumb" aria-label="Fil d'Ariane">
-          <a href="../index.html">Accueil</a> <span class="breadcrumb-sep">/</span>
-          <a href="../blog.html">Blog</a> <span class="breadcrumb-sep">/</span>
-          <span class="breadcrumb-current">{category}</span>
-        </nav>
-        <h1 class="hero-title">{title}</h1>
-        <p class="hero-subtitle">{description}</p>
+  <main>
+    <div class="article-container">
+      <div style="margin-bottom: 16px;">
+        <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">{category}</span>
       </div>
-    </div>
-  </section>
+      <h1 class="hero-title">{title}</h1>
+      <p class="hero-meta">Publié par l'équipe DatRey | Temps de lecture : ~6 min</p>
 
-  <main id="main-content" class="section-padding">
-    <div class="container" style="max-width: 850px; margin: 0 auto;">
-      <div class="article-hero-img-wrap" style="margin-bottom:32px; border-radius:12px; overflow:hidden;">
-        <img src="../assets/blog/{slug}-1.webp" alt="{title}" style="width:100%; max-height:450px; object-fit:cover;" />
+      <div class="article-hero-img-wrap">
+        <img src="../assets/blog/{slug}-1.webp" alt="{title}" />
       </div>
+
       <article class="blog-content">
         {content}
       </article>
+
+      <div class="cta-article-box">
+        <h3>Besoin d'accélérer votre croissance digitale ?</h3>
+        <p>Obtenez un Audit Digital & SEO complet de votre entreprise par les experts DatRey au Maroc.</p>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn">Demander mon Audit Gratuit</a>
+      </div>
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p style="text-align:center; color:var(--text-muted);">&copy; 2026 DatRey SARL. Tous droits réservés.</p>
-    </div>
+  <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
+    <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
   </footer>
-
-  <!-- Exit Intent Popup -->
-  <div id="exitIntentPopup" class="exit-popup-overlay">
-    <div class="exit-popup-modal">
-      <button class="exit-popup-close" aria-label="Fermer">×</button>
-      <div class="exit-popup-content">
-        <h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Ne partez pas les mains vides !</h3>
-        <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtenez un <strong>Audit UX/UI & SEO gratuit</strong> de votre site web. Découvrez comment augmenter vos conversions dès aujourd'hui.</p>
-        <a href="../contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn" style="width: 100%; justify-content: center;">Je veux mon audit gratuit</a>
-        <p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sans engagement. Analyse livrée en 48h.</p>
-      </div>
-    </div>
-  </div>
 </body>
 </html>
 """
 
 def inject_inbody_images(content_html, slug, title):
     """
-    Injects 4 body images ([slug]-2.webp to [slug]-5.webp) evenly after H2 sections.
+    Injects 4 in-body images ([slug]-2.webp to [slug]-5.webp) evenly into the HTML content,
+    guaranteeing AT LEAST 250 words / 1500 characters of text spacing between consecutive images!
     """
-    h2_parts = re.split(r'(<h2.*?>.*?</h2>)', content_html, flags=re.IGNORECASE)
-    if len(h2_parts) <= 1:
+    elements = re.split(r'(</p>|</h2>|</h3>)', content_html, flags=re.IGNORECASE)
+    if len(elements) <= 1:
         return content_html
 
     result = []
+    current_word_count = 0
     img_idx = 2
+    MIN_WORD_SPACING = 250  # At least 250 words between photos
 
-    for part in h2_parts:
-        result.append(part)
-        if part.lower().startswith('<h2') and img_idx <= 5:
+    for element in elements:
+        result.append(element)
+        words_in_element = len(re.findall(r'\w+', element))
+        current_word_count += words_in_element
+
+        if img_idx <= 5 and current_word_count >= MIN_WORD_SPACING and (element.lower() == '</p>' or element.lower() == '</h2>'):
             img_tag = (
-                f'\n<div class="article-body-img-wrap" style="margin:24px 0; border-radius:8px; overflow:hidden;">'
-                f'<img src="../assets/blog/{slug}-{img_idx}.webp" alt="{title} - Illustration {img_idx-1}" class="blog-img" loading="lazy" style="width:100%; height:auto; display:block;" />'
+                f'\n<div class="article-body-img-wrap">'
+                f'<img src="../assets/blog/{slug}-{img_idx}.webp" alt="{title} - Illustration {img_idx-1}" class="blog-img" loading="lazy" />'
                 f'</div>\n'
             )
             result.append(img_tag)
             img_idx += 1
+            current_word_count = 0  # Reset counter for next image spacing
 
     return "".join(result)
 
 def build_article_page(article_data):
     """
-    Compiles article data into HTML file, updates blog_data.json, rebuilds index, updates sitemap.
+    Compiles article HTML, injects body images with >=250 word spacing, and writes file to blog/{slug}.html.
     """
-    title = article_data["title"]
     slug = article_data["slug"]
+    title = article_data["title"]
     desc = article_data["description"]
-    category = article_data["category"]
-    raw_content = article_data["content"]
+    cat = article_data["category"]
+    content_raw = article_data["content"]
 
-    # Inject inbody images
-    content_with_imgs = inject_inbody_images(raw_content, slug, title)
+    content_with_images = inject_inbody_images(content_raw, slug, title)
 
-    # JSON-LD Schema
-    schema = {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": title,
-        "description": desc,
-        "image": f"https://datrey.ma/assets/blog/{slug}-1.webp",
-        "datePublished": datetime.now().strftime("%Y-%m-%d"),
-        "author": {"@type": "Organization", "name": "DatRey", "url": "https://datrey.ma"},
-        "publisher": {
-            "@type": "Organization",
-            "name": "DatRey",
-            "logo": {"@type": "ImageObject", "url": "https://datrey.ma/assets/logo.webp"}
-        }
-    }
-
-    html_page = HTML_ARTICLE_TEMPLATE.format(
+    full_html = ARTICLE_TEMPLATE.format(
         title=title,
-        slug=slug,
         description=desc,
-        category=category,
-        content=content_with_imgs,
-        schema_json=json.dumps(schema, ensure_ascii=False, indent=2)
+        slug=slug,
+        category=cat,
+        content=content_with_images
     )
 
     os.makedirs(BLOG_DIR, exist_ok=True)
-    file_path = os.path.join(BLOG_DIR, f"{slug}.html")
+    out_path = os.path.join(BLOG_DIR, f"{slug}.html")
 
-    with open(file_path, "w", encoding="utf-8") as f:
-        f.write(html_page)
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(full_html)
 
     print(f"[Site Builder] Article HTML created -> blog/{slug}.html")
+    update_blog_data_json(article_data)
+    rebuild_blog_index_and_sitemaps()
 
-    # Update blog_data.json
-    blog_index = []
+    return out_path
+
+def update_blog_data_json(article_data):
+    """Update blog_data.json with the new article metadata."""
+    entries = []
     if os.path.exists(BLOG_DATA_JSON):
         try:
             with open(BLOG_DATA_JSON, "r", encoding="utf-8") as f:
-                blog_index = json.load(f)
+                entries = json.load(f)
         except Exception:
-            blog_index = []
+            entries = []
 
-    # Check if article already exists in json
-    existing_idx = next((i for i, item in enumerate(blog_index) if item.get("slug") == slug), None)
+    # Remove existing entry if slug matches
+    entries = [e for e in entries if e.get("slug") != article_data["slug"]]
+
     new_entry = {
-        "title": title,
-        "slug": slug,
-        "category": category,
-        "desc": desc,
-        "date": datetime.now().strftime("%Y-%m-%d")
+        "title": article_data["title"],
+        "slug": article_data["slug"],
+        "description": article_data["description"],
+        "category": article_data["category"],
+        "date": "2026-07-28",
+        "author": "DatRey Experts",
+        "image": f"assets/blog/{article_data['slug']}-1.webp",
+        "lang": "fr"
     }
-
-    if existing_idx is not None:
-        blog_index[existing_idx] = new_entry
-    else:
-        blog_index.insert(0, new_entry)
+    entries.insert(0, new_entry)
 
     with open(BLOG_DATA_JSON, "w", encoding="utf-8") as f:
-        json.dump(blog_index, f, ensure_ascii=False, indent=2)
+        json.dump(entries, f, ensure_ascii=False, indent=2)
 
-    # Rebuild blog.html and sitemap.xml
-    print("[Site Builder] Rebuilding blog index (blog.html) and sitemaps...")
-    build_blog_index()
-    generate_sitemap_index()
+def rebuild_blog_index_and_sitemaps():
+    """Rebuild blog.html and generate multi-language sitemaps."""
+    try:
+        from build_blog_index import build_blog_index
+        build_blog_index()
+    except Exception as e:
+        print(f"[Site Builder] Error building blog index: {e}")
 
-    return file_path
+    try:
+        from generate_sitemap_index import generate_sitemaps
+        generate_sitemaps()
+    except Exception as e:
+        print(f"[Site Builder] Error building sitemaps: {e}")

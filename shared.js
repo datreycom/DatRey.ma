@@ -28,29 +28,19 @@
     window.closeMobileNav = () => mobileNav.classList.remove('active');
   }
 
-  // --- Theme Toggle (Light/Dark Mode) ---
+  // --- Theme Enforcement (Strict Light Mode) ---
   const themeToggle = document.getElementById('themeToggle');
-  const sunIcon = document.querySelector('.sun-icon');
-  const moonIcon = document.querySelector('.moon-icon');
   
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('datrey-theme', theme);
-    if (sunIcon && moonIcon) {
-      sunIcon.style.display = theme === 'dark' ? 'block' : 'none';
-      moonIcon.style.display = theme === 'dark' ? 'none' : 'block';
-    }
+  function applyTheme() {
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('datrey-theme', 'light');
   }
 
-  // Initialize theme (default to light mode)
-  const savedTheme = localStorage.getItem('datrey-theme');
-  applyTheme(savedTheme || 'light');
+  // Always force light mode
+  applyTheme();
 
   if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
-    });
+    themeToggle.style.display = 'none';
   }
 
   // --- Language Auto-Detect (FR/EN) ---

@@ -18,7 +18,8 @@ def generate_social_posts(article_data):
     hero_image_url = f"https://datrey.ma/assets/blog/{slug}-1.webp"
 
     # Hashtags high-reach
-    hashtags = f"#DatRey #MarketingDigital #Maroc #Acquisition #{category.replace(' ', '')} #CroissanceDigital #Casablanca #Rabat #SEO #GoogleAds #ROI"
+    category_hashtag = category.replace(' ', '').replace('(', '').replace(')', '').replace('&', '')
+    hashtags = f"#DatRey #MarketingDigital #Maroc #Acquisition #{category_hashtag} #CroissanceDigital #Casablanca #Rabat #SEO #GoogleAds #ROI"
 
     # 1. LinkedIn Post (250-300 words executive summary + cover photo + CTA)
     linkedin_post = f"""🚀 [NOUVEL ARTICLE EXPERT] : {title}
@@ -77,6 +78,7 @@ Retrouvez notre étude complète avec tous les chiffres, infographies et cas pra
 def publish_to_make_webhook(payload):
     """
     Sends the article, 250-300 word summary, cover photo URL and social posts payload to Make.com Webhook endpoint.
+    Strictly enforces UTF-8 header encoding.
     """
     if not MAKE_WEBHOOK_URL:
         print("[Social Publisher] Info: MAKE_WEBHOOK_URL is not set. Social payload formatted successfully.")
@@ -84,7 +86,10 @@ def publish_to_make_webhook(payload):
 
     try:
         print(f"[Social Publisher] Dispatching webhook payload to Make.com -> {MAKE_WEBHOOK_URL}")
-        res = requests.post(MAKE_WEBHOOK_URL, json=payload, timeout=30, verify=False)
+        headers = {"Content-Type": "application/json; charset=utf-8"}
+        json_data = json.dumps(payload, ensure_ascii=False).encode('utf-8')
+        
+        res = requests.post(MAKE_WEBHOOK_URL, data=json_data, headers=headers, timeout=30, verify=False)
         if res.status_code in (200, 201, 202):
             print("[Social Publisher] Make.com Webhook successfully triggered for LinkedIn, Instagram & Facebook!")
             return True

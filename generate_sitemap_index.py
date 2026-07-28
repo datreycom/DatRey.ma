@@ -2,7 +2,7 @@
 generate_sitemap_index.py
 -------------------------
 Generate a sitemap index referencing per-language sitemaps
-and individual language sitemaps for FR, EN, ES, AR.
+and individual language sitemaps for FR, EN.
 """
 import os
 import glob
@@ -32,7 +32,6 @@ def generate_lang_sitemap(lang, prefix):
             continue
         if 'template' in f.lower() or 'draft' in f.lower():
             continue
-        # For root sitemap, exclude localized dirs
         if not prefix and f.startswith('en/'):
             continue
         valid.append(f)
@@ -76,7 +75,6 @@ def generate_sitemap_index():
         fname = generate_lang_sitemap(lang, prefix)
         sitemap_files.append(fname)
     
-    # Create sitemap index
     sitemapindex = ET.Element("sitemapindex", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     current_date = datetime.now().strftime("%Y-%m-%d")
     
@@ -93,6 +91,8 @@ def generate_sitemap_index():
         f.write(final)
     
     print(f"\nsitemap.xml (index) -> {len(sitemap_files)} language sitemaps")
+
+generate_sitemaps = generate_sitemap_index
 
 if __name__ == "__main__":
     generate_sitemap_index()
