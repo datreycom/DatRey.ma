@@ -293,25 +293,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // --- 10. EXIT INTENT POPUP — Focus Trap & Accessibility ---
+  // --- 10. EXIT INTENT POPUP — Fixed Modal & Zero-Scroll ---
   var exitPopup = document.getElementById('exitIntentPopup');
   if (exitPopup) {
     var popupModal = exitPopup.querySelector('.exit-popup-modal');
     var closeBtn = exitPopup.querySelector('.exit-popup-close');
+    var pageStartTime = Date.now();
 
     function openExitPopup() {
       if (sessionStorage.getItem('exitPopupShown')) return;
+      if (window.scrollY < 200) return; // Prevent triggering if user is still at the top of the page
       exitPopup.classList.add('active');
-      exitPopup.style.display = 'flex';
       sessionStorage.setItem('exitPopupShown', 'true');
-      // Trap focus inside popup
-      if (closeBtn) closeBtn.focus();
       document.addEventListener('keydown', trapFocus);
     }
 
     function closeExitPopup() {
       exitPopup.classList.remove('active');
-      exitPopup.style.display = 'none';
       document.removeEventListener('keydown', trapFocus);
     }
 
@@ -340,10 +338,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target === exitPopup) closeExitPopup();
     });
 
-    // Exit intent trigger (mouse leaves viewport top)
+    // Exit intent trigger (mouse leaves viewport top after at least 6s and scrolled down)
     document.addEventListener('mouseout', function(e) {
-      if (!e.relatedTarget && e.clientY < 10) {
-        openExitPopup();
+      if (Date.now() - pageStartTime > 6000 && window.scrollY >= 200) {
+        if (!e.relatedTarget && e.clientY < 10) {
+          openExitPopup();
+        }
       }
     });
   }

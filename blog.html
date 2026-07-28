@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="fr" dir="ltr" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,7 @@
   <link rel="canonical" href="https://datrey.ma/blog.html" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="assets/logo.webp" type="image/webp" />
-  <meta name="theme-color" content="#050814" />
+  <meta name="theme-color" content="#ffffff" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" />
@@ -28,23 +28,24 @@
       margin-top: 40px;
     }
     .blog-card {
-      background: var(--nuit-800);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
     .blog-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
     }
     .blog-card-img {
       width: 100%;
       height: 200px;
       object-fit: cover;
-      background: var(--nuit-900);
+      background: #f1f5f9;
     }
     .blog-card-content {
       padding: 24px;
@@ -53,7 +54,7 @@
       flex-direction: column;
     }
     .blog-card-category {
-      color: var(--blue-400);
+      color: #2563eb;
       font-size: 0.85rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -62,19 +63,19 @@
     }
     .blog-card-title {
       font-size: 1.25rem;
-      color: var(--text-base);
+      color: #0f172a;
       margin-bottom: 12px;
       line-height: 1.4;
     }
     .blog-card-desc {
-      color: var(--text-muted);
+      color: #475569;
       font-size: 0.95rem;
       line-height: 1.6;
       margin-bottom: 20px;
       flex: 1;
     }
     .blog-card-link {
-      color: var(--blue-500);
+      color: #2563eb;
       font-weight: 600;
       text-decoration: none;
       display: inline-flex;
@@ -83,12 +84,12 @@
       transition: color 0.3s ease;
     }
     .blog-card-link:hover {
-      color: var(--blue-400);
+      color: #1d4ed8;
     }
   </style>
 </head>
 <body>
-  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
+  <script>document.documentElement.setAttribute('data-theme','light');</script>
   
   <header class="header" id="header">
     <div class="container">
@@ -104,10 +105,6 @@
         <a href="contact.html" class="btn btn-primary nav-cta">Audit Gratuit</a>
       </nav>
       <div style="display: flex; align-items: center; gap: 16px;">
-        <button id="themeToggle" class="theme-toggle" aria-label="Basculer le thème">
-          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        </button>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -115,45 +112,26 @@
     </div>
   </header>
 
-  <!-- Mobile Nav -->
-  <div class="mobile-nav" id="mobileNav">
-    <button class="mobile-nav-close" id="mobileClose" aria-label="Fermer le menu">&times;</button>
-    <a href="index.html" onclick="closeMobileNav()">Accueil</a>
-    <a href="services.html" onclick="closeMobileNav()">Nos Services</a>
-    <a href="blog.html" onclick="closeMobileNav()">Blog</a>
-    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
-    <a href="contact.html" class="btn btn-primary" onclick="closeMobileNav()">Audit Gratuit</a>
-  </div>
-
-  <section class="page-hero antigrav-hero">
-    <div class="hero-grid"></div>
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-    <div class="container">
-      <div class="page-hero-content">
-        <h1 class="hero-title">Blog <span class="highlight">DatRey</span></h1>
-        <p class="hero-subtitle">Insights, stratégies et guides pratiques pour maximiser votre acquisition digitale.</p>
-      </div>
+  <section class="page-hero">
+    <div class="container text-center">
+      <h1 class="hero-title">Notre Blog &amp; Expertise</h1>
+      <p class="hero-subtitle">Guides complets, études de cas et stratégies d'acquisition pour les entreprises exigeantes.</p>
     </div>
   </section>
 
-  <!-- ========== TECH STACK BANNER ========== -->
-  <div class="tech-stack-banner">
-    <div class="tech-stack-track">
-      <span>Partenaires &amp; Technologies :</span>
-      <img src="assets/tech/google-partner.svg" alt="Google Partner" style="height:30px; opacity:0.7;">
-      <img src="assets/tech/meta-partner.svg" alt="Meta Business Partner" style="height:30px; opacity:0.7;">
-      <img src="assets/tech/hubspot.svg" alt="HubSpot" style="height:30px; opacity:0.7;">
-      <img src="assets/tech/shopify.svg" alt="Shopify" style="height:30px; opacity:0.7;">
-      <img src="assets/tech/wordpress.svg" alt="WordPress" style="height:30px; opacity:0.7;">
-      <img src="assets/tech/figma.svg" alt="Figma" style="height:30px; opacity:0.7;">
-      <span style="color:var(--blue-400); font-weight:600;">+250 Projets Livrés</span>
-    </div>
-  </div>
-
   <main id="main-content" class="section-padding">
     <div class="container">
-      <div class="blog-grid reveal">
+      <div class="blog-grid">
+
+        <article class="blog-card">
+          <img src="assets/blog/cro-vs-seo-investissement-budgetaire-dirigeants-maroc-1.webp" alt="CRO vs SEO : Où investir vos 500 000 MAD ? Guide décisionnel pour dirigeants marocains" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <span class="blog-card-category">Optimisation des Conversions (CRO)</span>
+            <h2 class="blog-card-title">CRO vs SEO : Où investir vos 500 000 MAD ? Guide décisionnel pour dirigeants marocains</h2>
+            <p class="blog-card-desc">CRO ou SEO pour booster vos ventes ? Comparatif ROI, budgets et cas concrets au Maroc. Découvrez où placer vos 500 000 MAD pour une croissance rentable.</p>
+            <a href="blog/cro-vs-seo-investissement-budgetaire-dirigeants-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
 
         <article class="blog-card">
           <img src="assets/blog/geo-seo-domination-google-chatgpt-2025-roi-1.webp" alt="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2025 (et exploser votre ROI)" class="blog-card-img" loading="lazy" />
@@ -551,32 +529,8 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo" style="margin-bottom:4px;">
-            <img src="assets/logo.webp" alt="DatRey Logo" class="logo-img" width="40" height="40" />
-            <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
-          </a>
-          <p>Votre partenaire d'acquisition digitale full-stack au Maroc.</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 DatRey SARL. Tous droits réservés.</p>
-      </div>
+      <p style="text-align:center; color:#64748b;">&copy; 2026 DatRey SARL. Tous droits réservés.</p>
     </div>
   </footer>
-
-  <!-- Exit Intent Popup -->
-  <div id="exitIntentPopup" class="exit-popup-overlay">
-    <div class="exit-popup-modal">
-      <button class="exit-popup-close" aria-label="Fermer">×</button>
-      <div class="exit-popup-content">
-        <h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 12px; font-family: 'DM Serif Display', serif;">Ne partez pas les mains vides !</h3>
-        <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Obtenez un <strong>Audit UX/UI & SEO gratuit</strong> de votre site web. Découvrez comment augmenter vos conversions dès aujourd'hui.</p>
-        <a href="contact.html?subject=AuditGratuit" class="btn btn-primary magnetic-btn" style="width: 100%; justify-content: center;">Je veux mon audit gratuit</a>
-        <p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">Sans engagement. Analyse livrée en 48h.</p>
-      </div>
-    </div>
-  </div>
 </body>
 </html>

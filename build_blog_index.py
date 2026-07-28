@@ -128,7 +128,7 @@ def build_blog_index():
 
   <main id="main-content" class="section-padding">
     <div class="container">
-      <div class="blog-grid reveal">
+      <div class="blog-grid">
 """
 
     for article in articles:
