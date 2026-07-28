@@ -7,10 +7,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
-# Environment & API Configurations (Secrets read dynamically from environment)
+# Environment & API Configurations
 DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 POLLINATIONS_API_KEY = os.environ.get("POLLINATIONS_API_KEY", "")
-MAKE_WEBHOOK_URL = os.environ.get("MAKE_WEBHOOK_URL", "")
+MAKE_WEBHOOK_URL = os.environ.get("MAKE_WEBHOOK_URL", "https://hook.eu1.make.com/ctljeoq3t6zgsr9hj4u3nisvsdi1ke58")
 
 STATE_FILE = "autopilot_state.json"
 BLOG_DIR = os.path.join(BASE_DIR, "blog")

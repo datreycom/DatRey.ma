@@ -1,5 +1,7 @@
 import json
 import requests
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from autopilot.config import MAKE_WEBHOOK_URL
 
 def generate_social_posts(article_data):
@@ -82,7 +84,7 @@ def publish_to_make_webhook(payload):
 
     try:
         print(f"[Social Publisher] Dispatching webhook payload to Make.com -> {MAKE_WEBHOOK_URL}")
-        res = requests.post(MAKE_WEBHOOK_URL, json=payload, timeout=30)
+        res = requests.post(MAKE_WEBHOOK_URL, json=payload, timeout=30, verify=False)
         if res.status_code in (200, 201, 202):
             print("[Social Publisher] Make.com Webhook successfully triggered for LinkedIn, Instagram & Facebook!")
             return True
