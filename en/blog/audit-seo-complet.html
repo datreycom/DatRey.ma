@@ -33,6 +33,7 @@
       line-height: 1.8;
       margin: 0;
       padding: 0;
+      width: 100%;
     }
     .site-header {
       background: #ffffff;
@@ -40,12 +41,13 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      padding: 14px 0;
+      padding: 16px 0;
+      width: 100%;
     }
     .site-header-container {
-      max-width: 1200px;
+      max-width: 1320px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 4%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -55,107 +57,117 @@
       align-items: center;
       gap: 10px;
       font-weight: 700;
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       color: #0f172a;
       text-decoration: none;
     }
     .site-nav {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 28px;
     }
     .site-nav a {
       color: #475569;
       font-weight: 500;
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 1rem;
       transition: color 0.2s ease;
     }
     .site-nav a:hover {
       color: #2563eb;
     }
     .article-container {
-      max-width: 820px;
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 48px 24px;
+      padding: 52px 4%;
+      width: 92%;
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.65rem;
-      line-height: 1.25;
+      font-size: 3.1rem;
+      line-height: 1.2;
       color: #0f172a !important;
-      margin-top: 12px;
-      margin-bottom: 16px;
+      margin-top: 16px;
+      margin-bottom: 20px;
     }
     .hero-meta {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #64748b;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
     }
     .article-hero-img-wrap {
-      margin-bottom: 36px;
-      border-radius: 16px;
+      margin-bottom: 44px;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      width: 100%;
     }
     .article-hero-img-wrap img {
       width: 100%;
       height: auto;
-      max-height: 480px;
+      max-height: 560px;
       object-fit: cover;
       display: block;
     }
+    .blog-content {
+      width: 100%;
+      max-width: 100%;
+    }
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.85rem;
+      font-size: 2.1rem;
       color: #0f172a !important;
-      margin-top: 44px;
-      margin-bottom: 16px;
+      margin-top: 48px;
+      margin-bottom: 18px;
     }
     .blog-content h3 {
-      font-size: 1.35rem;
+      font-size: 1.45rem;
       color: #1e293b !important;
-      margin-top: 28px;
-      margin-bottom: 12px;
+      margin-top: 32px;
+      margin-bottom: 14px;
     }
     .blog-content p {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: #334155 !important;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+      line-height: 1.85;
     }
     .blog-content ul, .blog-content ol {
-      margin-bottom: 24px;
-      padding-left: 24px;
+      margin-bottom: 28px;
+      padding-left: 28px;
       color: #334155 !important;
     }
     .blog-content li {
-      margin-bottom: 8px;
-      font-size: 1.05rem;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
     }
     .article-body-img-wrap {
-      margin: 40px 0;
-      border-radius: 12px;
+      margin: 48px 0;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.06);
       background-color: #f1f5f9;
+      width: 100%;
     }
     .article-body-img-wrap img {
       width: 100%;
       height: auto;
-      max-height: 440px;
+      max-height: 540px;
       object-fit: cover;
       display: block;
     }
     .geo-definition, .geo-definition-box {
       background: #f8fafc !important;
       border: 1px solid #e2e8f0 !important;
-      border-left: 4px solid #2563eb !important;
-      padding: 20px 24px !important;
-      border-radius: 8px !important;
-      margin: 28px 0 !important;
-      font-size: 1.05rem !important;
-      line-height: 1.7 !important;
+      border-left: 5px solid #2563eb !important;
+      padding: 24px 28px !important;
+      border-radius: 12px !important;
+      margin: 32px 0 !important;
+      font-size: 1.1rem !important;
+      line-height: 1.75 !important;
       color: #0f172a !important;
+      width: 100%;
+      box-sizing: border-box;
     }
     .geo-definition strong, .geo-definition-box strong {
       color: #2563eb !important;
@@ -163,34 +175,42 @@
     .cta-article-box {
       background: #0f172a;
       color: #ffffff;
-      padding: 36px;
-      border-radius: 16px;
-      margin-top: 52px;
+      padding: 44px 36px;
+      border-radius: 20px;
+      margin-top: 60px;
       text-align: center;
+      width: 100%;
+      box-sizing: border-box;
     }
     .cta-article-box h3 {
       color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
-      font-size: 1.8rem;
-      margin-bottom: 12px;
+      font-size: 2.1rem;
+      margin-bottom: 14px;
     }
     .cta-article-box p {
       color: #94a3b8 !important;
-      font-size: 1.05rem;
-      margin-bottom: 24px;
+      font-size: 1.1rem;
+      margin-bottom: 28px;
     }
     .cta-btn {
       display: inline-block;
       background: #2563eb;
       color: #ffffff !important;
       font-weight: 600;
-      padding: 12px 28px;
+      padding: 14px 32px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s ease;
+      font-size: 1rem;
     }
     .cta-btn:hover {
       background: #1d4ed8;
+    }
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.2rem; }
+      .site-nav { display: none; }
+      .article-container { width: 95%; padding: 24px 12px; }
     }
   </style>
 
@@ -219,22 +239,22 @@
   <header class="site-header">
     <div class="site-header-container">
       <a href="../index.html" class="site-logo">
-        <img src="../assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:6px;" />
+        <img src="../assets/logo.webp" alt="DatRey Logo" width="40" height="40" style="border-radius:6px;" />
         <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
       </a>
       <nav class="site-nav">
         <a href="../index.html">Accueil</a>
         <a href="../services.html">Services</a>
         <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
-        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:8px 18px; font-size:0.9rem;">Audit Gratuit</a>
+        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:10px 22px; font-size:0.95rem;">Audit Gratuit</a>
       </nav>
     </div>
   </header>
 
   <main>
     <div class="article-container">
-      <div style="margin-bottom: 12px;">
-        <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.85rem; padding:6px 14px; border-radius:20px;">Marketing Digital</span>
+      <div style="margin-bottom: 14px;">
+        <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.9rem; padding:6px 16px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">Complete SEO Audit: Boost Your Web Visibility in Morocco</h1>
       <p class="hero-meta">Publié par l'équipe DatRey | Temps de lecture : ~6 min</p>
@@ -319,7 +339,7 @@
     </div>
   </main>
 
-  <footer style="border-top:1px solid #e2e8f0; margin-top:60px; padding:30px 0; text-align:center; color:#64748b; font-size:0.9rem;">
+  <footer style="border-top:1px solid #e2e8f0; margin-top:80px; padding:40px 0; text-align:center; color:#64748b; font-size:0.95rem;">
     <div class="site-header-container" style="justify-content:center;">
       <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
     </div>
