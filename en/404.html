@@ -24,7 +24,7 @@
 <link rel="canonical" href="https://datrey.ma/en/404.html">
 </head>
 <body>
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
+<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'light');</script>
 <div class="error-page">
 <div>
 <a href="/" style="display:inline-block;margin-bottom:2rem;">
@@ -39,5 +39,15 @@
 </div>
 </div>
 </div>
+<script type="speculationrules">
+{
+  "prerender": [
+    {
+      "source": "list",
+      "urls": ["/", "/en/", "/services.html", "/creation-site-web.html", "/blog.html", "/contact.html"]
+    }
+  ]
+}
+</script>
 </body>
 </html>

@@ -15,7 +15,7 @@ HIGH_INTENT_TOPIC_ANGLES = [
 
 def generate_article_content(service_slug=None, topic_hint=None):
     """
-    Calls DeepSeek API / Pollinations API to generate an exhaustive, high-converting blog article (>= 1,300 words),
+    Calls DeepSeek / Pollinations API to generate an exhaustive, high-converting blog article (>= 1,300 words),
     specifically crafted to attract high-value B2B client leads for DatRey.
     """
     if not service_slug or service_slug not in SERVICES:
@@ -61,59 +61,59 @@ def generate_article_content(service_slug=None, topic_hint=None):
     }}
     """
 
-    targets = [
-        {"url": "https://api.deepseek.com/v1/chat/completions", "model": "deepseek-chat", "keys": [DEEPSEEK_API_KEY]},
-        {"url": "https://gen.pollinations.ai/v1/chat/completions", "model": "deepseek", "keys": [POLLINATIONS_API_KEY]},
-        {"url": "https://gen.pollinations.ai/v1/chat/completions", "model": "openai", "keys": [POLLINATIONS_API_KEY]}
-    ]
+    targets = []
+    if DEEPSEEK_API_KEY:
+        targets.append({"url": "https://api.deepseek.com/v1/chat/completions", "model": "deepseek-chat", "headers": {"Authorization": f"Bearer {DEEPSEEK_API_KEY}"}})
+    if POLLINATIONS_API_KEY:
+        targets.append({"url": "https://gen.pollinations.ai/v1/chat/completions", "model": "deepseek", "headers": {"Authorization": f"Bearer {POLLINATIONS_API_KEY}"}})
+        targets.append({"url": "https://gen.pollinations.ai/v1/chat/completions", "model": "openai", "headers": {"Authorization": f"Bearer {POLLINATIONS_API_KEY}"}})
+
+    # Fallback to free open endpoints
+    targets.append({"url": "https://gen.pollinations.ai/v1/chat/completions", "model": "openai", "headers": {}})
+    targets.append({"url": "https://gen.pollinations.ai/v1/chat/completions", "model": "mistral", "headers": {}})
 
     session = requests.Session()
 
     for target in targets:
-        for key in target["keys"]:
-            if not key:
-                continue
-            headers = {
-                "Authorization": f"Bearer {key}",
-                "Content-Type": "application/json"
-            }
-            payload = {
-                "model": target["model"],
-                "messages": [
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt}
-                ],
-                "temperature": 0.7,
-                "response_format": {"type": "json_object"}
-            }
+        headers = {"Content-Type": "application/json"}
+        headers.update(target.get("headers", {}))
+        payload = {
+            "model": target["model"],
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+            ],
+            "temperature": 0.7,
+            "response_format": {"type": "json_object"}
+        }
 
-            for attempt in range(2):
-                try:
-                    print(f"[DeepSeek Engine] Requesting high-converting article via {target['url']} (model: {target['model']}, attempt: {attempt+1})...")
-                    res = session.post(target["url"], headers=headers, json=payload, timeout=90)
-                    if res.status_code == 200:
-                        result_json = res.json()
-                        raw_text = result_json["choices"][0]["message"]["content"]
+        for attempt in range(2):
+            try:
+                print(f"[DeepSeek Engine] Requesting high-converting article via {target['url']} (model: {target['model']}, attempt: {attempt+1})...")
+                res = session.post(target["url"], headers=headers, json=payload, timeout=90)
+                if res.status_code == 200:
+                    result_json = res.json()
+                    raw_text = result_json["choices"][0]["message"]["content"]
 
-                        if raw_text.startswith("```"):
-                            raw_text = re.sub(r'^```(json)?\n', '', raw_text)
-                            raw_text = re.sub(r'\n```$', '', raw_text)
+                    if raw_text.startswith("```"):
+                        raw_text = re.sub(r'^```(json)?\n', '', raw_text)
+                        raw_text = re.sub(r'\n```$', '', raw_text)
 
-                        data = json.loads(raw_text.strip(), strict=False)
-                        
-                        prompts = data.get("image_prompts", [])
-                        while len(prompts) < 5:
-                            prompts.append(f"Professional corporate digital marketing visualization of {service_name}, photorealistic, 8k resolution, cinematic lighting, no text")
-                        data["image_prompts"] = prompts[:5]
+                    data = json.loads(raw_text.strip(), strict=False)
+                    
+                    prompts = data.get("image_prompts", [])
+                    while len(prompts) < 5:
+                        prompts.append(f"Professional corporate digital marketing visualization of {service_name}, photorealistic, 8k resolution, cinematic lighting, no text")
+                    data["image_prompts"] = prompts[:5]
 
-                        word_count = len(re.findall(r'\w+', data.get("content", "")))
-                        print(f"[DeepSeek Engine] High-converting article generated! Title: '{data.get('title')}' | Words: ~{word_count}")
-                        return data
-                    elif res.status_code in (401, 402):
-                        break
-                    else:
-                        print(f"[DeepSeek Engine] Status {res.status_code} on {target['url']}: {res.text[:100]}")
-                except Exception as e:
-                    print(f"[DeepSeek Engine] Exception on {target['url']}: {e}")
+                    word_count = len(re.findall(r'\w+', data.get("content", "")))
+                    print(f"[DeepSeek Engine] High-converting article generated! Title: '{data.get('title')}' | Words: ~{word_count}")
+                    return data
+                elif res.status_code in (401, 402):
+                    break
+                else:
+                    print(f"[DeepSeek Engine] Status {res.status_code} on {target['url']}: {res.text[:100]}")
+            except Exception as e:
+                print(f"[DeepSeek Engine] Exception on {target['url']}: {e}")
 
-    raise RuntimeError("Failed to generate article: All API targets and keys exhausted.")
+    raise RuntimeError("Failed to generate article: All API targets exhausted.")

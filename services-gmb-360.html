@@ -16,8 +16,6 @@
 <link rel="canonical" href="https://datrey.ma/services-gmb-360.html">
 <link href="https://datrey.ma/services-gmb-360.html" hreflang="fr" rel="alternate"/>
 <link href="https://datrey.maen/services.html" hreflang="en" rel="alternate"/>
-<link href="https://datrey.maes/services.html" hreflang="es" rel="alternate"/>
-<link href="https://datrey.maar/services.html" hreflang="ar" rel="alternate"/>
 <link href="https://datrey.ma/services-gmb-360.html" hreflang="x-default" rel="alternate"/>
 <link href="https://datrey.ma/services-gmb-360.html" hreflang="fr" rel="alternate"/>
 <link href="https://datrey.ma/services-gmb-360.html" hreflang="x-default" rel="alternate"/>
@@ -136,7 +134,7 @@
 </head>
 <body>
 <!-- Prevent theme FOUC -->
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
+<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'light');</script>
 <a class="skip-to-content" href="#main-content">Aller au contenu principal</a>
 <!-- ========== HEADER ========== -->
 <header class="header" id="header">
@@ -158,10 +156,8 @@
 <div class="lang-selector">
 <button aria-label="Changer de langue" class="lang-btn">FR ▼</button>
 <div class="lang-dropdown">
-<a class="active" href="/services-gmb-360.html">Français</a>
-<a href="/en/services.html">English</a>
-<a href="/ar/services.html">العربية</a>
-<a href="/es/services.html">Español</a>
+<a href="/">Français</a>
+<a href="/en/">English</a>
 </div>
 </div>
 <button aria-label="Basculer le thème" class="theme-toggle" id="themeToggle">
@@ -435,5 +431,15 @@
 </div>
 <div class="chic-hover-image" id="chicHoverImg"></div>
 <script defer="" src="animations.js"></script>
+<script type="speculationrules">
+{
+  "prerender": [
+    {
+      "source": "list",
+      "urls": ["/", "/en/", "/services.html", "/creation-site-web.html", "/blog.html", "/contact.html"]
+    }
+  ]
+}
+</script>
 </body>
 </html>
