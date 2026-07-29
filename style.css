@@ -1931,12 +1931,12 @@ body::before {
 /* Light mode — Hero inline trust badges */
 [data-theme="light"] .hero [style*="color: var(--text-muted)"] { color: rgba(255,255,255,0.6) !important; }
 
-/* Light mode — Header */
-[data-theme="light"] .header { background: #ffffff; }
-[data-theme="light"] .header.scrolled { background: rgba(255,255,255,0.92); }
-[data-theme="light"] .nav-links a { color: #374151; }
-[data-theme="light"] .nav-links a:hover { color: #111827; }
-[data-theme="light"] .logo span { color: #111827; }
+/* Light mode — Header (Frosted Glass over Hero Photo) */
+[data-theme="light"] .header { background: rgba(5,8,20,0.65) !important; backdrop-filter: blur(16px) !important; -webkit-backdrop-filter: blur(16px) !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; }
+[data-theme="light"] .header.scrolled { background: rgba(5,8,20,0.92) !important; box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important; }
+[data-theme="light"] .nav-links a { color: #e2e8f0 !important; }
+[data-theme="light"] .nav-links a:hover, [data-theme="light"] .nav-links a.nav-active { color: #ffffff !important; }
+[data-theme="light"] .logo span { color: #ffffff !important; }
 
 /* Light mode — Approach visual */
 [data-theme="light"] .approach-steps-chic::before {
