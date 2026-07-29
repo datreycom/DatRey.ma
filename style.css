@@ -635,8 +635,17 @@ h1, h2, h3, h4, h5, h6 {
 .cta-box p {
   color: #334155 !important; font-size: 1.12rem;
   max-width: 560px; margin: 0 auto 36px; line-height: 1.85; letter-spacing: 0.02em;
-}
 .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.cta-box .btn-ghost, .cta-box .btn-outline {
+  background: #ffffff !important;
+  color: #2563eb !important;
+  border: 1px solid #bfdbfe !important;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.08) !important;
+}
+.cta-box .btn-primary {
+  background: linear-gradient(135deg, #2563eb, #3b82f6) !important;
+  color: #ffffff !important;
+}
 
 /* ============================================
    FOOTER

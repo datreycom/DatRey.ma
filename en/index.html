@@ -37,13 +37,13 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-body);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.88rem;padding:16px 36px;border-radius:50px;cursor:pointer;border:none;position:relative;overflow:hidden}
     .btn-primary{background:linear-gradient(135deg,var(--roi-600),var(--roi-500));color:#fff!important;box-shadow:0 4px 15px rgba(37,99,235,.4)}
     .nav-cta{padding:10px 24px!important;font-size:.85rem!important;color:#fff!important;letter-spacing:.08em}
-    .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(160deg,var(--nuit-950) 0%,var(--nuit-900) 30%,var(--nuit-800) 60%,var(--nuit-700) 100%);overflow:hidden}
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(180deg, rgba(248,250,252,0.90) 0%, rgba(255,255,255,0.95) 100%), url('../assets/hero_bg.webp') center/cover no-repeat;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);overflow:hidden}
     .hero .container{position:relative;z-index:2}
     .hero-content{max-width:750px;padding-top:40px}
-    .hero-title{font-size:clamp(2.8rem,5.5vw,4.8rem);font-weight:800;color:#fff;line-height:1.12;margin-bottom:24px;letter-spacing:0}
-    .hero-title .highlight{background:linear-gradient(135deg,var(--roi-300),var(--roi-200));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .hero-subtitle{font-size:1.2rem;color:rgba(255,255,255,.6);line-height:1.85;margin-bottom:40px;max-width:580px;font-weight:400;letter-spacing:.02em}
-    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(59,109,232,.1);border:1px solid rgba(59,109,232,.2);border-radius:50px;padding:8px 20px;margin-bottom:28px;font-size:.88rem;color:var(--roi-200);font-weight:500}
+    .hero-title{font-size:clamp(2.8rem,5.5vw,4.8rem);font-weight:800;color:#0f172a!important;line-height:1.12;margin-bottom:24px;letter-spacing:0}
+    .hero-title .highlight{background:linear-gradient(135deg,#2563eb,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-subtitle{font-size:1.2rem;color:#334155!important;line-height:1.85;margin-bottom:40px;max-width:580px;font-weight:400;letter-spacing:.02em}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);border-radius:50px;padding:8px 20px;margin-bottom:28px;font-size:.88rem;color:#2563eb;font-weight:600}
     .mobile-toggle{display:none}
     .theme-toggle{background:var(--bg-alt);border:1px solid var(--border-color);color:var(--text-main);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
     @media(max-width:768px){.nav-links{display:none}.mobile-toggle{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}.mobile-toggle span{width:26px;height:2px;background:var(--text-main);border-radius:2px}.container{padding:0 24px}}
@@ -76,7 +76,7 @@
         "email": "contact@datrey.ma",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "322 Bd Brahim Roudani, R\u00e9s. AR-Rayhane, \u00c9t. 04 N\u00b017",
+          "streetAddress": "5, rue de Dixmude, 1er \u00e9tage, appt 2, Benjdia",
           "addressLocality": "Casablanca",
           "addressRegion": "Casablanca-Settat",
           "postalCode": "20000",
@@ -659,7 +659,7 @@ fbq('track', 'PageView');
 <h3>Contact</h3>
 <div class="footer-contact-item">
 <span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
-<span>322 Bd Brahim Roudani, Rés. AR-Rayhane,<br/>Ét. 04 N°17, Maarif — Casablanca</span>
+<span>322 Bd Brahim Roudani, Rés. AR-Rayhane,<br/>Ét. 04 N°17, Benjdia — Casablanca</span>
 </div>
 <div class="footer-contact-item">
 <span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
