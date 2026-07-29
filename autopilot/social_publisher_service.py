@@ -4,10 +4,18 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from autopilot.config import MAKE_WEBHOOK_URL
 
+DATREY_CONTACT_BLOCK = """---
+📞 CONTACTEZ L'ÉQUIPE DATREY :
+🌐 Site Web : https://datrey.ma
+📱 Tél / WhatsApp : +212 6 44 44 30 59
+📩 Email : contact@datrey.ma
+📍 Adresse : Maarif — Casablanca, Maroc
+🚀 Demandez votre Audit Digital Gratuit : https://datrey.ma/contact.html"""
+
 def generate_social_posts(article_data):
     """
     Formats multi-channel social media posts (LinkedIn, Instagram, Facebook) with a rich 250-300 word executive summary,
-    hero cover photo URL, and high-reach engagement elements tailored for DatRey.
+    hero cover photo URL, and official DatRey agency contact info tailored for lead generation.
     """
     title = article_data["title"]
     slug = article_data["slug"]
@@ -21,7 +29,19 @@ def generate_social_posts(article_data):
     category_hashtag = category.replace(' ', '').replace('(', '').replace(')', '').replace('&', '')
     hashtags = f"#DatRey #MarketingDigital #Maroc #Acquisition #{category_hashtag} #CroissanceDigital #Casablanca #Rabat #SEO #GoogleAds #ROI"
 
-    # 1. LinkedIn Post (250-300 words executive summary + cover photo + CTA)
+    # 1. Facebook Post (250-300 words summary + article URL + complete contact info + hashtags)
+    facebook_post = f"""📌 [DÉCRYPTAGE & STRATÉGIE] : {title}
+
+{social_summary}
+
+👉 Lisez l'analyse intégrale et nos recommandations sur notre site :
+{article_url}
+
+{DATREY_CONTACT_BLOCK}
+
+{hashtags}"""
+
+    # 2. LinkedIn Post (250-300 words executive summary + article URL + complete contact info + hashtags)
     linkedin_post = f"""🚀 [NOUVEL ARTICLE EXPERT] : {title}
 
 {social_summary}
@@ -30,31 +50,19 @@ def generate_social_posts(article_data):
 Retrouvez notre étude complète avec tous les chiffres, infographies et cas pratiques sur notre blog officiel :
 👉 {article_url}
 
----
- DatRey SARL - Agence de Marketing Digital & Acquisition au Maroc
-📍 Casablanca & Rabat | 🌐 datrey.ma
+{DATREY_CONTACT_BLOCK}
 
 {hashtags}"""
 
-    # 2. Instagram Post (250-300 words summary + cover photo + CTA)
+    # 3. Instagram Post (250-300 words summary + bio link + contact info + hashtags)
     instagram_post = f"""📌 {title}
 
 {social_summary}
 
 🔗 Cliquez sur le lien dans notre bio pour lire l'article complet ou rendez-vous sur : {article_url}
 
--
-{hashtags}"""
+{DATREY_CONTACT_BLOCK}
 
-    # 3. Facebook Post (250-300 words summary + cover photo + CTA)
-    facebook_post = f"""📌 [DÉCRYPTAGE & STRATÉGIE] : {title}
-
-{social_summary}
-
-👉 Lisez l'analyse intégrale et téléchargez nos recommandations sur notre site :
-{article_url}
-
- DatRey Digital Agency - Votre partenaire croissance au Maroc.
 {hashtags}"""
 
     payload = {
@@ -67,9 +75,9 @@ Retrouvez notre étude complète avec tous les chiffres, infographies et cas pra
         "url": article_url,
         "hero_image_url": hero_image_url,
         "social": {
+            "facebook": facebook_post,
             "linkedin": linkedin_post,
-            "instagram": instagram_post,
-            "facebook": facebook_post
+            "instagram": instagram_post
         }
     }
 
@@ -91,7 +99,7 @@ def publish_to_make_webhook(payload):
         
         res = requests.post(MAKE_WEBHOOK_URL, data=json_data, headers=headers, timeout=30, verify=False)
         if res.status_code in (200, 201, 202):
-            print("[Social Publisher] Make.com Webhook successfully triggered for LinkedIn, Instagram & Facebook!")
+            print("[Social Publisher] Make.com Webhook successfully triggered for Facebook, LinkedIn & Instagram!")
             return True
         else:
             print(f"[Social Publisher] Webhook returned status {res.status_code}: {res.text}")
