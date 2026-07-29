@@ -634,6 +634,7 @@ h1, h2, h3, h4, h5, h6 {
 .cta-box p {
   color: #334155 !important; font-size: 1.12rem;
   max-width: 560px; margin: 0 auto 36px; line-height: 1.85; letter-spacing: 0.02em;
+}
 .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .cta-box .btn-ghost, .cta-box .btn-outline {
   background: #ffffff !important;
@@ -1310,22 +1311,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--roi-300);
 }
 
-/* --- Footer — Pure Light Mode --- */
-.footer {
-  background: #ffffff !important;
-  border-top: 1px solid #e2e8f0 !important;
-  color: #475569 !important;
-  padding: 80px 0 40px !important;
-}
-.footer h3, .footer h4 { color: #0f172a !important; }
-.footer-brand p { color: #64748b !important; }
-.footer-links a { color: #475569 !important; }
-.footer-links a:hover { color: #2563eb !important; }
-.footer-contact-item { color: #475569 !important; }
-.footer-bottom { border-top: 1px solid #f1f5f9 !important; color: #64748b !important; margin-top: 48px; padding-top: 24px; }
-.social-links a { color: #64748b !important; }
-.social-links a:hover { color: #2563eb !important; }
-
 
 
 /* --- Light Mode Explicit Overrides --- */
@@ -1419,8 +1404,8 @@ h1, h2, h3, h4, h5, h6 {
 .lang-selector { position: relative; display: inline-block; }
 .lang-btn { background: transparent; border: 1px solid var(--border-color); color: var(--text-main); font-family: var(--font-body); font-size: 0.88rem; font-weight: 600; cursor: pointer; padding: 6px 14px; border-radius: 20px; transition: var(--transition); display: flex; align-items: center; gap: 4px; }
 .lang-btn:hover { background: var(--roi-50); border-color: var(--roi-300); }
-.lang-dropdown { position: absolute; top: 100%; right: 0; background: #ffffff !important; min-width: 130px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: 0 10px 25px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.2s ease; transform: translateY(8px); z-index: 1000; overflow: hidden; padding: 4px 0; }
-.lang-selector:hover .lang-dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(4px); }
+.lang-dropdown { position: absolute; top: 100%; right: 0; background: #ffffff !important; min-width: 130px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: 0 10px 25px rgba(0,0,0,0.15); display: none; z-index: 1000; overflow: hidden; padding: 4px 0; }
+.lang-selector:hover .lang-dropdown { display: block !important; }
 .lang-dropdown a { display: block; padding: 8px 16px; color: #475569 !important; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: background 0.2s; text-align: left; }
 .lang-dropdown a:hover { background: var(--roi-50) !important; color: var(--roi-600) !important; }
 .lang-dropdown a.active { color: var(--roi-600) !important; font-weight: 700; }
