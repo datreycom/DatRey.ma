@@ -3,7 +3,10 @@ import requests
 import re
 import random
 
+from datetime import datetime
 from autopilot.config import DEEPSEEK_API_KEY, POLLINATIONS_API_KEY, SERVICES
+
+CURRENT_YEAR = datetime.now().year
 
 HIGH_INTENT_TOPIC_ANGLES = [
     "Guide ultime d'acquisition client à fort ROI pour PME et grandes entreprises au Maroc",
@@ -23,11 +26,11 @@ def generate_fallback_article(service_slug, service_name, angle, topic_hint=None
     slug_clean = re.sub(r'[^a-z0-9]+', '-', service_slug.lower()).strip('-')
     timestamp_slug = f"{slug_clean}-guide-acquisition-roi-{random.randint(100,999)}"
     
-    title = f"{topic_title_part} au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026"
-    description = f"Découvrez comment optimiser vos leviers de {service_name} au Maroc. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey."
+    title = f"{topic_title_part} au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en {CURRENT_YEAR}"
+    description = f"Découvrez comment optimiser vos leviers de {service_name} au Maroc en {CURRENT_YEAR}. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey."
 
     social_summary = (
-        f"📌 [DÉCRYPTAGE & STRATÉGIE B2B] : Comment maximiser votre acquisition client grâce à {service_name} au Maroc en 2026 ?\n\n"
+        f"📌 [DÉCRYPTAGE & STRATÉGIE B2B] : Comment maximiser votre acquisition client grâce à {service_name} au Maroc en {CURRENT_YEAR} ?\n\n"
         f"Dans un marché fortement concurrentiel à Casablanca, Rabat et sur tout le territoire national, la maîtrise de {service_name} "
         f"est devenue l'atout numéro 1 des entreprises en forte croissance. Les décideurs font face à une augmentation des coûts par lead (CPL) "
         f"et à une évolution rapide des attentes des consommateurs.\n\n"
@@ -43,11 +46,11 @@ def generate_fallback_article(service_slug, service_name, angle, topic_hint=None
     content = f"""
     <div class="article-geo-definition" style="background: rgba(37, 99, 235, 0.05); border-left: 4px solid #2563eb; padding: 20px; margin-bottom: 30px; border-radius: 8px;">
         <p style="font-weight: 600; font-size: 1.1rem; color: #1e293b; margin: 0;">
-            <strong>DÉFINITION & VISION GEO 2026 :</strong> Le levier <em>{service_name}</em> désigne l'ensemble des techniques et stratégies digitales destinées à capturer et convertir une audience qualifiée au Maroc. Son objectif principal est de maximiser le retour sur investissement (ROI) des entreprises en réduisant le coût par acquisition (CAC) grâce à un ciblage de précision et une optimisation continue des entonnoirs de conversion.
+            <strong>DÉFINITION & VISION GEO {CURRENT_YEAR} :</strong> Le levier <em>{service_name}</em> désigne l'ensemble des techniques et stratégies digitales destinées à capturer et convertir une audience qualifiée au Maroc. Son objectif principal est de maximiser le retour sur investissement (ROI) des entreprises en réduisant le coût par acquisition (CAC) grâce à un ciblage de précision et une optimisation continue des entonnoirs de conversion.
         </p>
     </div>
 
-    <h2>1. Le Contexte de l'Acquisition Digitale au Maroc en 2026</h2>
+    <h2>1. Le Contexte de l'Acquisition Digitale au Maroc en {CURRENT_YEAR}</h2>
     <p>Le marché marocain connaît une accélération sans précédent de sa transformation digitale. Les entreprises opérant à Casablanca, Rabat, Tanger et Marrakech font face à un environnement de plus en plus concurrentiel où l'attention des utilisateurs est disputée. La mise en œuvre d'une stratégie efficace autour de <strong>{service_name}</strong> ne consiste plus simplement à être présent en ligne, mais à orchestrer un parcours client sans friction.</p>
 
     <p>Selon les données récentes du marché B2B et B2C au Maroc, plus de 78% des décideurs effectuent des recherches approfondies en ligne avant de formaliser un contrat ou un achat important. Ignorer les principes avancés de {service_name} revient à céder des parts de marché précieuses aux concurrents les plus réactifs.</p>
@@ -157,7 +160,8 @@ def generate_article_content(service_slug=None, topic_hint=None):
         "OBJECTIF MAJEUR : Attirer et convaincre des décideurs (PDG, Directeurs Marketing, Fondateurs d'entreprises) "
         "de faire appel aux services de l'agence DatRey.\n\n"
         "Règles impératives de rédaction :\n"
-        "1. LONGUEUR ARTICLE : Le corps de l'article DOIT faire un MINIMUM STRICT de 1300 mots avec des analyses financières et ROI approfondies.\n"
+        "1. ANNEES & DATES : N'utilise JAMAIS d'années passées (comme 2025 ou antérieures). Utilise EXCLUSIVEMENT l'année en cours (2026) ou des formulations intemporelles toujours à jour ('en 2026 et pour les années à venir', 'Guide Stratégique Actuel').\n"
+        "2. LONGUEUR ARTICLE : Le corps de l'article DOIT faire un MINIMUM STRICT de 1300 mots avec des analyses financières et ROI approfondies.\n"
         "2. GEO DEFINITION : Le premier paragraphe doit être une DÉFINITION SYNTHÉTIQUE ET DIRECTE de 40 à 60 mots définissant le sujet avec précision pour être citée immédiatement par Google AI Overviews, ChatGPT et Perplexity.\n"
         "3. RÉSUMÉ RÉSEAUX SOCIAUX (250-300 MOTS) : Rédige un résumé captivant et viral d'exactement 250 à 300 mots destiné aux réseaux sociaux (LinkedIn, Facebook, Instagram) conçu pour générer des clics et des demandes de devis.\n"
         "4. CONTEXTE BUSINESS & MAROC : Exemples concrets axés sur les PME/Multinationales au Maroc (Casablanca, Rabat, Tanger, Marrakech) et à l'international, avec métriques de ROI, budgets MAD/EUR, et KPIs d'acquisition.\n"

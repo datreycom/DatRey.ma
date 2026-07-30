@@ -1,0 +1,2306 @@
+[
+  {
+    "post_id": 1,
+    "date": "30/07/2026",
+    "day_name": "Jeudi",
+    "time_slot": "09:00",
+    "week": 1,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 2,
+    "date": "30/07/2026",
+    "day_name": "Jeudi",
+    "time_slot": "20:00",
+    "week": 1,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 3,
+    "date": "31/07/2026",
+    "day_name": "Vendredi",
+    "time_slot": "09:00",
+    "week": 1,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 4,
+    "date": "31/07/2026",
+    "day_name": "Vendredi",
+    "time_slot": "20:00",
+    "week": 1,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 5,
+    "date": "01/08/2026",
+    "day_name": "Samedi",
+    "time_slot": "09:00",
+    "week": 1,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 6,
+    "date": "01/08/2026",
+    "day_name": "Samedi",
+    "time_slot": "20:00",
+    "week": 1,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 7,
+    "date": "02/08/2026",
+    "day_name": "Dimanche",
+    "time_slot": "09:00",
+    "week": 1,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 8,
+    "date": "02/08/2026",
+    "day_name": "Dimanche",
+    "time_slot": "20:00",
+    "week": 1,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 9,
+    "date": "03/08/2026",
+    "day_name": "Lundi",
+    "time_slot": "09:00",
+    "week": 1,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 10,
+    "date": "03/08/2026",
+    "day_name": "Lundi",
+    "time_slot": "20:00",
+    "week": 1,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 11,
+    "date": "04/08/2026",
+    "day_name": "Mardi",
+    "time_slot": "09:00",
+    "week": 1,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 12,
+    "date": "04/08/2026",
+    "day_name": "Mardi",
+    "time_slot": "20:00",
+    "week": 1,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 13,
+    "date": "05/08/2026",
+    "day_name": "Mercredi",
+    "time_slot": "09:00",
+    "week": 1,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 14,
+    "date": "05/08/2026",
+    "day_name": "Mercredi",
+    "time_slot": "20:00",
+    "week": 1,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 15,
+    "date": "06/08/2026",
+    "day_name": "Jeudi",
+    "time_slot": "09:00",
+    "week": 2,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 16,
+    "date": "06/08/2026",
+    "day_name": "Jeudi",
+    "time_slot": "20:00",
+    "week": 2,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 17,
+    "date": "07/08/2026",
+    "day_name": "Vendredi",
+    "time_slot": "09:00",
+    "week": 2,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 18,
+    "date": "07/08/2026",
+    "day_name": "Vendredi",
+    "time_slot": "20:00",
+    "week": 2,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 19,
+    "date": "08/08/2026",
+    "day_name": "Samedi",
+    "time_slot": "09:00",
+    "week": 2,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 20,
+    "date": "08/08/2026",
+    "day_name": "Samedi",
+    "time_slot": "20:00",
+    "week": 2,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 21,
+    "date": "09/08/2026",
+    "day_name": "Dimanche",
+    "time_slot": "09:00",
+    "week": 2,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 22,
+    "date": "09/08/2026",
+    "day_name": "Dimanche",
+    "time_slot": "20:00",
+    "week": 2,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 23,
+    "date": "10/08/2026",
+    "day_name": "Lundi",
+    "time_slot": "09:00",
+    "week": 2,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 24,
+    "date": "10/08/2026",
+    "day_name": "Lundi",
+    "time_slot": "20:00",
+    "week": 2,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 25,
+    "date": "11/08/2026",
+    "day_name": "Mardi",
+    "time_slot": "09:00",
+    "week": 2,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 26,
+    "date": "11/08/2026",
+    "day_name": "Mardi",
+    "time_slot": "20:00",
+    "week": 2,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 27,
+    "date": "12/08/2026",
+    "day_name": "Mercredi",
+    "time_slot": "09:00",
+    "week": 2,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 28,
+    "date": "12/08/2026",
+    "day_name": "Mercredi",
+    "time_slot": "20:00",
+    "week": 2,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 29,
+    "date": "13/08/2026",
+    "day_name": "Jeudi",
+    "time_slot": "09:00",
+    "week": 3,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 30,
+    "date": "13/08/2026",
+    "day_name": "Jeudi",
+    "time_slot": "12:00",
+    "week": 3,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 31,
+    "date": "13/08/2026",
+    "day_name": "Jeudi",
+    "time_slot": "20:00",
+    "week": 3,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 32,
+    "date": "14/08/2026",
+    "day_name": "Vendredi",
+    "time_slot": "09:00",
+    "week": 3,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 33,
+    "date": "14/08/2026",
+    "day_name": "Vendredi",
+    "time_slot": "12:00",
+    "week": 3,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 34,
+    "date": "14/08/2026",
+    "day_name": "Vendredi",
+    "time_slot": "20:00",
+    "week": 3,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 35,
+    "date": "15/08/2026",
+    "day_name": "Samedi",
+    "time_slot": "09:00",
+    "week": 3,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 36,
+    "date": "15/08/2026",
+    "day_name": "Samedi",
+    "time_slot": "12:00",
+    "week": 3,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 37,
+    "date": "15/08/2026",
+    "day_name": "Samedi",
+    "time_slot": "20:00",
+    "week": 3,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 38,
+    "date": "16/08/2026",
+    "day_name": "Dimanche",
+    "time_slot": "09:00",
+    "week": 3,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 39,
+    "date": "16/08/2026",
+    "day_name": "Dimanche",
+    "time_slot": "12:00",
+    "week": 3,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 40,
+    "date": "16/08/2026",
+    "day_name": "Dimanche",
+    "time_slot": "20:00",
+    "week": 3,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 41,
+    "date": "17/08/2026",
+    "day_name": "Lundi",
+    "time_slot": "09:00",
+    "week": 3,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 42,
+    "date": "17/08/2026",
+    "day_name": "Lundi",
+    "time_slot": "12:00",
+    "week": 3,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 43,
+    "date": "17/08/2026",
+    "day_name": "Lundi",
+    "time_slot": "20:00",
+    "week": 3,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 44,
+    "date": "18/08/2026",
+    "day_name": "Mardi",
+    "time_slot": "09:00",
+    "week": 3,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 45,
+    "date": "18/08/2026",
+    "day_name": "Mardi",
+    "time_slot": "12:00",
+    "week": 3,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 46,
+    "date": "18/08/2026",
+    "day_name": "Mardi",
+    "time_slot": "20:00",
+    "week": 3,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 47,
+    "date": "19/08/2026",
+    "day_name": "Mercredi",
+    "time_slot": "09:00",
+    "week": 3,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 48,
+    "date": "19/08/2026",
+    "day_name": "Mercredi",
+    "time_slot": "12:00",
+    "week": 3,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 49,
+    "date": "19/08/2026",
+    "day_name": "Mercredi",
+    "time_slot": "20:00",
+    "week": 3,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 50,
+    "date": "20/08/2026",
+    "day_name": "Jeudi",
+    "time_slot": "09:00",
+    "week": 4,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 51,
+    "date": "20/08/2026",
+    "day_name": "Jeudi",
+    "time_slot": "12:00",
+    "week": 4,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 52,
+    "date": "20/08/2026",
+    "day_name": "Jeudi",
+    "time_slot": "20:00",
+    "week": 4,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 53,
+    "date": "21/08/2026",
+    "day_name": "Vendredi",
+    "time_slot": "09:00",
+    "week": 4,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 54,
+    "date": "21/08/2026",
+    "day_name": "Vendredi",
+    "time_slot": "12:00",
+    "week": 4,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 55,
+    "date": "21/08/2026",
+    "day_name": "Vendredi",
+    "time_slot": "20:00",
+    "week": 4,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 56,
+    "date": "22/08/2026",
+    "day_name": "Samedi",
+    "time_slot": "09:00",
+    "week": 4,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 57,
+    "date": "22/08/2026",
+    "day_name": "Samedi",
+    "time_slot": "12:00",
+    "week": 4,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 58,
+    "date": "22/08/2026",
+    "day_name": "Samedi",
+    "time_slot": "20:00",
+    "week": 4,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 59,
+    "date": "23/08/2026",
+    "day_name": "Dimanche",
+    "time_slot": "09:00",
+    "week": 4,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 60,
+    "date": "23/08/2026",
+    "day_name": "Dimanche",
+    "time_slot": "12:00",
+    "week": 4,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 61,
+    "date": "23/08/2026",
+    "day_name": "Dimanche",
+    "time_slot": "20:00",
+    "week": 4,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 62,
+    "date": "24/08/2026",
+    "day_name": "Lundi",
+    "time_slot": "09:00",
+    "week": 4,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 63,
+    "date": "24/08/2026",
+    "day_name": "Lundi",
+    "time_slot": "12:00",
+    "week": 4,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 64,
+    "date": "24/08/2026",
+    "day_name": "Lundi",
+    "time_slot": "20:00",
+    "week": 4,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 65,
+    "date": "25/08/2026",
+    "day_name": "Mardi",
+    "time_slot": "09:00",
+    "week": 4,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 66,
+    "date": "25/08/2026",
+    "day_name": "Mardi",
+    "time_slot": "12:00",
+    "week": 4,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 67,
+    "date": "25/08/2026",
+    "day_name": "Mardi",
+    "time_slot": "20:00",
+    "week": 4,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 68,
+    "date": "26/08/2026",
+    "day_name": "Mercredi",
+    "time_slot": "09:00",
+    "week": 4,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 69,
+    "date": "26/08/2026",
+    "day_name": "Mercredi",
+    "time_slot": "12:00",
+    "week": 4,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 70,
+    "date": "26/08/2026",
+    "day_name": "Mercredi",
+    "time_slot": "20:00",
+    "week": 4,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 71,
+    "date": "27/08/2026",
+    "day_name": "Jeudi",
+    "time_slot": "09:00",
+    "week": 5,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 72,
+    "date": "27/08/2026",
+    "day_name": "Jeudi",
+    "time_slot": "12:00",
+    "week": 5,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 73,
+    "date": "27/08/2026",
+    "day_name": "Jeudi",
+    "time_slot": "20:00",
+    "week": 5,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 74,
+    "date": "28/08/2026",
+    "day_name": "Vendredi",
+    "time_slot": "09:00",
+    "week": 5,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 75,
+    "date": "28/08/2026",
+    "day_name": "Vendredi",
+    "time_slot": "12:00",
+    "week": 5,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 76,
+    "date": "28/08/2026",
+    "day_name": "Vendredi",
+    "time_slot": "20:00",
+    "week": 5,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 77,
+    "date": "29/08/2026",
+    "day_name": "Samedi",
+    "time_slot": "09:00",
+    "week": 5,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 78,
+    "date": "29/08/2026",
+    "day_name": "Samedi",
+    "time_slot": "12:00",
+    "week": 5,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 79,
+    "date": "29/08/2026",
+    "day_name": "Samedi",
+    "time_slot": "20:00",
+    "week": 5,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 80,
+    "date": "30/08/2026",
+    "day_name": "Dimanche",
+    "time_slot": "09:00",
+    "week": 5,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 81,
+    "date": "30/08/2026",
+    "day_name": "Dimanche",
+    "time_slot": "12:00",
+    "week": 5,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 82,
+    "date": "30/08/2026",
+    "day_name": "Dimanche",
+    "time_slot": "20:00",
+    "week": 5,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 83,
+    "date": "31/08/2026",
+    "day_name": "Lundi",
+    "time_slot": "09:00",
+    "week": 5,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 84,
+    "date": "31/08/2026",
+    "day_name": "Lundi",
+    "time_slot": "12:00",
+    "week": 5,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 85,
+    "date": "31/08/2026",
+    "day_name": "Lundi",
+    "time_slot": "20:00",
+    "week": 5,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 86,
+    "date": "01/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "09:00",
+    "week": 5,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 87,
+    "date": "01/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "12:00",
+    "week": 5,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 88,
+    "date": "01/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "20:00",
+    "week": 5,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 89,
+    "date": "02/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "09:00",
+    "week": 5,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 90,
+    "date": "02/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "12:00",
+    "week": 5,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 91,
+    "date": "02/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "20:00",
+    "week": 5,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 92,
+    "date": "03/09/2026",
+    "day_name": "Jeudi",
+    "time_slot": "09:00",
+    "week": 6,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 93,
+    "date": "03/09/2026",
+    "day_name": "Jeudi",
+    "time_slot": "12:00",
+    "week": 6,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 94,
+    "date": "03/09/2026",
+    "day_name": "Jeudi",
+    "time_slot": "20:00",
+    "week": 6,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 95,
+    "date": "04/09/2026",
+    "day_name": "Vendredi",
+    "time_slot": "09:00",
+    "week": 6,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 96,
+    "date": "04/09/2026",
+    "day_name": "Vendredi",
+    "time_slot": "12:00",
+    "week": 6,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 97,
+    "date": "04/09/2026",
+    "day_name": "Vendredi",
+    "time_slot": "20:00",
+    "week": 6,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 98,
+    "date": "05/09/2026",
+    "day_name": "Samedi",
+    "time_slot": "09:00",
+    "week": 6,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 99,
+    "date": "05/09/2026",
+    "day_name": "Samedi",
+    "time_slot": "12:00",
+    "week": 6,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 100,
+    "date": "05/09/2026",
+    "day_name": "Samedi",
+    "time_slot": "20:00",
+    "week": 6,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 101,
+    "date": "06/09/2026",
+    "day_name": "Dimanche",
+    "time_slot": "09:00",
+    "week": 6,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 102,
+    "date": "06/09/2026",
+    "day_name": "Dimanche",
+    "time_slot": "12:00",
+    "week": 6,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 103,
+    "date": "06/09/2026",
+    "day_name": "Dimanche",
+    "time_slot": "20:00",
+    "week": 6,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 104,
+    "date": "07/09/2026",
+    "day_name": "Lundi",
+    "time_slot": "09:00",
+    "week": 6,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 105,
+    "date": "07/09/2026",
+    "day_name": "Lundi",
+    "time_slot": "12:00",
+    "week": 6,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 106,
+    "date": "07/09/2026",
+    "day_name": "Lundi",
+    "time_slot": "20:00",
+    "week": 6,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 107,
+    "date": "08/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "09:00",
+    "week": 6,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 108,
+    "date": "08/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "12:00",
+    "week": 6,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 109,
+    "date": "08/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "20:00",
+    "week": 6,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 110,
+    "date": "09/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "09:00",
+    "week": 6,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 111,
+    "date": "09/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "12:00",
+    "week": 6,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 112,
+    "date": "09/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "20:00",
+    "week": 6,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 113,
+    "date": "10/09/2026",
+    "day_name": "Jeudi",
+    "time_slot": "09:00",
+    "week": 7,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 114,
+    "date": "10/09/2026",
+    "day_name": "Jeudi",
+    "time_slot": "12:00",
+    "week": 7,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 115,
+    "date": "10/09/2026",
+    "day_name": "Jeudi",
+    "time_slot": "20:00",
+    "week": 7,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 116,
+    "date": "11/09/2026",
+    "day_name": "Vendredi",
+    "time_slot": "09:00",
+    "week": 7,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 117,
+    "date": "11/09/2026",
+    "day_name": "Vendredi",
+    "time_slot": "12:00",
+    "week": 7,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 118,
+    "date": "11/09/2026",
+    "day_name": "Vendredi",
+    "time_slot": "20:00",
+    "week": 7,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 119,
+    "date": "12/09/2026",
+    "day_name": "Samedi",
+    "time_slot": "09:00",
+    "week": 7,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 120,
+    "date": "12/09/2026",
+    "day_name": "Samedi",
+    "time_slot": "12:00",
+    "week": 7,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 121,
+    "date": "12/09/2026",
+    "day_name": "Samedi",
+    "time_slot": "20:00",
+    "week": 7,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 122,
+    "date": "13/09/2026",
+    "day_name": "Dimanche",
+    "time_slot": "09:00",
+    "week": 7,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 123,
+    "date": "13/09/2026",
+    "day_name": "Dimanche",
+    "time_slot": "12:00",
+    "week": 7,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 124,
+    "date": "13/09/2026",
+    "day_name": "Dimanche",
+    "time_slot": "20:00",
+    "week": 7,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 125,
+    "date": "14/09/2026",
+    "day_name": "Lundi",
+    "time_slot": "09:00",
+    "week": 7,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 126,
+    "date": "14/09/2026",
+    "day_name": "Lundi",
+    "time_slot": "12:00",
+    "week": 7,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 127,
+    "date": "14/09/2026",
+    "day_name": "Lundi",
+    "time_slot": "20:00",
+    "week": 7,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 128,
+    "date": "15/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "09:00",
+    "week": 7,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 129,
+    "date": "15/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "12:00",
+    "week": 7,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 130,
+    "date": "15/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "20:00",
+    "week": 7,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 131,
+    "date": "16/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "09:00",
+    "week": 7,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 132,
+    "date": "16/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "12:00",
+    "week": 7,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 133,
+    "date": "16/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "20:00",
+    "week": 7,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 134,
+    "date": "17/09/2026",
+    "day_name": "Jeudi",
+    "time_slot": "09:00",
+    "week": 8,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 135,
+    "date": "17/09/2026",
+    "day_name": "Jeudi",
+    "time_slot": "12:00",
+    "week": 8,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 136,
+    "date": "17/09/2026",
+    "day_name": "Jeudi",
+    "time_slot": "20:00",
+    "week": 8,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 137,
+    "date": "18/09/2026",
+    "day_name": "Vendredi",
+    "time_slot": "09:00",
+    "week": 8,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 138,
+    "date": "18/09/2026",
+    "day_name": "Vendredi",
+    "time_slot": "12:00",
+    "week": 8,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 139,
+    "date": "18/09/2026",
+    "day_name": "Vendredi",
+    "time_slot": "20:00",
+    "week": 8,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 140,
+    "date": "19/09/2026",
+    "day_name": "Samedi",
+    "time_slot": "09:00",
+    "week": 8,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 141,
+    "date": "19/09/2026",
+    "day_name": "Samedi",
+    "time_slot": "12:00",
+    "week": 8,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 142,
+    "date": "19/09/2026",
+    "day_name": "Samedi",
+    "time_slot": "20:00",
+    "week": 8,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 143,
+    "date": "20/09/2026",
+    "day_name": "Dimanche",
+    "time_slot": "09:00",
+    "week": 8,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 144,
+    "date": "20/09/2026",
+    "day_name": "Dimanche",
+    "time_slot": "12:00",
+    "week": 8,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 145,
+    "date": "20/09/2026",
+    "day_name": "Dimanche",
+    "time_slot": "20:00",
+    "week": 8,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 146,
+    "date": "21/09/2026",
+    "day_name": "Lundi",
+    "time_slot": "09:00",
+    "week": 8,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 147,
+    "date": "21/09/2026",
+    "day_name": "Lundi",
+    "time_slot": "12:00",
+    "week": 8,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 148,
+    "date": "21/09/2026",
+    "day_name": "Lundi",
+    "time_slot": "20:00",
+    "week": 8,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 149,
+    "date": "22/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "09:00",
+    "week": 8,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 150,
+    "date": "22/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "12:00",
+    "week": 8,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 151,
+    "date": "22/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "20:00",
+    "week": 8,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 152,
+    "date": "23/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "09:00",
+    "week": 8,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 153,
+    "date": "23/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "12:00",
+    "week": 8,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 154,
+    "date": "23/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "20:00",
+    "week": 8,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 155,
+    "date": "24/09/2026",
+    "day_name": "Jeudi",
+    "time_slot": "09:00",
+    "week": 9,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 156,
+    "date": "24/09/2026",
+    "day_name": "Jeudi",
+    "time_slot": "12:00",
+    "week": 9,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 157,
+    "date": "24/09/2026",
+    "day_name": "Jeudi",
+    "time_slot": "20:00",
+    "week": 9,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 158,
+    "date": "25/09/2026",
+    "day_name": "Vendredi",
+    "time_slot": "09:00",
+    "week": 9,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 159,
+    "date": "25/09/2026",
+    "day_name": "Vendredi",
+    "time_slot": "12:00",
+    "week": 9,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 160,
+    "date": "25/09/2026",
+    "day_name": "Vendredi",
+    "time_slot": "20:00",
+    "week": 9,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 161,
+    "date": "26/09/2026",
+    "day_name": "Samedi",
+    "time_slot": "09:00",
+    "week": 9,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 162,
+    "date": "26/09/2026",
+    "day_name": "Samedi",
+    "time_slot": "12:00",
+    "week": 9,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 163,
+    "date": "26/09/2026",
+    "day_name": "Samedi",
+    "time_slot": "20:00",
+    "week": 9,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 164,
+    "date": "27/09/2026",
+    "day_name": "Dimanche",
+    "time_slot": "09:00",
+    "week": 9,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 165,
+    "date": "27/09/2026",
+    "day_name": "Dimanche",
+    "time_slot": "12:00",
+    "week": 9,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 166,
+    "date": "27/09/2026",
+    "day_name": "Dimanche",
+    "time_slot": "20:00",
+    "week": 9,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 167,
+    "date": "28/09/2026",
+    "day_name": "Lundi",
+    "time_slot": "09:00",
+    "week": 9,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 168,
+    "date": "28/09/2026",
+    "day_name": "Lundi",
+    "time_slot": "12:00",
+    "week": 9,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 169,
+    "date": "28/09/2026",
+    "day_name": "Lundi",
+    "time_slot": "20:00",
+    "week": 9,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 170,
+    "date": "29/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "09:00",
+    "week": 9,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 171,
+    "date": "29/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "12:00",
+    "week": 9,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 172,
+    "date": "29/09/2026",
+    "day_name": "Mardi",
+    "time_slot": "20:00",
+    "week": 9,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 173,
+    "date": "30/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "09:00",
+    "week": 9,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 174,
+    "date": "30/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "12:00",
+    "week": 9,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 175,
+    "date": "30/09/2026",
+    "day_name": "Mercredi",
+    "time_slot": "20:00",
+    "week": 9,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 176,
+    "date": "01/10/2026",
+    "day_name": "Jeudi",
+    "time_slot": "09:00",
+    "week": 10,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 177,
+    "date": "01/10/2026",
+    "day_name": "Jeudi",
+    "time_slot": "12:00",
+    "week": 10,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 178,
+    "date": "01/10/2026",
+    "day_name": "Jeudi",
+    "time_slot": "20:00",
+    "week": 10,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 179,
+    "date": "02/10/2026",
+    "day_name": "Vendredi",
+    "time_slot": "09:00",
+    "week": 10,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 180,
+    "date": "02/10/2026",
+    "day_name": "Vendredi",
+    "time_slot": "12:00",
+    "week": 10,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 181,
+    "date": "02/10/2026",
+    "day_name": "Vendredi",
+    "time_slot": "20:00",
+    "week": 10,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 182,
+    "date": "03/10/2026",
+    "day_name": "Samedi",
+    "time_slot": "09:00",
+    "week": 10,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 183,
+    "date": "03/10/2026",
+    "day_name": "Samedi",
+    "time_slot": "12:00",
+    "week": 10,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 184,
+    "date": "03/10/2026",
+    "day_name": "Samedi",
+    "time_slot": "20:00",
+    "week": 10,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 185,
+    "date": "04/10/2026",
+    "day_name": "Dimanche",
+    "time_slot": "09:00",
+    "week": 10,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 186,
+    "date": "04/10/2026",
+    "day_name": "Dimanche",
+    "time_slot": "12:00",
+    "week": 10,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 187,
+    "date": "04/10/2026",
+    "day_name": "Dimanche",
+    "time_slot": "20:00",
+    "week": 10,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 188,
+    "date": "05/10/2026",
+    "day_name": "Lundi",
+    "time_slot": "09:00",
+    "week": 10,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 189,
+    "date": "05/10/2026",
+    "day_name": "Lundi",
+    "time_slot": "12:00",
+    "week": 10,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 190,
+    "date": "05/10/2026",
+    "day_name": "Lundi",
+    "time_slot": "20:00",
+    "week": 10,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 191,
+    "date": "06/10/2026",
+    "day_name": "Mardi",
+    "time_slot": "09:00",
+    "week": 10,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 192,
+    "date": "06/10/2026",
+    "day_name": "Mardi",
+    "time_slot": "12:00",
+    "week": 10,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 193,
+    "date": "06/10/2026",
+    "day_name": "Mardi",
+    "time_slot": "20:00",
+    "week": 10,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 194,
+    "date": "07/10/2026",
+    "day_name": "Mercredi",
+    "time_slot": "09:00",
+    "week": 10,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 195,
+    "date": "07/10/2026",
+    "day_name": "Mercredi",
+    "time_slot": "12:00",
+    "week": 10,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 196,
+    "date": "07/10/2026",
+    "day_name": "Mercredi",
+    "time_slot": "20:00",
+    "week": 10,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 197,
+    "date": "08/10/2026",
+    "day_name": "Jeudi",
+    "time_slot": "09:00",
+    "week": 11,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 198,
+    "date": "08/10/2026",
+    "day_name": "Jeudi",
+    "time_slot": "12:00",
+    "week": 11,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 199,
+    "date": "08/10/2026",
+    "day_name": "Jeudi",
+    "time_slot": "20:00",
+    "week": 11,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 200,
+    "date": "09/10/2026",
+    "day_name": "Vendredi",
+    "time_slot": "09:00",
+    "week": 11,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 201,
+    "date": "09/10/2026",
+    "day_name": "Vendredi",
+    "time_slot": "12:00",
+    "week": 11,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 202,
+    "date": "09/10/2026",
+    "day_name": "Vendredi",
+    "time_slot": "20:00",
+    "week": 11,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 203,
+    "date": "10/10/2026",
+    "day_name": "Samedi",
+    "time_slot": "09:00",
+    "week": 11,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 204,
+    "date": "10/10/2026",
+    "day_name": "Samedi",
+    "time_slot": "12:00",
+    "week": 11,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 205,
+    "date": "10/10/2026",
+    "day_name": "Samedi",
+    "time_slot": "20:00",
+    "week": 11,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 206,
+    "date": "11/10/2026",
+    "day_name": "Dimanche",
+    "time_slot": "09:00",
+    "week": 11,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 207,
+    "date": "11/10/2026",
+    "day_name": "Dimanche",
+    "time_slot": "12:00",
+    "week": 11,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 208,
+    "date": "11/10/2026",
+    "day_name": "Dimanche",
+    "time_slot": "20:00",
+    "week": 11,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 209,
+    "date": "12/10/2026",
+    "day_name": "Lundi",
+    "time_slot": "09:00",
+    "week": 11,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 210,
+    "date": "12/10/2026",
+    "day_name": "Lundi",
+    "time_slot": "12:00",
+    "week": 11,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 211,
+    "date": "12/10/2026",
+    "day_name": "Lundi",
+    "time_slot": "20:00",
+    "week": 11,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 212,
+    "date": "13/10/2026",
+    "day_name": "Mardi",
+    "time_slot": "09:00",
+    "week": 11,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 213,
+    "date": "13/10/2026",
+    "day_name": "Mardi",
+    "time_slot": "12:00",
+    "week": 11,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 214,
+    "date": "13/10/2026",
+    "day_name": "Mardi",
+    "time_slot": "20:00",
+    "week": 11,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 215,
+    "date": "14/10/2026",
+    "day_name": "Mercredi",
+    "time_slot": "09:00",
+    "week": 11,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 216,
+    "date": "14/10/2026",
+    "day_name": "Mercredi",
+    "time_slot": "12:00",
+    "week": 11,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 217,
+    "date": "14/10/2026",
+    "day_name": "Mercredi",
+    "time_slot": "20:00",
+    "week": 11,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 218,
+    "date": "15/10/2026",
+    "day_name": "Jeudi",
+    "time_slot": "09:00",
+    "week": 12,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 219,
+    "date": "15/10/2026",
+    "day_name": "Jeudi",
+    "time_slot": "12:00",
+    "week": 12,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 220,
+    "date": "15/10/2026",
+    "day_name": "Jeudi",
+    "time_slot": "20:00",
+    "week": 12,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 221,
+    "date": "16/10/2026",
+    "day_name": "Vendredi",
+    "time_slot": "09:00",
+    "week": 12,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 222,
+    "date": "16/10/2026",
+    "day_name": "Vendredi",
+    "time_slot": "12:00",
+    "week": 12,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 223,
+    "date": "16/10/2026",
+    "day_name": "Vendredi",
+    "time_slot": "20:00",
+    "week": 12,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 224,
+    "date": "17/10/2026",
+    "day_name": "Samedi",
+    "time_slot": "09:00",
+    "week": 12,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 225,
+    "date": "17/10/2026",
+    "day_name": "Samedi",
+    "time_slot": "12:00",
+    "week": 12,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 226,
+    "date": "17/10/2026",
+    "day_name": "Samedi",
+    "time_slot": "20:00",
+    "week": 12,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 227,
+    "date": "18/10/2026",
+    "day_name": "Dimanche",
+    "time_slot": "09:00",
+    "week": 12,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 228,
+    "date": "18/10/2026",
+    "day_name": "Dimanche",
+    "time_slot": "12:00",
+    "week": 12,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 229,
+    "date": "18/10/2026",
+    "day_name": "Dimanche",
+    "time_slot": "20:00",
+    "week": 12,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 230,
+    "date": "19/10/2026",
+    "day_name": "Lundi",
+    "time_slot": "09:00",
+    "week": 12,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 231,
+    "date": "19/10/2026",
+    "day_name": "Lundi",
+    "time_slot": "12:00",
+    "week": 12,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 232,
+    "date": "19/10/2026",
+    "day_name": "Lundi",
+    "time_slot": "20:00",
+    "week": 12,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 233,
+    "date": "20/10/2026",
+    "day_name": "Mardi",
+    "time_slot": "09:00",
+    "week": 12,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 234,
+    "date": "20/10/2026",
+    "day_name": "Mardi",
+    "time_slot": "12:00",
+    "week": 12,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 235,
+    "date": "20/10/2026",
+    "day_name": "Mardi",
+    "time_slot": "20:00",
+    "week": 12,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 236,
+    "date": "21/10/2026",
+    "day_name": "Mercredi",
+    "time_slot": "09:00",
+    "week": 12,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 237,
+    "date": "21/10/2026",
+    "day_name": "Mercredi",
+    "time_slot": "12:00",
+    "week": 12,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 238,
+    "date": "21/10/2026",
+    "day_name": "Mercredi",
+    "time_slot": "20:00",
+    "week": 12,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 239,
+    "date": "22/10/2026",
+    "day_name": "Jeudi",
+    "time_slot": "09:00",
+    "week": 13,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 240,
+    "date": "22/10/2026",
+    "day_name": "Jeudi",
+    "time_slot": "12:00",
+    "week": 13,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 241,
+    "date": "22/10/2026",
+    "day_name": "Jeudi",
+    "time_slot": "20:00",
+    "week": 13,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 242,
+    "date": "23/10/2026",
+    "day_name": "Vendredi",
+    "time_slot": "09:00",
+    "week": 13,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 243,
+    "date": "23/10/2026",
+    "day_name": "Vendredi",
+    "time_slot": "12:00",
+    "week": 13,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 244,
+    "date": "23/10/2026",
+    "day_name": "Vendredi",
+    "time_slot": "20:00",
+    "week": 13,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 245,
+    "date": "24/10/2026",
+    "day_name": "Samedi",
+    "time_slot": "09:00",
+    "week": 13,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 246,
+    "date": "24/10/2026",
+    "day_name": "Samedi",
+    "time_slot": "12:00",
+    "week": 13,
+    "category": "Optimisation des Conversions (CRO)",
+    "title": "Optimisation des Conversions (CRO) au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 247,
+    "date": "24/10/2026",
+    "day_name": "Samedi",
+    "time_slot": "20:00",
+    "week": 13,
+    "category": "Emailing & Automation",
+    "title": "Emailing & Automation au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 248,
+    "date": "25/10/2026",
+    "day_name": "Dimanche",
+    "time_slot": "09:00",
+    "week": 13,
+    "category": "Stratégie Digitale",
+    "title": "Stratégie Digitale au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  },
+  {
+    "post_id": 249,
+    "date": "25/10/2026",
+    "day_name": "Dimanche",
+    "time_slot": "12:00",
+    "week": 13,
+    "category": "Affichage Dynamique",
+    "title": "Affichage Dynamique au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)"
+  },
+  {
+    "post_id": 250,
+    "date": "25/10/2026",
+    "day_name": "Dimanche",
+    "time_slot": "20:00",
+    "week": 13,
+    "category": "Audit Digital",
+    "title": "Audit Digital au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc"
+  },
+  {
+    "post_id": 251,
+    "date": "26/10/2026",
+    "day_name": "Lundi",
+    "time_slot": "09:00",
+    "week": 13,
+    "category": "Design & Impression",
+    "title": "Design & Impression au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc"
+  },
+  {
+    "post_id": 252,
+    "date": "26/10/2026",
+    "day_name": "Lundi",
+    "time_slot": "12:00",
+    "week": 13,
+    "category": "Développement Web & Mobile",
+    "title": "Développement Web & Mobile au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants"
+  },
+  {
+    "post_id": 253,
+    "date": "26/10/2026",
+    "day_name": "Lundi",
+    "time_slot": "20:00",
+    "week": 13,
+    "category": "Formations & Master Classes",
+    "title": "Formations & Master Classes au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc"
+  },
+  {
+    "post_id": 254,
+    "date": "27/10/2026",
+    "day_name": "Mardi",
+    "time_slot": "09:00",
+    "week": 13,
+    "category": "Google Ads & SEA",
+    "title": "Google Ads & SEA au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat"
+  },
+  {
+    "post_id": 255,
+    "date": "27/10/2026",
+    "day_name": "Mardi",
+    "time_slot": "12:00",
+    "week": 13,
+    "category": "Meta Ads & Social Ads",
+    "title": "Meta Ads & Social Ads au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)"
+  },
+  {
+    "post_id": 256,
+    "date": "27/10/2026",
+    "day_name": "Mardi",
+    "time_slot": "20:00",
+    "week": 13,
+    "category": "Référencement Naturel (SEO)",
+    "title": "Référencement Naturel (SEO) au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc"
+  }
+]
