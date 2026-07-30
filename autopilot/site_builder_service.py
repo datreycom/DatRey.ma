@@ -29,182 +29,246 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
   <link rel="stylesheet" href="../style.css">
   
   <style>
-    :root {{
-      --bg-main: #ffffff;
+    :root {
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
       --text-main: #0f172a;
       --text-muted: #475569;
-      --card-bg: #f8fafc;
       --accent: #2563eb;
       --border-color: #e2e8f0;
-    }}
-    body {{
+    }
+    [data-theme="dark"] {
+      --bg-main: #050814;
+      --card-bg: #0a0f1f;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #3b82f6;
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+    body {
       background-color: var(--bg-main) !important;
       color: var(--text-main) !important;
-      font-family: 'Inter', sans-serif;
-      line-height: 1.8;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.85;
       margin: 0;
       padding: 0;
       width: 100%;
-    }}
-    .site-header {{
-      background: #ffffff;
-      border-bottom: 1px solid #e2e8f0;
+    }
+    .site-header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
       z-index: 1000;
       padding: 16px 0;
       width: 100%;
-    }}
-    .site-header-container {{
-      max-width: 1320px;
+    }
+    [data-theme="dark"] .site-header {
+      background: rgba(10, 15, 31, 0.95);
+    }
+    .site-header-container {
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 0 4%;
+      padding: 0 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }}
-    .site-logo {{
+    }
+    .site-logo {
       display: flex;
       align-items: center;
       gap: 10px;
       font-weight: 700;
-      font-size: 1.4rem;
-      color: #0f172a;
+      font-size: 1.35rem;
+      color: var(--text-main);
       text-decoration: none;
-    }}
-    .site-nav {{
+    }
+    .site-nav {
       display: flex;
       align-items: center;
       gap: 28px;
-    }}
-    .site-nav a {{
-      color: #475569;
+    }
+    .site-nav a {
+      color: var(--text-muted);
       font-weight: 500;
       text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.2s ease;
-    }}
-    .site-nav a:hover {{
-      color: #2563eb;
-    }}
-    .article-container {{
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 52px 4%;
-      width: 92%;
-    }}
-    .hero-title {{
-      font-family: 'DM Serif Display', serif;
-      font-size: 3.1rem;
-      line-height: 1.2;
-      color: #0f172a !important;
-      margin-top: 16px;
-      margin-bottom: 20px;
-    }}
-    .hero-meta {{
       font-size: 0.95rem;
-      color: #64748b;
-      margin-bottom: 32px;
-    }}
-    .article-hero-img-wrap {{
-      margin-bottom: 44px;
+      transition: color 0.2s ease;
+    }
+    .site-nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Boxed Outer Layout */
+    .article-outer-wrapper {
+      background-color: var(--bg-main);
+      padding: 48px 20px 80px 20px;
+      min-height: 85vh;
+    }
+    .article-card-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      box-shadow: 0 12px 48px rgba(15, 23, 42, 0.05);
+      padding: 56px 64px;
+      box-sizing: border-box;
+    }
+
+    /* Centered Header Elements */
+    .article-header-centered {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .category-badge {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.08);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 6px 20px;
       border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.6rem;
+      line-height: 1.25;
+      color: var(--text-main) !important;
+      margin: 0 auto 20px auto;
+      max-width: 800px;
+      text-align: center;
+    }
+    .hero-meta {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 0;
+    }
+
+    /* Boxed Featured Image */
+    .article-hero-img-wrap {
+      margin: 0 auto 48px auto;
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
-      width: 100%;
-    }}
-    .article-hero-img-wrap img {{
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+      border: 1px solid var(--border-color);
+      max-width: 100%;
+    }
+    .article-hero-img-wrap img {
       width: 100%;
       height: auto;
-      max-height: 560px;
+      max-height: 460px;
       object-fit: cover;
       display: block;
-    }}
-    .blog-content {{
-      width: 100%;
-      max-width: 100%;
-    }}
-    .blog-content h2 {{
+    }
+
+    /* Reading Content Area (Centered Optimal Line Width 780px) */
+    .blog-content {
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: 1.125rem;
+      color: var(--text-main);
+    }
+    .blog-content h2 {
       font-family: 'DM Serif Display', serif;
-      font-size: 2.1rem;
-      color: #0f172a !important;
-      margin-top: 48px;
-      margin-bottom: 18px;
-    }}
-    .blog-content h3 {{
-      font-size: 1.45rem;
-      color: #1e293b !important;
-      margin-top: 32px;
-      margin-bottom: 14px;
-    }}
-    .blog-content p {{
-      font-size: 1.15rem;
-      color: #334155 !important;
-      margin-bottom: 24px;
-      line-height: 1.85;
-    }}
-    .blog-content ul, .blog-content ol {{
+      font-size: 2.0rem;
+      color: var(--text-main) !important;
+      margin-top: 52px;
+      margin-bottom: 20px;
+      line-height: 1.3;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-color);
+    }
+    .blog-content h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-main) !important;
+      margin-top: 36px;
+      margin-bottom: 16px;
+    }
+    .blog-content p {
+      font-size: 1.125rem;
+      color: var(--text-muted) !important;
       margin-bottom: 28px;
+      line-height: 1.85;
+    }
+    .blog-content ul, .blog-content ol {
+      margin-bottom: 32px;
       padding-left: 28px;
-      color: #334155 !important;
-    }}
-    .blog-content li {{
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-    }}
-    .article-body-img-wrap {{
-      margin: 48px 0;
+      color: var(--text-muted) !important;
+      line-height: 1.8;
+    }
+    .blog-content li {
+      margin-bottom: 12px;
+      font-size: 1.08rem;
+    }
+    
+    /* Boxed In-Body Images with Controlled Spacing */
+    .article-body-img-wrap {
+      margin: 48px auto;
+      max-width: 100%;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.06);
-      background-color: #f1f5f9;
-      width: 100%;
-    }}
-    .article-body-img-wrap img {{
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.07);
+      border: 1px solid var(--border-color);
+      background-color: var(--card-bg);
+    }
+    .article-body-img-wrap img {
       width: 100%;
       height: auto;
-      max-height: 540px;
+      max-height: 440px;
       object-fit: cover;
       display: block;
-    }}
-    .geo-definition, .geo-definition-box {{
-      background: #f8fafc !important;
-      border: 1px solid #e2e8f0 !important;
-      border-left: 5px solid #2563eb !important;
-      padding: 24px 28px !important;
-      border-radius: 12px !important;
-      margin: 32px 0 !important;
+    }
+
+    /* GEO / Definition Box */
+    .geo-definition, .geo-definition-box, .article-geo-definition {
+      background: rgba(37, 99, 235, 0.05) !important;
+      border: 1px solid var(--border-color) !important;
+      border-left: 4px solid var(--accent) !important;
+      padding: 24px 30px !important;
+      border-radius: 14px !important;
+      margin: 36px 0 !important;
       font-size: 1.1rem !important;
-      line-height: 1.75 !important;
-      color: #0f172a !important;
-      width: 100%;
+      line-height: 1.8 !important;
+      color: var(--text-main) !important;
       box-sizing: border-box;
-    }}
-    .geo-definition strong, .geo-definition-box strong {{
-      color: #2563eb !important;
-    }}
-    .cta-article-box {{
-      background: #0f172a;
+    }
+
+    /* CTA Box */
+    .cta-article-box {
+      background: linear-gradient(135deg, #0a0f1f 0%, #1e293b 100%);
       color: #ffffff;
-      padding: 44px 36px;
+      padding: 48px 36px;
       border-radius: 20px;
       margin-top: 60px;
       text-align: center;
-      width: 100%;
+      box-shadow: 0 16px 40px rgba(10, 15, 31, 0.15);
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
       box-sizing: border-box;
-    }}
-    .cta-article-box h3 {{
+    }
+    .cta-article-box h3 {
       color: #ffffff !important;
       font-family: 'DM Serif Display', serif;
       font-size: 2.1rem;
-      margin-bottom: 14px;
-    }}
-    .cta-article-box p {{
+      margin: 0 0 14px 0;
+    }
+    .cta-article-box p {
       color: #94a3b8 !important;
       font-size: 1.1rem;
-      margin-bottom: 28px;
-    }}
-    .cta-btn {{
+      margin: 0 0 28px 0;
+    }
+    .cta-btn {
       display: inline-block;
       background: #2563eb;
       color: #ffffff !important;
@@ -212,38 +276,44 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
       padding: 14px 32px;
       border-radius: 8px;
       text-decoration: none;
-      transition: background 0.2s ease;
+      transition: background 0.2s ease, transform 0.2s ease;
       font-size: 1rem;
-    }}
-    .cta-btn:hover {{
+    }
+    .cta-btn:hover {
       background: #1d4ed8;
-    }}
-    @media (max-width: 768px) {{
-      .hero-title {{ font-size: 2.2rem; }}
-      .site-nav {{ display: none; }}
-      .article-container {{ width: 95%; padding: 24px 12px; }}
-    }}
+      transform: translateY(-2px);
+    }
+
+    /* Responsive Mobile Boxed Padding */
+    @media (max-width: 768px) {
+      .article-outer-wrapper { padding: 16px 12px 40px 12px; }
+      .article-card-box { padding: 32px 20px; border-radius: 16px; }
+      .hero-title { font-size: 1.95rem; }
+      .site-nav { display: none; }
+      .blog-content h2 { font-size: 1.65rem; }
+      .cta-article-box { padding: 32px 20px; }
+    }
   </style>
 
   <!-- Schema.org BlogPosting -->
   <script type="application/ld+json">
-  {{
+  {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "{title}",
     "description": "{description}",
     "image": "https://datrey.ma/assets/blog/{slug}-1.webp",
-    "publisher": {{
+    "publisher": {
       "@type": "Organization",
       "name": "DatRey SARL",
-      "logo": {{
+      "logo": {
         "@type": "ImageObject",
-        "url": "https://datrey.ma/assets/logo.png"
-      }}
-    }},
+        "url": "https://datrey.ma/assets/logo.webp"
+      }
+    },
     "url": "https://datrey.ma/blog/{slug}.html",
     "inLanguage": "fr-MA"
-  }}
+  }
   </script>
 
   <!-- Meta Facebook Pixel Code -->
@@ -278,22 +348,28 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
     </div>
   </header>
 
-  <main>
-    <div class="article-container">
-      <div style="margin-bottom: 14px;">
-        <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.9rem; padding:6px 16px; border-radius:20px;">{category}</span>
+  <main class="article-outer-wrapper">
+    <div class="article-card-box">
+      <!-- Centered Header Section -->
+      <div class="article-header-centered">
+        <span class="category-badge">{category}</span>
+        <h1 class="hero-title">{title}</h1>
+        <div class="hero-meta">
+          <span>Par l'équipe DatRey</span> • <span>Temps de lecture : ~6 min</span>
+        </div>
       </div>
-      <h1 class="hero-title">{title}</h1>
-      <p class="hero-meta">Publié par l'équipe DatRey | Temps de lecture : ~6 min</p>
 
+      <!-- Featured Hero Image -->
       <div class="article-hero-img-wrap">
         <img src="../assets/blog/{slug}-1.webp" alt="{title}" />
       </div>
 
+      <!-- Article Reading Content -->
       <article class="blog-content">
         {content}
       </article>
 
+      <!-- CTA Box -->
       <div class="cta-article-box">
         <h3>Besoin d'accélérer votre croissance digitale ?</h3>
         <p>Obtenez un Audit Digital & SEO complet de votre entreprise par les experts DatRey au Maroc.</p>
