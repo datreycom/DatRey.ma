@@ -55,11 +55,10 @@ def save_autopilot_state(state):
 
 def calculate_daily_quota(state=None):
     """
-    Calculate daily post quota based on active week:
-    - Weeks 1 & 2 : 2 articles / day
-    - Weeks 3 & 4 : 3 articles / day
-    - Weeks 5 & 6 : 4 articles / day
-    - Week 7+     : 5 articles / day
+    Calculate daily post quota and schedule slots based on active week:
+    - Weeks 1 & 2 : 2 articles / day (Scheduled at 09:00 & 20:00 Morocco Time)
+    - Week 3+     : 3 articles / day (Scheduled at 09:00, 12:00 & 20:00 Morocco Time)
+    Strictly enforces a minimum interval of >= 2 hours between each post.
     """
     if not state:
         state = get_autopilot_state()
@@ -74,15 +73,14 @@ def calculate_daily_quota(state=None):
 
     if weeks_elapsed in (1, 2):
         quota = 2
-    elif weeks_elapsed in (3, 4):
+        schedule_slots = ["09:00", "20:00"]
+    else:  # Week 3+
         quota = 3
-    elif weeks_elapsed in (5, 6):
-        quota = 4
-    else:  # Week 7+
-        quota = 5
+        schedule_slots = ["09:00", "12:00", "20:00"]
 
     return {
         "week": weeks_elapsed,
         "quota": quota,
+        "schedule_slots": schedule_slots,
         "days_elapsed": days_elapsed
     }
