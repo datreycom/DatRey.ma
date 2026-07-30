@@ -1,12 +1,18 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 1,
+  "total_generated": 2,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2025",
       "title": "Google Ads au Maroc : Le Guide Complet 2025 pour Maximiser Votre ROI en MAD",
       "html_path": "C:\\Users\\Omar\\Desktop\\DatRey\\DatRey.ma\\blog\\google-ads-maroc-guide-roi-2025.html",
       "timestamp": "2026-07-28T14:51:13.466550"
+    },
+    {
+      "slug": "meta-ads-guide-acquisition-roi-196",
+      "title": "Meta Ads & Social Ads au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2025",
+      "html_path": "C:\\Users\\Omar\\Desktop\\DatRey\\DatRey.ma\\blog\\meta-ads-guide-acquisition-roi-196.html",
+      "timestamp": "2026-07-30T12:44:49.946957"
     }
   ]
 }

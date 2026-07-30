@@ -36,11 +36,8 @@ def generate_single_image(prompt, dest_filepath):
     seed = random.randint(10000, 999999)
 
     endpoints = [
-        # Flux Pro / Realism HD
-        {"url": f"https://gen.pollinations.ai/image/{encoded_prompt}?model=flux&width=1280&height=720&nologo=true&enhance=true&seed={seed}&negative_prompt={encoded_negative}", "use_auth": True},
-        {"url": f"https://image.pollinations.ai/prompt/{encoded_prompt}?model=flux&width=1280&height=720&nologo=true&enhance=true&seed={seed}&negative_prompt={encoded_negative}", "use_auth": False},
-        # Flux Klein fallback
-        {"url": f"https://gen.pollinations.ai/image/{encoded_prompt}?model=klein&width=1280&height=720&nologo=true&seed={seed}", "use_auth": True}
+        {"url": f"https://image.pollinations.ai/prompt/{encoded_prompt}?model=flux&width=1280&height=720&nologo=true&enhance=true&seed={seed}", "use_auth": False},
+        {"url": f"https://gen.pollinations.ai/image/{encoded_prompt}?model=flux&width=1280&height=720&nologo=true&seed={seed}", "use_auth": True}
     ]
 
     for attempt in range(3):
@@ -48,7 +45,7 @@ def generate_single_image(prompt, dest_filepath):
             for key in API_KEYS:
                 headers = {"Authorization": f"Bearer {key}"} if endpoint["use_auth"] and key else {}
                 try:
-                    res = requests.get(endpoint["url"], headers=headers, timeout=40)
+                    res = requests.get(endpoint["url"], headers=headers, timeout=15)
                     if res.status_code == 200 and len(res.content) > 15000:
                         os.makedirs(os.path.dirname(dest_filepath), exist_ok=True)
                         with open(dest_filepath, "wb") as f:

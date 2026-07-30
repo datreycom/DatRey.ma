@@ -9,7 +9,7 @@ DATREY_CONTACT_BLOCK = """---
 🌐 Site Web : https://datrey.ma
 📱 Tél / WhatsApp : +212 6 44 44 30 59
 📩 Email : contact@datrey.ma
-📍 Adresse : Maarif — Casablanca, Maroc
+📍 Adresse : 5, rue de Dixmude, 1er étage, appt 2, Benjdia — Casablanca, Maroc
 🚀 Demandez votre Audit Digital Gratuit : https://datrey.ma/contact.html"""
 
 def generate_social_posts(article_data):
@@ -73,7 +73,15 @@ Retrouvez notre étude complète avec tous les chiffres, infographies et cas pra
         "description": desc,
         "social_summary": social_summary,
         "url": article_url,
+        "link": article_url,
         "hero_image_url": hero_image_url,
+        "picture": hero_image_url,
+        "image_url": hero_image_url,
+        "message": facebook_post,
+        "post": facebook_post,
+        "text": facebook_post,
+        "facebook_post": facebook_post,
+        "content": facebook_post,
         "social": {
             "facebook": facebook_post,
             "linkedin": linkedin_post,

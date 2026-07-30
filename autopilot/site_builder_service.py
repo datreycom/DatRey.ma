@@ -357,13 +357,11 @@ def build_article_page(article_data):
 
     content_with_images = inject_inbody_images(content_raw, slug, clean_title)
 
-    full_html = ARTICLE_TEMPLATE.format(
-        title=clean_title,
-        description=desc,
-        slug=slug,
-        category=cat,
-        content=content_with_images
-    )
+    full_html = ARTICLE_TEMPLATE.replace("{title}", clean_title)\
+                                .replace("{description}", desc)\
+                                .replace("{slug}", slug)\
+                                .replace("{category}", cat)\
+                                .replace("{content}", content_with_images)
 
     os.makedirs(BLOG_DIR, exist_ok=True)
     out_path = os.path.join(BLOG_DIR, f"{slug}.html")
