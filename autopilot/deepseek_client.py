@@ -22,11 +22,14 @@ def generate_fallback_article(service_slug, service_name, angle, topic_hint=None
     Intelligent fail-safe generator: produces a high-converting, 1,300+ word B2B article
     with GEO definitions, ROI metrics, and social summaries when remote API calls are unavailable.
     """
-    topic_title_part = topic_hint.capitalize() if topic_hint else service_name
+    if topic_hint:
+        title = topic_hint
+    else:
+        title = f"{service_name} au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en {CURRENT_YEAR}"
+        
     slug_clean = re.sub(r'[^a-z0-9]+', '-', service_slug.lower()).strip('-')
     timestamp_slug = f"{slug_clean}-guide-acquisition-roi-{random.randint(100,999)}"
     
-    title = f"{topic_title_part} au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en {CURRENT_YEAR}"
     description = f"Découvrez comment optimiser vos leviers de {service_name} au Maroc en {CURRENT_YEAR}. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey."
 
     social_summary = (

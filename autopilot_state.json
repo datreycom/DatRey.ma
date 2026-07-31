@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 9,
+  "total_generated": 10,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -55,6 +55,12 @@
       "title": "Design & Impression au Maroc : 7 Erreurs Coûteuses Qui Tuent Vos Ventes (et les Solutions Rentables pour les Éviter en 2026)",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/erreurs-design-impression-couteuses-solutions-conversions-maroc.html",
       "timestamp": "2026-07-31T13:41:03.872423"
+    },
+    {
+      "slug": "developpement-guide-acquisition-roi-271",
+      "title": "Développement Web & Mobile au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc",
+      "html_path": "C:\\Users\\Omar\\Desktop\\DatRey\\DatRey.ma\\blog\\developpement-guide-acquisition-roi-271.html",
+      "timestamp": "2026-07-31T15:32:51.025989"
     }
   ]
 }

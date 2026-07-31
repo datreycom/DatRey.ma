@@ -1,3 +1,5 @@
+import os
+import json
 import time
 from datetime import datetime
 from autopilot.config import (
@@ -32,24 +34,48 @@ def run_autopilot_cycle(force_count=None, topic_hint=None):
     service_keys = list(SERVICES.keys())
     generated_count = state.get("total_generated", 0)
 
+    # Load 90-Day Editorial Calendar
+    calendar_data = []
+    calendar_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "editorial_calendar_90_days.json")
+    if os.path.exists(calendar_path):
+        with open(calendar_path, "r", encoding="utf-8") as f:
+            calendar_data = json.load(f)
+
     results = []
 
     for i in range(quota):
-        # Pick category in round-robin fashion
-        cat_idx = (generated_count + i) % len(service_keys)
-        service_slug = service_keys[cat_idx]
-
-        print(f"\n--- [Article {i+1}/{quota}] Generating for Service: '{SERVICES[service_slug]}' ---")
-
-        try:
-            # 1. DeepSeek Generation (>= 1300 words)
+        current_index = generated_count + i
+        
+        # Check if calendar entry exists
+        if current_index < len(calendar_data):
+            cal_entry = calendar_data[current_index]
+            scheduled_title = cal_entry["title"]
+            target_category_name = cal_entry["category"]
+            
+            # Map category name to slug
+            service_slug = "google-ads"
+            for slug, name in SERVICES.items():
+                if name.lower() == target_category_name.lower():
+                    service_slug = slug
+                    break
+            
+            print(f"\n--- [Article {i+1}/{quota}] [Calendar #{cal_entry['post_id']}] Category: '{target_category_name}' ---")
+            print(f"Scheduled Title: '{scheduled_title}'")
+            
+            raw_article = generate_article_content(service_slug=service_slug, topic_hint=scheduled_title)
+        else:
+            # Fallback round-robin if beyond 256 posts
+            cat_idx = current_index % len(service_keys)
+            service_slug = service_keys[cat_idx]
+            print(f"\n--- [Article {i+1}/{quota}] Generating for Service: '{SERVICES[service_slug]}' ---")
             raw_article = generate_article_content(service_slug=service_slug, topic_hint=topic_hint)
 
+        try:
             # 2. Humanizer & GEO Audit
             raw_article["content"] = apply_humanizer_audit(raw_article["content"])
             raw_article["content"] = verify_geo_intro(raw_article["content"], raw_article["title"], raw_article["category"])
 
-            # 3. Pollinations Image Generation (5 Flux images)
+            # 3. Pollinations/Unsplash HD Image Generation (5 Flux/Unsplash images)
             generate_article_images(raw_article["slug"], raw_article.get("image_prompts", []))
 
             # 4. Site Builder (HTML + Index + Sitemap)
