@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 10,
+  "total_generated": 12,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -61,6 +61,18 @@
       "title": "Développement Web & Mobile au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc",
       "html_path": "C:\\Users\\Omar\\Desktop\\DatRey\\DatRey.ma\\blog\\developpement-guide-acquisition-roi-271.html",
       "timestamp": "2026-07-31T15:32:51.025989"
+    },
+    {
+      "slug": "formations-master-classes-maroc-doubler-taux-conversion-2026",
+      "title": "Formations & Master Classes au Maroc : Le Plan d'Action Concret pour Doubler Votre Taux de Conversion en 2026",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/formations-master-classes-maroc-doubler-taux-conversion-2026.html",
+      "timestamp": "2026-07-31T20:18:47.859939"
+    },
+    {
+      "slug": "google-ads-sea-maroc-guide-optimisation-budgetaire-roi",
+      "title": "Google Ads & SEA au Maroc : Le Guide Décisionnel Ultime pour un ROI Maximisé en 2026",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/google-ads-sea-maroc-guide-optimisation-budgetaire-roi.html",
+      "timestamp": "2026-07-31T20:20:43.716536"
     }
   ]
 }
