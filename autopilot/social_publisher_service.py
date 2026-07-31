@@ -72,6 +72,7 @@ Retrouvez notre étude complète avec tous les chiffres, infographies et cas pra
         "category": category,
         "description": desc,
         "social_summary": social_summary,
+        "summary": social_summary,
         "url": article_url,
         "link": article_url,
         "hero_image_url": hero_image_url,
@@ -82,6 +83,7 @@ Retrouvez notre étude complète avec tous les chiffres, infographies et cas pra
         "text": facebook_post,
         "facebook_post": facebook_post,
         "content": facebook_post,
+        "caption": facebook_post,
         "social": {
             "facebook": facebook_post,
             "linkedin": linkedin_post,
