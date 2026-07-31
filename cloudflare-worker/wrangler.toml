@@ -1,0 +1,7 @@
+name = "datrey-autopilot-worker"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+[triggers]
+# Runs at 09:00, 12:00, and 20:00 Morocco Time (08:00, 11:00, 19:00 UTC)
+crons = ["0 8,11,19 * * *"]
