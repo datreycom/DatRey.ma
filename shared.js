@@ -78,9 +78,28 @@
     });
   }
 
+  // --- Interactive ROI Calculator Engine ---
+  const budgetInput = document.getElementById('roiBudget');
+  const budgetVal = document.getElementById('roiBudgetValue');
+  const leadsOutput = document.getElementById('roiLeadsOutput');
+  const revenueOutput = document.getElementById('roiRevenueOutput');
+
+  if (budgetInput && budgetVal && leadsOutput && revenueOutput) {
+    function updateROI() {
+      const budget = parseInt(budgetInput.value, 10);
+      budgetVal.textContent = budget.toLocaleString('fr-FR') + ' DH';
+      const estimatedLeads = Math.round(budget / 115);
+      const estimatedRevenue = Math.round(budget * 4.2);
+      leadsOutput.textContent = '+' + estimatedLeads.toLocaleString('fr-FR');
+      revenueOutput.textContent = estimatedRevenue.toLocaleString('fr-FR') + ' DH';
+    }
+    budgetInput.addEventListener('input', updateROI);
+    updateROI();
+  }
+
   // --- Interactive Spotlight Mouse Tracking on Cards ---
   document.addEventListener('mousemove', (e) => {
-    const cards = document.querySelectorAll('.service-card, .blog-card, .chic-card, .glass-card');
+    const cards = document.querySelectorAll('.service-card, .blog-card, .chic-card, .glass-card, .bento-card-glass');
     cards.forEach(card => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
