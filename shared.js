@@ -13,23 +13,7 @@
     window.scrollTo(0, 0);
   });
 
-  // --- Ultra-Fluid Lenis Smooth Scroll Engine ---
-  if (typeof Lenis !== 'undefined') {
-    try {
-      const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: 'vertical',
-        smooth: true,
-        smoothTouch: false
-      });
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-    } catch(e) {}
-  }
+
 
   // --- Header scroll effect ---
   const header = document.getElementById('header');
@@ -80,17 +64,29 @@
     updateROI();
   }
 
-  // --- Interactive Spotlight Mouse Tracking on Cards ---
-  document.addEventListener('mousemove', (e) => {
+  // --- High-Performance Mouse Tracking (Card Level) ---
+  function initSpotlight() {
     const cards = document.querySelectorAll('.service-card, .blog-card, .chic-card, .glass-card, .bento-card-glass');
     cards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
+      let ticking = false;
+      card.addEventListener('mousemove', (e) => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+            card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
     });
-  });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSpotlight);
+  } else {
+    initSpotlight();
+  }
 
   // --- Scroll reveal ---
   const revealElements = document.querySelectorAll('.reveal');
