@@ -79,17 +79,7 @@
   --font-heading: var(--font-display);
 }
 
-[data-theme="dark"] {
-  --bg-main: #0B0F19; /* Very dark blue/black */
-  --bg-secondary: #111827; /* Slightly lighter */
-  --surface-color: #1F2937; /* Card backgrounds */
-  --text-main: #F9FAFB; /* Pure white for headings */
-  --text-base: #D1D5DB; /* Light gray for text */
-  --text-muted: #9CA3AF;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --primary-color: #3B82F6; /* Ensure primary blue is vibrant in dark mode */
-  --accent-color: #60A5FA;
-}
+
 
 /* --- Reset & Base --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -300,12 +290,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em;
 }
 .theme-toggle {
-  background: var(--bg-alt);
-  border: 1px solid var(--border-color);
-  color: var(--text-main);
-  width: 42px; height: 42px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; transition: var(--transition);
+  display: none !important;
 }
 .theme-toggle:hover {
   background: rgba(255,255,255,0.15);

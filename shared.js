@@ -52,30 +52,13 @@
     window.closeMobileNav = () => mobileNav.classList.remove('active');
   }
 
-  // --- Theme Toggle (Dark & Light Mode with Glassmorphism) ---
-  const themeToggle = document.getElementById('themeToggle');
+  // --- Strict Light Mode Enforcement ---
+  document.documentElement.setAttribute('data-theme', 'light');
+  localStorage.setItem('datrey-theme', 'light');
   
-  function getPreferredTheme() {
-    const stored = localStorage.getItem('datrey-theme');
-    if (stored) return stored;
-    return 'light';
-  }
-
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('datrey-theme', theme);
-  }
-
-  const currentTheme = getPreferredTheme();
-  applyTheme(currentTheme);
-
+  const themeToggle = document.getElementById('themeToggle');
   if (themeToggle) {
-    themeToggle.style.display = 'flex';
-    themeToggle.addEventListener('click', () => {
-      const activeTheme = document.documentElement.getAttribute('data-theme');
-      const nextTheme = activeTheme === 'dark' ? 'light' : 'dark';
-      applyTheme(nextTheme);
-    });
+    themeToggle.style.display = 'none';
   }
 
   // --- Interactive ROI Calculator Engine ---
