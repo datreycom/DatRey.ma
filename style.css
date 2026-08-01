@@ -50,27 +50,11 @@
 /* --- Reset & Base --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 17px; }
-body {
-  font-family: var(--font-body);
-  color: var(--text-base);
-  background: var(--bg-main);
-  line-height: 1.9;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  font-size: 1.05rem;
-  letter-spacing: 0.03em;
-  word-spacing: 0.06em;
-}
+body { font-family: var(--font-body); color: var(--datrey-text); background: var(--datrey-cream) !important; line-height: 1.9; overflow-x: hidden; -webkit-font-smoothing: antialiased; font-size: 1.05rem; letter-spacing: 0.03em; }
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
-h1, h2, h3, h4, h5, h6 { 
-  font-family: var(--font-display); 
-  line-height: 1.25; 
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  text-wrap: balance;
-}
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-body); line-height: 1.25; font-weight: 800; color: var(--datrey-navy); letter-spacing: 0.01em; text-wrap: balance; }
 
 /* --- Accessibility (Pro Max UX) --- */
 *:focus-visible {
@@ -743,7 +727,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .service-card:hover::before { transform: scaleX(1); }
 
-.service-card-body { padding: 0; }
+.service-card-body { font-family: var(--font-body); color: var(--datrey-text); background: var(--datrey-cream) !important; line-height: 1.9; overflow-x: hidden; -webkit-font-smoothing: antialiased; font-size: 1.05rem; letter-spacing: 0.03em; }
 .service-card-body .service-icon {
   width: 56px; height: 56px; border-radius: 16px;
   display: flex; align-items: center; justify-content: center;
@@ -1327,12 +1311,7 @@ body::before {
   padding: 32px 40px;
 }
 .services-grid.bento .service-card:nth-child(6) .service-card-body,
-.services-grid.bento .service-card:nth-child(6) .service-card.glass-panel.floating-card-body {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 24px;
-}
+.services-grid.bento .service-card:nth-child(6) .service-card.glass-panel.floating-card-body { font-family: var(--font-body); color: var(--datrey-text); background: var(--datrey-cream) !important; line-height: 1.9; overflow-x: hidden; -webkit-font-smoothing: antialiased; font-size: 1.05rem; letter-spacing: 0.03em; }
 @media (max-width: 1024px) {
   .services-grid.bento {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -2031,7 +2010,7 @@ textarea.form-control { min-height: 150px; resize: vertical; }
   .header, .footer, .whatsapp-float, .exit-popup-overlay,
   .mobile-nav, .mobile-toggle, .theme-toggle, .lang-selector,
   .cta-section, .tech-stack-banner { display: none !important; }
-  body { background: #fff !important; color: #000 !important; font-size: 12pt; }
+  body { font-family: var(--font-body); color: var(--datrey-text); background: var(--datrey-cream) !important; line-height: 1.9; overflow-x: hidden; -webkit-font-smoothing: antialiased; font-size: 1.05rem; letter-spacing: 0.03em; }
   a { color: #000; text-decoration: underline; }
   a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
   .container { max-width: 100%; padding: 0; }
@@ -2290,12 +2269,7 @@ textarea.form-control { min-height: 150px; resize: vertical; }
   box-shadow: 0 4px 14px rgba(27, 42, 120, 0.25);
 }
 
-.mockup-pack-body {
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
+.mockup-pack-body { font-family: var(--font-body); color: var(--datrey-text); background: var(--datrey-cream) !important; line-height: 1.9; overflow-x: hidden; -webkit-font-smoothing: antialiased; font-size: 1.05rem; letter-spacing: 0.03em; }
 
 .mockup-pack-title {
   font-family: var(--font-body) !important;

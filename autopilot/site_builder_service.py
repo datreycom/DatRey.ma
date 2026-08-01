@@ -240,7 +240,7 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
     .cta-article-box {
       background: #eff6ff;
       border: 1px solid #bfdbfe;
-      color: #0f172a;
+      color: var(--datrey-navy);
       padding: 48px 36px;
       border-radius: 20px;
       margin-top: 60px;
