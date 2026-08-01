@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modèle Landing Page | SaaS</title>
+    <style>
+        :root {
+            --primary: #4F46E5; /* Indigo */
+            --dark: #0F172A;
+            --light: #F8FAFC;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+        body { background: var(--dark); color: #fff; text-align: center; overflow-x: hidden;}
+        
+        /* Hero Section */
+        .hero { padding: 8rem 5% 4rem; position: relative; }
+        .hero::before {
+            content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
+            width: 800px; height: 800px; background: radial-gradient(circle, rgba(79,70,229,0.3) 0%, rgba(15,23,42,0) 70%); z-index: -1;
+        }
+        .badge { background: rgba(79,70,229,0.2); color: #818CF8; padding: 0.5rem 1rem; border-radius: 30px; font-size: 0.9rem; font-weight: 500; display: inline-block; margin-bottom: 1.5rem; border: 1px solid rgba(79,70,229,0.3);}
+        .hero h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800; background: -webkit-linear-gradient(#fff, #94A3B8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+        .hero p { font-size: 1.3rem; color: #94A3B8; max-width: 600px; margin: 0 auto 3rem; line-height: 1.6;}
+        
+        .cta-group { display: flex; gap: 1rem; justify-content: center; }
+        .btn { padding: 1rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 1.1rem; transition: 0.3s; }
+        .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 4px 15px rgba(79,70,229,0.4); }
+        .btn-primary:hover { background: #4338CA; transform: translateY(-2px); }
+        .btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.15); }
+
+        /* Dashboard Preview */
+        .dashboard-preview { margin: 4rem auto 0; max-width: 1000px; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); backdrop-filter: blur(10px);}
+        .dashboard-img { width: 100%; height: 500px; background: #1E293B; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #64748B; font-size: 2rem;}
+
+        /* Features */
+        .features { padding: 8rem 5%; }
+        .features h2 { font-size: 3rem; margin-bottom: 4rem; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto; text-align: left; }
+        .feature-card { background: rgba(255,255,255,0.03); padding: 2.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); }
+        .feature-icon { width: 50px; height: 50px; background: var(--primary); border-radius: 12px; margin-bottom: 1.5rem; }
+        .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .feature-card p { color: #94A3B8; line-height: 1.6; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section class="hero">
+        <div class="badge">Nouveau : Intégration IA 2.0 🚀</div>
+        <h1>Automatisez votre flux de travail. Rapidement.</h1>
+        <p>L'outil SaaS ultime pour les équipes modernes. Gagnez 15 heures par semaine grâce à notre interface intuitive et puissante.</p>
+        
+        <div class="cta-group">
+            <a href="#" class="btn btn-primary">Essai Gratuit 14 Jours</a>
+            <a href="#" class="btn btn-secondary">Voir la Démo</a>
+        </div>
+
+        <div class="dashboard-preview">
+            <div class="dashboard-img">Aperçu de l'Application Dashboard</div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Tout ce dont vous avez besoin.</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon"></div>
+                <h3>Synchronisation en temps réel</h3>
+                <p>Vos données sont synchronisées instantanément sur tous vos appareils de manière sécurisée.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"></div>
+                <h3>Analyses Avancées</h3>
+                <p>Des tableaux de bord personnalisables pour suivre vos KPIs avec précision et clarté.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"></div>
+                <h3>Sécurité Bancaire</h3>
+                <p>Nous utilisons un chiffrement de bout-en-bout pour garantir la sécurité totale de vos informations.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

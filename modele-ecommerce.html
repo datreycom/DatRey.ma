@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modèle E-commerce | Boutique Moderne</title>
+    <style>
+        :root {
+            --brand: #FF4742;
+            --dark: #111;
+            --gray: #F4F4F4;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+        body { color: var(--dark); background: #fff; }
+        
+        /* Header */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; border-bottom: 1px solid #eaeaea; }
+        .logo { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; }
+        .cart-btn { background: var(--dark); color: #fff; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 600; }
+        
+        /* Hero Banner */
+        .promo-banner { background: var(--gray); padding: 5rem 5%; display: flex; align-items: center; justify-content: space-between; margin: 2rem 5%; border-radius: 20px;}
+        .promo-text { max-width: 500px; }
+        .promo-text h1 { font-size: 3.5rem; line-height: 1; margin-bottom: 1rem; }
+        .promo-text p { font-size: 1.2rem; color: #555; margin-bottom: 2rem; }
+        .btn-shop { background: var(--brand); color: #fff; padding: 1rem 2rem; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; display: inline-block; transition: 0.3s; }
+        .btn-shop:hover { background: #e03a35; transform: scale(1.05); }
+        .promo-image { width: 400px; height: 300px; background: #ddd; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 1.5rem;}
+
+        /* Product Grid */
+        .products { padding: 4rem 5%; }
+        .products h2 { font-size: 2rem; margin-bottom: 2rem; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; }
+        .product-card { border: 1px solid #eaeaea; border-radius: 12px; overflow: hidden; transition: 0.3s; padding-bottom: 1.5rem;}
+        .product-card:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.08); transform: translateY(-5px); }
+        .img-placeholder { height: 250px; background: var(--gray); display: flex; align-items: center; justify-content: center; color: #aaa; margin-bottom: 1rem;}
+        .product-info { padding: 0 1.5rem; }
+        .product-title { font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .product-price { font-weight: 800; font-size: 1.2rem; color: var(--brand); margin-bottom: 1rem; }
+        .add-to-cart { display: block; width: 100%; text-align: center; background: var(--dark); color: #fff; text-decoration: none; padding: 0.8rem; border-radius: 6px; font-weight: 600; }
+        .add-to-cart:hover { background: #333; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">SNEAKERS.</div>
+        <ul class="nav-links">
+            <li><a href="#">Nouveautés</a></li>
+            <li><a href="#">Hommes</a></li>
+            <li><a href="#">Femmes</a></li>
+            <li><a href="#">Promotions</a></li>
+        </ul>
+        <a href="#" class="cart-btn">Panier (0)</a>
+    </header>
+
+    <section class="promo-banner">
+        <div class="promo-text">
+            <h1>Nouvelle Collection Été 2024</h1>
+            <p>Découvrez notre dernière gamme de sneakers urbaines. Confort, style et durabilité.</p>
+            <a href="#" class="btn-shop">Acheter Maintenant</a>
+        </div>
+        <div class="promo-image">Image Produit (Hero)</div>
+    </section>
+
+    <section class="products">
+        <h2>Tendances Actuelles</h2>
+        <div class="grid">
+            <div class="product-card">
+                <div class="img-placeholder">Image Produit 1</div>
+                <div class="product-info">
+                    <h3 class="product-title">Urban Runner X1</h3>
+                    <div class="product-price">129,00 €</div>
+                    <a href="#" class="add-to-cart">Ajouter au panier</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="img-placeholder">Image Produit 2</div>
+                <div class="product-info">
+                    <h3 class="product-title">Street Classic Low</h3>
+                    <div class="product-price">89,99 €</div>
+                    <a href="#" class="add-to-cart">Ajouter au panier</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="img-placeholder">Image Produit 3</div>
+                <div class="product-info">
+                    <h3 class="product-title">HypeBoost Pro</h3>
+                    <div class="product-price">159,00 €</div>
+                    <a href="#" class="add-to-cart">Ajouter au panier</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="img-placeholder">Image Produit 4</div>
+                <div class="product-info">
+                    <h3 class="product-title">Retro Glide 90s</h3>
+                    <div class="product-price">110,00 €</div>
+                    <a href="#" class="add-to-cart">Ajouter au panier</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

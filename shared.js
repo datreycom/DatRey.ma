@@ -125,46 +125,45 @@
     stats.forEach(el => counterObserver.observe(el));
   }
 
-  // --- Slider ---
-  const slides = document.querySelectorAll('.hero-slide, .slider-slide');
-  const dots = document.querySelectorAll('.slider-dot');
-  const prevBtns = document.querySelectorAll('#sliderPrev, #heroSliderPrev');
-  const nextBtns = document.querySelectorAll('#sliderNext, #heroSliderNext');
+  // --- Sliders ---
+  const sliderContainers = document.querySelectorAll('.hero-photo-slider, .slider-section');
+  sliderContainers.forEach(container => {
+    const slides = container.querySelectorAll('.hero-slide, .slider-slide');
+    const dots = container.querySelectorAll('.slider-dot');
+    const prevBtn = container.querySelector('#sliderPrev, #heroSliderPrev');
+    const nextBtn = container.querySelector('#sliderNext, #heroSliderNext');
 
-  if (slides.length) {
-    let currentSlide = 0;
-    let sliderInterval;
+    if (slides.length) {
+      let currentSlide = 0;
+      let sliderInterval;
 
-    function goToSlide(index) {
-      if (!slides[currentSlide] || !slides[index]) return;
-      slides[currentSlide].classList.remove('active');
-      if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
-      currentSlide = (index + slides.length) % slides.length;
-      slides[currentSlide].classList.add('active');
-      if (dots[currentSlide]) dots[currentSlide].classList.add('active');
-    }
-    function startSlider() {
-      sliderInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
-    }
-    function stopSlider() { clearInterval(sliderInterval); }
+      function goToSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
+        currentSlide = (index + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+        if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+      }
+      function startSlider() {
+        sliderInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
+      }
+      function stopSlider() { clearInterval(sliderInterval); }
 
-    prevBtns.forEach(btn => btn.addEventListener('click', () => { stopSlider(); goToSlide(currentSlide - 1); startSlider(); }));
-    nextBtns.forEach(btn => btn.addEventListener('click', () => { stopSlider(); goToSlide(currentSlide + 1); startSlider(); }));
-    dots.forEach((dot, idx) => {
-      dot.addEventListener('click', () => {
-        stopSlider();
-        goToSlide(idx);
-        startSlider();
+      if (prevBtn) prevBtn.addEventListener('click', () => { stopSlider(); goToSlide(currentSlide - 1); startSlider(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { stopSlider(); goToSlide(currentSlide + 1); startSlider(); });
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => {
+          stopSlider();
+          goToSlide(idx);
+          startSlider();
+        });
       });
-    });
 
-    const sliderSection = document.querySelector('.hero-photo-slider, .slider-section');
-    if (sliderSection) {
-      sliderSection.addEventListener('mouseenter', stopSlider);
-      sliderSection.addEventListener('mouseleave', startSlider);
+      container.addEventListener('mouseenter', stopSlider);
+      container.addEventListener('mouseleave', startSlider);
+      startSlider();
     }
-    startSlider();
-  }
+  });
 
   // --- Smooth scroll for anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(link => {
