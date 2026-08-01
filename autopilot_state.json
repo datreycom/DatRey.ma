@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 16,
+  "total_generated": 17,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -97,6 +97,12 @@
       "title": "Emailing B2B au Maroc : L’Entonnoir Automatisé qui Génère 4,2x plus de RDV Qualifiés en 2026",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/emailing-automation-maroc-entonnoir-vente-b2b-rentable.html",
       "timestamp": "2026-08-01T12:00:21.895925"
+    },
+    {
+      "slug": "strategie-guide-acquisition-roi-534",
+      "title": "Stratégie Digitale au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)",
+      "html_path": "C:\\Users\\Omar\\Desktop\\DatRey\\DatRey.ma\\blog\\strategie-guide-acquisition-roi-534.html",
+      "timestamp": "2026-08-01T13:56:31.878791"
     }
   ]
 }

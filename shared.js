@@ -13,6 +13,24 @@
     window.scrollTo(0, 0);
   });
 
+  // --- Ultra-Fluid Lenis Smooth Scroll Engine ---
+  if (typeof Lenis !== 'undefined') {
+    try {
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: 'vertical',
+        smooth: true,
+        smoothTouch: false
+      });
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    } catch(e) {}
+  }
+
   // --- Header scroll effect ---
   const header = document.getElementById('header');
   if (header) {
@@ -34,38 +52,43 @@
     window.closeMobileNav = () => mobileNav.classList.remove('active');
   }
 
-  // --- Theme Enforcement (Strict Light Mode) ---
+  // --- Theme Toggle (Dark & Light Mode with Glassmorphism) ---
   const themeToggle = document.getElementById('themeToggle');
   
-  function applyTheme() {
-    document.documentElement.setAttribute('data-theme', 'light');
-    localStorage.setItem('datrey-theme', 'light');
+  function getPreferredTheme() {
+    const stored = localStorage.getItem('datrey-theme');
+    if (stored) return stored;
+    return 'light';
   }
 
-  applyTheme();
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('datrey-theme', theme);
+  }
+
+  const currentTheme = getPreferredTheme();
+  applyTheme(currentTheme);
 
   if (themeToggle) {
-    themeToggle.style.display = 'none';
+    themeToggle.style.display = 'flex';
+    themeToggle.addEventListener('click', () => {
+      const activeTheme = document.documentElement.getAttribute('data-theme');
+      const nextTheme = activeTheme === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+    });
   }
 
-  // --- Language Auto-Detect (FR/EN) ---
-  const langLinks = document.querySelectorAll('.lang-dropdown a');
-  langLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      localStorage.setItem('datrey-lang-override', 'true');
+  // --- Interactive Spotlight Mouse Tracking on Cards ---
+  document.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll('.service-card, .blog-card, .chic-card, .glass-card');
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
     });
   });
-
-  if (!localStorage.getItem('datrey-lang-override')) {
-    const path = window.location.pathname;
-    if (!path.startsWith('/en/')) {
-      const userLang = (navigator.language || navigator.userLanguage).slice(0, 2).toLowerCase();
-      if (userLang === 'en' && !path.includes('404')) {
-        let newPath = path === '/' ? '/index.html' : path;
-        window.location.replace(`/en${newPath}`);
-      }
-    }
-  }
 
   // --- Scroll reveal ---
   const revealElements = document.querySelectorAll('.reveal');
