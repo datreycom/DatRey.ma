@@ -1723,22 +1723,23 @@ body::before {
 }
 .form-control {
   width: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(14, 23, 68, 0.05);
+  border: 1px solid rgba(14, 23, 68, 0.1);
   color: var(--text-main);
   padding: 16px 20px;
   border-radius: 12px;
   font-size: 1rem;
   margin-bottom: 20px;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
   font-family: var(--font-body);
 }
 .form-control:focus {
   outline: none;
-  border-color: var(--roi-300);
-  box-shadow: 0 0 15px rgba(78, 205, 196, 0.15);
+  background: #ffffff;
+  border-color: var(--datrey-blue);
+  box-shadow: 0 0 15px rgba(45, 70, 194, 0.15);
 }
-.form-control::placeholder { color: rgba(255, 255, 255, 0.4); }
+.form-control::placeholder { color: var(--text-muted); }
 textarea.form-control { min-height: 150px; resize: vertical; }
 
 .contact-info-item {
