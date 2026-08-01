@@ -149,10 +149,10 @@
 
     prevBtn.addEventListener('click', () => { stopSlider(); goToSlide(currentSlide - 1); startSlider(); });
     nextBtn.addEventListener('click', () => { stopSlider(); goToSlide(currentSlide + 1); startSlider(); });
-    dots.forEach(dot => {
+    dots.forEach((dot, idx) => {
       dot.addEventListener('click', () => {
         stopSlider();
-        goToSlide(parseInt(dot.dataset.slide, 10));
+        goToSlide(idx);
         startSlider();
       });
     });
