@@ -45,22 +45,18 @@
   --shadow-glow: 0 0 48px rgba(34,80,196,0.12);
   --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* ── Semantic Theme Variables (Light Mode) ── */
-  --bg-main: var(--pure-white);
-  --bg-alt: var(--roi-50);
+  /* ── Semantic Theme Variables (Ultra-Clean Light Mode) ── */
+  --bg-main: #ffffff;
+  --bg-alt: #f8fafc;
 
-  /* Text Hierarchy — Light Mode
-     main:   Headings, titles, high-emphasis (WCAG AAA on white)
-     base:   Body text, article content (WCAG AA on white)
-     muted:  Secondary info, meta, captions (WCAG AA on white)
-     subtle: Placeholders, disabled states */
-  --text-main: #111827;
-  --text-base: #1f2937;
-  --text-muted: #6b7280;
-  --text-subtle: #9ca3af;
+  /* Text Hierarchy — Pitch Black & Charcoal Slate for 100% Contrast */
+  --text-main: #0f172a;
+  --text-base: #334155;
+  --text-muted: #64748b;
+  --text-subtle: #94a3b8;
 
-  --card-bg: var(--pure-white);
-  --border-color: var(--roi-100);
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
 
   /* ── Backward-compatible aliases ── */
   --teal-500: var(--roi-500);
