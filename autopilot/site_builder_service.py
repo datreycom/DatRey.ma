@@ -236,28 +236,29 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
       box-sizing: border-box;
     }
 
-    /* CTA Box */
+    /* CTA Box (Light Mode) */
     .cta-article-box {
-      background: linear-gradient(135deg, #0a0f1f 0%, #1e293b 100%);
-      color: #ffffff;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #0f172a;
       padding: 48px 36px;
       border-radius: 20px;
       margin-top: 60px;
       text-align: center;
-      box-shadow: 0 16px 40px rgba(10, 15, 31, 0.15);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
       max-width: 780px;
       margin-left: auto;
       margin-right: auto;
       box-sizing: border-box;
     }
     .cta-article-box h3 {
-      color: #ffffff !important;
+      color: #0f172a !important;
       font-family: 'DM Serif Display', serif;
       font-size: 2.1rem;
       margin: 0 0 14px 0;
     }
     .cta-article-box p {
-      color: #94a3b8 !important;
+      color: #334155 !important;
       font-size: 1.1rem;
       margin: 0 0 28px 0;
     }
