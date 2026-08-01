@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-body); line-height: 1.25; font-
 
 /* --- Utility --- */
 .container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
-.section-padding { padding: 140px 0; }
+.section-padding { padding: 80px 0; }
 .section-label {
   display: inline-flex; align-items: center; gap: 12px;
   font-size: 0.82rem; font-weight: 600; text-transform: uppercase;
@@ -229,7 +229,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-body); line-height: 1.25; font-
   background: #2563eb;
   transition: var(--transition); border-radius: 2px;
 }
-.nav-links a:hover { color: #2563eb !important; }
+.nav-links a:not(.btn):hover { color: #2563eb !important; }
 .nav-links a:hover::after { width: 100%; }
 .nav-cta {
   padding: 10px 24px !important;
@@ -1482,7 +1482,7 @@ body::before {
 .cta-box.aurora > * { position: relative; z-index: 1; }
 
 /* 9. Premium spacing */
-.section-padding-chic { padding: 160px 0; }
+.section-padding-chic { padding: 80px 0; }
 
 /* 10. Hero stat upgrade — glow numbers */
 .hero-stat-value {
@@ -2483,12 +2483,12 @@ textarea.form-control { min-height: 150px; resize: vertical; }
 .hero-photo-slider {
   position: relative;
   width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  border-radius: 28px;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(27, 42, 120, 0.12);
-  border: 1px solid var(--datrey-border);
+  box-shadow: none;
+  border: none;
   background: #ffffff;
 }
 

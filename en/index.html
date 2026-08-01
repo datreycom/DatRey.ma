@@ -19,8 +19,8 @@
 <link href="https://datrey.ma/" hreflang="x-default" rel="alternate"/>
  <!-- Critical CSS (above-the-fold) inlined for LCP -->
 <style>
-    :root{--nuit-950:#050814;--nuit-900:#0a0f1f;--nuit-800:#0f172a;--nuit-700:#1e293b;--roi-600:#1b2a78;--roi-500:#2d46c2;--roi-400:#60a5fa;--roi-300:#93c5fd;--roi-200:#bfdbfe;--roi-100:#dbeafe;--roi-50:#eff6ff;--pure-white:#fff;--gray-500:#6b7280;--font-display:'DM Serif Display',serif;--font-body:'Poppins',sans-serif;--radius-xl:24px;--shadow-card:0 8px 32px rgba(11,24,50,.08);--transition:.4s cubic-bezier(.16,1,.3,1);--bg-main:var(--pure-white);--bg-alt:var(--roi-50);--text-main:var(--nuit-900);--text-muted:#1e293b;--card-bg:var(--pure-white);--border-color:var(--roi-100)}
-    []{--bg-main:var(--nuit-950);--bg-alt:var(--nuit-900);--text-main:#f1f5f9;--text-muted:#94a3b8;--card-bg:rgba(15,23,42,.6);--border-color:rgba(30,41,59,.8)}
+    :root{--nuit-950:#050814;--nuit-900:#0a0f1f;--nuit-800:#1b2a78;--nuit-700:#5a668c;--roi-600:#1b2a78;--roi-500:#2d46c2;--roi-400:#60a5fa;--roi-300:#93c5fd;--roi-200:#bfdbfe;--roi-100:#dbeafe;--roi-50:#f8f7f2;--pure-white:#fff;--gray-500:#6b7280;--font-display:'DM Serif Display',serif;--font-body:'Poppins',sans-serif;--radius-xl:24px;--shadow-card:0 8px 32px rgba(11,24,50,.08);--transition:.4s cubic-bezier(.16,1,.3,1);--bg-main:#f8f7f2;--bg-alt:#ffffff;--text-main:#1b2a78;--text-muted:#5a668c;--card-bg:var(--pure-white);--border-color:#e6e4da}
+    []{--bg-main:var(--nuit-950);--bg-alt:var(--nuit-900);--text-main:#f8f7f2;--text-muted:#94a3b8;--card-bg:rgba(15,23,42,.6);--border-color:rgba(30,41,59,.8)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;font-size:17px}
     body{font-family:var(--font-body);color:var(--text-main);background:var(--bg-main);line-height:1.9;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:1.05rem;letter-spacing:.03em}
@@ -33,7 +33,7 @@
     .logo{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:#ffffff!important}
     .logo-img{width:40px;height:40px;border-radius:10px;object-fit:contain}
     .nav-links{display:flex;align-items:center;gap:20px}
-    .nav-links a{color:#e2e8f0!important;font-size:.95rem;font-weight:500;position:relative;white-space:nowrap;letter-spacing:.03em}
+    .nav-links a{color:#e6e4da!important;font-size:.95rem;font-weight:500;position:relative;white-space:nowrap;letter-spacing:.03em}
     .nav-links a:hover,.nav-links a.nav-active{color:#ffffff!important}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-body);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.88rem;padding:16px 36px;border-radius:50px;cursor:pointer;border:none;position:relative;overflow:hidden}
     .btn-primary{background:linear-gradient(135deg,var(--roi-600),var(--roi-500));color:#fff!important;box-shadow:0 4px 15px rgba(37,99,235,.4)}
@@ -43,7 +43,7 @@
     .hero-content{max-width:750px;padding-top:40px}
     .hero-title{font-size:clamp(2.8rem,5.5vw,4.8rem);font-weight:800;color:#ffffff!important;line-height:1.12;margin-bottom:24px;letter-spacing:0;text-shadow:0 4px 20px rgba(0,0,0,0.6)}
     .hero-title .highlight{background:linear-gradient(135deg,#60a5fa,#93c5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .hero-subtitle{font-size:1.2rem;color:#f1f5f9!important;line-height:1.85;margin-bottom:40px;max-width:580px;font-weight:400;letter-spacing:.02em;text-shadow:0 2px 10px rgba(0,0,0,0.5)}
+    .hero-subtitle{font-size:1.2rem;color:#f8f7f2!important;line-height:1.85;margin-bottom:40px;max-width:580px;font-weight:400;letter-spacing:.02em;text-shadow:0 2px 10px rgba(0,0,0,0.5)}
     .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(37,99,235,.35);border:1px solid rgba(96,165,250,.5);border-radius:50px;padding:8px 20px;margin-bottom:28px;font-size:.88rem;color:#93c5fd;font-weight:600;backdrop-filter:blur(8px)}
     .mobile-toggle{display:none}
     .theme-toggle{background:var(--bg-alt);border:1px solid var(--border-color);color:var(--text-main);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
@@ -592,7 +592,7 @@ fbq('track', 'PageView');
 <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             contact@datrey.ma
           </a>
-<a class="btn btn-outline" href="tel:+212644443059" style="color: #2563eb !important; border-color: #bfdbfe !important; background: #ffffff !important;">
+<a class="btn btn-outline" href="tel:+212644443059" style="color: #2d46c2 !important; border-color: #bfdbfe !important; background: #ffffff !important;">
 <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
             +212 6 44 44 30 59
           </a>

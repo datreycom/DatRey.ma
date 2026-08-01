@@ -15,16 +15,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=20260729g">
+  <link rel="stylesheet" href="../../style.css?v=20260729g">
   
   <style>
     :root {
       --bg-main: #f8f7f2;
       --text-main: #1b2a78;
-      --text-muted: #475569;
-      --card-bg: #f8fafc;
-      --accent: #2563eb;
-      --border-color: #e2e8f0;
+      --text-muted: #5a668c;
+      --card-bg: #ffffff;
+      --accent: #2d46c2;
+      --border-color: #e6e4da;
     }
     body {
       background-color: var(--bg-main) !important;
@@ -37,7 +37,7 @@
     }
     .site-header {
       background: #ffffff;
-      border-bottom: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e6e4da;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -58,7 +58,7 @@
       gap: 10px;
       font-weight: 700;
       font-size: 1.4rem;
-      color: #0f172a;
+      color: #1b2a78;
       text-decoration: none;
     }
     .site-nav {
@@ -67,14 +67,14 @@
       gap: 28px;
     }
     .site-nav a {
-      color: #475569;
+      color: #5a668c;
       font-weight: 500;
       text-decoration: none;
       font-size: 1rem;
       transition: color 0.2s ease;
     }
     .site-nav a:hover {
-      color: #2563eb;
+      color: #2d46c2;
     }
     .article-container {
       max-width: 1240px;
@@ -86,7 +86,7 @@
       font-family: 'DM Serif Display', serif;
       font-size: 3.1rem;
       line-height: 1.2;
-      color: #0f172a !important;
+      color: #1b2a78 !important;
       margin-top: 16px;
       margin-bottom: 20px;
     }
@@ -116,26 +116,26 @@
     .blog-content h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 2.1rem;
-      color: #0f172a !important;
+      color: #1b2a78 !important;
       margin-top: 48px;
       margin-bottom: 18px;
     }
     .blog-content h3 {
       font-size: 1.45rem;
-      color: #1e293b !important;
+      color: #5a668c !important;
       margin-top: 32px;
       margin-bottom: 14px;
     }
     .blog-content p {
       font-size: 1.15rem;
-      color: #334155 !important;
+      color: #5a668c !important;
       margin-bottom: 24px;
       line-height: 1.85;
     }
     .blog-content ul, .blog-content ol {
       margin-bottom: 28px;
       padding-left: 28px;
-      color: #334155 !important;
+      color: #5a668c !important;
     }
     .blog-content li {
       margin-bottom: 10px;
@@ -146,7 +146,7 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 12px 36px rgba(15, 23, 42, 0.06);
-      background-color: #f1f5f9;
+      background-color: #f8f7f2;
       width: 100%;
     }
     .article-body-img-wrap img {
@@ -157,23 +157,23 @@
       display: block;
     }
     .geo-definition, .geo-definition-box {
-      background: #f8fafc !important;
-      border: 1px solid #e2e8f0 !important;
-      border-left: 5px solid #2563eb !important;
+      background: #ffffff !important;
+      border: 1px solid #e6e4da !important;
+      border-left: 5px solid #2d46c2 !important;
       padding: 24px 28px !important;
       border-radius: 12px !important;
       margin: 32px 0 !important;
       font-size: 1.1rem !important;
       line-height: 1.75 !important;
-      color: #0f172a !important;
+      color: #1b2a78 !important;
       width: 100%;
       box-sizing: border-box;
     }
     .geo-definition strong, .geo-definition-box strong {
-      color: #2563eb !important;
+      color: #2d46c2 !important;
     }
     .cta-article-box {
-      background: #0f172a;
+      background: #1b2a78;
       color: #ffffff;
       padding: 44px 36px;
       border-radius: 20px;
@@ -189,13 +189,13 @@
       margin-bottom: 14px;
     }
     .cta-article-box p {
-      color: #334155 !important;
+      color: #5a668c !important;
       font-size: 1.1rem;
       margin-bottom: 28px;
     }
     .cta-btn {
       display: inline-block;
-      background: #2563eb;
+      background: #2d46c2;
       color: #ffffff !important;
       font-weight: 600;
       padding: 14px 32px;
@@ -205,7 +205,7 @@
       font-size: 1rem;
     }
     .cta-btn:hover {
-      background: #1d4ed8;
+      background: #1b2a78;
     }
     @media (max-width: 768px) {
       .hero-title { font-size: 2.2rem; }
@@ -255,12 +255,12 @@ fbq('track', 'PageView');
     <div class="site-header-container">
       <a href="../index.html" class="site-logo">
         <img decoding="async" src="../assets/logo.webp" alt="DatRey Logo" width="40" height="40" style="border-radius:6px;" />
-        <span><span style="color:#2563eb;">D</span>at<span style="color:#2563eb;">R</span>ey</span>
+        <span><span style="color:#2d46c2;">D</span>at<span style="color:#2d46c2;">R</span>ey</span>
       </a>
       <nav class="site-nav">
         <a href="../index.html">Accueil</a>
         <a href="../services.html">Services</a>
-        <a href="../blog.html" style="color:#2563eb; font-weight:600;">Blog</a>
+        <a href="../blog.html" style="color:#2d46c2; font-weight:600;">Blog</a>
         <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:10px 22px; font-size:0.95rem;"><span style="color: #ffffff !important;">Audit Gratuit</span></a>
       </nav>
     </div>
@@ -269,7 +269,7 @@ fbq('track', 'PageView');
   <main>
     <div class="article-container">
       <div style="margin-bottom: 14px;">
-        <span style="background:#eff6ff; color:#2563eb; font-weight:600; font-size:0.9rem; padding:6px 16px; border-radius:20px;">Marketing Digital</span>
+        <span style="background:#eff6ff; color:#2d46c2; font-weight:600; font-size:0.9rem; padding:6px 16px; border-radius:20px;">Marketing Digital</span>
       </div>
       <h1 class="hero-title">Website vs Web App: Best Choice for Your Morocco Project</h1>
       <p class="hero-meta">Publié par l'équipe DatRey | Temps de lecture : ~6 min</p>
@@ -304,7 +304,7 @@ fbq('track', 'PageView');
     </div>
   </main>
 
-  <footer style="border-top:1px solid #e2e8f0; margin-top:80px; padding:40px 0; text-align:center; color:#64748b; font-size:0.95rem;">
+  <footer style="border-top:1px solid #e6e4da; margin-top:80px; padding:40px 0; text-align:center; color:#64748b; font-size:0.95rem;">
     <div class="site-header-container" style="justify-content:center;">
       <p>&copy; 2026 DatRey SARL. Tous droits réservés. Agence Marketing Digital Maroc.</p>
     </div>

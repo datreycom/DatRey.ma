@@ -31,12 +31,12 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
   
   <style>
     :root {
-      --bg-main: #ffffff;
+      --bg-main: #f8f7f2;
       --card-bg: #ffffff;
-      --text-main: #0f172a;
-      --text-muted: #334155;
-      --accent: #2563eb;
-      --border-color: #e2e8f0;
+      --text-main: #1b2a78;
+      --text-muted: #5a668c;
+      --accent: #2d46c2;
+      --border-color: #e6e4da;
     }
     body {
       background-color: var(--bg-main) !important;
@@ -488,11 +488,24 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
 
 def inject_inbody_images(content_html, slug, title):
     """
-    Injects 4 in-body images ([slug]-2.webp to [slug]-5.webp) evenly into the HTML content,
-    guaranteeing AT LEAST 250 words / 1500 characters of text spacing between consecutive images!
+    Injects exactly 4 in-body images ([slug]-2.webp to [slug]-5.webp) evenly into the HTML content.
+    Guarantees AT LEAST 250 words of text spacing between consecutive images.
+    IMPORTANT: First strips any pre-existing body images to prevent duplication on re-generation.
     """
     clean_title = re.sub(r'\s*\|\s*Blog\s*DatRey.*$', '', title, flags=re.IGNORECASE).strip()
-    elements = re.split(r'(</p>|</h2>|3>)', content_html, flags=re.IGNORECASE)
+
+    # ── Step 1: Strip any pre-existing body image divs to prevent duplication ──
+    content_html = re.sub(
+        r'\n?<div class="article-body-img-wrap">.*?</div>\n?',
+        '',
+        content_html,
+        flags=re.DOTALL | re.IGNORECASE
+    )
+    # Clean up excessive blank lines left behind
+    content_html = re.sub(r'\n{3,}', '\n\n', content_html)
+
+    # ── Step 2: Split at paragraph and heading boundaries (fixed regex) ──
+    elements = re.split(r'(</p>|</h2>|</h3>)', content_html, flags=re.IGNORECASE)
     if len(elements) <= 1:
         return content_html
 
@@ -503,13 +516,19 @@ def inject_inbody_images(content_html, slug, title):
 
     for element in elements:
         result.append(element)
-        words_in_element = len(re.findall(r'\w+', element))
+        # Count only text words (strip HTML tags for accurate count)
+        text_only = re.sub(r'<[^>]+>', '', element)
+        words_in_element = len(re.findall(r'\w+', text_only))
         current_word_count += words_in_element
 
-        if img_idx <= 5 and current_word_count >= MIN_WORD_SPACING and (element.lower() == '</p>' or element.lower() == '</h2>'):
+        tag_lower = element.strip().lower()
+        is_boundary = tag_lower in ('</p>', '</h2>', '</h3>')
+
+        if img_idx <= 5 and current_word_count >= MIN_WORD_SPACING and is_boundary:
             img_tag = (
                 f'\n<div class="article-body-img-wrap">'
-                f'<img src="../assets/blog/{slug}-{img_idx}.webp" alt="{clean_title} - Illustration {img_idx-1}" class="blog-img" loading="lazy" />'
+                f'<img src="../assets/blog/{slug}-{img_idx}.webp" alt="{clean_title} - Illustration {img_idx-1}" '
+                f'class="blog-img" loading="lazy" decoding="async" />'
                 f'</div>\n'
             )
             result.append(img_tag)

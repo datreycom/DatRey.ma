@@ -19,31 +19,31 @@
 <link href="https://datrey.ma/" hreflang="x-default" rel="alternate"/>
 <!-- Critical CSS (above-the-fold) inlined for LCP -->
 <style>
-    :root{--roi-600:#1b2a78;--roi-500:#2d46c2;--roi-400:#60a5fa;--pure-white:#fff;--font-display:'DM Serif Display',serif;--font-body:'Poppins',sans-serif;--radius-xl:24px;--transition:.4s cubic-bezier(.16,1,.3,1);--bg-main:#f8f7f2;--bg-alt:#ffffff;--text-main:#1b2a78;--text-muted:#334155;--card-bg:#ffffff;--border-color:#e2e8f0}
+    :root{--roi-600:#1b2a78;--roi-500:#2d46c2;--roi-400:#60a5fa;--pure-white:#fff;--font-display:'DM Serif Display',serif;--font-body:'Poppins',sans-serif;--radius-xl:24px;--transition:.4s cubic-bezier(.16,1,.3,1);--bg-main:#f8f7f2;--bg-alt:#ffffff;--text-main:#1b2a78;--text-muted:#5a668c;--card-bg:#ffffff;--border-color:#e6e4da}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;font-size:17px}
     body{font-family:var(--font-body);color:var(--text-main);background:var(--bg-main);line-height:1.9;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:1.05rem;letter-spacing:.03em}
     img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
     h1,h2,h3,h4,h5,h6{font-family:var(--font-display);line-height:1.25;font-weight:700;letter-spacing:.01em}
     .container{max-width:1280px;margin:0 auto;padding:0 40px}
-    .header{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:#ffffff!important;border-bottom:1px solid #e2e8f0!important;box-shadow:0 4px 20px rgba(15,23,42,.04)!important;transition:var(--transition)}
+    .header{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:#ffffff!important;border-bottom:1px solid #e6e4da!important;box-shadow:0 4px 20px rgba(15,23,42,.04)!important;transition:var(--transition)}
     .header .container{display:flex;align-items:center;justify-content:space-between}
     .header.scrolled{background:rgba(255,255,255,0.98)!important;padding:12px 0;box-shadow:0 4px 20px rgba(15,23,42,.08)!important}
-    .logo{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:#0f172a!important}
+    .logo{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:#1b2a78!important}
     .logo-img{width:40px;height:40px;border-radius:10px;object-fit:contain}
     .nav-links{display:flex;align-items:center;gap:20px}
-    .nav-links a{color:#0f172a!important;font-size:.95rem;font-weight:600;position:relative;white-space:nowrap;letter-spacing:.03em}
-    .nav-links a:hover,.nav-links a.nav-active{color:#2563eb!important}
+    .nav-links a{color:#1b2a78!important;font-size:.95rem;font-weight:600;position:relative;white-space:nowrap;letter-spacing:.03em}
+    .nav-links a:hover,.nav-links a.nav-active{color:#2d46c2!important}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-body);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.88rem;padding:16px 36px;border-radius:50px;cursor:pointer;border:none;position:relative;overflow:hidden}
-    .btn-primary{background:#2563eb;color:#fff!important;box-shadow:0 4px 15px rgba(37,99,235,.3)}
+    .btn-primary{background:#2d46c2;color:#fff!important;box-shadow:0 4px 15px rgba(37,99,235,.3)}
     .nav-cta{padding:10px 24px!important;font-size:.85rem!important;color:#fff!important;letter-spacing:.08em}
     .hero{position:relative;min-height:90vh;display:flex;align-items:center;background:#ffffff!important;overflow:hidden}
     .hero .container{position:relative;z-index:2}
     .hero-content{max-width:750px;padding-top:40px}
-    .hero-title{font-size:clamp(2.8rem,5.5vw,4.8rem);font-weight:800;color:#0f172a!important;line-height:1.12;margin-bottom:24px;letter-spacing:0}
-    .hero-title .highlight{color:#2563eb!important}
-    .hero-subtitle{font-size:1.2rem;color:#334155!important;line-height:1.85;margin-bottom:40px;max-width:580px;font-weight:400;letter-spacing:.02em}
-    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:50px;padding:8px 20px;margin-bottom:28px;font-size:.88rem;color:#2563eb;font-weight:600}
+    .hero-title{font-size:clamp(2.8rem,5.5vw,4.8rem);font-weight:800;color:#1b2a78!important;line-height:1.12;margin-bottom:24px;letter-spacing:0}
+    .hero-title .highlight{color:#2d46c2!important}
+    .hero-subtitle{font-size:1.2rem;color:#5a668c!important;line-height:1.85;margin-bottom:40px;max-width:580px;font-weight:400;letter-spacing:.02em}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:50px;padding:8px 20px;margin-bottom:28px;font-size:.88rem;color:#2d46c2;font-weight:600}
     .mobile-toggle{display:none}
     .theme-toggle{background:var(--bg-alt);border:1px solid var(--border-color);color:var(--text-main);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
     @media(max-width:768px){.nav-links{display:none}.mobile-toggle{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}.mobile-toggle span{width:26px;height:2px;background:var(--text-main);border-radius:2px}.container{padding:0 24px}}
@@ -441,11 +441,11 @@ fbq('track', 'PageView');
 </section>
 
 <!-- ========== PHOTO SLIDER AGENCY SHOWCASE ========== -->
-<section class="slider-section section-padding" id="agency-slider" style="background: #f8fafc; padding: 100px 0;">
+<section class="slider-section section-padding" id="agency-slider" style="background: #ffffff; padding: 100px 0;">
   <div class="container">
     <div class="services-header reveal" style="text-align: center; margin-bottom: 48px;">
-      <div class="section-label" style="color: #2563eb;">L'Agence en Action</div>
-      <h2 class="section-title" style="color: #0f172a !important;">Au cœur de nos <span style="color: #2563eb;">studios &amp; stratégies</span></h2>
+      <div class="section-label" style="color: #2d46c2;">L'Agence en Action</div>
+      <h2 class="section-title" style="color: #1b2a78 !important;">Au cœur de nos <span style="color: #2d46c2;">studios &amp; stratégies</span></h2>
       <p class="section-subtitle">Découvrez l'environnement, l'équipe et les technologies qui façonnent la réussite de nos clients.</p>
     </div>
 
@@ -506,38 +506,38 @@ fbq('track', 'PageView');
 <img alt="Équipe DatRey analysant la méthodologie d'acquisition digitale" decoding="async" loading="lazy" src="assets/approach_methodology.webp" style="border-radius: var(--radius-2xl); box-shadow: 0 10px 30px rgba(0,0,0,0.08);"/>
 </div>
 <div class="reveal">
-<div class="section-label" style="color: #2563eb;">Méthodologie Scientifique</div>
-<h2 class="section-title" style="text-align: left; color: #0f172a !important;">Le processus de <span style="color: #2563eb;">croissance prévisible</span></h2>
-<p style="font-size: 1.05rem; color: #334155 !important; margin-bottom: 32px; line-height: 1.8;">
+<div class="section-label" style="color: #2d46c2;">Méthodologie Scientifique</div>
+<h2 class="section-title" style="text-align: left; color: #1b2a78 !important;">Le processus de <span style="color: #2d46c2;">croissance prévisible</span></h2>
+<p style="font-size: 1.05rem; color: #5a668c !important; margin-bottom: 32px; line-height: 1.8;">
   Nous appliquons une méthode rigoureuse et Data-Driven pour éliminer l'incertitude et dérisquer chacun de vos dirhams investis.
 </p>
 <div class="approach-steps approach-steps-chic" style="display: grid; gap: 20px;">
-<div class="approach-step glass-card" style="padding: 20px 28px; display: flex; gap: 20px; align-items: center; background: #ffffff; border: 1px solid #e2e8f0;">
-<div style="font-size: 1.6rem; font-weight: 800; color: #2563eb;">01</div>
+<div class="approach-step glass-card" style="padding: 20px 28px; display: flex; gap: 20px; align-items: center; background: #ffffff; border: 1px solid #e6e4da;">
+<div style="font-size: 1.6rem; font-weight: 800; color: #2d46c2;">01</div>
 <div>
-<h3 style="font-size: 1.1rem; margin-bottom: 4px; color: #0f172a !important;">Audit Data &amp; Tracking Pixel</h3>
-<p style="font-size: 0.9rem; color: #334155 !important; margin:0;">Configuration du Server-Side Tracking et élimination des pertes de budget.</p>
+<h3 style="font-size: 1.1rem; margin-bottom: 4px; color: #1b2a78 !important;">Audit Data &amp; Tracking Pixel</h3>
+<p style="font-size: 0.9rem; color: #5a668c !important; margin:0;">Configuration du Server-Side Tracking et élimination des pertes de budget.</p>
 </div>
 </div>
-<div class="approach-step glass-card" style="padding: 20px 28px; display: flex; gap: 20px; align-items: center; background: #ffffff; border: 1px solid #e2e8f0;">
-<div style="font-size: 1.6rem; font-weight: 800; color: #2563eb;">02</div>
+<div class="approach-step glass-card" style="padding: 20px 28px; display: flex; gap: 20px; align-items: center; background: #ffffff; border: 1px solid #e6e4da;">
+<div style="font-size: 1.6rem; font-weight: 800; color: #2d46c2;">02</div>
 <div>
-<h3 style="font-size: 1.1rem; margin-bottom: 4px; color: #0f172a !important;">Acquisition Multicanale</h3>
-<p style="font-size: 0.9rem; color: #334155 !important; margin:0;">Ciblage des prospects à forte valeur via Meta, Google Ads &amp; SEO.</p>
+<h3 style="font-size: 1.1rem; margin-bottom: 4px; color: #1b2a78 !important;">Acquisition Multicanale</h3>
+<p style="font-size: 0.9rem; color: #5a668c !important; margin:0;">Ciblage des prospects à forte valeur via Meta, Google Ads &amp; SEO.</p>
 </div>
 </div>
-<div class="approach-step glass-card" style="padding: 20px 28px; display: flex; gap: 20px; align-items: center; background: #ffffff; border: 1px solid #e2e8f0;">
-<div style="font-size: 1.6rem; font-weight: 800; color: #2563eb;">03</div>
+<div class="approach-step glass-card" style="padding: 20px 28px; display: flex; gap: 20px; align-items: center; background: #ffffff; border: 1px solid #e6e4da;">
+<div style="font-size: 1.6rem; font-weight: 800; color: #2d46c2;">03</div>
 <div>
-<h3 style="font-size: 1.1rem; margin-bottom: 4px; color: #0f172a !important;">CRO &amp; Neuromarketing</h3>
-<p style="font-size: 0.9rem; color: #334155 !important; margin:0;">Optimisation psychologique des landing pages pour doubler les conversions.</p>
+<h3 style="font-size: 1.1rem; margin-bottom: 4px; color: #1b2a78 !important;">CRO &amp; Neuromarketing</h3>
+<p style="font-size: 0.9rem; color: #5a668c !important; margin:0;">Optimisation psychologique des landing pages pour doubler les conversions.</p>
 </div>
 </div>
-<div class="approach-step glass-card" style="padding: 20px 28px; display: flex; gap: 20px; align-items: center; background: #ffffff; border: 1px solid #e2e8f0;">
-<div style="font-size: 1.6rem; font-weight: 800; color: #2563eb;">04</div>
+<div class="approach-step glass-card" style="padding: 20px 28px; display: flex; gap: 20px; align-items: center; background: #ffffff; border: 1px solid #e6e4da;">
+<div style="font-size: 1.6rem; font-weight: 800; color: #2d46c2;">04</div>
 <div>
-<h3 style="font-size: 1.1rem; margin-bottom: 4px; color: #0f172a !important;">Scale &amp; Rétention LTV</h3>
-<p style="font-size: 0.9rem; color: #334155 !important; margin:0;">Scaling des budgets gagnants et automatisation CRM de la fidélisation.</p>
+<h3 style="font-size: 1.1rem; margin-bottom: 4px; color: #1b2a78 !important;">Scale &amp; Rétention LTV</h3>
+<p style="font-size: 0.9rem; color: #5a668c !important; margin:0;">Scaling des budgets gagnants et automatisation CRM de la fidélisation.</p>
 </div>
 </div>
 </div>
@@ -547,38 +547,38 @@ fbq('track', 'PageView');
 </section>
 
 <!-- ========== LATEST INSIGHTS ========== -->
-<section class="latest-articles section-padding" id="latest-articles" style="background: #f8fafc; padding: 100px 0;">
+<section class="latest-articles section-padding" id="latest-articles" style="background: #ffffff; padding: 100px 0;">
 <div class="container">
 <div class="services-header reveal" style="text-align: center; margin-bottom: 48px;">
-<div class="section-label" style="color: #2563eb;">Ressources &amp; Strategy</div>
-<h2 class="section-title" style="color: #0f172a !important;">Nos derniers <span style="color: #2563eb;">Insights &amp; Guides</span></h2>
+<div class="section-label" style="color: #2d46c2;">Ressources &amp; Strategy</div>
+<h2 class="section-title" style="color: #1b2a78 !important;">Nos derniers <span style="color: #2d46c2;">Insights &amp; Guides</span></h2>
 <p class="section-subtitle">Découvrez nos analyses stratégiques sur l'acquisition et le marketing digital au Maroc.</p>
 </div>
 <div class="articles-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
-<a class="blog-card glass-card reveal" href="blog.html" style="background: #ffffff; border: 1px solid #e2e8f0; color: #0f172a; text-decoration: none;">
+<a class="blog-card glass-card reveal" href="blog.html" style="background: #ffffff; border: 1px solid #e6e4da; color: #1b2a78; text-decoration: none;">
 <div style="padding: 28px;">
-<span class="glowing-badge" style="margin-bottom: 12px; background: #eff6ff; border-color: #bfdbfe; color: #2563eb;">Stratégie 2026</span>
-<h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #0f172a !important;">Google Ads vs Meta Ads : Répartition Budgétaire Idéale</h3>
-<p style="font-size: 0.9rem; color: #334155 !important;">Comment équilibrer captation et création de demande au Maroc.</p>
+<span class="glowing-badge" style="margin-bottom: 12px; background: #eff6ff; border-color: #bfdbfe; color: #2d46c2;">Stratégie 2026</span>
+<h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #1b2a78 !important;">Google Ads vs Meta Ads : Répartition Budgétaire Idéale</h3>
+<p style="font-size: 0.9rem; color: #5a668c !important;">Comment équilibrer captation et création de demande au Maroc.</p>
 </div>
 </a>
-<a class="blog-card glass-card reveal" href="blog.html" style="background: #ffffff; border: 1px solid #e2e8f0; color: #0f172a; text-decoration: none;">
+<a class="blog-card glass-card reveal" href="blog.html" style="background: #ffffff; border: 1px solid #e6e4da; color: #1b2a78; text-decoration: none;">
 <div style="padding: 28px;">
-<span class="glowing-badge" style="margin-bottom: 12px; background: #eff6ff; border-color: #bfdbfe; color: #2563eb;">SEO &amp; IA</span>
-<h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #0f172a !important;">Dominer Google &amp; ChatGPT Search en 2026</h3>
-<p style="font-size: 0.9rem; color: #334155 !important;">Le guide pratique pour apparaître dans les réponses de l'IA.</p>
+<span class="glowing-badge" style="margin-bottom: 12px; background: #eff6ff; border-color: #bfdbfe; color: #2d46c2;">SEO &amp; IA</span>
+<h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #1b2a78 !important;">Dominer Google &amp; ChatGPT Search en 2026</h3>
+<p style="font-size: 0.9rem; color: #5a668c !important;">Le guide pratique pour apparaître dans les réponses de l'IA.</p>
 </div>
 </a>
-<a class="blog-card glass-card reveal" href="blog.html" style="background: #ffffff; border: 1px solid #e2e8f0; color: #0f172a; text-decoration: none;">
+<a class="blog-card glass-card reveal" href="blog.html" style="background: #ffffff; border: 1px solid #e6e4da; color: #1b2a78; text-decoration: none;">
 <div style="padding: 28px;">
-<span class="glowing-badge" style="margin-bottom: 12px; background: #eff6ff; border-color: #bfdbfe; color: #2563eb;">CRO &amp; UX</span>
-<h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #0f172a !important;">7 Principes Neuro-Attractifs pour Landing Pages</h3>
-<p style="font-size: 0.9rem; color: #334155 !important;">Transformez vos simples visiteurs en acheteurs impulsifs.</p>
+<span class="glowing-badge" style="margin-bottom: 12px; background: #eff6ff; border-color: #bfdbfe; color: #2d46c2;">CRO &amp; UX</span>
+<h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #1b2a78 !important;">7 Principes Neuro-Attractifs pour Landing Pages</h3>
+<p style="font-size: 0.9rem; color: #5a668c !important;">Transformez vos simples visiteurs en acheteurs impulsifs.</p>
 </div>
 </a>
 </div>
 <div style="text-align: center; margin-top: 40px;">
-<a class="btn btn-outline" href="blog.html" style="border-color: #2563eb; color: #2563eb;">Voir tous nos articles de blog →</a>
+<a class="btn btn-outline" href="blog.html" style="border-color: #2d46c2; color: #2d46c2;">Voir tous nos articles de blog →</a>
 </div>
 </div>
 </section>
@@ -659,7 +659,7 @@ fbq('track', 'PageView');
 <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             contact@datrey.ma
           </a>
-<a class="btn btn-outline" href="tel:+212644443059" style="color: #2563eb !important; border-color: #bfdbfe !important; background: #ffffff !important;">
+<a class="btn btn-outline" href="tel:+212644443059" style="color: #2d46c2 !important; border-color: #bfdbfe !important; background: #ffffff !important;">
 <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
             +212 6 44 44 30 59
           </a>
@@ -667,3 +667,76 @@ fbq('track', 'PageView');
 </div>
 </div>
 </section>
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="logo" href="/" style="margin-bottom:4px;">
+<img alt="DatRey Logo" class="logo-img" decoding="async" height="40" decoding="async" fetchpriority="high" src="assets/logo.webp" width="40"/>
+<span><span style="color: var(--datrey-blue);">D</span>at<span style="color: var(--datrey-blue);">R</span>ey AGENCY</span>
+</a>
+<p>Votre partenaire d'acquisition digitale full-stack au Maroc. Google Ads, Meta Ads, SEO et CRO pour scaler vos ventes.</p>
+<div class="social-links">
+<a aria-label="LinkedIn DatRey" href="https://www.linkedin.com/in/datrey-agency/" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+<a aria-label="X DatRey" href="https://x.com/Datrey_Agency" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg></a>
+<a aria-label="Instagram DatRey" href="https://www.instagram.com/datrey.agency/" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+</div>
+</div>
+<div>
+<h3>Navigation</h3>
+<div class="footer-links">
+<a href="/">Accueil</a>
+<a href="creation-site-web.html">Création Site Web</a>
+<a href="services.html">Nos Services</a>
+<a href="transformation-digitale.html">Transformation Digitale</a>
+<a href="blog.html">Blog</a>
+<a href="a-propos.html">À propos</a>
+<a href="cas-clients.html">Cas Clients</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+<div>
+<h3>Services</h3>
+<div class="footer-links">
+<a href="services-google-ads.html">Google Ads (SEA)</a>
+<a href="services-meta-ads.html">Meta Ads</a>
+<a href="services-seo.html">SEO &amp; Contenu</a>
+<a href="services-cro.html">CRO &amp; Landing Pages</a>
+<a href="services-emailing.html">Email &amp; Automation</a>
+<a href="services-strategie.html">Stratégie d'Acquisition</a>
+<a href="services-gmb-360.html">Visite Virtuelle 360°</a>
+</div>
+</div>
+<div>
+<h3>Contact</h3>
+<div class="footer-contact-item">
+<span>5, rue de Dixmude, 1er étage, appt 2, Benjdia, Casablanca</span>
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+<span>5, rue de Dixmude, 1er étage, appt 2,<br/>Benjdia — Casablanca</span>
+</div>
+<div class="footer-contact-item">
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+<a href="mailto:contact@datrey.ma" style="color:inherit;">contact@datrey.ma</a>
+</div>
+<div class="footer-contact-item">
+<span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+<a href="tel:+212644443059" style="color:inherit;">+212 6 44 44 30 59</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 DatRey. Tous droits réservés.</span>
+<div style="display:flex;gap:20px;">
+<a href="mentions-legales.html">Mentions légales</a>
+<a href="politique-confidentialite.html">Politique de confidentialité</a>
+</div>
+</div>
+</div>
+</footer>
+<a aria-label="Nous contacter sur WhatsApp" class="whatsapp-float" href="https://wa.me/212644443059" rel="noopener noreferrer" target="_blank">
+<svg fill="currentColor" height="28" viewbox="0 0 24 24" width="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+</a>
+<script defer="" src="animations.js"></script>
+</body>
+</html>
