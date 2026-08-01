@@ -94,23 +94,45 @@
   <header class="header" id="header">
     <div class="container">
       <a href="index.html" class="logo" aria-label="DatRey — Accueil">
-        <img src="assets/logo.webp" alt="DatRey Logo" width="40" height="40" />
+        <img src="assets/logo.webp" alt="DatRey Logo" class="logo-img" width="40" height="40" />
         <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
       </a>
       <nav class="nav-links" aria-label="Navigation principale">
         <a href="index.html">Accueil</a>
+        <a href="creation-site-web.html">Création Site Web</a>
         <a href="services.html">Nos Services</a>
         <a href="blog.html" class="nav-active">Blog</a>
         <a href="contact.html">Contact</a>
-        <a href="contact.html" class="btn btn-primary nav-cta">Audit Gratuit</a>
+        <a href="contact.html?subject=AuditGratuit" class="btn btn-primary nav-cta">Audit Gratuit</a>
       </nav>
       <div style="display: flex; align-items: center; gap: 16px;">
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <div class="lang-selector">
+          <button aria-label="Changer de langue" class="lang-btn">FR ▼</button>
+          <div class="lang-dropdown">
+            <a href="index.html">Français</a>
+            <a href="/en/">English</a>
+          </div>
+        </div>
+        <button aria-label="Basculer le thème" class="theme-toggle" id="themeToggle">
+          <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
+          <svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button aria-label="Menu" class="mobile-toggle" id="mobileToggle">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
+
+  <div aria-label="Navigation mobile" class="mobile-nav" id="mobileNav" role="navigation">
+    <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
+    <a href="index.html" onclick="closeMobileNav()">Accueil</a>
+    <a href="creation-site-web.html" onclick="closeMobileNav()">Création Site Web</a>
+    <a href="services.html" onclick="closeMobileNav()">Nos Services</a>
+    <a href="blog.html" class="nav-active" onclick="closeMobileNav()">Blog</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+    <a class="btn btn-primary magnetic-btn" href="contact.html?subject=AuditGratuit" onclick="closeMobileNav()">Audit Gratuit</a>
+  </div>
 
   <section class="page-hero">
     <div class="container text-center">
@@ -124,192 +146,509 @@
       <div class="blog-grid">
 
         <article class="blog-card">
-          <img src="assets/blog/emailing-automation-maroc-entonnoir-vente-b2b-rentable-1.webp" alt="Emailing B2B au Maroc : L’Entonnoir Automatisé qui Génère 4,2x plus de RDV Qualifiés en 2026" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/strategie-reseaux-sociaux-formation-1.webp" alt="Stratégie réseaux sociaux : boostez votre présence en ligne" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
-            <span class="blog-card-category">Emailing & Automation</span>
-            <h2 class="blog-card-title">Emailing B2B au Maroc : L’Entonnoir Automatisé qui Génère 4,2x plus de RDV Qualifiés en 2026</h2>
-            <p class="blog-card-desc">Découvrez comment structurer un entonnoir emailing B2B prévisible au Maroc. Stratégies, ROI, coûts MAD et automation pour des RDV qualifiés en 2026.</p>
-            <a href="blog/emailing-automation-maroc-entonnoir-vente-b2b-rentable.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Formations & Master Classes</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Stratégie réseaux sociaux : boostez votre présence en ligne</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/strategie-reseaux-sociaux-formation.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/cro-maroc-reduire-cac-augmenter-ltv-2026-1.webp" alt="CRO au Maroc 2026 : Comment réduire votre CAC de 40% et doubler votre LTV sans augmenter votre budget pub" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/google-ads-e-commerce-formation-1.webp" alt="Google Ads e-commerce : formation pour booster vos ventes" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
-            <span class="blog-card-category">Optimisation des Conversions (CRO)</span>
-            <h2 class="blog-card-title">CRO au Maroc 2026 : Comment réduire votre CAC de 40% et doubler votre LTV sans augmenter votre budget pub</h2>
-            <p class="blog-card-desc">Découvrez comment l'Optimisation du Taux de Conversion (CRO) transforme votre budget marketing au Maroc : baisse du CAC, explosion du LTV et ROI maximal dès 2026.</p>
-            <a href="blog/cro-maroc-reduire-cac-augmenter-ltv-2026.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Formations & Master Classes</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Google Ads e-commerce : formation pour booster vos ventes</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/google-ads-e-commerce-formation.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/referencement-naturel-seo-maroc-plan-action-90-jours-casablanca-rabat-1.webp" alt="Référencement Naturel (SEO) au Maroc : Le Plan d'Action 90 Jours qui Transforme votre Trafic en Clients à Casablanca et Rabat" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/seo-local-pme-formation-maroc-1.webp" alt="SEO local PME : formation pour dominer le marché marocain" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
-            <span class="blog-card-category">Référencement Naturel (SEO)</span>
-            <h2 class="blog-card-title">Référencement Naturel (SEO) au Maroc : Le Plan d'Action 90 Jours qui Transforme votre Trafic en Clients à Casablanca et Rabat</h2>
-            <p class="blog-card-desc">Découvrez comment dominer Google à Casablanca et Rabat en 90 jours. Un plan SEO concret, axé ROI et chiffres d'affaires pour les décideurs marocains. Audit offert.</p>
-            <a href="blog/referencement-naturel-seo-maroc-plan-action-90-jours-casablanca-rabat.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Formations & Master Classes</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">SEO local PME : formation pour dominer le marché marocain</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/seo-local-pme-formation-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/meta-ads-social-ads-maroc-optimisation-geo-domination-google-ai-chatgpt-perplexity-1.webp" alt="Meta Ads & Social Ads au Maroc : Dominez Google AI, ChatGPT et Perplexity avec une stratégie GEO en 2026" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <span class="blog-card-category">Meta Ads & Social Ads</span>
-            <h2 class="blog-card-title">Meta Ads & Social Ads au Maroc : Dominez Google AI, ChatGPT et Perplexity avec une stratégie GEO en 2026</h2>
-            <p class="blog-card-desc">Découvrez comment transformer vos Meta Ads en machine à cash au Maroc grâce au GEO. Attirez des clients via Google AI, ChatGPT et Perplexity. ROI maximal.</p>
-            <a href="blog/meta-ads-social-ads-maroc-optimisation-geo-domination-google-ai-chatgpt-perplexity.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/google-ads-sea-maroc-guide-optimisation-budgetaire-roi-1.webp" alt="Google Ads & SEA au Maroc : Le Guide Décisionnel Ultime pour un ROI Maximisé en 2026" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <span class="blog-card-category">Google Ads & SEA</span>
-            <h2 class="blog-card-title">Google Ads & SEA au Maroc : Le Guide Décisionnel Ultime pour un ROI Maximisé en 2026</h2>
-            <p class="blog-card-desc">Comparatif stratégique des leviers Google Ads au Maroc : budgets, formats, ROI. Optimisez votre SEA et dominez la concurrence dès 2026. Audit gratuit.</p>
-            <a href="blog/google-ads-sea-maroc-guide-optimisation-budgetaire-roi.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/formations-master-classes-maroc-doubler-taux-conversion-2026-1.webp" alt="Formations & Master Classes au Maroc : Le Plan d'Action Concret pour Doubler Votre Taux de Conversion en 2026" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <span class="blog-card-category">Formations & Master Classes</span>
-            <h2 class="blog-card-title">Formations & Master Classes au Maroc : Le Plan d'Action Concret pour Doubler Votre Taux de Conversion en 2026</h2>
-            <p class="blog-card-desc">Découvrez la stratégie pas à pas et l'étude de cas d'une formation au Maroc qui a doublé son taux de conversion en 90 jours. Optimisez votre ROI dès maintenant avec DatRey.</p>
-            <a href="blog/formations-master-classes-maroc-doubler-taux-conversion-2026.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/developpement-guide-acquisition-roi-271-1.webp" alt="Développement Web & Mobile au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/tendances-dev-2026-web-mobile-maroc-1.webp" alt="Tendances Dev 2026 : Web & Mobile au Maroc" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span class="blog-card-category">Développement Web & Mobile</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
             </div>
-            <h2 class="blog-card-title">Développement Web & Mobile au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc</h2>
-            <p class="blog-card-desc">Découvrez comment optimiser vos leviers de Développement Web & Mobile au Maroc en 2026. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey.</p>
-            <a href="blog/developpement-guide-acquisition-roi-271.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <h2 class="blog-card-title">Tendances Dev 2026 : Web & Mobile au Maroc</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/tendances-dev-2026-web-mobile-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/erreurs-design-impression-couteuses-solutions-conversions-maroc-1.webp" alt="Design & Impression au Maroc : 7 Erreurs Coûteuses Qui Tuent Vos Ventes (et les Solutions Rentables pour les Éviter en 2026)" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/site-vs-application-web-choisir-business-1.webp" alt="Site vs Application Web : Lequel Choisir pour votre Business ?" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Développement Web & Mobile</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Site vs Application Web : Lequel Choisir pour votre Business ?</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/site-vs-application-web-choisir-business.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/app-mobile-sur-mesure-maroc-1.webp" alt="App mobile sur mesure : boostez votre business au Maroc" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Développement Web & Mobile</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">App mobile sur mesure : boostez votre business au Maroc</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/app-mobile-sur-mesure-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/tendances-design-impression-maroc-1.webp" alt="Tendances Design & Impression : Boostez Votre Marque au Maroc" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span class="blog-card-category">Design & Impression</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
             </div>
-            <h2 class="blog-card-title">Design & Impression au Maroc : 7 Erreurs Coûteuses Qui Tuent Vos Ventes (et les Solutions Rentables pour les Éviter en 2026)</h2>
-            <p class="blog-card-desc">Découvrez les 7 erreurs fatales en design et impression qui ruinent votre ROI au Maroc. Solutions concrètes et stratégies 2026 pour maximiser vos conversions.</p>
-            <a href="blog/erreurs-design-impression-couteuses-solutions-conversions-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <h2 class="blog-card-title">Tendances Design & Impression : Boostez Votre Marque au Maroc</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/tendances-design-impression-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/audit-digital-maroc-2026-cout-inaction-roi-strategie-donnee-1.webp" alt="Audit Digital au Maroc en 2026 : Le Vrai Coût de l'Inaction vs. Le ROI d'une Stratégie Pilotée par la Donnée" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/impression-offset-vs-numerique-1.webp" alt="Impression Offset vs Numérique : Quel Choix pour Votre Projet ?" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Design & Impression</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Impression Offset vs Numérique : Quel Choix pour Votre Projet ?</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/impression-offset-vs-numerique.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/design-impression-identite-visuelle-1.webp" alt="Design & Impression : Créez une identité visuelle impactante au Maroc" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Design & Impression</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Design & Impression : Créez une identité visuelle impactante au Maroc</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/design-impression-identite-visuelle.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/audit-digital-indicateurs-cles-1.webp" alt="Audit Digital : 7 Indicateurs Clés pour Booster votre Performance" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span class="blog-card-category">Audit Digital</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
             </div>
-            <h2 class="blog-card-title">Audit Digital au Maroc en 2026 : Le Vrai Coût de l'Inaction vs. Le ROI d'une Stratégie Pilotée par la Donnée</h2>
-            <p class="blog-card-desc">Dirigeants, votre budget digital brûle-t-il ? Découvrez le comparatif chiffré entre l'inaction, le bricolage et l'Audit Stratégique. ROI prouvé, exemples MAD/EUR.</p>
-            <a href="blog/audit-digital-maroc-2026-cout-inaction-roi-strategie-donnee.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <h2 class="blog-card-title">Audit Digital : 7 Indicateurs Clés pour Booster votre Performance</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/audit-digital-indicateurs-cles.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/affichage-dynamique-geo-seo-ia-generation-leads-maroc-2026-1.webp" alt="Affichage Dynamique : Comment vos écrans peuvent générer 3x plus de leads grâce au GEO et à l'IA (Guide 2026)" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/audit-ux-ui-optimisation-experience-utilisateur-1.webp" alt="Audit UX/UI : Optimisez l'Expérience Utilisateur de Votre Site" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Audit Digital</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Audit UX/UI : Optimisez l'Expérience Utilisateur de Votre Site</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/audit-ux-ui-optimisation-experience-utilisateur.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/audit-seo-complet-1.webp" alt="Audit SEO complet : boostez votre visibilité web au Maroc" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Audit Digital</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Audit SEO complet : boostez votre visibilité web au Maroc</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/audit-seo-complet.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/roi-affichage-dynamique-maroc-1.webp" alt="ROI affichage dynamique : boostez vos ventes au Maroc" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span class="blog-card-category">Affichage Dynamique</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
             </div>
-            <h2 class="blog-card-title">Affichage Dynamique : Comment vos écrans peuvent générer 3x plus de leads grâce au GEO et à l'IA (Guide 2026)</h2>
-            <p class="blog-card-desc">Découvrez comment le GEO transforme l'affichage dynamique en machine à leads. Stratégies concrètes pour dominer Google AI et ChatGPT au Maroc dès 2026.</p>
-            <a href="blog/affichage-dynamique-geo-seo-ia-generation-leads-maroc-2026.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <h2 class="blog-card-title">ROI affichage dynamique : boostez vos ventes au Maroc</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/roi-affichage-dynamique-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/acquisition-client-roi-maroc-guide-strategique-2026-1.webp" alt="Acquisition Client à Fort ROI au Maroc : Le Guide Stratégique 2026 pour les Dirigeants qui Refusent de Brûler leur Budget" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/affichage-dynamique-contenu-dynamique-1.webp" alt="Affichage Dynamique : Boostez Votre Communication avec du Contenu Dynamique" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Affichage Dynamique</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Affichage Dynamique : Boostez Votre Communication avec du Contenu Dynamique</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/affichage-dynamique-contenu-dynamique.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/affichage-dynamique-led-maroc-1.webp" alt="Affichage Dynamique LED : Boostez Votre Visibilité au Maroc" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Affichage Dynamique</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Affichage Dynamique LED : Boostez Votre Visibilité au Maroc</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/affichage-dynamique-led-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/strategie-digitale-pme-casablanca-1.webp" alt="Stratégie Digitale pour PME : Boostez Votre Croissance" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span class="blog-card-category">Stratégie Digitale</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
             </div>
-            <h2 class="blog-card-title">Acquisition Client à Fort ROI au Maroc : Le Guide Stratégique 2026 pour les Dirigeants qui Refusent de Brûler leur Budget</h2>
-            <p class="blog-card-desc">Découvrez comment les PME et grandes entreprises au Maroc génèrent un ROI exceptionnel en 2026. Stratégies, budgets MAD, KPIs et pièges à éviter. Audit offert.</p>
-            <a href="blog/acquisition-client-roi-maroc-guide-strategique-2026.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <h2 class="blog-card-title">Stratégie Digitale pour PME : Boostez Votre Croissance</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/strategie-digitale-pme-casablanca.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/emailing-guide-acquisition-roi-451-1.webp" alt="Emailing & Automation au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/strategie-digitale-2026-tendances-maroc-1.webp" alt="Stratégie digitale 2026 : les tendances incontournables au Maroc" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Stratégie Digitale</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Stratégie digitale 2026 : les tendances incontournables au Maroc</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/strategie-digitale-2026-tendances-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/strategie-digitale-plan-digital-maroc-1.webp" alt="Stratégie digitale : construisez votre plan digital gagnant" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Stratégie Digitale</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Stratégie digitale : construisez votre plan digital gagnant</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/strategie-digitale-plan-digital-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/delivrabilite-email-etapes-boite-reception-1.webp" alt="Délivrabilité Email : 7 Étapes pour Atteindre la Boîte de Réception" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span class="blog-card-category">Emailing & Automation</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
             </div>
-            <h2 class="blog-card-title">Emailing & Automation au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026</h2>
-            <p class="blog-card-desc">Découvrez comment optimiser vos leviers de Emailing & Automation au Maroc en 2026. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey.</p>
-            <a href="blog/emailing-guide-acquisition-roi-451.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <h2 class="blog-card-title">Délivrabilité Email : 7 Étapes pour Atteindre la Boîte de Réception</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/delivrabilite-email-etapes-boite-reception.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/cro-guide-acquisition-roi-693-1.webp" alt="Optimisation des Conversions (CRO) au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/segmentation-emailing-boostez-campagnes-maroc-1.webp" alt="Segmentation emailing : boostez vos campagnes au Maroc" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Emailing & Automation</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Segmentation emailing : boostez vos campagnes au Maroc</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/segmentation-emailing-boostez-campagnes-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/sequences-automatisees-emailing-maroc-1.webp" alt="Séquences automatisées : boostez votre emailing au Maroc" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Emailing & Automation</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Séquences automatisées : boostez votre emailing au Maroc</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/sequences-automatisees-emailing-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/optimisation-conversions-cro-parcours-utilisateur-1.webp" alt="Optimisation des conversions CRO : améliorez votre parcours utilisateur" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span class="blog-card-category">Optimisation des Conversions (CRO)</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
             </div>
-            <h2 class="blog-card-title">Optimisation des Conversions (CRO) au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026</h2>
-            <p class="blog-card-desc">Découvrez comment optimiser vos leviers de Optimisation des Conversions (CRO) au Maroc. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey.</p>
-            <a href="blog/cro-guide-acquisition-roi-693.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <h2 class="blog-card-title">Optimisation des conversions CRO : améliorez votre parcours utilisateur</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/optimisation-conversions-cro-parcours-utilisateur.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/seo-guide-acquisition-roi-531-1.webp" alt="Référencement Naturel (SEO) au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/optimisation-conversions-landing-pages-1.webp" alt="Optimisation des Conversions : Boostez vos Landing Pages" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Optimisation des Conversions (CRO)</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Optimisation des Conversions : Boostez vos Landing Pages</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/optimisation-conversions-landing-pages.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/tests-ab-optimisation-conversions-1.webp" alt="Tests A/B : Optimisez vos conversions avec DatRey" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Optimisation des Conversions (CRO)</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Tests A/B : Optimisez vos conversions avec DatRey</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/tests-ab-optimisation-conversions.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/strategie-de-contenu-seo-maroc-1.webp" alt="Stratégie de contenu SEO : boostez votre visibilité au Maroc" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Référencement Naturel (SEO)</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Stratégie de contenu SEO : boostez votre visibilité au Maroc</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/strategie-de-contenu-seo-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/referencement-naturel-seo-local-maroc-1.webp" alt="Référencement Naturel SEO Local Maroc : Boostez votre visibilité" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Référencement Naturel (SEO)</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Référencement Naturel SEO Local Maroc : Boostez votre visibilité</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/referencement-naturel-seo-local-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/seo-technique-optimisations-essentielles-1.webp" alt="SEO technique : 7 optimisations essentielles pour votre site" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Référencement Naturel (SEO)</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">SEO technique : 7 optimisations essentielles pour votre site</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/seo-technique-optimisations-essentielles.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/budget-meta-ads-social-ads-encheres-maroc-1.webp" alt="Budget Meta Ads & Social Ads : Optimisez vos enchères au Maroc" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Meta Ads & Social Ads</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Budget Meta Ads & Social Ads : Optimisez vos enchères au Maroc</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/budget-meta-ads-social-ads-encheres-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/creations-publicitaires-meta-ads-social-ads-1.webp" alt="Créations publicitaires Meta Ads & Social Ads : boostez votre ROI" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Meta Ads & Social Ads</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Créations publicitaires Meta Ads & Social Ads : boostez votre ROI</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/creations-publicitaires-meta-ads-social-ads.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/ciblage-audience-meta-ads-guide-1.webp" alt="Ciblage Audience Meta Ads : Guide pour Maximiser vos Campagnes Social Ads" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Meta Ads & Social Ads</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Ciblage Audience Meta Ads : Guide pour Maximiser vos Campagnes Social Ads</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/ciblage-audience-meta-ads-guide.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/google-ads-debutants-guide-1.webp" alt="Google Ads pour débutants : guide complet pour réussir vos campagnes" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Google Ads & SEA</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Google Ads pour débutants : guide complet pour réussir vos campagnes</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/google-ads-debutants-guide.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/erreurs-google-ads-maroc-1.webp" alt="Google Ads au Maroc : 7 erreurs à éviter pour vos campagnes SEA" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Google Ads & SEA</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Google Ads au Maroc : 7 erreurs à éviter pour vos campagnes SEA</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/erreurs-google-ads-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/google-ads-sea-optimiser-roi-campagnes-1.webp" alt="Google Ads & SEA : Optimiser le ROI de vos campagnes" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Google Ads & SEA</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 01/08/2026 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Google Ads & SEA : Optimiser le ROI de vos campagnes</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/google-ads-sea-optimiser-roi-campagnes.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/google-ads-maroc-guide-complet-2024-1.webp" alt="Google Ads au Maroc : Le Guide Complet pour Dominer la Recherche en 2024" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Google Ads & SEA</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Google Ads au Maroc : Le Guide Complet pour Dominer la Recherche en 2024</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/google-ads-maroc-guide-complet-2024.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/google-ads-maroc-guide-complet-campagnes-rentables-2026-1.webp" alt="Google Ads au Maroc : le guide complet pour des campagnes rentables en 2026" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Google Ads & SEA</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Google Ads au Maroc : le guide complet pour des campagnes rentables en 2026</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/google-ads-maroc-guide-complet-campagnes-rentables-2026.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/google-ads-maroc-guide-complet-roi-sea-2026-1.webp" alt="Google Ads au Maroc : Le Guide Complet pour Maximiser Votre ROI SEA en 2026" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Google Ads & SEA</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Google Ads au Maroc : Le Guide Complet pour Maximiser Votre ROI SEA en 2026</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/google-ads-maroc-guide-complet-roi-sea-2026.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/google-ads-maroc-guide-roi-2026-1.webp" alt="Google Ads au Maroc : Le Guide Complet 2026 pour Maximiser Votre ROI en MAD" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Google Ads & SEA</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Google Ads au Maroc : Le Guide Complet 2026 pour Maximiser Votre ROI en MAD</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/google-ads-maroc-guide-roi-2026.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/meta-ads-vs-sea-guide-budgetaire-dirigeants-maroc-2024-1.webp" alt="Meta Ads vs SEA : Le Guide Budgétaire Décisif pour les Dirigeants Marocains en 2024" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Meta Ads & Social Ads</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Meta Ads vs SEA : Le Guide Budgétaire Décisif pour les Dirigeants Marocains en 2024</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/meta-ads-vs-sea-guide-budgetaire-dirigeants-maroc-2024.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/geo-seo-domination-google-chatgpt-2026-roi-1.webp" alt="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2026 (et exploser votre ROI)" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span class="blog-card-category">Référencement Naturel (SEO)</span>
               <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
             </div>
-            <h2 class="blog-card-title">Référencement Naturel (SEO) au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026</h2>
-            <p class="blog-card-desc">Découvrez comment optimiser vos leviers de Référencement Naturel (SEO) au Maroc. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey.</p>
-            <a href="blog/seo-guide-acquisition-roi-531.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/meta-ads-guide-acquisition-roi-139-1.webp" alt="Meta Ads & Social Ads au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Meta Ads & Social Ads</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Meta Ads & Social Ads au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026</h2>
-            <p class="blog-card-desc">Découvrez comment optimiser vos leviers de Meta Ads & Social Ads au Maroc. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey.</p>
-            <a href="blog/meta-ads-guide-acquisition-roi-139.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/meta-ads-guide-acquisition-roi-196-1.webp" alt="Meta Ads & Social Ads au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Meta Ads & Social Ads</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Meta Ads & Social Ads au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026</h2>
-            <p class="blog-card-desc">Découvrez comment optimiser vos leviers de Meta Ads & Social Ads au Maroc. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey.</p>
-            <a href="blog/meta-ads-guide-acquisition-roi-196.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <h2 class="blog-card-title">GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2026 (et exploser votre ROI)</h2>
+            <p class="blog-card-desc"></p>
+            <a href="blog/geo-seo-domination-google-chatgpt-2026-roi.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
@@ -327,509 +666,210 @@
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/geo-seo-domination-google-chatgpt-2026-roi-1.webp" alt="GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2026 (et exploser votre ROI)" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Référencement Naturel (SEO)</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">GEO & SEO : La stratégie pour dominer Google et ChatGPT en 2026 (et exploser votre ROI)</h2>
-            <p class="blog-card-desc">Découvrez comment le GEO et le SEO font exploser votre visibilité sur Google et ChatGPT. Stratégies, ROI et cas concrets pour les entreprises marocaines.</p>
-            <a href="blog/geo-seo-domination-google-chatgpt-2026-roi.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/meta-ads-vs-sea-guide-budgetaire-dirigeants-maroc-2024-1.webp" alt="Meta Ads vs SEA : Le Guide Budgétaire Décisif pour les Dirigeants Marocains en 2024" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/meta-ads-guide-acquisition-roi-196-1.webp" alt="Meta Ads & Social Ads au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span class="blog-card-category">Meta Ads & Social Ads</span>
               <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
             </div>
-            <h2 class="blog-card-title">Meta Ads vs SEA : Le Guide Budgétaire Décisif pour les Dirigeants Marocains en 2024</h2>
-            <p class="blog-card-desc">Comparez Meta Ads et SEA pour votre budget MAD. ROI, coûts d'acquisition, cas concrets Maroc. Découvrez la stratégie la plus rentable pour votre entreprise.</p>
-            <a href="blog/meta-ads-vs-sea-guide-budgetaire-dirigeants-maroc-2024.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <h2 class="blog-card-title">Meta Ads & Social Ads au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026</h2>
+            <p class="blog-card-desc">Découvrez comment optimiser vos leviers de Meta Ads & Social Ads au Maroc. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey.</p>
+            <a href="blog/meta-ads-guide-acquisition-roi-196.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/google-ads-maroc-guide-roi-2026-1.webp" alt="Google Ads au Maroc : Le Guide Complet 2026 pour Maximiser Votre ROI en MAD" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Google Ads & SEA</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Google Ads au Maroc : Le Guide Complet 2026 pour Maximiser Votre ROI en MAD</h2>
-            <p class="blog-card-desc">Découvrez comment les entreprises marocaines (PME, e-commerce) peuvent optimiser leurs campagnes Google Ads pour un ROI maximal en 2026. Stratégies, budget, ciblage local.</p>
-            <a href="blog/google-ads-maroc-guide-roi-2026.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/google-ads-maroc-guide-complet-roi-sea-2026-1.webp" alt="Google Ads au Maroc : Le Guide Complet pour Maximiser Votre ROI SEA en 2026" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Google Ads & SEA</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Google Ads au Maroc : Le Guide Complet pour Maximiser Votre ROI SEA en 2026</h2>
-            <p class="blog-card-desc">Découvrez comment optimiser vos campagnes Google Ads au Maroc. Stratégies, budget, ciblage et astuces SEO/GEO pour PME et e-commerçants à Casablanca, Rabat et ailleurs.</p>
-            <a href="blog/google-ads-maroc-guide-complet-roi-sea-2026.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/google-ads-maroc-guide-complet-campagnes-rentables-2026-1.webp" alt="Google Ads au Maroc : le guide complet pour des campagnes rentables en 2026" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Google Ads & SEA</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Google Ads au Maroc : le guide complet pour des campagnes rentables en 2026</h2>
-            <p class="blog-card-desc">Maîtrisez Google Ads au Maroc : stratégies, budgets, ciblage local et GEO pour maximiser votre ROI. Guide pratique pour PME et e-commerçants marocains.</p>
-            <a href="blog/google-ads-maroc-guide-complet-campagnes-rentables-2026.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/google-ads-maroc-guide-complet-2024-1.webp" alt="Google Ads au Maroc : Le Guide Complet pour Dominer la Recherche en 2024" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Google Ads & SEA</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Google Ads au Maroc : Le Guide Complet pour Dominer la Recherche en 2024</h2>
-            <p class="blog-card-desc">Maîtrisez Google Ads au Maroc : stratégies locales, optimisation du budget MAD, ciblage géographique et astuces pour PME et e-commerce à Casablanca et Rabat.</p>
-            <a href="blog/google-ads-maroc-guide-complet-2024.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/google-ads-sea-optimiser-roi-campagnes-1.webp" alt="Google Ads & SEA : Optimiser le ROI de vos campagnes" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Google Ads & SEA</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Google Ads & SEA : Optimiser le ROI de vos campagnes</h2>
-            <p class="blog-card-desc">Découvrez comment optimiser le ROI de vos campagnes Google Ads & SEA avec DatRey. Stratégies, conseils et astuces pour maximiser vos performances au Maroc.</p>
-            <a href="blog/google-ads-sea-optimiser-roi-campagnes.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/erreurs-google-ads-maroc-1.webp" alt="Google Ads au Maroc : 7 erreurs à éviter pour vos campagnes SEA" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Google Ads & SEA</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Google Ads au Maroc : 7 erreurs à éviter pour vos campagnes SEA</h2>
-            <p class="blog-card-desc">Découvrez les 7 erreurs fréquentes dans Google Ads au Maroc et comment les éviter. Optimisez vos campagnes SEA avec DatRey, agence digitale à Casablanca.</p>
-            <a href="blog/erreurs-google-ads-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/google-ads-debutants-guide-1.webp" alt="Google Ads pour débutants : guide complet pour réussir vos campagnes" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Google Ads & SEA</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Google Ads pour débutants : guide complet pour réussir vos campagnes</h2>
-            <p class="blog-card-desc">Découvrez comment lancer vos premières campagnes Google Ads au Maroc. Stratégies, budget, ciblage et astuces pour maximiser votre ROI. Contactez DatRey !</p>
-            <a href="blog/google-ads-debutants-guide.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/ciblage-audience-meta-ads-guide-1.webp" alt="Ciblage Audience Meta Ads : Guide pour Maximiser vos Campagnes Social Ads" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/meta-ads-guide-acquisition-roi-139-1.webp" alt="Meta Ads & Social Ads au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span class="blog-card-category">Meta Ads & Social Ads</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
             </div>
-            <h2 class="blog-card-title">Ciblage Audience Meta Ads : Guide pour Maximiser vos Campagnes Social Ads</h2>
-            <p class="blog-card-desc">Maîtrisez le ciblage audience Meta Ads pour des campagnes Social Ads performantes au Maroc. Conseils, statistiques et stratégies pour booster votre ROI.</p>
-            <a href="blog/ciblage-audience-meta-ads-guide.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <h2 class="blog-card-title">Meta Ads & Social Ads au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026</h2>
+            <p class="blog-card-desc">Découvrez comment optimiser vos leviers de Meta Ads & Social Ads au Maroc. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey.</p>
+            <a href="blog/meta-ads-guide-acquisition-roi-139.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/creations-publicitaires-meta-ads-social-ads-1.webp" alt="Créations publicitaires Meta Ads & Social Ads : boostez votre ROI" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Meta Ads & Social Ads</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Créations publicitaires Meta Ads & Social Ads : boostez votre ROI</h2>
-            <p class="blog-card-desc">Découvrez comment des créations publicitaires percutantes pour Meta Ads et Social Ads augmentent votre ROI. Conseils, exemples et services DatRey à Casablanca.</p>
-            <a href="blog/creations-publicitaires-meta-ads-social-ads.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/budget-meta-ads-social-ads-encheres-maroc-1.webp" alt="Budget Meta Ads & Social Ads : Optimisez vos enchères au Maroc" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Meta Ads & Social Ads</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Budget Meta Ads & Social Ads : Optimisez vos enchères au Maroc</h2>
-            <p class="blog-card-desc">Découvrez comment optimiser votre budget Meta Ads et Social Ads au Maroc. Stratégies d'enchères, conseils pratiques et astuces pour maximiser votre ROI. Contactez DatRey !</p>
-            <a href="blog/budget-meta-ads-social-ads-encheres-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/seo-technique-optimisations-essentielles-1.webp" alt="SEO technique : 7 optimisations essentielles pour votre site" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/seo-guide-acquisition-roi-531-1.webp" alt="Référencement Naturel (SEO) au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span class="blog-card-category">Référencement Naturel (SEO)</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
             </div>
-            <h2 class="blog-card-title">SEO technique : 7 optimisations essentielles pour votre site</h2>
-            <p class="blog-card-desc">Découvrez les 7 optimisations SEO technique indispensables pour améliorer le classement de votre site sur Google. Conseils d'experts DatRey au Maroc. Contactez-nous !</p>
-            <a href="blog/seo-technique-optimisations-essentielles.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <h2 class="blog-card-title">Référencement Naturel (SEO) au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026</h2>
+            <p class="blog-card-desc">Découvrez comment optimiser vos leviers de Référencement Naturel (SEO) au Maroc. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey.</p>
+            <a href="blog/seo-guide-acquisition-roi-531.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/referencement-naturel-seo-local-maroc-1.webp" alt="Référencement Naturel SEO Local Maroc : Boostez votre visibilité" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Référencement Naturel (SEO)</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Référencement Naturel SEO Local Maroc : Boostez votre visibilité</h2>
-            <p class="blog-card-desc">Découvrez comment le SEO local Maroc peut propulser votre entreprise. Stratégies, conseils et services DatRey pour dominer les recherches locales.</p>
-            <a href="blog/referencement-naturel-seo-local-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/strategie-de-contenu-seo-maroc-1.webp" alt="Stratégie de contenu SEO : boostez votre visibilité au Maroc" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Référencement Naturel (SEO)</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Stratégie de contenu SEO : boostez votre visibilité au Maroc</h2>
-            <p class="blog-card-desc">Découvrez comment une stratégie de contenu SEO performante peut propulser votre site en tête des recherches Google au Maroc. Contactez DatRey dès maintenant.</p>
-            <a href="blog/strategie-de-contenu-seo-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/tests-ab-optimisation-conversions-1.webp" alt="Tests A/B : Optimisez vos conversions avec DatRey" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/cro-guide-acquisition-roi-693-1.webp" alt="Optimisation des Conversions (CRO) au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span class="blog-card-category">Optimisation des Conversions (CRO)</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
             </div>
-            <h2 class="blog-card-title">Tests A/B : Optimisez vos conversions avec DatRey</h2>
-            <p class="blog-card-desc">Boostez votre taux de conversion grâce aux tests A/B. Découvrez notre méthode CRO pour prendre des décisions data-driven et maximiser votre ROI. Contactez DatRey dès maintenant.</p>
-            <a href="blog/tests-ab-optimisation-conversions.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <h2 class="blog-card-title">Optimisation des Conversions (CRO) au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026</h2>
+            <p class="blog-card-desc">Découvrez comment optimiser vos leviers de Optimisation des Conversions (CRO) au Maroc. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey.</p>
+            <a href="blog/cro-guide-acquisition-roi-693.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/optimisation-conversions-landing-pages-1.webp" alt="Optimisation des Conversions : Boostez vos Landing Pages" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/emailing-guide-acquisition-roi-451-1.webp" alt="Emailing & Automation au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Emailing & Automation</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Emailing & Automation au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026</h2>
+            <p class="blog-card-desc">Découvrez comment optimiser vos leviers de Emailing & Automation au Maroc en 2026. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey.</p>
+            <a href="blog/emailing-guide-acquisition-roi-451.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/acquisition-client-roi-maroc-guide-strategique-2026-1.webp" alt="Acquisition Client à Fort ROI au Maroc : Le Guide Stratégique 2026 pour les Dirigeants qui Refusent de Brûler leur Budget" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Stratégie Digitale</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Acquisition Client à Fort ROI au Maroc : Le Guide Stratégique 2026 pour les Dirigeants qui Refusent de Brûler leur Budget</h2>
+            <p class="blog-card-desc">Découvrez comment les PME et grandes entreprises au Maroc génèrent un ROI exceptionnel en 2026. Stratégies, budgets MAD, KPIs et pièges à éviter. Audit offert.</p>
+            <a href="blog/acquisition-client-roi-maroc-guide-strategique-2026.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/affichage-dynamique-geo-seo-ia-generation-leads-maroc-2026-1.webp" alt="Affichage Dynamique : Comment vos écrans peuvent générer 3x plus de leads grâce au GEO et à l'IA (Guide 2026)" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Affichage Dynamique</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Affichage Dynamique : Comment vos écrans peuvent générer 3x plus de leads grâce au GEO et à l'IA (Guide 2026)</h2>
+            <p class="blog-card-desc">Découvrez comment le GEO transforme l'affichage dynamique en machine à leads. Stratégies concrètes pour dominer Google AI et ChatGPT au Maroc dès 2026.</p>
+            <a href="blog/affichage-dynamique-geo-seo-ia-generation-leads-maroc-2026.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/audit-digital-maroc-2026-cout-inaction-roi-strategie-donnee-1.webp" alt="Audit Digital au Maroc en 2026 : Le Vrai Coût de l'Inaction vs. Le ROI d'une Stratégie Pilotée par la Donnée" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Audit Digital</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Audit Digital au Maroc en 2026 : Le Vrai Coût de l'Inaction vs. Le ROI d'une Stratégie Pilotée par la Donnée</h2>
+            <p class="blog-card-desc">Dirigeants, votre budget digital brûle-t-il ? Découvrez le comparatif chiffré entre l'inaction, le bricolage et l'Audit Stratégique. ROI prouvé, exemples MAD/EUR.</p>
+            <a href="blog/audit-digital-maroc-2026-cout-inaction-roi-strategie-donnee.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/erreurs-design-impression-couteuses-solutions-conversions-maroc-1.webp" alt="Design & Impression au Maroc : 7 Erreurs Coûteuses Qui Tuent Vos Ventes (et les Solutions Rentables pour les Éviter en 2026)" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Design & Impression</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Design & Impression au Maroc : 7 Erreurs Coûteuses Qui Tuent Vos Ventes (et les Solutions Rentables pour les Éviter en 2026)</h2>
+            <p class="blog-card-desc">Découvrez les 7 erreurs fatales en design et impression qui ruinent votre ROI au Maroc. Solutions concrètes et stratégies 2026 pour maximiser vos conversions.</p>
+            <a href="blog/erreurs-design-impression-couteuses-solutions-conversions-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/developpement-guide-acquisition-roi-271-1.webp" alt="Développement Web & Mobile au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Développement Web & Mobile</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Développement Web & Mobile au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc</h2>
+            <p class="blog-card-desc">Découvrez comment optimiser vos leviers de Développement Web & Mobile au Maroc en 2026. Guide stratégique complet avec métriques ROI et conseils d'experts DatRey.</p>
+            <a href="blog/developpement-guide-acquisition-roi-271.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/formations-master-classes-maroc-doubler-taux-conversion-2026-1.webp" alt="Formations & Master Classes au Maroc : Le Plan d'Action Concret pour Doubler Votre Taux de Conversion en 2026" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Formations & Master Classes</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Formations & Master Classes au Maroc : Le Plan d'Action Concret pour Doubler Votre Taux de Conversion en 2026</h2>
+            <p class="blog-card-desc">Découvrez la stratégie pas à pas et l'étude de cas d'une formation au Maroc qui a doublé son taux de conversion en 90 jours. Optimisez votre ROI dès maintenant avec DatRey.</p>
+            <a href="blog/formations-master-classes-maroc-doubler-taux-conversion-2026.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/google-ads-sea-maroc-guide-optimisation-budgetaire-roi-1.webp" alt="Google Ads & SEA au Maroc : Le Guide Décisionnel Ultime pour un ROI Maximisé en 2026" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Google Ads & SEA</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Google Ads & SEA au Maroc : Le Guide Décisionnel Ultime pour un ROI Maximisé en 2026</h2>
+            <p class="blog-card-desc">Comparatif stratégique des leviers Google Ads au Maroc : budgets, formats, ROI. Optimisez votre SEA et dominez la concurrence dès 2026. Audit gratuit.</p>
+            <a href="blog/google-ads-sea-maroc-guide-optimisation-budgetaire-roi.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/meta-ads-social-ads-maroc-optimisation-geo-domination-google-ai-chatgpt-perplexity-1.webp" alt="Meta Ads & Social Ads au Maroc : Dominez Google AI, ChatGPT et Perplexity avec une stratégie GEO en 2026" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Meta Ads & Social Ads</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Meta Ads & Social Ads au Maroc : Dominez Google AI, ChatGPT et Perplexity avec une stratégie GEO en 2026</h2>
+            <p class="blog-card-desc">Découvrez comment transformer vos Meta Ads en machine à cash au Maroc grâce au GEO. Attirez des clients via Google AI, ChatGPT et Perplexity. ROI maximal.</p>
+            <a href="blog/meta-ads-social-ads-maroc-optimisation-geo-domination-google-ai-chatgpt-perplexity.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/referencement-naturel-seo-maroc-plan-action-90-jours-casablanca-rabat-1.webp" alt="Référencement Naturel (SEO) au Maroc : Le Plan d'Action 90 Jours qui Transforme votre Trafic en Clients à Casablanca et Rabat" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Référencement Naturel (SEO)</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
+            </div>
+            <h2 class="blog-card-title">Référencement Naturel (SEO) au Maroc : Le Plan d'Action 90 Jours qui Transforme votre Trafic en Clients à Casablanca et Rabat</h2>
+            <p class="blog-card-desc">Découvrez comment dominer Google à Casablanca et Rabat en 90 jours. Un plan SEO concret, axé ROI et chiffres d'affaires pour les décideurs marocains. Audit offert.</p>
+            <a href="blog/referencement-naturel-seo-maroc-plan-action-90-jours-casablanca-rabat.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/cro-maroc-reduire-cac-augmenter-ltv-2026-1.webp" alt="CRO au Maroc 2026 : Comment réduire votre CAC de 40% et doubler votre LTV sans augmenter votre budget pub" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span class="blog-card-category">Optimisation des Conversions (CRO)</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
             </div>
-            <h2 class="blog-card-title">Optimisation des Conversions : Boostez vos Landing Pages</h2>
-            <p class="blog-card-desc">Découvrez comment optimiser vos landing pages pour maximiser les conversions. Conseils pratiques, statistiques et CTA pour booster vos résultats au Maroc.</p>
-            <a href="blog/optimisation-conversions-landing-pages.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <h2 class="blog-card-title">CRO au Maroc 2026 : Comment réduire votre CAC de 40% et doubler votre LTV sans augmenter votre budget pub</h2>
+            <p class="blog-card-desc">Découvrez comment l'Optimisation du Taux de Conversion (CRO) transforme votre budget marketing au Maroc : baisse du CAC, explosion du LTV et ROI maximal dès 2026.</p>
+            <a href="blog/cro-maroc-reduire-cac-augmenter-ltv-2026.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
         <article class="blog-card">
-          <img src="assets/blog/optimisation-conversions-cro-parcours-utilisateur-1.webp" alt="Optimisation des conversions CRO : améliorez votre parcours utilisateur" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Optimisation des Conversions (CRO)</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Optimisation des conversions CRO : améliorez votre parcours utilisateur</h2>
-            <p class="blog-card-desc">Découvrez comment l'optimisation des conversions (CRO) basée sur le parcours utilisateur peut booster vos ventes au Maroc. Conseils pratiques et outils.</p>
-            <a href="blog/optimisation-conversions-cro-parcours-utilisateur.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/sequences-automatisees-emailing-maroc-1.webp" alt="Séquences automatisées : boostez votre emailing au Maroc" class="blog-card-img" loading="lazy" />
+          <img src="assets/blog/emailing-automation-maroc-entonnoir-vente-b2b-rentable-1.webp" alt="Emailing B2B au Maroc : L’Entonnoir Automatisé qui Génère 4,2x plus de RDV Qualifiés en 2026" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span class="blog-card-category">Emailing & Automation</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-07-28 • 13:00</span>
             </div>
-            <h2 class="blog-card-title">Séquences automatisées : boostez votre emailing au Maroc</h2>
-            <p class="blog-card-desc">Découvrez comment les séquences automatisées transforment votre emailing au Maroc. Boostez vos ventes et fidélisez avec DatRey, agence SEO à Casablanca.</p>
-            <a href="blog/sequences-automatisees-emailing-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/segmentation-emailing-boostez-campagnes-maroc-1.webp" alt="Segmentation emailing : boostez vos campagnes au Maroc" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Emailing & Automation</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Segmentation emailing : boostez vos campagnes au Maroc</h2>
-            <p class="blog-card-desc">Découvrez comment la segmentation emailing améliore vos taux d'ouverture et conversions. Stratégies concrètes pour le marché marocain avec DatRey.</p>
-            <a href="blog/segmentation-emailing-boostez-campagnes-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/delivrabilite-email-etapes-boite-reception-1.webp" alt="Délivrabilité Email : 7 Étapes pour Atteindre la Boîte de Réception" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Emailing & Automation</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Délivrabilité Email : 7 Étapes pour Atteindre la Boîte de Réception</h2>
-            <p class="blog-card-desc">Améliorez la délivrabilité de vos emails au Maroc. Découvrez 7 étapes pour éviter les spams et booster vos campagnes. Contactez DatRey !</p>
-            <a href="blog/delivrabilite-email-etapes-boite-reception.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/strategie-digitale-plan-digital-maroc-1.webp" alt="Stratégie digitale : construisez votre plan digital gagnant" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Stratégie Digitale</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Stratégie digitale : construisez votre plan digital gagnant</h2>
-            <p class="blog-card-desc">Découvrez comment élaborer un plan digital efficace pour votre entreprise au Maroc. Boostez votre présence en ligne avec DatRey, agence digitale à Casablanca.</p>
-            <a href="blog/strategie-digitale-plan-digital-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/strategie-digitale-2026-tendances-maroc-1.webp" alt="Stratégie digitale 2026 : les tendances incontournables au Maroc" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Stratégie Digitale</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Stratégie digitale 2026 : les tendances incontournables au Maroc</h2>
-            <p class="blog-card-desc">Découvrez les 7 tendances clés de la stratégie digitale en 2026 pour booster votre présence en ligne au Maroc. IA, SEO vocal, vidéo courte... Agence DatRey vous guide.</p>
-            <a href="blog/strategie-digitale-2026-tendances-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/strategie-digitale-pme-casablanca-1.webp" alt="Stratégie Digitale pour PME : Boostez Votre Croissance" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Stratégie Digitale</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Stratégie Digitale pour PME : Boostez Votre Croissance</h2>
-            <p class="blog-card-desc">Transformez votre PME avec une stratégie digitale sur mesure. Découvrez nos services SEO, Google Ads et conseils pour booster votre croissance au Maroc. Contactez DatRey dès maintenant !</p>
-            <a href="blog/strategie-digitale-pme-casablanca.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/affichage-dynamique-led-maroc-1.webp" alt="Affichage Dynamique LED : Boostez Votre Visibilité au Maroc" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Affichage Dynamique</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Affichage Dynamique LED : Boostez Votre Visibilité au Maroc</h2>
-            <p class="blog-card-desc">Découvrez comment l'affichage dynamique LED transforme la communication visuelle au Maroc. Solutions sur mesure pour entreprises, commerces et institutions. Contactez DatRey dès maintenant.</p>
-            <a href="blog/affichage-dynamique-led-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/affichage-dynamique-contenu-dynamique-1.webp" alt="Affichage Dynamique : Boostez Votre Communication avec du Contenu Dynamique" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Affichage Dynamique</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Affichage Dynamique : Boostez Votre Communication avec du Contenu Dynamique</h2>
-            <p class="blog-card-desc">Découvrez comment l'affichage dynamique avec contenu dynamique transforme votre communication au Maroc. Solutions sur mesure pour entreprises. Contactez DatRey !</p>
-            <a href="blog/affichage-dynamique-contenu-dynamique.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/roi-affichage-dynamique-maroc-1.webp" alt="ROI affichage dynamique : boostez vos ventes au Maroc" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Affichage Dynamique</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">ROI affichage dynamique : boostez vos ventes au Maroc</h2>
-            <p class="blog-card-desc">Découvrez comment l'affichage dynamique augmente votre ROI au Maroc. Études de cas, statistiques et conseils pour maximiser votre investissement. Contactez DatRey !</p>
-            <a href="blog/roi-affichage-dynamique-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/audit-seo-complet-1.webp" alt="Audit SEO complet : boostez votre visibilité web au Maroc" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Audit Digital</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Audit SEO complet : boostez votre visibilité web au Maroc</h2>
-            <p class="blog-card-desc">Découvrez notre audit SEO complet pour améliorer votre classement Google au Maroc. Analyse technique, contenu et netlinking. Demandez votre audit gratuit !</p>
-            <a href="blog/audit-seo-complet.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/audit-ux-ui-optimisation-experience-utilisateur-1.webp" alt="Audit UX/UI : Optimisez l'Expérience Utilisateur de Votre Site" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Audit Digital</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Audit UX/UI : Optimisez l'Expérience Utilisateur de Votre Site</h2>
-            <p class="blog-card-desc">Découvrez comment un audit UX/UI améliore la performance de votre site web au Maroc. Analyse, conseils et CTA pour booster votre conversion.</p>
-            <a href="blog/audit-ux-ui-optimisation-experience-utilisateur.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/audit-digital-indicateurs-cles-1.webp" alt="Audit Digital : 7 Indicateurs Clés pour Booster votre Performance" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Audit Digital</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Audit Digital : 7 Indicateurs Clés pour Booster votre Performance</h2>
-            <p class="blog-card-desc">Découvrez les 7 indicateurs essentiels d'un audit digital pour améliorer votre performance en ligne. Contactez DatRey à Casablanca pour un audit professionnel.</p>
-            <a href="blog/audit-digital-indicateurs-cles.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/design-impression-identite-visuelle-1.webp" alt="Design & Impression : Créez une identité visuelle impactante au Maroc" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Design & Impression</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Design & Impression : Créez une identité visuelle impactante au Maroc</h2>
-            <p class="blog-card-desc">Boostez votre marque avec notre service Design & Impression à Casablanca. Identité visuelle sur mesure, supports print de qualité. Demandez un devis !</p>
-            <a href="blog/design-impression-identite-visuelle.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/impression-offset-vs-numerique-1.webp" alt="Impression Offset vs Numérique : Quel Choix pour Votre Projet ?" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Design & Impression</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Impression Offset vs Numérique : Quel Choix pour Votre Projet ?</h2>
-            <p class="blog-card-desc">Découvrez les différences entre impression offset et numérique pour choisir la meilleure solution. DatRey vous accompagne à Casablanca. Demandez un devis !</p>
-            <a href="blog/impression-offset-vs-numerique.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/tendances-design-impression-maroc-1.webp" alt="Tendances Design & Impression : Boostez Votre Marque au Maroc" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Design & Impression</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Tendances Design & Impression : Boostez Votre Marque au Maroc</h2>
-            <p class="blog-card-desc">Découvrez les tendances design & impression au Maroc pour 2026. Minimalisme, éco-impression, typographie audacieuse. Boostez votre marque avec DatRey. Contactez-nous !</p>
-            <a href="blog/tendances-design-impression-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/app-mobile-sur-mesure-maroc-1.webp" alt="App mobile sur mesure : boostez votre business au Maroc" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Développement Web & Mobile</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">App mobile sur mesure : boostez votre business au Maroc</h2>
-            <p class="blog-card-desc">Découvrez pourquoi une app mobile sur mesure est essentielle pour votre entreprise au Maroc. Conseils, chiffres et accompagnement par DatRey.</p>
-            <a href="blog/app-mobile-sur-mesure-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/site-vs-application-web-choisir-business-1.webp" alt="Site vs Application Web : Lequel Choisir pour votre Business ?" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Développement Web & Mobile</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Site vs Application Web : Lequel Choisir pour votre Business ?</h2>
-            <p class="blog-card-desc">Site vitrine ou application web ? Découvrez les différences, avantages et inconvénients pour faire le bon choix. Contactez DatRey pour votre projet web.</p>
-            <a href="blog/site-vs-application-web-choisir-business.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/tendances-dev-2026-web-mobile-maroc-1.webp" alt="Tendances Dev 2026 : Web & Mobile au Maroc" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Développement Web & Mobile</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Tendances Dev 2026 : Web & Mobile au Maroc</h2>
-            <p class="blog-card-desc">Découvrez les tendances développement web et mobile 2026 au Maroc. IA, PWA, frameworks modernes. DatRey vous accompagne à Casablanca. Contactez-nous !</p>
-            <a href="blog/tendances-dev-2026-web-mobile-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/seo-local-pme-formation-maroc-1.webp" alt="SEO local PME : formation pour dominer le marché marocain" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Formations & Master Classes</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">SEO local PME : formation pour dominer le marché marocain</h2>
-            <p class="blog-card-desc">Maîtrisez le SEO local pour votre PME au Maroc grâce à notre formation. Apprenez à attirer plus de clients près de chez vous. Inscrivez-vous dès maintenant !</p>
-            <a href="blog/seo-local-pme-formation-maroc.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/google-ads-e-commerce-formation-1.webp" alt="Google Ads e-commerce : formation pour booster vos ventes" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Formations & Master Classes</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Google Ads e-commerce : formation pour booster vos ventes</h2>
-            <p class="blog-card-desc">Maîtrisez Google Ads e-commerce avec notre formation au Maroc. Optimisez vos campagnes, réduisez vos coûts et multipliez vos ventes. Inscrivez-vous dès maintenant !</p>
-            <a href="blog/google-ads-e-commerce-formation.html" class="blog-card-link">Lire l'article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img src="assets/blog/strategie-reseaux-sociaux-formation-1.webp" alt="Stratégie réseaux sociaux : boostez votre présence en ligne" class="blog-card-img" loading="lazy" />
-          <div class="blog-card-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span class="blog-card-category">Formations & Master Classes</span>
-              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 2026-08-01 • 13:00</span>
-            </div>
-            <h2 class="blog-card-title">Stratégie réseaux sociaux : boostez votre présence en ligne</h2>
-            <p class="blog-card-desc">Découvrez notre formation en stratégie réseaux sociaux pour développer votre marque au Maroc. Boostez votre présence en ligne dès maintenant !</p>
-            <a href="blog/strategie-reseaux-sociaux-formation.html" class="blog-card-link">Lire l'article &rarr;</a>
+            <h2 class="blog-card-title">Emailing B2B au Maroc : L’Entonnoir Automatisé qui Génère 4,2x plus de RDV Qualifiés en 2026</h2>
+            <p class="blog-card-desc">Découvrez comment structurer un entonnoir emailing B2B prévisible au Maroc. Stratégies, ROI, coûts MAD et automation pour des RDV qualifiés en 2026.</p>
+            <a href="blog/emailing-automation-maroc-entonnoir-vente-b2b-rentable.html" class="blog-card-link">Lire l'article &rarr;</a>
           </div>
         </article>
 
@@ -839,8 +879,80 @@
 
   <footer class="footer">
     <div class="container">
-      <p style="text-align:center; color:#64748b;">&copy; 2026 DatRey SARL. Tous droits réservés.</p>
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-logo">
+            <img src="assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:8px;" />
+            <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
+          </a>
+          <p class="footer-desc">Agence d'acquisition digitale &amp; Growth Hacking au Maroc. Nous transformons votre budget marketing en ROI mesurable.</p>
+          <div class="social-links">
+            <a aria-label="LinkedIn DatRey" href="https://www.linkedin.com/in/datrey-agency/" rel="noopener noreferrer" target="_blank">
+              <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a aria-label="X DatRey" href="https://x.com/Datrey_Agency" rel="noopener noreferrer" target="_blank">
+              <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M4 4l11.73 16h5L9 4H4z"></path><path d="M4 20l6.76-9.33L18 4"></path></svg>
+            </a>
+            <a aria-label="Instagram DatRey" href="https://www.instagram.com/datrey.agency/" rel="noopener noreferrer" target="_blank">
+              <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            </a>
+            <a aria-label="Pinterest DatRey" href="https://www.pinterest.com/DatreyAgency" rel="noopener noreferrer" target="_blank">
+              <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="12" x2="12" y1="12" y2="22"></line><path d="M12 22c-3.5 0-6.5-2.5-7.5-6s.5-7 4-8.5 7-1 9.5 2 2 6-.5 8.5L12 22z"></path><circle cx="12" cy="7" r="1"></circle></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3>Navigation</h3>
+          <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="creation-site-web.html">Création Site Web</a>
+            <a href="services.html">Nos Services</a>
+            <a href="transformation-digitale.html">Transformation Digitale</a>
+            <a href="blog.html">Blog</a>
+            <a href="a-propos.html">À propos</a>
+            <a href="cas-clients.html">Cas Clients</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h3>Services</h3>
+          <div class="footer-links">
+            <a href="services-google-ads.html">Google Ads (SEA)</a>
+            <a href="services-meta-ads.html">Meta Ads</a>
+            <a href="services-seo.html">SEO &amp; Contenu</a>
+            <a href="services-cro.html">CRO &amp; Landing Pages</a>
+            <a href="services-emailing.html">Email &amp; Automation</a>
+            <a href="services-strategie.html">Stratégie d'Acquisition</a>
+            <a href="services-gmb-360.html">Visite Virtuelle 360°</a>
+          </div>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+            <span>5, rue de Dixmude, 1er étage, appt 2,<br/>Benjdia — Casablanca</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+            <a href="mailto:contact@datrey.ma" style="color:inherit;">contact@datrey.ma</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+            <a href="tel:+212644443059" style="color:inherit;">+212 6 44 44 30 59</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 DatRey. Tous droits réservés.</span>
+        <div style="display:flex;gap:20px;">
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="politique-confidentialite.html">Politique de confidentialité</a>
+        </div>
+      </div>
     </div>
   </footer>
+  <a aria-label="Nous contacter sur WhatsApp" class="whatsapp-float" href="https://wa.me/212644443059" rel="noopener noreferrer" target="_blank">
+    <svg fill="currentColor" height="28" viewbox="0 0 24 24" width="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+  </a>
 </body>
 </html>
