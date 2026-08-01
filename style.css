@@ -2587,3 +2587,21 @@ textarea.form-control { min-height: 150px; resize: vertical; }
   object-fit: cover;
   display: block;
 }
+
+/* ============================================
+   PERFORMANCE & SPEED OPTIMIZATIONS
+   ============================================ */
+img {
+  content-visibility: auto;
+}
+
+.hero-slide-img, .service-hero-img-wrap img, .mockup-img-wrap img {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+.tech-stack-track {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
