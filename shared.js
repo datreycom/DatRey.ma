@@ -126,29 +126,30 @@
   }
 
   // --- Slider ---
-  const slides = document.querySelectorAll('.slider-slide');
+  const slides = document.querySelectorAll('.hero-slide, .slider-slide');
   const dots = document.querySelectorAll('.slider-dot');
-  const prevBtn = document.getElementById('sliderPrev');
-  const nextBtn = document.getElementById('sliderNext');
+  const prevBtns = document.querySelectorAll('#sliderPrev, #heroSliderPrev');
+  const nextBtns = document.querySelectorAll('#sliderNext, #heroSliderNext');
 
-  if (slides.length && prevBtn && nextBtn) {
+  if (slides.length) {
     let currentSlide = 0;
     let sliderInterval;
 
     function goToSlide(index) {
+      if (!slides[currentSlide] || !slides[index]) return;
       slides[currentSlide].classList.remove('active');
-      dots[currentSlide].classList.remove('active');
+      if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
       currentSlide = (index + slides.length) % slides.length;
       slides[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
+      if (dots[currentSlide]) dots[currentSlide].classList.add('active');
     }
     function startSlider() {
-      sliderInterval = setInterval(() => goToSlide(currentSlide + 1), 4500);
+      sliderInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
     }
     function stopSlider() { clearInterval(sliderInterval); }
 
-    prevBtn.addEventListener('click', () => { stopSlider(); goToSlide(currentSlide - 1); startSlider(); });
-    nextBtn.addEventListener('click', () => { stopSlider(); goToSlide(currentSlide + 1); startSlider(); });
+    prevBtns.forEach(btn => btn.addEventListener('click', () => { stopSlider(); goToSlide(currentSlide - 1); startSlider(); }));
+    nextBtns.forEach(btn => btn.addEventListener('click', () => { stopSlider(); goToSlide(currentSlide + 1); startSlider(); }));
     dots.forEach((dot, idx) => {
       dot.addEventListener('click', () => {
         stopSlider();
@@ -157,7 +158,7 @@
       });
     });
 
-    const sliderSection = document.querySelector('.slider-section');
+    const sliderSection = document.querySelector('.hero-photo-slider, .slider-section');
     if (sliderSection) {
       sliderSection.addEventListener('mouseenter', stopSlider);
       sliderSection.addEventListener('mouseleave', startSlider);

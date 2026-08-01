@@ -245,43 +245,75 @@ fbq('track', 'PageView');
 <a class="btn btn-primary magnetic-btn" href="contact.html" onclick="closeMobileNav()">Audit Gratuit</a>
 </div>
 <main id="main-content">
-<!-- ========== OFFICIAL POSTER HERO SECTION ========== -->
-<section class="hero antigrav-hero chic-hero" id="hero" style="position: relative; overflow: hidden; padding: 140px 0 90px; background: var(--datrey-cream);">
+<!-- ========== HERO PHOTO SLIDER SECTION ========== -->
+<section class="hero antigrav-hero chic-hero" id="hero" style="position: relative; overflow: hidden; padding: 120px 0 60px; background: var(--datrey-cream);">
   <div class="container">
-    <div class="hero-content" style="max-width: 960px; margin: 0 auto; text-align: center;">
-      
-      <!-- Top Divider Tag -->
-      <div class="poster-divider">
-        <div class="poster-divider-line"></div>
-        <div class="poster-divider-text">VOS SOLUTIONS NUMÉRIQUES</div>
-        <div class="poster-divider-line"></div>
-      </div>
-
-      <!-- Main Headline -->
-      <h1 class="hero-title" style="font-size: clamp(2.8rem, 5.8vw, 4.8rem); line-height: 1.12; margin-bottom: 16px; color: var(--datrey-navy) !important; font-family: var(--font-body); font-weight: 900;">
-        DatRey <span style="color: var(--datrey-blue);">AGENCY</span>
-      </h1>
-      
-      <p style="font-size: clamp(1.4rem, 2.5vw, 2.1rem); font-weight: 700; color: var(--datrey-text); margin-bottom: 24px;">
-        Transformons votre entreprise grâce au digital
-      </p>
-
-      <p class="hero-subtitle" style="font-size: 1.15rem; line-height: 1.8; max-width: 760px; margin: 0 auto 36px; color: var(--datrey-base) !important;">
-        Agence spécialisée en <strong>Marketing Digital, Création Web, Référencement Local, Design, Affichage Dynamique &amp; IA</strong> au Maroc.
-      </p>
-
-      <!-- Primary Action Buttons -->
-      <div class="hero-actions" style="display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap;">
-        <a class="btn magnetic-btn poster-callout-btn" href="contact.html?subject=AuditGratuit">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-          Demandez votre Audit Gratuit !
-        </a>
-        <a class="btn btn-outline" href="#domaines-expertise" style="font-size: 1rem; padding: 18px 36px; border-color: var(--datrey-navy); color: var(--datrey-navy); font-weight: 700;">
-          Nos Domaines d'Expertise ↓
-        </a>
-      </div>
-
+    
+    <!-- Top Divider Tag -->
+    <div class="poster-divider" style="margin-bottom: 20px;">
+      <div class="poster-divider-line"></div>
+      <div class="poster-divider-text">VOS SOLUTIONS NUMÉRIQUES &amp; ACQUISITION</div>
+      <div class="poster-divider-line"></div>
     </div>
+
+    <!-- Hero Photo Slider Container -->
+    <div class="hero-photo-slider reveal">
+      <div class="hero-slider-track">
+        
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+          <img src="assets/slider_agency_team.jpg" alt="Équipe DatRey Agency en studio" class="hero-slide-img" decoding="async" />
+          <div class="hero-slide-overlay">
+            <h1 class="hero-slide-title">Transformons votre entreprise grâce au digital</h1>
+            <p class="hero-slide-desc">DatRey Agency — Agence d'Acquisition &amp; Solutions Numériques d'Élite au Maroc. Stratégies sur-mesure orientées ROI.</p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <a href="contact.html?subject=AuditGratuit" class="poster-callout-btn" style="padding: 14px 32px; font-size: 0.95rem;">Demandez votre Audit Gratuit !</a>
+              <a href="#domaines-expertise" class="btn btn-outline" style="border-color: #ffffff; color: #ffffff; padding: 14px 28px; border-radius: 50px; font-weight: 700;">Nos Domaines d'Expertise ↓</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+          <img src="assets/slider_creative_strategy.jpg" alt="Session Analytics & Data ROI" class="hero-slide-img" decoding="async" />
+          <div class="hero-slide-overlay">
+            <h2 class="hero-slide-title">Pilotage Data-Driven &amp; Dashboards de ROI</h2>
+            <p class="hero-slide-desc">Google Ads, Meta Ads &amp; SEO Local : chaque dirham investi est analysé et optimisé pour maximiser votre chiffre d'affaires.</p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <a href="contact.html?subject=SimulateurROI" class="poster-callout-btn" style="padding: 14px 32px; font-size: 0.95rem;">Simuler mon ROI →</a>
+              <a href="creation-site-web.html" class="btn btn-outline" style="border-color: #ffffff; color: #ffffff; padding: 14px 28px; border-radius: 50px; font-weight: 700;">Création de Sites Web →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+          <img src="assets/slider_digital_production.jpg" alt="Studio de Création Visuelle & LED" class="hero-slide-img" decoding="async" />
+          <div class="hero-slide-overlay">
+            <h2 class="hero-slide-title">Studio de Création Visuelle &amp; Affichage LED</h2>
+            <p class="hero-slide-desc">Design premium, identité de marque percutante et campagnes visuelles haute définition pour dominer votre marché.</p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <a href="services.html" class="poster-callout-btn" style="padding: 14px 32px; font-size: 0.95rem;">Découvrir nos Services 360° →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slider Controls -->
+      <div class="slider-nav">
+        <div class="slider-dots">
+          <button class="slider-dot active" aria-label="Slide 1"></button>
+          <button class="slider-dot" aria-label="Slide 2"></button>
+          <button class="slider-dot" aria-label="Slide 3"></button>
+        </div>
+        <div class="slider-arrows">
+          <button class="slider-btn" id="heroSliderPrev" aria-label="Image précédente">←</button>
+          <button class="slider-btn" id="heroSliderNext" aria-label="Image suivante">→</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 

@@ -2440,3 +2440,115 @@ textarea.form-control { min-height: 150px; resize: vertical; }
   background: var(--datrey-navy);
   color: #ffffff;
 }
+
+
+/* ============================================
+   HERO PHOTO SLIDER (HOMEPAGE)
+   ============================================ */
+.hero-photo-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(27, 42, 120, 0.12);
+  border: 1px solid var(--datrey-border);
+  background: #ffffff;
+}
+
+.hero-slider-track {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .hero-slider-track { height: 440px; }
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1.04);
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.hero-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(27, 42, 120, 0.25) 0%, rgba(14, 23, 68, 0.75) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 48px;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .hero-slide-overlay { padding: 28px; }
+}
+
+.hero-slide-title {
+  font-size: clamp(2rem, 4vw, 3.2rem) !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  line-height: 1.15 !important;
+  margin-bottom: 16px !important;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+.hero-slide-desc {
+  font-size: 1.15rem !important;
+  color: #f0f2fb !important;
+  max-width: 680px;
+  margin-bottom: 28px !important;
+  line-height: 1.6;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Service Hero Layout (2-Column with HD Photo) */
+.service-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .service-hero-grid { grid-template-columns: 1fr; text-align: center; }
+}
+
+.service-hero-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(27, 42, 120, 0.1);
+  border: 1px solid var(--datrey-border);
+  background: #ffffff;
+}
+
+.service-hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
