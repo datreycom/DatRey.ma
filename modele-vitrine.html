@@ -3,88 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modèle Vitrine | Design Premium</title>
+    <title>Modèle Vitrine | Luxe & Élégance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2A2A2A;
-            --accent: #D4AF37; /* Gold */
-            --bg: #F8F9FA;
+            --primary: #1A1A1A;
+            --accent: #C5A059;
+            --bg: #FAFAFA;
             --text: #333333;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden;}
         
-        /* Navbar */
-        nav { display: flex; justify-content: space-between; padding: 2rem 5%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100;}
-        nav .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: 1px;}
-        nav ul { display: flex; gap: 2rem; list-style: none; align-items: center; }
-        nav a { text-decoration: none; color: var(--text); font-weight: 500; transition: color 0.3s; }
-        nav a:hover { color: var(--accent); }
-        .btn-contact { background: var(--primary); color: #fff; padding: 0.8rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; transition: background 0.3s;}
-        .btn-contact:hover { background: var(--accent); color: #fff; }
+        h1, h2, h3, .logo { font-family: 'Playfair Display', serif; }
 
-        /* Hero */
-        .hero { height: 80vh; display: flex; align-items: center; padding: 0 5%; background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
-        .hero-content { max-width: 600px; }
-        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem; color: var(--primary); }
-        .hero p { font-size: 1.2rem; margin-bottom: 2rem; color: #666; }
+        /* Navbar - Glassmorphism */
+        nav { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 1.5rem 5%; position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(250, 250, 250, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary); letter-spacing: 2px;}
+        nav ul { display: flex; gap: 3rem; list-style: none; align-items: center; }
+        nav a { text-decoration: none; color: var(--primary); font-size: 0.9rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: var(--transition); position: relative;}
+        nav a::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -4px; left: 0; background-color: var(--accent); transition: var(--transition); }
+        nav a:hover::after { width: 100%; }
+        
+        .btn-contact { 
+            background: var(--primary); color: #fff !important; padding: 0.8rem 2rem; border-radius: 0; 
+            border: 1px solid var(--primary); transition: var(--transition);
+        }
+        .btn-contact::after { display: none; }
+        .btn-contact:hover { background: transparent; color: var(--primary) !important; }
+
+        /* Hero with Parallax */
+        .hero { 
+            height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;
+            background: url('assets/hero_bg_luxury.webp') center/cover no-repeat fixed;
+            position: relative; color: #fff;
+        }
+        .hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 2rem; animation: fadeUp 1.5s ease forwards; opacity: 0;}
+        .hero h1 { font-size: 5rem; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 400; }
+        .hero p { font-size: 1.2rem; font-weight: 300; margin-bottom: 3rem; letter-spacing: 1px; }
+        
+        .btn-hero {
+            display: inline-block; padding: 1.2rem 3rem; background: var(--accent); color: #fff; text-decoration: none;
+            text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-weight: 600;
+            transition: var(--transition); border: 1px solid var(--accent);
+        }
+        .btn-hero:hover { background: transparent; color: var(--accent); }
 
         /* Services */
-        .services { padding: 5rem 5%; text-align: center; }
-        .services h2 { font-size: 2.5rem; margin-bottom: 3rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background: #fff; padding: 3rem 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-10px); }
-        .card h3 { margin-bottom: 1rem; font-size: 1.5rem; }
+        .services { padding: 8rem 5%; background: #fff; text-align: center; }
+        .section-title { font-size: 3rem; color: var(--primary); margin-bottom: 1rem; }
+        .section-subtitle { color: var(--accent); font-style: italic; font-size: 1.2rem; margin-bottom: 4rem; }
         
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; }
+        .card { 
+            padding: 4rem 2rem; background: var(--bg); border: 1px solid rgba(0,0,0,0.03); 
+            transition: var(--transition); position: relative; overflow: hidden;
+            cursor: pointer;
+        }
+        .card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--accent); transform: scaleX(0); transition: var(--transition); transform-origin: left;
+        }
+        .card:hover::before { transform: scaleX(1); }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); background: #fff;}
+        .card-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 1.5rem; }
+        .card h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary); }
+        .card p { color: #666; font-size: 0.95rem; }
+
         /* Footer */
-        footer { background: var(--primary); color: #fff; padding: 4rem 5%; text-align: center; margin-top: 5rem;}
+        footer { background: var(--primary); color: #fff; padding: 6rem 5% 2rem; text-align: center; }
+        footer h2 { font-size: 3rem; margin-bottom: 1.5rem; font-weight: 400;}
+        footer p { color: #aaa; margin-bottom: 3rem; max-width: 500px; margin-inline: auto;}
+        .footer-bottom { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: #666; text-transform: uppercase; letter-spacing: 1px;}
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav>
-        <div class="logo">LUXE.CO</div>
+        <div class="logo">Maison Royale.</div>
         <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">À Propos</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#" class="btn-contact">Nous Contacter</a></li>
+            <li><a href="#">La Maison</a></li>
+            <li><a href="#">Savoir-Faire</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#" class="btn-contact">Contact</a></li>
         </ul>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>L'Élégance de votre Marque, Sublimée.</h1>
-            <p>Nous concevons des expériences digitales sur-mesure pour les entreprises qui exigent l'excellence.</p>
-            <a href="#" class="btn-contact" style="font-size: 1.1rem; padding: 1rem 2rem;">Découvrir notre approche</a>
+            <h1>L'Art de l'Excellence.</h1>
+            <p>Une expérience digitale façonnée par l'élégance, conçue pour les marques d'exception.</p>
+            <a href="#" class="btn-hero">Découvrir notre univers</a>
         </div>
     </section>
 
     <section class="services">
-        <h2>Nos Domaines d'Expertise</h2>
+        <h2 class="section-title">Notre Savoir-Faire</h2>
+        <p class="section-subtitle">L'alliance de la tradition et de l'innovation</p>
+        
         <div class="grid">
             <div class="card">
-                <h3>Design Stratégique</h3>
-                <p>Création d'identités visuelles fortes et intemporelles qui captivent votre audience cible.</p>
+                <div class="card-icon">✧</div>
+                <h3>Haute Couture Digitale</h3>
+                <p>Création d'interfaces web sur-mesure, où chaque pixel est pensé avec la même rigueur qu'une pièce de joaillerie.</p>
             </div>
             <div class="card">
-                <h3>Développement Web</h3>
-                <p>Des plateformes robustes, rapides et optimisées pour l'expérience utilisateur et le SEO.</p>
+                <div class="card-icon">✦</div>
+                <h3>Direction Artistique</h3>
+                <p>Une identité visuelle intemporelle qui capture l'essence même de votre marque et séduit votre clientèle prestigieuse.</p>
             </div>
             <div class="card">
-                <h3>Marketing Digital</h3>
-                <p>Acquisition de trafic qualifié et stratégies de conversion à fort retour sur investissement.</p>
+                <div class="card-icon">✺</div>
+                <h3>Stratégie Premium</h3>
+                <p>Déploiement de campagnes d'acquisition exclusives, ciblant une audience qualifiée à fort pouvoir d'achat.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <h2>Prêt à innover ?</h2>
-        <p style="margin: 1rem 0 2rem; color: #ccc;">Contactez notre équipe d'experts dès aujourd'hui.</p>
-        <a href="#" class="btn-contact">Démarrer un projet</a>
-        <p style="margin-top: 4rem; font-size: 0.9rem; color: #888;">© 2024 LUXE.CO. Tous droits réservés.</p>
+        <h2>Sublimez votre image.</h2>
+        <p>Confiez la création de votre plateforme digitale à nos artisans du web.</p>
+        <a href="#" class="btn-hero" style="background: transparent;">Demander une consultation</a>
+        <div class="footer-bottom">
+            © 2024 Maison Royale. Tous droits réservés. | Modèle Vitrine Exclusif
+        </div>
     </footer>
 
 </body>
