@@ -31,20 +31,12 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
   
   <style>
     :root {
-      --bg-main: #f8fafc;
+      --bg-main: #ffffff;
       --card-bg: #ffffff;
       --text-main: #0f172a;
-      --text-muted: #475569;
+      --text-muted: #334155;
       --accent: #2563eb;
       --border-color: #e2e8f0;
-    }
-    [data-theme="dark"] {
-      --bg-main: #050814;
-      --card-bg: #0a0f1f;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent: #3b82f6;
-      --border-color: rgba(255, 255, 255, 0.1);
     }
     body {
       background-color: var(--bg-main) !important;

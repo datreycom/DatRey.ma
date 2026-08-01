@@ -134,7 +134,7 @@ HTML
 </head>
 <body>
 منع وميض القالب (FOUC)
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
+<script>document.documentElement.removeAttribute('data-theme');try{localStorage.removeItem('datrey-theme');}catch(e){}</script>
 <a class="skip-to-content" href="#main-content">الانتقال إلى المحتوى الرئيسي</a>
  ========== الترويسة ========== 
 <header class="header" id="header">

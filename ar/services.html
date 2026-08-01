@@ -104,7 +104,7 @@
 </head>
 <body>
  Prevent theme FOUC 
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'dark');</script>
+<script>document.documentElement.removeAttribute('data-theme');try{localStorage.removeItem('datrey-theme');}catch(e){}</script>
 <a class="skip-to-content" href="#main-content">انتقل إلى المحتوى الرئيسي</a>
  ========== HEADER ========== 
 <header class="header" id="header">
