@@ -334,13 +334,27 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-body); line-height: 1.25; font-
 /* ============================================
    TECH STACK BANNER (Partners & Technologies)
    ============================================ */
+/* ============================================
+   TECH STACK BANNER (Contained & Centered)
+   ============================================ */
 .tech-stack-banner {
-  width: 100%;
-  padding: 22px 0;
-  background: var(--pure-white);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  overflow: hidden;
+  max-width: 1200px !important;
+  margin: 36px auto !important;
+  padding: 24px 32px !important;
+  background: #ffffff !important;
+  border: 1px solid var(--datrey-border) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 30px rgba(27, 42, 120, 0.05) !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+@media (max-width: 768px) {
+  .tech-stack-banner {
+    margin: 24px 16px !important;
+    padding: 20px 16px !important;
+    border-radius: 16px !important;
+  }
 }
 
 
@@ -2009,7 +2023,28 @@ textarea.form-control { min-height: 150px; resize: vertical; }
 @media print {
   .header, .footer, .whatsapp-float, .exit-popup-overlay,
   .mobile-nav, .mobile-toggle, .theme-toggle, .lang-selector,
-  .cta-section, .tech-stack-banner { display: none !important; }
+  .cta-section, /* ============================================
+   TECH STACK BANNER (Contained & Centered)
+   ============================================ */
+.tech-stack-banner {
+  max-width: 1200px !important;
+  margin: 36px auto !important;
+  padding: 24px 32px !important;
+  background: #ffffff !important;
+  border: 1px solid var(--datrey-border) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 30px rgba(27, 42, 120, 0.05) !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+@media (max-width: 768px) {
+  .tech-stack-banner {
+    margin: 24px 16px !important;
+    padding: 20px 16px !important;
+    border-radius: 16px !important;
+  }
+}
   body { font-family: var(--font-body); color: var(--datrey-text); background: var(--datrey-cream) !important; line-height: 1.9; overflow-x: hidden; -webkit-font-smoothing: antialiased; font-size: 1.05rem; letter-spacing: 0.03em; }
   a { color: #000; text-decoration: underline; }
   a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
