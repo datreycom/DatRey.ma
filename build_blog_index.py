@@ -133,11 +133,18 @@ def build_blog_index():
 
     for article in articles:
         desc = article.get("description", article.get("desc", ""))
+        raw_date = article.get("date", "2026-08-01")
+        raw_time = article.get("publish_time", "13:00")
+        formatted_datetime = article.get("formatted_date_time", f"{raw_date} à {raw_time}")
+        
         html += f"""
         <article class="blog-card">
           <img src="assets/blog/{article['slug']}-1.webp" alt="{article['title']}" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
-            <span class="blog-card-category">{article['category']}</span>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">{article['category']}</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 {raw_date} • {raw_time}</span>
+            </div>
             <h2 class="blog-card-title">{article['title']}</h2>
             <p class="blog-card-desc">{desc}</p>
             <a href="blog/{article['slug']}.html" class="blog-card-link">Lire l'article &rarr;</a>

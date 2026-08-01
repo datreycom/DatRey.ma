@@ -2,6 +2,7 @@ import os
 import json
 import re
 import sys
+from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
@@ -355,7 +356,7 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
         <span class="category-badge">{category}</span>
         <h1 class="hero-title">{title}</h1>
         <div class="hero-meta">
-          <span>Par l'équipe DatRey</span> • <span>Temps de lecture : ~6 min</span>
+          <span>📅 Publié le {pub_date} à {pub_time}</span> • <span>Par l'équipe DatRey</span> • <span>Temps de lecture : ~6 min</span>
         </div>
       </div>
 
@@ -429,6 +430,10 @@ def build_article_page(article_data):
     cat = article_data["category"]
     content_raw = article_data["content"]
 
+    now = datetime.now()
+    pub_date = article_data.get("date", now.strftime("%d/%m/%Y"))
+    pub_time = article_data.get("publish_time", now.strftime("%H:%M"))
+
     clean_title = re.sub(r'\s*\|\s*Blog\s*DatRey.*$', '', raw_title, flags=re.IGNORECASE).strip()
 
     content_with_images = inject_inbody_images(content_raw, slug, clean_title)
@@ -437,6 +442,8 @@ def build_article_page(article_data):
                                 .replace("{description}", desc)\
                                 .replace("{slug}", slug)\
                                 .replace("{category}", cat)\
+                                .replace("{pub_date}", pub_date)\
+                                .replace("{pub_time}", pub_time)\
                                 .replace("{content}", content_with_images)
 
     os.makedirs(BLOG_DIR, exist_ok=True)
@@ -446,7 +453,7 @@ def build_article_page(article_data):
         f.write(full_html)
 
     print(f"[Site Builder] Article HTML created -> blog/{slug}.html")
-    update_blog_data_json({**article_data, "title": clean_title})
+    update_blog_data_json({**article_data, "title": clean_title, "date": pub_date, "publish_time": pub_time})
     rebuild_blog_index_and_sitemaps()
 
     return out_path
@@ -464,13 +471,19 @@ def update_blog_data_json(article_data):
     entries = [e for e in entries if e.get("slug") != article_data["slug"]]
 
     clean_title = re.sub(r'\s*\|\s*Blog\s*DatRey.*$', '', article_data["title"], flags=re.IGNORECASE).strip()
+    
+    now = datetime.now()
+    pub_date = article_data.get("date", now.strftime("%d/%m/%Y"))
+    pub_time = article_data.get("publish_time", now.strftime("%H:%M"))
 
     new_entry = {
         "title": clean_title,
         "slug": article_data["slug"],
         "description": article_data["description"],
         "category": article_data["category"],
-        "date": "2026-07-28",
+        "date": pub_date,
+        "publish_time": pub_time,
+        "formatted_date_time": f"Publié le {pub_date} à {pub_time}",
         "author": "DatRey Experts",
         "image": f"assets/blog/{article_data['slug']}-1.webp",
         "lang": "fr"
