@@ -2605,3 +2605,29 @@ img {
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
 }
+
+/* ============================================
+   BUTTON & NAVIGATION CONTRAST FIXES
+   ============================================ */
+.nav-cta, .btn-primary, .poster-callout-btn {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+.nav-cta span, .btn-primary span {
+  color: #ffffff !important;
+}
+
+/* Reduced Section Whitespace */
+.section-padding {
+  padding: 56px 0 !important;
+}
+
+.hero, .hero-section, .chic-hero {
+  padding: 100px 0 36px !important;
+}
+
+.poster-divider {
+  margin-top: 12px !important;
+  margin-bottom: 24px !important;
+}
