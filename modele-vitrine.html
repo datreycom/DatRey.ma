@@ -3,143 +3,1401 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modèle Vitrine | Luxe & Élégance</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Maison Élara | L'Excellence Intemporelle</title>
+    <meta name="description" content="Découvrez Maison Élara, symbole du luxe et de l'élégance intemporelle.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    
     <style>
+        /* CSS Variables - Color Palette & Typography */
         :root {
-            --primary: #1A1A1A;
-            --accent: #C5A059;
-            --bg: #FAFAFA;
-            --text: #333333;
-            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --color-black: #0D0D0D;
+            --color-gold: #C5A059;
+            --color-gold-light: #d4b679;
+            --color-champagne: #F5EFE0;
+            --color-white: #FAF9F6;
+            --color-charcoal: #2A2A2A;
+            --color-error: #e74c3c;
+            
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 8rem;
+            
+            --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.3s ease;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden;}
-        
-        h1, h2, h3, .logo { font-family: 'Playfair Display', serif; }
 
-        /* Navbar - Glassmorphism */
-        nav { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 1.5rem 5%; position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(250, 250, 250, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05);
-            transition: var(--transition);
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary); letter-spacing: 2px;}
-        nav ul { display: flex; gap: 3rem; list-style: none; align-items: center; }
-        nav a { text-decoration: none; color: var(--primary); font-size: 0.9rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: var(--transition); position: relative;}
-        nav a::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -4px; left: 0; background-color: var(--accent); transition: var(--transition); }
-        nav a:hover::after { width: 100%; }
         
-        .btn-contact { 
-            background: var(--primary); color: #fff !important; padding: 0.8rem 2rem; border-radius: 0; 
-            border: 1px solid var(--primary); transition: var(--transition);
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
         }
-        .btn-contact::after { display: none; }
-        .btn-contact:hover { background: transparent; color: var(--primary) !important; }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-white);
+            color: var(--color-charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            color: var(--color-black);
+            line-height: 1.2;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-fast);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .section-padding {
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: var(--transition-fast);
+            background: transparent;
+        }
+        
+        .btn-gold {
+            background-color: var(--color-gold);
+            color: var(--color-white);
+        }
+        
+        .btn-gold:hover {
+            background-color: var(--color-black);
+            color: var(--color-gold);
+        }
+        
+        .btn-outline {
+            border-color: var(--color-gold);
+            color: var(--color-gold);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--color-gold);
+            color: var(--color-white);
+        }
+        
+        /* Typography Utilities */
+        .subtitle {
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            color: var(--color-gold);
+            display: block;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        /* Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-        /* Hero with Parallax */
-        .hero { 
-            height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;
-            background: url('assets/hero_bg_luxury.webp') center/cover no-repeat fixed;
-            position: relative; color: #fff;
+        /* 1. Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+            background: transparent;
         }
-        .hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
-        .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 2rem; animation: fadeUp 1.5s ease forwards; opacity: 0;}
-        .hero h1 { font-size: 5rem; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 400; }
-        .hero p { font-size: 1.2rem; font-weight: 300; margin-bottom: 3rem; letter-spacing: 1px; }
         
-        .btn-hero {
-            display: inline-block; padding: 1.2rem 3rem; background: var(--accent); color: #fff; text-decoration: none;
-            text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-weight: 600;
-            transition: var(--transition); border: 1px solid var(--accent);
+        .navbar.scrolled {
+            background: rgba(13, 13, 13, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         }
-        .btn-hero:hover { background: transparent; color: var(--accent); }
+        
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--color-champagne);
+            letter-spacing: 1px;
+            z-index: 1001;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+        
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-champagne);
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--color-gold);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--color-champagne);
+            margin: 5px 0;
+            transition: var(--transition-fast);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--color-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition-smooth);
+            z-index: 999;
+        }
+        
+        .mobile-menu.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .mobile-menu ul {
+            text-align: center;
+        }
+        
+        .mobile-menu li {
+            margin: 2rem 0;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .mobile-menu.active li {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .mobile-menu.active li:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu.active li:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-menu.active li:nth-child(3) { transition-delay: 0.3s; }
+        .mobile-menu.active li:nth-child(4) { transition-delay: 0.4s; }
+        .mobile-menu.active li:nth-child(5) { transition-delay: 0.5s; }
+        
+        .mobile-menu a {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--color-champagne);
+        }
+        
+        .mobile-menu a:hover {
+            color: var(--color-gold);
+        }
+        
+        /* Menu Open State */
+        .menu-open .mobile-menu-btn span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .menu-open .mobile-menu-btn span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-open .mobile-menu-btn span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
 
-        /* Services */
-        .services { padding: 8rem 5%; background: #fff; text-align: center; }
-        .section-title { font-size: 3rem; color: var(--primary); margin-bottom: 1rem; }
-        .section-subtitle { color: var(--accent); font-style: italic; font-size: 1.2rem; margin-bottom: 4rem; }
+        /* 2. Hero Section */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0D0D0D 0%, #1a1a2e 50%, #0D0D0D 100%);
+            overflow: hidden;
+        }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; }
-        .card { 
-            padding: 4rem 2rem; background: var(--bg); border: 1px solid rgba(0,0,0,0.03); 
-            transition: var(--transition); position: relative; overflow: hidden;
+        /* Subtle animated gradient mesh overlay */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.1) 0%, transparent 60%);
+            animation: pulseBg 10s infinite alternate;
+        }
+        
+        @keyframes pulseBg {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.5); opacity: 1; }
+        }
+        
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            padding: 0 var(--spacing-md);
+            animation: fadeUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-title {
+            color: var(--color-champagne);
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -1px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .hero-subtitle {
+            color: rgba(245, 239, 224, 0.8);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 600px;
+            margin: 0 auto var(--spacing-lg);
+            font-weight: 300;
+        }
+
+        /* 3. Notre Histoire */
+        .histoire {
+            background-color: var(--color-white);
+            color: var(--color-black);
+        }
+        
+        .histoire-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+        
+        .histoire-content {
+            padding-right: var(--spacing-md);
+        }
+        
+        .histoire-text {
+            font-size: 1.1rem;
+            color: var(--color-charcoal);
+            margin-bottom: var(--spacing-md);
+            font-weight: 300;
+        }
+        
+        .histoire-visual {
+            position: relative;
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .histoire-visual::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: var(--color-gold);
+            opacity: 0.3;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--spacing-lg);
+            width: 50%;
+            padding-right: var(--spacing-md);
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-right: 0;
+            padding-left: var(--spacing-md);
+            text-align: left;
+        }
+        
+        .timeline-item::after {
+            content: '✦';
+            position: absolute;
+            top: 0;
+            right: -8px;
+            color: var(--color-gold);
+            font-size: 1.2rem;
+            line-height: 1;
+            background-color: var(--color-white);
+            padding: 5px 0;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            right: auto;
+            left: -8px;
+        }
+        
+        .timeline-year {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--color-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* 4. Savoir-Faire */
+        .savoir-faire {
+            background-color: var(--color-champagne);
+            color: var(--color-black);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+        
+        .service-card {
+            background-color: var(--color-white);
+            padding: var(--spacing-lg);
+            transition: var(--transition-smooth);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--color-gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--color-gold);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .service-desc {
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 300;
+        }
+
+        /* 5. Collections/Portfolio */
+        .collections {
+            background-color: var(--color-white);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            grid-auto-rows: 300px;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
             cursor: pointer;
         }
-        .card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
-            background: var(--accent); transform: scaleX(0); transition: var(--transition); transform-origin: left;
+        
+        .portfolio-item:nth-child(1) { grid-row: span 2; background: linear-gradient(135deg, #2c3e50, #3498db); }
+        .portfolio-item:nth-child(2) { background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); }
+        .portfolio-item:nth-child(3) { grid-row: span 2; background: linear-gradient(135deg, #000000, #434343); }
+        .portfolio-item:nth-child(4) { background: linear-gradient(135deg, #4b6cb7, #182848); }
+        .portfolio-item:nth-child(5) { background: linear-gradient(135deg, #e52d27, #b31217); }
+        .portfolio-item:nth-child(6) { background: linear-gradient(135deg, #2b5876, #4e4376); }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 13, 13, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition-smooth);
         }
-        .card:hover::before { transform: scaleX(1); }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); background: #fff;}
-        .card-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 1.5rem; }
-        .card h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary); }
-        .card p { color: #666; font-size: 0.95rem; }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-title {
+            color: var(--color-champagne);
+            font-size: 1.8rem;
+            transform: translateY(20px);
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+        
+        .portfolio-item:hover .portfolio-title {
+            transform: translateY(0);
+        }
+        
+        .portfolio-category {
+            color: var(--color-gold);
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            transform: translateY(20px);
+            transition: var(--transition-smooth);
+            transition-delay: 0.1s;
+        }
+        
+        .portfolio-item:hover .portfolio-category {
+            transform: translateY(0);
+        }
 
-        /* Footer */
-        footer { background: var(--primary); color: #fff; padding: 6rem 5% 2rem; text-align: center; }
-        footer h2 { font-size: 3rem; margin-bottom: 1.5rem; font-weight: 400;}
-        footer p { color: #aaa; margin-bottom: 3rem; max-width: 500px; margin-inline: auto;}
-        .footer-bottom { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: #666; text-transform: uppercase; letter-spacing: 1px;}
+        /* 6. Témoignages */
+        .temoignages {
+            background-color: var(--color-black);
+            color: var(--color-champagne);
+            overflow: hidden;
+        }
+        
+        .temoignages .section-title {
+            color: var(--color-champagne);
+        }
+        
+        .testimonials-wrapper {
+            display: flex;
+            gap: var(--spacing-md);
+            overflow-x: auto;
+            padding: var(--spacing-md) 0;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+            scroll-snap-type: x mandatory;
+        }
+        
+        .testimonials-wrapper::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        
+        .testimonial-card {
+            min-width: 400px;
+            background-color: var(--color-charcoal);
+            padding: var(--spacing-lg);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            position: relative;
+        }
+        
+        .quote-icon {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: var(--color-gold);
+            line-height: 0;
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            opacity: 0.3;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            z-index: 2;
+            font-weight: 300;
+        }
+        
+        .testimonial-author {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--color-gold);
+        }
+        
+        .testimonial-company {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(245, 239, 224, 0.6);
+            margin-top: 5px;
+        }
 
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* 7. Contact Form */
+        .contact {
+            background-color: var(--color-charcoal);
+            color: var(--color-champagne);
+        }
+        
+        .contact .section-title {
+            color: var(--color-champagne);
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-md);
+            position: relative;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-gold);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(13, 13, 13, 0.5);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            color: var(--color-champagne);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            background: rgba(13, 13, 13, 0.8);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .error-message {
+            color: var(--color-error);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        
+        .form-group.has-error .form-control {
+            border-color: var(--color-error);
+        }
+        
+        .form-group.has-error .error-message {
+            display: block;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            background-color: var(--color-gold);
+            color: var(--color-white);
+            border: none;
+            padding: 1.2rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .btn-submit:hover {
+            background-color: var(--color-champagne);
+            color: var(--color-black);
+        }
+        
+        /* Modal Success */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 13, 13, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition-fast);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .modal-content {
+            background: var(--color-champagne);
+            color: var(--color-black);
+            padding: var(--spacing-lg);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            transform: translateY(20px);
+            transition: var(--transition-smooth);
+        }
+        
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+        
+        .modal-title {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .modal-text {
+            font-weight: 300;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .btn-close {
+            background: transparent;
+            border: 1px solid var(--color-black);
+            padding: 0.8rem 2rem;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        
+        .btn-close:hover {
+            background: var(--color-black);
+            color: var(--color-champagne);
+        }
+
+        /* 8. Footer */
+        .footer {
+            background-color: var(--color-black);
+            color: rgba(245, 239, 224, 0.6);
+            padding: var(--spacing-lg) 0 2rem 0;
+            border-top: 1px solid rgba(197, 160, 89, 0.1);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--color-gold);
+            margin-bottom: var(--spacing-sm);
+            display: inline-block;
+        }
+        
+        .footer-desc {
+            max-width: 300px;
+            font-weight: 300;
+            font-size: 0.95rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 50%;
+            color: var(--color-gold);
+        }
+        
+        .social-icons a:hover {
+            background: var(--color-gold);
+            color: var(--color-black);
+        }
+        
+        .footer-title {
+            font-family: var(--font-heading);
+            color: var(--color-champagne);
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--color-gold);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+        
+        .agency-credit {
+            color: var(--color-gold);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .histoire-grid,
+            .services-grid {
+                gap: var(--spacing-lg);
+            }
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-lg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --spacing-lg: 3rem;
+                --spacing-xl: 4rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .histoire-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .histoire-visual {
+                display: none; /* Hide timeline line on mobile for simplicity, or re-layout */
+            }
+            
+            /* Simple mobile timeline fallback */
+            .histoire-visual {
+                display: block;
+            }
+            .histoire-visual::before { left: 0; }
+            .timeline-item, .timeline-item:nth-child(even) {
+                width: 100%;
+                margin-left: 0;
+                padding-left: 2rem;
+                padding-right: 0;
+                text-align: left;
+            }
+            .timeline-item::after, .timeline-item:nth-child(even):after {
+                left: -7px;
+                right: auto;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 250px;
+            }
+            .portfolio-item:nth-child(1), .portfolio-item:nth-child(3) {
+                grid-row: span 1;
+            }
+            
+            .testimonial-card {
+                min-width: 300px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Maison Royale.</div>
-        <ul>
-            <li><a href="#">La Maison</a></li>
-            <li><a href="#">Savoir-Faire</a></li>
-            <li><a href="#">Collections</a></li>
-            <li><a href="#" class="btn-contact">Contact</a></li>
-        </ul>
+    <!-- 1. Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">Maison Élara</a>
+            
+            <div class="nav-links">
+                <a href="#histoire">La Maison</a>
+                <a href="#savoir-faire">Savoir-Faire</a>
+                <a href="#collections">Collections</a>
+                <a href="#temoignages">Journal</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
+    
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="#histoire" class="mobile-link">La Maison</a></li>
+            <li><a href="#savoir-faire" class="mobile-link">Savoir-Faire</a></li>
+            <li><a href="#collections" class="mobile-link">Collections</a></li>
+            <li><a href="#temoignages" class="mobile-link">Journal</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+    </div>
 
-    <section class="hero">
+    <!-- 2. Hero Section -->
+    <header class="hero" id="accueil">
         <div class="hero-content">
-            <h1>L'Art de l'Excellence.</h1>
-            <p>Une expérience digitale façonnée par l'élégance, conçue pour les marques d'exception.</p>
-            <a href="#" class="btn-hero">Découvrir notre univers</a>
+            <span class="subtitle">Paris depuis 2015</span>
+            <h1 class="hero-title">L'Art de l'Excellence Intemporelle</h1>
+            <p class="hero-subtitle">Plongez dans un univers où le luxe rencontre la technologie, créant des expériences digitales inoubliables pour les marques de prestige.</p>
+            <a href="#collections" class="btn btn-gold">Découvrir l'univers</a>
+        </div>
+    </header>
+
+    <!-- 3. Notre Histoire -->
+    <section class="section-padding histoire" id="histoire">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="subtitle">Héritage</span>
+                <h2 class="section-title">Notre Histoire</h2>
+            </div>
+            
+            <div class="histoire-grid">
+                <div class="histoire-content reveal">
+                    <p class="histoire-text">Née de la fusion entre l'artisanat de luxe et l'innovation digitale, Maison Élara a été fondée avec une vision claire : redéfinir les standards de l'élégance sur le web.</p>
+                    <p class="histoire-text">Chaque projet est traité comme une pièce de haute couture, conçue sur mesure pour refléter l'âme et le prestige de nos clients. Nous croyons que le digital doit susciter la même émotion que le toucher d'une soie précieuse ou l'éclat d'un diamant.</p>
+                    <a href="#savoir-faire" class="btn btn-outline" style="margin-top: 1rem;">Notre expertise</a>
+                </div>
+                
+                <div class="histoire-visual reveal">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2015</div>
+                        <h3 class="timeline-title">La Fondation</h3>
+                        <p class="timeline-desc">Création de la Maison à Paris, berceau du luxe et de la créativité.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2018</div>
+                        <h3 class="timeline-title">Expansion Internationale</h3>
+                        <p class="timeline-desc">Ouverture de nos bureaux à Milan et Genève pour servir une clientèle mondiale.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <h3 class="timeline-title">Maison Digitale</h3>
+                        <p class="timeline-desc">Lancement de notre nouveau pôle d'innovation dédié aux expériences immersives.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="services">
-        <h2 class="section-title">Notre Savoir-Faire</h2>
-        <p class="section-subtitle">L'alliance de la tradition et de l'innovation</p>
-        
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon">✧</div>
-                <h3>Haute Couture Digitale</h3>
-                <p>Création d'interfaces web sur-mesure, où chaque pixel est pensé avec la même rigueur qu'une pièce de joaillerie.</p>
+    <!-- 4. Savoir-Faire -->
+    <section class="section-padding savoir-faire" id="savoir-faire">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="subtitle">Expertise</span>
+                <h2 class="section-title">Notre Savoir-Faire</h2>
             </div>
-            <div class="card">
-                <div class="card-icon">✦</div>
-                <h3>Direction Artistique</h3>
-                <p>Une identité visuelle intemporelle qui capture l'essence même de votre marque et séduit votre clientèle prestigieuse.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">✺</div>
-                <h3>Stratégie Premium</h3>
-                <p>Déploiement de campagnes d'acquisition exclusives, ciblant une audience qualifiée à fort pouvoir d'achat.</p>
+            
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">✧</div>
+                    <h3 class="service-title">Haute Couture Digitale</h3>
+                    <p class="service-desc">Conception sur mesure de plateformes web d'exception, alliant esthétique raffinée et performances technologiques de pointe.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">✦</div>
+                    <h3 class="service-title">Direction Artistique</h3>
+                    <p class="service-desc">Création d'univers visuels immersifs qui racontent l'histoire de votre marque avec élégance et distinction.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">✺</div>
+                    <h3 class="service-title">Stratégie Premium</h3>
+                    <p class="service-desc">Accompagnement stratégique pour positionner votre marque digitale dans la sphère du luxe et de l'exclusivité.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">✦</div>
+                    <h3 class="service-title">Architecture Web</h3>
+                    <p class="service-desc">Structuration robuste et évolutive garantissant une fluidité parfaite et une navigation intuitive pour vos utilisateurs.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">✺</div>
+                    <h3 class="service-title">Expérience Client</h3>
+                    <p class="service-desc">Design d'interfaces centrées sur l'émotion, transformant chaque visite en un moment privilégié et mémorable.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">✧</div>
+                    <h3 class="service-title">Identité de Marque</h3>
+                    <p class="service-desc">Développement d'une signature visuelle unique et intemporelle qui traverse les modes et affirme votre singularité.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <h2>Sublimez votre image.</h2>
-        <p>Confiez la création de votre plateforme digitale à nos artisans du web.</p>
-        <a href="#" class="btn-hero" style="background: transparent;">Demander une consultation</a>
-        <div class="footer-bottom">
-            © 2024 Maison Royale. Tous droits réservés. | Modèle Vitrine Exclusif
+    <!-- 5. Collections/Portfolio -->
+    <section class="section-padding collections" id="collections">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="subtitle">Portfolio</span>
+                <h2 class="section-title">Nos Collections</h2>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item reveal">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">L'Écrin Noir</h3>
+                        <span class="portfolio-category">Joaillerie</span>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Symphonie Rouge</h3>
+                        <span class="portfolio-category">Parfumerie</span>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Ombres & Lumières</h3>
+                        <span class="portfolio-category">Horlogerie</span>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Bleu Nuit</h3>
+                        <span class="portfolio-category">Mode</span>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Velours Pourpre</h3>
+                        <span class="portfolio-category">Hôtellerie</span>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Reflets d'Or</h3>
+                        <span class="portfolio-category">Beauté</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Témoignages -->
+    <section class="section-padding temoignages" id="temoignages">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="subtitle">Confiance</span>
+                <h2 class="section-title">Journal & Échos</h2>
+            </div>
+            
+            <div class="testimonials-wrapper reveal">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Maison Élara a su capturer l'essence de notre héritage centenaire pour le transposer dans une expérience digitale d'une pureté absolue.</p>
+                    <h4 class="testimonial-author">Alexandre D.</h4>
+                    <p class="testimonial-company">Maison de Haute Joaillerie</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">L'attention aux détails est remarquable. Chaque pixel semble avoir été poli à la main, tel un artisan façonnant un objet précieux.</p>
+                    <h4 class="testimonial-author">Sophie V.</h4>
+                    <p class="testimonial-company">Directrice Créative</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Une collaboration qui a redéfini notre vision du e-commerce de luxe. Le résultat dépasse de loin toutes nos attentes.</p>
+                    <h4 class="testimonial-author">Charles M.</h4>
+                    <p class="testimonial-company">Horlogerie Suisse</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">L'équipe d'Élara possède cette rare capacité à traduire l'émotion et l'exclusivité à travers un écran. Un travail d'orfèvre.</p>
+                    <h4 class="testimonial-author">Éléonore L.</h4>
+                    <p class="testimonial-company">Fondatrice Beauté Premium</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Contact Form -->
+    <section class="section-padding contact" id="contact">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="subtitle">Privilège</span>
+                <h2 class="section-title">Prendre Rendez-vous</h2>
+            </div>
+            
+            <div class="contact-container reveal">
+                <form id="elara-contact-form" novalidate>
+                    <div class="form-group" id="group-name">
+                        <label class="form-label" for="nom">Nom Complet</label>
+                        <input type="text" id="nom" name="nom" class="form-control" placeholder="Votre nom" required>
+                        <span class="error-message">Veuillez entrer votre nom.</span>
+                    </div>
+                    
+                    <div class="form-group" id="group-email">
+                        <label class="form-label" for="email">Adresse Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="vous@exemple.com" required>
+                        <span class="error-message">Veuillez entrer une adresse email valide.</span>
+                    </div>
+                    
+                    <div class="form-group" id="group-phone">
+                        <label class="form-label" for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" class="form-control" placeholder="Votre numéro">
+                        <!-- Phone is optional, no error msg by default unless we strictly require format -->
+                    </div>
+                    
+                    <div class="form-group" id="group-message">
+                        <label class="form-label" for="message">Votre Demande</label>
+                        <textarea id="message" name="message" class="form-control" placeholder="Comment pouvons-nous vous assister ?" required></textarea>
+                        <span class="error-message">Votre message doit contenir au moins 10 caractères.</span>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Envoyer la demande</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content">
+            <div style="font-size: 3rem; color: var(--color-gold); margin-bottom: 1rem;">✧</div>
+            <h2 class="modal-title">Merci</h2>
+            <p class="modal-text">Votre message a bien été envoyé. Un conseiller de la Maison vous contactera sous 24h.</p>
+            <button class="btn-close" id="close-modal">Fermer</button>
+        </div>
+    </div>
+
+    <!-- 8. Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid reveal">
+                <div>
+                    <a href="#" class="footer-logo">Maison Élara</a>
+                    <p class="footer-desc">L'incarnation de l'élégance digitale. Nous créons des univers virtuels où le luxe s'exprime dans sa forme la plus pure.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">La Maison</h4>
+                    <ul class="footer-links">
+                        <li><a href="#histoire">Notre Histoire</a></li>
+                        <li><a href="#savoir-faire">Expertise</a></li>
+                        <li><a href="#collections">Collections</a></li>
+                        <li><a href="#temoignages">Journal</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Légal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Mentions Légales</a></li>
+                        <li><a href="#">Politique de Confidentialité</a></li>
+                        <li><a href="#">CGV</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Maison Élara. Tous droits réservés.</p>
+                <p style="margin-top: 10px;">Réalisé avec &hearts; par <span class="agency-credit">DatRey Agency</span></p>
+            </div>
         </div>
     </footer>
 
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile Menu Toggle
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const body = document.body;
+
+            function toggleMenu() {
+                body.classList.toggle('menu-open');
+                mobileMenu.classList.toggle('active');
+                if(body.classList.contains('menu-open')) {
+                    body.style.overflow = 'hidden'; // Prevent scrolling
+                } else {
+                    body.style.overflow = 'auto';
+                }
+            }
+
+            menuBtn.addEventListener('click', toggleMenu);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // Scroll Reveal Animation with Intersection Observer
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            // Form Validation & Modal
+            const form = document.getElementById('elara-contact-form');
+            const modal = document.getElementById('success-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            
+            // Email Regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
+                
+                // Get Fields
+                const nameInput = document.getElementById('nom');
+                const emailInput = document.getElementById('email');
+                const msgInput = document.getElementById('message');
+                
+                // Groups for error classes
+                const groupName = document.getElementById('group-name');
+                const groupEmail = document.getElementById('group-email');
+                const groupMsg = document.getElementById('group-message');
+
+                // Reset Errors
+                groupName.classList.remove('has-error');
+                groupEmail.classList.remove('has-error');
+                groupMsg.classList.remove('has-error');
+
+                // Validate Name
+                if (nameInput.value.trim() === '') {
+                    groupName.classList.add('has-error');
+                    isValid = false;
+                }
+
+                // Validate Email
+                if (!emailRegex.test(emailInput.value.trim())) {
+                    groupEmail.classList.add('has-error');
+                    isValid = false;
+                }
+
+                // Validate Message
+                if (msgInput.value.trim().length < 10) {
+                    groupMsg.classList.add('has-error');
+                    isValid = false;
+                }
+
+                // Success
+                if (isValid) {
+                    // Show Modal
+                    modal.classList.add('active');
+                    // Reset Form
+                    form.reset();
+                }
+            });
+
+            // Close Modal
+            closeModalBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+            
+            // Close modal on click outside
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+            
+            // Initial trigger for scroll (in case elements are already in viewport on load)
+            window.dispatchEvent(new Event('scroll'));
+        });
+    </script>
 </body>
 </html>
