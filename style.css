@@ -2321,7 +2321,7 @@ textarea.form-control { min-height: 150px; resize: vertical; }
   box-shadow: 0 4px 14px rgba(27, 42, 120, 0.25);
 }
 
-.mockup-pack-body { font-family: var(--font-body); color: var(--datrey-text); background: var(--datrey-cream) !important; line-height: 1.9; overflow-x: hidden; -webkit-font-smoothing: antialiased; font-size: 1.05rem; letter-spacing: 0.03em; }
+.mockup-pack-body { font-family: var(--font-body); color: var(--datrey-text); background: var(--datrey-cream) !important; line-height: 1.9; overflow-x: hidden; -webkit-font-smoothing: antialiased; font-size: 1.05rem; letter-spacing: 0.03em; padding: 28px; }
 
 .mockup-pack-title {
   font-family: var(--font-body) !important;
