@@ -50,7 +50,7 @@
 /* --- Reset & Base --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 17px; }
-body { font-family: var(--font-body); color: var(--datrey-text); background: var(--datrey-cream) !important; line-height: 1.9; overflow-x: hidden; -webkit-font-smoothing: antialiased; font-size: 1.05rem; letter-spacing: 0.03em; }
+body { font-family: var(--font-body); color: var(--datrey-text); background: var(--datrey-cream) !important; line-height: 1.9; overflow-x: clip; -webkit-font-smoothing: antialiased; font-size: 1.05rem; letter-spacing: 0.03em; }
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
@@ -612,16 +612,15 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-body); line-height: 1.25; font-
   line-height: 1.7;
   margin-top: 16px;
   max-width: 320px;
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 .footer .logo span { color: #0f172a !important; }
 .social-links {
   display: flex;
   gap: 16px;
   margin-top: 20px;
-  justify-content: flex-start !important;
+  justify-content: flex-start;
 }
 .social-links a { color: #64748b !important; transition: 0.3s; }
 .social-links a:hover { color: #2563eb !important; transform: translateY(-3px); }
@@ -631,10 +630,10 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-body); line-height: 1.25; font-
   font-size: 1.05rem;
   font-weight: 700;
   margin-bottom: 20px;
-  text-align: left !important;
+  text-align: left;
 }
 
-.footer-links { text-align: left !important; }
+.footer-links { text-align: left; }
 .footer-links a {
   display: block;
   color: #475569 !important;
@@ -642,7 +641,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-body); line-height: 1.25; font-
   padding: 6px 0;
   text-decoration: none;
   transition: 0.3s;
-  text-align: left !important;
+  text-align: left;
 }
 .footer-links a:hover { color: #2563eb !important; transform: translateX(4px); }
 
@@ -653,8 +652,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-body); line-height: 1.25; font-
   color: #475569 !important;
   font-size: 0.92rem;
   margin-bottom: 14px;
-  text-align: left !important;
-  justify-content: flex-start !important;
+  text-align: left;
+  justify-content: flex-start;
 }
 .footer-contact-item span, .footer-contact-item a { color: #475569 !important; text-decoration: none; }
 .footer-contact-item a:hover { color: #2563eb !important; }
@@ -884,6 +883,9 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-body); line-height: 1.25; font-
   .page-hero .hero-title { font-size: 2.2rem; }
   .cta-box { padding: 40px 20px; }
   .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  .footer-grid .footer-desc, .footer-grid .footer-brand p, .footer-grid h3, .footer-grid h4, .footer-links, .footer-links a { text-align: center !important; }
+  .footer-grid .social-links, .footer-grid .footer-contact-item { justify-content: center !important; }
+  .footer-grid .footer-desc { margin: 16px auto 0; }
   .footer-bottom { flex-direction: column; gap: 20px; text-align: center; align-items: center; }
   .section-padding { padding: 48px 0 !important; }
   .hero, .hero-section, .chic-hero { padding: 80px 0 32px !important; }
@@ -1628,7 +1630,7 @@ body::before {
 .faq-content { max-width: 1000px; margin: 0 auto; padding: 20px; }
 
 /* --- Blog Grid & Cards --- */
-.blog-grid {
+.blog-grid, .articles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 32px;
@@ -2032,7 +2034,14 @@ textarea.form-control { min-height: 150px; resize: vertical; }
 @media print {
   .header, .footer, .whatsapp-float, .exit-popup-overlay,
   .mobile-nav, .mobile-toggle, .theme-toggle, .lang-selector,
-  .cta-section, /* ============================================
+  .cta-section { display: none !important; }
+  body { color: #000; background: #fff !important; overflow-x: visible; }
+  a { color: #000; text-decoration: underline; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+  .container { max-width: 100%; padding: 0; }
+}
+
+/* ============================================
    TECH STACK BANNER (Contained & Centered)
    ============================================ */
 .tech-stack-banner {
@@ -2053,11 +2062,6 @@ textarea.form-control { min-height: 150px; resize: vertical; }
     padding: 20px 16px !important;
     border-radius: 16px !important;
   }
-}
-  body { font-family: var(--font-body); color: var(--datrey-text); background: var(--datrey-cream) !important; line-height: 1.9; overflow-x: hidden; -webkit-font-smoothing: antialiased; font-size: 1.05rem; letter-spacing: 0.03em; }
-  a { color: #000; text-decoration: underline; }
-  a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
-  .container { max-width: 100%; padding: 0; }
 }
 
 /* ============================================
@@ -2092,6 +2096,7 @@ textarea.form-control { min-height: 150px; resize: vertical; }
 
 /* 6 Core Expertise Domains Grid (Poster Style) */
 .poster-domain-grid {
+  justify-content: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
@@ -2099,11 +2104,13 @@ textarea.form-control { min-height: 150px; resize: vertical; }
 }
 
 @media (max-width: 992px) {
-  .poster-domain-grid { grid-template-columns: repeat(2, 1fr); }
+  .poster-domain-grid {
+  justify-content: center; grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 640px) {
-  .poster-domain-grid { grid-template-columns: 1fr; }
+  .poster-domain-grid {
+  justify-content: center; grid-template-columns: 1fr; }
 }
 
 .poster-domain-card {
@@ -2505,12 +2512,12 @@ textarea.form-control { min-height: 150px; resize: vertical; }
 .hero-slider-track {
   position: relative;
   width: 100%;
-  height: 540px;
+  height: 600px;
   overflow: hidden;
 }
 
 @media (max-width: 768px) {
-  .hero-slider-track { height: 640px; }
+  .hero-slider-track { height: 100vh; min-height: 650px; max-height: 850px; }
 }
 
 .hero-slide {
@@ -2549,7 +2556,55 @@ textarea.form-control { min-height: 150px; resize: vertical; }
 }
 
 @media (max-width: 768px) {
-  .hero-slide-overlay { padding: 28px; }
+  .hero-slide-overlay { 
+    padding: 24px 20px; 
+    align-items: center; 
+    text-align: center;
+  }
+  .hero-slide-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-slide-title { text-align: center; font-size: 2.2rem !important; }
+  .hero-slide-desc { text-align: center; font-size: 1.05rem !important; margin-bottom: 20px !important; }
+  .poster-divider { justify-content: center !important; }
+  .hero-slider-track { height: 500px !important; }
+  
+  /* Additional fix for the agency slider lower on the page */
+  .photo-slider-container { border-radius: 16px; }
+  .slider-wrapper { height: 480px; }
+  .slider-overlay-card { margin: 16px; padding: 20px; max-width: calc(100% - 32px); }
+  .slider-title { text-align: center; font-size: 1.4rem !important; }
+  .slider-desc { text-align: center; font-size: 0.95rem !important; line-height: 1.4 !important; }
+  .slider-tag { display: block; margin: 0 auto 12px; width: max-content; }
+  .slider-nav { padding: 12px 16px; }
+  
+  /* Mobile Alignment Fixes for Cas Clients and Approach */
+  .approach-step {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 16px !important;
+  }
+  .service-tags {
+    justify-content: center !important;
+    flex-wrap: wrap;
+  }
+  .kpi-stats-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 20px !important;
+  }
+}
+
+/* Base style for the KPI stats row */
+.kpi-stats-row {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
 }
 
 .hero-slide-title {
@@ -2646,6 +2701,7 @@ img {
 
 /* Services Image Grid Redesign */
 .services-image-grid {
+    justify-content: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
@@ -3038,6 +3094,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); line-height: 1.25; fo
     grid-column: span 1 !important;
   }
   .services-image-grid {
+    justify-content: center;
     grid-template-columns: 1fr !important;
   }
   body, html {

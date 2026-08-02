@@ -1384,9 +1384,34 @@
 .signup-form-container { display: block; }
 .signup-form-container.hidden { display: none; }
 
+    
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background-color: var(--c-primary, #6366f1);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 500;
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+            z-index: 10000;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            pointer-events: none;
+        }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
     </style>
 </head>
 <body>
+    <div class="toast" id="toast">Message</div>
+
 
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
@@ -1462,41 +1487,7 @@
                     <div class="stat-value">2.4s</div>
                     <div class="stat-desc">Temps de réponse</div>
                 </div>
-                <div class="mockup">
-                    <div class="mockup-header">
-                        <div class="mockup-dot"></div>
-                        <div class="mockup-dot"></div>
-                        <div class="mockup-dot"></div>
-                    </div>
-                    <div class="mockup-body">
-                        <div class="mockup-sidebar">
-                            <div class="mockup-nav-item active"></div>
-                            <div class="mockup-nav-item"></div>
-                            <div class="mockup-nav-item"></div>
-                            <div class="mockup-nav-item"></div>
-                        </div>
-                        <div class="mockup-content">
-                            <div class="mockup-stats">
-                                <div class="mockup-stat-card">
-                                    <div class="mockup-stat-title"></div>
-                                    <div class="mockup-stat-value"></div>
-                                </div>
-                                <div class="mockup-stat-card">
-                                    <div class="mockup-stat-title"></div>
-                                    <div class="mockup-stat-value" style="width: 70%;"></div>
-                                </div>
-                                <div class="mockup-stat-card">
-                                    <div class="mockup-stat-title"></div>
-                                    <div class="mockup-stat-value" style="width: 50%;"></div>
-                                </div>
-                            </div>
-                            <div class="mockup-chart">
-                                <div class="mockup-chart-line"></div>
-                                <div class="mockup-chart-path"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <img src="assets/saas_dashboard_mockup.jpg" class="mockup" alt="SaaS Dashboard Interface" style="object-fit: cover; width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); display: block;" />
             </div>
         </div>
     </section>
@@ -2365,6 +2356,43 @@ console.log(`Agent ${agent.id} déployé !`);
         revealElements.forEach(el => {
             revealObserver.observe(el);
         });
+    
+        // Toast Function
+        const toast = document.getElementById('toast');
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Intercept empty links
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                showToast('Cette fonctionnalité est simulée dans cette démo');
+            });
+        });
+
+        // Intercept forms
+        ['ctaForm', 'loginForm', 'signupForm'].forEach(formId => {
+            const form = document.getElementById(formId);
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    showToast('Action simulée avec succès !');
+                    // Close modal if in modal
+                    const modal = form.closest('.modal');
+                    if (modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                    form.reset();
+                });
+            }
+        });
+
     </script>
 </body>
 </html>
