@@ -3,2397 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DatRey Agency - Modèle E-Learning</title>
+    <title>Académie Pro | Formations en Ligne &amp; Certifications</title>
     
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-black: #09090B;
-            --bg-card: #18181B;
-            --border-color: #27272A;
-            --primary-violet: #8B5CF6;
+            --bg-slate: #0F172A;
+            --bg-card: #1E293B;
+            --primary-purple: #8B5CF6;
             --primary-blue: #3B82F6;
-            --primary-emerald: #10B981;
-            --text-white: #FAFAFA;
-            --text-muted: #A1A1AA;
-            
-            --nav-height: 72px;
-            
-            /* Gradients */
-            --gradient-primary: linear-gradient(135deg, var(--primary-violet), var(--primary-blue));
-            --gradient-glow: linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(59, 130, 246, 0.4));
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border-color: #334155;
+            --nav-height: 76px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-black);
-            color: var(--text-white);
+            background-color: var(--bg-slate);
+            color: var(--text-light);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 
-        ul {
-            list-style: none;
+        /* Navigation */
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            height: var(--nav-height); background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color);
+            display: flex; align-items: center;
         }
+        .header .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .logo { font-size: 1.4rem; font-weight: 800; color: #FFF; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--primary-purple); }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.92rem; font-weight: 500; }
+        .nav-links a:hover { color: var(--primary-purple); }
 
-        button {
-            cursor: pointer;
-            font-family: inherit;
+        .btn-purple {
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+            color: #FFF !important; font-weight: 700; padding: 12px 26px;
+            border-radius: 50px; border: none; cursor: pointer; transition: all 0.3s;
+            font-size: 0.88rem; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
         }
+        .btn-purple:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6); }
 
-        /* Utilities */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .text-gradient {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 24px;
-            border-radius: 9999px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.39);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--text-white);
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--text-muted);
-        }
-
-        /* Glassmorphism */
-        .glass {
-            background: rgba(24, 24, 27, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: var(--nav-height);
-            display: flex;
-            align-items: center;
-            z-index: 100;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid transparent;
-        }
-
-        .navbar.scrolled {
-            background: rgba(9, 9, 11, 0.8);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 800;
-            font-size: 1.25rem;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-icon {
-            width: 28px;
-            height: 28px;
-            background: var(--gradient-primary);
-            border-radius: 8px;
-            position: relative;
-        }
-        
-        .logo-icon::after {
-            content: '';
-            position: absolute;
-            inset: 4px;
-            background: var(--bg-black);
-            border-radius: 4px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-        }
-
-        .nav-links a {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-white);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .login-link {
-            color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .login-link:hover {
-            color: var(--text-white);
-        }
-
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-white);
-            font-size: 1.5rem;
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: var(--nav-height);
-            left: 0;
-            width: 100%;
-            background: var(--bg-card);
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            transform: translateY(-100%);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 99;
-            pointer-events: none;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .mobile-menu.active {
-            transform: translateY(0);
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        /* Hero Section */
+        /* Hero */
         .hero {
-            padding-top: calc(var(--nav-height) + 80px);
-            padding-bottom: 80px;
-            position: relative;
-            text-align: center;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            mask-image: radial-gradient(circle at center, black 0%, transparent 80%);
-            -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 80%);
-        }
-
-        .hero-glow {
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 400px;
-            background: var(--gradient-glow);
-            filter: blur(100px);
-            z-index: -1;
-            border-radius: 50%;
-            opacity: 0.5;
-        }
-
-        .pill-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 16px;
-            border-radius: 9999px;
-            background: rgba(139, 92, 246, 0.1);
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            color: var(--primary-violet);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 32px;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 800;
-            letter-spacing: -1px;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            max-width: 900px;
-            margin-inline: auto;
-        }
-
-        .hero p {
-            font-size: clamp(1.1rem, 2vw, 1.25rem);
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-inline: auto;
-            margin-bottom: 40px;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            margin-bottom: 80px;
-        }
-
-        /* Dashboard Mockup */
-        .mockup-container {
-            perspective: 1000px;
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .mockup {
-            width: 100%;
-            height: 600px;
-            background: var(--bg-card);
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            transform: rotateX(15deg) rotateY(0deg);
-            transition: transform 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .mockup:hover {
-            transform: rotateX(5deg) rotateY(0deg);
-        }
-
-        .mockup-header {
-            height: 48px;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .mockup-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--border-color);
-        }
-        .mockup-dot:nth-child(1) { background: #ef4444; }
-        .mockup-dot:nth-child(2) { background: #eab308; }
-        .mockup-dot:nth-child(3) { background: #22c55e; }
-
-        .mockup-body {
-            flex: 1;
-            padding: 32px;
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: 32px;
-        }
-
-        .mockup-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .mockup-nav-item {
-            height: 32px;
-            border-radius: 6px;
-            background: rgba(255, 255, 255, 0.05);
-            width: 100%;
-        }
-        .mockup-nav-item.active {
-            background: rgba(139, 92, 246, 0.15);
-            width: 80%;
-        }
-
-        .mockup-content {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .mockup-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-
-        .mockup-stat-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-        }
-
-        .mockup-stat-title {
-            width: 60%;
-            height: 12px;
-            background: var(--text-muted);
-            border-radius: 4px;
-            margin-bottom: 16px;
-            opacity: 0.5;
-        }
-
-        .mockup-stat-value {
-            width: 40%;
-            height: 24px;
-            background: var(--text-white);
-            border-radius: 4px;
-            opacity: 0.9;
-        }
-
-        .mockup-chart {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            position: relative;
-            overflow: hidden;
-            padding: 24px;
-        }
-
-        .mockup-chart-line {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(59, 130, 246, 0.2), transparent);
-            clip-path: polygon(0 100%, 0 60%, 20% 50%, 40% 70%, 60% 40%, 80% 30%, 100% 40%, 100% 100%);
-        }
-
-        .mockup-chart-path {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-bottom: 2px solid var(--primary-blue);
-            clip-path: polygon(0 60%, 20% 50%, 40% 70%, 60% 40%, 80% 30%, 100% 40%, 100% calc(40% + 2px), 80% calc(30% + 2px), 60% calc(40% + 2px), 40% calc(70% + 2px), 20% calc(50% + 2px), 0 calc(60% + 2px));
-        }
-
-        /* Social Proof / Logos */
-        .social-proof {
-            padding: 60px 0;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            background: rgba(24, 24, 27, 0.3);
-            overflow: hidden;
-        }
-
-        .social-proof p {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 32px;
-        }
-
-        .logo-scroll {
-            display: flex;
-            gap: 60px;
-            width: max-content;
-            animation: scroll 30s linear infinite;
-        }
-
-        .logo-item {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            opacity: 0.5;
-            transition: opacity 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo-item:hover {
-            opacity: 1;
-        }
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Bento Grid Features */
-        .features {
-            padding: 120px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 3vw, 2.5rem);
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .section-subtitle {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 240px;
-            gap: 24px;
-        }
-
-        .bento-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 32px;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .bento-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(139, 92, 246, 0.5);
-        }
-
-        .bento-large-1 { grid-column: span 2; grid-row: span 2; }
-        .bento-tall { grid-column: span 1; grid-row: span 2; }
-        .bento-regular { grid-column: span 1; grid-row: span 1; }
-        .bento-large-2 { grid-column: span 2; grid-row: span 1; }
-
-        .bento-icon {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 12px;
-            border-radius: 12px;
-        }
-
-        .bento-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .bento-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .bento-large-1 .bento-title { font-size: 1.75rem; }
-        .bento-large-1 .bento-desc { font-size: 1.1rem; }
-
-        .bento-bg-gradient {
-            position: absolute;
-            bottom: -50%;
-            right: -20%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        /* How It Works */
-        .process {
-            padding: 120px 0;
-            background: rgba(24, 24, 27, 0.3);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            position: relative;
-            margin-top: 64px;
-        }
-
-        .process-line {
-            position: absolute;
-            top: 40px;
-            left: 10%;
-            right: 10%;
-            height: 2px;
-            background: repeating-linear-gradient(90deg, var(--border-color) 0, var(--border-color) 10px, transparent 10px, transparent 20px);
-            z-index: 0;
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: var(--bg-black);
-            border: 2px solid var(--border-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 800;
-            margin: 0 auto 24px;
-            color: var(--primary-violet);
-            box-shadow: 0 0 20px rgba(9, 9, 11, 0.5);
-        }
-
-        .step-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .step-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Pricing */
-        .pricing {
-            padding: 120px 0;
-        }
-
-        .pricing-toggle {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 64px;
-        }
-
-        .toggle-label {
-            font-weight: 600;
-            color: var(--text-muted);
-            transition: color 0.3s;
-        }
-        .toggle-label.active {
-            color: var(--text-white);
-        }
-
-        .toggle-switch {
-            width: 64px;
-            height: 32px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 9999px;
-            position: relative;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .toggle-slider {
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            width: 24px;
-            height: 24px;
-            background: var(--primary-violet);
-            border-radius: 50%;
-            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-        }
-        
-        .toggle-switch.annual .toggle-slider {
-            transform: translateX(32px);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .pricing-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        .pricing-card.pro {
-            border-color: var(--primary-violet);
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(139, 92, 246, 0.1);
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gradient-primary);
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 9999px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .tier-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .tier-price {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: baseline;
-            gap: 4px;
-        }
-
-        .tier-period {
-            font-size: 1rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .tier-desc {
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            font-size: 0.95rem;
-        }
-
-        .feature-list {
-            margin-bottom: 40px;
-            flex: 1;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 16px;
-            font-size: 0.95rem;
-        }
-
-        .feature-icon {
-            color: var(--primary-emerald);
-            font-weight: bold;
-        }
-
-        .pricing-card .btn {
-            width: 100%;
-        }
-
-        /* FAQ */
-        .faq {
-            padding: 120px 0;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .accordion {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .accordion-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .accordion-header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 24px;
-            background: none;
-            border: none;
-            color: var(--text-white);
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-align: left;
-        }
-
-        .accordion-icon {
-            width: 24px;
-            height: 24px;
-            position: relative;
-            transition: transform 0.3s;
-        }
-
-        .accordion-icon::before, .accordion-icon::after {
-            content: '';
-            position: absolute;
-            background: var(--text-white);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.3s;
-        }
-
-        .accordion-icon::before { width: 16px; height: 2px; }
-        .accordion-icon::after { width: 2px; height: 16px; }
-
-        .accordion-item.active .accordion-icon {
-            transform: rotate(45deg);
-        }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-
-        .accordion-body {
-            padding: 0 24px 24px;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 120px 0;
-            margin-bottom: 60px;
-        }
-
-        .cta-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 32px;
-            padding: 80px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-bg {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
-            z-index: 0;
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .cta-title {
-            font-size: clamp(2rem, 3vw, 2.5rem);
-            font-weight: 800;
-            margin-bottom: 24px;
-        }
-
-        .cta-desc {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-        }
-
-        .cta-form {
-            display: flex;
-            gap: 16px;
-            max-width: 480px;
-            margin: 0 auto;
-        }
-
-        .cta-input {
-            flex: 1;
-            padding: 16px 24px;
-            border-radius: 9999px;
-            border: 1px solid var(--border-color);
-            background: rgba(9, 9, 11, 0.5);
-            color: var(--text-white);
-            font-family: inherit;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        .cta-input:focus {
-            border-color: var(--primary-violet);
-        }
+            position: relative; padding-top: calc(var(--nav-height) + 60px); padding-bottom: 80px;
+            text-align: center; background: radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
+        }
+        .hero-badge {
+            display: inline-block; padding: 6px 16px; border-radius: 50px;
+            background: rgba(139, 92, 246, 0.2); border: 1px solid rgba(139, 92, 246, 0.4);
+            color: #C4B5FD; font-size: 0.82rem; font-weight: 700; margin-bottom: 20px;
+        }
+        .hero-title { font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 800; color: #FFF; line-height: 1.2; margin-bottom: 20px; }
+        .hero-title span { background: linear-gradient(135deg, #C4B5FD, #60A5FA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-desc { font-size: 1.1rem; color: var(--text-muted); max-width: 680px; margin: 0 auto 36px; }
+
+        /* Catalogue Section */
+        .section { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-title { font-size: 2.2rem; color: #FFF; font-weight: 800; }
+
+        .course-tabs { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+        .course-tab {
+            background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-muted);
+            padding: 8px 20px; border-radius: 50px; cursor: pointer; font-size: 0.88rem; font-weight: 600; transition: all 0.3s;
+        }
+        .course-tab.active, .course-tab:hover { background: var(--primary-purple); color: #FFF; border-color: var(--primary-purple); }
+
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+        .course-card {
+            background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px;
+            overflow: hidden; transition: transform 0.3s; display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .course-card:hover { transform: translateY(-4px); border-color: var(--primary-purple); }
+        .course-card-body { padding: 24px; }
+        .course-tag { display: inline-block; padding: 4px 10px; border-radius: 4px; background: rgba(59, 130, 246, 0.2); color: #60A5FA; font-size: 0.75rem; font-weight: 700; margin-bottom: 12px; }
+        .course-title { font-size: 1.15rem; font-weight: 700; color: #FFF; margin-bottom: 10px; }
+        .course-info { display: flex; gap: 16px; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 20px; }
+        .course-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 16px; }
+        .course-price { font-size: 1.25rem; font-weight: 800; color: #FFF; }
+
+        /* Dashboard Simulation Widget */
+        .dashboard-widget {
+            background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px;
+            padding: 32px; max-width: 800px; margin: 40px auto 0; box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        .progress-bar-bg { width: 100%; height: 8px; background: #334155; border-radius: 4px; overflow: hidden; margin-top: 8px; }
+        .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary-purple), var(--primary-blue)); border-radius: 4px; }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+            z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal-box {
+            background: var(--bg-card); border: 1px solid var(--primary-purple); border-radius: 20px;
+            max-width: 480px; width: 100%; padding: 36px; position: relative;
+        }
+        .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--text-muted); font-size: 1.4rem; cursor: pointer; }
 
         .toast {
-            position: fixed;
-            bottom: 32px;
-            right: 32px;
-            background: var(--primary-emerald);
-            color: white;
-            padding: 16px 24px;
-            border-radius: 12px;
-            font-weight: 600;
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 1000;
+            position: fixed; bottom: 30px; right: 30px; background: var(--primary-purple); color: #FFF;
+            padding: 16px 28px; border-radius: 12px; font-weight: 700; z-index: 3000; display: none;
         }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        /* Footer */
-        .footer {
-            border-top: 1px solid var(--border-color);
-            padding: 80px 0 40px;
-            background: var(--bg-black);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 64px;
-            margin-bottom: 80px;
-        }
-
-        .footer-logo {
-            margin-bottom: 24px;
-        }
-        
-        .footer-desc {
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            max-width: 300px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 16px;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            color: var(--text-muted);
-        }
-
-        .social-icon:hover {
-            background: var(--primary-violet);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .footer-title {
-            font-weight: 700;
-            margin-bottom: 24px;
-            font-size: 1.1rem;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-white);
-        }
-
-        .footer-bottom {
-            padding-top: 32px;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .bento-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .pricing-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .pricing-card.pro {
-                transform: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links, .nav-actions .btn {
-                display: none;
-            }
-            .mobile-toggle {
-                display: block;
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .mockup {
-                height: 400px;
-            }
-            .mockup-body {
-                grid-template-columns: 1fr;
-                padding: 16px;
-            }
-            .mockup-sidebar {
-                display: none;
-            }
-            .process-steps {
-                grid-template-columns: 1fr;
-                gap: 64px;
-            }
-            .process-line {
-                display: none;
-            }
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 40px;
-            }
-            .cta-form {
-                flex-direction: column;
-            }
-            .cta-container {
-                padding: 60px 20px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .bento-grid {
-                grid-template-columns: 1fr;
-            }
-            .bento-large-1, .bento-tall, .bento-large-2 {
-                grid-column: span 1;
-                grid-row: span 1;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-cta {
-                flex-direction: column;
-            }
-        }
-
-/* DESIGN SPELLS */
-
-/* Animated gradient border on the Pro pricing card */
-@keyframes borderRotate {
-    0% { --angle: 0deg; }
-    100% { --angle: 360deg; }
-}
-
-/* Floating particles effect for hero */
-@keyframes float {
-    0%, 100% { transform: translateY(0) translateX(0); }
-    25% { transform: translateY(-20px) translateX(10px); }
-    50% { transform: translateY(-10px) translateX(-10px); }
-    75% { transform: translateY(-30px) translateX(5px); }
-}
-.hero-particles {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    overflow: hidden;
-}
-.particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: var(--primary-violet);
-    border-radius: 50%;
-    opacity: 0.3;
-    animation: float 8s ease-in-out infinite;
-}
-.particle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; animation-duration: 7s; }
-.particle:nth-child(2) { top: 40%; left: 80%; animation-delay: 1s; animation-duration: 9s; background: var(--primary-blue); }
-.particle:nth-child(3) { top: 60%; left: 30%; animation-delay: 2s; animation-duration: 6s; }
-.particle:nth-child(4) { top: 15%; left: 60%; animation-delay: 3s; animation-duration: 8s; background: var(--primary-emerald); }
-.particle:nth-child(5) { top: 70%; left: 70%; animation-delay: 0.5s; animation-duration: 10s; }
-.particle:nth-child(6) { top: 85%; left: 15%; animation-delay: 2.5s; animation-duration: 7.5s; background: var(--primary-blue); }
-.particle:nth-child(7) { top: 30%; left: 50%; animation-delay: 1.5s; animation-duration: 8.5s; }
-.particle:nth-child(8) { top: 55%; left: 90%; animation-delay: 4s; animation-duration: 11s; background: var(--primary-violet); opacity: 0.2; width: 6px; height: 6px; }
-
-/* Typing cursor effect for hero title */
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-}
-.typing-cursor {
-    display: inline-block;
-    width: 3px;
-    height: 1em;
-    background: var(--primary-violet);
-    margin-left: 4px;
-    animation: blink 1s infinite;
-    vertical-align: text-bottom;
-}
-
-/* Glow pulse on CTA buttons */
-@keyframes glowPulse {
-    0%, 100% { box-shadow: 0 4px 14px rgba(139, 92, 246, 0.39); }
-    50% { box-shadow: 0 4px 30px rgba(139, 92, 246, 0.6), 0 0 60px rgba(139, 92, 246, 0.2); }
-}
-.btn-primary { animation: glowPulse 3s ease-in-out infinite; }
-
-/* Stat counter in hero dashboard */
-.dashboard-stat {
-    position: absolute;
-    background: rgba(24, 24, 27, 0.9);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 12px 16px;
-    backdrop-filter: blur(10px);
-    z-index: 5;
-}
-.dashboard-stat.stat-1 {
-    top: 20%;
-    right: -30px;
-    animation: float 6s ease-in-out infinite;
-}
-.dashboard-stat.stat-2 {
-    bottom: 25%;
-    left: -20px;
-    animation: float 8s ease-in-out infinite reverse;
-}
-.stat-value {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--primary-emerald);
-}
-.stat-desc {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
-
-/* Testimonials section */
-.testimonials {
-    padding: 100px 0;
-    position: relative;
-}
-.testimonials-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-.testimonials-header h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: 1rem;
-}
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-}
-.testimonial-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 2rem;
-    transition: all 0.3s ease;
-}
-.testimonial-card:hover {
-    border-color: rgba(139, 92, 246, 0.3);
-    transform: translateY(-4px);
-}
-.testimonial-stars {
-    color: #F59E0B;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-}
-.testimonial-text {
-    color: var(--text-muted);
-    line-height: 1.7;
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-}
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-.testimonial-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.9rem;
-}
-.testimonial-name {
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-.testimonial-role {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
-@media (max-width: 768px) {
-    .testimonials-grid { grid-template-columns: 1fr; }
-}
-
-/* Integration logos section */
-.integrations {
-    padding: 80px 0;
-    text-align: center;
-}
-.integrations h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-}
-.integrations-subtitle {
-    color: var(--text-muted);
-    max-width: 600px;
-    margin: 0 auto 3rem;
-}
-.integrations-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-.integration-item {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: all 0.3s ease;
-}
-.integration-item:hover {
-    border-color: rgba(139, 92, 246, 0.3);
-    background: rgba(139, 92, 246, 0.05);
-}
-.integration-icon {
-    font-size: 1.5rem;
-}
-.integration-name {
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-@media (max-width: 768px) {
-    .integrations-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-/* --- MODALS & DRAWERS --- */
-.modal-overlay {
-    position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);
-    z-index: 2000; display: flex; align-items: center; justify-content: center;
-    opacity: 0; pointer-events: none; transition: all 0.3s ease;
-}
-.modal-overlay.active { opacity: 1; pointer-events: all; }
-.modal-container {
-    background: var(--bg-card); border: 1px solid var(--border-color);
-    border-radius: 24px; width: 100%; max-width: 480px; padding: 40px;
-    transform: translateY(20px) scale(0.95); transition: all 0.3s ease;
-    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); position: relative;
-}
-.modal-overlay.active .modal-container { transform: translateY(0) scale(1); }
-.modal-close {
-    position: absolute; top: 20px; right: 20px; background: none; border: none;
-    color: var(--text-muted); font-size: 1.5rem; cursor: pointer; transition: color 0.2s;
-}
-.modal-close:hover { color: var(--text-white); }
-.modal-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
-.modal-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; }
-.form-group { margin-bottom: 16px; }
-.form-label { display: block; font-size: 0.9rem; margin-bottom: 8px; color: var(--text-muted); }
-.form-input {
-    width: 100%; padding: 12px 16px; background: rgba(9,9,11,0.5);
-    border: 1px solid var(--border-color); border-radius: 12px;
-    color: var(--text-white); font-family: inherit; transition: border-color 0.2s;
-}
-.form-input:focus { border-color: var(--primary-violet); outline: none; }
-.form-options { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; font-size: 0.85rem; }
-.sso-buttons { display: flex; gap: 12px; margin-top: 24px; }
-.btn-sso {
-    flex: 1; padding: 10px; background: transparent; border: 1px solid var(--border-color);
-    border-radius: 12px; color: var(--text-white); display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s;
-}
-.btn-sso:hover { background: rgba(255,255,255,0.05); }
-
-/* Video Player */
-.video-modal .modal-container { max-width: 900px; padding: 20px; }
-.video-player {
-    background: #000; border-radius: 16px; overflow: hidden; position: relative;
-    aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
-}
-.video-controls {
-    position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8)); display: flex; align-items: center; gap: 16px;
-}
-.progress-bar { flex: 1; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; cursor: pointer; position: relative; }
-.progress-fill { position: absolute; left: 0; top: 0; height: 100%; background: var(--primary-violet); width: 30%; border-radius: 2px; transition: width 0.3s; }
-.video-chapters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
-.chapter-btn {
-    background: rgba(255,255,255,0.05); border: 1px solid var(--border-color);
-    padding: 12px; border-radius: 12px; color: var(--text-muted); text-align: left; font-size: 0.85rem; transition: all 0.2s;
-}
-.chapter-btn:hover, .chapter-btn.active { background: rgba(139,92,246,0.1); border-color: var(--primary-violet); color: var(--text-white); }
-
-/* Drawer */
-.drawer-overlay {
-    position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px);
-    z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.3s;
-}
-.drawer-overlay.active { opacity: 1; pointer-events: all; }
-.drawer {
-    position: fixed; top: 0; right: -500px; width: 100%; max-width: 500px; height: 100vh;
-    background: var(--bg-card); border-left: 1px solid var(--border-color);
-    z-index: 2001; transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex; flex-direction: column;
-}
-.drawer.active { right: 0; }
-.drawer-header { padding: 24px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
-.drawer-body { padding: 24px; overflow-y: auto; flex: 1; }
-.code-tabs { display: flex; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid var(--border-color); }
-.code-tab { padding: 8px 16px; border-bottom: 2px solid transparent; color: var(--text-muted); cursor: pointer; }
-.code-tab.active { border-bottom-color: var(--primary-violet); color: var(--text-white); }
-.code-block { background: rgba(0,0,0,0.5); padding: 16px; border-radius: 12px; font-family: monospace; font-size: 0.9rem; color: #a5b4fc; overflow-x: auto; display: none;}
-.code-block.active { display: block; }
-.plan-highlight { border: 1px solid var(--primary-violet); background: rgba(139,92,246,0.1); padding: 12px; border-radius: 12px; margin-bottom: 20px; font-size: 0.9rem; display: none; }
-
-.success-screen { display: none; text-align: center; padding: 40px 0; }
-.success-screen.active { display: block; }
-.signup-form-container { display: block; }
-.signup-form-container.hidden { display: none; }
-
-    
-        /* Toast Notification */
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background-color: var(--c-primary, #6366f1);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-weight: 500;
-            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
-            z-index: 10000;
-            opacity: 0;
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            pointer-events: none;
-        }
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
-        }
-
+        .toast.active { display: block; animation: slideUp 0.3s ease; }
     </style>
 </head>
 <body>
-    <div class="toast" id="toast">Message</div>
 
-
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <div class="logo-icon"></div>
-                Aura Corp
-            </a>
-            
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">🎓 ACADÉMIE <span>PRO</span></a>
             <ul class="nav-links">
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Catalogue</a></li>
-                <li><a href="#">Mes Cours</a></li>
-                <li><a href="#">Formateurs</a></li>
+                <li><a href="#courses">Catalogue</a></li>
+                <li><a href="#dashboard">Mon Espace</a></li>
+                <li><a href="#formateurs">Formateurs</a></li>
+                <li><a href="#tarifs">Abonnements</a></li>
             </ul>
-            
-            <div class="nav-actions">
-                <a href="#" class="login-link">Se connecter</a>
-                <a href="#pricing" class="btn btn-primary">Démarrer</a>
-                <button class="mobile-toggle" id="mobileToggle">☰</button>
-            </div>
+            <button class="btn-purple" onclick="openEnrollModal('Pass Illimité')">Rejoindre la Plateforme</button>
         </div>
-    </nav>
+    </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#features" class="login-link">Fonctionnalités</a>
-        <a href="#pricing" class="login-link">Tarifs</a>
-        <a href="#how-it-works" class="login-link">Intégrations</a>
-        <a href="#" class="login-link">Documentation</a>
-        <hr style="border-color: var(--border-color);">
-        <a href="#" class="login-link">Se connecter</a>
-        <a href="#pricing" class="btn btn-primary" style="text-align: center;">Démarrer</a>
-    </div>
-
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
-        <div class="hero-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
-        <div class="hero-bg"></div>
-        <div class="hero-glow"></div>
         <div class="container">
-            <div class="pill-badge reveal">
-                🚀 Nouveau — Intégration GPT-4 disponible
-            </div>
-            <h1 class="reveal" style="transition-delay: 100ms;">Apprenez avec<br><span class="text-gradient">les meilleurs experts.</span></h1>
-            <p class="reveal" style="transition-delay: 200ms;">Plateforme LMS complète : cours en vidéo, quiz interactifs et certificats de réussite.</p>
-            <div class="hero-cta reveal" style="transition-delay: 300ms;">
-                <a href="#pricing" class="btn btn-primary">Commencer l'essai gratuit</a>
-                <a href="#features" class="btn btn-outline">Voir la démo</a>
+            <span class="hero-badge">🎓 +150 Formations Certifiantes en Ligne</span>
+            <h1 class="hero-title">Accélérez votre Carrière avec les <span>Meilleurs Experts</span></h1>
+            <p class="hero-desc">Développement Web, Design UI/UX, Marketing Digital et Intelligence Artificielle. Apprenez à votre rythme avec projets pratiques.</p>
+            <div style="display:flex; gap:16px; justify-content:center;">
+                <button class="btn-purple" onclick="openEnrollModal('Débutant')">Commencer Gratuitement</button>
+                <a href="#courses" class="btn-purple" style="background:transparent; border:1px solid var(--primary-purple);">Explorer le Catalogue</a>
             </div>
 
-            <!-- Dashboard Mockup -->
-            <div class="mockup-container reveal" style="transition-delay: 400ms;">
-                <div class="dashboard-stat stat-1">
-                    <div class="stat-value">+247%</div>
-                    <div class="stat-desc">Productivité</div>
+            <!-- Student Dashboard Widget Simulation -->
+            <div class="dashboard-widget" id="dashboard">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                    <h3 style="font-size:1.1rem; color:#FFF;">📊 Votre Progression en Temps Réel</h3>
+                    <span style="font-size:0.8rem; color:#C4B5FD; background:rgba(139,92,246,0.2); padding:4px 12px; border-radius:50px;">Espace Apprenant</span>
                 </div>
-                <div class="dashboard-stat stat-2">
-                    <div class="stat-value">2.4s</div>
-                    <div class="stat-desc">Temps de réponse</div>
+                <div style="margin-bottom:20px; text-align:left;">
+                    <div style="display:flex; justify-content:space-between; font-size:0.88rem; margin-bottom:4px;">
+                        <span>Développement Full-Stack Next.js 15</span>
+                        <span style="color:var(--primary-purple); font-weight:700;">78% Terminé</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 78%;"></div></div>
                 </div>
-                <img src="assets/saas_dashboard_mockup.jpg" class="mockup" alt="SaaS Dashboard Interface" style="object-fit: cover; width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); display: block;" />
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Proof -->
-    <section class="social-proof">
-        <p>Ils nous font confiance</p>
-        <div style="overflow: hidden;">
-            <div class="logo-scroll">
-                <!-- Double the logos for infinite scroll effect -->
-                <div class="logo-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    TechVision
-                </div>
-                <div class="logo-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
-                    DataFlow
-                </div>
-                <div class="logo-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19c2.5 0 4.5-2 4.5-4.5a4.5 4.5 0 0 0-4-4.5 5 5 0 0 0-9.5-2 4.5 4.5 0 0 0-3 8h12z"/></svg>
-                    CloudNine
-                </div>
-                <div class="logo-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                    QuantumLabs
-                </div>
-                <div class="logo-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    MetaPulse
-                </div>
-                <div class="logo-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-                    SynapseIO
-                </div>
-                <!-- Duplicates -->
-                <div class="logo-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    TechVision
-                </div>
-                <div class="logo-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
-                    DataFlow
-                </div>
-                <div class="logo-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19c2.5 0 4.5-2 4.5-4.5a4.5 4.5 0 0 0-4-4.5 5 5 0 0 0-9.5-2 4.5 4.5 0 0 0-3 8h12z"/></svg>
-                    CloudNine
-                </div>
-                <div class="logo-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                    QuantumLabs
-                </div>
-                <div class="logo-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    MetaPulse
-                </div>
-                <div class="logo-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-                    SynapseIO
+                <div style="text-align:left;">
+                    <div style="display:flex; justify-content:space-between; font-size:0.88rem; margin-bottom:4px;">
+                        <span>Prompt Engineering &amp; AI Workflows</span>
+                        <span style="color:var(--primary-blue); font-weight:700;">45% Terminé</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 45%; background:#3B82F6;"></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Bento -->
-    <section class="features" id="features">
+    <!-- Catalogue Section -->
+    <section class="section" id="courses">
         <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Une puissance <span class="text-gradient">inégalée</span></h2>
-                <p class="section-subtitle">Découvrez comment Aura Corp repousse les limites de ce qui est possible pour votre entreprise.</p>
+            <div class="section-header">
+                <h2 class="section-title">Formations à la Une</h2>
+                <p style="color:var(--text-muted);">Acquérez des compétences recherchées sur le marché du travail.</p>
             </div>
+
+            <div class="course-tabs">
+                <button class="course-tab active">Tous les Cours</button>
+                <button class="course-tab">Développement Web</button>
+                <button class="course-tab">Design UI/UX</button>
+                <button class="course-tab">Marketing &amp; Sales</button>
+            </div>
+
+            <div class="courses-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-card-body">
+                        <span class="course-tag">CODE &amp; DEV</span>
+                        <h3 class="course-title">Masterclass React &amp; Next.js 15 de A à Z</h3>
+                        <div class="course-info">
+                            <span>⏱️ 24h de cours</span>
+                            <span>⭐ 4.9/5 (420 avis)</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price">1 490 MAD</span>
+                            <button class="btn-purple" style="padding:8px 18px; font-size:0.8rem;" onclick="openEnrollModal('Next.js Masterclass')">S'inscrire</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-card-body">
+                        <span class="course-tag">DESIGN</span>
+                        <h3 class="course-title">UI/UX Design Systems &amp; Figma Advanced</h3>
+                        <div class="course-info">
+                            <span>⏱️ 18h de cours</span>
+                            <span>⭐ 4.8/5 (310 avis)</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price">1 290 MAD</span>
+                            <button class="btn-purple" style="padding:8px 18px; font-size:0.8rem;" onclick="openEnrollModal('UI/UX Figma')">S'inscrire</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Enrolment -->
+    <div class="modal-overlay" id="enrollModal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeEnrollModal()">✕</button>
+            <h3 style="font-size: 1.4rem; color: #FFF; margin-bottom: 8px; text-align: center;">Rejoindre la Formation</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px; text-align: center;">Accédez immédiatement à vos cours en ligne.</p>
             
-            <div class="bento-grid">
-                <div class="bento-card bento-large-1 reveal">
-                    <div class="bento-bg-gradient"></div>
-                    <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; max-height: 200px;">
-                        <img src="assets/aura_team.jpg" alt="Data Visualization" style="width: 100%; object-fit: cover;">
-                    </div>
-                    <span class="bento-icon">⚡</span>
-                    <h3 class="bento-title">Temps Réel Absolu</h3>
-                    <p class="bento-desc">Traitez des millions de points de données instantanément. Notre infrastructure distribuée garantit une latence inférieure à 50ms, peu importe la charge. Ne prenez plus jamais de décisions basées sur des données obsolètes.</p>
+            <form onsubmit="handleEnrollment(event)">
+                <div style="margin-bottom: 16px;">
+                    <label style="display:block; font-size:0.8rem; color:#C4B5FD; margin-bottom:4px;">Nom Complexe</label>
+                    <input type="text" style="width:100%; padding:12px; background:#0F172A; border:1px solid var(--border-color); border-radius:8px; color:#FFF;" required placeholder="ex: Amine Lahlou">
                 </div>
-                
-                <div class="bento-card bento-regular reveal" style="transition-delay: 100ms;">
-                    <span class="bento-icon">🔒</span>
-                    <h3 class="bento-title">Sécurité Enterprise</h3>
-                    <p class="bento-desc">Chiffrement de bout en bout et conformité RGPD, SOC2 et ISO 27001 intégrée.</p>
+                <div style="margin-bottom: 16px;">
+                    <label style="display:block; font-size:0.8rem; color:#C4B5FD; margin-bottom:4px;">Adresse Email</label>
+                    <input type="email" style="width:100%; padding:12px; background:#0F172A; border:1px solid var(--border-color); border-radius:8px; color:#FFF;" required placeholder="amine@gmail.com">
                 </div>
-                
-                <div class="bento-card bento-tall reveal" style="transition-delay: 200ms;">
-                    <div class="bento-bg-gradient" style="background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);"></div>
-                    <span class="bento-icon">🤖</span>
-                    <h3 class="bento-title">Agents IA</h3>
-                    <p class="bento-desc">Déployez des agents autonomes qui apprennent de vos workflows et exécutent des tâches complexes sans supervision. De la qualification de leads à l'analyse de contrats.</p>
-                </div>
-                
-                <div class="bento-card bento-regular reveal" style="transition-delay: 300ms;">
-                    <span class="bento-icon">🔌</span>
-                    <h3 class="bento-title">API Ouverte</h3>
-                    <p class="bento-desc">Connectez Aura Corp à tous vos outils existants via notre API GraphQL robuste.</p>
-                </div>
-                
-                <div class="bento-card bento-large-2 reveal" style="transition-delay: 100ms;">
-                    <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; max-height: 200px;">
-                        <img src="assets/aura_team.jpg" alt="Analytics Dashboard" style="width: 100%; object-fit: cover;">
-                    </div>
-                    <span class="bento-icon">📊</span>
-                    <h3 class="bento-title">Analytics Avancés & Collaboration</h3>
-                    <p class="bento-desc">Visualisez l'impact de l'IA sur vos KPIs grâce à des tableaux de bord interactifs générés dynamiquement. Partagez des insights avec toute votre équipe instantanément. 👥</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="process" id="how-it-works">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Comment ça <span class="text-gradient">marche ?</span></h2>
-                <p class="section-subtitle">Déployez votre premier agent IA en moins de 5 minutes. Aucune compétence en code requise.</p>
-            </div>
-            
-            <div class="process-steps">
-                <div class="process-line"></div>
-                <div class="process-step reveal">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Connectez vos données</h3>
-                    <p class="step-desc">Synchronisez vos bases de données, CRM et documents via nos intégrations natives en un clic.</p>
-                </div>
-                <div class="process-step reveal" style="transition-delay: 200ms;">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Configurez vos agents</h3>
-                    <p class="step-desc">Définissez les objectifs, les règles métiers et le niveau d'autonomie de votre flotte d'agents.</p>
-                </div>
-                <div class="process-step reveal" style="transition-delay: 400ms;">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Analysez les résultats</h3>
-                    <p class="step-desc">Suivez les performances en temps réel et laissez l'IA optimiser ses propres processus.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Une tarification <span class="text-gradient">transparente</span></h2>
-                <p class="section-subtitle">Choisissez le plan adapté à la croissance de votre entreprise. Annulez à tout moment.</p>
-            </div>
-            
-            <div class="pricing-toggle reveal">
-                <span class="toggle-label active" id="label-monthly">Mensuel</span>
-                <div class="toggle-switch" id="billingToggle">
-                    <div class="toggle-slider"></div>
-                </div>
-                <span class="toggle-label" id="label-annual">Annuel (-20%)</span>
-            </div>
-            
-            <div class="pricing-grid">
-                <div class="pricing-card reveal">
-                    <h3 class="tier-name">Starter</h3>
-                    <div class="tier-price">
-                        <span id="price-starter">29</span>€<span class="tier-period">/mois</span>
-                    </div>
-                    <p class="tier-desc">Parfait pour les solopreneurs et petites équipes.</p>
-                    <ul class="feature-list">
-                        <li class="feature-item"><span class="feature-icon">✓</span> 2 Agents IA actifs</li>
-                        <li class="feature-item"><span class="feature-icon">✓</span> 10 000 requêtes/mois</li>
-                        <li class="feature-item"><span class="feature-icon">✓</span> Intégrations basiques</li>
-                        <li class="feature-item"><span class="feature-icon">✓</span> Support par email</li>
-                    </ul>
-                    <button class="btn btn-outline">Commencer gratuitement</button>
-                </div>
-                
-                <div class="pricing-card pro reveal" style="transition-delay: 150ms;">
-                    <div class="popular-badge">Populaire</div>
-                    <h3 class="tier-name">Pro</h3>
-                    <div class="tier-price">
-                        <span id="price-pro">79</span>€<span class="tier-period">/mois</span>
-                    </div>
-                    <p class="tier-desc">La puissance complète pour les entreprises en croissance.</p>
-                    <ul class="feature-list">
-                        <li class="feature-item"><span class="feature-icon">✓</span> 10 Agents IA actifs</li>
-                        <li class="feature-item"><span class="feature-icon">✓</span> Requêtes illimitées</li>
-                        <li class="feature-item"><span class="feature-icon">✓</span> Modèles personnalisés</li>
-                        <li class="feature-item"><span class="feature-icon">✓</span> API Avancée & Webhooks</li>
-                        <li class="feature-item"><span class="feature-icon">✓</span> Support prioritaire 24/7</li>
-                    </ul>
-                    <button class="btn btn-primary">Démarrer l'essai Pro</button>
-                </div>
-                
-                <div class="pricing-card reveal" style="transition-delay: 300ms;">
-                    <h3 class="tier-name">Enterprise</h3>
-                    <div class="tier-price">
-                        <span>Sur mesure</span>
-                    </div>
-                    <p class="tier-desc">Solutions dédiées pour les grandes organisations.</p>
-                    <ul class="feature-list">
-                        <li class="feature-item"><span class="feature-icon">✓</span> Agents illimités</li>
-                        <li class="feature-item"><span class="feature-icon">✓</span> Déploiement sur site (On-premise)</li>
-                        <li class="feature-item"><span class="feature-icon">✓</span> SLA Garanti 99.99%</li>
-                        <li class="feature-item"><span class="feature-icon">✓</span> Account Manager dédié</li>
-                        <li class="feature-item"><span class="feature-icon">✓</span> Formation de l'équipe</li>
-                    </ul>
-                    <button class="btn btn-outline">Contacter les ventes</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Questions <span class="text-gradient">Fréquentes</span></h2>
-            </div>
-            
-            <div class="accordion reveal">
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Puis-je annuler mon abonnement à tout moment ?
-                        <span class="accordion-icon"></span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            Oui, vous pouvez annuler, mettre à niveau ou rétrograder votre abonnement à tout moment depuis votre tableau de bord. En cas d'annulation, vous continuerez d'avoir accès à vos fonctionnalités jusqu'à la fin de votre cycle de facturation en cours.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Mes données sont-elles sécurisées et privées ?
-                        <span class="accordion-icon"></span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            Absolument. La sécurité est notre priorité. Toutes vos données sont chiffrées au repos (AES-256) et en transit (TLS 1.3). De plus, nous ne conservons pas vos requêtes pour entraîner nos modèles de fondation publics. Aura Corp est certifié SOC2 Type II et conforme au RGPD.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Aura Corp s'intègre-t-il avec mes outils actuels ?
-                        <span class="accordion-icon"></span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            Oui, nous proposons plus de 150 intégrations natives (Slack, Salesforce, HubSpot, Notion, Jira, etc.) ainsi qu'une API GraphQL complète et un système de Webhooks pour des connexions personnalisées.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Ais-je besoin de savoir coder pour configurer un Agent IA ?
-                        <span class="accordion-icon"></span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            Non, pas du tout. Notre interface No-Code vous permet de créer, configurer et déployer des agents complexes via un système de "glisser-déposer" et d'instructions en langage naturel.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Comment fonctionne la période d'essai ?
-                        <span class="accordion-icon"></span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            Vous bénéficiez de 14 jours d'essai gratuit sur le plan Pro, avec un accès total à toutes les fonctionnalités. Aucune carte bancaire n'est requise pour commencer.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Quel niveau de support proposez-vous ?
-                        <span class="accordion-icon"></span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            Le plan Starter inclut un support par email sous 24h. Le plan Pro bénéficie d'un support prioritaire 24/7 par chat et email. Les clients Enterprise ont un accès direct à un Customer Success Manager dédié et un canal Slack partagé.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials reveal">
-        <div class="container">
-            <div class="testimonials-header">
-                <h2>Ce que disent nos <span class="text-gradient">utilisateurs</span></h2>
-                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Rejoignez plus de 10 000 équipes qui transforment leur quotidien avec Aura Corp.</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Aura Corp a divisé par 3 le temps que notre équipe passait sur les tâches administratives. Le ROI est spectaculaire."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, var(--primary-violet), var(--primary-blue)); color: white;">SL</div>
-                        <div>
-                            <div class="testimonial-name">Sophie Laurent</div>
-                            <div class="testimonial-role">CTO, TechVision</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"L'intégration avec notre stack existante a été transparente. Les agents IA ont remplacé 4 outils différents."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, var(--primary-blue), var(--primary-emerald)); color: white;">MK</div>
-                        <div>
-                            <div class="testimonial-name">Marc Kowalski</div>
-                            <div class="testimonial-role">VP Engineering, DataFlow</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Le support est exceptionnel et la sécurité enterprise nous a permis de convaincre notre RSSI en 48h."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, var(--primary-emerald), #F59E0B); color: white;">AD</div>
-                        <div>
-                            <div class="testimonial-name">Amira Diouf</div>
-                            <div class="testimonial-role">Head of Ops, QuantumLabs</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Integrations -->
-    <section class="integrations reveal">
-        <div class="container">
-            <h2>S'intègre avec vos <span class="text-gradient">outils favoris</span></h2>
-            <p class="integrations-subtitle">Connectez Aura Corp à votre écosystème existant en quelques clics. 50+ intégrations natives.</p>
-            <div class="integrations-grid">
-                <div class="integration-item"><span class="integration-icon">📊</span><span class="integration-name">Google Analytics</span></div>
-                <div class="integration-item"><span class="integration-icon">💬</span><span class="integration-name">Slack</span></div>
-                <div class="integration-item"><span class="integration-icon">📋</span><span class="integration-name">Notion</span></div>
-                <div class="integration-item"><span class="integration-icon">🔧</span><span class="integration-name">Jira</span></div>
-                <div class="integration-item"><span class="integration-icon">📧</span><span class="integration-name">Gmail</span></div>
-                <div class="integration-item"><span class="integration-icon">🗂️</span><span class="integration-name">Salesforce</span></div>
-                <div class="integration-item"><span class="integration-icon">📈</span><span class="integration-name">HubSpot</span></div>
-                <div class="integration-item"><span class="integration-icon">🔗</span><span class="integration-name">Zapier</span></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-container reveal">
-                <div class="cta-bg"></div>
-                <div class="cta-content">
-                    <h2 class="cta-title">Prêt à transformer votre productivité ?</h2>
-                    <p class="cta-desc">Rejoignez plus de 10 000 entreprises qui utilisent Aura Corp pour automatiser leurs processus et gagner un temps précieux chaque jour.</p>
-                    
-                    <form class="cta-form" id="ctaForm">
-                        <input type="email" class="cta-input" placeholder="Votre adresse email pro" required id="emailInput">
-                        <button type="submit" class="btn btn-primary">Commencer gratuitement</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo footer-logo">
-                        <div class="logo-icon"></div>
-                        Aura Corp
-                    </div>
-                    <p class="footer-desc">La plateforme d'agents IA autonomes conçue pour les équipes modernes et ambitieuses.</p>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h4 class="footer-title">Produit</h4>
-                    <div class="footer-links">
-                        <a href="#">Fonctionnalités</a>
-                        <a href="#">Intégrations</a>
-                        <a href="#">Tarifs</a>
-                        <a href="#">Changelog</a>
-                        <a href="#">API Documentation</a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h4 class="footer-title">Ressources</h4>
-                    <div class="footer-links">
-                        <a href="#">Blog</a>
-                        <a href="#">Guides & Tutoriels</a>
-                        <a href="#">Communauté</a>
-                        <a href="#">Centre d'aide</a>
-                        <a href="#">Partenaires</a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h4 class="footer-title">Entreprise</h4>
-                    <div class="footer-links">
-                        <a href="#">À propos</a>
-                        <a href="#">Carrières</a>
-                        <a href="#">Contact</a>
-                        <a href="#">Confidentialité</a>
-                        <a href="#">CGV</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Aura Corp Inc. Réalisé avec ♥ par DatRey Agency.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        🎉 Bienvenue ! Vérifiez votre email pour activer votre compte.
-    </div>
-
-
-    <!-- Modals & Drawers -->
-    <!-- Login Modal -->
-    <div class="modal-overlay" id="loginModal">
-        <div class="modal-container">
-            <button class="modal-close" data-close="loginModal">&times;</button>
-            <h3 class="modal-title">Bon retour</h3>
-            <p class="modal-desc">Connectez-vous pour accéder à votre espace.</p>
-            <form id="loginForm">
-                <div class="form-group">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-input" required placeholder="nom@entreprise.com">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Mot de passe</label>
-                    <input type="password" class="form-input" required placeholder="••••••••">
-                </div>
-                <div class="form-options">
-                    <label style="display:flex; align-items:center; gap:8px;">
-                        <input type="checkbox"> Se souvenir de moi
-                    </label>
-                    <a href="#" style="color:var(--primary-violet);">Mot de passe oublié ?</a>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width:100%;">Se connecter</button>
-                
-                <div style="text-align:center; margin: 24px 0; color: var(--text-muted); font-size: 0.85rem;">Ou continuer avec</div>
-                <div class="sso-buttons">
-                    <button type="button" class="btn-sso">Google</button>
-                    <button type="button" class="btn-sso">GitHub</button>
-                    <button type="button" class="btn-sso">SSO</button>
-                </div>
+                <button type="submit" class="btn-purple" style="width: 100%;">Valider mon Inscription →</button>
             </form>
         </div>
     </div>
 
-    <!-- Signup Modal -->
-    <div class="modal-overlay" id="signupModal">
-        <div class="modal-container">
-            <button class="modal-close" data-close="signupModal">&times;</button>
-            <div class="signup-form-container">
-                <h3 class="modal-title">Créer un compte</h3>
-                <p class="modal-desc">Démarrez avec Aura Corp en quelques secondes.</p>
-                <div class="plan-highlight" id="selectedPlanDisplay">Plan sélectionné : <strong>Pro</strong></div>
-                <form id="signupForm">
-                    <div class="form-group">
-                        <label class="form-label">Nom complet</label>
-                        <input type="text" class="form-input" required placeholder="Jean Dupont">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Email professionnel</label>
-                        <input type="email" class="form-input" required placeholder="jean@entreprise.com">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Nom de l'équipe/organisation</label>
-                        <input type="text" class="form-input" required placeholder="Acme Corp">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Mot de passe</label>
-                        <input type="password" class="form-input" required placeholder="••••••••">
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width:100%;">Créer mon compte</button>
-                </form>
-            </div>
-            <div class="success-screen" id="signupSuccess">
-                <div style="font-size: 4rem; margin-bottom: 20px;">🚀</div>
-                <h3 class="modal-title">Votre espace Aura Corp est prêt !</h3>
-                <p class="modal-desc">Redirection vers votre tableau de bord...</p>
-            </div>
+    <div class="toast" id="toast">🚀 Inscription réussie ! Vérifiez vos emails pour accéder à la plateforme.</div>
+
+    <footer style="background:#080D1A; padding:40px 0; border-top:1px solid var(--border-color); text-align:center;">
+        <div class="container">
+            <p style="font-size: 1.2rem; font-weight:800; color:var(--primary-purple);">ACADÉMIE PRO</p>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top:8px;">© 2026 Académie Pro. Démo créée par DatRey Agency.</p>
         </div>
-    </div>
+    </footer>
 
-    <!-- Video Modal -->
-    <div class="modal-overlay video-modal" id="videoModal">
-        <div class="modal-container">
-            <button class="modal-close" data-close="videoModal">&times;</button>
-            <div class="video-player" id="demoVideo">
-                <div style="font-size:4rem; color:var(--text-muted); opacity:0.5;">▶</div>
-                <div class="video-controls">
-                    <button id="playPauseBtn" style="background:none; border:none; color:white; font-size:1.2rem;">⏸</button>
-                    <div class="progress-bar" id="vidProgress"><div class="progress-fill" id="vidFill"></div></div>
-                    <span style="font-size:0.8rem; font-variant-numeric:tabular-nums;" id="vidTime">1:42 / 3:15</span>
-                    <span style="background:rgba(255,255,255,0.2); padding:2px 6px; border-radius:4px; font-size:0.7rem; font-weight:bold;">HD</span>
-                    <button style="background:none; border:none; color:white;">🔊</button>
-                </div>
-            </div>
-            <div class="video-chapters">
-                <button class="chapter-btn active" data-time="0">1. Ingestion des données</button>
-                <button class="chapter-btn" data-time="1">2. Configuration de l'agent</button>
-                <button class="chapter-btn" data-time="2">3. Analytics & Export</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Docs Drawer -->
-    <div class="drawer-overlay" id="docsOverlay"></div>
-    <div class="drawer" id="docsDrawer">
-        <div class="drawer-header">
-            <h3 class="modal-title" style="margin:0;">Documentation API</h3>
-            <button class="modal-close" style="position:static;" data-close="docsDrawer">&times;</button>
-        </div>
-        <div class="drawer-body">
-            <p class="modal-desc">Intégrez Aura Corp rapidement avec nos SDKs officiels.</p>
-            <div class="code-tabs">
-                <div class="code-tab active" data-lang="python">Python</div>
-                <div class="code-tab" data-lang="curl">cURL</div>
-                <div class="code-tab" data-lang="node">Node.js</div>
-            </div>
-            <div class="code-block active" id="code-python">
-import nexusai
-
-client = nexusai.Client(api_key="VOTRE_API_KEY")
-
-agent = client.agents.create(
-    name="Support Bot",
-    model="nexus-v2",
-    instructions="Répondre aux questions clients."
-)
-print(f"Agent {agent.id} déployé avec succès !")
-            </div>
-            <div class="code-block" id="code-curl">
-curl -X POST https://api.nexusai.com/v1/agents \
-  -H "Authorization: Bearer VOTRE_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "Support Bot",
-    "model": "nexus-v2",
-    "instructions": "Répondre aux questions."
-  }'
-            </div>
-            <div class="code-block" id="code-node">
-import { Aura Corp } from 'nexusai';
-
-const client = new Aura Corp('VOTRE_API_KEY');
-
-const agent = await client.agents.create({
-  name: 'Support Bot',
-  model: 'nexus-v2',
-  instructions: 'Répondre aux questions clients.'
-});
-console.log(`Agent ${agent.id} déployé !`);
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
     <script>
-
-        // --- Interactions & Modals JS ---
-        
-        // Modal functions
-        const openModal = (id) => { document.getElementById(id).classList.add('active'); };
-        const closeModal = (id) => { document.getElementById(id).classList.remove('active'); };
-        
-        document.querySelectorAll('[data-close]').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const id = btn.getAttribute('data-close');
-                if (id === 'docsDrawer') {
-                    document.getElementById('docsDrawer').classList.remove('active');
-                    document.getElementById('docsOverlay').classList.remove('active');
-                } else {
-                    closeModal(id);
-                }
-            });
-        });
-
-        // Close modal on click outside
-        document.querySelectorAll('.modal-overlay').forEach(overlay => {
-            overlay.addEventListener('click', (e) => {
-                if (e.target === overlay) {
-                    overlay.classList.remove('active');
-                }
-            });
-        });
-        document.getElementById('docsOverlay').addEventListener('click', () => {
-            document.getElementById('docsDrawer').classList.remove('active');
-            document.getElementById('docsOverlay').classList.remove('active');
-        });
-
-        // 1. Login Modal triggers
-        document.querySelectorAll('.login-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (link.textContent.trim().toLowerCase().includes('connecter')) {
-                    e.preventDefault();
-                    openModal('loginModal');
-                }
-            });
-        });
-
-        document.getElementById('loginForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            closeModal('loginModal');
-            toast.textContent = '✅ Connexion réussie !';
-            toast.style.background = 'var(--primary-emerald)';
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 3000);
-        });
-
-        // 2. Signup Modal triggers
-        const showSignup = (planName) => {
-            const planDisplay = document.getElementById('selectedPlanDisplay');
-            if (planName) {
-                planDisplay.innerHTML = `Plan sélectionné : <strong>${planName}</strong>`;
-                planDisplay.style.display = 'block';
-            } else {
-                planDisplay.style.display = 'none';
-            }
-            document.querySelector('.signup-form-container').classList.remove('hidden');
-            document.getElementById('signupSuccess').classList.remove('active');
-            openModal('signupModal');
-        };
-
-        // Hero "Démarrer" and "Commencer l'essai gratuit"
-        document.querySelectorAll('.hero-cta .btn-primary, .nav-actions .btn-primary').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                showSignup('');
-            });
-        });
-
-        // Mobile menu "Démarrer"
-        document.querySelector('.mobile-menu .btn-primary').addEventListener('click', (e) => {
-            e.preventDefault();
-            mobileMenu.classList.remove('active');
-            mobileToggle.textContent = '☰';
-            showSignup('');
-        });
-
-        // Pricing buttons
-        const pricingBtns = document.querySelectorAll('.pricing-card .btn');
-        pricingBtns[0].addEventListener('click', (e) => { e.preventDefault(); showSignup('Starter'); });
-        pricingBtns[1].addEventListener('click', (e) => { e.preventDefault(); showSignup('Pro'); });
-        pricingBtns[2].addEventListener('click', (e) => { e.preventDefault(); showSignup('Enterprise'); });
-
-        document.getElementById('signupForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            document.querySelector('.signup-form-container').classList.add('hidden');
-            document.getElementById('signupSuccess').classList.add('active');
-            setTimeout(() => {
-                closeModal('signupModal');
-            }, 3000);
-        });
-
-        // 3. Video Modal
-        document.querySelector('.hero-cta .btn-outline').addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal('videoModal');
-        });
-
-        const chapterBtns = document.querySelectorAll('.chapter-btn');
-        const vidFill = document.getElementById('vidFill');
-        const vidTime = document.getElementById('vidTime');
-        const times = ['0:00 / 3:15', '1:15 / 3:15', '2:30 / 3:15'];
-        const fills = ['0%', '38%', '76%'];
-
-        chapterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                chapterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const idx = parseInt(btn.getAttribute('data-time'));
-                vidFill.style.width = fills[idx];
-                vidTime.textContent = times[idx];
-            });
-        });
-
-        // 4. Docs Drawer
-        document.querySelectorAll('a').forEach(a => {
-            if (a.textContent.trim() === 'Documentation' || a.textContent.trim() === 'API Documentation') {
-                a.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    document.getElementById('docsDrawer').classList.add('active');
-                    document.getElementById('docsOverlay').classList.add('active');
-                });
-            }
-        });
-
-        const codeTabs = document.querySelectorAll('.code-tab');
-        codeTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                codeTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                document.querySelectorAll('.code-block').forEach(b => b.classList.remove('active'));
-                document.getElementById('code-' + tab.getAttribute('data-lang')).classList.add('active');
-            });
-        });
-
-        // 5. Integration Toasts
-        document.querySelectorAll('.integration-item').forEach(item => {
-            item.style.cursor = 'pointer';
-            item.addEventListener('click', () => {
-                const name = item.querySelector('.integration-name').textContent;
-                toast.textContent = `⚡ Intégration ${name} prête à être configurée !`;
-                toast.style.background = 'var(--primary-blue)';
-                toast.classList.add('show');
-                setTimeout(() => toast.classList.remove('show'), 3000);
-            });
-        });
-
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        const mobileToggle = document.getElementById('mobileToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        mobileToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            mobileToggle.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
-        });
-
-        // Close mobile menu on link click
-        document.querySelectorAll('.mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                mobileToggle.textContent = '☰';
-            });
-        });
-
-        // Pricing Toggle
-        const billingToggle = document.getElementById('billingToggle');
-        const labelMonthly = document.getElementById('label-monthly');
-        const labelAnnual = document.getElementById('label-annual');
-        const priceStarter = document.getElementById('price-starter');
-        const pricePro = document.getElementById('price-pro');
-        
-        let isAnnual = false;
-        
-        billingToggle.addEventListener('click', () => {
-            isAnnual = !isAnnual;
-            
-            if (isAnnual) {
-                billingToggle.classList.add('annual');
-                labelAnnual.classList.add('active');
-                labelMonthly.classList.remove('active');
-                animateValue(priceStarter, 29, 290, 300);
-                animateValue(pricePro, 79, 790, 300);
-            } else {
-                billingToggle.classList.remove('annual');
-                labelMonthly.classList.add('active');
-                labelAnnual.classList.remove('active');
-                animateValue(priceStarter, 290, 29, 300);
-                animateValue(pricePro, 790, 79, 300);
-            }
-        });
-
-        // Number animation function
-        function animateValue(obj, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.innerHTML = Math.floor(progress * (end - start) + start);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
+        function openEnrollModal(course) { document.getElementById('enrollModal').classList.add('active'); }
+        function closeEnrollModal() { document.getElementById('enrollModal').classList.remove('active'); }
+        function handleEnrollment(e) {
+            e.preventDefault(); closeEnrollModal();
+            const t = document.getElementById('toast'); t.classList.add('active');
+            setTimeout(() => t.classList.remove('active'), 4000);
         }
-
-        // FAQ Accordion
-        const accordionHeaders = document.querySelectorAll('.accordion-header');
-        
-        accordionHeaders.forEach(header => {
-            header.addEventListener('click', () => {
-                const item = header.parentElement;
-                const content = header.nextElementSibling;
-                const isActive = item.classList.contains('active');
-                
-                // Close all other items
-                document.querySelectorAll('.accordion-item').forEach(otherItem => {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.accordion-content').style.maxHeight = null;
-                });
-                
-                if (!isActive) {
-                    item.classList.add('active');
-                    content.style.maxHeight = content.scrollHeight + "px";
-                }
-            });
-        });
-
-        // Form validation & Toast
-        const form = document.getElementById('ctaForm');
-        const emailInput = document.getElementById('emailInput');
-        const toast = document.getElementById('toast');
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            if (emailInput.value) {
-                // Show toast
-                toast.classList.add('show');
-                
-                // Reset form
-                form.reset();
-                
-                // Hide toast after 3 seconds
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 4000);
-            }
-        });
-
-        // Scroll Reveal Animations using IntersectionObserver
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        const revealCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        };
-        
-        const revealOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-        
-        const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
-        
-        revealElements.forEach(el => {
-            revealObserver.observe(el);
-        });
-    
-        // Toast Function
-        const toast = document.getElementById('toast');
-        function showToast(message) {
-            toast.textContent = message;
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
-
-        // Intercept empty links
-        document.querySelectorAll('a[href="#"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                showToast('Cette fonctionnalité est simulée dans cette démo');
-            });
-        });
-
-        // Intercept forms
-        ['ctaForm', 'loginForm', 'signupForm'].forEach(formId => {
-            const form = document.getElementById(formId);
-            if (form) {
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    showToast('Action simulée avec succès !');
-                    // Close modal if in modal
-                    const modal = form.closest('.modal');
-                    if (modal) {
-                        modal.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                    form.reset();
-                });
-            }
-        });
-
     </script>
 </body>
 </html>
