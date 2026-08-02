@@ -3184,3 +3184,18 @@ h1, h2, .section-title, .hero-title {
         max-width: 320px;
     }
 }
+
+
+/* Fix for SVG icons in pack features */
+.mockup-pack-features li svg, 
+.pack-features li svg, 
+ul li svg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    max-width: 18px !important;
+    max-height: 18px !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+}
