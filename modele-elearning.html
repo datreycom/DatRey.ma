@@ -18,8 +18,11 @@
         :root {
             --bg-slate: #0F172A;
             --bg-card: #1E293B;
+            --bg-card-hover: #26354A;
             --primary-purple: #8B5CF6;
             --primary-blue: #3B82F6;
+            --accent-green: #10B981;
+            --accent-amber: #F59E0B;
             --text-light: #F8FAFC;
             --text-muted: #94A3B8;
             --border-color: #334155;
@@ -48,7 +51,7 @@
         .logo { font-size: 1.4rem; font-weight: 800; color: #FFF; text-decoration: none; display: flex; align-items: center; gap: 8px; }
         .logo span { color: var(--primary-purple); }
         .nav-links { display: flex; gap: 28px; list-style: none; }
-        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.92rem; font-weight: 500; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.92rem; font-weight: 500; transition: color 0.2s; }
         .nav-links a:hover { color: var(--primary-purple); }
 
         .btn-purple {
@@ -56,13 +59,22 @@
             color: #FFF !important; font-weight: 700; padding: 12px 26px;
             border-radius: 50px; border: none; cursor: pointer; transition: all 0.3s;
             font-size: 0.88rem; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            text-decoration: none;
         }
         .btn-purple:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6); }
 
+        .btn-outline {
+            background: transparent; color: var(--text-light); font-weight: 600; padding: 10px 22px;
+            border-radius: 50px; border: 1px solid var(--border-color); cursor: pointer; transition: all 0.3s;
+            font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+        }
+        .btn-outline:hover { border-color: var(--primary-purple); color: #FFF; background: rgba(139, 92, 246, 0.1); }
+
         /* Hero */
         .hero {
-            position: relative; padding-top: calc(var(--nav-height) + 60px); padding-bottom: 80px;
-            text-align: center; background: radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
+            position: relative; padding-top: calc(var(--nav-height) + 50px); padding-bottom: 70px;
+            text-align: center; background: radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.18) 0%, transparent 60%);
         }
         .hero-badge {
             display: inline-block; padding: 6px 16px; border-radius: 50px;
@@ -73,56 +85,178 @@
         .hero-title span { background: linear-gradient(135deg, #C4B5FD, #60A5FA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-desc { font-size: 1.1rem; color: var(--text-muted); max-width: 680px; margin: 0 auto 36px; }
 
-        /* Catalogue Section */
-        .section { padding: 80px 0; }
-        .section-header { text-align: center; margin-bottom: 48px; }
-        .section-title { font-size: 2.2rem; color: #FFF; font-weight: 800; }
+        /* Student Dashboard Widget */
+        .dashboard-widget {
+            background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px;
+            padding: 32px; max-width: 860px; margin: 40px auto 0; box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            text-align: left;
+        }
+        .dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 16px; }
+        .dashboard-nav-tabs { display: flex; gap: 8px; background: #0F172A; padding: 6px; border-radius: 12px; border: 1px solid var(--border-color); }
+        .dash-tab-btn {
+            background: transparent; border: none; color: var(--text-muted); padding: 8px 16px;
+            border-radius: 8px; font-size: 0.84rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .dash-tab-btn.active { background: var(--primary-purple); color: #FFF; font-weight: 700; }
+        .dash-tab-btn:hover:not(.active) { color: #FFF; }
+        
+        .dash-content-panel { display: none; }
+        .dash-content-panel.active { display: block; animation: fadeIn 0.3s ease; }
 
-        .course-tabs { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+        .progress-bar-bg { width: 100%; height: 8px; background: #0F172A; border-radius: 4px; overflow: hidden; margin-top: 8px; }
+        .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary-purple), var(--primary-blue)); border-radius: 4px; transition: width 0.5s ease; }
+
+        .cert-card, .quiz-card {
+            background: #0F172A; border: 1px solid var(--border-color); border-radius: 12px;
+            padding: 16px 20px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;
+        }
+        .cert-card:hover, .quiz-card:hover { border-color: var(--primary-purple); }
+
+        /* Search & Catalogue Section */
+        .section { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 36px; }
+        .section-title { font-size: 2.2rem; color: #FFF; font-weight: 800; margin-bottom: 12px; }
+
+        .search-bar-container { max-width: 500px; margin: 0 auto 32px; position: relative; }
+        .search-input {
+            width: 100%; padding: 14px 20px 14px 46px; background: var(--bg-card);
+            border: 1px solid var(--border-color); border-radius: 50px; color: #FFF;
+            font-size: 0.95rem; font-family: inherit; transition: border-color 0.3s;
+        }
+        .search-input:focus { outline: none; border-color: var(--primary-purple); box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2); }
+        .search-icon { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem; }
+
+        .course-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
         .course-tab {
             background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-muted);
-            padding: 8px 20px; border-radius: 50px; cursor: pointer; font-size: 0.88rem; font-weight: 600; transition: all 0.3s;
+            padding: 9px 22px; border-radius: 50px; cursor: pointer; font-size: 0.88rem; font-weight: 600; transition: all 0.3s;
         }
         .course-tab.active, .course-tab:hover { background: var(--primary-purple); color: #FFF; border-color: var(--primary-purple); }
 
-        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; }
         .course-card {
-            background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px;
-            overflow: hidden; transition: transform 0.3s; display: flex; flex-direction: column; justify-content: space-between;
+            background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 18px;
+            overflow: hidden; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;
+            cursor: pointer;
         }
-        .course-card:hover { transform: translateY(-4px); border-color: var(--primary-purple); }
-        .course-card-body { padding: 24px; }
-        .course-tag { display: inline-block; padding: 4px 10px; border-radius: 4px; background: rgba(59, 130, 246, 0.2); color: #60A5FA; font-size: 0.75rem; font-weight: 700; margin-bottom: 12px; }
-        .course-title { font-size: 1.15rem; font-weight: 700; color: #FFF; margin-bottom: 10px; }
-        .course-info { display: flex; gap: 16px; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 20px; }
-        .course-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 16px; }
-        .course-price { font-size: 1.25rem; font-weight: 800; color: #FFF; }
-
-        /* Dashboard Simulation Widget */
-        .dashboard-widget {
-            background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px;
-            padding: 32px; max-width: 800px; margin: 40px auto 0; box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        .course-card:hover { transform: translateY(-6px); border-color: var(--primary-purple); box-shadow: 0 12px 30px rgba(139, 92, 246, 0.2); }
+        .course-card-img-wrapper { height: 180px; width: 100%; overflow: hidden; position: relative; }
+        .course-card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .course-card:hover .course-card-img { transform: scale(1.05); }
+        .course-card-badge {
+            position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 6px;
+            background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(6px); color: #60A5FA;
+            font-size: 0.72rem; font-weight: 800; letter-spacing: 0.5px; border: 1px solid rgba(96, 165, 250, 0.3);
         }
-        .progress-bar-bg { width: 100%; height: 8px; background: #334155; border-radius: 4px; overflow: hidden; margin-top: 8px; }
-        .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary-purple), var(--primary-blue)); border-radius: 4px; }
+        .course-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+        .course-title { font-size: 1.15rem; font-weight: 700; color: #FFF; margin-bottom: 12px; line-height: 1.4; }
+        .course-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 18px; line-clamp: 2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .course-info { display: flex; gap: 14px; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 20px; align-items: center; flex-wrap: wrap; }
+        .course-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 18px; margin-top: auto; }
+        .course-price { font-size: 1.3rem; font-weight: 800; color: #FFF; }
 
-        /* Modal */
+        /* Modals */
         .modal-overlay {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+            position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px);
             z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px;
+            overflow-y: auto;
         }
-        .modal-overlay.active { display: flex; }
+        .modal-overlay.active { display: flex; animation: fadeIn 0.25s ease; }
+        
         .modal-box {
-            background: var(--bg-card); border: 1px solid var(--primary-purple); border-radius: 20px;
-            max-width: 480px; width: 100%; padding: 36px; position: relative;
+            background: var(--bg-card); border: 1px solid var(--primary-purple); border-radius: 24px;
+            max-width: 900px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6); margin: auto;
         }
-        .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--text-muted); font-size: 1.4rem; cursor: pointer; }
+        .modal-box-small { max-width: 480px; padding: 36px; }
+        .modal-close {
+            position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.1);
+            border: none; color: #FFF; font-size: 1.2rem; cursor: pointer; width: 36px; height: 36px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10;
+            transition: background 0.2s;
+        }
+        .modal-close:hover { background: rgba(239, 68, 68, 0.8); }
 
+        /* Video Player Simulation */
+        .video-player-sim {
+            background: #000; border-radius: 16px; overflow: hidden; position: relative;
+            aspect-ratio: 16 / 9; margin-bottom: 24px; border: 1px solid var(--border-color);
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .video-poster-img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; opacity: 0.65; }
+        .video-overlay-play {
+            position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; z-index: 2; background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(2px);
+            transition: background 0.3s;
+        }
+        .video-overlay-play:hover { background: rgba(15, 23, 42, 0.2); }
+        .play-btn-circle {
+            width: 72px; height: 72px; border-radius: 50%; background: var(--primary-purple);
+            color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.8rem;
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.8); transition: transform 0.3s; padding-left: 4px;
+        }
+        .video-overlay-play:hover .play-btn-circle { transform: scale(1.1); }
+
+        .video-controls-bar {
+            position: absolute; bottom: 0; left: 0; right: 0; z-index: 5;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 14px 20px;
+            display: flex; align-items: center; gap: 16px; color: #FFF; font-size: 0.85rem;
+        }
+        .video-progress-line { flex: 1; height: 6px; background: rgba(255,255,255,0.3); border-radius: 3px; cursor: pointer; position: relative; }
+        .video-progress-fill { height: 100%; background: var(--primary-purple); border-radius: 3px; width: 35%; transition: width 0.1s linear; }
+
+        /* Syllabus Accordion */
+        .syllabus-module {
+            border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 12px;
+            overflow: hidden; background: #0F172A;
+        }
+        .syllabus-header {
+            padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; font-weight: 700; color: #FFF; font-size: 0.95rem; user-select: none;
+        }
+        .syllabus-header:hover { background: rgba(139, 92, 246, 0.1); }
+        .syllabus-content { padding: 0 20px 16px; display: none; border-top: 1px solid var(--border-color); }
+        .syllabus-content.active { display: block; padding-top: 12px; }
+        .lesson-item {
+            padding: 10px 14px; border-radius: 8px; display: flex; justify-content: space-between;
+            align-items: center; font-size: 0.86rem; color: var(--text-muted); cursor: pointer; margin-bottom: 4px;
+            transition: all 0.2s;
+        }
+        .lesson-item:hover { background: var(--bg-card); color: #FFF; }
+        .lesson-item.active-lesson { background: rgba(139, 92, 246, 0.2); color: #C4B5FD; font-weight: 600; }
+
+        /* Instructor Info Box */
+        .instructor-box {
+            background: #0F172A; border: 1px solid var(--border-color); border-radius: 16px;
+            padding: 20px; display: flex; gap: 16px; align-items: center; margin-top: 24px;
+        }
+        .instructor-avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-purple); }
+
+        /* Toast */
         .toast {
-            position: fixed; bottom: 30px; right: 30px; background: var(--primary-purple); color: #FFF;
-            padding: 16px 28px; border-radius: 12px; font-weight: 700; z-index: 3000; display: none;
+            position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+            color: #FFF; padding: 16px 28px; border-radius: 14px; font-weight: 700; z-index: 3000; display: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); font-size: 0.92rem;
         }
         .toast.active { display: block; animation: slideUp 0.3s ease; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Form elements */
+        .form-group { margin-bottom: 18px; text-align: left; }
+        .form-label { display: block; font-size: 0.82rem; color: #C4B5FD; font-weight: 600; margin-bottom: 6px; }
+        .form-control {
+            width: 100%; padding: 12px 16px; background: #0F172A; border: 1px solid var(--border-color);
+            border-radius: 10px; color: #FFF; font-family: inherit; font-size: 0.9rem;
+        }
+        .form-control:focus { outline: none; border-color: var(--primary-purple); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .dashboard-header { flex-direction: column; align-items: flex-start; }
+            .courses-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -137,7 +271,7 @@
                 <li><a href="#formateurs">Formateurs</a></li>
                 <li><a href="#tarifs">Abonnements</a></li>
             </ul>
-            <button class="btn-purple" onclick="openEnrollModal('Pass Illimité')">Rejoindre la Plateforme</button>
+            <button class="btn-purple" onclick="openEnrollModal('Pass Illimité Académie')">Rejoindre la Plateforme</button>
         </div>
     </header>
 
@@ -146,31 +280,101 @@
         <div class="container">
             <span class="hero-badge">🎓 +150 Formations Certifiantes en Ligne</span>
             <h1 class="hero-title">Accélérez votre Carrière avec les <span>Meilleurs Experts</span></h1>
-            <p class="hero-desc">Développement Web, Design UI/UX, Marketing Digital et Intelligence Artificielle. Apprenez à votre rythme avec projets pratiques.</p>
-            <div style="display:flex; gap:16px; justify-content:center;">
-                <button class="btn-purple" onclick="openEnrollModal('Débutant')">Commencer Gratuitement</button>
-                <a href="#courses" class="btn-purple" style="background:transparent; border:1px solid var(--primary-purple);">Explorer le Catalogue</a>
+            <p class="hero-desc">Développement Web, Design UI/UX, Marketing Digital et Intelligence Artificielle. Apprenez à votre rythme avec projets pratiques et accompagnement individuel.</p>
+            <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+                <button class="btn-purple" onclick="openEnrollModal('Pass Immersion Gratuit')">Commencer Gratuitement</button>
+                <a href="#courses" class="btn-outline">Explorer le Catalogue ↓</a>
             </div>
 
             <!-- Student Dashboard Widget Simulation -->
             <div class="dashboard-widget" id="dashboard">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-                    <h3 style="font-size:1.1rem; color:#FFF;">📊 Votre Progression en Temps Réel</h3>
-                    <span style="font-size:0.8rem; color:#C4B5FD; background:rgba(139,92,246,0.2); padding:4px 12px; border-radius:50px;">Espace Apprenant</span>
-                </div>
-                <div style="margin-bottom:20px; text-align:left;">
-                    <div style="display:flex; justify-content:space-between; font-size:0.88rem; margin-bottom:4px;">
-                        <span>Développement Full-Stack Next.js 15</span>
-                        <span style="color:var(--primary-purple); font-weight:700;">78% Terminé</span>
+                <div class="dashboard-header">
+                    <div>
+                        <h3 style="font-size:1.15rem; color:#FFF; font-weight:800; display:flex; align-items:center; gap:8px;">
+                            📊 Tableau de Bord Apprenant
+                        </h3>
+                        <p style="font-size:0.82rem; color:var(--text-muted);">Suivez votre progression et accédez à vos badges certifiés.</p>
                     </div>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 78%;"></div></div>
-                </div>
-                <div style="text-align:left;">
-                    <div style="display:flex; justify-content:space-between; font-size:0.88rem; margin-bottom:4px;">
-                        <span>Prompt Engineering &amp; AI Workflows</span>
-                        <span style="color:var(--primary-blue); font-weight:700;">45% Terminé</span>
+                    <div class="dashboard-nav-tabs">
+                        <button class="dash-tab-btn active" onclick="switchDashTab('courses')">Cours En Cours</button>
+                        <button class="dash-tab-btn" onclick="switchDashTab('certs')">Certificats Obtenus</button>
+                        <button class="dash-tab-btn" onclick="switchDashTab('quizzes')">Quiz Récent</button>
                     </div>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 45%; background:#3B82F6;"></div></div>
+                </div>
+
+                <!-- Tab 1: Mes Cours -->
+                <div class="dash-content-panel active" id="dashPanelCourses">
+                    <div style="margin-bottom:20px;">
+                        <div style="display:flex; justify-content:space-between; font-size:0.88rem; margin-bottom:6px;">
+                            <span style="font-weight:600; color:#FFF;">💻 Masterclass React 19 &amp; Next.js 15</span>
+                            <span style="color:var(--primary-purple); font-weight:700;">78% Terminé</span>
+                        </div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 78%;"></div></div>
+                    </div>
+                    <div style="margin-bottom:20px;">
+                        <div style="display:flex; justify-content:space-between; font-size:0.88rem; margin-bottom:6px;">
+                            <span style="font-weight:600; color:#FFF;">🤖 Prompt Engineering &amp; Architectures Agents IA</span>
+                            <span style="color:var(--primary-blue); font-weight:700;">45% Terminé</span>
+                        </div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 45%; background:#3B82F6;"></div></div>
+                    </div>
+                    <div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.88rem; margin-bottom:6px;">
+                            <span style="font-weight:600; color:#FFF;">🎨 UI/UX Design Systems &amp; Figma Advanced</span>
+                            <span style="color:var(--accent-green); font-weight:700;">90% Terminé</span>
+                        </div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%; background:#10B981;"></div></div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Certificats -->
+                <div class="dash-content-panel" id="dashPanelCerts">
+                    <div class="cert-card">
+                        <div>
+                            <div style="font-weight:700; color:#FFF; font-size:0.92rem;">🎓 Certificat Architecte React &amp; Next.js Full-Stack</div>
+                            <div style="font-size:0.78rem; color:var(--text-muted);">Délivré le 14 Janvier 2026 • ID: CERT-88492</div>
+                        </div>
+                        <button class="btn-outline" style="padding:6px 14px; font-size:0.78rem;" onclick="showToast('📄 Téléchargement du certificat PDF en cours...')">📥 Télécharger PDF</button>
+                    </div>
+                    <div class="cert-card">
+                        <div>
+                            <div style="font-weight:700; color:#FFF; font-size:0.92rem;">🏆 Certificat Master UI/UX Design Systems</div>
+                            <div style="font-size:0.78rem; color:var(--text-muted);">Délivré le 28 Décembre 2025 • ID: CERT-77319</div>
+                        </div>
+                        <button class="btn-outline" style="padding:6px 14px; font-size:0.78rem;" onclick="showToast('📄 Téléchargement du certificat PDF en cours...')">📥 Télécharger PDF</button>
+                    </div>
+                    <div class="cert-card">
+                        <div>
+                            <div style="font-weight:700; color:#FFF; font-size:0.92rem;">🚀 Certificat Prompt Engineer &amp; Agents IA</div>
+                            <div style="font-size:0.78rem; color:var(--text-muted);">Délivré le 10 Novembre 2025 • ID: CERT-65104</div>
+                        </div>
+                        <button class="btn-outline" style="padding:6px 14px; font-size:0.78rem;" onclick="showToast('📄 Téléchargement du certificat PDF en cours...')">📥 Télécharger PDF</button>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Quiz -->
+                <div class="dash-content-panel" id="dashPanelQuizzes">
+                    <div class="quiz-card">
+                        <div>
+                            <div style="font-weight:700; color:#FFF; font-size:0.92rem;">⚡ Quiz Next.js 15 Server Actions</div>
+                            <div style="font-size:0.78rem; color:var(--accent-green); font-weight:700;">Score: 98 / 100 (Mention Très Bien) • 01 Fév 2026</div>
+                        </div>
+                        <button class="btn-outline" style="padding:6px 14px; font-size:0.78rem;" onclick="showToast('📝 Ouverture de la session de Quiz en direct...')">🔄 Repasser</button>
+                    </div>
+                    <div class="quiz-card">
+                        <div>
+                            <div style="font-weight:700; color:#FFF; font-size:0.92rem;">🎨 Quiz Figma Auto-Layout &amp; Variables</div>
+                            <div style="font-size:0.78rem; color:#60A5FA; font-weight:700;">Score: 92 / 100 (Validé) • 25 Jan 2026</div>
+                        </div>
+                        <button class="btn-outline" style="padding:6px 14px; font-size:0.78rem;" onclick="showToast('📝 Ouverture de la session de Quiz en direct...')">🔄 Repasser</button>
+                    </div>
+                    <div class="quiz-card">
+                        <div>
+                            <div style="font-weight:700; color:#FFF; font-size:0.92rem;">🧠 Quiz System Prompts &amp; RAG Architecture</div>
+                            <div style="font-size:0.78rem; color:var(--primary-purple); font-weight:700;">Score: 100 / 100 (Parfait 🎉) • 18 Jan 2026</div>
+                        </div>
+                        <button class="btn-outline" style="padding:6px 14px; font-size:0.78rem;" onclick="showToast('📝 Ouverture de la session de Quiz en direct...')">🔄 Repasser</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -180,91 +384,491 @@
     <section class="section" id="courses">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Formations à la Une</h2>
-                <p style="color:var(--text-muted);">Acquérez des compétences recherchées sur le marché du travail.</p>
+                <h2 class="section-title">Catalogue des Formations</h2>
+                <p style="color:var(--text-muted); max-width:600px; margin:0 auto;">Développez les compétences les plus recherchées de l'industrie avec nos cursus interactifs.</p>
             </div>
 
-            <div class="course-tabs">
-                <button class="course-tab active">Tous les Cours</button>
-                <button class="course-tab">Développement Web</button>
-                <button class="course-tab">Design UI/UX</button>
-                <button class="course-tab">Marketing &amp; Sales</button>
+            <!-- Search Bar -->
+            <div class="search-bar-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="courseSearchInput" class="search-input" placeholder="Rechercher un cours, une techno, une compétence..." oninput="filterCourses()">
             </div>
 
-            <div class="courses-grid">
-                <!-- Course 1 -->
-                <div class="course-card">
-                    <div class="course-card-body">
-                        <span class="course-tag">CODE &amp; DEV</span>
-                        <h3 class="course-title">Masterclass React &amp; Next.js 15 de A à Z</h3>
-                        <div class="course-info">
-                            <span>⏱️ 24h de cours</span>
-                            <span>⭐ 4.9/5 (420 avis)</span>
-                        </div>
-                        <div class="course-footer">
-                            <span class="course-price">1 490 MAD</span>
-                            <button class="btn-purple" style="padding:8px 18px; font-size:0.8rem;" onclick="openEnrollModal('Next.js Masterclass')">S'inscrire</button>
-                        </div>
-                    </div>
-                </div>
+            <!-- Category Tabs -->
+            <div class="course-tabs" id="courseTabs">
+                <button class="course-tab active" onclick="setCourseCategory('all', this)">Tous les Cours</button>
+                <button class="course-tab" onclick="setCourseCategory('webdev', this)">Développement Web</button>
+                <button class="course-tab" onclick="setCourseCategory('uiux', this)">Design UI/UX</button>
+                <button class="course-tab" onclick="setCourseCategory('ai', this)">Intelligence Artificielle</button>
+                <button class="course-tab" onclick="setCourseCategory('marketing', this)">Marketing &amp; Sales</button>
+            </div>
 
-                <!-- Course 2 -->
-                <div class="course-card">
-                    <div class="course-card-body">
-                        <span class="course-tag">DESIGN</span>
-                        <h3 class="course-title">UI/UX Design Systems &amp; Figma Advanced</h3>
-                        <div class="course-info">
-                            <span>⏱️ 18h de cours</span>
-                            <span>⭐ 4.8/5 (310 avis)</span>
-                        </div>
-                        <div class="course-footer">
-                            <span class="course-price">1 290 MAD</span>
-                            <button class="btn-purple" style="padding:8px 18px; font-size:0.8rem;" onclick="openEnrollModal('UI/UX Figma')">S'inscrire</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Course Cards will be rendered here dynamically via JS -->
             </div>
         </div>
     </section>
 
+    <!-- Interactive Course Detail & Video Player Modal -->
+    <div class="modal-overlay" id="courseModal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeCourseModal()">✕</button>
+            <div style="padding: 32px;" id="courseModalContent">
+                <!-- Content injected dynamically -->
+            </div>
+        </div>
+    </div>
+
     <!-- Modal Enrolment -->
     <div class="modal-overlay" id="enrollModal">
-        <div class="modal-box">
+        <div class="modal-box modal-box-small">
             <button class="modal-close" onclick="closeEnrollModal()">✕</button>
-            <h3 style="font-size: 1.4rem; color: #FFF; margin-bottom: 8px; text-align: center;">Rejoindre la Formation</h3>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px; text-align: center;">Accédez immédiatement à vos cours en ligne.</p>
+            <h3 style="font-size: 1.4rem; color: #FFF; margin-bottom: 8px; text-align: center; font-weight: 800;">Rejoindre la Formation</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px; text-align: center;" id="enrollSubtitle">Accédez immédiatement à votre espace de formation sécurisé.</p>
             
             <form onsubmit="handleEnrollment(event)">
-                <div style="margin-bottom: 16px;">
-                    <label style="display:block; font-size:0.8rem; color:#C4B5FD; margin-bottom:4px;">Nom Complexe</label>
-                    <input type="text" style="width:100%; padding:12px; background:#0F172A; border:1px solid var(--border-color); border-radius:8px; color:#FFF;" required placeholder="ex: Amine Lahlou">
+                <div class="form-group">
+                    <label class="form-label">Formation Sélectionnée</label>
+                    <input type="text" id="enrollCourseName" class="form-control" readonly style="background:#1E293B; color:#C4B5FD; font-weight:700;">
                 </div>
-                <div style="margin-bottom: 16px;">
-                    <label style="display:block; font-size:0.8rem; color:#C4B5FD; margin-bottom:4px;">Adresse Email</label>
-                    <input type="email" style="width:100%; padding:12px; background:#0F172A; border:1px solid var(--border-color); border-radius:8px; color:#FFF;" required placeholder="amine@gmail.com">
+                <div class="form-group">
+                    <label class="form-label">Nom Complexe</label>
+                    <input type="text" class="form-control" required placeholder="ex: Amine Lahlou">
                 </div>
-                <button type="submit" class="btn-purple" style="width: 100%;">Valider mon Inscription →</button>
+                <div class="form-group">
+                    <label class="form-label">Adresse Email Professionnelle</label>
+                    <input type="email" class="form-control" required placeholder="amine@entreprise.ma">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Numéro de Téléphone (WhatsApp)</label>
+                    <input type="tel" class="form-control" required placeholder="+212 600 000 000">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Mode de Paiement Préféré</label>
+                    <select class="form-control" required>
+                        <option value="card">Carte Bancaire Marocaine / Internationale</option>
+                        <option value="transfer">Virement Bancaire (RIB Instantané)</option>
+                        <option value="cash">Paiement Cash via Agence Wafacash / Cash Plus</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-purple" style="width: 100%; padding: 14px; margin-top: 10px;">Valider mon Inscription →</button>
             </form>
         </div>
     </div>
 
+    <!-- Toast Notification -->
     <div class="toast" id="toast">🚀 Inscription réussie ! Vérifiez vos emails pour accéder à la plateforme.</div>
 
-    <footer style="background:#080D1A; padding:40px 0; border-top:1px solid var(--border-color); text-align:center;">
+    <!-- Footer -->
+    <footer style="background:#080D1A; padding:50px 0 40px; border-top:1px solid var(--border-color); text-align:center;">
         <div class="container">
-            <p style="font-size: 1.2rem; font-weight:800; color:var(--primary-purple);">ACADÉMIE PRO</p>
-            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top:8px;">© 2026 Académie Pro. Démo créée par DatRey Agency.</p>
+            <p style="font-size: 1.4rem; font-weight:800; color:var(--primary-purple);">ACADÉMIE PRO</p>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top:10px; max-width:500px; margin-left:auto; margin-right:auto;">
+                Plateforme marocaine d'excellence en e-learning pour les professionnels du numérique et entreprises.
+            </p>
+            <div style="margin-top: 24px; color: var(--text-muted); font-size: 0.82rem;">
+                © 2026 Académie Pro. Démo conçue avec soin par DatRey Agency.
+            </div>
         </div>
     </footer>
 
+    <!-- JavaScript logic -->
     <script>
-        function openEnrollModal(course) { document.getElementById('enrollModal').classList.add('active'); }
-        function closeEnrollModal() { document.getElementById('enrollModal').classList.remove('active'); }
+        // Courses Database
+        const coursesData = [
+            {
+                id: 'course-1',
+                title: 'Masterclass React 19 & Next.js 15 (App Router & Server Actions)',
+                tag: 'CODE & DEV',
+                category: 'webdev',
+                price: '1 490 MAD',
+                rating: '4.9 ⭐ (420 avis)',
+                duration: '28h de cours',
+                level: 'Avancé',
+                img: 'assets/photo_dev.webp',
+                desc: 'Maîtrisez les architectures modernes avec Next.js 15, React Server Components, Server Actions, TypeScript strict et Tailwind CSS. Créez des applications web hyper-rapides et sécurisées prêtes pour la production.',
+                instructor: {
+                    name: 'Youssef El Amrani',
+                    title: 'Senior Lead Full-Stack Architect',
+                    avatar: 'assets/about_team.webp',
+                    bio: '12 ans d\'expérience chez les leaders tech internationaux. Formateur passionné ayant accompagné +8 000 développeurs.'
+                },
+                modules: [
+                    { title: "Module 1: Fondations & App Router Next.js 15", lessons: ["1.1 Architecture & Installation (15 min)", "1.2 Server vs Client Components (25 min)", "1.3 Dynamic Routing & Layouts (30 min)"] },
+                    { title: "Module 2: Server Actions & Gestion de l'État", lessons: ["2.1 Mutations sans API Routes (20 min)", "2.2 Optimistic Updates & React Hook Form (35 min)", "2.3 Cash & Revalidation Strategies (25 min)"] },
+                    { title: "Module 3: Authentification & Base de Données", lessons: ["3.1 Intégration Prisma ORM & PostgreSQL (40 min)", "3.2 NextAuth v5 / Auth.js Setup (45 min)", "3.3 Middleware & Protected Routes (30 min)"] },
+                    { title: "Module 4: Déploiement CI/CD & Performance Edge", lessons: ["4.1 Optimisation Core Web Vitals (30 min)", "4.2 Deployment Vercel & Custom Domain (20 min)", "4.3 Monitoring & Error Tracking (25 min)"] }
+                ]
+            },
+            {
+                id: 'course-2',
+                title: 'UI/UX Design Systems & Figma Advanced 2026',
+                tag: 'DESIGN',
+                category: 'uiux',
+                price: '1 290 MAD',
+                rating: '4.8 ⭐ (310 avis)',
+                duration: '18h de cours',
+                level: 'Intermédiaire',
+                img: 'assets/photo_design.webp',
+                desc: 'Apprenez à concevoir des Design Systems évolutifs sous Figma avec les Variables, le Mode Sombre/Clair automatique, l\'Auto-Layout v5 et la documentation d\'accessibilité WCAG.',
+                instructor: {
+                    name: 'Leila Benjelloun',
+                    title: 'Lead Product Designer & Design System Expert',
+                    avatar: 'assets/slider_agency_team.jpg',
+                    bio: 'Spécialiste de la création de Design Systems complexes pour des applications bancaires et saas e-commerce.'
+                },
+                modules: [
+                    { title: "Module 1: Principes d'Atomic Design & Tokens", lessons: ["1.1 Tokens de Design: Couleurs & Typo (20 min)", "1.2 Grilles & Spacing Scale (25 min)"] },
+                    { title: "Module 2: Variables Figma & Modes Dynamiques", lessons: ["2.1 Déclaration des Variables & Aliases (30 min)", "2.2 Mode Sombre en 1 Clic (20 min)"] },
+                    { title: "Module 3: Composants Complexes & Variantes", lessons: ["3.1 Interactive Components (35 min)", "3.2 Component Properties & Nesting (40 min)"] },
+                    { title: "Module 4: Prototypage Avancé & Hand-off Dev", lessons: ["4.1 Animations Smart Animate (25 min)", "4.2 Documentation pour Développeurs (30 min)"] }
+                ]
+            },
+            {
+                id: 'course-3',
+                title: 'Prompt Engineering & Architectures Agents IA',
+                tag: 'INTELLIGENCE ARTIFICIELLE',
+                category: 'ai',
+                price: '1 890 MAD',
+                rating: '5.0 ⭐ (540 avis)',
+                duration: '32h de cours',
+                level: 'Tous niveaux',
+                img: 'assets/photo_marketing.webp',
+                desc: 'Découvrez comment concevoir des pipelines IA de classe entreprise: System Prompts avancés, RAG (Retrieval-Augmented Generation), bases vectorielles, et orchestration d\'agents autonomes multi-tâches.',
+                instructor: {
+                    name: 'Dr. Omar Tazi',
+                    title: 'Consultant IA & Expert LLM',
+                    avatar: 'assets/methodology_team.jpg',
+                    bio: 'Docteur en Intelligence Artificielle, auteur de plusieurs travaux sur le RAG et l\'alignement des grands modèles de langage.'
+                },
+                modules: [
+                    { title: "Module 1: Fondations des LLMs & Prompting", lessons: ["1.1 Architecture des LLMs (30 min)", "1.2 Context Windows & Tokenisation (25 min)"] },
+                    { title: "Module 2: Advanced Prompting Strategies", lessons: ["2.1 Few-Shot, Chain-of-Thought & ReAct (40 min)", "2.2 Structured Outputs (JSON Schema) (35 min)"] },
+                    { title: "Module 3: RAG & Vector Databases", lessons: ["3.1 Embeddings & Similarity Search (45 min)", "3.2 Chunking & Indexation avec Pinecone (50 min)"] },
+                    { title: "Module 4: Orchestration d'Agents IA", lessons: ["4.1 Multi-Agent Workflows avec LangChain (60 min)", "4.2 Autonomous Tool Use & API Integration (55 min)"] }
+                ]
+            },
+            {
+                id: 'course-4',
+                title: 'Growth Hacking, SEO & Acquisition Client 360°',
+                tag: 'MARKETING & SALES',
+                category: 'marketing',
+                price: '990 MAD',
+                rating: '4.7 ⭐ (195 avis)',
+                duration: '15h de cours',
+                level: 'Débutant',
+                img: 'assets/photo_formation.webp',
+                desc: 'Attirez et convertissez des prospects qualifiés en continu grâce aux meilleures stratégies de SEO technique, Cold Emailing automatisé, Google Ads ciblé et optimisation CRO.',
+                instructor: {
+                    name: 'Sophia Alami',
+                    title: 'Head of Growth & Performance Marketing',
+                    avatar: 'assets/aura_team.jpg',
+                    bio: 'Experte en tunnels de conversion et acquisition omnicanale avec 8 ans d\'expérience sur la région MENA.'
+                },
+                modules: [
+                    { title: "Module 1: SEO Technique & Audit sémantique", lessons: ["1.1 Recherche de mots-clés rentables (30 min)", "1.2 Architecture du site & Maillage interne (35 min)"] },
+                    { title: "Module 2: Cold Outreach & Funnels LinkedIn", lessons: ["2.1 Copywriting d'emails à fort taux de réponse (25 min)", "2.2 Séquences automatisées multi-canal (40 min)"] },
+                    { title: "Module 3: Google Ads & Meta Ads Performance", lessons: ["3.1 Configuration des campagnes Search (45 min)", "3.2 Retargeting & Audiences Lookalike (35 min)"] },
+                    { title: "Module 4: Conversion Rate Optimization (CRO)", lessons: ["4.1 Tests A/B & Heatmaps (30 min)", "4.2 Réduction de l'abandon de panier (25 min)"] }
+                ]
+            },
+            {
+                id: 'course-5',
+                title: 'Architecture Cloud, Microservices & Docker',
+                tag: 'CODE & DEV',
+                category: 'webdev',
+                price: '1 350 MAD',
+                rating: '4.9 ⭐ (280 avis)',
+                duration: '22h de cours',
+                level: 'Intermédiaire',
+                img: 'assets/photo_audit.webp',
+                desc: 'Déployez et orchestrez des microservices conteneurisés résilients avec Docker, Docker Compose et des pipelines CI/CD automatisés sur AWS et DigitalOcean.',
+                instructor: {
+                    name: 'Tariq Chraibi',
+                    title: 'Principal DevOps & Cloud Architect',
+                    avatar: 'assets/about_team.webp',
+                    bio: 'Spécialiste de la conteneurisation, Kubernetes et des architectures distribuées hautement disponibles.'
+                },
+                modules: [
+                    { title: "Module 1: Docker Fundamentals & Containérization", lessons: ["1.1 Images, Containers & Registries (35 min)", "1.2 Optimization des Dockerfiles (30 min)"] },
+                    { title: "Module 2: Orchestration avec Docker Compose", lessons: ["2.1 Multi-Container Environments (40 min)", "2.2 Networking & Persistent Volumes (35 min)"] },
+                    { title: "Module 3: CI/CD Pipelines & GitHub Actions", lessons: ["3.1 Automated Testing & Linting (30 min)", "3.2 Continuous Deployment sur VPS/Cloud (45 min)"] },
+                    { title: "Module 4: Security & Monitoring", lessons: ["4.1 Secret Management & SSL (25 min)", "4.2 Logging avec Grafana & Prometheus (35 min)"] }
+                ]
+            },
+            {
+                id: 'course-6',
+                title: 'Product Management, Agile & Stratégie Produit',
+                tag: 'MARKETING & SALES',
+                category: 'marketing',
+                price: '1 190 MAD',
+                rating: '4.8 ⭐ (160 avis)',
+                duration: '16h de cours',
+                level: 'Tous niveaux',
+                img: 'assets/slider_creative_strategy.jpg',
+                desc: 'Définissez la vision produit, priorisez le backlog grâce aux frameworks MoSCoW et RICE, animez les cérémonies Scrum et mesurez les KPIs clés (ARR, Retention, NPS).',
+                instructor: {
+                    name: 'Mehdi Berrada',
+                    title: 'Senior VP of Product & CPO',
+                    avatar: 'assets/methodology_team.jpg',
+                    bio: 'Accompagne la transformation digitale et l\'alignement produit des grands groupes technologiques.'
+                },
+                modules: [
+                    { title: "Module 1: Product Discovery & User Interviews", lessons: ["1.1 Identification des besoins utilisateur (30 min)", "1.2 Value Proposition Canvas (25 min)"] },
+                    { title: "Module 2: Roadmapping & Priorisation Backlog", lessons: ["2.1 Matrice RICE & Scoring (35 min)", "2.2 Rédaction de User Stories efficaces (30 min)"] },
+                    { title: "Module 3: Frameworks Agile & Scrum", lessons: ["3.1 Sprint Planning & Daily Standups (25 min)", "3.2 Retrospectives & continuous improvement (30 min)"] },
+                    { title: "Module 4: Metrics Produit & Analytics", lessons: ["4.1 Tracking Cohortes & Retention Rate (40 min)", "4.2 Product-Led Growth Strategies (35 min)"] }
+                ]
+            }
+        ];
+
+        let activeCategory = 'all';
+        let isPlayingSim = false;
+
+        // Render Courses Grid
+        function renderCourses() {
+            const grid = document.getElementById('coursesGrid');
+            const searchVal = document.getElementById('courseSearchInput').value.toLowerCase().trim();
+
+            const filtered = coursesData.filter(course => {
+                const matchesCategory = activeCategory === 'all' || course.category === activeCategory;
+                const matchesSearch = course.title.toLowerCase().includes(searchVal) ||
+                                      course.desc.toLowerCase().includes(searchVal) ||
+                                      course.tag.toLowerCase().includes(searchVal);
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align:center; padding: 60px 20px; background:var(--bg-card); border-radius:16px;">
+                        <span style="font-size:3rem; display:block; margin-bottom:12px;">🔍</span>
+                        <h3 style="color:#FFF; font-size:1.2rem;">Aucune formation trouvée</h3>
+                        <p style="color:var(--text-muted); font-size:0.9rem; margin-top:6px;">Essayez de modifier vos termes de recherche ou sélectionnez une autre catégorie.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(c => `
+                <div class="course-card" onclick="openCourseModal('${c.id}')">
+                    <div class="course-card-img-wrapper">
+                        <img src="${c.img}" alt="${c.title}" class="course-card-img">
+                        <span class="course-card-badge">${c.tag}</span>
+                    </div>
+                    <div class="course-card-body">
+                        <h3 class="course-title">${c.title}</h3>
+                        <p class="course-desc">${c.desc}</p>
+                        <div class="course-info">
+                            <span>⏱️ ${c.duration}</span>
+                            <span>${c.rating}</span>
+                            <span>📊 ${c.level}</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price">${c.price}</span>
+                            <button class="btn-purple" style="padding:8px 18px; font-size:0.8rem;" onclick="event.stopPropagation(); openCourseModal('${c.id}')">Aperçu &amp; Détails →</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function setCourseCategory(cat, el) {
+            activeCategory = cat;
+            document.querySelectorAll('#courseTabs .course-tab').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+            renderCourses();
+        }
+
+        function filterCourses() {
+            renderCourses();
+        }
+
+        // Student Dashboard Tabs
+        function switchDashTab(tabName) {
+            document.querySelectorAll('.dash-tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.dash-content-panel').forEach(p => p.classList.remove('active'));
+
+            if (tabName === 'courses') {
+                event.target.classList.add('active');
+                document.getElementById('dashPanelCourses').classList.add('active');
+            } else if (tabName === 'certs') {
+                event.target.classList.add('active');
+                document.getElementById('dashPanelCerts').classList.add('active');
+            } else if (tabName === 'quizzes') {
+                event.target.classList.add('active');
+                document.getElementById('dashPanelQuizzes').classList.add('active');
+            }
+        }
+
+        // Course Detail & Video Modal
+        function openCourseModal(courseId) {
+            const course = coursesData.find(c => c.id === courseId);
+            if (!course) return;
+
+            isPlayingSim = false;
+
+            const modalContent = document.getElementById('courseModalContent');
+            modalContent.innerHTML = `
+                <div style="display:flex; gap:10px; align-items:center; margin-bottom:12px; flex-wrap:wrap;">
+                    <span style="background:rgba(139,92,246,0.2); color:#C4B5FD; padding:4px 12px; border-radius:50px; font-size:0.75rem; font-weight:800;">${course.tag}</span>
+                    <span style="font-size:0.82rem; color:var(--text-muted);">${course.rating}</span>
+                    <span style="font-size:0.82rem; color:var(--text-muted);">⏱️ ${course.duration}</span>
+                    <span style="font-size:0.82rem; color:var(--text-muted);">📊 Niveau ${course.level}</span>
+                </div>
+
+                <h2 style="font-size: clamp(1.4rem, 2.5vw, 1.9rem); color:#FFF; font-weight:800; margin-bottom:16px; line-height:1.3;">
+                    ${course.title}
+                </h2>
+
+                <!-- Video Preview Simulation -->
+                <div class="video-player-sim" id="videoPlayerSim">
+                    <img src="${course.img}" class="video-poster-img" id="simPosterImg" alt="Extrait Video">
+                    <div class="video-overlay-play" id="simPlayOverlay" onclick="toggleSimVideoPlay('${course.title}')">
+                        <div class="play-btn-circle" id="simPlayBtnIcon">▶</div>
+                    </div>
+                    <div style="padding:16px 20px; z-index:3; display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:0.78rem; font-weight:700; color:#FFF; background:rgba(0,0,0,0.6); padding:4px 10px; border-radius:4px;" id="simVideoTitleTag">
+                            🎬 Extrait Gratuit: Lesson 1.1 Intro &amp; Aperçu
+                        </span>
+                        <span style="font-size:0.75rem; color:#10B981; font-weight:800; background:rgba(16,185,129,0.2); padding:4px 8px; border-radius:4px;">
+                            HD 1080p
+                        </span>
+                    </div>
+                    <div class="video-controls-bar">
+                        <span id="simTimeDisplay">02:15 / 14:30</span>
+                        <div class="video-progress-line" onclick="seekSimVideo(event)">
+                            <div class="video-progress-fill" id="simProgressFill"></div>
+                        </div>
+                        <span style="font-size:0.8rem; cursor:pointer;" onclick="showToast('🔊 Volume ajusté')">🔊</span>
+                        <span style="font-size:0.8rem; cursor:pointer;" onclick="showToast('🖥️ Mode Plein Écran')">⛶</span>
+                    </div>
+                </div>
+
+                <p style="font-size:0.96rem; color:var(--text-muted); margin-bottom:28px; line-height:1.7;">
+                    ${course.desc}
+                </p>
+
+                <!-- Syllabus Accordion -->
+                <h3 style="font-size:1.15rem; color:#FFF; margin-bottom:16px; font-weight:800; display:flex; align-items:center; gap:8px;">
+                    📚 Programme de la Formation (${course.modules.length} Modules)
+                </h3>
+                <div style="margin-bottom:32px;">
+                    ${course.modules.map((mod, idx) => `
+                        <div class="syllabus-module">
+                            <div class="syllabus-header" onclick="toggleSyllabusModule(this)">
+                                <span>${mod.title}</span>
+                                <span style="font-size:0.8rem; color:var(--primary-purple);">▼</span>
+                            </div>
+                            <div class="syllabus-content ${idx === 0 ? 'active' : ''}">
+                                ${mod.lessons.map((les, lidx) => `
+                                    <div class="lesson-item ${idx === 0 && lidx === 0 ? 'active-lesson' : ''}" onclick="selectLesson('${les.replace(/'/g, "\\'")}', this)">
+                                        <span>▶ ${les}</span>
+                                        <span style="font-size:0.75rem; color:var(--accent-green); font-weight:700;">Aperçu vidéo</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <!-- Instructor Profile -->
+                <h3 style="font-size:1.15rem; color:#FFF; margin-bottom:12px; font-weight:800;">👨‍🏫 Votre Formateur Expert</h3>
+                <div class="instructor-box">
+                    <img src="${course.instructor.avatar}" class="instructor-avatar" alt="${course.instructor.name}">
+                    <div>
+                        <h4 style="color:#FFF; font-weight:700; font-size:1.05rem;">${course.instructor.name}</h4>
+                        <div style="color:var(--primary-purple); font-size:0.82rem; font-weight:600; margin-bottom:6px;">${course.instructor.title}</div>
+                        <p style="color:var(--text-muted); font-size:0.85rem;">${course.instructor.bio}</p>
+                    </div>
+                </div>
+
+                <!-- Modal CTA -->
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:32px; border-top:1px solid var(--border-color); padding-top:24px; flex-wrap:wrap; gap:16px;">
+                    <div>
+                        <span style="font-size:0.82rem; color:var(--text-muted); display:block;">Prix d'accès à vie:</span>
+                        <span style="font-size:1.6rem; font-weight:800; color:#FFF;">${course.price}</span>
+                    </div>
+                    <button class="btn-purple" style="padding:14px 32px; font-size:0.95rem;" onclick="closeCourseModal(); openEnrollModal('${course.title.replace(/'/g, "\\'")}')">
+                        ⚡ S'inscrire à cette Formation →
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('courseModal').classList.add('active');
+        }
+
+        function closeCourseModal() {
+            document.getElementById('courseModal').classList.remove('active');
+            isPlayingSim = false;
+        }
+
+        function toggleSyllabusModule(el) {
+            const content = el.nextElementSibling;
+            const isVis = content.classList.contains('active');
+            content.classList.toggle('active');
+            el.querySelector('span:last-child').textContent = isVis ? '▼' : '▲';
+        }
+
+        function selectLesson(lessonTitle, el) {
+            document.querySelectorAll('.lesson-item').forEach(i => i.classList.remove('active-lesson'));
+            el.classList.add('active-lesson');
+            
+            const tag = document.getElementById('simVideoTitleTag');
+            if (tag) tag.textContent = `🎬 Extrait: ${lessonTitle}`;
+            
+            showToast(`▶ Lecture de l'extrait: ${lessonTitle}`);
+        }
+
+        function toggleSimVideoPlay(title) {
+            isPlayingSim = !isPlayingSim;
+            const playIcon = document.getElementById('simPlayBtnIcon');
+            const progress = document.getElementById('simProgressFill');
+
+            if (isPlayingSim) {
+                if (playIcon) playIcon.textContent = '⏸';
+                showToast(`▶ Lecture simulée lancée !`);
+                progress.style.width = '65%';
+            } else {
+                if (playIcon) playIcon.textContent = '▶';
+                showToast(`⏸ Extrait mis en pause.`);
+            }
+        }
+
+        function seekSimVideo(e) {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const pct = Math.round(((e.clientX - rect.left) / rect.width) * 100);
+            document.getElementById('simProgressFill').style.width = `${pct}%`;
+            showToast(`⏩ Lecture à ${pct}%`);
+        }
+
+        // Enrollment Modal
+        function openEnrollModal(courseTitle) {
+            document.getElementById('enrollCourseName').value = courseTitle || 'Pass Illimité Académie';
+            document.getElementById('enrollModal').classList.add('active');
+        }
+
+        function closeEnrollModal() {
+            document.getElementById('enrollModal').classList.remove('active');
+        }
+
         function handleEnrollment(e) {
-            e.preventDefault(); closeEnrollModal();
-            const t = document.getElementById('toast'); t.classList.add('active');
+            e.preventDefault();
+            const courseName = document.getElementById('enrollCourseName').value;
+            closeEnrollModal();
+            showToast(`🚀 Inscription réussie à "${courseName}" ! Vérifiez votre boîte email.`);
+        }
+
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('active');
             setTimeout(() => t.classList.remove('active'), 4000);
         }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCourses();
+        });
     </script>
 </body>
 </html>

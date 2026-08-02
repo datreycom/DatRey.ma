@@ -7,7 +7,8 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>L'Olivier | Restaurant Gastronomique & Fine Dining</title>
+    <title>L'Olivier | Restaurant Gastronomique & Fine Dining Casablanca</title>
+    <meta name="description" content="Découvrez L'Olivier, restaurant gastronomique d'exception à Casablanca. Cuisine créative, ingrédients d'exception et cadre somptueux.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,8 +19,10 @@
         :root {
             --bg-dark: #0B130E;
             --bg-card: #121F17;
+            --bg-card-hover: #1A2B20;
             --gold-primary: #D4AF37;
             --gold-light: #F3E5AB;
+            --gold-dark: #997A15;
             --emerald-accent: #1B3B2B;
             --text-gold: #E2C044;
             --text-light: #F4F4F0;
@@ -48,10 +51,11 @@
         .header {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
             height: var(--nav-height);
-            background: rgba(11, 19, 14, 0.92);
-            backdrop-filter: blur(12px);
+            background: rgba(11, 19, 14, 0.94);
+            backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-gold);
             display: flex; align-items: center;
+            transition: all 0.3s ease;
         }
         .header .container {
             display: flex; justify-content: space-between; align-items: center; width: 100%;
@@ -59,111 +63,254 @@
         .logo {
             font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 800;
             color: var(--gold-primary); text-decoration: none; display: flex; align-items: center; gap: 8px;
+            letter-spacing: 0.05em;
         }
-        .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+        .logo span { color: #FFF; font-weight: 400; }
+        .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
         .nav-links a {
-            color: var(--text-light); text-decoration: none; font-size: 0.95rem; font-weight: 500;
-            transition: color 0.3s;
+            color: var(--text-light); text-decoration: none; font-size: 0.92rem; font-weight: 500;
+            transition: color 0.3s; position: relative; padding: 4px 0;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+            background: var(--gold-primary); transition: width 0.3s;
         }
         .nav-links a:hover { color: var(--gold-primary); }
+        .nav-links a:hover::after { width: 100%; }
 
         .btn-gold {
             background: linear-gradient(135deg, var(--gold-primary), #B8860B);
-            color: #0B130E !important; font-weight: 700; padding: 12px 28px;
+            color: #0B130E !important; font-weight: 700; padding: 12px 26px;
             border-radius: 50px; border: none; cursor: pointer; transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); text-transform: uppercase; font-size: 0.82rem; letter-spacing: 0.06em;
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;
         }
-        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5); }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(212, 175, 55, 0.55); background: linear-gradient(135deg, #F3E5AB, var(--gold-primary)); }
 
         .btn-outline-gold {
             background: transparent; color: var(--gold-light) !important;
-            border: 1px solid var(--gold-primary); font-weight: 600; padding: 12px 28px;
-            border-radius: 50px; cursor: pointer; transition: all 0.3s; font-size: 0.85rem; letter-spacing: 0.05em;
+            border: 1px solid var(--gold-primary); font-weight: 600; padding: 12px 26px;
+            border-radius: 50px; cursor: pointer; transition: all 0.3s; font-size: 0.82rem; letter-spacing: 0.06em;
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; text-transform: uppercase;
         }
-        .btn-outline-gold:hover { background: rgba(212, 175, 55, 0.15); color: #FFF !important; }
+        .btn-outline-gold:hover { background: rgba(212, 175, 55, 0.18); color: #FFF !important; border-color: var(--gold-light); }
 
         /* Hero */
         .hero {
             position: relative; min-height: 100vh; padding-top: var(--nav-height);
             display: flex; align-items: center; justify-content: center; text-align: center;
-            background: linear-gradient(180deg, rgba(11, 19, 14, 0.4) 0%, rgba(11, 19, 14, 0.95) 100%),
+            background: linear-gradient(180deg, rgba(11, 19, 14, 0.55) 0%, rgba(11, 19, 14, 0.95) 100%),
                         url('assets/photo_marketing.webp') center/cover no-repeat;
         }
-        .hero-content { max-width: 850px; padding: 60px 20px; }
+        .hero-content { max-width: 900px; padding: 60px 20px; z-index: 2; }
         .hero-badge {
-            display: inline-block; padding: 6px 16px; border: 1px solid var(--gold-primary);
-            border-radius: 50px; color: var(--gold-light); font-size: 0.8rem; letter-spacing: 0.15em;
-            text-transform: uppercase; margin-bottom: 24px; background: rgba(27, 59, 43, 0.6);
+            display: inline-block; padding: 8px 20px; border: 1px solid var(--gold-primary);
+            border-radius: 50px; color: var(--gold-light); font-size: 0.8rem; letter-spacing: 0.2em;
+            text-transform: uppercase; margin-bottom: 24px; background: rgba(27, 59, 43, 0.7);
+            backdrop-filter: blur(8px);
         }
         .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 800; color: #FFF;
-            line-height: 1.15; margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            font-size: clamp(2.5rem, 5.5vw, 4.5rem); font-weight: 800; color: #FFF;
+            line-height: 1.15; margin-bottom: 24px; text-shadow: 0 4px 25px rgba(0,0,0,0.8);
         }
-        .hero-title span { color: var(--gold-primary); }
+        .hero-title span { color: var(--gold-primary); font-style: italic; font-weight: 400; }
         .hero-desc {
-            font-size: 1.15rem; color: var(--text-muted); max-width: 680px; margin: 0 auto 36px;
+            font-size: 1.15rem; color: var(--text-muted); max-width: 720px; margin: 0 auto 36px; line-height: 1.8;
         }
-        .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+
+        .hero-info-bar {
+            display: inline-flex; gap: 24px; background: rgba(18, 31, 23, 0.85); border: 1px solid var(--border-gold);
+            border-radius: 50px; padding: 12px 28px; backdrop-filter: blur(10px); font-size: 0.85rem; color: var(--text-light);
+            flex-wrap: wrap; justify-content: center;
+        }
+        .hero-info-item { display: flex; align-items: center; gap: 8px; }
+        .hero-info-item span.icon { color: var(--gold-primary); font-size: 1rem; }
+
+        /* General Section */
+        .section { padding: 100px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.1); }
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .section-subtitle { color: var(--gold-primary); font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 10px; font-weight: 600; }
+        .section-title { font-size: 2.5rem; color: #FFF; }
+        .section-title span { color: var(--gold-primary); }
 
         /* Menu Section */
-        .section { padding: 100px 0; }
-        .section-header { text-align: center; margin-bottom: 56px; }
-        .section-subtitle { color: var(--gold-primary); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; }
-        .section-title { font-size: 2.4rem; color: #FFF; }
-
-        .menu-tabs { display: flex; justify-content: center; gap: 16px; margin-bottom: 48px; flex-wrap: wrap; }
+        .menu-tabs { display: flex; justify-content: center; gap: 12px; margin-bottom: 48px; flex-wrap: wrap; }
         .menu-tab {
             background: var(--bg-card); border: 1px solid var(--border-gold); color: var(--text-muted);
-            padding: 10px 24px; border-radius: 50px; cursor: pointer; transition: all 0.3s; font-weight: 600; font-size: 0.9rem;
+            padding: 12px 24px; border-radius: 50px; cursor: pointer; transition: all 0.3s; font-weight: 600; font-size: 0.88rem;
         }
-        .menu-tab.active, .menu-tab:hover { background: var(--gold-primary); color: #0B130E; border-color: var(--gold-primary); }
+        .menu-tab.active, .menu-tab:hover { background: var(--gold-primary); color: #0B130E; border-color: var(--gold-primary); box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); }
 
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 32px; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 28px; }
         .menu-card {
-            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px;
-            padding: 28px; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; justify-content: space-between;
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 18px;
+            overflow: hidden; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;
+            position: relative; cursor: pointer;
         }
-        .menu-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15); }
-        .menu-card-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
-        .menu-card-title { font-size: 1.25rem; color: var(--gold-light); }
-        .menu-card-price { font-family: 'Cinzel', serif; font-size: 1.3rem; font-weight: 700; color: var(--gold-primary); }
-        .menu-card-desc { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 16px; }
-        .menu-card-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #10B981; }
+        .menu-card:hover { transform: translateY(-6px); border-color: var(--gold-primary); box-shadow: 0 12px 35px rgba(212, 175, 55, 0.2); background: var(--bg-card-hover); }
+        
+        .menu-card-img-wrap { position: relative; height: 210px; overflow: hidden; }
+        .menu-card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .menu-card:hover .menu-card-img { transform: scale(1.08); }
+        .menu-card-badge {
+            position: absolute; top: 14px; left: 14px; background: rgba(11, 19, 14, 0.85);
+            border: 1px solid var(--gold-primary); color: var(--gold-light); font-size: 0.72rem;
+            padding: 4px 12px; border-radius: 50px; backdrop-filter: blur(6px); font-weight: 600; letter-spacing: 0.05em;
+        }
+        
+        .menu-card-body { padding: 22px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .menu-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+        .menu-card-title { font-size: 1.2rem; color: var(--gold-light); font-weight: 700; line-height: 1.3; }
+        .menu-card-price { font-family: 'Cinzel', serif; font-size: 1.25rem; font-weight: 700; color: var(--gold-primary); white-space: nowrap; }
+        .menu-card-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 18px; line-height: 1.5; }
+        
+        .menu-card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(212, 175, 55, 0.15); padding-top: 14px; margin-top: auto; }
+        .menu-card-tag { font-size: 0.78rem; font-weight: 600; color: #10B981; display: flex; align-items: center; gap: 4px; }
+        .btn-card-action {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-light); border: 1px solid var(--border-gold);
+            padding: 6px 14px; border-radius: 50px; font-size: 0.78rem; font-weight: 600; transition: all 0.3s;
+        }
+        .menu-card:hover .btn-card-action { background: var(--gold-primary); color: #0B130E; border-color: var(--gold-primary); }
 
-        /* Reservation Modal */
+        /* Chef Section */
+        .chef-section { background: rgba(18, 31, 23, 0.4); }
+        .chef-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .chef-img-box { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid var(--border-gold); }
+        .chef-img { width: 100%; height: 480px; object-fit: cover; display: block; }
+        .chef-badge {
+            position: absolute; bottom: 20px; right: 20px; background: rgba(11, 19, 14, 0.9);
+            border: 1px solid var(--gold-primary); padding: 16px 24px; border-radius: 14px; backdrop-filter: blur(8px);
+        }
+        .chef-badge-title { font-family: 'Cinzel', serif; color: var(--gold-primary); font-size: 1.1rem; font-weight: 700; }
+        .chef-badge-sub { font-size: 0.8rem; color: var(--text-muted); }
+
+        .chef-content h3 { font-size: 2rem; color: var(--gold-light); margin-bottom: 16px; }
+        .chef-quote { font-style: italic; font-size: 1.1rem; color: var(--text-light); border-left: 3px solid var(--gold-primary); padding-left: 20px; margin-bottom: 24px; line-height: 1.7; }
+        .chef-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .chef-feat-item { background: var(--bg-card); padding: 18px; border-radius: 12px; border: 1px solid var(--border-gold); }
+        .chef-feat-title { font-size: 0.95rem; color: var(--gold-primary); font-weight: 700; margin-bottom: 4px; }
+        .chef-feat-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* Gallery Section */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+        .gallery-card {
+            position: relative; height: 260px; border-radius: 16px; overflow: hidden;
+            border: 1px solid var(--border-gold); cursor: pointer;
+        }
+        .gallery-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-overlay {
+            position: absolute; inset: 0; background: linear-gradient(0deg, rgba(11, 19, 14, 0.9) 0%, rgba(11, 19, 14, 0.2) 100%);
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; opacity: 0.9; transition: opacity 0.3s;
+        }
+        .gallery-card:hover .gallery-img { transform: scale(1.08); }
+        .gallery-card:hover .gallery-overlay { opacity: 1; }
+        .gallery-title { font-size: 1.15rem; color: var(--gold-light); font-weight: 700; }
+        .gallery-sub { font-size: 0.82rem; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 0.1em; }
+
+        /* Modals */
         .modal-overlay {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+            position: fixed; inset: 0; background: rgba(0,0,0,0.88); backdrop-filter: blur(12px);
             z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px;
+            opacity: 0; transition: opacity 0.3s ease;
         }
-        .modal-overlay.active { display: flex; }
+        .modal-overlay.active { display: flex; opacity: 1; }
+        
+        /* Modal Box */
         .modal-box {
-            background: var(--bg-card); border: 1px solid var(--gold-primary); border-radius: 20px;
-            max-width: 540px; width: 100%; padding: 40px; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            background: var(--bg-card); border: 1px solid var(--gold-primary); border-radius: 24px;
+            max-width: 650px; width: 100%; padding: 36px; position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+            max-height: 90vh; overflow-y: auto; transform: scale(0.95); transition: transform 0.3s ease;
         }
+        .modal-overlay.active .modal-box { transform: scale(1); }
+        
         .modal-close {
-            position: absolute; top: 20px; right: 20px; background: none; border: none;
-            color: var(--text-muted); font-size: 1.5rem; cursor: pointer;
+            position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.08); border: 1px solid var(--border-gold);
+            color: var(--gold-light); font-size: 1.2rem; cursor: pointer; width: 36px; height: 36px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; transition: all 0.3s; z-index: 10;
         }
+        .modal-close:hover { background: var(--gold-primary); color: #0B130E; }
+
+        /* Dish Detail Modal */
+        .dish-modal-img { width: 100%; height: 260px; object-fit: cover; border-radius: 16px; margin-bottom: 20px; border: 1px solid var(--border-gold); }
+        .dish-modal-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 12px; }
+        .dish-modal-title { font-size: 1.6rem; color: var(--gold-light); }
+        .dish-modal-price { font-family: 'Cinzel', serif; font-size: 1.7rem; font-weight: 700; color: var(--gold-primary); }
+        .dish-ingredients { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; }
+        .ing-pill { background: rgba(212, 175, 55, 0.12); border: 1px solid var(--border-gold); color: var(--gold-light); padding: 5px 14px; border-radius: 50px; font-size: 0.8rem; }
+        
+        .wine-box {
+            background: rgba(27, 59, 43, 0.5); border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 14px; padding: 16px 20px; margin-bottom: 24px; display: flex; gap: 14px; align-items: center;
+        }
+        .wine-icon { font-size: 1.8rem; }
+        .wine-title { font-size: 0.85rem; color: var(--gold-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+        .wine-desc { font-size: 0.9rem; color: var(--text-light); }
+
+        /* Form Controls */
         .form-group { margin-bottom: 20px; }
         .form-label { display: block; font-size: 0.85rem; color: var(--gold-light); margin-bottom: 8px; font-weight: 600; }
         .form-control {
-            width: 100%; padding: 12px 16px; background: rgba(11, 19, 14, 0.8); border: 1px solid var(--border-gold);
-            border-radius: 8px; color: #FFF; font-family: inherit; font-size: 0.95rem;
+            width: 100%; padding: 14px 18px; background: rgba(11, 19, 14, 0.85); border: 1px solid var(--border-gold);
+            border-radius: 10px; color: #FFF; font-family: inherit; font-size: 0.95rem; transition: border-color 0.3s;
         }
-        .form-control:focus { outline: none; border-color: var(--gold-primary); }
+        .form-control:focus { outline: none; border-color: var(--gold-primary); box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+        
+        .dish-selected-badge {
+            background: rgba(212, 175, 55, 0.15); border: 1px dashed var(--gold-primary); padding: 10px 16px;
+            border-radius: 10px; color: var(--gold-light); font-size: 0.88rem; margin-bottom: 20px; display: flex;
+            justify-content: space-between; align-items: center;
+        }
+
+        /* Lightbox Gallery Modal */
+        .lightbox-box {
+            background: var(--bg-card); border: 1px solid var(--gold-primary); border-radius: 20px;
+            max-width: 900px; width: 100%; padding: 24px; position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.95);
+            text-align: center;
+        }
+        .lightbox-img { width: 100%; max-height: 60vh; object-fit: contain; border-radius: 12px; margin-bottom: 16px; background: #000; }
+        .lightbox-caption { color: var(--gold-light); font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
+        .lightbox-sub { color: var(--text-muted); font-size: 0.9rem; }
+        .lightbox-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; }
+        .btn-lightbox {
+            background: rgba(212, 175, 55, 0.15); border: 1px solid var(--border-gold); color: var(--gold-light);
+            padding: 8px 20px; border-radius: 50px; cursor: pointer; transition: all 0.3s; font-weight: 600;
+        }
+        .btn-lightbox:hover { background: var(--gold-primary); color: #0B130E; }
 
         /* Toast */
         .toast {
-            position: fixed; bottom: 30px; right: 30px; background: var(--gold-primary); color: #0B130E;
-            padding: 16px 28px; border-radius: 12px; font-weight: 700; z-index: 3000; display: none; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, var(--gold-primary), #B8860B);
+            color: #0B130E; padding: 18px 30px; border-radius: 14px; font-weight: 700; z-index: 3000; display: none;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.6); max-width: 420px; font-size: 0.95rem; border: 1px solid #FFF;
         }
-        .toast.active { display: block; animation: slideUp 0.3s ease; }
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .toast.active { display: block; animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
         /* Footer */
-        .footer { background: #060B08; padding: 60px 0 30px; border-top: 1px solid var(--border-gold); text-align: center; }
-        .footer-logo { font-size: 1.8rem; color: var(--gold-primary); font-family: 'Cinzel', serif; margin-bottom: 12px; }
-        .footer-text { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px; }
+        .footer { background: #060B08; padding: 80px 0 40px; border-top: 1px solid var(--border-gold); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; }
+        .footer-logo { font-size: 1.8rem; color: var(--gold-primary); font-family: 'Cinzel', serif; margin-bottom: 16px; }
+        .footer-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
+        .footer-title { color: var(--gold-light); font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; font-family: 'Cinzel', serif; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--gold-primary); }
+        
+        .newsletter-form { display: flex; gap: 8px; margin-top: 12px; }
+        .newsletter-input {
+            flex-grow: 1; padding: 12px; background: rgba(11, 19, 14, 0.8); border: 1px solid var(--border-gold);
+            border-radius: 8px; color: #FFF; font-size: 0.88rem;
+        }
+        .footer-bottom { border-top: 1px solid rgba(212, 175, 55, 0.15); padding-top: 30px; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .chef-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-info-bar { border-radius: 16px; flex-direction: column; gap: 10px; }
+        }
     </style>
 </head>
 <body>
@@ -171,11 +318,12 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <a href="#" class="logo">🌿 L'Olivier</a>
+            <a href="#" class="logo">🌿 L'Olivier <span>Gastronomie</span></a>
             <ul class="nav-links">
                 <li><a href="#menu">Carte &amp; Menu</a></li>
                 <li><a href="#chef">Le Chef</a></li>
-                <li><a href="#ambiance">L'Ambiance</a></li>
+                <li><a href="#gallery">Galerie Visuelle</a></li>
+                <li><a href="#cave">Cave &amp; Vins</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="btn-gold" onclick="openReservationModal()">Réserver une Table</button>
@@ -185,12 +333,25 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <span class="hero-badge">Gastronomie &amp; Terroir • Casablanca</span>
-            <h1 class="hero-title">L'Art de la Haute <span>Gastronomie</span></h1>
-            <p class="hero-desc">Une expérience culinaire d'exception alliant saveurs méditerranéennes raffinées et produits locaux de saison dans un cadre intimiste.</p>
+            <span class="hero-badge">Haute Gastronomie &amp; Terroir • Anfa Casablanca</span>
+            <h1 class="hero-title">L'Art de la Fine <span>Gastronomie</span></h1>
+            <p class="hero-desc">Une symphonie culinaire d'exception alliant la noblesse des produits de la mer, le terroir marocain et l'audace de la haute cuisine méditerranéenne.</p>
+            
             <div class="hero-btns">
-                <button class="btn-gold" onclick="openReservationModal()">Réserver une Table</button>
+                <button class="btn-gold" onclick="openReservationModal()"> Réserver une Table</button>
                 <a href="#menu" class="btn-outline-gold">Découvrir le Menu</a>
+            </div>
+
+            <div class="hero-info-bar">
+                <div class="hero-info-item">
+                    <span class="icon">📍</span> 5, Rue de Dixmude, quartier Anfa, Casablanca
+                </div>
+                <div class="hero-info-item">
+                    <span class="icon">🕒</span> Mar - Dim : 19h00 - 00h30
+                </div>
+                <div class="hero-info-item">
+                    <span class="icon">⭐</span> 4.9/5 (340+ Avis Gourmets)
+                </div>
             </div>
         </div>
     </section>
@@ -199,151 +360,763 @@
     <section class="section" id="menu">
         <div class="container">
             <div class="section-header">
-                <div class="section-subtitle">Plaisir des Sens</div>
-                <h2 class="section-title">Notre Carte d'Exception</h2>
+                <div class="section-subtitle">Plaisir des Sens &amp; Création</div>
+                <h2 class="section-title">Notre Carte <span>Gastronomique</span></h2>
             </div>
 
             <div class="menu-tabs">
-                <button class="menu-tab active" onclick="filterMenu('all')">Tous les Plats</button>
-                <button class="menu-tab" onclick="filterMenu('entree')">Entrées Raffinées</button>
-                <button class="menu-tab" onclick="filterMenu('plat')">Plats Signature</button>
-                <button class="menu-tab" onclick="filterMenu('dessert')">Desserts &amp; Douceurs</button>
+                <button class="menu-tab active" onclick="filterMenu('all', event)">Tous les Plats</button>
+                <button class="menu-tab" onclick="filterMenu('entree', event)">Entrées Raffinées</button>
+                <button class="menu-tab" onclick="filterMenu('plat', event)">Plats Signature</button>
+                <button class="menu-tab" onclick="filterMenu('dessert', event)">Desserts &amp; Douceurs</button>
+                <button class="menu-tab" onclick="filterMenu('boisson', event)">Mixologie &amp; Grands Crus</button>
             </div>
 
             <div class="menu-grid" id="menuGrid">
-                <!-- Plat 1 -->
-                <div class="menu-card" data-category="entree">
-                    <div>
-                        <div class="menu-card-header">
-                            <h3 class="menu-card-title">Foie Gras Poêlé aux Figues de Taounate</h3>
-                            <span class="menu-card-price">280 MAD</span>
-                        </div>
-                        <p class="menu-card-desc">Foie gras poêlé minute, réduction de balsamique aux figues fraîches du terroir et pain brioché maison.</p>
+                <!-- Dish 1 -->
+                <div class="menu-card" data-category="entree" onclick="openDishModal(0)">
+                    <div class="menu-card-img-wrap">
+                        <img src="assets/photo_marketing.webp" alt="Foie Gras Poêlé" class="menu-card-img">
+                        <span class="menu-card-badge">Entrée Signature</span>
                     </div>
-                    <span class="menu-card-tag">✓ Entrée du Chef</span>
+                    <div class="menu-card-body">
+                        <div>
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Foie Gras Poêlé aux Figues de Taounate</h3>
+                                <span class="menu-card-price">280 MAD</span>
+                            </div>
+                            <p class="menu-card-desc">Foie gras de canard poêlé minute, réduction de balsamique aux figues fraîches du terroir et pain brioché croustillant.</p>
+                        </div>
+                        <div class="menu-card-footer">
+                            <span class="menu-card-tag">✓ Spécialité Chef</span>
+                            <span class="btn-card-action">Voir &amp; Réserver →</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Plat 2 -->
-                <div class="menu-card" data-category="plat">
-                    <div>
-                        <div class="menu-card-header">
-                            <h3 class="menu-card-title">Filet de Saint-Pierre &amp; Emulsion Safran</h3>
-                            <span class="menu-card-price">390 MAD</span>
-                        </div>
-                        <p class="menu-card-desc">Saint-Pierre sauvage rôti sur peau, mousseline de céleri-rave et émulsion au safran de Taliouine.</p>
+                <!-- Dish 2 -->
+                <div class="menu-card" data-category="entree" onclick="openDishModal(1)">
+                    <div class="menu-card-img-wrap">
+                        <img src="assets/elara_artisan.jpg" alt="Carpaccio St-Jacques" class="menu-card-img">
+                        <span class="menu-card-badge">Fraîcheur Marine</span>
                     </div>
-                    <span class="menu-card-tag">★ Plat Signature</span>
+                    <div class="menu-card-body">
+                        <div>
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Carpaccio de St-Jacques Yuzu &amp; Truffe</h3>
+                                <span class="menu-card-price">310 MAD</span>
+                            </div>
+                            <p class="menu-card-desc">Noix de Saint-Jacques de plongée finement tranchées, perles de Yuzu, huile de truffe noire d'Alba et fleur de sel de Zima.</p>
+                        </div>
+                        <div class="menu-card-footer">
+                            <span class="menu-card-tag">★ Produit d'Exception</span>
+                            <span class="btn-card-action">Voir &amp; Réserver →</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Plat 3 -->
-                <div class="menu-card" data-category="plat">
-                    <div>
-                        <div class="menu-card-header">
-                            <h3 class="menu-card-title">Côte d'Agneau de Lait aux Herbes de l'Atlas</h3>
-                            <span class="menu-card-price">420 MAD</span>
-                        </div>
-                        <p class="menu-card-desc">Agneau confit 12 heures, jus corsé au romarin sauvage, légumes racines glacés au miel d'oranger.</p>
+                <!-- Dish 3 -->
+                <div class="menu-card" data-category="entree" onclick="openDishModal(2)">
+                    <div class="menu-card-img-wrap">
+                        <img src="assets/elara_col2.jpg" alt="Velouté Potimarron" class="menu-card-img">
+                        <span class="menu-card-badge">Végétarien Gourmand</span>
                     </div>
-                    <span class="menu-card-tag">★ Plat Signature</span>
+                    <div class="menu-card-body">
+                        <div>
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Velouté de Potimarron &amp; Fleur d'Oranger</h3>
+                                <span class="menu-card-price">190 MAD</span>
+                            </div>
+                            <p class="menu-card-desc">Velouté onctueux de potimarron rôti, parfum délicat d'eau de fleur d'oranger bio, amandes effilées torréfiées et émulsion argan.</p>
+                        </div>
+                        <div class="menu-card-footer">
+                            <span class="menu-card-tag">🌿 100% Bio</span>
+                            <span class="btn-card-action">Voir &amp; Réserver →</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Plat 4 -->
-                <div class="menu-card" data-category="dessert">
-                    <div>
-                        <div class="menu-card-header">
-                            <h3 class="menu-card-title">Soufflé Chaud au Chocolat Grand Cru</h3>
-                            <span class="menu-card-price">160 MAD</span>
-                        </div>
-                        <p class="menu-card-desc">Chocolat noir 72% Valrhona, cœur coulant et glace artisanale à la fleur d'oranger.</p>
+                <!-- Dish 4 -->
+                <div class="menu-card" data-category="plat" onclick="openDishModal(3)">
+                    <div class="menu-card-img-wrap">
+                        <img src="assets/svc_marketing_hd.jpg" alt="Saint-Pierre Safran" class="menu-card-img" onerror="this.src='assets/hero_transformation.webp'">
+                        <span class="menu-card-badge">Plat Signature</span>
                     </div>
-                    <span class="menu-card-tag">✓ Dessert Gourmand</span>
+                    <div class="menu-card-body">
+                        <div>
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Filet de Saint-Pierre &amp; Safran de Taliouine</h3>
+                                <span class="menu-card-price">390 MAD</span>
+                            </div>
+                            <p class="menu-card-desc">Saint-Pierre sauvage rôti sur peau, mousseline douce de céleri-rave, Émulsion légère au safran pur de Taliouine et salicorne.</p>
+                        </div>
+                        <div class="menu-card-footer">
+                            <span class="menu-card-tag">★ Grand Classique</span>
+                            <span class="btn-card-action">Voir &amp; Réserver →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 5 -->
+                <div class="menu-card" data-category="plat" onclick="openDishModal(4)">
+                    <div class="menu-card-img-wrap">
+                        <img src="assets/hero_bg_luxury.webp" alt="Côte d'Agneau" class="menu-card-img">
+                        <span class="menu-card-badge">Spécialité Maison</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div>
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Côte d'Agneau de Lait aux Herbes de l'Atlas</h3>
+                                <span class="menu-card-price">420 MAD</span>
+                            </div>
+                            <p class="menu-card-desc">Carré d'agneau confit 12 heures à basse température, jus corsé infusé au romarin sauvage, légumes racines glacés au miel d'oranger.</p>
+                        </div>
+                        <div class="menu-card-footer">
+                            <span class="menu-card-tag">🔥 Cuisson Basse Température</span>
+                            <span class="btn-card-action">Voir &amp; Réserver →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 6 -->
+                <div class="menu-card" data-category="plat" onclick="openDishModal(5)">
+                    <div class="menu-card-img-wrap">
+                        <img src="assets/elara_col3.jpg" alt="Pigeon Rôti Pastilla" class="menu-card-img">
+                        <span class="menu-card-badge">Tradition Réinventée</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div>
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Pigeon Rôti &amp; Pastilla Croustillante Épicée</h3>
+                                <span class="menu-card-price">450 MAD</span>
+                            </div>
+                            <p class="menu-card-desc">Supra de pigeon royal rosé, cuisse confite en pastilla de feuilles de warka dorées, jus réduit au ras-el-hanout d'exception.</p>
+                        </div>
+                        <div class="menu-card-footer">
+                            <span class="menu-card-tag">✨ Incontournable L'Olivier</span>
+                            <span class="btn-card-action">Voir &amp; Réserver →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 7 -->
+                <div class="menu-card" data-category="dessert" onclick="openDishModal(6)">
+                    <div class="menu-card-img-wrap">
+                        <img src="assets/elara_col1.jpg" alt="Soufflé Chocolat" class="menu-card-img">
+                        <span class="menu-card-badge">Dessert Iconique</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div>
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Soufflé Chaud Chocolat Grand Cru Valrhona</h3>
+                                <span class="menu-card-price">160 MAD</span>
+                            </div>
+                            <p class="menu-card-desc">Chocolat noir 72% Guanaja, cœur coulant gourmand et glace artisanale turbinée minute à la fleur d'oranger.</p>
+                        </div>
+                        <div class="menu-card-footer">
+                            <span class="menu-card-tag">🍫 Pure Gourmandise</span>
+                            <span class="btn-card-action">Voir &amp; Réserver →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 8 -->
+                <div class="menu-card" data-category="dessert" onclick="openDishModal(7)">
+                    <div class="menu-card-img-wrap">
+                        <img src="assets/kodex_lifestyle.jpg" alt="Sphère Cacao" class="menu-card-img">
+                        <span class="menu-card-badge">Création 2026</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div>
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Sphère Cacao &amp; Praliné Pistache d'Alep</h3>
+                                <span class="menu-card-price">175 MAD</span>
+                            </div>
+                            <p class="menu-card-desc">Coque en chocolat fin fondu au caramel chaud sous vos yeux, biscuit cuillère imbibé d'expresso et glace pistache intense.</p>
+                        </div>
+                        <div class="menu-card-footer">
+                            <span class="menu-card-tag">✨ Spectacle à Table</span>
+                            <span class="btn-card-action">Voir &amp; Réserver →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 9 -->
+                <div class="menu-card" data-category="boisson" onclick="openDishModal(8)">
+                    <div class="menu-card-img-wrap">
+                        <img src="assets/aura_hero.jpg" alt="Cocktail Royal Atlas" class="menu-card-img">
+                        <span class="menu-card-badge">Mixologie Exclusive</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div>
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Cocktail Signature "Royal Atlas Gold"</h3>
+                                <span class="menu-card-price">180 MAD</span>
+                            </div>
+                            <p class="menu-card-desc">Whisky Single Malt vieilli, liqueur de figue de Barbarie, bitter maison à la cannelle, citron vert et paillettes d'or 24 carats.</p>
+                        </div>
+                        <div class="menu-card-footer">
+                            <span class="menu-card-tag">🍸 Cocktails d'Auteur</span>
+                            <span class="btn-card-action">Voir &amp; Réserver →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 10 -->
+                <div class="menu-card" data-category="boisson" onclick="openDishModal(9)">
+                    <div class="menu-card-img-wrap">
+                        <img src="assets/case_b2b.webp" alt="Grand Cru Vin" class="menu-card-img">
+                        <span class="menu-card-badge">Sommelier Selection</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div>
+                            <div class="menu-card-header">
+                                <h3 class="menu-card-title">Château Tandem Syrah Alain Graillot 2020</h3>
+                                <span class="menu-card-price">680 MAD</span>
+                            </div>
+                            <p class="menu-card-desc">Cuvée d'exception du domaine marocain de Ben Slimane, notes d'épices douces, de mûres sauvages et tannerie noble.</p>
+                        </div>
+                        <div class="menu-card-footer">
+                            <span class="menu-card-tag">🍷 Cave Privée</span>
+                            <span class="btn-card-action">Voir &amp; Réserver →</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reservation Modal -->
+    <!-- Chef Section -->
+    <section class="section chef-section" id="chef">
+        <div class="container">
+            <div class="chef-grid">
+                <div class="chef-img-box">
+                    <img src="assets/methodology_team.jpg" alt="Chef Reda Benhallam" class="chef-img">
+                    <div class="chef-badge">
+                        <div class="chef-badge-title">Chef Reda Benhallam</div>
+                        <div class="chef-badge-sub">Maître Cuisinier &amp; Formateur à Paris</div>
+                    </div>
+                </div>
+                <div class="chef-content">
+                    <div class="section-subtitle">Philosophie &amp; Savoir-Faire</div>
+                    <h3>Une Passion transmise avec Excellence</h3>
+                    <p class="chef-quote">"Chaque assiette que nous dressons est un hommage vibrant à nos racines méditerranéennes. Nous magnifions le produit brut avec des techniques de haute précision."</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">
+                        Formé auprès de maîtres étoilés à Paris et Florence, le Chef Reda sélectionne chaque matin les trésors des pêcheurs de Casablanca et des maraîchers biologiques de la région de Chtouka.
+                    </p>
+                    <div class="chef-features">
+                        <div class="chef-feat-item">
+                            <div class="chef-feat-title">🍃 100% Produits Bio</div>
+                            <div class="chef-feat-desc">Arrivage quotidien et traçabilité rigoureuse.</div>
+                        </div>
+                        <div class="chef-feat-item">
+                            <div class="chef-feat-title">🍷 Sommelier Dédié</div>
+                            <div class="chef-feat-desc">Plus de 180 références de vins d'exception.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">L'Univers Visuel de L'Olivier</div>
+                <h2 class="section-title">Galerie &amp; <span>Ambiance Immersive</span></h2>
+                <p style="color: var(--text-muted); margin-top: 10px;">Cliquez sur une image pour l'ouvrir en plein écran dans notre Lightbox interactive.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-card" onclick="openGalleryModal(0)">
+                    <img src="assets/photo_marketing.webp" alt="Salle de Restaurant VIP" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-sub">Intérieur &amp; Décor</span>
+                        <div class="gallery-title">La Salle Gastronomique VIP</div>
+                    </div>
+                </div>
+
+                <div class="gallery-card" onclick="openGalleryModal(1)">
+                    <img src="assets/aura_team.jpg" alt="Chef en Cuisine" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-sub">Coulisses &amp; Brigade</span>
+                        <div class="gallery-title">Dressage Haute Précision</div>
+                    </div>
+                </div>
+
+                <div class="gallery-card" onclick="openGalleryModal(2)">
+                    <img src="assets/elara_hero.jpg" alt="Terrasse Jardin Secret" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-sub">Espace Extérieur</span>
+                        <div class="gallery-title">La Terrasse Jardin Ombragée</div>
+                    </div>
+                </div>
+
+                <div class="gallery-card" onclick="openGalleryModal(3)">
+                    <img src="assets/kodex_lookbook.jpg" alt="Cave à Vins" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-sub">Sommellerie</span>
+                        <div class="gallery-title">La Cave aux Grands Crus</div>
+                    </div>
+                </div>
+
+                <div class="gallery-card" onclick="openGalleryModal(4)">
+                    <img src="assets/hypeboost_pro.jpg" alt="Dessert Gourmand" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-sub">Patisserie Fine</span>
+                        <div class="gallery-title">Création Sucrée du Jour</div>
+                    </div>
+                </div>
+
+                <div class="gallery-card" onclick="openGalleryModal(5)">
+                    <img src="assets/contact_hero.webp" alt="Table du Chef" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-sub">Expérience Privée</span>
+                        <div class="gallery-title">La Table Privative du Chef</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Dish Detail Modal -->
+    <div class="modal-overlay" id="dishModal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeDishModal()">✕</button>
+            <img src="" id="dishImg" class="dish-modal-img" alt="Plat">
+            <div class="dish-modal-header">
+                <h3 class="dish-modal-title" id="dishTitle">Titre du Plat</h3>
+                <span class="dish-modal-price" id="dishPrice">0 MAD</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;" id="dishDesc">Description détaillée...</p>
+            
+            <div style="font-size: 0.85rem; color: var(--gold-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">Ingrédients &amp; Composition</div>
+            <div class="dish-ingredients" id="dishIngredients">
+                <!-- Pills injected via JS -->
+            </div>
+
+            <div class="wine-box">
+                <div class="wine-icon">🍷</div>
+                <div>
+                    <div class="wine-title">Accord Mets &amp; Vins Recommandé</div>
+                    <div class="wine-desc" id="dishWine">Cuvée spéciale...</div>
+                </div>
+            </div>
+
+            <div style="background: rgba(11, 19, 14, 0.8); border: 1px solid var(--border-gold); padding: 14px; border-radius: 12px; margin-bottom: 24px; font-size: 0.88rem; color: var(--text-light);">
+                👨‍🍳 <strong>Note du Chef :</strong> <span id="dishChefNote">Préparé minute avec des produits frais du jour.</span>
+            </div>
+
+            <button class="btn-gold" style="width: 100%; font-size: 0.9rem;" onclick="addDishToReservation()">Ajouter à ma Réservation de Table →</button>
+        </div>
+    </div>
+
+    <!-- Table Reservation Modal -->
     <div class="modal-overlay" id="reservationModal">
         <div class="modal-box">
             <button class="modal-close" onclick="closeReservationModal()">✕</button>
-            <h3 style="font-size: 1.6rem; color: var(--gold-primary); margin-bottom: 8px; text-align: center;">Réserver une Table</h3>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px; text-align: center;">Confirmez votre présence chez L'Olivier en quelques secondes.</p>
+            <h3 style="font-size: 1.7rem; color: var(--gold-primary); margin-bottom: 8px; text-align: center;" class="font-serif">Réserver une Table</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px; text-align: center;">Confirmez votre expérience gastronomique chez L'Olivier en 1 minute.</p>
             
+            <div id="dishSelectedBanner" class="dish-selected-badge" style="display: none;">
+                <span>🍽️ Plat sélectionné : <strong id="selectedDishName">Foie Gras</strong></span>
+                <button type="button" style="background:none; border:none; color:#EF4444; cursor:pointer; font-weight:bold;" onclick="clearSelectedDish()">Enlever</button>
+            </div>
+
             <form id="resForm" onsubmit="handleReservation(event)">
                 <div class="form-group">
-                    <label class="form-label">Nom Complet</label>
-                    <input type="text" class="form-control" placeholder="ex: Omar Benjelloun" required>
+                    <label class="form-label">Nom Complet *</label>
+                    <input type="text" id="resName" class="form-control" placeholder="ex: Omar Benjelloun" required>
                 </div>
+
                 <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                     <div>
-                        <label class="form-label">Date</label>
-                        <input type="date" class="form-control" required>
+                        <label class="form-label">Téléphone / WhatsApp *</label>
+                        <input type="tel" id="resPhone" class="form-control" placeholder="+212 6 00 00 00 00" required>
                     </div>
                     <div>
-                        <label class="form-label">Heure</label>
-                        <select class="form-control" required>
-                            <option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option>
-                        </select>
+                        <label class="form-label">Adresse E-mail *</label>
+                        <input type="email" id="resEmail" class="form-control" placeholder="omar@exemple.ma" required>
                     </div>
                 </div>
+
                 <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                     <div>
-                        <label class="form-label">Couverts</label>
-                        <select class="form-control" required>
-                            <option>2 Personnes</option><option>4 Personnes</option><option>6 Personnes</option><option>Groupe Privé</option>
-                        </select>
+                        <label class="form-label">Date de visite *</label>
+                        <input type="date" id="resDate" class="form-control" required>
                     </div>
                     <div>
-                        <label class="form-label">Emplacement</label>
-                        <select class="form-control">
-                            <option>Salle Principale</option><option>Terrasse Jardin</option><option>Salon V.I.P</option>
+                        <label class="form-label">Heure du Service *</label>
+                        <select id="resTime" class="form-control" required>
+                            <option value="19:30">19:30 - Premier Service</option>
+                            <option value="20:00">20:00 - Service Gourmet</option>
+                            <option value="20:30">20:30 - Peak Dinner</option>
+                            <option value="21:00">21:00 - Late Service</option>
+                            <option value="21:30">21:30 - Night Service</option>
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="btn-gold" style="width: 100%; margin-top: 10px;">Confirmer ma Réservation →</button>
+
+                <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div>
+                        <label class="form-label">Nombre de Couverts *</label>
+                        <select id="resGuests" class="form-control" required>
+                            <option value="2 Personnes">2 Personnes (Intimiste)</option>
+                            <option value="4 Personnes">4 Personnes (Famille / Amis)</option>
+                            <option value="6 Personnes">6 Personnes (Table Gourmande)</option>
+                            <option value="8+ Personnes">8+ Personnes (Groupe Privé)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label">Emplacement Souhaité</label>
+                        <select id="resSeating" class="form-control">
+                            <option value="Salle Principal Gastronomique">Salle Principale Gastronomique</option>
+                            <option value="Terrasse Jardin">Terrasse Jardin Ombragée</option>
+                            <option value="Salon VIP Privatif">Salon V.I.P Privatif</option>
+                            <option value="Table Directe du Chef">La Table Directe du Chef</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Demandes Particulières &amp; Allergies</label>
+                    <textarea id="resNotes" class="form-control" rows="2" placeholder="ex: Anniversaire, allergies aux fruits de mer, placement calme..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-gold" style="width: 100%; margin-top: 10px; font-size: 0.95rem;">Confirmer ma Réservation Gratuitement →</button>
             </form>
         </div>
     </div>
 
+    <!-- Gallery Lightbox Modal -->
+    <div class="modal-overlay" id="galleryModal">
+        <div class="lightbox-box">
+            <button class="modal-close" onclick="closeGalleryModal()">✕</button>
+            <img src="" id="lightboxImg" class="lightbox-img" alt="Lightbox Visual">
+            <div class="lightbox-caption" id="lightboxTitle">Titre</div>
+            <div class="lightbox-sub" id="lightboxSub">Description</div>
+            <div class="lightbox-nav">
+                <button class="btn-lightbox" onclick="prevGalleryImage()">◀ Précédent</button>
+                <span style="font-size: 0.85rem; color: var(--gold-primary);" id="lightboxCounter">1 / 6</span>
+                <button class="btn-lightbox" onclick="nextGalleryImage()">Suivant ▶</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
-    <div class="toast" id="toast">🎉 Réservation confirmée avec succès ! Un SMS de confirmation vous a été envoyé.</div>
+    <div class="toast" id="toast">🎉 Réservation enregistrée ! Notre maître d'hôtel vous contactera par SMS / WhatsApp sous 15 minutes.</div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="container">
-            <div class="footer-logo">🌿 L'Olivier</div>
-            <p class="footer-text">5, Rue de Dixmude, Casablanca • Tel: +212 5 22 00 11 22</p>
-            <p style="font-size: 0.8rem; color: var(--text-muted);">© 2026 L'Olivier Restaurant. Démo créée par DatRey Agency.</p>
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">🌿 L'Olivier</div>
+                    <p class="footer-desc">Une destination gastronomique majeure au cœur de Casablanca. Excellence, passion et terroir réinventé.</p>
+                    <div style="font-size: 0.88rem; color: var(--text-light); line-height: 1.8;">
+                        📍 5, Rue de Dixmude, Anfa, Casablanca<br>
+                        📞 Téléphone : +212 5 22 00 11 22<br>
+                        💬 WhatsApp Direct : +212 6 61 00 11 22
+                    </div>
+                </div>
+
+                <div>
+                    <div class="footer-title">Navigation</div>
+                    <ul class="footer-links">
+                        <li><a href="#menu">La Carte Gastronomique</a></li>
+                        <li><a href="#chef">Le Chef Reda</a></li>
+                        <li><a href="#gallery">Galerie Photos</a></li>
+                        <li><a href="javascript:void(0)" onclick="openReservationModal()">Réservation de Table</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer-title">Horaires d'Ouverture</div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.8;">
+                        Lundi : Fermé<br>
+                        Mardi - Vendredi : 19h00 - 00h30<br>
+                        Samedi - Dimanche : 12h30 - 15h30 / 19h00 - 01h00
+                    </div>
+                </div>
+
+                <div>
+                    <div class="footer-title">Privilèges &amp; Newsletter</div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Inscrivez-vous pour recevoir nos invitations aux soirées Dégustation et Grands Crus.</p>
+                    <form onsubmit="handleNewsletter(event)" class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Votre adresse e-mail" required>
+                        <button type="submit" class="btn-gold" style="padding: 10px 16px; border-radius: 8px;">Rejoindre</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                © 2026 L'Olivier Fine Dining Casablanca. Tous droits réservés. Modèle créé pour DatRey Agency.
+            </div>
         </div>
     </footer>
 
+    <!-- JavaScript logic -->
     <script>
-        function openReservationModal() {
-            document.getElementById('reservationModal').classList.add('active');
-        }
-        function closeReservationModal() {
-            document.getElementById('reservationModal').classList.remove('active');
-        }
-        function handleReservation(e) {
-            e.preventDefault();
-            closeReservationModal();
-            const toast = document.getElementById('toast');
-            toast.classList.add('active');
-            setTimeout(() => toast.classList.remove('active'), 4000);
-        }
-        function filterMenu(category) {
+        // Dishes Data
+        const dishesData = [
+            {
+                title: "Foie Gras Poêlé aux Figues de Taounate",
+                price: "280 MAD",
+                img: "assets/photo_marketing.webp",
+                desc: "Foie gras de canard frais poêlé minute à la fleur de sel de Zima, sur son lit de figues fraîches pochées au jus de grenade et balsamique ambré, accompagné d'une brioche feuilletée tiède.",
+                ingredients: ["Foie Gras de Canard", "Figues de Taounate", "Réduction Balsamique", "Fleur de Sel de Zima", "Brioche Maison"],
+                wine: "Château d'Yquem Sauternes 2014 ou Gewurztraminer Vendanges Tardives",
+                chefNote: "Un équilibre parfait entre le gras noble et l'acidité fruitée des figues du Rif."
+            },
+            {
+                title: "Carpaccio de St-Jacques Yuzu & Truffe",
+                price: "310 MAD",
+                img: "assets/elara_artisan.jpg",
+                desc: "Finement tranchées à la main, nos noix de Saint-Jacques fraîches sont marinées à l'huile de truffe noire d'Alba, jus de yuzu pressé à froid et câpres de Safi croustillantes.",
+                ingredients: ["St-Jacques de Plongée", "Huile de Truffe Noire", "Yuzu Frais", "Perles de Saumon", "Câpres de Safi"],
+                wine: "Chablis Premier Cru 'Les Vaillons' 2020",
+                chefNote: "Servi sur assiette givrée pour garantir une fraîcheur marine absolue."
+            },
+            {
+                title: "Velouté de Potimarron & Fleur d'Oranger",
+                price: "190 MAD",
+                img: "assets/elara_col2.jpg",
+                desc: "Potimarron bio roussi au beurre noisette, infusé doucement à la fleur d'oranger artisanale de Marrakech, surmonté d'une émulsion veloutée d'huile d'argan et éclats d'amandes.",
+                ingredients: ["Potimarron Bio", "Eau de Fleur d'Oranger", "Huile d'Argan Bio", "Amandes Torréfiées", "Crème d'Isigny"],
+                wine: "Condrieu Domaine Yves Cuilleron 2021",
+                chefNote: "Une entrée végétarienne réconfortante qui marie avec élégance douceur et parfum suave."
+            },
+            {
+                title: "Filet de Saint-Pierre & Safran de Taliouine",
+                price: "390 MAD",
+                img: "assets/hero_transformation.webp",
+                desc: "Saint-Pierre sauvage pêché au large des côtes casablancaises, rôti au thym citron, accompagné d'une mousseline onctueuse de céleri-rave et émulsion au safran pur.",
+                ingredients: ["Saint-Pierre Sauvage", "Safran de Taliouine", "Céleri-Rave", "Salicorne Marine", "Beurre de Bresse"],
+                wine: "Meursault Premier Cru Domaine Roulot 2019",
+                chefNote: "Le poisson est cuit sur peau pour un croustillant irrésistible tout en conservant une chair nacrée."
+            },
+            {
+                title: "Côte d'Agneau de Lait aux Herbes de l'Atlas",
+                price: "420 MAD",
+                img: "assets/hero_bg_luxury.webp",
+                desc: "Carré d'agneau de lait confit pendant 12 heures à 75°C, enrobé d'une croûte d'herbes aromatiques sauvages de l'Atlas, jus corsé réduit et légumes racines dorés au miel.",
+                ingredients: ["Agneau de Lait", "Romarin & Thym Sauvage", "Jus Corsé Confit", "Miel d'Oranger Bio", "Carottes Fanes Glacées"],
+                wine: "Château Palmer Margaux 2015 ou Syrah Tandem Ben Slimane",
+                chefNote: "Une viande d'une tendreté incomparable qui se détache à la cuillère."
+            },
+            {
+                title: "Pigeon Rôti & Pastilla Croustillante Épicée",
+                price: "450 MAD",
+                img: "assets/elara_col3.jpg",
+                desc: "Le suprême de pigeon royal rôti rosé au beurre de sauge, flanqué d'une pastilla individuelle des cuisses confites aux épices fines, amandes pilées et sucre glace à la cannelle.",
+                ingredients: ["Pigeon Royal", "Feuilles de Warka", "Ras-el-Hanout 27 épices", "Amandes Grillées", "Jus Réduit"],
+                wine: "Côte-Rôtie Domaine Jamet 2018",
+                chefNote: "Notre hommage ultime à l'excellence culinaire marocaine et à la Haute Cuisine."
+            },
+            {
+                title: "Soufflé Chaud Chocolat Grand Cru Valrhona",
+                price: "160 MAD",
+                img: "assets/elara_col1.jpg",
+                desc: "Soufflé minute cuit au four à sole, élaboré à partir du pur chocolat noir 72% Valrhona, révélant un cœur fondant intense et servi avec une glace turbinée à la fleur d'oranger.",
+                ingredients: ["Chocolat Valrhona 72%", "Œufs Bio de Ferme", "Beurre Frais", "Glace Fleur d'Oranger"],
+                wine: "Bordeaux Sauternes ou Porto Taylor's 20 ans",
+                chefNote: "Préparé minute (compter 15 min d'attente lors de votre commande)."
+            },
+            {
+                title: "Sphère Cacao & Praliné Pistache d'Alep",
+                price: "175 MAD",
+                img: "assets/kodex_lifestyle.jpg",
+                desc: "Une coque sphérique en chocolat fin qui fond sous un filet de chocolat chaud versé à votre table, découvrant un cœur de praliné croustillant pistache et crémeux vanille Bourbon.",
+                ingredients: ["Chocolat Noir Grand Cru", "Pistache d'Alep", "Vanille Bourbon", "Biscuit Cuillère"],
+                wine: "Champagne Ruinart Rosé Brut",
+                chefNote: "Un final visuel et théâtral inoubliable pour votre repas."
+            },
+            {
+                title: "Cocktail Signature 'Royal Atlas Gold'",
+                price: "180 MAD",
+                img: "assets/aura_hero.jpg",
+                desc: "Mixologie d'exception alliant un Single Malt infusé à la cannelle de Ceylan, liqueur de figue de barbarie artisanale, jus de citrons verts et poudre d'or 24K comestible.",
+                ingredients: ["Whisky Single Malt", "Liqueur Figue de Barbarie", "Citron Vert", "Sirop d'Épices", "Or 24 Karats"],
+                wine: "Cocktail Signature à savourer en apéritif",
+                chefNote: "Créé exclusivement par notre Chef Barman pour L'Olivier."
+            },
+            {
+                title: "Château Tandem Syrah Alain Graillot 2020",
+                price: "680 MAD",
+                img: "assets/case_b2b.webp",
+                desc: "Un grand vin rouge marocain né du partenariat entre le célèbre vigneron de la Vallée du Rhône Alain Graillot et la Ferme Rouge de Rommani. Puissant, épicé et fruité.",
+                ingredients: ["100% Syrah", "Terroir de Rommani", "Élevage en Fûts de Chêne", "Cuvée Raré"],
+                wine: "Compagnon idéal des viandes rouges et pigeons rôti",
+                chefNote: "Conservé en cave climatisée à 14°C constants."
+            }
+        ];
+
+        // Gallery Images Data
+        const galleryData = [
+            { img: "assets/photo_marketing.webp", title: "La Salle Gastronomique VIP", sub: "Cadre intimiste éclairé à la bougie" },
+            { img: "assets/aura_team.jpg", title: "Dressage Haute Précision", sub: "Le Chef Reda au passe en plein service" },
+            { img: "assets/elara_hero.jpg", title: "La Terrasse Jardin Ombragée", sub: "Havre de paix au milieu des oliviers centenaires" },
+            { img: "assets/kodex_lookbook.jpg", title: "La Cave aux Grands Crus", sub: "Plus de 180 d'étiquettes d'exception" },
+            { img: "assets/hypeboost_pro.jpg", title: "Création Sucrée du Jour", sub: "Pâtisserie d'art dressée minute" },
+            { img: "assets/contact_hero.webp", title: "La Table Privative du Chef", sub: "Immergée au plus près des créations culinaires" }
+        ];
+
+        let currentGalleryIndex = 0;
+        let selectedDishIndex = null;
+
+        // Set min date for reservation form to today
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateInput = document.getElementById('resDate');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.setAttribute('min', today);
+                dateInput.value = today;
+            }
+        });
+
+        // Filter Menu
+        function filterMenu(category, e) {
             document.querySelectorAll('.menu-tab').forEach(tab => tab.classList.remove('active'));
-            event.target.classList.add('active');
-            
+            if(e && e.target) e.target.classList.add('active');
+
             const cards = document.querySelectorAll('.menu-card');
             cards.forEach(card => {
-                if(category === 'all' || card.dataset.category === category) {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
                     card.style.display = 'flex';
                 } else {
                     card.style.display = 'none';
                 }
             });
         }
+
+        // Dish Modal Functions
+        function openDishModal(index) {
+            selectedDishIndex = index;
+            const dish = dishesData[index];
+            document.getElementById('dishImg').src = dish.img;
+            document.getElementById('dishTitle').innerText = dish.title;
+            document.getElementById('dishPrice').innerText = dish.price;
+            document.getElementById('dishDesc').innerText = dish.desc;
+            document.getElementById('dishWine').innerText = dish.wine;
+            document.getElementById('dishChefNote').innerText = dish.chefNote;
+
+            // Ingredients
+            const ingContainer = document.getElementById('dishIngredients');
+            ingContainer.innerHTML = '';
+            dish.ingredients.forEach(ing => {
+                const pill = document.createElement('span');
+                pill.className = 'ing-pill';
+                pill.innerText = ing;
+                ingContainer.appendChild(pill);
+            });
+
+            document.getElementById('dishModal').classList.add('active');
+        }
+
+        function closeDishModal() {
+            document.getElementById('dishModal').classList.remove('active');
+        }
+
+        function addDishToReservation() {
+            closeDishModal();
+            if (selectedDishIndex !== null) {
+                const dish = dishesData[selectedDishIndex];
+                document.getElementById('dishSelectedBanner').style.display = 'flex';
+                document.getElementById('selectedDishName').innerText = dish.title + " (" + dish.price + ")";
+            }
+            openReservationModal();
+        }
+
+        function clearSelectedDish() {
+            selectedDishIndex = null;
+            document.getElementById('dishSelectedBanner').style.display = 'none';
+        }
+
+        // Reservation Modal
+        function openReservationModal() {
+            document.getElementById('reservationModal').classList.add('active');
+        }
+
+        function closeReservationModal() {
+            document.getElementById('reservationModal').classList.remove('active');
+        }
+
+        function handleReservation(e) {
+            e.preventDefault();
+            const name = document.getElementById('resName').value;
+            const date = document.getElementById('resDate').value;
+            const time = document.getElementById('resTime').value;
+            const guests = document.getElementById('resGuests').value;
+
+            closeReservationModal();
+
+            const toast = document.getElementById('toast');
+            toast.innerHTML = `🎉 Merci <strong>${name}</strong> ! Votre table pour <strong>${guests}</strong> le <strong>${date}</strong> à <strong>${time}</strong> a été enregistrée.`;
+            toast.classList.add('active');
+
+            setTimeout(() => {
+                toast.classList.remove('active');
+            }, 5500);
+
+            // reset form
+            document.getElementById('resForm').reset();
+            clearSelectedDish();
+        }
+
+        // Newsletter Form
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const toast = document.getElementById('toast');
+            toast.innerHTML = `✉️ Merci ! Vous êtes désormais inscrit au Cercle Privé L'Olivier.`;
+            toast.classList.add('active');
+            setTimeout(() => toast.classList.remove('active'), 4000);
+            e.target.reset();
+        }
+
+        // Lightbox Gallery Modal
+        function openGalleryModal(index) {
+            currentGalleryIndex = index;
+            updateGalleryModal();
+            document.getElementById('galleryModal').classList.add('active');
+        }
+
+        function updateGalleryModal() {
+            const item = galleryData[currentGalleryIndex];
+            document.getElementById('lightboxImg').src = item.img;
+            document.getElementById('lightboxTitle').innerText = item.title;
+            document.getElementById('lightboxSub').innerText = item.sub;
+            document.getElementById('lightboxCounter').innerText = `${currentGalleryIndex + 1} / ${galleryData.length}`;
+        }
+
+        function closeGalleryModal() {
+            document.getElementById('galleryModal').classList.remove('active');
+        }
+
+        function prevGalleryImage() {
+            currentGalleryIndex = (currentGalleryIndex - 1 + galleryData.length) % galleryData.length;
+            updateGalleryModal();
+        }
+
+        function nextGalleryImage() {
+            currentGalleryIndex = (currentGalleryIndex + 1) % galleryData.length;
+            updateGalleryModal();
+        }
+
+        // Keyboard navigation for Lightbox & closing modals with Escape
+        document.addEventListener('keydown', (e) => {
+            const galleryModal = document.getElementById('galleryModal');
+            if (galleryModal.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') prevGalleryImage();
+                if (e.key === 'ArrowRight') nextGalleryImage();
+                if (e.key === 'Escape') closeGalleryModal();
+            }
+            if (e.key === 'Escape') {
+                closeDishModal();
+                closeReservationModal();
+            }
+        });
     </script>
 </body>
 </html>

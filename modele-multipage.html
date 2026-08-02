@@ -1411,6 +1411,31 @@
             opacity: 1;
         }
 
+        /* Multipage Section & Card Styles */
+        .multipage-section { padding: 100px 0; border-bottom: 1px solid var(--border-color); }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+        .team-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 28px 24px; text-align: center; transition: transform 0.3s, border-color 0.3s; }
+        .team-card:hover { transform: translateY(-6px); border-color: rgba(139,92,246,0.4); }
+        .team-avatar { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 2px solid var(--primary-violet); }
+        .team-name { font-size: 1.1rem; font-weight: 700; color: var(--text-white); margin-bottom: 4px; }
+        .team-role { font-size: 0.85rem; color: var(--primary-violet); font-weight: 600; margin-bottom: 12px; }
+        .team-bio { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+        .service-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 32px; transition: transform 0.3s, border-color 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .service-card:hover { transform: translateY(-6px); border-color: var(--primary-blue); }
+        .service-icon { font-size: 2.2rem; margin-bottom: 16px; display: inline-block; background: rgba(255,255,255,0.05); padding: 12px; border-radius: 14px; }
+
+        .jobs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 40px; }
+        .job-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 28px; cursor: pointer; transition: all 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .job-card:hover { transform: translateY(-6px); border-color: var(--primary-violet); box-shadow: 0 12px 30px rgba(139,92,246,0.15); }
+        .job-badge { display: inline-block; background: rgba(139,92,246,0.12); color: var(--primary-violet); font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
+        .job-title { font-size: 1.2rem; font-weight: 700; color: var(--text-white); margin-bottom: 8px; }
+        .job-meta { display: flex; gap: 16px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; flex-wrap: wrap; }
+
+        .job-modal-box { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; max-width: 680px; width: 100%; padding: 40px; position: relative; max-height: 90vh; overflow-y: auto; }
+        .job-req-list { list-style: disc; margin-left: 20px; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6; }
+
     </style>
 </head>
 <body>
@@ -1426,9 +1451,9 @@
             </a>
             
             <ul class="nav-links">
-                <li><a href="modele-multipage.html">Accueil</a></li>
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#about">À Propos</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#expertise">Notre Expertise</a></li>
                 <li><a href="#carrieres">Carrières</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -1443,17 +1468,18 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#features" class="login-link">Fonctionnalités</a>
-        <a href="#pricing" class="login-link">Tarifs</a>
-        <a href="#how-it-works" class="login-link">Intégrations</a>
-        <a href="#" class="login-link">Documentation</a>
+        <a href="#hero" class="login-link">Accueil</a>
+        <a href="#about" class="login-link">À Propos</a>
+        <a href="#services" class="login-link">Services</a>
+        <a href="#carrieres" class="login-link">Carrières</a>
+        <a href="#contact" class="login-link">Contact</a>
         <hr style="border-color: var(--border-color);">
         <a href="#" class="login-link">Se connecter</a>
         <a href="#pricing" class="btn btn-primary" style="text-align: center;">Démarrer</a>
     </div>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-particles">
             <div class="particle"></div>
             <div class="particle"></div>
@@ -1867,6 +1893,260 @@
         </div>
     </section>
 
+    <!-- À Propos Section (#about) -->
+    <section class="multipage-section reveal" id="about">
+        <div class="container">
+            <div class="section-header" style="text-align:center;">
+                <span class="job-badge" style="margin-bottom:12px;">NOTRE HISTOIRE &amp; VISION</span>
+                <h2 class="section-title">Pionniers de l'IA Autonome <span class="text-gradient">pour l'Entreprise</span></h2>
+                <p class="section-subtitle">Fondée en 2024, Aura Corp développe la nouvelle génération d'agents virtuels autonomes pour libérer le potentiel créatif et stratégique des équipes humaines.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="assets/aura_team.jpg" alt="Dr. Alexandre Mercer" class="team-avatar">
+                    <h3 class="team-name">Dr. Alexandre Mercer</h3>
+                    <div class="team-role">CEO &amp; Co-fondateur</div>
+                    <p class="team-bio">Ancien chercheur principal en IA à Polytechnique, spécialisé dans les architectures de modèles fondateurs et la sécurité des agents autonomes.</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="assets/aura_team.jpg" alt="Elena Rostova" class="team-avatar">
+                    <h3 class="team-name">Elena Rostova</h3>
+                    <div class="team-role">VP Artificial Intelligence</div>
+                    <p class="team-bio">Pionnière en apprentissage par renforcement et fine-tuning de LLM, ex-Lead Scientist chez DeepMind Paris.</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="assets/aura_team.jpg" alt="Thomas Benali" class="team-avatar">
+                    <h3 class="team-name">Thomas Benali</h3>
+                    <div class="team-role">Chief Product Officer</div>
+                    <p class="team-bio">12 ans d'expérience dans la création d'interfaces SaaS haute performance et la simplification de workflows complexes.</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="assets/aura_team.jpg" alt="Sarah Jenkins" class="team-avatar">
+                    <h3 class="team-name">Sarah Jenkins</h3>
+                    <div class="team-role">VP Security &amp; Compliance</div>
+                    <p class="team-bio">Experte en cybersécurité cloud, garante des standards SOC2 Type II, ISO 27001 et RGPD sur l'ensemble de notre infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (#services) -->
+    <section class="multipage-section reveal" id="services">
+        <div class="container">
+            <div class="section-header" style="text-align:center;">
+                <span class="job-badge" style="margin-bottom:12px;">NOS EXPERTISES</span>
+                <h2 class="section-title">Des Services IA <span class="text-gradient">Haute Performance</span></h2>
+                <p class="section-subtitle">Découvrez nos 4 piliers d'accompagnement pour accélérer la transformation numérique et l'automatisation de vos processus.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div>
+                        <span class="service-icon">🤖</span>
+                        <h3 style="font-size:1.3rem; font-weight:700; color:#FFF; margin-bottom:12px;">Flotte d'Agents IA Autonomes</h3>
+                        <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:20px;">Conception et déploiement d'agents personnalisés capables d'exécuter des workflows complexes sans supervision, du support client à la finance.</p>
+                    </div>
+                    <button class="btn btn-outline" style="width:100%;" onclick="openModal('signupModal')">Demander une démo →</button>
+                </div>
+
+                <div class="service-card">
+                    <div>
+                        <span class="service-icon">⚡</span>
+                        <h3 style="font-size:1.3rem; font-weight:700; color:#FFF; margin-bottom:12px;">Infrastructure Cloud &amp; Edge Latence &lt;50ms</h3>
+                        <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:20px;">Hébergement dédié souverain et distribué garantissant une exécution haute vitesse et une disponibilité continue de 99.99%.</p>
+                    </div>
+                    <button class="btn btn-outline" style="width:100%;" onclick="openModal('signupModal')">Consulter l'architecture →</button>
+                </div>
+
+                <div class="service-card">
+                    <div>
+                        <span class="service-icon">🧠</span>
+                        <h3 style="font-size:1.3rem; font-weight:700; color:#FFF; margin-bottom:12px;">Fine-Tuning LLM &amp; RAG Avancé</h3>
+                        <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:20px;">Entraînement et spécialisation de grands modèles de langage sur vos données d'entreprise en environnement entièrement étanche.</p>
+                    </div>
+                    <button class="btn btn-outline" style="width:100%;" onclick="openModal('signupModal')">Découvrir le RAG →</button>
+                </div>
+
+                <div class="service-card">
+                    <div>
+                        <span class="service-icon">🔒</span>
+                        <h3 style="font-size:1.3rem; font-weight:700; color:#FFF; margin-bottom:12px;">Audit Sécurité &amp; Gouvernance IA</h3>
+                        <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:20px;">Analyse d'impact, conformité RGPD / AI Act européen et mise en place de barrières de sécurité éthiques inviolables.</p>
+                    </div>
+                    <button class="btn btn-outline" style="width:100%;" onclick="openModal('signupModal')">Réserver un audit →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrières Section (#carrieres) -->
+    <section class="multipage-section reveal" id="carrieres">
+        <div class="container">
+            <div class="section-header" style="text-align:center;">
+                <span class="job-badge" style="margin-bottom:12px;">REJOIGNEZ-NOUS</span>
+                <h2 class="section-title">Postes Ouverts &amp; <span class="text-gradient">Opportunités</span></h2>
+                <p class="section-subtitle">Participez à la construction d'une technologie d'IA pionnière. Cliquez sur une offre pour consulter les détails et postuler en direct.</p>
+            </div>
+
+            <div class="jobs-grid">
+                <!-- Job 1 -->
+                <div class="job-card" onclick="openJobModal(0)">
+                    <div>
+                        <span class="job-badge">R&amp;D • TEMPS PLEIN</span>
+                        <h3 class="job-title">Senior AI Research Engineer</h3>
+                        <div class="job-meta">
+                            <span>📍 Remote / Paris</span>
+                            <span>💰 95k€ - 120k€</span>
+                        </div>
+                        <p style="color:var(--text-muted); font-size:0.9rem;">Conception d'architectures de modèles de langage et d'agents autonomes à haute efficacité quantique.</p>
+                    </div>
+                    <button class="btn btn-outline" style="margin-top:20px; font-size:0.85rem; padding:8px 16px;">Voir l'offre &amp; Postuler →</button>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="job-card" onclick="openJobModal(1)">
+                    <div>
+                        <span class="job-badge">PRODUCT • HYBRIDE</span>
+                        <h3 class="job-title">Principal Product Designer</h3>
+                        <div class="job-meta">
+                            <span>📍 Paris</span>
+                            <span>💰 75k€ - 95k€</span>
+                        </div>
+                        <p style="color:var(--text-muted); font-size:0.9rem;">Développement du design system Aura et des interfaces immersives pour nos tableaux de bord SaaS.</p>
+                    </div>
+                    <button class="btn btn-outline" style="margin-top:20px; font-size:0.85rem; padding:8px 16px;">Voir l'offre &amp; Postuler →</button>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="job-card" onclick="openJobModal(2)">
+                    <div>
+                        <span class="job-badge">DEVOPS • REMOTE</span>
+                        <h3 class="job-title">Lead Cloud DevOps &amp; Security</h3>
+                        <div class="job-meta">
+                            <span>📍 Full Remote</span>
+                            <span>💰 85k€ - 110k€</span>
+                        </div>
+                        <p style="color:var(--text-muted); font-size:0.9rem;">Supervision des clusters Kubernetes multi-régions et maintien de l'isolation zéro-confiance.</p>
+                    </div>
+                    <button class="btn btn-outline" style="margin-top:20px; font-size:0.85rem; padding:8px 16px;">Voir l'offre &amp; Postuler →</button>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="job-card" onclick="openJobModal(3)">
+                    <div>
+                        <span class="job-badge">ENGINEERING • PARIS</span>
+                        <h3 class="job-title">Fullstack Engineer (React / Python)</h3>
+                        <div class="job-meta">
+                            <span>📍 Paris</span>
+                            <span>💰 65k€ - 85k€</span>
+                        </div>
+                        <p style="color:var(--text-muted); font-size:0.9rem;">Implémentation d'APIs GraphQL haute vitesse et intégration continue des agents IA côté web.</p>
+                    </div>
+                    <button class="btn btn-outline" style="margin-top:20px; font-size:0.85rem; padding:8px 16px;">Voir l'offre &amp; Postuler →</button>
+                </div>
+
+                <!-- Job 5 -->
+                <div class="job-card" onclick="openJobModal(4)">
+                    <div>
+                        <span class="job-badge">REVENUE • HYBRIDE</span>
+                        <h3 class="job-title">Customer Success Manager Enterprise</h3>
+                        <div class="job-meta">
+                            <span>📍 Paris</span>
+                            <span>💰 55k€ - 70k€</span>
+                        </div>
+                        <p style="color:var(--text-muted); font-size:0.9rem;">Accompagnement personnalisé des comptes du CAC40 dans le déploiement de leurs flottes d'agents IA.</p>
+                    </div>
+                    <button class="btn btn-outline" style="margin-top:20px; font-size:0.85rem; padding:8px 16px;">Voir l'offre &amp; Postuler →</button>
+                </div>
+
+                <!-- Job 6 -->
+                <div class="job-card" onclick="openJobModal(5)">
+                    <div>
+                        <span class="job-badge">COMMUNITY • REMOTE</span>
+                        <h3 class="job-title">Technical Writer &amp; AI Evangelist</h3>
+                        <div class="job-meta">
+                            <span>📍 Full Remote</span>
+                            <span>💰 50k€ - 65k€</span>
+                        </div>
+                        <p style="color:var(--text-muted); font-size:0.9rem;">Rédaction de la documentation SDK officielle, articles de blog techniques et animation de la communauté.</p>
+                    </div>
+                    <button class="btn btn-outline" style="margin-top:20px; font-size:0.85rem; padding:8px 16px;">Voir l'offre &amp; Postuler →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (#contact) -->
+    <section class="multipage-section reveal" id="contact">
+        <div class="container">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:48px; align-items:center;">
+                <div>
+                    <span class="job-badge" style="margin-bottom:12px;">PRENONS CONTACT</span>
+                    <h2 class="section-title" style="margin-bottom:16px;">Parlons de votre <span class="text-gradient">Projet IA</span></h2>
+                    <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.6; margin-bottom:32px;">Nos experts et directeurs de projets vous accompagnent pour définir le meilleur plan d'action.</p>
+
+                    <div style="display:flex; flex-direction:column; gap:20px;">
+                        <div style="display:flex; align-items:center; gap:16px;">
+                            <div style="width:48px; height:48px; border-radius:12px; background:rgba(139,92,246,0.1); border:1px solid var(--border-color); display:flex; align-items:center; justify-content:center; font-size:1.3rem;">📍</div>
+                            <div>
+                                <div style="font-weight:700; color:#FFF;">Siège Social</div>
+                                <div style="color:var(--text-muted); font-size:0.9rem;">124 Avenue des Champs-Élysées, 75008 Paris</div>
+                            </div>
+                        </div>
+
+                        <div style="display:flex; align-items:center; gap:16px;">
+                            <div style="width:48px; height:48px; border-radius:12px; background:rgba(59,130,246,0.1); border:1px solid var(--border-color); display:flex; align-items:center; justify-content:center; font-size:1.3rem;">✉️</div>
+                            <div>
+                                <div style="font-weight:700; color:#FFF;">Email Direct</div>
+                                <div style="color:var(--text-muted); font-size:0.9rem;">contact@auracorp.ai • support@auracorp.ai</div>
+                            </div>
+                        </div>
+
+                        <div style="display:flex; align-items:center; gap:16px;">
+                            <div style="width:48px; height:48px; border-radius:12px; background:rgba(16,185,129,0.1); border:1px solid var(--border-color); display:flex; align-items:center; justify-content:center; font-size:1.3rem;">📞</div>
+                            <div>
+                                <div style="font-weight:700; color:#FFF;">Téléphone</div>
+                                <div style="color:var(--text-muted); font-size:0.9rem;">+33 (0)1 89 45 60 00 (Du lun au ven, 9h-18h)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:24px; padding:36px;">
+                    <h3 style="font-size:1.3rem; font-weight:700; color:#FFF; margin-bottom:16px;">Envoyer un message</h3>
+                    <form onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label">Nom complet</label>
+                            <input type="text" class="form-input" required placeholder="Sophie Martin">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email professionnel</label>
+                            <input type="email" class="form-input" required placeholder="sophie@entreprise.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Sujet de votre demande</label>
+                            <select class="form-input">
+                                <option>Déploiement d'Agents IA sur-mesure</option>
+                                <option>Demande de Devis Enterprise</option>
+                                <option>Partenariat Technique &amp; Intégration</option>
+                                <option>Autre question</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Votre message</label>
+                            <textarea class="form-input" style="height:100px; resize:none;" required placeholder="Décrivez votre besoin ou votre projet..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%;">Transmettre ma demande →</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -2077,10 +2357,176 @@ const agent = await client.agents.create({
 console.log(`Agent ${agent.id} déployé !`);
             </div>
         </div>
+    <!-- Career / Offres d'Emploi Modal (#jobModal) -->
+    <div class="modal-overlay" id="jobModal">
+        <div class="job-modal-box">
+            <button class="modal-close" onclick="closeJobModal()">&times;</button>
+            <div id="jobModalContent">
+                <span class="job-badge" id="modalJobBadge">R&amp;D • TEMPS PLEIN</span>
+                <h3 class="modal-title" id="modalJobTitle" style="font-size:1.6rem; margin-top:6px;">Senior AI Research Engineer</h3>
+                
+                <div class="job-meta" style="margin-top:10px; margin-bottom:20px;">
+                    <span id="modalJobLocation">📍 Remote / Paris</span>
+                    <span id="modalJobSalary">💰 95k€ - 120k€</span>
+                </div>
+
+                <div style="border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); padding:16px 0; margin-bottom:20px;">
+                    <h4 style="font-size:0.95rem; font-weight:700; color:#FFF; margin-bottom:8px;">Description du poste</h4>
+                    <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6;" id="modalJobDesc"></p>
+                </div>
+
+                <div style="margin-bottom:20px;">
+                    <h4 style="font-size:0.95rem; font-weight:700; color:#FFF; margin-bottom:8px;">Responsabilités Clés</h4>
+                    <ul class="job-req-list" id="modalJobResponsibilities"></ul>
+                </div>
+
+                <!-- Application Form -->
+                <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-color); border-radius:16px; padding:24px; margin-top:24px;">
+                    <h4 style="font-size:1.1rem; font-weight:700; color:#FFF; margin-bottom:16px;">Postuler à cette offre</h4>
+                    <form id="jobAppForm" onsubmit="submitJobApplication(event)">
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                            <div class="form-group">
+                                <label class="form-label">Nom complet</label>
+                                <input type="text" class="form-input" required placeholder="Jean Dupont">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email professionnel</label>
+                                <input type="email" class="form-input" required placeholder="jean@exemple.com">
+                            </div>
+                        </div>
+
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                            <div class="form-group">
+                                <label class="form-label">Lien Profil (LinkedIn / GitHub)</label>
+                                <input type="url" class="form-input" required placeholder="https://linkedin.com/in/...">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Téléphone</label>
+                                <input type="tel" class="form-input" placeholder="+33 6 12 34 56 78">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Pourquoi souhaitez-vous nous rejoindre ?</label>
+                            <textarea class="form-input" style="height:80px; resize:none;" required placeholder="Expliquez brièvement vos motivations..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width:100%;">Envoyer ma candidature →</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->
     <script>
+        // Jobs Data & Modal Handlers
+        const jobsData = [
+            {
+                badge: "R&D • TEMPS PLEIN",
+                title: "Senior AI Research Engineer",
+                location: "📍 Remote / Paris",
+                salary: "💰 95k€ - 120k€",
+                desc: "En tant que Senior AI Research Engineer, vous ferez partie de notre laboratoire R&D pionnier et travaillerez directement sur l'optimisation des architectures d'agents autonomes et le fine-tuning distribué.",
+                responsibilities: [
+                    "Concevoir et entraîner des modèles de fondation spécialisés pour l'exécution d'actions complexes.",
+                    "Optimiser la latence d'inférence RAG et réduire le coût en jetons par requête de 40%.",
+                    "Collaborer avec l'équipe de sécurité pour implémenter des garde-fous déterministes sur les outputs LLM."
+                ]
+            },
+            {
+                badge: "PRODUCT • HYBRIDE",
+                title: "Principal Product Designer",
+                location: "📍 Paris (Hybride)",
+                salary: "💰 75k€ - 95k€",
+                desc: "Vous dirigerez l'expérience utilisateur et la vision produit visuelle d'Aura Corp. Vous définirez le Design System et imaginerez des micro-interactions intuitives pour piloter des flottes d'agents virtuels.",
+                responsibilities: [
+                    "Maintenir et faire évoluer notre Design System global sous Figma et TailwindCSS.",
+                    "Mener des tests utilisateurs avec des directeurs informatiques et équipes opérationnelles.",
+                    "Créer des maquettes et prototypes haute-fidélité pour les fonctionnalités d'analytics et d'export."
+                ]
+            },
+            {
+                badge: "DEVOPS • REMOTE",
+                title: "Lead Cloud DevOps & Security",
+                location: "📍 Full Remote",
+                salary: "💰 85k€ - 110k€",
+                desc: "Vous garantirez la résilience, la scalabilité et la sécurité de notre infrastructure distributed multi-cloud (AWS/GCP/Azure) gérant plusieurs millions d'appels API par jour.",
+                responsibilities: [
+                    "Maintenir les clusters Kubernetes et les pipelines de déploiement continu automatisés.",
+                    "Garantir le respect strict des certifications SOC2 Type II, ISO 27001 et la conformité RGPD.",
+                    "Mettre en place des sondes de monitoring temps réel et réduire la latence API à moins de 30ms."
+                ]
+            },
+            {
+                badge: "ENGINEERING • PARIS",
+                title: "Fullstack Engineer (React / Python)",
+                location: "📍 Paris",
+                salary: "💰 65k€ - 85k€",
+                desc: "Vous développerez les fonctionnalités cœur de notre application web SaaS et participerez à la mise en œuvre de nos SDKs et intégrations temps réel.",
+                responsibilities: [
+                    "Développer des composants web réutilisables et performants avec React et WebSockets.",
+                    "Construire des API REST / GraphQL hautement sécurisées avec FastAPI et PostgreSQL.",
+                    "Écrire des tests unitaires et d'intégration automatisés garantissant 95%+ de couverture."
+                ]
+            },
+            {
+                badge: "REVENUE • HYBRIDE",
+                title: "Customer Success Manager Enterprise",
+                location: "📍 Paris",
+                salary: "💰 55k€ - 70k€",
+                desc: "Vous serez l'interlocuteur privilégié de nos clients Grands Comptes pour assurer une intégration fluide, une adoption rapide et un ROI mesurable d'Aura Corp.",
+                responsibilities: [
+                    "Piloter l'onboarding technique et la conduite du changement auprès de plus de 20 comptes stratégiques.",
+                    "Analyser les métriques d'utilisation et proposer des optimisations de workflows IA sur-mesure.",
+                    "Garantir un taux de renouvellement et de satisfaction client (NPS) supérieur à 90%."
+                ]
+            },
+            {
+                badge: "COMMUNITY • REMOTE",
+                title: "Technical Writer & AI Evangelist",
+                location: "📍 Full Remote",
+                salary: "💰 50k€ - 65k€",
+                desc: "Vous serez la voix technique d'Aura Corp auprès de la communauté de développeurs et d'entreprises. Vous publierez des guides d'intégration, tutoriels et documentation API.",
+                responsibilities: [
+                    "Rédiger une documentation claire, des exemples de code et des guides de démarrage rapide.",
+                    "Animer notre serveur Discord et participer aux conférences IA majeures en Europe.",
+                    "Collaborer avec les ingénieurs pour documenter chaque nouvelle mise à jour de l'API."
+                ]
+            }
+        ];
+
+        function openJobModal(index) {
+            const data = jobsData[index];
+            if (!data) return;
+            document.getElementById('modalJobBadge').textContent = data.badge;
+            document.getElementById('modalJobTitle').textContent = data.title;
+            document.getElementById('modalJobLocation').textContent = data.location;
+            document.getElementById('modalJobSalary').textContent = data.salary;
+            document.getElementById('modalJobDesc').textContent = data.desc;
+
+            const respList = document.getElementById('modalJobResponsibilities');
+            respList.innerHTML = data.responsibilities.map(r => `<li>${r}</li>`).join('');
+
+            document.getElementById('jobModal').classList.add('active');
+        }
+
+        function closeJobModal() {
+            document.getElementById('jobModal').classList.remove('active');
+        }
+
+        function submitJobApplication(e) {
+            e.preventDefault();
+            closeJobModal();
+            showToast('🎉 Candidature transmise avec succès ! Notre équipe RH vous recontactera sous 48h.');
+            document.getElementById('jobAppForm').reset();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast('✉️ Message envoyé ! Notre équipe commerciale vous répondra dans les plus brefs délais.');
+            e.target.reset();
+        }
 
         // --- Interactions & Modals JS ---
         

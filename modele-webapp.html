@@ -1411,6 +1411,69 @@
             opacity: 1;
         }
 
+        /* Interactive Dashboard Styles */
+        .dash-controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .dash-time-btn {
+            background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-muted);
+            padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .dash-time-btn.active, .dash-time-btn:hover {
+            background: var(--gradient-primary); color: white; border-color: transparent; box-shadow: 0 4px 14px rgba(139,92,246,0.35);
+        }
+        .notif-bell-btn {
+            position: relative; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color);
+            color: var(--text-white); width: 42px; height: 42px; border-radius: 50%; display: inline-flex;
+            align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; transition: all 0.2s;
+        }
+        .notif-bell-btn:hover { background: rgba(255,255,255,0.15); transform: scale(1.05); }
+        .notif-badge {
+            position: absolute; top: -2px; right: -2px; background: #EF4444; color: white;
+            font-size: 0.7rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; border: 2px solid var(--bg-black);
+        }
+        .notif-item {
+            padding: 16px; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color);
+            margin-bottom: 12px; transition: all 0.2s;
+        }
+        .notif-item.unread { border-left: 4px solid var(--primary-violet); background: rgba(139,92,246,0.08); }
+        .notif-item:hover { background: rgba(255,255,255,0.06); }
+        .notif-title { font-weight: 700; font-size: 0.9rem; color: var(--text-white); margin-bottom: 4px; display: flex; justify-content: space-between; }
+        .notif-time { font-size: 0.75rem; color: var(--text-muted); font-weight: normal; }
+        .notif-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+
+        .interactive-mockup {
+            width: 100%; background: var(--bg-card); border-radius: 24px; border: 1px solid var(--border-color);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7); overflow: hidden; display: flex; flex-direction: column; text-align: left;
+        }
+        .dash-topbar {
+            padding: 18px 24px; border-bottom: 1px solid var(--border-color); background: rgba(255,255,255,0.02);
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+        }
+        .dash-kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; padding: 24px; }
+        .dash-kpi-card {
+            background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .dash-kpi-card:hover { transform: translateY(-3px); border-color: rgba(139,92,246,0.4); }
+        .dash-kpi-title { font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 8px; }
+        .dash-kpi-val { font-size: 1.8rem; font-weight: 800; color: var(--text-white); margin-bottom: 4px; transition: all 0.3s; }
+        .dash-kpi-trend { font-size: 0.8rem; font-weight: 600; color: var(--primary-emerald); }
+
+        .dash-chart-container { padding: 0 24px 24px; }
+        .dash-chart-box {
+            background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 16px; padding: 24px; position: relative;
+        }
+        .chart-svg { width: 100%; height: 180px; overflow: visible; }
+        .chart-polyline { fill: none; stroke: url(#chartGradient); stroke-width: 3; transition: all 0.5s ease; }
+        .chart-area { fill: url(#chartAreaGradient); opacity: 0.25; transition: all 0.5s ease; }
+        .chart-labels { display: flex; justify-content: space-between; margin-top: 12px; color: var(--text-muted); font-size: 0.8rem; font-weight: 600; }
+
+        .export-option-card {
+            background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px;
+            cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 12px;
+        }
+        .export-option-card:hover, .export-option-card.selected { border-color: var(--primary-violet); background: rgba(139,92,246,0.1); }
+
     </style>
 </head>
 <body>
@@ -1433,6 +1496,9 @@
             </ul>
             
             <div class="nav-actions">
+                <button class="notif-bell-btn" onclick="toggleNotifDrawer()" title="Notifications">
+                    🔔 <span class="notif-badge" id="navNotifBadge">2</span>
+                </button>
                 <a href="#" class="login-link">Se connecter</a>
                 <a href="#pricing" class="btn btn-primary">Démarrer</a>
                 <button class="mobile-toggle" id="mobileToggle">☰</button>
@@ -1476,17 +1542,86 @@
                 <a href="#features" class="btn btn-outline">Voir la démo</a>
             </div>
 
-            <!-- Dashboard Mockup -->
+            <!-- Live Interactive Dashboard -->
             <div class="mockup-container reveal" style="transition-delay: 400ms;">
-                <div class="dashboard-stat stat-1">
-                    <div class="stat-value">+247%</div>
-                    <div class="stat-desc">Productivité</div>
+                <div class="interactive-mockup">
+                    <div class="dash-topbar">
+                        <div style="display:flex; align-items:center; gap:12px;">
+                            <div style="width:12px; height:12px; border-radius:50%; background:#10B981; box-shadow:0 0 10px #10B981;"></div>
+                            <span style="font-weight:700; font-size:0.95rem; color:var(--text-white);">Aura Executive Dashboard</span>
+                            <span style="background:rgba(139,92,246,0.15); color:var(--primary-violet); border:1px solid rgba(139,92,246,0.3); padding:2px 10px; border-radius:20px; font-size:0.75rem; font-weight:700;">PROD • LIVE</span>
+                        </div>
+                        
+                        <div class="dash-controls">
+                            <div style="display:flex; background:rgba(0,0,0,0.4); padding:3px; border-radius:22px; border:1px solid var(--border-color);">
+                                <button class="dash-time-btn active" onclick="updateDashboardStats('7d', this)">7 jours</button>
+                                <button class="dash-time-btn" onclick="updateDashboardStats('30d', this)">30 jours</button>
+                                <button class="dash-time-btn" onclick="updateDashboardStats('12m', this)">12 mois</button>
+                            </div>
+
+                            <button class="btn btn-outline" style="padding:6px 14px; font-size:0.82rem;" onclick="openExportModal()">
+                                📊 Exporter Rapport
+                            </button>
+
+                            <button class="notif-bell-btn" onclick="toggleNotifDrawer()" title="Notifications">
+                                🔔 <span class="notif-badge" id="dashNotifBadge">2</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- KPI Stat Cards -->
+                    <div class="dash-kpi-grid">
+                        <div class="dash-kpi-card">
+                            <div class="dash-kpi-title">Revenu Global</div>
+                            <div class="dash-kpi-val" id="kpiRevenue">48 250 €</div>
+                            <div class="dash-kpi-trend" id="kpiRevenueTrend">↗ +12.4% vs période précédente</div>
+                        </div>
+
+                        <div class="dash-kpi-card">
+                            <div class="dash-kpi-title">Taux de Conversion</div>
+                            <div class="dash-kpi-val" id="kpiConversions">3.42%</div>
+                            <div class="dash-kpi-trend" id="kpiConversionsTrend">↗ +0.8% vs période précédente</div>
+                        </div>
+
+                        <div class="dash-kpi-card">
+                            <div class="dash-kpi-title">Utilisateurs Actifs</div>
+                            <div class="dash-kpi-val" id="kpiUsers">1 240</div>
+                            <div class="dash-kpi-trend" id="kpiUsersTrend">↗ +8.1% vs période précédente</div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Chart Box -->
+                    <div class="dash-chart-container">
+                        <div class="dash-chart-box">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
+                                <div>
+                                    <h4 style="font-size:0.95rem; font-weight:700; color:var(--text-white);">Activité et Performance en Temps Réel</h4>
+                                    <p style="font-size:0.8rem; color:var(--text-muted);" id="chartPeriodSubtitle">Aperçu des 7 derniers jours d'activité</p>
+                                </div>
+                                <span style="font-size:0.8rem; color:var(--primary-emerald); font-weight:700;">● Latence API: 24ms</span>
+                            </div>
+
+                            <svg class="chart-svg" viewBox="0 0 500 150">
+                                <defs>
+                                    <linearGradient id="chartGradient" x1="0" y1="0" x2="1" y2="0">
+                                        <stop offset="0%" stop-color="#8B5CF6"/>
+                                        <stop offset="100%" stop-color="#3B82F6"/>
+                                    </linearGradient>
+                                    <linearGradient id="chartAreaGradient" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.4"/>
+                                        <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                                <polygon id="chartArea" class="chart-area" points="0,150 0,90 80,70 160,110 240,40 320,65 400,25 500,50 500,150" />
+                                <polyline id="chartPolyline" class="chart-polyline" points="0,90 80,70 160,110 240,40 320,65 400,25 500,50" />
+                            </svg>
+
+                            <div class="chart-labels" id="chartLabels">
+                                <span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="dashboard-stat stat-2">
-                    <div class="stat-value">2.4s</div>
-                    <div class="stat-desc">Temps de réponse</div>
-                </div>
-                <img src="assets/saas_dashboard_mockup.jpg" class="mockup" alt="SaaS Dashboard Interface" style="object-fit: cover; width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); display: block;" />
             </div>
         </div>
     </section>
@@ -2069,12 +2204,239 @@ const agent = await client.agents.create({
   instructions: 'Répondre aux questions clients.'
 });
 console.log(`Agent ${agent.id} déployé !`);
+    <!-- Export Report Modal (#exportModal) -->
+    <div class="modal-overlay" id="exportModal">
+        <div class="modal-container" style="max-width:520px;">
+            <button class="modal-close" onclick="closeExportModal()">&times;</button>
+            <h3 class="modal-title">📊 Exporter le Rapport</h3>
+            <p class="modal-desc">Sélectionnez le format et les métriques à inclure dans votre export.</p>
+
+            <form id="exportForm" onsubmit="executeExportReport(event)">
+                <div class="form-group">
+                    <label class="form-label">Format de fichier</label>
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
+                        <div class="export-option-card selected" id="fmt-csv" onclick="selectExportFormat(this, 'CSV')">
+                            <span>📄</span> <strong>CSV</strong>
+                        </div>
+                        <div class="export-option-card" id="fmt-pdf" onclick="selectExportFormat(this, 'PDF')">
+                            <span>📕</span> <strong>PDF</strong>
+                        </div>
+                        <div class="export-option-card" id="fmt-excel" onclick="selectExportFormat(this, 'Excel')">
+                            <span>📊</span> <strong>Excel</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top:16px;">
+                    <label class="form-label">Période d'analyse</label>
+                    <select class="form-input" id="exportPeriodSelect">
+                        <option value="7d">7 derniers jours</option>
+                        <option value="30d" selected>30 derniers jours</option>
+                        <option value="12m">12 derniers mois</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Métriques à inclure</label>
+                    <div style="display:flex; flex-direction:column; gap:8px; font-size:0.88rem; color:var(--text-muted);">
+                        <label style="display:flex; align-items:center; gap:8px; cursor:pointer;"><input type="checkbox" checked> Chiffre d'affaires &amp; Transactions</label>
+                        <label style="display:flex; align-items:center; gap:8px; cursor:pointer;"><input type="checkbox" checked> Taux de conversion &amp; Cohortes</label>
+                        <label style="display:flex; align-items:center; gap:8px; cursor:pointer;"><input type="checkbox" checked> Activité des utilisateurs &amp; Latence API</label>
+                        <label style="display:flex; align-items:center; gap:8px; cursor:pointer;"><input type="checkbox"> Logs détaillés des Agents IA</label>
+                    </div>
+                </div>
+
+                <div id="exportProgress" style="display:none; margin-bottom:16px; margin-top:16px;">
+                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:var(--text-muted); margin-bottom:4px;">
+                        <span>Génération du fichier en cours...</span>
+                        <span id="exportPercent">0%</span>
+                    </div>
+                    <div style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
+                        <div id="exportProgressBar" style="width:0%; height:100%; background:var(--gradient-primary); transition:width 0.2s;"></div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:12px;">Générer &amp; Télécharger ↓</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Drawer (#notifDrawer) -->
+    <div class="drawer-overlay" id="notifOverlay" onclick="toggleNotifDrawer()"></div>
+    <div class="drawer" id="notifDrawer">
+        <div class="drawer-header">
+            <div>
+                <h3 class="modal-title" style="margin:0; font-size:1.25rem;">Notifications</h3>
+                <span style="font-size:0.8rem; color:var(--text-muted);" id="notifSubtext">2 notifications non lues</span>
+            </div>
+            <button class="modal-close" style="position:static;" onclick="toggleNotifDrawer()">&times;</button>
+        </div>
+        <div class="drawer-body">
+            <div style="display:flex; justify-content:space-between; margin-bottom:16px;">
+                <button style="background:none; border:none; color:var(--primary-violet); font-size:0.85rem; font-weight:600; cursor:pointer;" onclick="markAllNotifsRead()">✓ Marquer tout comme lu</button>
+                <button style="background:none; border:none; color:var(--text-muted); font-size:0.85rem; cursor:pointer;" onclick="clearAllNotifs()">Vider</button>
+            </div>
+
+            <div id="notifList">
+                <div class="notif-item unread">
+                    <div class="notif-title">
+                        <span>💳 Nouveau paiement reçu</span>
+                        <span class="notif-time">Il y a 5 min</span>
+                    </div>
+                    <div class="notif-desc">Abonnement Plan Pro renouvelé pour 79.00€ par Acme Corp.</div>
+                </div>
+
+                <div class="notif-item unread">
+                    <div class="notif-title">
+                        <span>🤖 Agent IA V2 Déployé</span>
+                        <span class="notif-time">Il y a 2h</span>
+                    </div>
+                    <div class="notif-desc">L'agent Support Bot V2 est désormais actif sur le cluster principal avec 99.8% de succès.</div>
+                </div>
+
+                <div class="notif-item">
+                    <div class="notif-title">
+                        <span>📈 Rapport Hebdomadaire</span>
+                        <span class="notif-time">Hier</span>
+                    </div>
+                    <div class="notif-desc">Votre rapport de performance hebdomadaire est prêt à être consulté ou exporté.</div>
+                </div>
+
+                <div class="notif-item">
+                    <div class="notif-title">
+                        <span>🔒 Audit SOC2 Validé</span>
+                        <span class="notif-time">Il y a 2 jours</span>
+                    </div>
+                    <div class="notif-desc">Le contrôle de sécurité automatique n'a détecté aucune vulnérabilité critique.</div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Scripts -->
     <script>
+
+        // Interactive Dashboard Logic
+        let currentSelectedExportFormat = 'CSV';
+
+        function updateDashboardStats(period, btn) {
+            document.querySelectorAll('.dash-time-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            const kpiRev = document.getElementById('kpiRevenue');
+            const kpiRevTrend = document.getElementById('kpiRevenueTrend');
+            const kpiConv = document.getElementById('kpiConversions');
+            const kpiConvTrend = document.getElementById('kpiConversionsTrend');
+            const kpiUsers = document.getElementById('kpiUsers');
+            const kpiUsersTrend = document.getElementById('kpiUsersTrend');
+            const chartSubtitle = document.getElementById('chartPeriodSubtitle');
+            const chartPolyline = document.getElementById('chartPolyline');
+            const chartArea = document.getElementById('chartArea');
+            const chartLabels = document.getElementById('chartLabels');
+
+            if (period === '7d') {
+                kpiRev.textContent = '48 250 €';
+                kpiRevTrend.textContent = '↗ +12.4% vs période précédente';
+                kpiConv.textContent = '3.42%';
+                kpiConvTrend.textContent = '↗ +0.8% vs période précédente';
+                kpiUsers.textContent = '1 240';
+                kpiUsersTrend.textContent = '↗ +8.1% vs période précédente';
+                chartSubtitle.textContent = "Aperçu des 7 derniers jours d'activité";
+                chartPolyline.setAttribute('points', '0,90 80,70 160,110 240,40 320,65 400,25 500,50');
+                chartArea.setAttribute('points', '0,150 0,90 80,70 160,110 240,40 320,65 400,25 500,50 500,150');
+                chartLabels.innerHTML = '<span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span>';
+            } else if (period === '30d') {
+                kpiRev.textContent = '184 900 €';
+                kpiRevTrend.textContent = '↗ +24.7% vs période précédente';
+                kpiConv.textContent = '4.18%';
+                kpiConvTrend.textContent = '↗ +1.4% vs période précédente';
+                kpiUsers.textContent = '8 450';
+                kpiUsersTrend.textContent = '↗ +18.3% vs période précédente';
+                chartSubtitle.textContent = "Aperçu des 30 derniers jours (par semaine)";
+                chartPolyline.setAttribute('points', '0,110 80,80 160,60 240,75 320,35 400,45 500,20');
+                chartArea.setAttribute('points', '0,150 0,110 80,80 160,60 240,75 320,35 400,45 500,20 500,150');
+                chartLabels.innerHTML = '<span>Semaine 1</span><span>Semaine 2</span><span>Semaine 3</span><span>Semaine 4</span>';
+            } else if (period === '12m') {
+                kpiRev.textContent = '2 140 500 €';
+                kpiRevTrend.textContent = '↗ +45.2% vs période précédente';
+                kpiConv.textContent = '5.65%';
+                kpiConvTrend.textContent = '↗ +2.9% vs période précédente';
+                kpiUsers.textContent = '94 200';
+                kpiUsersTrend.textContent = '↗ +34.0% vs période précédente';
+                chartSubtitle.textContent = "Aperçu annuel consolidé (12 mois)";
+                chartPolyline.setAttribute('points', '0,130 80,100 160,85 240,55 320,40 400,30 500,15');
+                chartArea.setAttribute('points', '0,150 0,130 80,100 160,85 240,55 320,40 400,30 500,15 500,150');
+                chartLabels.innerHTML = '<span>Jan</span><span>Mar</span><span>Mai</span><span>Juil</span><span>Sep</span><span>Nov</span>';
+            }
+        }
+
+        // Notification Drawer Logic (#notifDrawer)
+        function toggleNotifDrawer() {
+            const drawer = document.getElementById('notifDrawer');
+            const overlay = document.getElementById('notifOverlay');
+            const isActive = drawer.classList.contains('active');
+            if (isActive) {
+                drawer.classList.remove('active');
+                overlay.classList.remove('active');
+            } else {
+                drawer.classList.add('active');
+                overlay.classList.add('active');
+            }
+        }
+
+        function markAllNotifsRead() {
+            document.querySelectorAll('.notif-item').forEach(item => item.classList.remove('unread'));
+            const dashBadge = document.getElementById('dashNotifBadge');
+            const navBadge = document.getElementById('navNotifBadge');
+            if (dashBadge) dashBadge.style.display = 'none';
+            if (navBadge) navBadge.style.display = 'none';
+            document.getElementById('notifSubtext').textContent = 'Toutes les notifications sont lues';
+            showToast('✓ Toutes les notifications ont été marquées comme lues.');
+        }
+
+        function clearAllNotifs() {
+            document.getElementById('notifList').innerHTML = '<div style="text-align:center; padding:40px; color:var(--text-muted);">Aucune notification.</div>';
+            markAllNotifsRead();
+        }
+
+        // Export Report Modal Logic (#exportModal)
+        function openExportModal() {
+            document.getElementById('exportModal').classList.add('active');
+        }
+
+        function closeExportModal() {
+            document.getElementById('exportModal').classList.remove('active');
+            document.getElementById('exportProgress').style.display = 'none';
+            document.getElementById('exportProgressBar').style.width = '0%';
+        }
+
+        function selectExportFormat(card, fmt) {
+            document.querySelectorAll('.export-option-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            currentSelectedExportFormat = fmt;
+        }
+
+        function executeExportReport(e) {
+            e.preventDefault();
+            const progressBox = document.getElementById('exportProgress');
+            const progressBar = document.getElementById('exportProgressBar');
+            const progressPercent = document.getElementById('exportPercent');
+            
+            progressBox.style.display = 'block';
+            let pct = 0;
+            const interval = setInterval(() => {
+                pct += 25;
+                progressBar.style.width = pct + '%';
+                progressPercent.textContent = pct + '%';
+                if (pct >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        closeExportModal();
+                        showToast(`📊 Rapport ${currentSelectedExportFormat} généré et téléchargé avec succès !`);
+                    }, 400);
+                }
+            }, 250);
+        }
 
         // --- Interactions & Modals JS ---
         

@@ -7,20 +7,22 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>Le Journal du Digital | High-Tech, IA &amp; Business</title>
+    <title>Le Journal du Digital | High-Tech, IA, Design &amp; Business</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --bg-white: #FFFFFF;
             --bg-offwhite: #F8FAFC;
+            --bg-card: #FFFFFF;
             --text-dark: #0F172A;
             --text-muted: #475569;
             --accent-blue: #2563EB;
+            --accent-blue-light: #EFF6FF;
             --border-color: #E2E8F0;
             --nav-height: 80px;
         }
@@ -51,14 +53,22 @@
         .logo { font-family: 'Lora', serif; font-size: 1.6rem; font-weight: 700; color: var(--text-dark); text-decoration: none; }
         .logo span { color: var(--accent-blue); }
         .nav-links { display: flex; gap: 32px; list-style: none; }
-        .nav-links a { color: var(--text-dark); text-decoration: none; font-size: 0.95rem; font-weight: 600; }
+        .nav-links a { color: var(--text-dark); text-decoration: none; font-size: 0.95rem; font-weight: 600; transition: color 0.2s; }
         .nav-links a:hover { color: var(--accent-blue); }
 
         .btn-black {
             background: var(--text-dark); color: #FFF !important; font-weight: 600;
             padding: 10px 24px; border-radius: 50px; border: none; cursor: pointer; transition: all 0.3s;
+            font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
         }
-        .btn-black:hover { background: var(--accent-blue); }
+        .btn-black:hover { background: var(--accent-blue); transform: translateY(-1px); }
+
+        .btn-blue {
+            background: var(--accent-blue); color: #FFF !important; font-weight: 600;
+            padding: 10px 24px; border-radius: 50px; border: none; cursor: pointer; transition: all 0.3s;
+            font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+        }
+        .btn-blue:hover { background: #1D4ED8; transform: translateY(-1px); }
 
         /* Featured Article Hero */
         .featured-hero {
@@ -67,47 +77,140 @@
         }
         .featured-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
         .featured-badge {
-            display: inline-block; padding: 4px 12px; border-radius: 4px;
-            background: rgba(37, 99, 235, 0.1); color: var(--accent-blue);
-            font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 16px;
+            display: inline-block; padding: 4px 12px; border-radius: 6px;
+            background: var(--accent-blue-light); color: var(--accent-blue);
+            font-size: 0.78rem; font-weight: 800; text-transform: uppercase; margin-bottom: 16px; letter-spacing: 0.5px;
         }
-        .featured-title { font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.25; margin-bottom: 16px; color: var(--text-dark); }
-        .featured-desc { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 24px; }
-        .featured-meta { display: flex; gap: 16px; font-size: 0.88rem; color: var(--text-muted); font-weight: 500; }
-        .featured-img { width: 100%; height: 360px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .featured-title { font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.25; margin-bottom: 16px; color: var(--text-dark); font-weight: 700; }
+        .featured-desc { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 24px; line-height: 1.6; }
+        .featured-meta { display: flex; gap: 16px; font-size: 0.88rem; color: var(--text-muted); font-weight: 500; align-items: center; flex-wrap: wrap; }
+        .featured-img { width: 100%; height: 360px; object-fit: cover; border-radius: 18px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); transition: transform 0.3s; }
+        .featured-hero:hover .featured-img { transform: scale(1.01); }
+
+        /* Filter & Search Bar */
+        .filter-section { padding-top: 50px; }
+        .search-filter-wrapper { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 36px; }
+        
+        .search-box { position: relative; min-width: 320px; flex: 1; max-width: 450px; }
+        .search-input {
+            width: 100%; padding: 12px 20px 12px 44px; border-radius: 50px;
+            border: 1px solid var(--border-color); background: var(--bg-white);
+            font-size: 0.92rem; font-family: inherit; transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .search-input:focus { outline: none; border-color: var(--accent-blue); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+        .search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+
+        .category-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+        .category-pill {
+            padding: 8px 18px; border-radius: 50px; border: 1px solid var(--border-color);
+            background: var(--bg-white); color: var(--text-muted); font-size: 0.86rem; font-weight: 600;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .category-pill.active, .category-pill:hover { background: var(--text-dark); color: #FFF; border-color: var(--text-dark); }
 
         /* Articles Grid Section */
-        .section { padding: 80px 0; }
-        .section-header { margin-bottom: 40px; display: flex; justify-content: space-between; align-items: flex-end; }
-        .section-title { font-size: 2rem; }
-
+        .section { padding-bottom: 80px; }
         .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 36px; }
         .article-card {
-            background: var(--bg-white); border-radius: 12px; overflow: hidden;
-            border: 1px solid var(--border-color); transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--bg-card); border-radius: 16px; overflow: hidden;
+            border: 1px solid var(--border-color); transition: all 0.3s ease;
+            display: flex; flex-direction: column; cursor: pointer;
         }
-        .article-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
-        .article-img { width: 100%; height: 200px; object-fit: cover; }
-        .article-body { padding: 24px; }
-        .article-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; line-height: 1.35; color: var(--text-dark); }
-        .article-desc { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 16px; }
+        .article-card:hover { transform: translateY(-6px); box-shadow: 0 16px 35px rgba(0,0,0,0.08); border-color: var(--accent-blue); }
+        .article-img-wrapper { height: 210px; overflow: hidden; width: 100%; position: relative; }
+        .article-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .article-card:hover .article-img { transform: scale(1.06); }
+        .article-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+        .article-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; line-height: 1.35; color: var(--text-dark); }
+        .article-desc { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; line-clamp: 2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+        /* Reader Modal */
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(8px);
+            z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px;
+            overflow-y: auto;
+        }
+        .modal-overlay.active { display: flex; animation: fadeIn 0.25s ease; }
+        
+        .modal-box {
+            background: var(--bg-white); border-radius: 24px; max-width: 860px; width: 100%;
+            max-height: 90vh; overflow-y: auto; position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+            margin: auto; border: 1px solid var(--border-color);
+        }
+        .modal-close {
+            position: absolute; top: 20px; right: 20px; background: #F1F5F9;
+            border: none; color: var(--text-dark); font-size: 1.2rem; cursor: pointer; width: 38px; height: 38px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10;
+            transition: all 0.2s;
+        }
+        .modal-close:hover { background: #E2E8F0; transform: rotate(90deg); }
+
+        .takeaways-box {
+            background: #F0Fdf4; border: 1px solid #BBF7D0; border-radius: 16px;
+            padding: 24px; margin: 28px 0; color: #166534;
+        }
+        .takeaways-box h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; font-weight: 800; margin-bottom: 12px; color: #15803D; }
+        .takeaways-box ul { list-style-type: none; padding-left: 0; }
+        .takeaways-box li { position: relative; padding-left: 24px; margin-bottom: 8px; font-size: 0.92rem; line-height: 1.5; }
+        .takeaways-box li::before { content: '✓'; position: absolute; left: 0; color: #16A34A; font-weight: bold; }
+
+        .article-content-body { font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 36px; }
+        .article-content-body p { margin-bottom: 20px; }
+
+        .author-box {
+            background: var(--bg-offwhite); border: 1px solid var(--border-color); border-radius: 16px;
+            padding: 24px; display: flex; gap: 20px; align-items: center; margin-bottom: 40px;
+        }
+        .author-avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-blue); }
+
+        /* Comments Section */
+        .comments-section { border-top: 1px solid var(--border-color); padding-top: 36px; margin-top: 36px; }
+        .comment-card {
+            background: var(--bg-offwhite); border-radius: 12px; padding: 16px 20px;
+            margin-bottom: 16px; border: 1px solid var(--border-color);
+        }
+        .comment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .comment-user { font-weight: 700; font-size: 0.92rem; color: var(--text-dark); display: flex; align-items: center; gap: 8px; }
+        .comment-avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
+        .comment-date { font-size: 0.78rem; color: var(--text-muted); }
+        .comment-text { font-size: 0.92rem; color: #475569; line-height: 1.5; }
+
+        .comment-form { margin-top: 24px; background: #F8FAFC; border: 1px solid var(--border-color); padding: 24px; border-radius: 16px; }
+        .form-control-light {
+            width: 100%; padding: 12px 16px; border: 1px solid var(--border-color);
+            border-radius: 10px; font-family: inherit; font-size: 0.9rem; margin-bottom: 12px; background: #FFF;
+        }
+        .form-control-light:focus { outline: none; border-color: var(--accent-blue); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
 
         /* Newsletter Box */
         .newsletter-box {
-            background: var(--text-dark); color: #FFF; border-radius: 20px;
-            padding: 60px 40px; text-align: center; max-width: 800px; margin: 60px auto 0;
+            background: var(--text-dark); color: #FFF; border-radius: 24px;
+            padding: 60px 40px; text-align: center; max-width: 860px; margin: 60px auto 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
         }
         .newsletter-input {
-            padding: 14px 20px; border-radius: 50px; border: none; width: 320px; max-width: 100%;
-            font-size: 0.95rem; margin-right: 10px;
+            padding: 14px 24px; border-radius: 50px; border: none; width: 340px; max-width: 100%;
+            font-size: 0.95rem; margin-right: 10px; font-family: inherit;
         }
+        .newsletter-input:focus { outline: none; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5); }
 
         /* Toast */
         .toast {
             position: fixed; bottom: 30px; right: 30px; background: var(--text-dark); color: #FFF;
-            padding: 16px 28px; border-radius: 12px; font-weight: 700; z-index: 3000; display: none;
+            padding: 16px 28px; border-radius: 14px; font-weight: 700; z-index: 3000; display: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25); font-size: 0.92rem;
         }
         .toast.active { display: block; animation: slideUp 0.3s ease; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .featured-grid { grid-template-columns: 1fr; }
+            .search-filter-wrapper { flex-direction: column; align-items: stretch; }
+            .search-box { min-width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -131,86 +234,523 @@
             <div class="featured-grid">
                 <div>
                     <span class="featured-badge">STRATÉGIE &amp; IA</span>
-                    <h1 class="featured-title">L'Impact de l'IA Générative sur le E-Commerce en 2026</h1>
-                    <p class="featured-desc">Comment les entreprises marocaines et internationales utilisent les agents intelligents pour automatiser le service client et tripler leur taux de conversion.</p>
+                    <h1 class="featured-title">L'Impact Majeur de l'IA Générative sur le E-Commerce en 2026</h1>
+                    <p class="featured-desc">Comment les entreprises marocaines et internationales utilisent les agents intelligents et les architectures RAG pour automatiser leur support et tripler la conversion.</p>
                     <div class="featured-meta">
-                        <span>Par Sarah Bennani</span>
+                        <span style="font-weight:700; color:var(--text-dark);">Par Sarah Bennani</span>
                         <span>•</span>
                         <span>⏱️ 5 min de lecture</span>
                         <span>•</span>
-                        <span>📅 2 Aout 2026</span>
+                        <span>📅 02 Août 2026</span>
+                    </div>
+                    <div style="margin-top: 24px;">
+                        <button class="btn-blue" onclick="openArticleModal('art-0')">Lire l'Article Complet →</button>
                     </div>
                 </div>
                 <div>
-                    <img src="assets/photo_marketing.webp" alt="IA E-Commerce" class="featured-img">
+                    <img src="assets/photo_marketing.webp" alt="IA E-Commerce" class="featured-img" onclick="openArticleModal('art-0')" style="cursor:pointer;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Articles Grid -->
-    <section class="section" id="articles">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Dernières Publications</h2>
+    <!-- Filter & Search Section -->
+    <div class="container filter-section" id="articles">
+        <div class="search-filter-wrapper">
+            <div class="category-pills" id="categoryPills">
+                <button class="category-pill active" onclick="setArticleCategory('all', this)">Tous les Articles</button>
+                <button class="category-pill" onclick="setArticleCategory('ia', this)">IA &amp; Stratégie</button>
+                <button class="category-pill" onclick="setArticleCategory('design', this)">Design UX</button>
+                <button class="category-pill" onclick="setArticleCategory('seo', this)">SEO Local</button>
+                <button class="category-pill" onclick="setArticleCategory('ecommerce', this)">E-Commerce</button>
+                <button class="category-pill" onclick="setArticleCategory('tech', this)">Tech &amp; Dev</button>
             </div>
+            
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="articleSearchInput" class="search-input" placeholder="Rechercher un article, mot-clé, auteur..." oninput="filterArticles()">
+            </div>
+        </div>
+    </div>
 
-            <div class="articles-grid">
-                <!-- Article 1 -->
-                <div class="article-card">
-                    <img src="assets/slider_creative_strategy.jpg" alt="UX Design" class="article-img">
-                    <div class="article-body">
-                        <span class="featured-badge">DESIGN &amp; UX</span>
-                        <h3 class="article-title">Les 10 Tendances de Design Web qui Domineront en 2026</h3>
-                        <p class="article-desc">Du bento grid aux micro-interactions fluides, décryptage des meilleures pratiques UI.</p>
-                        <div class="featured-meta">
-                            <span>⏱️ 4 min</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Article 2 -->
-                <div class="article-card">
-                    <img src="assets/slider_digital_production.jpg" alt="SEO Local" class="article-img">
-                    <div class="article-body">
-                        <span class="featured-badge">SEO LOCAL</span>
-                        <h3 class="article-title">Guide Complet du SEO Google Maps au Maroc</h3>
-                        <p class="article-desc">Optimisez votre fiche GMB pour capturer les clients locaux et maximiser les appels.</p>
-                        <div class="featured-meta">
-                            <span>⏱️ 7 min</span>
-                        </div>
-                    </div>
-                </div>
+    <!-- Articles Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="articles-grid" id="articlesGrid">
+                <!-- Cards dynamically populated via JS -->
             </div>
 
             <!-- Newsletter Box -->
             <div class="newsletter-box" id="newsletter">
-                <h2 style="font-size: 2rem; margin-bottom: 12px; color:#FFF;">Rejoignez +15 000 Décideurs</h2>
-                <p style="color: #94A3B8; margin-bottom: 24px;">Recevez notre analyse hebdomadaire des meilleures stratégies digitales directement par email.</p>
-                <form onsubmit="handleNewsletter(event)">
-                    <input type="email" class="newsletter-input" placeholder="Votre adresse email pro" required>
-                    <button type="submit" class="btn-black" style="background:var(--accent-blue);">S'abonner Gratuitement</button>
+                <h2 style="font-size: 2.1rem; margin-bottom: 12px; color:#FFF; font-weight:700;">Rejoignez +15 000 Décideurs</h2>
+                <p style="color: #94A3B8; margin-bottom: 28px; max-width:560px; margin-left:auto; margin-right:auto;">Recevez chaque mardi matin notre décryptage exclusif des meilleures stratégies digitales, tendances IA et retours d'expérience.</p>
+                <form onsubmit="handleNewsletter(event)" style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+                    <input type="email" id="newsletterEmailInput" class="newsletter-input" placeholder="Votre adresse email professionnelle" required>
+                    <button type="submit" class="btn-blue" style="padding:14px 30px;">S'abonner Gratuitement →</button>
                 </form>
             </div>
         </div>
     </section>
 
+    <!-- Interactive Article Reader Modal -->
+    <div class="modal-overlay" id="articleModal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeArticleModal()">✕</button>
+            <div style="padding: 40px;" id="articleModalContent">
+                <!-- Content injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
     <div class="toast" id="toast">📬 Merci ! Vous êtes bien inscrit à la newsletter.</div>
 
-    <footer style="background:#0F172A; color:#FFF; padding:40px 0; border-top:1px solid #1E293B; text-align:center;">
+    <!-- Footer -->
+    <footer style="background:#0F172A; color:#FFF; padding:50px 0; border-top:1px solid #1E293B; text-align:center;">
         <div class="container">
-            <p style="font-family:'Lora', serif; font-size:1.3rem; margin-bottom:8px;">LE JOURNAL DU DIGITAL</p>
-            <p style="color: #64748B; font-size: 0.85rem;">© 2026 Le Journal du Digital. Démo créée par DatRey Agency.</p>
+            <p style="font-family:'Lora', serif; font-size:1.4rem; font-weight:700; margin-bottom:10px;">LE JOURNAL DU DIGITAL</p>
+            <p style="color: #94A3B8; font-size: 0.88rem; max-width:480px; margin:0 auto;">
+                L'actualité décryptée par des praticiens et experts du web au Maroc et à l'international.
+            </p>
+            <p style="color: #64748B; font-size: 0.82rem; margin-top:24px;">© 2026 Le Journal du Digital. Démo développée par DatRey Agency.</p>
         </div>
     </footer>
 
+    <!-- JavaScript Logic -->
     <script>
-        function openNewsletter() { document.getElementById('newsletter').scrollIntoView({behavior: 'smooth'}); }
+        // Articles Database
+        const articlesData = [
+            {
+                id: 'art-0',
+                category: 'IA & STRATÉGIE',
+                categoryId: 'ia',
+                title: 'L\'Impact Majeur de l\'IA Générative sur le E-Commerce en 2026',
+                subtitle: 'Comment les entreprises marocaines et internationales utilisent les agents intelligents et les architectures RAG pour automatiser leur support et tripler la conversion.',
+                desc: 'Comment les entreprises marocaines et internationales utilisent les agents intelligents pour automatiser le service client et tripler leur taux de conversion.',
+                img: 'assets/photo_marketing.webp',
+                author: {
+                    name: 'Sarah Bennani',
+                    role: 'Chief AI Strategist & Tech Speaker',
+                    avatar: 'assets/aura_team.jpg',
+                    bio: 'Pionnière dans l\'intégration des modèles de langage et d\'agents intelligents pour grands comptes et plateformes e-commerce.'
+                },
+                date: '02 Août 2026',
+                readTime: '5 min de lecture',
+                takeaways: [
+                    "Les agents IA personnalisent les recommandations produits en temps réel selon le contexte comportemental.",
+                    "L'automatisation du support client par RAG réduit le temps de réponse de 85% tout en garantissant la précision des données.",
+                    "La recherche sémantique et la recherche par image doublent le taux d'engagement sur les fiches produits."
+                ],
+                paragraphs: [
+                    "L'année 2026 marque un tournant définitif dans l'adoption de l'intelligence artificielle générative par les acteurs du commerce électronique. Autrefois cantonnée à de simples chatbots textuels pré-programmés, l'IA s'impose désormais comme le moteur central de la stratégie d'acquisition, de fidélisation et d'efficacité opérationnelle.",
+                    "L'innovation la plus disruptive réside dans les agents conversationnels autonomes dotés de mémoire contextuelle et interconnectés aux systèmes ERP. Capables de comprendre le langage naturel le plus nuancé, ces assistants virtuels conseillent les clients comme de véritables personal shoppers en boutique physique, ajustant leurs recommandations selon l'historique d'achat et les préférences individuelles.",
+                    "Parallèlement, la recherche visuelle et vectorielle redéfinit la découverte produit. En remplaçant les requêtes par mots-clés traditionnelles par une compréhension sémantique profonde du besoin utilisateur, les plateformes e-commerce constatent une baisse significative du taux de rebond et une hausse de +34% du panier moyen.",
+                    "En conclusion, les marques qui intègrent ces technologies avec une approche orientée expérience utilisateur et respect de la confidentialité des données s'assurent une avance concurrentielle majeure. L'automatisation intelligente ne remplace pas l'humain, mais démultiplie la capacité de passage à l'échelle des équipes."
+                ],
+                comments: [
+                    { name: "Mehdi Alami", date: "Il y a 3 heures", avatar: "assets/about_team.webp", text: "Article très inspirant ! Nous avons testé un agent RAG sur notre boutique Shopify le mois dernier et les résultats sur la conversion sont impressionnants." },
+                    { name: "Yasmine Chraibi", date: "Il y a 6 heures", avatar: "assets/slider_agency_team.jpg", text: "Excellente analyse. La personnalisation en temps réel est clairement le facteur différenciant décisif pour les marques en 2026." }
+                ]
+            },
+            {
+                id: 'art-1',
+                category: 'DESIGN UX',
+                categoryId: 'design',
+                title: 'Les 10 Tendances UI/UX Majeures qui Redéfinissent le Web en 2026',
+                desc: 'Du Bento Grid aux micro-interactions haptiques, décryptage des règles de design adoptées par les meilleures applications.',
+                img: 'assets/slider_creative_strategy.jpg',
+                author: {
+                    name: 'Yassine Mansouri',
+                    role: 'Senior UX/UI Lead',
+                    avatar: 'assets/methodology_team.jpg',
+                    bio: '10+ ans d\'expérience en design d\'interfaces haut de gamme et conception de systèmes d\'interaction immersifs.'
+                },
+                date: '01 Août 2026',
+                readTime: '6 min de lecture',
+                takeaways: [
+                    "Les Bento Grids organisent l'information de manière visuelle, hiérarchisée et ultra-lisible sur mobile et desktop.",
+                    "Le Dark Glassmorphism combiné à des palettes de couleurs Tailwind apporte un sentiment de modernité haut de gamme.",
+                    "Les micro-interactions ciblées guident le regard de l'utilisateur sans charger l'attention visuelle."
+                ],
+                paragraphs: [
+                    "Le paysage du design d'interfaces a évolué de manière spectaculaire au cours des 12 derniers mois. L'époque des layouts rigides et des palettes de couleurs génériques est révolue, laissant place à des expériences ultra-dynamiques et personnalisables.",
+                    "La première tendance incontournable est l'adoption massive de la structure en 'Bento Grid', popularisée par les géants de la tech. Cette disposition modulaire permet d'organiser des contenus hétérogènes (indicateurs, graphiques, médias, CTA) dans un cadre cohérent et parfaitement adapté au responsive design.",
+                    "En matière de typographie et de contrastes, nous observons un retour vers des polices sérif élégantes pour les titres combinées à des typographies sans-sérif très géométriques pour le corps de texte, créant un équilibre visuel sophistiqué et mémorable.",
+                    "Enfin, le mouvement et la réactivité de l'interface jouent un rôle prépondérant. Les micro-animations au survol et les transitions fluides ne sont plus du simple habillage visuel, mais des signaux d'interface indispensables pour guider le regard de l'utilisateur."
+                ],
+                comments: [
+                    { name: "Leila Berrada", date: "Il y a 1 jour", avatar: "assets/aura_team.jpg", text: "Le Bento Grid a complètement transformé notre landing page. Les utilisateurs comprennent notre valeur ajoutée beaucoup plus rapidement !" }
+                ]
+            },
+            {
+                id: 'art-2',
+                category: 'SEO LOCAL',
+                categoryId: 'seo',
+                title: 'Guide Stratégique du SEO Google Maps & GMB au Maroc',
+                desc: 'Optimisez votre fiche Google Business Profile pour dominer les recherches de proximité et capturer des clients qualifiés.',
+                img: 'assets/slider_digital_production.jpg',
+                author: {
+                    name: 'Amine El Fassi',
+                    role: 'SEO & Growth Director',
+                    avatar: 'assets/about_team.webp',
+                    bio: 'Expert en référencement naturel local et stratégies de visibilité sur les moteurs de recherche pour PME et franchises.'
+                },
+                date: '30 Juillet 2026',
+                readTime: '7 min de lecture',
+                takeaways: [
+                    "La cohérence des informations NAP (Nom, Adresse, Téléphone) sur tous les annuaires est la clé du référencement local.",
+                    "La collecte régulière d'avis clients positifs augmente la crédibilité de votre fiche de +70%.",
+                    "Les photos actualisées chaque semaine et la géolocalisation des posts GMB boostent les appels."
+                ],
+                paragraphs: [
+                    "Pour toute entreprise disposant d'un point de vente physique ou proposant des services de proximité au Maroc, le référencement sur Google Maps est devenu le canal d'acquisition le plus rentable et le plus direct.",
+                    "Le comportement des consommateurs marocains privilégie aujourd'hui les requêtes 'près de chez moi' ou avec indication de ville. Apparaître dans le Pack 3 local de Google garantit un flux continu d'appels et d'itinéraires créés directement depuis les smartphones.",
+                    "Pour optimiser votre présence, la première étape consiste à valider et remplir à 100% votre fiche Google Business Profile: catégories précises, horaires actualisés, photos haute définition et description riche en mots-clés géolocalisés.",
+                    "De plus, la gestion proactive des avis clients est primordiale. Répondre à chaque commentaire avec courtoisie et encourager les clients satisfaits à laisser des avis détaillés indique à l'algorithme Google que votre établissement est actif et hautement recommandé."
+                ],
+                comments: [
+                    { name: "Karim Bennani", date: "Il y a 2 jours", avatar: "assets/methodology_team.jpg", text: "Merci pour ces conseils pratiques ! En optimisant les mots-clés de notre fiche GMB, nous avons doublé les demandes d'itinéraires ce mois-ci." }
+                ]
+            },
+            {
+                id: 'art-3',
+                category: 'E-COMMERCE',
+                categoryId: 'ecommerce',
+                title: 'Optimiser le Taux de Conversion (CRO) de sa Boutique Shopify',
+                desc: 'Réduisez l\'abandon de panier et maximisez la valeur moyenne de commande grâce aux micro-copies et au tunnel 1-click.',
+                img: 'assets/case_ecommerce.webp',
+                author: {
+                    name: 'Kenza Alami',
+                    role: 'E-Commerce Growth Manager',
+                    avatar: 'assets/slider_agency_team.jpg',
+                    bio: 'Accompagne les e-commerçants dans l\'optimisation de leurs funnels de vente et le scaling de leurs revenus.'
+                },
+                date: '28 Juillet 2026',
+                readTime: '5 min de lecture',
+                takeaways: [
+                    "Un tunnel de commande sans friction (Fast Checkout) augmente la conversion immédiate de 22%.",
+                    "L'affichage dynamique des preuves sociales (badges de confiance, avis vérifiés) rassure l'acheteur.",
+                    "La clarté des frais de livraison dès la fiche produit élimine la première cause d'abandon de panier."
+                ],
+                paragraphs: [
+                    "Attirer du trafic qualifié sur sa boutique en ligne représente la moitié de l'équation. L'autre moitié — souvent négligée — consiste à transformer ces visiteurs en acheteurs payants à travers une expérience d'achat fluide et rassurante.",
+                    "L'optimisation du taux de conversion (CRO) commence par l'analyse fine du parcours utilisateur. Identifier les points de friction dans le tunnel de commande permet de corriger immédiatement les obstacles qui poussent les clients à quitter le site.",
+                    "L'intégration d'un bouton d'achat direct (Express Checkout via Apple Pay, Google Pay ou carte bancaire enregistrée) permet d'éliminer les étapes fastidieuses de saisie d'adresse pour les clients récurrents.",
+                    "Enfin, la transparence sur les délais et coûts de livraison, associée à une politique de retour simplifiée, instaure une relation de confiance indispensable pour déclencher le passage à l'acte d'achat."
+                ],
+                comments: [
+                    { name: "Tariq Kabbaj", date: "Il y a 3 jours", avatar: "assets/about_team.webp", text: "La simplification du checkout a changé la donne sur notre boutique. Moins de formulaires = plus de ventes !" }
+                ]
+            },
+            {
+                id: 'art-4',
+                category: 'TECH & DEV',
+                categoryId: 'tech',
+                title: 'Pourquoi Next.js 15 et React Server Components Révolutionnent le Web',
+                desc: 'Analyse technique des performances du Server-Side Rendering et de la réduction drastique du JS envoyé au navigateur.',
+                img: 'assets/photo_dev.webp',
+                author: {
+                    name: 'Karim Chraibi',
+                    role: 'Principal Software Architect',
+                    avatar: 'assets/methodology_team.jpg',
+                    bio: 'Expert en architecture web moderne, spécialisé dans les frameworks Jamstack et la haute performance.'
+                },
+                date: '25 Juillet 2026',
+                readTime: '8 min de lecture',
+                takeaways: [
+                    "Zero JS bundle pour les composants serveur statiques = temps de chargement divisé par 3.",
+                    "Les Server Actions sécurisent les mutations de données sans nécessiter d'API REST boilerplate.",
+                    "Le Streaming SSR permet d'afficher les éléments d'interface critiques sans bloquer le rendu."
+                ],
+                paragraphs: [
+                    "Avec la sortie de Next.js 15, l'écosystème React franchit une étape décisive vers un modèle d'architecture hybride où le serveur retrouve toute sa pertinence.",
+                    "Pendant des années, le développement Single Page Application (SPA) a surchargé le navigateur de l'utilisateur avec d'imposants bundles JavaScript, dégradant les performances sur appareils mobiles et compliquant le SEO.",
+                    "Les React Server Components (RSC) corrigent cette dérive en exécutant le rendu des composants directement sur le serveur Edge. Seul le code HTML final et le strict minimum de JavaScript interactif sont transmis au client.",
+                    "Les développeurs bénéficient d'un confort de code inégalé: accès direct aux bases de données, sécurité renforcée des secrets API et réduction des temps d'interaction utilisateur (INP & LCP)."
+                ],
+                comments: [
+                    { name: "Omar H.", date: "Il y a 4 jours", avatar: "assets/aura_team.jpg", text: "Passer de la version 12 à 15 a été un vrai gap de performance pour notre SaaS." }
+                ]
+            },
+            {
+                id: 'art-5',
+                category: 'IA & STRATÉGIE',
+                categoryId: 'ia',
+                title: 'L\'Ère des Agents IA & RAG pour l\'Automatisation des PME',
+                desc: 'Comment centraliser la connaissance d\'entreprise et déployer des assistants internes ultra-sécurisés.',
+                img: 'assets/photo_audit.webp',
+                author: {
+                    name: 'Dr. Omar Tazi',
+                    role: 'Data & AI Consultant',
+                    avatar: 'assets/methodology_team.jpg',
+                    bio: 'Accompagne la transformation IA des organisations et le déploiement de modèles de langage souverains.'
+                },
+                date: '22 Juillet 2026',
+                readTime: '6 min de lecture',
+                takeaways: [
+                    "Le RAG permet de connecter vos propres documents internes (PDF, Notion, SQL) aux modèles d'IA.",
+                    "La confidentialité des données est garantie par l'hébergement local ou sur instances dédiées.",
+                    "Les gains de temps sur la recherche documentaire interne atteignent jusqu'à 15h par collaborateur et par mois."
+                ],
+                paragraphs: [
+                    "L'intégration de l'intelligence artificielle dans les PME ne se limite plus aux requêtes génériques sur ChatGPT. Les entreprises déploient désormais leurs propres moteurs d'IA sécurisés grâce aux architectures RAG (Retrieval-Augmented Generation).",
+                    "Le RAG consiste à connecter un modèle de langage (LLM) à la base de connaissances spécifique de l'entreprise : procédures internes, catalogues produits, contrats juridiques ou historiques de tickets support.",
+                    "Lorsqu'un collaborateur interroge le système, l'agent extrait les passages pertinents dans la documentation interne et formule une réponse précise, citant ses sources et éliminant tout risque d'hallucination.",
+                    "Cette technologie transforme la gestion des connaissances et l'onboarding des nouveaux employés, tout en garantissant un contrôle strict de la confidentialité des données sensibles."
+                ],
+                comments: [
+                    { name: "Fatima Ezzahra", date: "Il y a 5 jours", avatar: "assets/slider_agency_team.jpg", text: "C'est exactement ce que nous cherchions pour structurer nos 10 ans d'archives juridiques !" }
+                ]
+            },
+            {
+                id: 'art-6',
+                category: 'DESIGN UX',
+                categoryId: 'design',
+                title: 'Motion Design & Micro-animations: Captiver sans Ralentir',
+                desc: 'Les techniques d\'animation CSS et Lottie légères pour dynamiser l\'interface sans compromettre la vitesse.',
+                img: 'assets/photo_design.webp',
+                author: {
+                    name: 'Nadia Skalli',
+                    role: 'Motion & Interactive Designer',
+                    avatar: 'assets/aura_team.jpg',
+                    bio: 'Créatrice d\'expériences numériques immersives et animations vectorielles haute performance.'
+                },
+                date: '19 Juillet 2026',
+                readTime: '4 min de lecture',
+                takeaways: [
+                    "Privilégier les propriétés CSS transform et opacity exécutées par la carte graphique (GPU).",
+                    "Utiliser les fichiers Lottie JSON légers au lieu des GIFs lourds et non optimisés.",
+                    "Respecter la préférence utilisateur prefers-reduced-motion pour l'accessibilité."
+                ],
+                paragraphs: [
+                    "Le motion design moderne est un puissant levier d'engagement. Une animation subtile au bon moment capte l'attention, confirme une action ou rend une attente de chargement agréable.",
+                    "Cependant, des animations mal conçues peuvent rapidement devenir une source de frustration, provoquant des saccades d'affichage et ralentissant la navigation sur mobile.",
+                    "La règle d'or consiste à utiliser exclusivement les propriétés CSS accélérées par le processeur graphique (`transform` et `opacity`), qui évitent les recalculs coûteux du layout navigateur.",
+                    "En combinant ces techniques avec des micro-interactions réactives, vous créez une interface vivante et naturelle tout en conservant un score de performance parfait sur Google Lighthouse."
+                ],
+                comments: [
+                    { name: "Sami R.", date: "Il y a 1 semaine", avatar: "assets/about_team.webp", text: "Article très pertinent. L'accélération matérielle CSS est essentielle." }
+                ]
+            }
+        ];
+
+        let activeCategory = 'all';
+
+        // Render Articles Grid
+        function renderArticles() {
+            const grid = document.getElementById('articlesGrid');
+            const searchVal = document.getElementById('articleSearchInput').value.toLowerCase().trim();
+
+            const filtered = articlesData.filter(article => {
+                const matchesCategory = activeCategory === 'all' || article.categoryId === activeCategory;
+                const matchesSearch = article.title.toLowerCase().includes(searchVal) ||
+                                      article.desc.toLowerCase().includes(searchVal) ||
+                                      article.category.toLowerCase().includes(searchVal) ||
+                                      article.author.name.toLowerCase().includes(searchVal);
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align:center; padding: 60px 20px; background:var(--bg-offwhite); border-radius:16px; border:1px solid var(--border-color);">
+                        <span style="font-size:3rem; display:block; margin-bottom:12px;">🔎</span>
+                        <h3 style="color:var(--text-dark); font-size:1.2rem; font-family:'Lora', serif;">Aucun article ne correspond à votre recherche</h3>
+                        <p style="color:var(--text-muted); font-size:0.9rem; margin-top:6px;">Essayez de taper d'autres mots-clés ou sélectionnez la catégorie "Tous les Articles".</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(a => `
+                <div class="article-card" onclick="openArticleModal('${a.id}')">
+                    <div class="article-img-wrapper">
+                        <img src="${a.img}" alt="${a.title}" class="article-img">
+                    </div>
+                    <div class="article-body">
+                        <span class="featured-badge">${a.category}</span>
+                        <h3 class="article-title">${a.title}</h3>
+                        <p class="article-desc">${a.desc}</p>
+                        <div class="featured-meta" style="margin-top:auto; padding-top:16px; border-top:1px solid var(--border-color);">
+                            <span>Par ${a.author.name}</span>
+                            <span>•</span>
+                            <span>⏱️ ${a.readTime}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function setArticleCategory(catId, el) {
+            activeCategory = catId;
+            document.querySelectorAll('#categoryPills .category-pill').forEach(p => p.classList.remove('active'));
+            el.classList.add('active');
+            renderArticles();
+        }
+
+        function filterArticles() {
+            renderArticles();
+        }
+
+        // Article Modal Reader
+        function openArticleModal(articleId) {
+            const article = articlesData.find(a => a.id === articleId);
+            if (!article) return;
+
+            const modalContent = document.getElementById('articleModalContent');
+            modalContent.innerHTML = `
+                <div style="display:flex; gap:12px; align-items:center; margin-bottom:16px; flex-wrap:wrap;">
+                    <span class="featured-badge" style="margin-bottom:0;">${article.category}</span>
+                    <span style="font-size:0.85rem; color:var(--text-muted);">⏱️ ${article.readTime}</span>
+                    <span style="font-size:0.85rem; color:var(--text-muted);">📅 Publié le ${article.date}</span>
+                </div>
+
+                <h1 style="font-size: clamp(1.6rem, 3vw, 2.4rem); font-family:'Lora', serif; font-weight:700; color:var(--text-dark); line-height:1.3; margin-bottom:16px;">
+                    ${article.title}
+                </h1>
+
+                <p style="font-size:1.1rem; color:var(--text-muted); margin-bottom:28px; line-height:1.6; font-style:italic;">
+                    ${article.subtitle || article.desc}
+                </p>
+
+                <div style="width:100%; height:380px; overflow:hidden; border-radius:18px; margin-bottom:32px;">
+                    <img src="${article.img}" alt="${article.title}" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+
+                <!-- Key Takeaways -->
+                <div class="takeaways-box">
+                    <h4>💡 Points Clés à Retenir</h4>
+                    <ul>
+                        ${article.takeaways.map(t => `<li>${t}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <!-- Full Article Body (4+ Paragraphs) -->
+                <div class="article-content-body">
+                    ${article.paragraphs.map(p => `<p>${p}</p>`).join('')}
+                </div>
+
+                <!-- Author Bio Box -->
+                <div class="author-box">
+                    <img src="${article.author.avatar}" class="author-avatar" alt="${article.author.name}">
+                    <div>
+                        <h4 style="font-family:'Plus Jakarta Sans', sans-serif; font-size:1.1rem; font-weight:700; color:var(--text-dark);">${article.author.name}</h4>
+                        <div style="color:var(--accent-blue); font-size:0.84rem; font-weight:600; margin-bottom:6px;">${article.author.role}</div>
+                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">${article.author.bio}</p>
+                    </div>
+                </div>
+
+                <!-- Comments Section -->
+                <div class="comments-section">
+                    <h3 style="font-family:'Lora', serif; font-size:1.4rem; color:var(--text-dark); margin-bottom:20px;">
+                        💬 Espace de Discussion (${article.comments.length} commentaires)
+                    </h3>
+                    
+                    <div id="commentsList_${article.id}">
+                        ${article.comments.map(c => `
+                            <div class="comment-card">
+                                <div class="comment-header">
+                                    <span class="comment-user">
+                                        <img src="${c.avatar}" class="comment-avatar" alt="${c.name}">
+                                        ${c.name}
+                                    </span>
+                                    <span class="comment-date">${c.date}</span>
+                                </div>
+                                <p class="comment-text">${c.text}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <!-- New Comment Form -->
+                    <div class="comment-form">
+                        <h4 style="font-family:'Plus Jakarta Sans', sans-serif; font-size:1rem; font-weight:700; color:var(--text-dark); margin-bottom:12px;">
+                            Laisser un commentaire
+                        </h4>
+                        <form onsubmit="handleAddComment(event, '${article.id}')">
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                                <input type="text" id="commName_${article.id}" class="form-control-light" placeholder="Votre nom complet" required>
+                                <input type="email" id="commEmail_${article.id}" class="form-control-light" placeholder="Votre adresse email" required>
+                            </div>
+                            <textarea id="commText_${article.id}" class="form-control-light" rows="3" placeholder="Partagez votre avis ou posez une question..." required style="resize:vertical;"></textarea>
+                            <button type="submit" class="btn-black" style="padding:10px 24px;">Publier le Commentaire →</button>
+                        </form>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('articleModal').classList.add('active');
+        }
+
+        function closeArticleModal() {
+            document.getElementById('articleModal').classList.remove('active');
+        }
+
+        function handleAddComment(e, articleId) {
+            e.preventDefault();
+            const nameInput = document.getElementById(`commName_${articleId}`);
+            const textInput = document.getElementById(`commText_${articleId}`);
+
+            const newComment = {
+                name: nameInput.value.trim(),
+                date: "À l'instant",
+                avatar: "assets/about_team.webp",
+                text: textInput.value.trim()
+            };
+
+            const article = articlesData.find(a => a.id === articleId);
+            if (article) {
+                article.comments.unshift(newComment);
+                
+                // Refresh comments list UI
+                const listEl = document.getElementById(`commentsList_${articleId}`);
+                if (listEl) {
+                    listEl.innerHTML = article.comments.map(c => `
+                        <div class="comment-card" style="animation: fadeIn 0.3s ease;">
+                            <div class="comment-header">
+                                <span class="comment-user">
+                                    <img src="${c.avatar}" class="comment-avatar" alt="${c.name}">
+                                    ${c.name}
+                                </span>
+                                <span class="comment-date">${c.date}</span>
+                            </div>
+                            <p class="comment-text">${c.text}</p>
+                        </div>
+                    `).join('');
+                }
+            }
+
+            nameInput.value = '';
+            textInput.value = '';
+            document.getElementById(`commEmail_${articleId}`).value = '';
+
+            showToast(`💬 Commentaire publié avec succès !`);
+        }
+
+        // Newsletter Handler
+        function openNewsletter() {
+            document.getElementById('newsletter').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                document.getElementById('newsletterEmailInput').focus();
+            }, 600);
+        }
+
         function handleNewsletter(e) {
             e.preventDefault();
-            const t = document.getElementById('toast'); t.classList.add('active');
+            const email = document.getElementById('newsletterEmailInput').value;
+            showToast(`📬 Merci ! ${email} est désormais inscrit à la newsletter.`);
+            document.getElementById('newsletterEmailInput').value = '';
+        }
+
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('active');
             setTimeout(() => t.classList.remove('active'), 4000);
         }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            renderArticles();
+        });
     </script>
 </body>
 </html>

@@ -8,21 +8,25 @@
     <meta http-equiv="Expires" content="0">
 
     <title>Palais & Demeures | Immobilier de Prestige au Maroc</title>
+    <meta name="description" content="Agence immobilière de luxe au Maroc. Vente et location de villas d'exception, riads historiques et penthouses à Casablanca, Marrakech, Tanger et Rabat.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --bg-navy: #0F172A;
             --bg-card: #1E293B;
+            --bg-card-hover: #26354A;
             --gold-accent: #D4AF37;
+            --gold-light: #F3E5AB;
             --blue-royal: #2563EB;
             --text-light: #F8FAFC;
             --text-muted: #94A3B8;
             --border-color: #334155;
+            --border-gold: rgba(212, 175, 55, 0.3);
             --nav-height: 80px;
         }
 
@@ -45,92 +49,233 @@
         .header {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
             height: var(--nav-height); background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color);
-            display: flex; align-items: center;
+            backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-color);
+            display: flex; align-items: center; transition: all 0.3s;
         }
         .header .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #FFF; text-decoration: none; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #FFF; text-decoration: none; letter-spacing: 0.05em; }
         .logo span { color: var(--gold-accent); }
-        .nav-links { display: flex; gap: 32px; list-style: none; }
-        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s; }
+        
+        .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+        .nav-links a {
+            color: var(--text-light); text-decoration: none; font-size: 0.92rem; font-weight: 500;
+            transition: color 0.3s; position: relative; padding: 4px 0;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+            background: var(--gold-accent); transition: width 0.3s;
+        }
         .nav-links a:hover { color: var(--gold-accent); }
+        .nav-links a:hover::after { width: 100%; }
 
         .btn-gold {
             background: linear-gradient(135deg, var(--gold-accent), #B8860B);
-            color: #0F172A !important; font-weight: 700; padding: 12px 28px;
+            color: #0F172A !important; font-weight: 700; padding: 12px 26px;
             border-radius: 8px; border: none; cursor: pointer; transition: all 0.3s;
-            font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;
+            font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em;
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
         }
-        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3); }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45); background: linear-gradient(135deg, #F3E5AB, var(--gold-accent)); }
+
+        .btn-outline-gold {
+            background: transparent; color: var(--gold-accent) !important;
+            border: 1px solid var(--gold-accent); font-weight: 600; padding: 12px 26px;
+            border-radius: 8px; cursor: pointer; transition: all 0.3s; font-size: 0.82rem;
+            text-transform: uppercase; letter-spacing: 0.06em; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;
+        }
+        .btn-outline-gold:hover { background: rgba(212, 175, 55, 0.15); color: #FFF !important; }
 
         /* Hero */
         .hero {
-            position: relative; min-height: 90vh; padding-top: calc(var(--nav-height) + 40px);
+            position: relative; min-height: 92vh; padding-top: calc(var(--nav-height) + 20px);
             display: flex; align-items: center; justify-content: center; text-align: center;
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.95) 100%),
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.65) 0%, rgba(15, 23, 42, 0.98) 100%),
                         url('assets/case_realestate.webp') center/cover no-repeat;
         }
-        .hero-content { max-width: 900px; padding: 40px 20px; }
+        .hero-content { max-width: 960px; padding: 40px 20px; z-index: 2; }
         .hero-badge {
-            display: inline-block; padding: 6px 18px; border: 1px solid var(--gold-accent);
-            border-radius: 50px; color: var(--gold-accent); font-size: 0.8rem; letter-spacing: 0.15em;
-            text-transform: uppercase; margin-bottom: 24px; background: rgba(30, 41, 59, 0.8);
+            display: inline-block; padding: 8px 20px; border: 1px solid var(--gold-accent);
+            border-radius: 50px; color: var(--gold-accent); font-size: 0.8rem; letter-spacing: 0.2em;
+            text-transform: uppercase; margin-bottom: 24px; background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(8px);
         }
-        .hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; color: #FFF; margin-bottom: 20px; }
-        .hero-title span { color: var(--gold-accent); }
-        .hero-desc { font-size: 1.15rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
+        .hero-title { font-size: clamp(2.5rem, 5.5vw, 4.2rem); font-weight: 800; color: #FFF; margin-bottom: 20px; line-height: 1.15; }
+        .hero-title span { color: var(--gold-accent); font-style: italic; }
+        .hero-desc { font-size: 1.15rem; color: var(--text-muted); max-width: 720px; margin: 0 auto 36px; line-height: 1.8; }
 
-        /* Search Bar Widget */
+        /* Functional Search Bar Widget */
         .search-bar-widget {
-            background: rgba(30, 41, 59, 0.95); border: 1px solid var(--border-color);
-            border-radius: 16px; padding: 24px; max-width: 960px; margin: 0 auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5); backdrop-filter: blur(12px);
+            background: rgba(30, 41, 59, 0.95); border: 1px solid var(--border-gold);
+            border-radius: 20px; padding: 28px; max-width: 1040px; margin: 0 auto;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6); backdrop-filter: blur(16px); text-align: left;
         }
-        .search-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) 140px; gap: 16px; align-items: end; }
-        .search-field label { display: block; font-size: 0.8rem; color: var(--gold-accent); margin-bottom: 6px; font-weight: 600; text-align: left; }
+        .search-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) 160px; gap: 16px; align-items: end; }
+        .search-field label { display: block; font-size: 0.8rem; color: var(--gold-accent); margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
         .search-select, .search-input {
-            width: 100%; padding: 12px; background: #0F172A; border: 1px solid var(--border-color);
-            border-radius: 8px; color: #FFF; font-size: 0.9rem;
+            width: 100%; padding: 12px 14px; background: #0F172A; border: 1px solid var(--border-color);
+            border-radius: 10px; color: #FFF; font-size: 0.9rem; transition: border-color 0.3s;
         }
+        .search-select:focus, .search-input:focus { outline: none; border-color: var(--gold-accent); box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+
+        /* Section General */
+        .section { padding: 100px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .section-subtitle { color: var(--gold-accent); font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 8px; font-weight: 600; }
+        .section-title { font-size: 2.5rem; color: #FFF; }
+        .section-title span { color: var(--gold-accent); }
 
         /* Properties Grid */
-        .section { padding: 100px 0; }
-        .section-header { text-align: center; margin-bottom: 56px; }
-        .section-title { font-size: 2.5rem; color: #FFF; margin-bottom: 12px; }
-
-        .properties-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px; }
+        .properties-filter-status { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; color: var(--text-muted); font-size: 0.9rem; }
+        .properties-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 32px; }
+        
         .property-card {
-            background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px;
-            overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 18px;
+            overflow: hidden; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;
+            position: relative;
         }
-        .property-card:hover { transform: translateY(-6px); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
-        .property-img { width: 100%; height: 240px; object-fit: cover; }
-        .property-body { padding: 24px; }
-        .property-price { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold-accent); font-weight: 700; margin-bottom: 8px; }
-        .property-title { font-size: 1.2rem; color: #FFF; margin-bottom: 8px; }
-        .property-location { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px; display: flex; align-items: center; gap: 6px; }
-        .property-specs { display: flex; gap: 16px; border-top: 1px solid var(--border-color); padding-top: 16px; font-size: 0.85rem; color: var(--text-muted); }
+        .property-card:hover { transform: translateY(-8px); border-color: var(--gold-accent); box-shadow: 0 20px 40px rgba(0,0,0,0.5); background: var(--bg-card-hover); }
+        
+        .property-img-wrap { position: relative; height: 250px; overflow: hidden; }
+        .property-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .property-card:hover .property-img { transform: scale(1.08); }
+        
+        .property-badge-city {
+            position: absolute; top: 16px; left: 16px; background: rgba(15, 23, 42, 0.85);
+            border: 1px solid var(--gold-accent); color: var(--gold-light); font-size: 0.75rem;
+            padding: 4px 12px; border-radius: 50px; backdrop-filter: blur(8px); font-weight: 600;
+        }
+        .property-badge-trans {
+            position: absolute; top: 16px; right: 16px; background: var(--gold-accent);
+            color: #0F172A; font-size: 0.75rem; padding: 4px 12px; border-radius: 50px; font-weight: 700;
+        }
 
-        /* Modal */
+        .property-body { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .property-price { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--gold-accent); font-weight: 700; margin-bottom: 6px; }
+        .property-title { font-size: 1.25rem; color: #FFF; margin-bottom: 8px; font-weight: 700; line-height: 1.3; }
+        .property-location { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px; display: flex; align-items: center; gap: 6px; }
+        
+        .property-specs {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color); padding: 14px 0; margin-bottom: 20px; font-size: 0.85rem; color: var(--text-light); text-align: center;
+        }
+        .property-spec-item strong { display: block; color: var(--gold-accent); font-size: 0.95rem; }
+
+        .property-features { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+        .feat-pill { background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.75rem; padding: 3px 10px; border-radius: 50px; }
+
+        /* Calculator Section */
+        .calc-box {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 24px;
+            padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.6); display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center;
+        }
+        .calc-form-group { margin-bottom: 24px; }
+        .calc-form-label { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--gold-accent); margin-bottom: 8px; font-weight: 600; }
+        .calc-range { width: 100%; accent-color: var(--gold-accent); cursor: pointer; }
+        
+        .calc-results-card {
+            background: #0F172A; border: 1px solid var(--border-gold); border-radius: 20px;
+            padding: 32px; text-align: center; display: flex; flex-direction: column; justify-content: center;
+        }
+        .calc-result-monthly { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 800; color: var(--gold-accent); margin: 10px 0; }
+        .calc-breakdown-bar { height: 12px; border-radius: 50px; background: #334155; overflow: hidden; display: flex; margin: 20px 0; }
+        .calc-bar-capital { background: var(--gold-accent); height: 100%; }
+        .calc-bar-interest { background: var(--blue-royal); height: 100%; }
+
+        /* City Destinations Showcase */
+        .cities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+        .city-card {
+            position: relative; height: 280px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color);
+            cursor: pointer; transition: transform 0.3s;
+        }
+        .city-card:hover { transform: translateY(-6px); border-color: var(--gold-accent); }
+        .city-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .city-card:hover .city-img { transform: scale(1.08); }
+        .city-overlay {
+            position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.1) 100%);
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 24px;
+        }
+
+        /* Property Detail Modal */
         .modal-overlay {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+            position: fixed; inset: 0; background: rgba(0,0,0,0.88); backdrop-filter: blur(12px);
             z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px;
+            opacity: 0; transition: opacity 0.3s ease;
         }
-        .modal-overlay.active { display: flex; }
-        .modal-box {
-            background: var(--bg-card); border: 1px solid var(--gold-accent); border-radius: 20px;
-            max-width: 500px; width: 100%; padding: 40px; position: relative;
+        .modal-overlay.active { display: flex; opacity: 1; }
+        
+        .modal-box-large {
+            background: var(--bg-card); border: 1px solid var(--gold-accent); border-radius: 24px;
+            max-width: 960px; width: 100%; padding: 36px; position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.95);
+            max-height: 92vh; overflow-y: auto;
         }
-        .modal-close { position: absolute; top: 20px; right: 20px; background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer; }
+        
+        .modal-close {
+            position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.08); border: 1px solid var(--border-color);
+            color: var(--gold-light); font-size: 1.2rem; cursor: pointer; width: 36px; height: 36px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; transition: all 0.3s; z-index: 20;
+        }
+        .modal-close:hover { background: var(--gold-accent); color: #0F172A; }
+
+        /* Property Modal Photo Grid */
+        .property-photo-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; margin-bottom: 24px; height: 320px; }
+        .photo-main { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; border: 1px solid var(--border-color); cursor: pointer; }
+        .photo-thumbs { display: grid; grid-template-rows: 1fr 1fr; gap: 12px; }
+        .photo-thumb { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color); cursor: pointer; transition: opacity 0.3s; }
+        .photo-thumb:hover { opacity: 0.8; }
+
+        /* 360 Virtual Tour Widget */
+        .tour-widget-box {
+            background: #0B1120; border: 1px solid var(--border-gold); border-radius: 16px;
+            padding: 20px; margin: 24px 0; text-align: center; position: relative;
+        }
+        .tour-canvas-area {
+            position: relative; height: 260px; border-radius: 12px; overflow: hidden;
+            background: url('assets/hero_bg_luxury.webp') center/cover no-repeat;
+            display: flex; align-items: center; justify-content: center; transition: background-position 0.2s linear;
+        }
+        .tour-overlay-badge {
+            position: absolute; top: 12px; left: 12px; background: rgba(15, 23, 42, 0.85);
+            border: 1px solid var(--gold-accent); color: var(--gold-accent); padding: 4px 12px; border-radius: 50px; font-size: 0.78rem; font-weight: 700;
+        }
+        .tour-hotspot {
+            position: absolute; background: rgba(212, 175, 55, 0.9); color: #0F172A; font-weight: 700;
+            padding: 6px 14px; border-radius: 50px; font-size: 0.78rem; cursor: pointer;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.8); animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
+        .tour-controls { display: flex; justify-content: center; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+        .btn-tour-ctrl {
+            background: rgba(255,255,255,0.08); border: 1px solid var(--border-color); color: var(--text-light);
+            padding: 6px 14px; border-radius: 50px; font-size: 0.8rem; cursor: pointer; transition: all 0.3s;
+        }
+        .btn-tour-ctrl:hover { background: var(--gold-accent); color: #0F172A; }
 
         /* Toast */
         .toast {
-            position: fixed; bottom: 30px; right: 30px; background: var(--gold-accent); color: #0F172A;
-            padding: 16px 28px; border-radius: 12px; font-weight: 700; z-index: 3000; display: none;
+            position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, var(--gold-accent), #B8860B);
+            color: #0F172A; padding: 18px 30px; border-radius: 14px; font-weight: 700; z-index: 3000; display: none;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.6); max-width: 440px; border: 1px solid #FFF; font-size: 0.95rem;
         }
-        .toast.active { display: block; animation: slideUp 0.3s ease; }
+        .toast.active { display: block; animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-        .footer { background: #080D1A; padding: 60px 0 30px; border-top: 1px solid var(--border-color); text-align: center; }
+        /* Footer */
+        .footer { background: #080D1A; padding: 80px 0 40px; border-top: 1px solid var(--border-color); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; }
+        .footer-logo { font-size: 1.8rem; color: var(--gold-accent); font-family: 'Playfair Display', serif; margin-bottom: 16px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--gold-accent); }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .calc-box { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .property-photo-grid { grid-template-columns: 1fr; height: auto; }
+            .photo-thumbs { grid-template-columns: 1fr 1fr; height: 120px; }
+        }
     </style>
 </head>
 <body>
@@ -142,126 +287,943 @@
             <ul class="nav-links">
                 <li><a href="#properties">Propriétés</a></li>
                 <li><a href="#villes">Nos Villes</a></li>
+                <li><a href="#calc">Calculateur Prêt</a></li>
                 <li><a href="#estimation">Estimation</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="btn-gold" onclick="openVisiteModal('Villa Royale')">Demander une Visite</button>
+            <button class="btn-gold" onclick="openVisiteModal('Villa Royale Anfa')">Demander une Visite</button>
         </div>
     </header>
 
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <span class="hero-badge">Immobilier de Prestige • Maroc</span>
-            <h1 class="hero-title">Résidences d'Exception &amp; <span>Villas de Luxe</span></h1>
-            <p class="hero-desc">Découvrez notre collection exclusive de propriétés d'exception à Casablanca, Marrakech, Tanger et Rabat.</p>
+            <span class="hero-badge">Immobilier d'Exception • Maroc &amp; International</span>
+            <h1 class="hero-title">Résidences de Prestige &amp; <span>Villas d'Artiste</span></h1>
+            <p class="hero-desc">Explorez notre sélection ultra-exclusive de demeures somptueuses, penthouses vue mer et riads historiques à Casablanca, Marrakech, Tanger et Rabat.</p>
 
-            <!-- Search Bar -->
-            <div class="search-bar-widget">
+            <!-- Real-time Search Widget -->
+            <div class="search-bar-widget" id="searchWidget">
                 <div class="search-grid">
                     <div class="search-field">
-                        <label>Transaction</label>
-                        <select class="search-select"><option>Acheter</option><option>Louer</option></select>
-                    </div>
-                    <div class="search-field">
                         <label>Ville</label>
-                        <select class="search-select"><option>Casablanca (Anfa / Californie)</option><option>Marrakech (Palmeraie)</option><option>Tanger (Malabata)</option></select>
+                        <select class="search-select" id="searchCity" onchange="filterProperties()">
+                            <option value="all">Toutes les Villes</option>
+                            <option value="Casablanca">Casablanca (Anfa / Californie)</option>
+                            <option value="Marrakech">Marrakech (Palmeraie / Hivernage)</option>
+                            <option value="Tanger">Tanger (Malabata / Falaise)</option>
+                            <option value="Rabat">Rabat (Souissi / Agdal)</option>
+                            <option value="Essaouira">Essaouira (Mirleft / Plage)</option>
+                        </select>
                     </div>
+
                     <div class="search-field">
                         <label>Type de bien</label>
-                        <select class="search-select"><option>Villa Contemporaine</option><option>Penthouse Vue Mer</option><option>Riad de Prestige</option></select>
+                        <select class="search-select" id="searchType" onchange="filterProperties()">
+                            <option value="all">Tous les Types</option>
+                            <option value="Villa Contemporaine">Villa Contemporaine</option>
+                            <option value="Riad Historique">Riad Historique</option>
+                            <option value="Penthouse Vue Mer">Penthouse Vue Mer</option>
+                            <option value="Appartement de Luxe">Appartement de Luxe</option>
+                        </select>
                     </div>
-                    <button class="btn-gold" onclick="filterProperties()" style="height: 45px;">Rechercher</button>
+
+                    <div class="search-field">
+                        <label>Transaction</label>
+                        <select class="search-select" id="searchTrans" onchange="filterProperties()">
+                            <option value="all">Acheter &amp; Louer</option>
+                            <option value="Acheter">Vente / Achat</option>
+                            <option value="Louer">Location Prestige</option>
+                        </select>
+                    </div>
+
+                    <div class="search-field">
+                        <label>Budget Max (MAD)</label>
+                        <select class="search-select" id="searchPrice" onchange="filterProperties()">
+                            <option value="all">Budget Illimité</option>
+                            <option value="10000000">&lt; 10 Millions MAD</option>
+                            <option value="20000000">&lt; 20 Millions MAD</option>
+                            <option value="30000000">&lt; 30 Millions MAD</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-gold" onclick="filterProperties()" style="height: 46px;">Rechercher →</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Properties Section -->
+    <!-- Properties Grid Section -->
     <section class="section" id="properties">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Notre Sélection Exclusive</h2>
-                <p style="color: var(--text-muted);">Des biens d'exception minutieusement sélectionnés par nos experts.</p>
+                <div class="section-subtitle">Portfolio d'Exception</div>
+                <h2 class="section-title">Nos Biens <span>Disponibles</span></h2>
+            </div>
+
+            <div class="properties-filter-status">
+                <span id="propertiesCount">Affichage de 6 propriétés prestigieuses</span>
+                <button class="btn-outline-gold" style="padding: 6px 16px; font-size: 0.75rem;" onclick="resetSearchFilters()">Réinitialiser les filtres</button>
             </div>
 
             <div class="properties-grid" id="propertiesGrid">
                 <!-- Property 1 -->
-                <div class="property-card">
-                    <img src="assets/case_realestate.webp" alt="Villa Californie" class="property-img">
+                <div class="property-card" data-city="Casablanca" data-type="Villa Contemporaine" data-trans="Acheter" data-price="18500000" onclick="openPropertyModal(0)">
+                    <div class="property-img-wrap">
+                        <img src="assets/case_realestate.webp" alt="Villa Californie Anfa" class="property-img">
+                        <span class="property-badge-city">📍 Casablanca • Californie</span>
+                        <span class="property-badge-trans">Acheter</span>
+                    </div>
                     <div class="property-body">
-                        <div class="property-price">18 500 000 MAD</div>
-                        <h3 class="property-title">Villa Contemporaine Anfa</h3>
-                        <div class="property-location">📍 Californie, Casablanca</div>
-                        <div class="property-specs">
-                            <span>📐 850 m²</span>
-                            <span>🛏️ 5 Suites</span>
-                            <span>🏊 Piscine Chauffée</span>
+                        <div>
+                            <div class="property-price">18 500 000 MAD</div>
+                            <h3 class="property-title">Villa Contemporaine Architecte Anfa</h3>
+                            <div class="property-location">📍 Quartier Californie, Casablanca</div>
+                            
+                            <div class="property-specs">
+                                <div class="property-spec-item"><strong>850 m²</strong>Surface</div>
+                                <div class="property-spec-item"><strong>5 Suites</strong>Chambres</div>
+                                <div class="property-spec-item"><strong>6 SDB</strong>Bains</div>
+                            </div>
+
+                            <div class="property-features">
+                                <span class="feat-pill">🏊 Piscine Chauffée</span>
+                                <span class="feat-pill">🏡 Jardin 1200m²</span>
+                                <span class="feat-pill">🤖 Domotique</span>
+                                <span class="feat-pill">🚗 Garage 4 places</span>
+                            </div>
                         </div>
-                        <button class="btn-gold" style="width: 100%; margin-top: 20px;" onclick="openVisiteModal('Villa Anfa')">Réserver une Visite Privée</button>
+
+                        <button class="btn-gold" style="width: 100%; margin-top: 10px;">Voir le Bien &amp; Visiter →</button>
                     </div>
                 </div>
 
                 <!-- Property 2 -->
-                <div class="property-card">
-                    <img src="assets/hero_bg_luxury.webp" alt="Penthouse Marina" class="property-img">
+                <div class="property-card" data-city="Marrakech" data-type="Riad Historique" data-trans="Acheter" data-price="14200000" onclick="openPropertyModal(1)">
+                    <div class="property-img-wrap">
+                        <img src="assets/elara_hero.jpg" alt="Riad Palmeraie" class="property-img">
+                        <span class="property-badge-city">📍 Marrakech • Palmeraie</span>
+                        <span class="property-badge-trans">Acheter</span>
+                    </div>
                     <div class="property-body">
-                        <div class="property-price">9 200 000 MAD</div>
-                        <h3 class="property-title">Penthouse Duplex Vue Mer</h3>
-                        <div class="property-location">📍 Malabata, Tanger</div>
-                        <div class="property-specs">
-                            <span>📐 380 m²</span>
-                            <span>🛏️ 4 Chambres</span>
-                            <span>🌅 Terrasse Panoramique</span>
+                        <div>
+                            <div class="property-price">14 200 000 MAD</div>
+                            <h3 class="property-title">Riad Historique avec Pool &amp; Hammam</h3>
+                            <div class="property-location">📍 La Palmeraie, Marrakech</div>
+                            
+                            <div class="property-specs">
+                                <div class="property-spec-item"><strong>620 m²</strong>Surface</div>
+                                <div class="property-spec-item"><strong>7 Suites</strong>Chambres</div>
+                                <div class="property-spec-item"><strong>7 SDB</strong>Bains</div>
+                            </div>
+
+                            <div class="property-features">
+                                <span class="feat-pill">🌿 Patio Verdoyant</span>
+                                <span class="feat-pill">♨️ Hammam Marbre</span>
+                                <span class="feat-pill">🌄 Rooftop Vue Atlas</span>
+                            </div>
                         </div>
-                        <button class="btn-gold" style="width: 100%; margin-top: 20px;" onclick="openVisiteModal('Penthouse Tanger')">Réserver une Visite Privée</button>
+
+                        <button class="btn-gold" style="width: 100%; margin-top: 10px;">Voir le Bien &amp; Visiter →</button>
+                    </div>
+                </div>
+
+                <!-- Property 3 -->
+                <div class="property-card" data-city="Tanger" data-type="Penthouse Vue Mer" data-trans="Acheter" data-price="9200000" onclick="openPropertyModal(2)">
+                    <div class="property-img-wrap">
+                        <img src="assets/hero_bg_luxury.webp" alt="Penthouse Tanger" class="property-img">
+                        <span class="property-badge-city">📍 Tanger • Malabata</span>
+                        <span class="property-badge-trans">Acheter</span>
+                    </div>
+                    <div class="property-body">
+                        <div>
+                            <div class="property-price">9 200 000 MAD</div>
+                            <h3 class="property-title">Penthouse Duplex Vue Panoramique Détroit</h3>
+                            <div class="property-location">📍 Bay Malabata, Tanger</div>
+                            
+                            <div class="property-specs">
+                                <div class="property-spec-item"><strong>380 m²</strong>Surface</div>
+                                <div class="property-spec-item"><strong>4 Chambres</strong>Suites</div>
+                                <div class="property-spec-item"><strong>4 SDB</strong>Bains</div>
+                            </div>
+
+                            <div class="property-features">
+                                <span class="feat-pill">🌊 Terrasse 140m²</span>
+                                <span class="feat-pill">🛁 Jacuzzi Privé</span>
+                                <span class="feat-pill">🛗 Ascenseur Direct</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-gold" style="width: 100%; margin-top: 10px;">Voir le Bien &amp; Visiter →</button>
+                    </div>
+                </div>
+
+                <!-- Property 4 -->
+                <div class="property-card" data-city="Marrakech" data-type="Villa Contemporaine" data-trans="Acheter" data-price="26000000" onclick="openPropertyModal(3)">
+                    <div class="property-img-wrap">
+                        <img src="assets/kodex_lookbook.jpg" alt="Palais Royal Marrakech" class="property-img">
+                        <span class="property-badge-city">📍 Marrakech • Palmeraie</span>
+                        <span class="property-badge-trans">Acheter</span>
+                    </div>
+                    <div class="property-body">
+                        <div>
+                            <div class="property-price">26 000 000 MAD</div>
+                            <h3 class="property-title">Palais Royal avec Golf Privé &amp; Spa</h3>
+                            <div class="property-location">📍 Route de Fès - Palmeraie, Marrakech</div>
+                            
+                            <div class="property-specs">
+                                <div class="property-spec-item"><strong>1 200 m²</strong>Surface</div>
+                                <div class="property-spec-item"><strong>6 Suites</strong>Master</div>
+                                <div class="property-spec-item"><strong>8 SDB</strong>Bains</div>
+                            </div>
+
+                            <div class="property-features">
+                                <span class="feat-pill">🚁 Helipad Privé</span>
+                                <span class="feat-pill">⛳ Putting Green</span>
+                                <span class="feat-pill">🌊 Bassin 25m</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-gold" style="width: 100%; margin-top: 10px;">Voir le Bien &amp; Visiter →</button>
+                    </div>
+                </div>
+
+                <!-- Property 5 -->
+                <div class="property-card" data-city="Rabat" data-type="Appartement de Luxe" data-trans="Louer" data-price="6800000" onclick="openPropertyModal(4)">
+                    <div class="property-img-wrap">
+                        <img src="assets/mockup_site_vitrine.jpg" alt="Appartement Rabat" class="property-img">
+                        <span class="property-badge-city">📍 Rabat • Souissi</span>
+                        <span class="property-badge-trans">Location / Vente</span>
+                    </div>
+                    <div class="property-body">
+                        <div>
+                            <div class="property-price">6 800 000 MAD <span style="font-size:0.85rem; color:var(--text-muted); font-weight:400;">(ou 35 000 MAD/m)</span></div>
+                            <h3 class="property-title">Appartement Haussmannien de Prestige</h3>
+                            <div class="property-location">📍 Quartier Ambassades Souissi, Rabat</div>
+                            
+                            <div class="property-specs">
+                                <div class="property-spec-item"><strong>290 m²</strong>Surface</div>
+                                <div class="property-spec-item"><strong>3 Chambres</strong>Suites</div>
+                                <div class="property-spec-item"><strong>3 SDB</strong>Bains</div>
+                            </div>
+
+                            <div class="property-features">
+                                <span class="feat-pill">🛡️ Sécurité 24/7</span>
+                                <span class="feat-pill">🪵 Parquet Chêne</span>
+                                <span class="feat-pill">🔥 Cheminée Marbre</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-gold" style="width: 100%; margin-top: 10px;">Voir le Bien &amp; Visiter →</button>
+                    </div>
+                </div>
+
+                <!-- Property 6 -->
+                <div class="property-card" data-city="Essaouira" data-type="Villa Contemporaine" data-trans="Acheter" data-price="21500000" onclick="openPropertyModal(5)">
+                    <div class="property-img-wrap">
+                        <img src="assets/transfo_digitale_hero.webp" alt="Villa Oceanfront Essaouira" class="property-img">
+                        <span class="property-badge-city">📍 Essaouira • Falaise</span>
+                        <span class="property-badge-trans">Acheter</span>
+                    </div>
+                    <div class="property-body">
+                        <div>
+                            <div class="property-price">21 500 000 MAD</div>
+                            <h3 class="property-title">Villa Oceanfront Cliffside Estate</h3>
+                            <div class="property-location">📍 Falaise Plage Privée, Essaouira</div>
+                            
+                            <div class="property-specs">
+                                <div class="property-spec-item"><strong>950 m²</strong>Surface</div>
+                                <div class="property-spec-item"><strong>5 Suites</strong>Vue Mer</div>
+                                <div class="property-spec-item"><strong>6 SDB</strong>Bains</div>
+                            </div>
+
+                            <div class="property-features">
+                                <span class="feat-pill">🏖️ Accès Plage Privée</span>
+                                <span class="feat-pill">🏊 Piscine Infinity</span>
+                                <span class="feat-pill">☀️ Solaire 100% Autonome</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-gold" style="width: 100%; margin-top: 10px;">Voir le Bien &amp; Visiter →</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="noResultsMsg" style="display: none; text-align: center; padding: 60px 20px; background: var(--bg-card); border-radius: 20px; border: 1px dashed var(--border-gold); margin-top: 30px;">
+                <h3 style="color: var(--gold-accent); font-size: 1.5rem; margin-bottom: 10px;">Aucune propriété ne correspond exactement à vos critères.</h3>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">Nos chausseurs immobiliers peuvent rechercher un bien sur mesure pour vous.</p>
+                <button class="btn-gold" onclick="resetSearchFilters()">Réinitialiser la recherche</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Mortgage / Mensualité Calculator -->
+    <section class="section" id="calc">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Simulateur d'Investissement</div>
+                <h2 class="section-title">Calculateur de <span>Mensualité Immobilière</span></h2>
+                <p style="color: var(--text-muted); margin-top: 8px;">Estimez instantanément vos mensualités bancaires et capacités de financement au Maroc.</p>
+            </div>
+
+            <div class="calc-box">
+                <div>
+                    <!-- Price slider -->
+                    <div class="calc-form-group">
+                        <div class="calc-form-label">
+                            <span>Prix du Bien Immobiliers</span>
+                            <strong id="calcPriceVal" style="color:var(--gold-accent); font-size:1.1rem;">9 200 000 MAD</strong>
+                        </div>
+                        <input type="range" id="calcPriceRange" class="calc-range" min="1000000" max="40000000" step="500000" value="9200000" oninput="updateCalculator()">
+                    </div>
+
+                    <!-- Down payment -->
+                    <div class="calc-form-group">
+                        <div class="calc-form-label">
+                            <span>Apport Personnel (%)</span>
+                            <strong id="calcDownVal" style="color:var(--gold-accent); font-size:1.1rem;">20% (1 840 000 MAD)</strong>
+                        </div>
+                        <input type="range" id="calcDownRange" class="calc-range" min="10" max="50" step="5" value="20" oninput="updateCalculator()">
+                    </div>
+
+                    <!-- Loan Duration -->
+                    <div class="calc-form-group">
+                        <div class="calc-form-label"><span>Durée de Remboursement</span></div>
+                        <div style="display: flex; gap: 10px;">
+                            <button class="btn-outline-gold btn-calc-dur active" style="flex:1;" onclick="setCalcDuration(10, this)">10 Ans</button>
+                            <button class="btn-outline-gold btn-calc-dur" style="flex:1;" onclick="setCalcDuration(15, this)">15 Ans</button>
+                            <button class="btn-outline-gold btn-calc-dur" style="flex:1;" onclick="setCalcDuration(20, this)">20 Ans</button>
+                            <button class="btn-outline-gold btn-calc-dur" style="flex:1;" onclick="setCalcDuration(25, this)">25 Ans</button>
+                        </div>
+                    </div>
+
+                    <!-- Interest rate -->
+                    <div class="calc-form-group">
+                        <div class="calc-form-label">
+                            <span>Taux d'Intérêt Annuel Estimé</span>
+                            <strong id="calcRateVal" style="color:var(--gold-accent); font-size:1.1rem;">4.5%</strong>
+                        </div>
+                        <input type="range" id="calcRateRange" class="calc-range" min="3.0" max="7.0" step="0.25" value="4.5" oninput="updateCalculator()">
+                    </div>
+                </div>
+
+                <!-- Calculator Output Card -->
+                <div class="calc-results-card">
+                    <div style="font-size: 0.85rem; color: var(--gold-accent); letter-spacing: 0.1em; text-transform: uppercase;">Mensualité Estimée</div>
+                    <div class="calc-result-monthly" id="calcMonthlyRes">46 550 MAD</div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted);">par mois (hors assurance emprunteur)</div>
+
+                    <div class="calc-breakdown-bar">
+                        <div id="barCapital" class="calc-bar-capital" style="width: 70%;"></div>
+                        <div id="barInterest" class="calc-bar-interest" style="width: 30%;"></div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-light); margin-bottom: 12px;">
+                        <span>🟡 Montant Emprunté : <strong id="calcLoanVal">7 360 000 MAD</strong></span>
+                        <span>🔵 Intérêts Totaux : <strong id="calcTotalInterestVal">3 812 000 MAD</strong></span>
+                    </div>
+
+                    <button class="btn-gold" style="width: 100%; margin-top: 14px; font-size: 0.9rem;" onclick="requestBankPreapproval()">Obtenir un Pré-Accord de Financement →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations / Villes Showcase -->
+    <section class="section" id="villes">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Territoires d'Exception</div>
+                <h2 class="section-title">L'Immobilier par <span>Destination</span></h2>
+            </div>
+
+            <div class="cities-grid">
+                <div class="city-card" onclick="filterByCity('Casablanca')">
+                    <img src="assets/case_realestate.webp" alt="Casablanca" class="city-img">
+                    <div class="city-overlay">
+                        <div style="font-family:'Playfair Display'; font-size:1.5rem; color:#FFF; font-weight:700;">Casablanca</div>
+                        <div style="font-size:0.85rem; color:var(--gold-accent);">Anfa &amp; Californie • 12 Propriétés</div>
+                    </div>
+                </div>
+
+                <div class="city-card" onclick="filterByCity('Marrakech')">
+                    <img src="assets/elara_hero.jpg" alt="Marrakech" class="city-img">
+                    <div class="city-overlay">
+                        <div style="font-family:'Playfair Display'; font-size:1.5rem; color:#FFF; font-weight:700;">Marrakech</div>
+                        <div style="font-size:0.85rem; color:var(--gold-accent);">Palmeraie &amp; Hivernage • 18 Propriétés</div>
+                    </div>
+                </div>
+
+                <div class="city-card" onclick="filterByCity('Tanger')">
+                    <img src="assets/hero_bg_luxury.webp" alt="Tanger" class="city-img">
+                    <div class="city-overlay">
+                        <div style="font-family:'Playfair Display'; font-size:1.5rem; color:#FFF; font-weight:700;">Tanger</div>
+                        <div style="font-size:0.85rem; color:var(--gold-accent);">Malabata &amp; Falaise • 9 Propriétés</div>
+                    </div>
+                </div>
+
+                <div class="city-card" onclick="filterByCity('Rabat')">
+                    <img src="assets/mockup_site_vitrine.jpg" alt="Rabat" class="city-img">
+                    <div class="city-overlay">
+                        <div style="font-family:'Playfair Display'; font-size:1.5rem; color:#FFF; font-weight:700;">Rabat</div>
+                        <div style="font-size:0.85rem; color:var(--gold-accent);">Souissi &amp; Ambassades • 7 Propriétés</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal Visite -->
-    <div class="modal-overlay" id="visiteModal">
-        <div class="modal-box">
-            <button class="modal-close" onclick="closeVisiteModal()">✕</button>
-            <h3 style="font-size: 1.5rem; color: var(--gold-accent); margin-bottom: 8px; text-align: center;">Demande de Visite Privée</h3>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px; text-align: center;">Un conseiller dédié vous recontactera sous 2 heures.</p>
-            
-            <form onsubmit="handleVisite(event)">
-                <div style="margin-bottom: 16px;">
-                    <label style="display:block; font-size:0.8rem; color:var(--gold-accent); margin-bottom:4px;">Nom Complexe</label>
-                    <input type="text" class="search-input" required placeholder="ex: Mme. Alami">
+    <!-- Property Detail Modal -->
+    <div class="modal-overlay" id="propertyModal">
+        <div class="modal-box-large">
+            <button class="modal-close" onclick="closePropertyModal()">✕</button>
+
+            <!-- 3 Photos Grid Gallery -->
+            <div class="property-photo-grid">
+                <img src="" id="propModalMainPhoto" class="photo-main" alt="Photo Principale">
+                <div class="photo-thumbs">
+                    <img src="" id="propModalThumb1" class="photo-thumb" onclick="swapModalPhoto(this.src)" alt="Thumb 1">
+                    <img src="" id="propModalThumb2" class="photo-thumb" onclick="swapModalPhoto(this.src)" alt="Thumb 2">
                 </div>
-                <div style="margin-bottom: 16px;">
-                    <label style="display:block; font-size:0.8rem; color:var(--gold-accent); margin-bottom:4px;">Téléphone / WhatsApp</label>
-                    <input type="tel" class="search-input" required placeholder="+212 6 00 00 00 00">
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 14px;">
+                <div>
+                    <h2 id="propModalTitle" style="font-size: 1.8rem; color: #FFF; font-family: 'Playfair Display', serif;">Titre de la Propriété</h2>
+                    <div id="propModalLocation" style="color: var(--gold-accent); font-size: 0.95rem; margin-top: 4px;">📍 Localisation</div>
                 </div>
-                <button type="submit" class="btn-gold" style="width: 100%;">Envoyer ma Demande →</button>
-            </form>
+                <div id="propModalPrice" style="font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 800; color: var(--gold-accent);">0 MAD</div>
+            </div>
+
+            <!-- Specs Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px; background: #0F172A; border: 1px solid var(--border-color); padding: 16px; border-radius: 14px; margin-bottom: 24px; text-align: center;">
+                <div><span style="font-size:0.78rem; color:var(--text-muted);">SURFACE HABITABLE</span><strong id="propModalSurface" style="display:block; color:#FFF; font-size:1.1rem;">850 m²</strong></div>
+                <div><span style="font-size:0.78rem; color:var(--text-muted);">SUITES / CHAMBRES</span><strong id="propModalBeds" style="display:block; color:#FFF; font-size:1.1rem;">5 Suites</strong></div>
+                <div><span style="font-size:0.78rem; color:var(--text-muted);">SALLES DE BAIN</span><strong id="propModalBaths" style="display:block; color:#FFF; font-size:1.1rem;">6 SDB</strong></div>
+                <div><span style="font-size:0.78rem; color:var(--text-muted);">PARKING / GARAGE</span><strong id="propModalGarage" style="display:block; color:#FFF; font-size:1.1rem;">4 Voitures</strong></div>
+                <div><span style="font-size:0.78rem; color:var(--text-muted);">DPE ÉNERGIE</span><strong style="display:block; color:#10B981; font-size:1.1rem;">Classe A+</strong></div>
+            </div>
+
+            <!-- Description -->
+            <div style="margin-bottom: 24px;">
+                <h4 style="color: var(--gold-accent); font-size: 1.05rem; margin-bottom: 8px;">Description &amp; Architecture</h4>
+                <p id="propModalDesc" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">Description de la propriété...</p>
+            </div>
+
+            <!-- Amenities Badges -->
+            <div style="margin-bottom: 24px;">
+                <h4 style="color: var(--gold-accent); font-size: 1.05rem; margin-bottom: 10px;">Équipements de Luxe Included</h4>
+                <div id="propModalAmenities" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <!-- Amenities pills -->
+                </div>
+            </div>
+
+            <!-- Simulated 360 Virtual Tour Widget -->
+            <div class="tour-widget-box">
+                <div style="font-family:'Playfair Display'; color:var(--gold-accent); font-size:1.2rem; font-weight:700; margin-bottom:10px;">📺 Visite Virtuelle Immersive 360°</div>
+                
+                <div class="tour-canvas-area" id="tourCanvasArea">
+                    <span class="tour-overlay-badge">MODÈLE 3D INTERACTIF 360°</span>
+                    
+                    <div class="tour-hotspot" style="top: 40%; left: 30%;" onclick="triggerHotspot('Grand Salon & Vues Jardin')">📍 Grand Salon</div>
+                    <div class="tour-hotspot" style="top: 60%; left: 70%;" onclick="triggerHotspot('Suite Master & Dressing')">📍 Suite Master</div>
+                </div>
+
+                <div class="tour-controls">
+                    <button class="btn-tour-ctrl" onclick="panTour(-60)">◀ Rotation Gauche</button>
+                    <button class="btn-tour-ctrl" onclick="panTour(60)">Rotation Droite ▶</button>
+                    <button class="btn-tour-ctrl" onclick="zoomTour(1.2)">🔍 Zoom +</button>
+                    <button class="btn-tour-ctrl" onclick="zoomTour(1.0)">🔄 Réinitialiser</button>
+                    <button class="btn-tour-ctrl" onclick="toggleAutoTour()">⏯️ Toggle Rotation Auto</button>
+                </div>
+            </div>
+
+            <!-- Visit Request Form Inside Modal -->
+            <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-gold); border-radius: 18px; padding: 28px; margin-top: 24px;">
+                <h3 style="color: var(--gold-accent); font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 6px;">Demander une Visite Privée</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px;">Un conseiller senior vous accompagnera en toute confidentialité.</p>
+
+                <form onsubmit="handleVisiteSubmit(event)">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                        <div>
+                            <label style="display:block; font-size:0.8rem; color:var(--gold-accent); margin-bottom:6px; font-weight:600;">Nom Complet *</label>
+                            <input type="text" class="search-input" id="visiteName" placeholder="ex: Mme. Sophia Alami" required>
+                        </div>
+                        <div>
+                            <label style="display:block; font-size:0.8rem; color:var(--gold-accent); margin-bottom:6px; font-weight:600;">Téléphone / WhatsApp *</label>
+                            <input type="tel" class="search-input" id="visitePhone" placeholder="+212 6 00 00 00 00" required>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+                        <div>
+                            <label style="display:block; font-size:0.8rem; color:var(--gold-accent); margin-bottom:6px; font-weight:600;">Date Souhaitée</label>
+                            <input type="date" class="search-input" id="visiteDate" required>
+                        </div>
+                        <div>
+                            <label style="display:block; font-size:0.8rem; color:var(--gold-accent); margin-bottom:6px; font-weight:600;">Créneau Horaire</label>
+                            <select class="search-select" id="visiteTime">
+                                <option>10:00 - Matinée</option>
+                                <option>14:30 - Après-midi</option>
+                                <option>17:30 - Fin de journée (Coucher de soleil)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-gold" style="width: 100%; font-size: 0.95rem;">Confirmer ma Demande de Visite Privée →</button>
+                </form>
+            </div>
         </div>
     </div>
 
-    <div class="toast" id="toast">✅ Demande reçue ! Votre agent dédié vous appellera sous peu.</div>
+    <!-- Estimation Form Section -->
+    <section class="section" id="estimation" style="background: rgba(30, 41, 59, 0.3);">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-header">
+                <div class="section-subtitle">Propriétaires &amp; Vendeurs</div>
+                <h2 class="section-title">Confiez-nous la <span>Vente de Votre Bien</span></h2>
+                <p style="color: var(--text-muted); margin-top: 8px;">Bénéficiez d'une estimation confidentielle gratuite et d'un mandat exclusif sur mesure.</p>
+            </div>
 
-    <footer class="footer">
+            <div style="background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 20px; padding: 36px;">
+                <form onsubmit="handleEstimationSubmit(event)">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                        <div>
+                            <label style="display:block; font-size:0.8rem; color:var(--gold-accent); margin-bottom:6px;">Nom &amp; Prénom *</label>
+                            <input type="text" class="search-input" required placeholder="Votre nom">
+                        </div>
+                        <div>
+                            <label style="display:block; font-size:0.8rem; color:var(--gold-accent); margin-bottom:6px;">Téléphone *</label>
+                            <input type="tel" class="search-input" required placeholder="+212 6 00 00 00 00">
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                        <div>
+                            <label style="display:block; font-size:0.8rem; color:var(--gold-accent); margin-bottom:6px;">Ville du Bien *</label>
+                            <select class="search-select" required>
+                                <option>Casablanca</option><option>Marrakech</option><option>Tanger</option><option>Rabat</option><option>Autre</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="display:block; font-size:0.8rem; color:var(--gold-accent); margin-bottom:6px;">Type de Bien *</label>
+                            <select class="search-select" required>
+                                <option>Villa</option><option>Riad</option><option>Penthouse</option><option>Terrain d'Exception</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-gold" style="width: 100%; margin-top: 10px;">Demander mon Estimation Confidentielle →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">✅ Votre demande a été enregistrée avec succès ! Un conseiller privé vous appellera dans les plus brefs délais.</div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
         <div class="container">
-            <p style="font-family:'Playfair Display', serif; font-size: 1.4rem; color: var(--gold-accent); margin-bottom: 8px;">PALAIS &amp; DEMEURES</p>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">© 2026 Palais &amp; Demeures Luxury Real Estate. Démo créée par DatRey Agency.</p>
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">PALAIS <span>&amp; DEMEURES</span></div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px;">L'excellence de l'immobilier d'art et de prestige au Royaume du Maroc et à l'international.</p>
+                    <div style="font-size: 0.88rem; color: var(--text-light); line-height: 1.8;">
+                        📍 Bd de la Corniche, Anfa, Casablanca<br>
+                        📞 Concierge Immobilier : +212 5 22 88 99 00<br>
+                        💬 WhatsApp Private : +212 6 61 88 99 00
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="color: var(--gold-accent); font-family: 'Playfair Display'; margin-bottom: 16px;">Villes Clés</h4>
+                    <ul class="footer-links">
+                        <li><a href="javascript:void(0)" onclick="filterByCity('Casablanca')">Villas Casablanca Anfa</a></li>
+                        <li><a href="javascript:void(0)" onclick="filterByCity('Marrakech')">Riads Marrakech Palmeraie</a></li>
+                        <li><a href="javascript:void(0)" onclick="filterByCity('Tanger')">Penthouses Tanger Malabata</a></li>
+                        <li><a href="javascript:void(0)" onclick="filterByCity('Rabat')">Demeures Rabat Souissi</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: var(--gold-accent); font-family: 'Playfair Display'; margin-bottom: 16px;">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#calc">Calculateur de Crédit</a></li>
+                        <li><a href="#estimation">Estimation Gratuite</a></li>
+                        <li><a href="javascript:void(0)" onclick="openVisiteModal('Visite Sur Mesure')">Chasseur Immobilier Privé</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: var(--gold-accent); font-family: 'Playfair Display'; margin-bottom: 16px;">Newsletter Privilège</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Recevez avant tout le monde nos offres Off-Market ultra-confidentielles.</p>
+                    <form onsubmit="handleNewsletterSubmit(event)" style="display: flex; gap: 8px;">
+                        <input type="email" class="search-input" placeholder="Votre e-mail" required style="padding: 10px;">
+                        <button type="submit" class="btn-gold" style="padding: 10px 14px;">Rejoindre</button>
+                    </form>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--border-color); padding-top: 30px; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+                © 2026 Palais &amp; Demeures Luxury Real Estate Morocco. Tous droits réservés. Modèle conçu pour DatRey Agency.
+            </div>
         </div>
     </footer>
 
+    <!-- JavaScript logic -->
     <script>
-        function openVisiteModal(name) { document.getElementById('visiteModal').classList.add('active'); }
-        function closeVisiteModal() { document.getElementById('visiteModal').classList.remove('active'); }
-        function handleVisite(e) {
-            e.preventDefault(); closeVisiteModal();
-            const t = document.getElementById('toast'); t.classList.add('active');
-            setTimeout(() => t.classList.remove('active'), 4000);
-        }
+        // Full Properties Data
+        const propertiesData = [
+            {
+                title: "Villa Contemporaine Architecte Anfa",
+                price: "18 500 000 MAD",
+                rawPrice: 18500000,
+                city: "Casablanca",
+                location: "Quartier Californie / Anfa, Casablanca",
+                type: "Villa Contemporaine",
+                trans: "Acheter",
+                surface: "850 m²",
+                beds: "5 Suites",
+                baths: "6 SDB",
+                garage: "4 Voitures",
+                mainPhoto: "assets/case_realestate.webp",
+                photo1: "assets/hero_bg_luxury.webp",
+                photo2: "assets/kodex_lookbook.jpg",
+                desc: "Cette villa d'exception signée par un cabinet renommé propose de grands volumes baignés de lumière, un salon triple hauteur ouvrant sur un jardin paysagé de 1 200 m², une piscine chauffée à débordement et une domotique intégrée de dernière génération.",
+                amenities: ["🏊 Piscine Chauffée", "🏡 Jardin 1200 m²", "🤖 Domotique Crestron", "♨️ Spa & Hammam", "🛡️ Caméras & Alarme", "🍷 Cave à Vins Climatisée"]
+            },
+            {
+                title: "Riad Historique avec Pool & Hammam",
+                price: "14 200 000 MAD",
+                rawPrice: 14200000,
+                city: "Marrakech",
+                location: "La Palmeraie, Marrakech",
+                type: "Riad Historique",
+                trans: "Acheter",
+                surface: "620 m²",
+                beds: "7 Suites",
+                baths: "7 SDB",
+                garage: "2 Voitures",
+                mainPhoto: "assets/elara_hero.jpg",
+                photo1: "assets/elara_artisan.jpg",
+                photo2: "assets/elara_col3.jpg",
+                desc: "Un riad d'artisanat d'art magnifiquement restauré avec zelliges traditionnels, patio central arboré d'oliviers centenaires, bassin chauffé, hammam traditionnel en marbre et rooftop panoramique avec vue imprenable sur la chaîne de l'Atlas.",
+                amenities: ["🌿 Patio d'Oliviers", "🏊 Bassin Chauffé", "♨️ Hammam Marbre", "🌄 Terrasses Atlas", "🔥 Cheminées en Tadelakt"]
+            },
+            {
+                title: "Penthouse Duplex Vue Panoramique Détroit",
+                price: "9 200 000 MAD",
+                rawPrice: 9200000,
+                city: "Tanger",
+                location: "Malabata, Tanger",
+                type: "Penthouse Vue Mer",
+                trans: "Acheter",
+                surface: "380 m²",
+                beds: "4 Suites",
+                baths: "4 SDB",
+                garage: "2 Voitures",
+                mainPhoto: "assets/hero_bg_luxury.webp",
+                photo1: "assets/case_realestate.webp",
+                photo2: "assets/mockup_site_vitrine.jpg",
+                desc: "Surplombant la baie de Tanger et le Détroit de Gibraltar, ce penthouse d'exception offre une terrasse panoramique de 140 m² équipée d'un jacuzzi extérieur, des baies vitrées toute hauteur et des prestations haut de gamme uniques.",
+                amenities: ["🌊 Vue Panoramique Mer", "🛁 Jacuzzi Rooftop", "🛗 Ascenseur Privatif", "🛋️ Salon Traversant", "🛡️ Concierge 24/7"]
+            },
+            {
+                title: "Palais Royal avec Golf Privé & Spa",
+                price: "26 000 000 MAD",
+                rawPrice: 26000000,
+                city: "Marrakech",
+                location: "Route de Fès - Palmeraie, Marrakech",
+                type: "Villa Contemporaine",
+                trans: "Acheter",
+                surface: "1 200 m²",
+                beds: "6 Master Suites",
+                baths: "8 SDB",
+                garage: "6 Voitures",
+                mainPhoto: "assets/kodex_lookbook.jpg",
+                photo1: "assets/elara_hero.jpg",
+                photo2: "assets/transfo_digitale_hero.webp",
+                desc: "Propriété somptueuse établie sur un domaine privé d'un hectare. Comprend un putting green de golf privatif, un helipad, une piscine olympique de 25 mètres, ainsi qu'un centre de bien-être privé avec hammam, sauna et salle de massage.",
+                amenities: ["🚁 Helipad Privé", "⛳ Putting Green Golf", "🏊 Piscine 25m", "💆 Centre Spa & Massage", "🌳 Parc 1 Hectare"]
+            },
+            {
+                title: "Appartement Haussmannien de Prestige",
+                price: "6 800 000 MAD",
+                rawPrice: 6800000,
+                city: "Rabat",
+                location: "Souissi, Rabat",
+                type: "Appartement de Luxe",
+                trans: "Louer",
+                surface: "290 m²",
+                beds: "3 Suites",
+                baths: "3 SDB",
+                garage: "2 Voitures",
+                mainPhoto: "assets/mockup_site_vitrine.jpg",
+                photo1: "assets/case_realestate.webp",
+                photo2: "assets/hero_bg_luxury.webp",
+                desc: "Idéalement situé au cœur du quartier des ambassades, cet appartement de grand standing associe le charme du style haussmannien (moulures d'origine, parquet chêne) au confort moderne le plus raffiné.",
+                amenities: ["🛡️ Résidence Sécurisée", "🪵 Parquet Chêne Massif", "🔥 Cheminée Marbre", "❄️ Climatisation Encastrée", "📦 Cave Privative"]
+            },
+            {
+                title: "Villa Oceanfront Cliffside Estate",
+                price: "21 500 000 MAD",
+                rawPrice: 21500000,
+                city: "Essaouira",
+                location: "Falaise Mirleft, Essaouira",
+                type: "Villa Contemporaine",
+                trans: "Acheter",
+                surface: "950 m²",
+                beds: "5 Suites",
+                baths: "6 SDB",
+                garage: "3 Voitures",
+                mainPhoto: "assets/transfo_digitale_hero.webp",
+                photo1: "assets/hero_bg_luxury.webp",
+                photo2: "assets/elara_hero.jpg",
+                desc: "Perchée en première ligne sur les falaises escarpées avec un accès privé direct à la plage. Cette villa autonome équipée de panneaux solaires offre une piscine infinity semblant se jeter directement dans l'Océan Atlantique.",
+                amenities: ["🏖️ Accès Plage Privé", "🏊 Piscine Infinity Ocean", "☀️ 100% Énergie Solaire", "🌅 Vues Coucher de Soleil", "🎾 Court de Tennis"]
+            }
+        ];
+
+        let selectedPropIndex = 0;
+        let tourAngle = 0;
+        let isTourSpinning = false;
+        let tourInterval = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCalculator();
+            const visiteDate = document.getElementById('visiteDate');
+            if(visiteDate) {
+                const today = new Date().toISOString().split('T')[0];
+                visiteDate.setAttribute('min', today);
+                visiteDate.value = today;
+            }
+        });
+
+        // Search & Filter Properties
         function filterProperties() {
-            alert("Filtre dynamique activé ! Recherche en cours pour les critères sélectionnés.");
+            const city = document.getElementById('searchCity').value;
+            const type = document.getElementById('searchType').value;
+            const trans = document.getElementById('searchTrans').value;
+            const maxPrice = document.getElementById('searchPrice').value;
+
+            const cards = document.querySelectorAll('.property-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const cCity = card.getAttribute('data-city');
+                const cType = card.getAttribute('data-type');
+                const cTrans = card.getAttribute('data-trans');
+                const cPrice = parseInt(card.getAttribute('data-price'));
+
+                const matchCity = (city === 'all' || cCity === city);
+                const matchType = (type === 'all' || cType === type);
+                const matchTrans = (trans === 'all' || cTrans === trans);
+                const matchPrice = (maxPrice === 'all' || cPrice <= parseInt(maxPrice));
+
+                if (matchCity && matchType && matchTrans && matchPrice) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('propertiesCount').innerText = `Affichage de ${visibleCount} propriété(s) trouvée(s)`;
+            const noResults = document.getElementById('noResultsMsg');
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
         }
+
+        function resetSearchFilters() {
+            document.getElementById('searchCity').value = 'all';
+            document.getElementById('searchType').value = 'all';
+            document.getElementById('searchTrans').value = 'all';
+            document.getElementById('searchPrice').value = 'all';
+            filterProperties();
+        }
+
+        function filterByCity(cityName) {
+            document.getElementById('searchCity').value = cityName;
+            filterProperties();
+            document.getElementById('properties').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Property Modal
+        function openPropertyModal(index) {
+            selectedPropIndex = index;
+            const prop = propertiesData[index];
+
+            document.getElementById('propModalMainPhoto').src = prop.mainPhoto;
+            document.getElementById('propModalThumb1').src = prop.photo1;
+            document.getElementById('propModalThumb2').src = prop.photo2;
+
+            document.getElementById('propModalTitle').innerText = prop.title;
+            document.getElementById('propModalLocation').innerText = "📍 " + prop.location;
+            document.getElementById('propModalPrice').innerText = prop.price;
+            document.getElementById('propModalSurface').innerText = prop.surface;
+            document.getElementById('propModalBeds').innerText = prop.beds;
+            document.getElementById('propModalBaths').innerText = prop.baths;
+            document.getElementById('propModalGarage').innerText = prop.garage;
+            document.getElementById('propModalDesc').innerText = prop.desc;
+
+            // Amenities pills
+            const amenitiesContainer = document.getElementById('propModalAmenities');
+            amenitiesContainer.innerHTML = '';
+            prop.amenities.forEach(am => {
+                const pill = document.createElement('span');
+                pill.className = 'feat-pill';
+                pill.style.fontSize = '0.85rem';
+                pill.style.padding = '6px 14px';
+                pill.innerText = am;
+                amenitiesContainer.appendChild(pill);
+            });
+
+            // Tour area initial image
+            document.getElementById('tourCanvasArea').style.backgroundImage = `url('${prop.mainPhoto}')`;
+
+            document.getElementById('propertyModal').classList.add('active');
+        }
+
+        function swapModalPhoto(newSrc) {
+            const main = document.getElementById('propModalMainPhoto');
+            const oldMainSrc = main.src;
+            main.src = newSrc;
+            document.getElementById('tourCanvasArea').style.backgroundImage = `url('${newSrc}')`;
+        }
+
+        function closePropertyModal() {
+            document.getElementById('propertyModal').classList.remove('active');
+            if (isTourSpinning) toggleAutoTour();
+        }
+
+        function openVisiteModal(title) {
+            openPropertyModal(0);
+        }
+
+        // 360 Virtual Tour Controls
+        function panTour(delta) {
+            tourAngle += delta;
+            const tourArea = document.getElementById('tourCanvasArea');
+            tourArea.style.backgroundPosition = `${tourAngle}px center`;
+        }
+
+        function zoomTour(scale) {
+            const tourArea = document.getElementById('tourCanvasArea');
+            if (scale > 1.0) {
+                tourArea.style.backgroundSize = '140%';
+            } else {
+                tourArea.style.backgroundSize = 'cover';
+            }
+        }
+
+        function toggleAutoTour() {
+            isTourSpinning = !isTourSpinning;
+            if (isTourSpinning) {
+                tourInterval = setInterval(() => panTour(4), 50);
+            } else {
+                clearInterval(tourInterval);
+            }
+        }
+
+        function triggerHotspot(name) {
+            showToast(`🔍 Hotspot 360° : Aperçu de "${name}" chargé.`);
+        }
+
+        // Calculator Logic
+        let currentDuration = 20;
+
+        function setCalcDuration(years, btn) {
+            currentDuration = years;
+            document.querySelectorAll('.btn-calc-dur').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            updateCalculator();
+        }
+
+        function updateCalculator() {
+            const price = parseFloat(document.getElementById('calcPriceRange').value);
+            const downPct = parseFloat(document.getElementById('calcDownRange').value);
+            const rateYear = parseFloat(document.getElementById('calcRateRange').value);
+
+            // Down payment amount
+            const downAmount = price * (downPct / 100);
+            const loanAmount = price - downAmount;
+
+            // Formatted labels
+            document.getElementById('calcPriceVal').innerText = formatMAD(price);
+            document.getElementById('calcDownVal').innerText = `${downPct}% (${formatMAD(downAmount)})`;
+            document.getElementById('calcRateVal').innerText = `${rateYear}%`;
+            document.getElementById('calcLoanVal').innerText = formatMAD(loanAmount);
+
+            // Monthly Payment Formula
+            const r = (rateYear / 100) / 12;
+            const n = currentDuration * 12;
+            let monthly = 0;
+            if (r > 0) {
+                monthly = (loanAmount * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+            } else {
+                monthly = loanAmount / n;
+            }
+
+            const totalRepaid = monthly * n;
+            const totalInterest = totalRepaid - loanAmount;
+
+            document.getElementById('calcMonthlyRes').innerText = `${formatMAD(Math.round(monthly))} / mois`;
+            document.getElementById('calcTotalInterestVal').innerText = formatMAD(Math.round(totalInterest));
+
+            // Bar breakdown
+            const interestPct = Math.round((totalInterest / totalRepaid) * 100);
+            const capitalPct = 100 - interestPct;
+
+            document.getElementById('barCapital').style.width = `${capitalPct}%`;
+            document.getElementById('barInterest').style.width = `${interestPct}%`;
+        }
+
+        function formatMAD(amount) {
+            return new Intl.NumberFormat('fr-MA').format(amount) + " MAD";
+        }
+
+        function requestBankPreapproval() {
+            const monthly = document.getElementById('calcMonthlyRes').innerText;
+            const loan = document.getElementById('calcLoanVal').innerText;
+            showToast(`🏦 Demande envoyée ! Simulation pour mensualité de ${monthly} (Emprunt: ${loan}) enregistrée. Un conseiller financier vous recontacte.`);
+        }
+
+        // Form Handlers
+        function handleVisiteSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('visiteName').value;
+            const date = document.getElementById('visiteDate').value;
+            closePropertyModal();
+            showToast(`✅ Demande de visite enregistrée pour ${name} le ${date}. Votre agent d'élite vous contactera.`);
+        }
+
+        function handleEstimationSubmit(e) {
+            e.preventDefault();
+            showToast(`🏡 Demande d'estimation bien reçue ! Notre expert régional prendra rendez-vous sous 24h.`);
+            e.target.reset();
+        }
+
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            showToast(`📬 Bienvenue dans le Club Off-Market Palais & Demeures !`);
+            e.target.reset();
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.innerText = message;
+            toast.classList.add('active');
+            setTimeout(() => toast.classList.remove('active'), 5500);
+        }
+
+        // Keyboard escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closePropertyModal();
+            }
+        });
     </script>
 </body>
 </html>
