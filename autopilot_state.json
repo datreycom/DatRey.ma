@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 19,
+  "total_generated": 21,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -115,6 +115,18 @@
       "title": "Audit Digital au Maroc : Comment une PME de Casablanca a doublé son taux de conversion en 90 jours (Guide Stratégique Actuel)",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/audit-digital-maroc-doubler-taux-conversion-90-jours.html",
       "timestamp": "2026-08-02T09:52:40.902560"
+    },
+    {
+      "slug": "design-impression-maroc-guide-strategique-roi-2026",
+      "title": "Design & Impression au Maroc : Le Guide Stratégique 2026 pour Rentabiliser Chaque Dirham",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/design-impression-maroc-guide-strategique-roi-2026.html",
+      "timestamp": "2026-08-02T11:57:36.890047"
+    },
+    {
+      "slug": "developpement-web-mobile-maroc-optimisation-geo-google-ai-chatgpt-perplexity-2026",
+      "title": "Développement Web & Mobile au Maroc : l’Optimisation GEO pour dominer Google AI, ChatGPT et Perplexity en 2026",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/developpement-web-mobile-maroc-optimisation-geo-google-ai-chatgpt-perplexity-2026.html",
+      "timestamp": "2026-08-02T11:59:11.179101"
     }
   ]
 }
