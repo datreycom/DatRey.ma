@@ -962,6 +962,115 @@
             }
         }
 
+
+        /* Extra Modals CSS */
+        .modal-overlay {
+            padding: 1rem;
+            overflow-y: auto;
+        }
+        .project-modal-content {
+            max-width: 800px;
+            width: 100%;
+            background: var(--color-white);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            transform: translateY(30px);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0;
+            margin: auto;
+            pointer-events: auto;
+        }
+        .modal-overlay.active .project-modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .project-modal-visual {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, #1a1a2e, #0D0D0D);
+            background-size: cover;
+            background-position: center;
+        }
+        .project-modal-body {
+            padding: 3rem;
+            text-align: left;
+            color: var(--color-charcoal);
+        }
+        .project-modal-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-black);
+        }
+        .project-modal-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            flex-wrap: wrap;
+        }
+        .project-modal-meta strong {
+            color: var(--color-gold);
+            font-weight: 500;
+        }
+        .project-modal-desc p {
+            margin-bottom: 1rem;
+            font-weight: 300;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        .project-modal-footer {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .btn-close-absolute {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.4);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-fast);
+            backdrop-filter: blur(4px);
+        }
+        .btn-close-absolute:hover {
+            background: var(--color-gold);
+        }
+        .quote-modal-content {
+            max-width: 600px;
+            width: 100%;
+            background: var(--color-charcoal);
+            color: var(--color-champagne);
+            padding: 3rem;
+            position: relative;
+            transform: translateY(30px);
+            transition: all 0.5s;
+            margin: auto;
+            pointer-events: auto;
+            text-align: left;
+        }
+        .modal-overlay.active .quote-modal-content {
+            transform: translateY(0);
+        }
+        @media (max-width: 768px) {
+            .project-modal-body { padding: 1.5rem; }
+            .project-modal-visual { height: 250px; }
+            .quote-modal-content { padding: 1.5rem; }
+        }
+
 /* DESIGN SPELLS — Magnetic Cursor Glow */
 .hero::after {
     content: '';
@@ -1099,7 +1208,7 @@
             <a href="#" class="logo">Maison Élara</a>
             
             <div class="nav-links">
-                <a href="#histoire">La Maison</a>
+                <a href="#la-maison">La Maison</a>
                 <a href="#savoir-faire">Savoir-Faire</a>
                 <a href="#collections">Collections</a>
                 <a href="#temoignages">Témoignages</a>
@@ -1117,7 +1226,7 @@
     
     <div class="mobile-menu" id="mobile-menu">
         <ul>
-            <li><a href="#histoire" class="mobile-link">La Maison</a></li>
+            <li><a href="#la-maison" class="mobile-link">La Maison</a></li>
             <li><a href="#savoir-faire" class="mobile-link">Savoir-Faire</a></li>
             <li><a href="#collections" class="mobile-link">Collections</a></li>
             <li><a href="#temoignages" class="mobile-link">Témoignages</a></li>
@@ -1137,7 +1246,7 @@
     </header>
 
     <!-- 3. Notre Histoire -->
-    <section class="section-padding histoire" id="histoire">
+    <section class="section-padding histoire" id="la-maison">
         <div class="container">
             <div class="text-center reveal">
                 <span class="subtitle">Héritage</span>
@@ -1232,6 +1341,11 @@
                     <div class="service-icon">✧</div>
                     <h3 class="service-title">Identité de Marque</h3>
                     <p class="service-desc">Développement d'une signature visuelle unique et intemporelle qui traverse les modes et affirme votre singularité.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">🎨</div>
+                    <h3 class="service-title">Design Graphique & Impression</h3>
+                    <p class="service-desc">Création d'identités visuelles, charte graphique sur-mesure, édition de prestige et impression haute définition sur papiers d'exception.</p>
                 </div>
             </div>
         </div>
@@ -1430,7 +1544,7 @@
                 <div>
                     <h4 class="footer-title">La Maison</h4>
                     <ul class="footer-links">
-                        <li><a href="#histoire">Notre Histoire</a></li>
+                        <li><a href="#la-maison">Notre Histoire</a></li>
                         <li><a href="#savoir-faire">Expertise</a></li>
                         <li><a href="#collections">Collections</a></li>
                         <li><a href="#temoignages">Journal</a></li>
@@ -1581,6 +1695,134 @@
                 }
             });
             
+            
+            // Projects Data
+            const projectsData = {
+                "L'Écrin Noir": { client: "Villa Royale Marrakech", year: "2025", service: "Direction Artistique & Identité Visuelle", desc: ["Pour la Villa Royale Marrakech, nous avons imaginé une identité visuelle puisant dans l'élégance de l'architecture marocaine traditionnelle.", "Le projet a nécessité une direction artistique globale, allant du design du logo aux supports imprimés, en passant par une interface digitale immersive.", "Le résultat est une expérience utilisateur luxueuse qui invite au voyage dès le premier regard."], bg: "linear-gradient(135deg, #2c3e50, #3498db)" },
+                "Symphonie Rouge": { client: "Montre Chrono Paris", year: "2024", service: "Design Digital & E-commerce", desc: ["Montre Chrono Paris nous a confié la refonte de son expérience d'achat en ligne.", "Nous avons mis en place un configurateur 3D exclusif permettant aux clients de personnaliser chaque détail de leur garde-temps.", "La plateforme allie performance e-commerce et esthétique horlogère de très haute volée."], bg: "linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d)" },
+                "Ombres & Lumières": { client: "Château Haut-Brion", year: "2023", service: "Expérience Immersive", desc: ["Une plongée virtuelle dans les caves centenaires du domaine, offrant une dégustation visuelle de leurs meilleurs crus.", "La plateforme intègre des vidéos cinématiques interactives et un design épuré, laissant la majesté du vin s'exprimer.", "Une véritable ode au terroir français, sublimée par une technologie de pointe."], bg: "linear-gradient(135deg, #000000, #434343)" },
+                "Bleu Nuit": { client: "Haute Parfumerie Élara", year: "2026", service: "Identité & Packaging", desc: ["Création complète de l'identité de la gamme de parfums de niche Élara.", "Le design des flacons, la typographie et l'univers digital ont été pensés pour évoquer la sensualité et le mystère.", "Une campagne digitale primée a accompagné le lancement, générant un engouement mondial."], bg: "linear-gradient(135deg, #4b6cb7, #182848)" },
+                "Velours Pourpre": { client: "Palace des Neiges", year: "2025", service: "UX/UI Design", desc: ["Conception de la plateforme de réservation pour ce complexe hôtelier 5 étoiles situé dans les Alpes.", "L'interface privilégie la simplicité et l'élégance, guidant l'utilisateur à travers un parcours fluide et sans friction.", "Les animations subtiles rappellent la chute de la neige, créant une atmosphère apaisante."], bg: "linear-gradient(135deg, #e52d27, #b31217)" },
+                "Reflets d'Or": { client: "Aura Cosmétiques", year: "2024", service: "Design Graphique & Impression Premium", desc: ["Refonte de l'identité visuelle et création des packagings pour cette marque de cosmétiques bio de luxe.", "Utilisation de papiers texturés d'exception et d'impressions à chaud dorées pour un rendu tactile inoubliable.", "Le site web prolonge cette expérience avec des visuels organiques et une navigation intuitive."], bg: "linear-gradient(135deg, #2b5876, #4e4376)" }
+            };
+
+            const projectModal = document.getElementById('project-modal');
+            const quoteModal = document.getElementById('quote-modal');
+            const pTitle = document.getElementById('project-modal-title');
+            const pClient = document.getElementById('project-modal-client');
+            const pYear = document.getElementById('project-modal-year');
+            const pService = document.getElementById('project-modal-service');
+            const pDesc = document.getElementById('project-modal-desc');
+            const pVisual = document.getElementById('project-modal-visual');
+
+            // 1. Open Project Modal
+            document.querySelectorAll('.portfolio-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const title = item.querySelector('.portfolio-title').textContent.trim();
+                    const data = projectsData[title];
+                    if (data) {
+                        pTitle.textContent = title;
+                        pClient.textContent = data.client;
+                        pYear.textContent = data.year;
+                        pService.textContent = data.service;
+                        pDesc.innerHTML = data.desc.map(p => `<p>${p}</p>`).join('');
+                        pVisual.style.background = data.bg;
+                        
+                        projectModal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            // Close functions
+            const closeModals = () => {
+                document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
+                document.body.style.overflow = 'auto';
+            };
+
+            document.getElementById('close-project-modal')?.addEventListener('click', closeModals);
+            document.getElementById('close-quote-modal')?.addEventListener('click', closeModals);
+
+            document.querySelectorAll('.modal-overlay').forEach(overlay => {
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) closeModals();
+                });
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeModals();
+            });
+
+            // Open Quote Modal
+            document.getElementById('btn-quote-from-project')?.addEventListener('click', () => {
+                projectModal.classList.remove('active');
+                quoteModal.classList.add('active');
+            });
+
+            // Make sure all buttons trigger correctly
+            document.querySelectorAll('.btn').forEach(btn => {
+                const href = btn.getAttribute('href');
+                if (!href) return;
+                
+                // Quote Modal Trigger for 'btn-outline' in 'Notre Histoire' as requested
+                // Wait, the prompt says "Any CTA button without a direct anchor link... should smoothly scroll or open this Quote Modal"
+                // Let's attach smooth scrolling to ALL anchor buttons, and Quote modal for the specific button
+                
+                btn.addEventListener('click', (e) => {
+                    if(href.length > 1 && href.startsWith('#')) {
+                        const target = document.querySelector(href);
+                        if(target) {
+                            e.preventDefault();
+                            target.scrollIntoView({behavior: 'smooth'});
+                        }
+                    }
+                });
+            });
+
+            // Quote Form Submit
+            const quoteForm = document.getElementById('quote-form');
+            if (quoteForm) {
+                quoteForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    quoteModal.classList.remove('active');
+                    document.getElementById('success-modal').classList.add('active');
+                    quoteForm.reset();
+                });
+            }
+
+            // Fix mobile menu smooth scroll & close
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (mobileMenu.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                    const targetId = link.getAttribute('href');
+                    if(targetId.length > 1) {
+                        const target = document.querySelector(targetId);
+                        if(target) {
+                            setTimeout(() => {
+                                target.scrollIntoView({behavior: 'smooth'});
+                            }, 300); // Wait for menu to close
+                        }
+                    }
+                });
+            });
+
+            // Fix desktop nav links smooth scroll
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    if(targetId.length > 1) {
+                        const target = document.querySelector(targetId);
+                        if(target) {
+                            target.scrollIntoView({behavior: 'smooth'});
+                        }
+                    }
+                });
+            });
+
             // Initial trigger for scroll (in case elements are already in viewport on load)
             window.dispatchEvent(new Event('scroll'));
         });
@@ -1609,5 +1851,65 @@
         }, { threshold: 0.5 });
         counters.forEach(c => counterObserver.observe(c));
     </script>
+
+    <!-- Project Detail Modal -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="project-modal-content" id="project-modal-content" tabindex="-1">
+            <button class="btn-close-absolute" id="close-project-modal" aria-label="Fermer">&times;</button>
+            <div class="project-modal-visual" id="project-modal-visual"></div>
+            <div class="project-modal-body">
+                <h2 class="project-modal-title" id="project-modal-title">Titre du projet</h2>
+                <div class="project-modal-meta">
+                    <div><strong>Client:</strong> <span id="project-modal-client">Nom</span></div>
+                    <div><strong>Année:</strong> <span id="project-modal-year">2024</span></div>
+                    <div><strong>Service:</strong> <span id="project-modal-service">Service</span></div>
+                </div>
+                <div class="project-modal-desc" id="project-modal-desc">
+                    <!-- Descriptions here -->
+                </div>
+                <div class="project-modal-footer">
+                    <button class="btn btn-gold" id="btn-quote-from-project">Demander un projet similaire</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote/Consultation Modal -->
+    <div class="modal-overlay" id="quote-modal">
+        <div class="quote-modal-content">
+            <button class="btn-close-absolute" id="close-quote-modal" aria-label="Fermer">&times;</button>
+            <h2 class="section-title" style="font-size: 2rem; color: var(--color-champagne); text-align: center; margin-bottom: 1rem;">Demander un devis</h2>
+            <form id="quote-form" novalidate>
+                <div class="form-group">
+                    <label class="form-label" for="quote-nom">Nom Complet</label>
+                    <input type="text" id="quote-nom" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="quote-entreprise">Entreprise (Optionnel)</label>
+                    <input type="text" id="quote-entreprise" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="quote-email">Email</label>
+                    <input type="email" id="quote-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="quote-service">Service souhaité</label>
+                    <select id="quote-service" class="form-control" style="appearance: none; -webkit-appearance: none; background: rgba(13, 13, 13, 0.5) url('data:image/svg+xml;utf8,<svg fill=%22%23C5A059%22 height=%2224%22 viewBox=%220 0 24 24%22 width=%2224%22 xmlns=%22http://www.w3.org/2000/svg%22><path d=%22M7 10l5 5 5-5z%22/><path d=%22M0 0h24v24H0z%22 fill=%22none%22/></svg>') no-repeat right 10px center; padding-right: 30px;">
+                        <option value="Haute Couture Digitale">Haute Couture Digitale</option>
+                        <option value="Direction Artistique">Direction Artistique</option>
+                        <option value="Design Graphique & Impression">Design Graphique & Impression</option>
+                        <option value="Stratégie Premium">Stratégie Premium</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="quote-message">Message</label>
+                    <textarea id="quote-message" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer la demande</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>
