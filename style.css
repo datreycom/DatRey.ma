@@ -2087,6 +2087,7 @@ textarea.form-control { min-height: 150px; resize: vertical; }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--datrey-navy);
+    text-align: center;
 }
 
 /* 6 Core Expertise Domains Grid (Poster Style) */
@@ -2509,7 +2510,7 @@ textarea.form-control { min-height: 150px; resize: vertical; }
 }
 
 @media (max-width: 768px) {
-  .hero-slider-track { height: 440px; }
+  .hero-slider-track { height: 640px; }
 }
 
 .hero-slide {
@@ -3046,9 +3047,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); line-height: 1.25; fo
 
 /* Native App-like Mobile Optimizations */
 @media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden;
-    overscroll-behavior-y: none;
+  body {
     -webkit-tap-highlight-color: transparent;
   }
   #main-content {
