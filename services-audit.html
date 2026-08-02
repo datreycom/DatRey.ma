@@ -19,7 +19,7 @@
 <link href="style.css?v=20260729g" rel="stylesheet"/>
 <link href="assets/logo.webp" rel="icon" type="image/webp"/>
 <link href="favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
-<meta content="#050814" name="theme-color"/>
+<meta content="#ffffff" name="theme-color"/>
 <link href="/manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -123,7 +123,7 @@ fbq('track', 'PageView');
 </head>
 <body style="background: var(--datrey-cream, #f8f7f2) !important; color: var(--datrey-text, #0e1744);">
 <!-- Prevent theme FOUC -->
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'light');</script>
+<script>document.documentElement.removeAttribute('data-theme');try{localStorage.removeItem('datrey-theme');}catch(e){}</script>
 <a class="skip-to-content" href="#main-content">Aller au contenu principal</a>
 <!-- ========== HEADER ========== -->
 <header class="header" id="header" style="background: #ffffff !important; border-bottom: 1px solid var(--datrey-border) !important;">
@@ -229,6 +229,46 @@ fbq('track', 'PageView');
 </div>
 </div>
 </section>
+<!-- ========== METHODOLOGY ========== -->
+<section class="section-padding">
+<div class="container">
+<div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+<h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Notre <span class="gradient-text">Méthodologie</span></h2>
+<p style="color: var(--text-muted); font-size: 1.1rem;">Une analyse clinique de votre écosystème digital.</p>
+</div>
+<div class="services-grid">
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">1. Collecte &amp; Setup Data</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Nous connectons nos outils d'analyse avancés à vos plateformes (GA4, GSC, CRM) pour consolider une base de données fiable et exhaustive sur vos performances actuelles.</p>
+</div>
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">2. Identification des Frictions</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Nos experts décortiquent chaque étape de votre funnel : blocages techniques SEO, fuites de conversion UX/UI et déperdition de budget sur vos campagnes d'acquisition.</p>
+</div>
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">3. Plan d'Action Priorisé</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Nous restituons nos conclusions sous forme de backlog actionnable, classant les optimisations selon la matrice Effort / Impact pour maximiser les quick wins.</p>
+</div>
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">4. Suivi &amp; Accompagnement</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Nous ne nous arrêtons pas au rapport. Nous vous accompagnons dans le déploiement des correctifs ou formons vos équipes internes pour garantir une implémentation réussie.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ========== WHY CHOOSE US ========== -->
+<section class="section-padding" style="background: var(--datrey-cream);">
+<div class="container">
+<div class="chic-card reveal" style="padding: 3rem; text-align: center;">
+<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--datrey-navy);">Pourquoi nous choisir ?</h2>
+<p style="color: var(--datrey-base); font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+Contrairement aux audits automatisés générés par des logiciels, l'audit DatRey est réalisé de manière artisanale par nos consultants seniors. Nous adoptons une approche holistique 360° : nous ne regardons pas seulement le SEO ou les Ads de manière isolée, mais comment l'ensemble de votre stratégie s'imbrique pour générer du revenu. Notre objectif est de transformer la data brute en décisions stratégiques rentables pour votre croissance.
+</p>
+</div>
+</div>
+</section>
+
 <!-- ========== FAQ AGENCE ========== -->
 <section class="section-padding" style="background: var(--bg-alt);">
 <div class="container">
@@ -392,3 +432,4 @@ fbq('track', 'PageView');
 </script>
 </body>
 </html>
+

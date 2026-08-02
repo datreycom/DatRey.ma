@@ -22,7 +22,7 @@
 <link href="style.css?v=20260729g" rel="stylesheet"/>
 <link href="assets/logo.webp" rel="icon" type="image/webp"/>
 <link href="favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
-<meta content="#050814" name="theme-color"/>
+<meta content="#ffffff" name="theme-color"/>
 <link href="/manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -149,7 +149,7 @@ fbq('track', 'PageView');
 </head>
 <body class="service-detail-page" style="background: var(--datrey-cream, #f8f7f2) !important; color: var(--datrey-text, #0e1744);">
 <!-- Prevent theme FOUC -->
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'light');</script>
+<script>document.documentElement.removeAttribute('data-theme');try{localStorage.removeItem('datrey-theme');}catch(e){}</script>
 <a class="skip-to-content" href="#main-content">Aller au contenu principal</a>
 <!-- ========== HEADER ========== -->
 <header class="header" id="header" style="background: #ffffff !important; border-bottom: 1px solid var(--datrey-border) !important;">
@@ -194,171 +194,326 @@ fbq('track', 'PageView');
 <a class="btn btn-primary magnetic-btn" href="contact.html" onclick="closeMobileNav()"><span style="color: #ffffff !important;">Audit Gratuit</span></a>
 </div>
 <main id="main-content">
-<!-- ========== PAGE HERO ========== -->
-<section class="page-hero antigrav-hero hero-with-bg" style="background-image: url('https://picsum.photos/seed/gmb-hero/1920/1080');">
-<div class="hero-grid"></div>
-<div class="hero-orb hero-orb-1"></div>
-<div class="hero-orb hero-orb-2"></div>
-<div class="container">
-<div class="page-hero-content">
-<nav aria-label="Fil d'Ariane" class="breadcrumb">
-<a href="/">Accueil</a>
-<span class="breadcrumb-sep">›</span>
-<a href="services.html">Nos Services</a>
-<span class="breadcrumb-sep">›</span>
-<span class="breadcrumb-current">Google My Business &amp; Visite 360°</span>
-</nav>
-<h1 class="hero-title">Google My Business &amp; <span class="highlight">Visite Virtuelle 360°</span></h1>
-<p class="hero-subtitle">
-          Dominez les résultats locaux, gagnez la confiance de vos clients et attirez plus de trafic qualifié dans votre établissement physique.
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero antigrav-hero hero-with-bg" style="background-image: url('assets/photo_audit.webp');">
+    <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <nav aria-label="Fil d'Ariane" class="breadcrumb" style="justify-content: center;">
+          <a href="/">Accueil</a>
+          <span class="breadcrumb-sep">›</span>
+          <a href="services.html">Nos Services</a>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current">Visite Digitale Immersive 360°</span>
+        </nav>
+        <h1 class="hero-title">Dominez votre marché local grâce à la <span class="highlight">vitrine digitale immersive</span></h1>
+        <p class="hero-subtitle" style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+          Transformez vos recherches de proximité en revenus prévisibles.
         </p>
-</div>
-</div>
-</section>
-<!-- ========== TECH STACK / PARTNERS BANNER ========== -->
-<div class="tech-stack-banner">
-<div style="text-align: center; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Partenaires &amp; Technologies</div>
-<div class="tech-stack-track" style="display: flex; gap: 4rem; align-items: center; white-space: nowrap; animation: scroll-left 30s linear infinite; width: max-content;">
-    <img src="assets/tech/google-partner.svg" alt="Google Partner" height="40" style="opacity: 0.8;"/>
-    <img src="assets/tech/meta-partner.svg" alt="Meta Business Partner" height="40" style="opacity: 0.8;"/>
-    <img src="assets/tech/shopify.svg" alt="Shopify Partner" height="40" style="opacity: 0.8;"/>
-    <img src="assets/tech/wordpress.svg" alt="WordPress" height="40" style="opacity: 0.8;"/>
-    <img src="assets/tech/hubspot.svg" alt="HubSpot" height="40" style="opacity: 0.8;"/>
-    <img src="assets/tech/figma.svg" alt="Figma" height="40" style="opacity: 0.8;"/>
-    
-    <!-- Duplication for infinite scroll -->
-    <img src="assets/tech/google-partner.svg" alt="Google Partner" height="40" style="opacity: 0.8;"/>
-    <img src="assets/tech/meta-partner.svg" alt="Meta Business Partner" height="40" style="opacity: 0.8;"/>
-    <img src="assets/tech/shopify.svg" alt="Shopify Partner" height="40" style="opacity: 0.8;"/>
-    <img src="assets/tech/wordpress.svg" alt="WordPress" height="40" style="opacity: 0.8;"/>
-    <img src="assets/tech/hubspot.svg" alt="HubSpot" height="40" style="opacity: 0.8;"/>
-    <img src="assets/tech/figma.svg" alt="Figma" height="40" style="opacity: 0.8;"/>
-</div>
-</div>
-<!-- ========== SERVICE VISUAL ========== -->
-<section class="section-padding" style="padding-bottom: 0;">
-<div class="container">
-<div class="service-hero-img reveal" style="border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
-<img decoding="async" alt="Exemple de visite virtuelle 360 et SEO local Google My Business" src="https://picsum.photos/seed/gmb-visual/1200/600" style="width:100%; height:auto; display:block;"/>
-</div>
-</div>
-</section>
-<section class="section-padding">
-<div class="container">
-<h2 class="section-title" style="font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 24px;">Pourquoi Google trouve votre voisin et pas vous ?</h2>
-<p class="section-subtitle" style="max-width:780px; margin-bottom: 32px;">Le Référencement Local est aujourd'hui indispensable. Si un client cherche vos services à proximité, il doit vous trouver instantanément. Ne laissez plus la concurrence s'accaparer les premiers résultats de Google Maps et de la recherche locale.</p>
-</div>
-</section>
-<section class="section-padding" style="background: var(--bg-alt);">
-<div class="container">
-<h2 class="section-title" style="font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 24px;">Les avantages d'une fiche Google My Business optimisée</h2>
-<ul style="list-style:none; padding:0; max-width:780px;">
-<li style="padding: 12px 0; border-bottom: 1px solid var(--border-color); display: flex; gap: 12px; align-items: flex-start; line-height: 1.7;"><svg fill="none" height="20" stroke="var(--roi-500)" stroke-width="2" style="flex-shrink:0; margin-top:3px;" viewbox="0 0 24 24" width="20"><path d="M20 6L9 17l-5-5"></path></svg><span><strong>Visibilité Locale Accrue :</strong> Apparaissez dans le Pack Local de Google et sur Google Maps dès qu'un prospect fait une recherche liée à votre secteur.</span></li>
-<li style="padding: 12px 0; border-bottom: 1px solid var(--border-color); display: flex; gap: 12px; align-items: flex-start; line-height: 1.7;"><svg fill="none" height="20" stroke="var(--roi-500)" stroke-width="2" style="flex-shrink:0; margin-top:3px;" viewbox="0 0 24 24" width="20"><path d="M20 6L9 17l-5-5"></path></svg><span><strong>Informations Pratiques Immédiates :</strong> Vos horaires, coordonnées, itinéraire et site web accessibles en un clic.</span></li>
-<li style="padding: 12px 0; border-bottom: 1px solid var(--border-color); display: flex; gap: 12px; align-items: flex-start; line-height: 1.7;"><svg fill="none" height="20" stroke="var(--roi-500)" stroke-width="2" style="flex-shrink:0; margin-top:3px;" viewbox="0 0 24 24" width="20"><path d="M20 6L9 17l-5-5"></path></svg><span><strong>Réassurance Client :</strong> Gestion centralisée de vos avis Google pour bâtir un lien de confiance solide avec vos futurs clients.</span></li>
-</ul>
-</div>
-</section>
-<section class="section-padding">
-<div class="container">
-<h2 class="section-title" style="font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 24px;">La puissance de la Visite Virtuelle 360°</h2>
-<p class="section-subtitle" style="max-width:780px; margin-bottom: 32px;">L'ajout d'une visite virtuelle 360° intégrée directement à votre fiche Google Street View et à votre site web améliore considérablement l'attractivité de votre profil.</p>
-<div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px;">
-<div class="glass-panel" style="padding: 24px;">
-<h3 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--roi-400);">40x Plus Attrayant</h3>
-<p>Les fiches avec des photos et une visite virtuelle ont 2 fois plus de chances de susciter l'intérêt. C'est un argument visuel incontournable.</p>
-</div>
-<div class="glass-panel" style="padding: 24px;">
-<h3 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--roi-400);">Transparence et Confiance</h3>
-<p>Ouvrez les portes de votre établissement 24h/24 et 7j/7. Les clients peuvent découvrir l'ambiance et la propreté des lieux avant même de se déplacer.</p>
-</div>
-<div class="glass-panel" style="padding: 24px;">
-<h3 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--roi-400);">Compétitivité Maximale</h3>
-<p>Démarquez-vous instantanément de vos concurrents qui ne proposent que des photos classiques.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="section-padding" style="background: var(--bg-alt);">
-<div class="container">
-<h2 class="section-title" style="font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 24px;">Pourquoi choisir DatRey ?</h2>
-<p class="section-subtitle" style="max-width:780px; margin-bottom: 32px;">Chez DatRey, nous ne nous contentons pas de prendre des photos. Nous déployons une véritable stratégie d'acquisition locale.</p>
-<ul style="list-style:none; padding:0; max-width:780px;">
-<li style="padding: 12px 0; border-bottom: 1px solid var(--border-color); display: flex; gap: 12px; align-items: flex-start; line-height: 1.7;"><svg fill="none" height="20" stroke="var(--roi-500)" stroke-width="2" style="flex-shrink:0; margin-top:3px;" viewbox="0 0 24 24" width="20"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span><strong>Expertise Technique :</strong> Captation panoramique Haute Résolution, montage professionnel et post-production soignée.</span></li>
-<li style="padding: 12px 0; border-bottom: 1px solid var(--border-color); display: flex; gap: 12px; align-items: flex-start; line-height: 1.7;"><svg fill="none" height="20" stroke="var(--roi-500)" stroke-width="2" style="flex-shrink:0; margin-top:3px;" viewbox="0 0 24 24" width="20"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span><strong>Accompagnement de A à Z :</strong> De la création complète de votre fiche Google à l'intégration technique de la visite 360° sur toutes vos plateformes.</span></li>
-<li style="padding: 12px 0; border-bottom: 1px solid var(--border-color); display: flex; gap: 12px; align-items: flex-start; line-height: 1.7;"><svg fill="none" height="20" stroke="var(--roi-500)" stroke-width="2" style="flex-shrink:0; margin-top:3px;" viewbox="0 0 24 24" width="20"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span><strong>Qualité Premium &amp; Rapidité :</strong> Une livraison rapide sans jamais compromettre le rendu professionnel de votre image de marque.</span></li>
-</ul>
-</div>
-</section>
+        <div style="margin-top: 2rem;">
+            <a class="btn btn-primary magnetic-btn" href="contact.html?subject=AuditGratuit" style="background: var(--datrey-navy) !important;"><span style="color: #ffffff !important;">Demandez votre Audit Gratuit</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- ========== SERVICE GALLERY ========== -->
-<section class="section-padding" style="background: var(--datrey-cream);">
-  <div class="container">
-    <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Aperçu en <span class="gradient-text">Images</span></h2>
-      <p style="color: var(--text-muted);">Plongez dans l'univers de notre expertise.</p>
+  <!-- ========== LE PARCOURS D'ACHAT (LE PASSÉ VS LE PRÉSENT) ========== -->
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="section-title reveal" style="font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 24px;">Le parcours d'achat moderne commence toujours par une recherche</h2>
+      <p class="section-subtitle reveal" style="max-width:800px; margin: 0 auto 48px auto;">Avant de franchir votre porte, vos clients comparent vos services, vos prix et votre réputation depuis leur smartphone. Si vous n'êtes pas visible instantanément, vous n'existez pas.</p>
+      
+      <div class="bento-grid reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+        <!-- Le Passé -->
+        <div class="bento-item glass-panel" style="background: rgba(14,23,68,0.03); border: 1px solid rgba(14,23,68,0.05); padding: 40px;">
+          <h3 style="color: var(--text-muted); margin-bottom: 20px; font-size: 1.8rem;">Le Passé</h3>
+          <div style="font-size: 4rem; margin-bottom: 20px; opacity: 0.5;">🏪</div>
+          <p style="font-size: 1.1rem; color: var(--text-muted);">Une vitrine physique isolée, invisible sur les cartes et moteurs de recherche. Les clients passent devant sans le savoir.</p>
+        </div>
+        <!-- Le Présent -->
+        <div class="bento-item glass-panel" style="background: linear-gradient(135deg, rgba(45,70,194,0.1), rgba(78,205,196,0.1)); border: 1px solid rgba(45,70,194,0.2); padding: 40px;">
+          <h3 style="color: var(--datrey-blue); margin-bottom: 20px; font-size: 1.8rem;">Le Présent</h3>
+          <div style="font-size: 4rem; margin-bottom: 20px;">📱</div>
+          <p style="font-size: 1.1rem; font-weight: 600;">"Clinique dentaire près de chez moi" <br> "Meilleur restaurant quartier"</p>
+          <p style="margin-top: 15px;">Une présence omnicanale qui intercepte l'intention d'achat là où elle se trouve : sur les smartphones de vos futurs clients.</p>
+        </div>
+      </div>
     </div>
-    <div class="service-gallery-grid">
-      <div class="gallery-item reveal"><img src="assets/slider-marketing.webp" alt="Marketing Digital" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-design.webp" alt="Web Design" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/photo_dev.webp" alt="Développement" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/photo_audit.webp" alt="Audit et Analyse" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-formation.webp" alt="Formation" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-signage.webp" alt="Stratégie" loading="lazy"></div>
+  </section>
+
+  <!-- ========== LE COÛT DE L'INVISIBILITÉ (SANS OPTIMISATION VS STANDARD DATREY) ========== -->
+  <section class="section-padding" style="background: var(--bg-alt);">
+    <div class="container">
+      <h2 class="section-title reveal" style="margin-bottom: 24px;">Le coût réel de votre invisibilité digitale</h2>
+      <p class="section-subtitle reveal" style="max-width:800px; margin: 0 auto 48px auto;">Un client de votre quartier vous cherche. Ce qui se passe ensuite détermine votre chiffre d'affaires.</p>
+      
+      <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <div class="glass-panel" style="padding: 30px; border-left: 4px solid #ef4444;">
+          <h3 style="color: #ef4444; margin-bottom: 15px;">Sans Optimisation</h3>
+          <p><strong>1. Le client cherche</strong></p>
+          <p><strong>2. Ne trouve pas d'informations</strong> claires (ou fiche inexistante)</p>
+          <p><strong>3. Frustration</strong></p>
+          <div style="margin-top: 20px; padding: 15px; background: rgba(239,68,68,0.1); border-radius: 8px;">
+            <p style="color: #ef4444; font-weight: 700; margin:0;">Résultat : Achète chez votre voisin d'en face.</p>
+          </div>
+        </div>
+        <div class="glass-panel" style="padding: 30px; border-left: 4px solid #10b981;">
+          <h3 style="color: #10b981; margin-bottom: 15px;">Standard DatRey</h3>
+          <p><strong>1. Le client cherche</strong></p>
+          <p><strong>2. Trouve une fiche parfaite</strong> et rassurante</p>
+          <p><strong>3. Clic pour appeler / Itinéraire</strong></p>
+          <div style="margin-top: 20px; padding: 15px; background: rgba(16,185,129,0.1); border-radius: 8px;">
+            <p style="color: #10b981; font-weight: 700; margin:0;">Résultat : Visite en magasin et conversion.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-<!-- ========== FAQ AGENCE ========== -->
-<section class="section-padding" style="background: var(--bg-alt);">
-<div class="container">
-<div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-<h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Questions <span class="gradient-text">Fréquentes</span></h2>
-<p style="color: var(--text-muted);">Tout ce que vous devez savoir sur notre accompagnement.</p>
-</div>
-<div class="faq-list" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
-<details class="faq-item-chic">
-<summary>Comment se déroule l'accompagnement avec DatRey ?</summary>
-<div class="faq-content">
-<p>Tout commence par un audit gratuit de votre existant. Ensuite, nous définissons ensemble une stratégie sur-mesure (KPIs, budget, canaux). Une fois validée, notre équipe déploie les campagnes et vous fournit un reporting régulier pour suivre la rentabilité de vos investissements.</p>
-</div>
-</details>
-<details class="faq-item-chic">
-<summary>Faut-il un budget minimum pour travailler avec vous ?</summary>
-<div class="faq-content">
-<p>Nous adaptons nos stratégies à vos objectifs. Cependant, pour l'acquisition payante (Google Ads, Meta Ads), un budget publicitaire mensuel d'au moins 5 000 MAD est recommandé pour récolter suffisamment de données et optimiser le ROI rapidement.</p>
-</div>
-</details>
-<details class="faq-item-chic">
-<summary>Quand verrai-je les premiers résultats ?</summary>
-<div class="faq-content">
-<p>Pour le SEA et les Social Ads, les premiers leads ou ventes arrivent généralement dans la première semaine de diffusion. Pour le SEO, c'est une stratégie de fond : les premiers frémissements s'observent après 2 à 3 mois d'optimisations régulières.</p>
-</div>
-</details>
-</div>
-</div>
-</section>
-<!-- ========== CTA ========== -->
-<section class="cta-section section-padding" id="contact">
-<div class="container">
-<div class="cta-box reveal" style="text-align:center;">
-<h2>Démarquez-vous dès aujourd'hui</h2>
-<p>
-          Rencontrons-nous pour créer votre visite virtuelle 360° et optimiser votre fiche Google.
-          Demandez votre devis gratuit et sans engagement.
+  </section>
+
+  <!-- ========== GMB PILIER 1 ========== -->
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="section-title reveal" style="margin-bottom: 48px;">Google My Business : Le premier pilier de votre acquisition</h2>
+      <p class="section-subtitle reveal" style="max-width:800px; margin: 0 auto 48px auto;">Nous transformons de simples recherches en actions immédiates grâce à un profil d'entreprise maîtrisé, optimisé pour l'algorithme local de Google.</p>
+      
+      <div class="bento-grid reveal">
+        <div class="bento-item glass-panel" style="padding: 30px;">
+          <div style="font-size: 2.5rem; color: var(--datrey-blue); margin-bottom: 15px;">1</div>
+          <h3 style="margin-bottom: 10px;">Position Zéro</h3>
+          <p>Apparition au-dessus des résultats de recherche classiques.</p>
+        </div>
+        <div class="bento-item glass-panel" style="padding: 30px;">
+          <div style="font-size: 2.5rem; color: var(--datrey-blue); margin-bottom: 15px;">2</div>
+          <h3 style="margin-bottom: 10px;">Preuve Sociale</h3>
+          <p>Gestion et mise en avant des avis clients.</p>
+        </div>
+        <div class="bento-item glass-panel" style="padding: 30px;">
+          <div style="font-size: 2.5rem; color: var(--datrey-blue); margin-bottom: 15px;">3</div>
+          <h3 style="margin-bottom: 10px;">Friction Zéro</h3>
+          <p>Boutons d'action immédiate (Appeler, Itinéraire, Site Web).</p>
+        </div>
+        <div class="bento-item glass-panel" style="padding: 30px;">
+          <div style="font-size: 2.5rem; color: var(--datrey-blue); margin-bottom: 15px;">4</div>
+          <h3 style="margin-bottom: 10px;">Fraîcheur des données</h3>
+          <p>Horaires précis et posts d'actualité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== IMMERSION 360 ========== -->
+  <section class="section-padding" style="background: var(--datrey-navy); color: white;">
+    <div class="container">
+      <h2 class="section-title reveal" style="color: white; margin-bottom: 24px;">L'avantage déloyal : L'immersion 360°</h2>
+      <p class="section-subtitle reveal" style="color: rgba(255,255,255,0.8); max-width:800px; margin: 0 auto 60px auto;">Démarquez-vous radicalement en permettant à vos clients de visiter vos locaux avant même de s'y déplacer physiquement.</p>
+      
+      <div class="reveal" style="text-align: center; margin-bottom: 60px;">
+        <h3 style="font-size: clamp(3rem, 8vw, 6rem); color: var(--roi-300); margin: 0; line-height: 1;">40x</h3>
+        <p style="font-size: 1.5rem; font-weight: 500; margin-top: 15px;">Une visite virtuelle 360° génère jusqu'à 40 fois plus d'engagement client qu'une simple galerie de photos.</p>
+      </div>
+
+      <div class="bento-grid reveal" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="bento-item" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 12px;">
+          <h4 style="color: var(--roi-300); margin-bottom: 10px;">Augmente le temps</h4>
+          <p style="color: rgba(255,255,255,0.7); margin:0;">passé sur votre fiche</p>
+        </div>
+        <div class="bento-item" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 12px;">
+          <h4 style="color: var(--roi-300); margin-bottom: 10px;">Lève les doutes</h4>
+          <p style="color: rgba(255,255,255,0.7); margin:0;">avant la visite physique</p>
+        </div>
+        <div class="bento-item" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 12px;">
+          <h4 style="color: var(--roi-300); margin-bottom: 10px;">Compatible VR</h4>
+          <p style="color: rgba(255,255,255,0.7); margin:0;">pour un effet waouh garanti</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== POURQUOI ROI IMMEDIAT ========== -->
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="section-title reveal" style="margin-bottom: 24px;">Pourquoi l'optimisation locale génère un ROI immédiat</h2>
+      <p class="section-subtitle reveal" style="max-width:800px; margin: 0 auto 48px auto;">Une présence locale structurée fait bien plus qu'afficher votre adresse. C'est un moteur de croissance continu.</p>
+      
+      <div class="bento-grid reveal">
+        <div class="bento-item glass-panel" style="padding: 30px;">
+          <div style="font-size: 2.5rem; margin-bottom: 15px;">🧲</div>
+          <h3 style="margin-bottom: 15px;">Trafic Qualifié</h3>
+          <p>Apparaissez précisément au moment où l'intention d'achat est la plus forte.</p>
+        </div>
+        <div class="bento-item glass-panel" style="padding: 30px;">
+          <div style="font-size: 2.5rem; margin-bottom: 15px;">🛡️</div>
+          <h3 style="margin-bottom: 15px;">Confiance & Crédibilité</h3>
+          <p>Une fiche complète et vérifiée rassure instantanément face à une concurrence invisible.</p>
+        </div>
+        <div class="bento-item glass-panel" style="padding: 30px;">
+          <div style="font-size: 2.5rem; margin-bottom: 15px;">⚡</div>
+          <h3 style="margin-bottom: 15px;">Conversion Rapide</h3>
+          <p>Réduisez le temps entre la recherche et le contact avec des boutons d'appel direct.</p>
+        </div>
+        <div class="bento-item glass-panel" style="padding: 30px;">
+          <div style="font-size: 2.5rem; margin-bottom: 15px;">📈</div>
+          <h3 style="margin-bottom: 15px;">Data & Décisions</h3>
+          <p>Suivez exactement combien de personnes ont cherché votre itinéraire ou vous ont appelé ce mois-ci.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMPARATIF ========== -->
+  <section class="section-padding" style="background: var(--bg-alt);">
+    <div class="container">
+      <h2 class="section-title reveal" style="margin-bottom: 48px;">L'impact d'une exécution experte</h2>
+      <div class="reveal" style="overflow-x: auto;">
+        <table style="width: 100%; max-width: 1000px; margin: 0 auto; border-collapse: collapse; text-align: left; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+          <thead>
+            <tr style="background: var(--datrey-navy); color: white;">
+              <th style="padding: 20px; font-size: 1.2rem;">Critère</th>
+              <th style="padding: 20px; font-size: 1.2rem; color: rgba(255,255,255,0.7);">Fiche Basique</th>
+              <th style="padding: 20px; font-size: 1.2rem; color: var(--roi-300);">Fiche DatRey 360°</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+              <td style="padding: 20px; font-weight: 600;">📷 Visuels</td>
+              <td style="padding: 20px; color: var(--text-muted);">Photos amateurs par smartphone</td>
+              <td style="padding: 20px; font-weight: 600; color: var(--datrey-blue);">Captation 360° HD Haute Résolution</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+              <td style="padding: 20px; font-weight: 600;">⏱️ Engagement</td>
+              <td style="padding: 20px; color: var(--text-muted);">Passif, quelques secondes</td>
+              <td style="padding: 20px; font-weight: 600; color: var(--datrey-blue);">Interactif, exploration immersive, x40</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+              <td style="padding: 20px; font-weight: 600;">🗺️ Intégration Google</td>
+              <td style="padding: 20px; color: var(--text-muted);">Isolée</td>
+              <td style="padding: 20px; font-weight: 600; color: var(--datrey-blue);">Couplée à Google Street View & Maps</td>
+            </tr>
+            <tr>
+              <td style="padding: 20px; font-weight: 600;">🔗 Partageabilité</td>
+              <td style="padding: 20px; color: var(--text-muted);">Lien standard</td>
+              <td style="padding: 20px; font-weight: 600; color: var(--datrey-blue);">Lien universel intégrable WhatsApp, Réseaux Sociaux, Site Web</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== METHODOLOGIE ========== -->
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="section-title reveal" style="margin-bottom: 24px;">Notre méthodologie de déploiement en 5 étapes</h2>
+      <p class="section-subtitle reveal" style="max-width:800px; margin: 0 auto 48px auto;">Un processus "Clé en main" où notre équipe technique s'occupe de tout, sans perturber votre activité.</p>
+      
+      <div class="bento-grid reveal">
+        <div class="bento-item glass-panel" style="padding: 30px;">
+          <div style="font-size: 1.5rem; font-weight: 700; color: var(--datrey-blue); margin-bottom: 10px;">Étape 1</div>
+          <h3 style="margin-bottom: 15px;">Cadrage Technique</h3>
+          <p>Visite, évaluation de l'espace, prise de mesures, et identification des meilleurs angles pour valoriser vos produits.</p>
+        </div>
+        <div class="bento-item glass-panel" style="padding: 30px;">
+          <div style="font-size: 1.5rem; font-weight: 700; color: var(--datrey-blue); margin-bottom: 10px;">Étape 2</div>
+          <h3 style="margin-bottom: 15px;">Captation 360° HD</h3>
+          <p>Prises de vues panoramiques en ultra-haute définition, couvrant l'intérieur et la façade extérieure.</p>
+        </div>
+        <div class="bento-item glass-panel" style="padding: 30px;">
+          <div style="font-size: 1.5rem; font-weight: 700; color: var(--datrey-blue); margin-bottom: 10px;">Étape 3</div>
+          <h3 style="margin-bottom: 15px;">Post-Production</h3>
+          <p>Traitement des images, correction colorimétrique et création du maillage 3D interactif.</p>
+        </div>
+        <div class="bento-item glass-panel" style="padding: 30px;">
+          <div style="font-size: 1.5rem; font-weight: 700; color: var(--datrey-blue); margin-bottom: 10px;">Étape 4</div>
+          <h3 style="margin-bottom: 15px;">Intégration Algorithmique</h3>
+          <p>Upload sécurisé et synchronisation directe avec les serveurs de Google Maps, Search et Street View.</p>
+        </div>
+        <div class="bento-item glass-panel" style="padding: 30px; grid-column: 1 / -1; background: linear-gradient(135deg, rgba(45,70,194,0.05), rgba(78,205,196,0.05));">
+          <div style="font-size: 1.5rem; font-weight: 700; color: var(--datrey-blue); margin-bottom: 10px;">Étape 5</div>
+          <h3 style="margin-bottom: 15px;">Livraison & Déploiement Omnicanal</h3>
+          <p>Remise du lien officiel. Votre visite 360° est prête à être envoyée sur WhatsApp, intégrée à votre site web, ou partagée sur vos réseaux sociaux.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ECOSYSTEME ========== -->
+  <section class="section-padding" style="background: var(--bg-alt);">
+    <div class="container">
+      <h2 class="section-title reveal" style="margin-bottom: 24px;">Au-delà de la visibilité locale : L'écosystème DatRey</h2>
+      <p class="section-subtitle reveal" style="max-width:800px; margin: 0 auto 48px auto;">Nous ne vendons pas seulement des visites virtuelles. Nous sommes une agence d'acquisition full-stack dédiée à votre ROI.</p>
+      
+      <div class="bento-grid reveal" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+        <a href="services-seo.html" class="bento-item glass-panel" style="padding: 20px; text-decoration: none; color: inherit; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+          <h4 style="margin: 0; color: var(--datrey-navy);">Référencement Local (SEO/Maps)</h4>
+        </a>
+        <a href="services-google-ads.html" class="bento-item glass-panel" style="padding: 20px; text-decoration: none; color: inherit; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+          <h4 style="margin: 0; color: var(--datrey-navy);">Google Ads & Meta Ads</h4>
+        </a>
+        <a href="creation-site-web.html" class="bento-item glass-panel" style="padding: 20px; text-decoration: none; color: inherit; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+          <h4 style="margin: 0; color: var(--datrey-navy);">Création de Site Web</h4>
+        </a>
+        <a href="services-design.html" class="bento-item glass-panel" style="padding: 20px; text-decoration: none; color: inherit; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+          <h4 style="margin: 0; color: var(--datrey-navy);">Design & Identité Visuelle</h4>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERTISE GMB ========== -->
+  <section class="section-padding" style="background: var(--datrey-cream);">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Notre <span class="gradient-text">Méthodologie</span> &amp; Expertise</h2>
+        <p style="color: var(--text-muted);">Une gestion proactive pour dominer le SEO Local.</p>
+      </div>
+      
+      <div class="bento-grid" style="margin-bottom: 3rem;">
+        <div class="bento-card-glass reveal">
+          <h3>Optimisation Sémantique</h3>
+          <p>Nous ne nous contentons pas de remplir votre fiche. Nous intégrons les mots-clés locaux stratégiques dans la description, les services et les posts pour ressortir sur les recherches de vos prospects.</p>
+        </div>
+        <div class="bento-card-glass reveal" style="animation-delay: 0.1s;">
+          <h3>Gestion des Avis Clients</h3>
+          <p>Les avis sont le premier critère de conversion en local. Nous mettons en place des processus de collecte et nous gérons les réponses aux avis (positifs comme négatifs) de manière professionnelle.</p>
+        </div>
+        <div class="bento-card-glass reveal" style="animation-delay: 0.2s;">
+          <h3>Actualisation Dynamique</h3>
+          <p>Google favorise les fiches actives. Nous animons votre profil Google Business Profile avec des posts réguliers (offres, actualités, articles) et des ajouts de photos géolocalisées.</p>
+        </div>
+        <div class="bento-card-glass reveal" style="animation-delay: 0.3s;">
+          <h3>Suivi des Performances</h3>
+          <p>Grâce à des reportings clairs, nous analysons les clics vers votre site, les demandes d'itinéraires et les appels générés pour prouver le ROI de notre gestion locale.</p>
+        </div>
+      </div>
+
+      <div class="chic-card reveal">
+        <div class="chic-card-content" style="text-align: center; padding: 2rem;">
+          <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Pourquoi nous confier votre Référencement Local ?</h3>
+          <p>Dans un environnement B2B où la proximité est souvent gage de confiance, votre fiche Google Business Profile est votre vitrine digitale numéro un. Notre équipe spécialisée en Local SEO s'assure que vous soyez la réponse évidente aux recherches locales de vos futurs clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section section-padding" id="contact" style="background: var(--datrey-navy); color: white;">
+    <div class="container">
+      <div class="cta-box reveal" style="text-align:center; background: transparent; box-shadow: none; border:none;">
+        <h2 style="color: white; margin-bottom: 20px;">Prêt à attirer des milliers de clients locaux ?</h2>
+        <p style="color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto 40px auto; font-size: 1.2rem;">
+          Arrêtez de perdre des clients au profit de vos concurrents. Sécurisez votre position de leader dès aujourd'hui.
         </p>
-<div class="cta-actions">
-<a class="btn btn-primary magnetic-btn" href="contact.html?subject=AuditGratuit">
-<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            contact@datrey.ma
+        <div class="cta-actions" style="justify-content: center;">
+          <a class="btn btn-primary magnetic-btn" href="contact.html?subject=AuditGratuit" style="background: white !important; color: var(--datrey-navy) !important; padding: 20px 40px; font-size: 1.2rem; border-radius: 50px;">
+            Demandez votre AUDIT GRATUIT
           </a>
-<a class="btn btn-outline magnetic-btn" href="tel:+212644443059" style="color: #2d46c2 !important; border-color: #bfdbfe !important; background: #ffffff !important;">
-<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
-            +212 6 44 44 30 59
-          </a>
-</div>
-</div>
-</div>
-</section>
+        </div>
+        <p style="margin-top: 20px; color: var(--roi-300); font-size: 0.9rem;">(Sans engagement, livré en 48h)</p>
+      </div>
+    </div>
+  </section>
 </main>
 <!-- ========== FOOTER ========== -->
 <footer class="footer">
@@ -474,3 +629,4 @@ fbq('track', 'PageView');
 </script>
 </body>
 </html>
+

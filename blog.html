@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr" data-theme="light">
+<html lang="fr" dir="ltr" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -89,7 +89,7 @@
   </style>
 </head>
 <body>
-  <script>document.documentElement.setAttribute('data-theme','light');</script>
+  <script>document.documentElement.removeAttribute('data-theme');try{localStorage.removeItem('datrey-theme');}catch(e){}</script>
   
   <header class="header" id="header">
     <div class="container">
@@ -995,3 +995,5 @@
   </a>
 </body>
 </html>
+
+

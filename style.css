@@ -872,25 +872,29 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-body); line-height: 1.25; font-
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .mobile-toggle { display: flex; }
+  .container { padding: 0 16px !important; }
   .hero-stats { gap: 32px; flex-wrap: wrap; margin-top: 60px; }
   .hero-actions { flex-direction: column; }
-  .hero-actions .btn { width: 100%; justify-content: center; }
+  .hero-actions .btn { width: 100%; justify-content: center; min-height: 48px; }
   .services-grid { grid-template-columns: 1fr; }
   .service-detail-header { flex-direction: column; gap: 20px; }
   .service-detail-header h3 { font-size: 2rem; }
   .service-hero-img img { height: 300px; }
-  .page-hero { padding: 140px 0 60px; }
-  .page-hero .hero-title { font-size: 2.5rem; }
-  .cta-box { padding: 60px 30px; }
+  .page-hero { padding: 100px 0 40px !important; }
+  .page-hero .hero-title { font-size: 2.2rem; }
+  .cta-box { padding: 40px 20px; }
   .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
   .footer-bottom { flex-direction: column; gap: 20px; text-align: center; align-items: center; }
-  .section-padding { padding: 100px 0; }
+  .section-padding { padding: 48px 0 !important; }
+  .hero, .hero-section, .chic-hero { padding: 80px 0 32px !important; }
   .whatsapp-float { bottom: 16px; right: 16px; width: 50px; height: 50px; }
   .whatsapp-float svg { width: 24px; height: 24px; }
 }
 @media (max-width: 480px) {
-  .hero-title { font-size: 2.5rem; }
-  .container { padding: 0 24px; }
+  .hero-title { font-size: 2.2rem; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+  .container { padding: 0 16px !important; }
 }
 
 /* Dark mode image brightness */
@@ -928,7 +932,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-body); line-height: 1.25; font-
   height: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s 0.8s;
   transform: scale(1.03);
   display: flex;
   align-items: flex-end;
@@ -938,6 +942,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-body); line-height: 1.25; font-
   opacity: 1;
   visibility: visible;
   transform: scale(1);
+  z-index: 2;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s 0s;
 }
 
 .slider-img {
@@ -2509,7 +2515,7 @@ textarea.form-control { min-height: 150px; resize: vertical; }
   inset: 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s 0.8s;
   transform: scale(1.04);
 }
 
@@ -2517,6 +2523,8 @@ textarea.form-control { min-height: 150px; resize: vertical; }
   opacity: 1;
   visibility: visible;
   transform: scale(1);
+  z-index: 2;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s 0s;
 }
 
 .hero-slide-img {
@@ -2621,11 +2629,11 @@ img {
 
 /* Reduced Section Whitespace */
 .section-padding {
-  padding: 56px 0 !important;
+  padding: 64px 0;
 }
 
 .hero, .hero-section, .chic-hero {
-  padding: 100px 0 36px !important;
+  padding: 100px 0 36px;
 }
 
 .poster-divider {
@@ -2825,4 +2833,233 @@ img {
 .service-detail-page .section-padding li {
     justify-content: center;
     text-align: center;
+}
+
+/* ============================================
+   MOBILE APP-LIKE EXPERIENCE (PWA)
+   ============================================ */
+@media (max-width: 768px) {
+  /* Native App Behaviors */
+  body, html {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none; /* Prevent accidental text selection on mobile */
+    overflow-x: hidden;
+  }
+  
+  /* Allow selection in form inputs and specific text areas if needed */
+  input, textarea, p, h1, h2, h3, h4, h5, h6 {
+    user-select: text;
+  }
+  
+  /* Padding for Bottom Tab Bar */
+  body {
+    padding-bottom: 70px !important;
+  }
+
+  /* Hide whatsapp float a bit higher to avoid bottom bar overlap */
+  .whatsapp-float {
+    bottom: 86px !important;
+  }
+}
+
+/* Bottom Tab Bar Styles */
+.bottom-tab-bar {
+  display: none; /* Hidden on desktop */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+  z-index: 9999;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@media (max-width: 768px) {
+  .bottom-tab-bar {
+    display: flex;
+  }
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  width: 25%;
+  height: 100%;
+  transition: all 0.2s ease;
+}
+
+.tab-item svg {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  transition: all 0.2s ease;
+}
+
+.tab-item:active {
+  transform: scale(0.9);
+}
+
+.tab-item.active {
+  color: var(--datrey-blue);
+}
+
+.tab-item.active svg {
+  stroke-width: 2.5;
+}
+/* ==============================================================
+   GLOBAL ENFORCEMENT OF INDEX.HTML THEME (CRITICAL CSS)
+   ============================================================== */
+:root {
+  --roi-600: #1b2a78;
+  --roi-500: #2d46c2;
+  --roi-400: #60a5fa;
+  --pure-white: #fff;
+  --font-display: 'DM Serif Display', serif;
+  --font-body: 'Poppins', sans-serif;
+  --radius-xl: 24px;
+  --transition: .4s cubic-bezier(.16,1,.3,1);
+  --bg-main: #f8f7f2;
+  --bg-alt: #ffffff;
+  --text-main: #1b2a78;
+  --text-muted: #5a668c;
+  --card-bg: #ffffff;
+  --border-color: #e6e4da;
+}
+html { scroll-behavior: smooth; font-size: 17px; }
+body { font-family: var(--font-body); color: var(--text-main); background: var(--bg-main) !important; line-height: 1.9; overflow-x: hidden; -webkit-font-smoothing: antialiased; font-size: 1.05rem; letter-spacing: .03em; }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); line-height: 1.25; font-weight: 700; color: var(--text-main) !important; letter-spacing: .01em; }
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; background: #ffffff !important; border-bottom: 1px solid #e6e4da !important; box-shadow: 0 4px 20px rgba(15,23,42,.04) !important; transition: var(--transition); }
+.header.scrolled { background: rgba(255,255,255,0.98) !important; padding: 12px 0; box-shadow: 0 4px 20px rgba(15,23,42,.08) !important; }
+.logo { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: #1b2a78 !important; }
+.nav-links a { color: #1b2a78 !important; font-size: .95rem; font-weight: 600; position: relative; white-space: nowrap; letter-spacing: .03em; }
+.nav-links a:hover, .nav-links a.nav-active { color: #2d46c2 !important; }
+.btn-primary { background: #2d46c2 !important; color: #fff !important; box-shadow: 0 4px 15px rgba(37,99,235,.3) !important; }
+.hero { background: #ffffff !important; }
+.hero-title { color: #1b2a78 !important; }
+.hero-title .highlight { color: #2d46c2 !important; }
+.hero-subtitle { color: #5a668c !important; }
+
+/* ==============================================================
+   FIX PAGE-HERO TO MATCH LIGHT THEME
+   ============================================================== */
+.page-hero {
+  background: #ffffff !important;
+  color: #1b2a78 !important;
+}
+.page-hero .hero-title, .page-hero h1 {
+  color: #1b2a78 !important;
+}
+.page-hero .hero-title .highlight {
+  color: #2d46c2 !important;
+}
+.page-hero .hero-subtitle, .page-hero p {
+  color: #5a668c !important;
+}
+/* Ensure dark elements inside the page are also fixed */
+.chic-hero, .hero-section {
+  background: #ffffff !important;
+  color: #1b2a78 !important;
+}
+.chic-hero h1, .hero-section h1, .chic-hero .hero-title {
+  color: #1b2a78 !important;
+}
+.chic-hero p, .hero-section p, .chic-hero .hero-subtitle {
+  color: #5a668c !important;
+}
+
+/* ==============================================================
+   FIX HERO-WITH-BG FOR LIGHT THEME (White overlay)
+   ============================================================== */
+.hero-with-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85) !important;
+  z-index: 1;
+}
+.hero-with-bg .page-hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero-with-bg .page-hero-content h1, 
+.hero-with-bg .page-hero-content .hero-title,
+.hero-with-bg .page-hero-content .hero-subtitle,
+.hero-with-bg .page-hero-content p {
+  text-shadow: none !important;
+}
+.btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .1em !important;
+  font-size: .88rem !important;
+  padding: 16px 36px !important;
+  border-radius: 50px !important;
+  cursor: pointer !important;
+  border: none !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.nav-cta {
+  padding: 10px 24px !important;
+  font-size: .85rem !important;
+  color: #fff !important;
+  letter-spacing: .08em !important;
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .bento-span-2 {
+    grid-column: span 1 !important;
+  }
+  .services-image-grid {
+    grid-template-columns: 1fr !important;
+  }
+  body, html {
+    user-select: auto !important;
+  }
+}
+
+/* Native App-like Mobile Optimizations */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  #main-content {
+    padding-bottom: 90px !important; /* Space for bottom tab bar */
+  }
+  .header {
+    padding: 12px 0 !important;
+  }
+  h1 { font-size: 2.2rem !important; line-height: 1.2 !important; }
+  h2 { font-size: 1.8rem !important; line-height: 1.3 !important; }
+  
+  /* Touch target size improvements */
+  a, button, .btn {
+    min-height: 44px;
+  }
 }

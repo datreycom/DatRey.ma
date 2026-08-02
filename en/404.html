@@ -39,7 +39,7 @@ fbq('track', 'PageView');
 <!-- End Meta Facebook Pixel Code -->
 </head>
 <body style="background: var(--datrey-cream, #f8f7f2) !important; color: var(--datrey-text, #0e1744);">
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'light');</script>
+<script>document.documentElement.removeAttribute('data-theme');try{localStorage.removeItem('datrey-theme');}catch(e){}</script>
 <div class="error-page">
 <div>
 <a href="/" style="display:inline-block;margin-bottom:2rem;">
@@ -66,3 +66,4 @@ fbq('track', 'PageView');
 </script>
 </body>
 </html>
+

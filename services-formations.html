@@ -19,7 +19,7 @@
 <link href="style.css?v=20260729g" rel="stylesheet"/>
 <link href="assets/logo.webp" rel="icon" type="image/webp"/>
 <link href="favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
-<meta content="#050814" name="theme-color"/>
+<meta content="#ffffff" name="theme-color"/>
 <link href="/manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -123,7 +123,7 @@ fbq('track', 'PageView');
 </head>
 <body style="background: var(--datrey-cream, #f8f7f2) !important; color: var(--datrey-text, #0e1744);">
 <!-- Prevent theme FOUC -->
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'light');</script>
+<script>document.documentElement.removeAttribute('data-theme');try{localStorage.removeItem('datrey-theme');}catch(e){}</script>
 <a class="skip-to-content" href="#main-content">Aller au contenu principal</a>
 <!-- ========== HEADER ========== -->
 <header class="header" id="header" style="background: #ffffff !important; border-bottom: 1px solid var(--datrey-border) !important;">
@@ -229,6 +229,43 @@ fbq('track', 'PageView');
 </div>
 </div>
 </section>
+
+<!-- ========== EXPERTISE FORMATION ========== -->
+<section class="section-padding" style="background: var(--datrey-cream);">
+  <div class="container">
+    <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Notre <span class="gradient-text">Méthodologie</span> &amp; Expertise</h2>
+      <p style="color: var(--text-muted);">Un apprentissage concret, opérationnel et adapté à vos enjeux B2B.</p>
+    </div>
+    
+    <div class="bento-grid" style="margin-bottom: 3rem;">
+      <div class="bento-card-glass reveal">
+        <h3>Audit &amp; Personnalisation</h3>
+        <p>Avant chaque formation, nous évaluons le niveau de vos équipes et analysons vos objectifs (génération de leads, notoriété) pour concevoir un programme sur-mesure, 100% pertinent pour votre secteur.</p>
+      </div>
+      <div class="bento-card-glass reveal" style="animation-delay: 0.1s;">
+        <h3>Pratique &amp; Cas Réels</h3>
+        <p>Fini la théorie abstraite. Nos Master Classes s'appuient sur vos propres données, vos comptes publicitaires et votre site web. Vous appliquez immédiatement ce que vous apprenez.</p>
+      </div>
+      <div class="bento-card-glass reveal" style="animation-delay: 0.2s;">
+        <h3>Outils &amp; Processus</h3>
+        <p>Nous vous formons aux outils de référence du marché (Google Analytics 4, SEMrush, HubSpot, Meta Business Suite) et vous transmettons nos frameworks d'agence pour gagner en productivité.</p>
+      </div>
+      <div class="bento-card-glass reveal" style="animation-delay: 0.3s;">
+        <h3>Suivi Post-Formation</h3>
+        <p>L'apprentissage ne s'arrête pas à la fin de la session. Nous proposons un accompagnement de suivi pour valider les acquis et vous aider à résoudre vos premières difficultés opérationnelles.</p>
+      </div>
+    </div>
+
+    <div class="chic-card reveal">
+      <div class="chic-card-content" style="text-align: center; padding: 2rem;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Pourquoi former vos équipes avec nous ?</h3>
+        <p>Nos formateurs sont avant tout des experts opérationnels qui gèrent des campagnes au quotidien. En choisissant DatRey, vous profitez de stratégies éprouvées et de méthodes agiles, vous permettant d'internaliser vos compétences digitales et d'accélérer sereinement votre transformation B2B.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== FAQ AGENCE ========== -->
 <section class="section-padding" style="background: var(--bg-alt);">
 <div class="container">
@@ -392,3 +429,4 @@ fbq('track', 'PageView');
 </script>
 </body>
 </html>
+

@@ -20,7 +20,7 @@
 <link href="style.css?v=20260729g" rel="stylesheet"/>
 <link href="assets/logo.webp" rel="icon" type="image/webp"/>
 <link href="favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
-<meta content="#050814" name="theme-color"/>
+<meta content="#ffffff" name="theme-color"/>
 <link href="/manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -147,7 +147,7 @@ fbq('track', 'PageView');
 </head>
 <body class="service-detail-page" style="background: var(--datrey-cream, #f8f7f2) !important; color: var(--datrey-text, #0e1744);">
 <!-- Prevent theme FOUC -->
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'light');</script>
+<script>document.documentElement.removeAttribute('data-theme');try{localStorage.removeItem('datrey-theme');}catch(e){}</script>
 <a class="skip-to-content" href="#main-content">Aller au contenu principal</a>
 <!-- ========== HEADER ========== -->
 <header class="header" id="header" style="background: #ffffff !important; border-bottom: 1px solid var(--datrey-border) !important;">
@@ -271,20 +271,30 @@ fbq('track', 'PageView');
 </div>
 </section>
 
-<!-- ========== SERVICE GALLERY ========== -->
+<!-- ========== NOTRE METHODOLOGIE & POURQUOI NOUS CHOISIR ========== -->
 <section class="section-padding" style="background: var(--datrey-cream);">
   <div class="container">
     <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Aperçu en <span class="gradient-text">Images</span></h2>
-      <p style="color: var(--text-muted);">Plongez dans l'univers de notre expertise.</p>
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Notre <span class="gradient-text">Méthodologie</span></h2>
+      <p style="color: var(--text-muted);">De l'audit à la roadmap : un plan d'action chirurgical.</p>
     </div>
-    <div class="service-gallery-grid">
-      <div class="gallery-item reveal"><img src="assets/slider-marketing.webp" alt="Marketing Digital" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-design.webp" alt="Web Design" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/photo_dev.webp" alt="Développement" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/photo_audit.webp" alt="Audit et Analyse" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-formation.webp" alt="Formation" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-signage.webp" alt="Stratégie" loading="lazy"></div>
+    <div class="services-grid" style="margin-bottom: 4rem;">
+      <div class="bento-card-glass reveal">
+        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--datrey-navy);">1. Diagnostic &amp; Market Intelligence</h3>
+        <p>Audit approfondi de vos actifs numériques (UX/UI, Tracking, Data existante), de la concurrence et de votre proposition de valeur pour identifier les leviers de croissance sous-exploités.</p>
+      </div>
+      <div class="bento-card-glass reveal">
+        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--datrey-navy);">2. Cartographie du Parcours Client</h3>
+        <p>Modélisation du funnel d'acquisition complet (Awareness, Consideration, Conversion, Retention) pour s'assurer que le bon message est délivré au bon moment, sur le bon canal.</p>
+      </div>
+      <div class="bento-card-glass reveal">
+        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--datrey-navy);">3. Plan Média &amp; Attribution</h3>
+        <p>Allocation intelligente du budget marketing à travers Google Ads, Meta Ads et le SEO. Définition des KPIs (CPA, ROAS, LTV) et mise en place de modèles d'attribution multi-touch.</p>
+      </div>
+    </div>
+    <div class="chic-card reveal">
+      <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--datrey-navy);">Pourquoi nous choisir ?</h3>
+      <p>Une exécution brillante sur une mauvaise stratégie mène à l'échec. DatRey agit comme votre CMO externalisé. Nous apportons une vision macroscopique et des modèles de prévision financière précis pour transformer vos dépenses marketing en investissements maîtrisés, hautement rentables et prédictifs.</p>
     </div>
   </div>
 </section>
@@ -454,3 +464,4 @@ fbq('track', 'PageView');
 </script>
 </body>
 </html>
+

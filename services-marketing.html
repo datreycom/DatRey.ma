@@ -19,7 +19,7 @@
 <link href="style.css?v=20260729g" rel="stylesheet"/>
 <link href="assets/logo.webp" rel="icon" type="image/webp"/>
 <link href="favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
-<meta content="#050814" name="theme-color"/>
+<meta content="#ffffff" name="theme-color"/>
 <link href="/manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -123,7 +123,7 @@ fbq('track', 'PageView');
 </head>
 <body style="background: var(--datrey-cream, #f8f7f2) !important; color: var(--datrey-text, #0e1744);">
 <!-- Prevent theme FOUC -->
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'light');</script>
+<script>document.documentElement.removeAttribute('data-theme');try{localStorage.removeItem('datrey-theme');}catch(e){}</script>
 <a class="skip-to-content" href="#main-content">Aller au contenu principal</a>
 <!-- ========== HEADER ========== -->
 <header class="header" id="header" style="background: #ffffff !important; border-bottom: 1px solid var(--datrey-border) !important;">
@@ -255,6 +255,34 @@ fbq('track', 'PageView');
 </div>
 </div>
 </section>
+<!-- ========== NOTRE METHODOLOGIE & POURQUOI NOUS CHOISIR ========== -->
+<section class="section-padding" style="background: var(--datrey-cream);">
+  <div class="container">
+    <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Notre <span class="gradient-text">Méthodologie</span></h2>
+      <p style="color: var(--text-muted);">Une approche data-driven pour maximiser votre ROI.</p>
+    </div>
+    <div class="services-grid" style="margin-bottom: 4rem;">
+      <div class="bento-card-glass reveal">
+        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--datrey-navy);">1. Audit &amp; Stratégie</h3>
+        <p>Analyse de votre marché, étude de l'existant, et définition d'un plan d'action multi-canal aligné sur vos objectifs commerciaux.</p>
+      </div>
+      <div class="bento-card-glass reveal">
+        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--datrey-navy);">2. Déploiement Agile</h3>
+        <p>Création des campagnes (Google, Meta, LinkedIn), optimisation SEO et mise en place des tracking avancés pour mesurer chaque conversion.</p>
+      </div>
+      <div class="bento-card-glass reveal">
+        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--datrey-navy);">3. Optimisation Continue</h3>
+        <p>A/B testing, ajustement des enchères et scaling des campagnes performantes pour réduire votre CPA et augmenter la LTV.</p>
+      </div>
+    </div>
+    <div class="chic-card reveal">
+      <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--datrey-navy);">Pourquoi nous choisir ?</h3>
+      <p>DatRey n'est pas une simple agence d'exécution. Nous sommes des partenaires de croissance. Notre équipe pluridisciplinaire maîtrise les écosystèmes d'acquisition les plus complexes, de la configuration technique au copywriting persuasif, pour bâtir une machine à leads prévisible et rentable.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ========== FAQ AGENCE ========== -->
 <section class="section-padding" style="background: var(--bg-alt);">
 <div class="container">
@@ -418,3 +446,4 @@ fbq('track', 'PageView');
 </script>
 </body>
 </html>
+

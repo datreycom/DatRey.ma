@@ -20,7 +20,7 @@
 <link href="style.css?v=20260729g" rel="stylesheet"/>
 <link href="assets/logo.webp" rel="icon" type="image/webp"/>
 <link href="favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
-<meta content="#050814" name="theme-color"/>
+<meta content="#ffffff" name="theme-color"/>
 <link href="/manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -147,7 +147,7 @@ fbq('track', 'PageView');
 </head>
 <body class="service-detail-page" style="background: var(--datrey-cream, #f8f7f2) !important; color: var(--datrey-text, #0e1744);">
 <!-- Prevent theme FOUC -->
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'light');</script>
+<script>document.documentElement.removeAttribute('data-theme');try{localStorage.removeItem('datrey-theme');}catch(e){}</script>
 <a class="skip-to-content" href="#main-content">Aller au contenu principal</a>
 <!-- ========== HEADER ========== -->
 <header class="header" id="header" style="background: #ffffff !important; border-bottom: 1px solid var(--datrey-border) !important;">
@@ -275,20 +275,38 @@ fbq('track', 'PageView');
 </div>
 </section>
 
-<!-- ========== SERVICE GALLERY ========== -->
+<!-- ========== EXPERTISE GOOGLE ADS ========== -->
 <section class="section-padding" style="background: var(--datrey-cream);">
   <div class="container">
     <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Aperçu en <span class="gradient-text">Images</span></h2>
-      <p style="color: var(--text-muted);">Plongez dans l'univers de notre expertise.</p>
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Notre <span class="gradient-text">Méthodologie</span> &amp; Expertise</h2>
+      <p style="color: var(--text-muted);">Une approche data-driven pour dominer les résultats de recherche.</p>
     </div>
-    <div class="service-gallery-grid">
-      <div class="gallery-item reveal"><img src="assets/slider-marketing.webp" alt="Marketing Digital" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-design.webp" alt="Web Design" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/photo_dev.webp" alt="Développement" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/photo_audit.webp" alt="Audit et Analyse" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-formation.webp" alt="Formation" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-signage.webp" alt="Stratégie" loading="lazy"></div>
+    
+    <div class="bento-grid" style="margin-bottom: 3rem;">
+      <div class="bento-card-glass reveal">
+        <h3>Optimisation du Quality Score</h3>
+        <p>Un Quality Score élevé réduit vos CPC (Coût Par Clic) et améliore votre positionnement. Nous alignons parfaitement vos mots-clés, vos annonces et vos Landing Pages pour plaire à l'algorithme de Google.</p>
+      </div>
+      <div class="bento-card-glass reveal" style="animation-delay: 0.1s;">
+        <h3>Tracking de Conversion Avancé</h3>
+        <p>On ne pilote bien que ce que l'on mesure. Nous configurons un tracking Server-Side précis pour remonter 100% de vos leads B2B, appels et ventes E-commerce, permettant aux enchères automatiques de performer.</p>
+      </div>
+      <div class="bento-card-glass reveal" style="animation-delay: 0.2s;">
+        <h3>Structures de Campagnes Modernes</h3>
+        <p>Des campagnes Search structurées (SKAGs ou thématiques) couplées à la puissance de Performance Max. Nous maîtrisons les signaux d'audience pour diffuser votre message aux décideurs les plus qualifiés.</p>
+      </div>
+      <div class="bento-card-glass reveal" style="animation-delay: 0.3s;">
+        <h3>A/B Testing d'Annonces</h3>
+        <p>Nous itérons continuellement sur les titres, descriptions et extensions d'annonces. Un meilleur CTR (Click-Through Rate) signifie plus de trafic qualifié à un coût d'acquisition (CPA) maîtrisé.</p>
+      </div>
+    </div>
+
+    <div class="chic-card reveal">
+      <div class="chic-card-content" style="text-align: center; padding: 2rem;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Pourquoi nous confier vos campagnes Google Ads ?</h3>
+        <p>La plateforme publicitaire de Google est complexe et les clics B2B coûtent cher. Nous adoptons une vision ROIste : chaque dirham investi doit générer du revenu (ROAS). En combinant une expertise technique pointue et une compréhension profonde de votre cycle de vente, nous faisons de Google Ads votre meilleur levier d'acquisition.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -458,3 +476,4 @@ fbq('track', 'PageView');
 </script>
 </body>
 </html>
+

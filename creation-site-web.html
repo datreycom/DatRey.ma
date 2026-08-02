@@ -206,7 +206,7 @@
           </div>
           <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--datrey-navy); margin-bottom: 8px;">Démo Vitrine Agence</h4>
           <p style="font-size: 0.88rem; color: var(--datrey-muted); margin-bottom: 16px;">Exemple complet de site corporate B2B avec animations fluides.</p>
-          <button class="mockup-demo-btn" style="width: 100%; justify-content: center;" onclick="openDemoModal('vitrine')">Voir l'Échantillon ✨</button>
+          <a href="modele-vitrine.html" target="_blank" class="btn btn-outline" style="width: 100%; justify-content: center; border-color: var(--datrey-blue); color: var(--datrey-blue);">Voir la version live ✨</a>
         </div>
 
         <!-- Sample 2 -->
@@ -216,7 +216,7 @@
           </div>
           <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--datrey-navy); margin-bottom: 8px;">Démo E-Commerce Store</h4>
           <p style="font-size: 0.88rem; color: var(--datrey-muted); margin-bottom: 16px;">Exemple de boutique en ligne avec catalogue et panier réactif.</p>
-          <button class="mockup-demo-btn" style="width: 100%; justify-content: center;" onclick="openDemoModal('ecommerce')">Voir l'Échantillon ✨</button>
+          <a href="modele-ecommerce.html" target="_blank" class="btn btn-outline" style="width: 100%; justify-content: center; border-color: var(--datrey-blue); color: var(--datrey-blue);">Voir la version live ✨</a>
         </div>
 
         <!-- Sample 3 -->
@@ -226,7 +226,7 @@
           </div>
           <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--datrey-navy); margin-bottom: 8px;">Démo Landing Lead Gen</h4>
           <p style="font-size: 0.88rem; color: var(--datrey-muted); margin-bottom: 16px;">Exemple de page de vente pour génération urgente de leads.</p>
-          <button class="mockup-demo-btn" style="width: 100%; justify-content: center;" onclick="openDemoModal('landing')">Voir l'Échantillon ✨</button>
+          <a href="modele-landing.html" target="_blank" class="btn btn-outline" style="width: 100%; justify-content: center; border-color: var(--datrey-blue); color: var(--datrey-blue);">Voir la version live ✨</a>
         </div>
 
         <!-- Sample 4 -->
@@ -236,7 +236,7 @@
           </div>
           <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--datrey-navy); margin-bottom: 8px;">Démo Dashboard SaaS</h4>
           <p style="font-size: 0.88rem; color: var(--datrey-muted); margin-bottom: 16px;">Exemple de portail web dynamique avec statistiques en temps réel.</p>
-          <button class="mockup-demo-btn" style="width: 100%; justify-content: center;" onclick="openDemoModal('webapp')">Voir l'Échantillon ✨</button>
+          <a href="contact.html?subject=DemoWebApp" class="btn btn-outline" style="width: 100%; justify-content: center; border-color: var(--datrey-blue); color: var(--datrey-blue);">Voir la version live ✨</a>
         </div>
       </div>
     </div>
@@ -336,7 +336,8 @@ const demoData = {
       "Architecture 5 à 10 pages optimisées SEO Local",
       "Module de prise de rendez-vous en ligne ou contact direct",
       "100% conforme à la nouvelle charte DatRey Agency"
-    ]
+    ],
+    link: "modele-vitrine.html"
   },
   ecommerce: {
     title: "🛒 Échantillon Démo : E-Commerce High-Converting",
@@ -347,7 +348,8 @@ const demoData = {
       "Paiement par carte bancaire (CMI / Stripe) et Cash on Delivery",
       "Relance automatique des paniers abandonnés sur WhatsApp",
       "Gestion facile des stocks et des commandes"
-    ]
+    ],
+    link: "modele-ecommerce.html"
   },
   landing: {
     title: "⚡ Échantillon Démo : Landing Page Lead Generation",
@@ -358,7 +360,8 @@ const demoData = {
       "Formulaire de capture de leads réactif",
       "Suivi Pixel Meta & Conversion Google Ads intégré",
       "Garantie de taux de conversion supérieur à 4.5%"
-    ]
+    ],
+    link: "modele-landing.html"
   },
   webapp: {
     title: "⚙️ Échantillon Démo : Application Web & Dashboard SaaS",
@@ -369,7 +372,8 @@ const demoData = {
       "Dashboard interactif avec graphiques de performance",
       "Base de données relationnelle et gestion des utilisateurs",
       "Workflows automatisés et agents IA"
-    ]
+    ],
+    link: "contact.html?subject=DemoWebApp"
   }
 };
 
@@ -389,8 +393,8 @@ function openDemoModal(type) {
       ${data.points.map(pt => `<li style="font-size: 1rem; color: var(--datrey-text); font-weight: 600; display: flex; align-items: center; gap: 10px;"><span style="color: var(--datrey-blue);">✓</span> ${pt}</li>`).join('')}
     </ul>
     <div style="display: flex; gap: 16px; justify-content: flex-end; flex-wrap: wrap;">
-      <button class="btn btn-outline" style="border-color: var(--datrey-border); color: var(--datrey-muted);" onclick="closeDemoModal()">Fermer</button>
-      <a href="contact.html?subject=CommanderDemo_${type}" class="btn btn-primary" style="background: var(--datrey-navy); color: #ffffff !important; padding: 14px 28px; border-radius: 50px; font-weight: 700;">Demander un Devis pour cette Démo →</a>
+      <a href="${data.link}" target="_blank" class="btn btn-outline" style="border-color: var(--datrey-blue); color: var(--datrey-blue); font-weight: 600;">Voir la version live &rarr;</a>
+      <a href="contact.html?subject=CommanderDemo_${type}" class="btn btn-primary" style="background: var(--datrey-navy); color: #ffffff !important; padding: 14px 28px; border-radius: 50px; font-weight: 700;">Demander un Devis pour cette Démo 🚀</a>
     </div>
   `;
   modal.classList.add('active');

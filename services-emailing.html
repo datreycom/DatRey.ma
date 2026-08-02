@@ -20,7 +20,7 @@
 <link href="style.css?v=20260729g" rel="stylesheet"/>
 <link href="assets/logo.webp" rel="icon" type="image/webp"/>
 <link href="favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
-<meta content="#050814" name="theme-color"/>
+<meta content="#ffffff" name="theme-color"/>
 <link href="/manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -147,7 +147,7 @@ fbq('track', 'PageView');
 </head>
 <body class="service-detail-page" style="background: var(--datrey-cream, #f8f7f2) !important; color: var(--datrey-text, #0e1744);">
 <!-- Prevent theme FOUC -->
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'light');</script>
+<script>document.documentElement.removeAttribute('data-theme');try{localStorage.removeItem('datrey-theme');}catch(e){}</script>
 <a class="skip-to-content" href="#main-content">Aller au contenu principal</a>
 <!-- ========== HEADER ========== -->
 <header class="header" id="header" style="background: #ffffff !important; border-bottom: 1px solid var(--datrey-border) !important;">
@@ -271,20 +271,38 @@ fbq('track', 'PageView');
 </div>
 </section>
 
-<!-- ========== SERVICE GALLERY ========== -->
+<!-- ========== EXPERTISE EMAILING & AUTOMATION ========== -->
 <section class="section-padding" style="background: var(--datrey-cream);">
   <div class="container">
     <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Aperçu en <span class="gradient-text">Images</span></h2>
-      <p style="color: var(--text-muted);">Plongez dans l'univers de notre expertise.</p>
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Notre <span class="gradient-text">Méthodologie</span> &amp; Expertise</h2>
+      <p style="color: var(--text-muted);">Des scénarios automatisés intelligents pour fidéliser et convertir.</p>
     </div>
-    <div class="service-gallery-grid">
-      <div class="gallery-item reveal"><img src="assets/slider-marketing.webp" alt="Marketing Digital" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-design.webp" alt="Web Design" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/photo_dev.webp" alt="Développement" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/photo_audit.webp" alt="Audit et Analyse" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-formation.webp" alt="Formation" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-signage.webp" alt="Stratégie" loading="lazy"></div>
+    
+    <div class="bento-grid" style="margin-bottom: 3rem;">
+      <div class="bento-card-glass reveal">
+        <h3>Segmentation Avancée</h3>
+        <p>Finis les envois de masse inefficaces. Nous segmentons votre base de données selon des critères comportementaux, démographiques et transactionnels pour envoyer le bon message, au bon moment, à la bonne personne.</p>
+      </div>
+      <div class="bento-card-glass reveal" style="animation-delay: 0.1s;">
+        <h3>Scénarios Nurturing B2B</h3>
+        <p>L'éducation de vos prospects est primordiale en B2B. Nous mettons en place des séquences d'emailing automatisées qui nourrissent vos leads (Lead Nurturing) jusqu'à ce qu'ils soient prêts pour une approche commerciale (MQL vers SQL).</p>
+      </div>
+      <div class="bento-card-glass reveal" style="animation-delay: 0.2s;">
+        <h3>Délivrabilité &amp; Conformité</h3>
+        <p>Vos emails doivent arriver en boîte de réception principale. Nous configurons vos domaines (SPF, DKIM, DMARC), surveillons votre réputation IP et nous assurons d'une stricte conformité (RGPD).</p>
+      </div>
+      <div class="bento-card-glass reveal" style="animation-delay: 0.3s;">
+        <h3>A/B Testing &amp; Optimisation</h3>
+        <p>Sujets, Call-To-Action, design et horaires d'envoi... Nous testons systématiquement plusieurs variables pour maximiser les taux d'ouverture (Open Rate) et les taux de clics (CTR).</p>
+      </div>
+    </div>
+
+    <div class="chic-card reveal">
+      <div class="chic-card-content" style="text-align: center; padding: 2rem;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Pourquoi nous choisir pour l'Emailing ?</h3>
+        <p>L'Emailing reste le canal digital offrant le meilleur retour sur investissement (ROI) lorsqu'il est bien maîtrisé. En combinant la psychologie d'achat, le copywriting percutant et des outils de Marketing Automation puissants (HubSpot, ActiveCampaign, Klaviyo), nous transformons vos contacts en clients fidèles et décuplons votre Valeur Vie Client (LTV).</p>
+      </div>
     </div>
   </div>
 </section>
@@ -454,3 +472,4 @@ fbq('track', 'PageView');
 </script>
 </body>
 </html>
+

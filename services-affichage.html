@@ -19,7 +19,7 @@
 <link href="style.css?v=20260729g" rel="stylesheet"/>
 <link href="assets/logo.webp" rel="icon" type="image/webp"/>
 <link href="favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
-<meta content="#050814" name="theme-color"/>
+<meta content="#ffffff" name="theme-color"/>
 <link href="/manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -123,7 +123,7 @@ fbq('track', 'PageView');
 </head>
 <body style="background: var(--datrey-cream, #f8f7f2) !important; color: var(--datrey-text, #0e1744);">
 <!-- Prevent theme FOUC -->
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'light');</script>
+<script>document.documentElement.removeAttribute('data-theme');try{localStorage.removeItem('datrey-theme');}catch(e){}</script>
 <a class="skip-to-content" href="#main-content">Aller au contenu principal</a>
 <!-- ========== HEADER ========== -->
 <header class="header" id="header" style="background: #ffffff !important; border-bottom: 1px solid var(--datrey-border) !important;">
@@ -237,6 +237,46 @@ fbq('track', 'PageView');
 </div>
 </div>
 </section>
+<!-- ========== METHODOLOGY ========== -->
+<section class="section-padding">
+<div class="container">
+<div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+<h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Notre <span class="gradient-text">Méthodologie</span></h2>
+<p style="color: var(--text-muted); font-size: 1.1rem;">Un processus éprouvé pour un déploiement sans faille.</p>
+</div>
+<div class="services-grid">
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">1. Analyse &amp; Stratégie</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Nous étudions vos flux de visiteurs, la luminosité de votre espace et vos objectifs de communication pour sélectionner la technologie d'affichage (LED, LCD) la plus adaptée.</p>
+</div>
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">2. Déploiement Technique</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Nos équipes certifiées assurent une installation sécurisée, un câblage invisible et une intégration réseau robuste pour garantir une disponibilité maximale.</p>
+</div>
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">3. Création de Contenu</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Nos designers motion conçoivent des visuels attractifs et des animations dynamiques spécialement calibrés pour capter l'attention de votre audience.</p>
+</div>
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">4. Pilotage Centralisé</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Grâce à notre CMS cloud, mettez à jour l'ensemble de votre parc d'écrans en quelques clics, planifiez vos campagnes et suivez l'état du matériel en temps réel.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ========== WHY CHOOSE US ========== -->
+<section class="section-padding" style="background: var(--datrey-cream);">
+<div class="container">
+<div class="chic-card reveal" style="padding: 3rem; text-align: center;">
+<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--datrey-navy);">Pourquoi nous choisir ?</h2>
+<p style="color: var(--datrey-base); font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+Nous ne sommes pas de simples revendeurs de matériel. DatRey agit comme un véritable partenaire d'intégration technologique. Nous combinons expertise matérielle, infrastructure logicielle de pointe et création de contenu haut de gamme pour transformer vos espaces en véritables leviers d'acquisition et de fidélisation. Bénéficiez d'un support technique réactif et d'un matériel sous garantie pour une tranquillité d'esprit totale.
+</p>
+</div>
+</div>
+</section>
+
 <!-- ========== FAQ AGENCE ========== -->
 <section class="section-padding" style="background: var(--bg-alt);">
 <div class="container">
@@ -400,3 +440,4 @@ fbq('track', 'PageView');
 </script>
 </body>
 </html>
+

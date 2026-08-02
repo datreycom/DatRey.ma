@@ -186,3 +186,59 @@ if ('serviceWorker' in navigator) {
     // Service worker disabled for maximum loading speed
   });
 }
+
+  // --- Mobile Bottom Tab Bar Injection ---
+  function injectBottomTabBar() {
+    if (document.querySelector('.bottom-tab-bar')) return; // Already injected
+    
+    // Determine active path to highlight the correct tab
+    const path = window.location.pathname;
+    const page = path.split('/').pop() || 'index.html';
+    
+    const isHome = page === 'index.html' || page === '';
+    const isServices = page.startsWith('service');
+    const isProjects = page === 'cas-clients.html';
+    const isContact = page === 'contact.html';
+
+    const bottomBarHTML = `
+      <nav class="bottom-tab-bar">
+        <a href="index.html" class="tab-item ${isHome ? 'active' : ''}">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <span>Accueil</span>
+        </a>
+        <a href="services.html" class="tab-item ${isServices ? 'active' : ''}">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <span>Services</span>
+        </a>
+        <a href="cas-clients.html" class="tab-item ${isProjects ? 'active' : ''}">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+          <span>Projets</span>
+        </a>
+        <a href="contact.html" class="tab-item ${isContact ? 'active' : ''}">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>Contact</span>
+        </a>
+      </nav>
+    `;
+    document.body.insertAdjacentHTML('beforeend', bottomBarHTML);
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectBottomTabBar);
+  } else {
+    injectBottomTabBar();
+  }

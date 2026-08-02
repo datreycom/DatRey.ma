@@ -20,7 +20,7 @@
 <link href="style.css?v=20260729g" rel="stylesheet"/>
 <link href="assets/logo.webp" rel="icon" type="image/webp"/>
 <link href="favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
-<meta content="#050814" name="theme-color"/>
+<meta content="#ffffff" name="theme-color"/>
 <link href="/manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -147,7 +147,7 @@ fbq('track', 'PageView');
 </head>
 <body class="service-detail-page" style="background: var(--datrey-cream, #f8f7f2) !important; color: var(--datrey-text, #0e1744);">
 <!-- Prevent theme FOUC -->
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'light');</script>
+<script>document.documentElement.removeAttribute('data-theme');try{localStorage.removeItem('datrey-theme');}catch(e){}</script>
 <a class="skip-to-content" href="#main-content">Aller au contenu principal</a>
 <!-- ========== HEADER ========== -->
 <header class="header" id="header" style="background: #ffffff !important; border-bottom: 1px solid var(--datrey-border) !important;">
@@ -271,22 +271,44 @@ fbq('track', 'PageView');
 </div>
 </section>
 
-<!-- ========== SERVICE GALLERY ========== -->
+<!-- ========== METHODOLOGY ========== -->
+<section class="section-padding">
+<div class="container">
+<div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+<h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Notre <span class="gradient-text">Méthodologie CRO</span></h2>
+<p style="color: var(--text-muted); font-size: 1.1rem;">Une approche scientifique pour maximiser votre taux de conversion.</p>
+</div>
+<div class="services-grid">
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">1. Analyse Quantitative &amp; Heatmaps</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Nous déployons des outils de tracking avancés (Hotjar, Clarity) pour analyser les zones de chaleur, le scroll et les clics, afin d'identifier précisément où vos utilisateurs abandonnent.</p>
+</div>
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">2. Audit Heuristique &amp; UX</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Nos experts en psychologie comportementale évaluent votre interface à travers le prisme des biais cognitifs pour réduire la friction et clarifier votre proposition de valeur.</p>
+</div>
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">3. Design de Nouvelles Variantes</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Nous concevons des wireframes et des prototypes de landing pages neuro-optimisés, en retravaillant le copywriting, la hiérarchie visuelle et l'emplacement des Call-to-Action.</p>
+</div>
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">4. A/B Testing &amp; Itération</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Nous lançons des tests A/B rigoureux pour valider statistiquement nos hypothèses. Nous conservons la version gagnante et réitérons le processus pour une croissance continue.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ========== WHY CHOOSE US ========== -->
 <section class="section-padding" style="background: var(--datrey-cream);">
-  <div class="container">
-    <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Aperçu en <span class="gradient-text">Images</span></h2>
-      <p style="color: var(--text-muted);">Plongez dans l'univers de notre expertise.</p>
-    </div>
-    <div class="service-gallery-grid">
-      <div class="gallery-item reveal"><img src="assets/slider-marketing.webp" alt="Marketing Digital" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-design.webp" alt="Web Design" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/photo_dev.webp" alt="Développement" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/photo_audit.webp" alt="Audit et Analyse" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-formation.webp" alt="Formation" loading="lazy"></div>
-      <div class="gallery-item reveal"><img src="assets/slider-signage.webp" alt="Stratégie" loading="lazy"></div>
-    </div>
-  </div>
+<div class="container">
+<div class="chic-card reveal" style="padding: 3rem; text-align: center;">
+<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--datrey-navy);">Pourquoi nous choisir ?</h2>
+<p style="color: var(--datrey-base); font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+L'optimisation des conversions (CRO) ne s'improvise pas avec des "best practices" génériques. Chez DatRey, chaque décision est motivée par la donnée (data-driven). En combinant une maîtrise technique poussée des outils d'A/B testing, une expertise en copywriting B2B et une compréhension profonde de l'expérience utilisateur (UX), nous garantissons une augmentation mesurable de vos leads qualifiés sans avoir à augmenter votre budget publicitaire.
+</p>
+</div>
+</div>
 </section>
 <!-- ========== FAQ AGENCE ========== -->
 <section class="section-padding" style="background: var(--bg-alt);">
@@ -454,3 +476,4 @@ fbq('track', 'PageView');
 </script>
 </body>
 </html>
+

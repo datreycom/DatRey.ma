@@ -19,7 +19,7 @@
 <link href="style.css?v=20260729g" rel="stylesheet"/>
 <link href="assets/logo.webp" rel="icon" type="image/webp"/>
 <link href="favicon.ico" rel="icon" sizes="32x32" type="image/x-icon"/>
-<meta content="#050814" name="theme-color"/>
+<meta content="#ffffff" name="theme-color"/>
 <link href="/manifest.json" rel="manifest"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -123,7 +123,7 @@ fbq('track', 'PageView');
 </head>
 <body style="background: var(--datrey-cream, #f8f7f2) !important; color: var(--datrey-text, #0e1744);">
 <!-- Prevent theme FOUC -->
-<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('datrey-theme')||'light');</script>
+<script>document.documentElement.removeAttribute('data-theme');try{localStorage.removeItem('datrey-theme');}catch(e){}</script>
 <a class="skip-to-content" href="#main-content">Aller au contenu principal</a>
 <!-- ========== HEADER ========== -->
 <header class="header" id="header" style="background: #ffffff !important; border-bottom: 1px solid var(--datrey-border) !important;">
@@ -237,6 +237,46 @@ fbq('track', 'PageView');
 </div>
 </div>
 </section>
+<!-- ========== METHODOLOGY ========== -->
+<section class="section-padding">
+<div class="container">
+<div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+<h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Notre <span class="gradient-text">Méthodologie Créative</span></h2>
+<p style="color: var(--text-muted); font-size: 1.1rem;">Un processus rigoureux pour donner vie à votre vision.</p>
+</div>
+<div class="services-grid">
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">1. Découverte &amp; Stratégie</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Nous animons des ateliers de branding pour extraire l'ADN de votre entreprise, comprendre votre positionnement marché et définir la perception que vous souhaitez projeter.</p>
+</div>
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">2. Conceptualisation Visuelle</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Nos directeurs artistiques élaborent des moodboards et des pistes créatives. Nous définissons ensemble la typographie, la colorimétrie et les éléments graphiques fondateurs.</p>
+</div>
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">3. Déclinaison 360°</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Nous appliquons votre nouvelle identité sur l'ensemble de vos supports de communication : UI web, cartes de visite, plaquettes commerciales et présentations d'entreprise.</p>
+</div>
+<div class="bento-card-glass p-6">
+<h3 style="color: var(--datrey-navy); margin-bottom: 1rem; font-size: 1.25rem;">4. Finalisation &amp; Impression</h3>
+<p style="color: var(--datrey-base); line-height: 1.6;">Livraison d'une charte graphique exhaustive et de fichiers prêts à l'emploi. Pour le print, nous gérons la chaîne de production avec des imprimeurs de confiance pour un rendu irréprochable.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ========== WHY CHOOSE US ========== -->
+<section class="section-padding" style="background: var(--datrey-cream);">
+<div class="container">
+<div class="chic-card reveal" style="padding: 3rem; text-align: center;">
+<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--datrey-navy);">Pourquoi nous choisir ?</h2>
+<p style="color: var(--datrey-base); font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+Nous croyons que le design ne doit pas seulement être "beau", il doit être performant. L'agence DatRey allie esthétique premium et efficacité marketing. Notre équipe créative maîtrise aussi bien les codes du digital (UX/UI, Motion) que les exigences techniques de l'impression (colorimétrie CMJN, grammage, vernis). En centralisant votre branding et vos supports chez nous, vous garantissez une cohérence absolue de votre image de marque à chaque point de contact avec vos clients.
+</p>
+</div>
+</div>
+</section>
+
 <!-- ========== FAQ AGENCE ========== -->
 <section class="section-padding" style="background: var(--bg-alt);">
 <div class="container">
@@ -400,3 +440,4 @@ fbq('track', 'PageView');
 </script>
 </body>
 </html>
+
