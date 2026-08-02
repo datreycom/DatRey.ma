@@ -216,6 +216,14 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-body); line-height: 1.25; font-
   -webkit-text-fill-color: transparent;
   color: #3A56A6;
 }
+.logo .logo-agency {
+  color: #0e1744 !important;
+  font-weight: 800 !important;
+  margin-left: 6px;
+  letter-spacing: 0.05em;
+  font-size: 0.95em;
+  text-transform: uppercase;
+}
 .nav-active { color: var(--roi-500) !important; }
 .nav-links { display: flex; align-items: center; gap: 24px; }
 .nav-links a {
