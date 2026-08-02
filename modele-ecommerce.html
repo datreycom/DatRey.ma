@@ -1061,6 +1061,173 @@
                 grid-template-columns: 1fr;
             }
         }
+
+/* DESIGN SPELLS */
+
+/* Product card magnetic tilt on hover */
+.product-card {
+    perspective: 800px;
+}
+.product-card:hover .img-wrapper {
+    transform: rotateY(-3deg) rotateX(2deg);
+}
+
+/* Pulse animation for sale tags */
+@keyframes pulseSale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+.product-tag.sale {
+    animation: pulseSale 2s ease-in-out infinite;
+}
+
+/* Cart button bounce */
+@keyframes cartBounce {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.3); }
+    50% { transform: scale(0.9); }
+    70% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+.cart-bounce {
+    animation: cartBounce 0.6s ease;
+}
+
+/* Shimmer loading effect for product images */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+.img-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.product-card:hover .img-wrapper::after { opacity: 1; }
+
+/* Horizontal scroll indicator for categories */
+.category-pills::after {
+    content: '→';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, transparent, var(--c-off-white));
+    padding: 0 15px 0 40px;
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+.category-pills { position: relative; }
+
+/* Brand story section */
+.brand-story {
+    padding: 80px 5%;
+    background: var(--c-black);
+    color: white;
+    text-align: center;
+}
+.brand-story h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+.brand-story p {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.15rem;
+    color: #aaa;
+    line-height: 1.8;
+}
+.brand-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 900px;
+    margin: 3rem auto 0;
+}
+.brand-value {
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+.brand-value:hover {
+    border-color: var(--c-red);
+    background: rgba(255,59,48,0.05);
+}
+.brand-value-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.brand-value h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+.brand-value p {
+    font-size: 0.9rem;
+    color: #888;
+    margin: 0;
+}
+@media (max-width: 768px) {
+    .brand-values { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+/* Trending section */
+.trending-banner {
+    padding: 60px 5%;
+    background: linear-gradient(135deg, #1C1C1E 0%, #2a0a0a 100%);
+    border-radius: 24px;
+    margin: 0 5% 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    overflow: hidden;
+    position: relative;
+}
+.trending-banner::before {
+    content: 'KŌDEX';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15rem;
+    font-weight: 900;
+    color: rgba(255,59,48,0.05);
+    pointer-events: none;
+}
+.trending-text h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 1rem;
+}
+.trending-text p {
+    color: #aaa;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+.trending-visual {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--c-red) 0%, transparent 70%);
+    opacity: 0.3;
+    flex-shrink: 0;
+}
+@media (max-width: 768px) {
+    .trending-banner { flex-direction: column; text-align: center; margin: 0 4% 40px; padding: 40px 5%; }
+    .trending-visual { width: 200px; height: 200px; }
+}
     </style>
 </head>
 <body>
@@ -1310,6 +1477,39 @@
                 <p style="opacity: 0.7; font-size: 0.9rem;">Une équipe à votre écoute</p>
             </div>
         </div>
+    </section>
+
+    <!-- Brand Story -->
+    <section class="brand-story reveal">
+        <h2>Plus qu'une marque.<br>Un mouvement.</h2>
+        <p>Chez KŌDEX, chaque paire raconte une histoire. Née de la culture street et façonnée par l'innovation, notre mission est de repousser les limites du style urbain.</p>
+        <div class="brand-values">
+            <div class="brand-value">
+                <div class="brand-value-icon">🎨</div>
+                <h3>Design Audacieux</h3>
+                <p>Des silhouettes qui ne passent jamais inaperçues, conçues par notre studio créatif parisien.</p>
+            </div>
+            <div class="brand-value">
+                <div class="brand-value-icon">♻️</div>
+                <h3>Éco-Responsable</h3>
+                <p>Matériaux recyclés, production locale et emballages 100% biodégradables.</p>
+            </div>
+            <div class="brand-value">
+                <div class="brand-value-icon">⚡</div>
+                <h3>Innovation Tech</h3>
+                <p>Semelles à mémoire de forme et tissus respirants de dernière génération.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Now -->
+    <section class="trending-banner reveal">
+        <div class="trending-text">
+            <h2>🔥 Tendance du Moment</h2>
+            <p>La Neon Strike est épuisée en 48h. Ne manquez pas notre prochaine édition limitée — inscrivez-vous à notre newsletter.</p>
+            <a href="#newsletter" class="btn-shop" style="display: inline-flex; align-items: center; gap: 0.5rem;">M'avertir du prochain drop <span>→</span></a>
+        </div>
+        <div class="trending-visual"></div>
     </section>
 
     <!-- Newsletter -->

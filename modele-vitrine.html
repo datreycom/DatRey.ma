@@ -961,6 +961,134 @@
                 grid-template-columns: 1fr;
             }
         }
+
+/* DESIGN SPELLS — Magnetic Cursor Glow */
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s;
+    opacity: 0;
+    z-index: 0;
+}
+.hero:hover::after { opacity: 1; }
+
+/* Staggered fade-in for service cards */
+.service-card:nth-child(1) { transition-delay: 0.1s; }
+.service-card:nth-child(2) { transition-delay: 0.2s; }
+.service-card:nth-child(3) { transition-delay: 0.3s; }
+.service-card:nth-child(4) { transition-delay: 0.4s; }
+.service-card:nth-child(5) { transition-delay: 0.5s; }
+.service-card:nth-child(6) { transition-delay: 0.6s; }
+
+/* Gold shimmer animation on hover for buttons */
+.btn-gold::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s;
+}
+.btn-gold:hover::before { left: 100%; }
+.btn-gold { position: relative; overflow: hidden; }
+
+/* Parallax text shadow on hero title */
+.hero h1 { text-shadow: 0 4px 30px rgba(197,160,89,0.3); }
+
+/* Smooth golden underline animation for section titles */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--color-gold);
+    margin: 1.5rem auto 0;
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.section-title:hover::after { width: 120px; }
+
+/* Testimonial card lift effect */
+.testimonial-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(197,160,89,0.15);
+}
+
+/* Counter animation for stats */
+.stat-number {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--color-gold);
+    display: block;
+    line-height: 1;
+}
+.stat-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 0.5rem;
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+    padding: 4rem 0;
+    border-top: 1px solid rgba(197,160,89,0.2);
+    border-bottom: 1px solid rgba(197,160,89,0.2);
+}
+@media (max-width: 768px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+}
+
+/* Journal/Blog preview cards */
+.journal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.journal-card {
+    background: var(--color-champagne);
+    border: 1px solid rgba(197,160,89,0.15);
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+.journal-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+.journal-img {
+    height: 220px;
+    width: 100%;
+}
+.journal-body {
+    padding: 2rem;
+}
+.journal-date {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-gold);
+    margin-bottom: 0.8rem;
+}
+.journal-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+.journal-excerpt {
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 300;
+}
+@media (max-width: 768px) {
+    .journal-grid { grid-template-columns: 1fr; }
+}
     </style>
 </head>
 <body>
@@ -974,7 +1102,8 @@
                 <a href="#histoire">La Maison</a>
                 <a href="#savoir-faire">Savoir-Faire</a>
                 <a href="#collections">Collections</a>
-                <a href="#temoignages">Journal</a>
+                <a href="#temoignages">Témoignages</a>
+                <a href="#journal">Journal</a>
                 <a href="#contact">Contact</a>
             </div>
             
@@ -991,7 +1120,8 @@
             <li><a href="#histoire" class="mobile-link">La Maison</a></li>
             <li><a href="#savoir-faire" class="mobile-link">Savoir-Faire</a></li>
             <li><a href="#collections" class="mobile-link">Collections</a></li>
-            <li><a href="#temoignages" class="mobile-link">Journal</a></li>
+            <li><a href="#temoignages" class="mobile-link">Témoignages</a></li>
+            <li><a href="#journal" class="mobile-link">Journal</a></li>
             <li><a href="#contact" class="mobile-link">Contact</a></li>
         </ul>
     </div>
@@ -1041,6 +1171,28 @@
             </div>
         </div>
     </section>
+
+    <!-- Stats Counter -->
+    <div class="container">
+        <div class="stats-grid reveal">
+            <div class="stat-item">
+                <span class="stat-number" data-target="150">0</span>
+                <span class="stat-label">Projets livrés</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="98">0</span>
+                <span class="stat-label">% Satisfaction</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="12">0</span>
+                <span class="stat-label">Années d'expertise</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="35">0</span>
+                <span class="stat-label">Collaborateurs</span>
+            </div>
+        </div>
+    </div>
 
     <!-- 4. Savoir-Faire -->
     <section class="section-padding savoir-faire" id="savoir-faire">
@@ -1166,6 +1318,40 @@
                     <p class="testimonial-text">L'équipe d'Élara possède cette rare capacité à traduire l'émotion et l'exclusivité à travers un écran. Un travail d'orfèvre.</p>
                     <h4 class="testimonial-author">Éléonore L.</h4>
                     <p class="testimonial-company">Fondatrice Beauté Premium</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journal -->
+    <section class="section-padding" id="journal" style="background: var(--color-white);">
+        <div class="container">
+            <h2 class="section-title text-center">Notre Journal</h2>
+            <p class="text-center" style="max-width: 600px; margin: 0 auto var(--spacing-lg); font-weight: 300; color: #666;">Inspirations, tendances et réflexions sur l'art du digital de luxe.</p>
+            <div class="journal-grid">
+                <div class="journal-card reveal">
+                    <div class="journal-img" style="background: linear-gradient(135deg, #1a1a2e, #2a2a4a);"></div>
+                    <div class="journal-body">
+                        <div class="journal-date">15 Juillet 2026</div>
+                        <h3 class="journal-title">L'Art du Minimalisme Digital</h3>
+                        <p class="journal-excerpt">Comment les marques de luxe redéfinissent l'expérience utilisateur à travers la sobriété et la précision.</p>
+                    </div>
+                </div>
+                <div class="journal-card reveal">
+                    <div class="journal-img" style="background: linear-gradient(135deg, #2a1a1a, #4a2a2a);"></div>
+                    <div class="journal-body">
+                        <div class="journal-date">28 Juin 2026</div>
+                        <h3 class="journal-title">Typographie & Émotion</h3>
+                        <p class="journal-excerpt">Pourquoi le choix d'une police de caractère peut transformer la perception de votre marque haut de gamme.</p>
+                    </div>
+                </div>
+                <div class="journal-card reveal">
+                    <div class="journal-img" style="background: linear-gradient(135deg, #1a2a1a, #2a4a2a);"></div>
+                    <div class="journal-body">
+                        <div class="journal-date">12 Juin 2026</div>
+                        <h3 class="journal-title">Stratégie Digitale 2026</h3>
+                        <p class="journal-excerpt">Les 5 tendances incontournables pour les maisons de prestige qui souhaitent dominer le digital.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1398,6 +1584,30 @@
             // Initial trigger for scroll (in case elements are already in viewport on load)
             window.dispatchEvent(new Event('scroll'));
         });
+
+        // Counter animation for stats
+        const counters = document.querySelectorAll('.stat-number');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute('data-target'));
+                    let current = 0;
+                    const increment = target / 60;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            el.textContent = target + (el.closest('.stat-item').querySelector('.stat-label').textContent.includes('%') ? '%' : '+');
+                            clearInterval(timer);
+                        } else {
+                            el.textContent = Math.floor(current);
+                        }
+                    }, 30);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(c => counterObserver.observe(c));
     </script>
 </body>
 </html>
