@@ -3124,3 +3124,63 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); line-height: 1.25; fo
 
 
 @media (max-width: 768px) { .bento-card-glass { padding: 24px !important; } }
+
+
+/* =====================================================================
+   GLOBAL CENTERING & MOBILE FIXES (REQUESTED BY USER)
+   ===================================================================== */
+
+/* 1. Global Centering of All Titles */
+h1, h2, .section-title, .hero-title {
+    text-align: center !important;
+}
+
+/* 2. Specific CTA Box fixes */
+.cta-box h2 {
+    text-align: center !important;
+}
+.cta-box p {
+    text-align: center !important;
+}
+.cta-actions {
+    justify-content: center !important;
+}
+
+/* 3. Global Mobile Fixes */
+@media (max-width: 768px) {
+    /* Ensure no horizontal overflow */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+
+    /* Fix container padding for mobile */
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    /* Fix hero slider track on mobile to avoid stretched images */
+    .hero-slider-track {
+        height: 500px !important;
+        min-height: auto !important;
+        max-height: none !important;
+    }
+
+    /* Force grids to 1 column on small screens to prevent overflow */
+    .services-image-grid, .bento-grid, .blog-grid, .articles-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    /* Stack CTA buttons vertically if they don't fit */
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px !important;
+    }
+    .cta-actions .btn {
+        width: 100% !important;
+        max-width: 320px;
+    }
+}
