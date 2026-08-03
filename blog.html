@@ -91,36 +91,38 @@
 <body>
   <script>document.documentElement.setAttribute('data-theme','light');</script>
   
-  <!-- ========== HEADER ========== -->
-<header class="header" id="header">
-<div class="container">
-<a aria-label="DatRey Agency — Accueil" class="logo" href="/">
-<img decoding="async" alt="DatRey Agency Logo" class="logo-img" height="40" src="assets/logo.webp" width="40"/>
-<span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey <span class="logo-agency">AGENCY</span></span>
-</a>
-<nav aria-label="Navigation principale" class="nav-links">
-<a href="/">Accueil</a>
-<a href="creation-site-web.html">Création Site Web</a>
-<a href="services.html">Nos Services</a>
-<a class="nav-active" href="blog.html">Blog</a>
-<a href="contact.html">Contact</a>
-<a class="btn btn-primary nav-cta" style="background: var(--datrey-navy) !important; color: #ffffff !important; font-weight: 700;" href="contact.html"><span style="color: #ffffff !important;">Audit Gratuit</span></a>
-</nav>
-<div style="display: flex; align-items: center; gap: 16px;">
-<div class="lang-selector">
-<button aria-label="Changer de langue" class="lang-btn">FR ▼</button>
-<div class="lang-dropdown">
-<a href="/">Français</a>
-<a href="/en/">English</a>
-</div>
-</div>
-
-<button aria-label="Menu" class="mobile-toggle" id="mobileToggle">
-<span></span><span></span><span></span>
-</button>
-</div>
-</div>
-</header>
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="DatRey — Accueil">
+        <img src="assets/logo.webp" alt="DatRey Logo" class="logo-img" width="40" height="40" />
+        <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="creation-site-web.html">Création Site Web</a>
+        <a href="services.html">Nos Services</a>
+        <a href="blog.html" class="nav-active">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html?subject=AuditGratuit" class="btn btn-primary nav-cta">Audit Gratuit</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div class="lang-selector">
+          <button aria-label="Changer de langue" class="lang-btn">FR ▼</button>
+          <div class="lang-dropdown">
+            <a href="index.html">Français</a>
+            <a href="/en/">English</a>
+          </div>
+        </div>
+        <button aria-label="Basculer le thème" class="theme-toggle" id="themeToggle">
+          <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
+          <svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button aria-label="Menu" class="mobile-toggle" id="mobileToggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
   <div aria-label="Navigation mobile" class="mobile-nav" id="mobileNav" role="navigation">
     <button aria-label="Fermer le menu" class="mobile-nav-close" id="mobileClose">×</button>
@@ -142,6 +144,32 @@
   <main id="main-content" class="section-padding">
     <div class="container">
       <div class="blog-grid">
+
+        <article class="blog-card">
+          <img src="assets/blog/referencement-naturel-seo-maroc-guide-2026-acquisition-client-roi-1.webp" alt="Référencement Naturel (SEO) au Maroc : Le Guide Stratégique 2026 pour une Acquisition Client Rentable et un ROI Massif" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Référencement Naturel (SEO)</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 03/08/2026 • 11:16</span>
+            </div>
+            <h2 class="blog-card-title">Référencement Naturel (SEO) au Maroc : Le Guide Stratégique 2026 pour une Acquisition Client Rentable et un ROI Massif</h2>
+            <p class="blog-card-desc">Découvrez comment le SEO au Maroc en 2026 génère un ROI massif. Stratégies concrètes, KPIs, et exemples pour PME et grands groupes. Demandez votre audit gratuit.</p>
+            <a href="blog/referencement-naturel-seo-maroc-guide-2026-acquisition-client-roi.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="assets/blog/entonnoir-vente-b2b-rentable-maroc-meta-ads-1.webp" alt="Entonnoir de Vente B2B Rentable au Maroc : La Méthode DatRey pour des Leads Prévisibles avec Meta Ads" class="blog-card-img" loading="lazy" />
+          <div class="blog-card-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="blog-card-category">Meta Ads & Social Ads</span>
+              <span style="font-size: 0.8rem; color: #64748b; font-weight: 500;">📅 03/08/2026 • 11:15</span>
+            </div>
+            <h2 class="blog-card-title">Entonnoir de Vente B2B Rentable au Maroc : La Méthode DatRey pour des Leads Prévisibles avec Meta Ads</h2>
+            <p class="blog-card-desc">Découvrez comment structurer un entonnoir Meta Ads B2B rentable au Maroc. Stratégies, budgets MAD, ROI et KPIs concrets pour des leads prévisibles.</p>
+            <a href="blog/entonnoir-vente-b2b-rentable-maroc-meta-ads.html" class="blog-card-link">Lire l'article &rarr;</a>
+          </div>
+        </article>
 
         <article class="blog-card">
           <img src="assets/blog/google-ads-sea-maroc-reduire-cac-augmenter-ltv-1.webp" alt="Google Ads & SEA au Maroc : Comment innocenter votre CAC et exploser votre LTV en 2026" class="blog-card-img" loading="lazy" />
@@ -971,9 +999,9 @@
       <div class="footer-grid">
         <div>
           <a href="index.html" class="footer-logo">
-<img decoding="async" alt="DatRey Agency Logo" class="logo-img" height="40" src="assets/logo.webp" width="40"/>
-<span><span style="color: var(--datrey-blue, #2563eb);">D</span>at<span style="color: var(--datrey-blue, #2563eb);">R</span>ey <span class="logo-agency" style="color: var(--datrey-navy, #0e1744); font-weight: 800; letter-spacing: 0.05em;">AGENCY</span></span>
-</a>
+            <img src="assets/logo.webp" alt="DatRey Logo" width="36" height="36" style="border-radius:8px;" />
+            <span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey</span>
+          </a>
           <p class="footer-desc">Agence d'acquisition digitale &amp; Growth Hacking au Maroc. Nous transformons votre budget marketing en ROI mesurable.</p>
           <div class="social-links">
             <a aria-label="LinkedIn DatRey" href="https://www.linkedin.com/in/datrey-agency/" rel="noopener noreferrer" target="_blank">
@@ -1009,7 +1037,6 @@
             <a href="services-google-ads.html">Google Ads (SEA)</a>
             <a href="services-meta-ads.html">Meta Ads</a>
             <a href="services-seo.html">SEO &amp; Contenu</a>
-<a href="services-design.html">Design Graphique &amp; Impression</a>
             <a href="services-cro.html">CRO &amp; Landing Pages</a>
             <a href="services-emailing.html">Email &amp; Automation</a>
             <a href="services-strategie.html">Stratégie d'Acquisition</a>
