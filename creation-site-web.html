@@ -16,20 +16,33 @@
 <body style="background: var(--datrey-cream, #f8f7f2) !important; color: var(--datrey-text, #0e1744);">
 
 <!-- ========== HEADER ========== -->
-<header class="header" id="header" style="background: #ffffff !important; border-bottom: 1px solid var(--datrey-border) !important;">
+<header class="header" id="header">
 <div class="container">
-<a href="/" class="logo" style="color: var(--datrey-navy) !important;">
+<a aria-label="DatRey Agency — Accueil" class="logo" href="/">
 <img decoding="async" alt="DatRey Agency Logo" class="logo-img" height="40" src="assets/logo.webp" width="40"/>
-<span><span style="color: var(--datrey-blue, #2563eb);">D</span>at<span style="color: var(--datrey-blue, #2563eb);">R</span>ey <span class="logo-agency" style="color: var(--datrey-navy, #0e1744); font-weight: 800; letter-spacing: 0.05em;">AGENCY</span></span>
+<span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey <span class="logo-agency">AGENCY</span></span>
 </a>
-<nav class="nav-links" aria-label="Navigation principale">
+<nav aria-label="Navigation principale" class="nav-links">
 <a href="/">Accueil</a>
-<a href="creation-site-web.html" class="nav-active">Création Site Web</a>
+<a class="nav-active" href="creation-site-web.html">Création Site Web</a>
 <a href="services.html">Nos Services</a>
 <a href="blog.html">Blog</a>
 <a href="contact.html">Contact</a>
-<a href="contact.html?subject=CreationWeb" class="btn btn-primary nav-cta" style="background: var(--datrey-navy) !important; color: #ffffff !important; font-weight: 700;" style="background: var(--datrey-blue); color: #ffffff !important;"><span style="color: #ffffff !important;">Audit Gratuit</span></a>
+<a class="btn btn-primary nav-cta" style="background: var(--datrey-navy) !important; color: #ffffff !important; font-weight: 700;" href="contact.html"><span style="color: #ffffff !important;">Audit Gratuit</span></a>
 </nav>
+<div style="display: flex; align-items: center; gap: 16px;">
+<div class="lang-selector">
+<button aria-label="Changer de langue" class="lang-btn">FR ▼</button>
+<div class="lang-dropdown">
+<a href="/">Français</a>
+<a href="/en/">English</a>
+</div>
+</div>
+
+<button aria-label="Menu" class="mobile-toggle" id="mobileToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
 </div>
 </header>
 

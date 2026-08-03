@@ -251,20 +251,36 @@ fbq('track', 'PageView');
 <!-- End Meta Facebook Pixel Code -->
 </head>
 <body style="background: var(--datrey-cream, #f8f7f2) !important; color: var(--datrey-text, #0e1744);">
-  <header class="site-header">
-    <div class="site-header-container">
-      <a href="../index.html" class="site-logo">
-        <img decoding="async" src="../assets/logo.webp" alt="DatRey Logo" width="40" height="40" style="border-radius:6px;" />
-        <span><span style="color:#2d46c2;">D</span>at<span style="color:#2d46c2;">R</span>ey</span>
-      </a>
-      <nav class="site-nav">
-        <a href="../index.html">Accueil</a>
-        <a href="../services.html">Services</a>
-        <a href="../blog.html" style="color:#2d46c2; font-weight:600;">Blog</a>
-        <a href="../contact.html?subject=AuditGratuit" class="cta-btn" style="padding:10px 22px; font-size:0.95rem;"><span style="color: #ffffff !important;">Audit Gratuit</span></a>
-      </nav>
-    </div>
-  </header>
+  <!-- ========== HEADER ========== -->
+<header class="header" id="header">
+<div class="container">
+<a aria-label="DatRey Agency — Accueil" class="logo" href="/en/">
+<img decoding="async" alt="DatRey Agency Logo" class="logo-img" height="40" src="../../assets/logo.webp" width="40"/>
+<span><span class="logo-blue">D</span>at<span class="logo-blue">R</span>ey <span class="logo-agency">AGENCY</span></span>
+</a>
+<nav aria-label="Navigation principale" class="nav-links">
+<a href="/en/">Accueil</a>
+<a href="../../creation-site-web.html">Création Site Web</a>
+<a href="../../services.html">Nos Services</a>
+<a href="../../blog.html">Blog</a>
+<a href="../../contact.html">Contact</a>
+<a class="btn btn-primary nav-cta" style="background: var(--datrey-navy) !important; color: #ffffff !important; font-weight: 700;" href="../../contact.html"><span style="color: #ffffff !important;">Audit Gratuit</span></a>
+</nav>
+<div style="display: flex; align-items: center; gap: 16px;">
+<div class="lang-selector">
+<button aria-label="Changer de langue" class="lang-btn">FR ▼</button>
+<div class="lang-dropdown">
+<a href="/">Français</a>
+<a href="/en/">English</a>
+</div>
+</div>
+
+<button aria-label="Menu" class="mobile-toggle" id="mobileToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
 
   <main>
     <div class="article-container">
