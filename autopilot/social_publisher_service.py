@@ -1,8 +1,11 @@
 import json
+import time
+import hashlib
 import requests
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from autopilot.config import MAKE_WEBHOOK_URL
+from autopilot.pollinations_image_service import UNSPLASH_CURATED_STOCKS
 
 DATREY_CONTACT_BLOCK = """---
 📞 CONTACTEZ L'ÉQUIPE DATREY :
@@ -15,7 +18,8 @@ DATREY_CONTACT_BLOCK = """---
 def generate_social_posts(article_data):
     """
     Formats multi-channel social media posts (LinkedIn, Instagram, Facebook) with a rich 250-300 word executive summary,
-    hero cover photo URL, and official DatRey agency contact info tailored for lead generation.
+    guaranteed live CDN cover photo URL, and official DatRey agency contact info tailored for lead generation.
+    Includes unique ref hash to prevent LinkedIn 422 duplicate content errors.
     """
     title = article_data["title"]
     slug = article_data["slug"]
@@ -23,13 +27,22 @@ def generate_social_posts(article_data):
     category = article_data["category"]
     social_summary = article_data.get("social_summary", desc)
     article_url = f"https://datrey.ma/blog/{slug}.html"
-    hero_image_url = f"https://datrey.ma/assets/blog/{slug}-1.webp"
+
+    # ✅ FIX 1: Guaranteed Live CDN Image URL (prevents Make 404 HTML Page error)
+    # Uses deterministic Unsplash live photo URL so Make gets a 200 OK image instantly
+    slug_hash = int(hashlib.md5(slug.encode()).hexdigest()[:8], 16)
+    live_stock_url = UNSPLASH_CURATED_STOCKS[slug_hash % len(UNSPLASH_CURATED_STOCKS)]
+    hero_image_url = article_data.get("hero_image_url") or live_stock_url
+
+    # Unique reference tag to prevent LinkedIn 422 Duplicate Content error
+    unique_ref = hashlib.md5(f"{slug}_{time.time()}".encode()).hexdigest()[:6].upper()
+    ref_tag = f"📌 Réf: #DR-{unique_ref}"
 
     # Hashtags high-reach
     category_hashtag = category.replace(' ', '').replace('(', '').replace(')', '').replace('&', '')
     hashtags = f"#DatRey #MarketingDigital #Maroc #Acquisition #{category_hashtag} #CroissanceDigital #Casablanca #Rabat #SEO #GoogleAds #ROI"
 
-    # 1. Facebook Post (250-300 words summary + article URL + complete contact info + hashtags)
+    # 1. Facebook Post
     facebook_post = f"""📌 [DÉCRYPTAGE & STRATÉGIE] : {title}
 
 {social_summary}
@@ -39,9 +52,10 @@ def generate_social_posts(article_data):
 
 {DATREY_CONTACT_BLOCK}
 
-{hashtags}"""
+{hashtags}
+{ref_tag}"""
 
-    # 2. LinkedIn Post (250-300 words executive summary + article URL + complete contact info + hashtags)
+    # 2. LinkedIn Post
     linkedin_post = f"""🚀 [NOUVEL ARTICLE EXPERT] : {title}
 
 {social_summary}
@@ -52,9 +66,10 @@ Retrouvez notre étude complète avec tous les chiffres, infographies et cas pra
 
 {DATREY_CONTACT_BLOCK}
 
-{hashtags}"""
+{hashtags}
+{ref_tag}"""
 
-    # 3. Instagram Post (250-300 words summary + bio link + contact info + hashtags)
+    # 3. Instagram Post
     instagram_post = f"""📌 {title}
 
 {social_summary}
@@ -63,7 +78,8 @@ Retrouvez notre étude complète avec tous les chiffres, infographies et cas pra
 
 {DATREY_CONTACT_BLOCK}
 
-{hashtags}"""
+{hashtags}
+{ref_tag}"""
 
     payload = {
         "event": "new_blog_article",
