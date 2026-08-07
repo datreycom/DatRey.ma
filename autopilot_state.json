@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 43,
+  "total_generated": 45,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -259,6 +259,18 @@
       "title": "Doublez votre taux de conversion au Maroc : Le plan Web & Mobile qui transforme vos visiteurs en clients (Étude de cas DatRey)",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/doubler-taux-conversion-web-mobile-maroc-strategie.html",
       "timestamp": "2026-08-06T12:56:09.863204"
+    },
+    {
+      "slug": "formations-master-classes-maroc-comparatif-budget-rentable",
+      "title": "Formations & Master Classes au Maroc : Le Comparatif Décisionnel 2026 pour un Budget Formatif Rentable",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/formations-master-classes-maroc-comparatif-budget-rentable.html",
+      "timestamp": "2026-08-07T00:38:27.318280"
+    },
+    {
+      "slug": "google-ads-sea-maroc-optimisation-geo-domination-google-ai-chatgpt-perplexity",
+      "title": "Google Ads & SEA au Maroc : Dominez Google AI, ChatGPT et Perplexity avec le GEO en 2026",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/google-ads-sea-maroc-optimisation-geo-domination-google-ai-chatgpt-perplexity.html",
+      "timestamp": "2026-08-07T00:39:17.262771"
     }
   ]
 }
