@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 47,
+  "total_generated": 49,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -283,6 +283,18 @@
       "title": "Référencement Naturel (SEO) au Maroc : Le Levier N°1 pour Réduire Votre CAC et Exploser Votre LTV en 2026",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/referencement-naturel-seo-maroc-reduire-cac-maximiser-ltv.html",
       "timestamp": "2026-08-07T08:51:17.422402"
+    },
+    {
+      "slug": "cro-maroc-entonnoir-vente-b2b-rentable",
+      "title": "CRO au Maroc : Transformez Votre Trafic en Contrats B2B Rentables Grâce à un Entonnoir de Vente Prévisible",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/cro-maroc-entonnoir-vente-b2b-rentable.html",
+      "timestamp": "2026-08-07T11:40:48.774277"
+    },
+    {
+      "slug": "emailing-automation-maroc-guide-ultime-roi-2026",
+      "title": "Emailing & Automation au Maroc : Le Guide Ultime 2026 pour des Campagnes Rentables et un ROI de 4000%",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/emailing-automation-maroc-guide-ultime-roi-2026.html",
+      "timestamp": "2026-08-07T11:42:07.656560"
     }
   ]
 }
