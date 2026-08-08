@@ -12,7 +12,7 @@ from autopilot.deepseek_client import generate_article_content
 from autopilot.humanizer_engine import apply_humanizer_audit, verify_geo_intro
 from autopilot.pollinations_image_service import generate_article_images
 from autopilot.site_builder_service import build_article_page
-from autopilot.social_publisher_service import generate_social_posts, publish_to_make_webhook
+from autopilot.social_publisher_service import generate_social_posts, save_pending_webhook
 
 def run_autopilot_cycle(force_count=None, topic_hint=None):
     """
@@ -81,9 +81,10 @@ def run_autopilot_cycle(force_count=None, topic_hint=None):
             # 4. Site Builder (HTML + Index + Sitemap)
             html_path = build_article_page(raw_article)
 
-            # 5. Social Media Publisher (LinkedIn / Instagram Payload -> Make.com)
+            # 5. Social Media Publisher — save payload for post-deploy dispatch
+            # Webhook is NOT sent here. It will be dispatched AFTER git push + GitHub Pages deploy.
             social_payload = generate_social_posts(raw_article)
-            publish_to_make_webhook(social_payload)
+            save_pending_webhook(social_payload)
 
             results.append({
                 "slug": raw_article["slug"],

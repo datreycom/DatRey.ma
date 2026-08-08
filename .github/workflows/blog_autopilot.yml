@@ -30,6 +30,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4
 
+      # ─── PHASE 1: Generate articles, images, HTML pages ───
+      # Webhook payloads are saved to pending_webhooks.json (NOT sent yet)
       - name: Execute Autopilot Engine
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -38,9 +40,24 @@ jobs:
         run: |
           python -m autopilot.cli --auto
 
+      # ─── GIT PUSH: Deploy content + images to GitHub Pages ───
       - name: Commit and Push Changes
         run: |
           git config --global user.name "DatRey Autopilot Bot"
           git config --global user.email "bot@datrey.ma"
-          git add blog/ assets/blog/ blog_data.json blog.html sitemap*.xml autopilot_state.json
+          git add blog/ assets/blog/ blog_data.json blog.html sitemap*.xml autopilot_state.json pending_webhooks.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "auto(blog): publish daily articles and update sitemaps" && git push)
+
+      # ─── PHASE 2: Post-Deploy Social Publishing ───
+      # Waits 3 minutes for GitHub Pages to deploy, verifies image URLs are live,
+      # then dispatches webhooks to Make.com one by one with 30s delays.
+      - name: Post-Deploy Social Publishing
+        env:
+          MAKE_WEBHOOK_URL: ${{ secrets.MAKE_WEBHOOK_URL }}
+        run: |
+          if [ -f "pending_webhooks.json" ]; then
+            echo "[Post-Deploy] Found pending webhooks. Dispatching..."
+            python -m autopilot.dispatch_webhooks
+          else
+            echo "[Post-Deploy] No pending webhooks. Skipping."
+          fi
