@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 55,
+  "total_generated": 56,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -331,6 +331,12 @@
       "title": "Formations & Master Classes au Maroc : Comment Innocenter votre CAC et Exploser votre LTV en 2026",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/formations-master-classes-maroc-innocenter-cac-maximiser-ltv.html",
       "timestamp": "2026-08-08T11:23:27.328307"
+    },
+    {
+      "slug": "google-ads-guide-acquisition-roi-998",
+      "title": "Google Ads & SEA au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc",
+      "html_path": "C:\\Users\\Omar\\Desktop\\DatRey\\DatRey.ma\\blog\\google-ads-guide-acquisition-roi-998.html",
+      "timestamp": "2026-08-08T12:46:42.612045"
     }
   ]
 }

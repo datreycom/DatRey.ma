@@ -168,7 +168,7 @@ def _deduplicate_images(slug, file_paths):
             hashes[content_md5] = path
 
     if not duplicates:
-        print(f"[Dedup Engine] No duplicates found for '{slug}'. All 5 images are unique. ✅")
+        print(f"[Dedup Engine] No duplicates found for '{slug}'. All 5 images are unique. [OK]")
         return
 
     # Replace each duplicate with a different Unsplash stock photo
@@ -198,7 +198,7 @@ def _deduplicate_images(slug, file_paths):
                                 f.write(res.content)
                             hashes[new_hash] = dup_path
                             used_indices.add(candidate_idx)
-                            print(f"[Dedup Engine] REPLACED {os.path.basename(dup_path)} with stock #{candidate_idx} ({len(res.content)//1024} KB) ✅")
+                            print(f"[Dedup Engine] REPLACED {os.path.basename(dup_path)} with stock #{candidate_idx} ({len(res.content)//1024} KB) [OK]")
                             break
                 except Exception as e:
                     print(f"[Dedup Engine] Replacement failed for stock #{candidate_idx}: {e}")

@@ -162,12 +162,12 @@ def _verify_image_url(url, max_retries=3):
             res = requests.head(url, timeout=10, allow_redirects=True)
             content_type = res.headers.get("content-type", "")
             if res.status_code == 200 and ("image" in content_type or "octet" in content_type):
-                print(f"[Image Verify] ✅ {url} → 200 OK ({content_type})")
+                print(f"[Image Verify] [OK] {url} -> 200 OK ({content_type})")
                 return True
             else:
-                print(f"[Image Verify] ⚠️ Attempt {attempt+1}/{max_retries}: {url} → {res.status_code} ({content_type})")
+                print(f"[Image Verify] [WARN] Attempt {attempt+1}/{max_retries}: {url} -> {res.status_code} ({content_type})")
         except Exception as e:
-            print(f"[Image Verify] ⚠️ Attempt {attempt+1}/{max_retries}: {url} → Error: {e}")
+            print(f"[Image Verify] [WARN] Attempt {attempt+1}/{max_retries}: {url} -> Error: {e}")
 
         if attempt < max_retries - 1:
             time.sleep(10)
@@ -275,21 +275,21 @@ def publish_to_make_webhook(payload):
 
             res = requests.post(MAKE_WEBHOOK_URL, data=json_data, headers=headers, timeout=30, verify=False)
             if res.status_code in (200, 201, 202):
-                print("[Social Publisher] ✅ Make.com Webhook triggered successfully!")
+                print("[Social Publisher] [OK] Make.com Webhook triggered successfully!")
                 return True
             else:
-                print(f"[Social Publisher] ⚠️ Webhook returned status {res.status_code}: {res.text[:200]}")
+                print(f"[Social Publisher] [WARN] Webhook returned status {res.status_code}: {res.text[:200]}")
                 # Don't retry on 4xx client errors (except 429)
                 if 400 <= res.status_code < 500 and res.status_code != 429:
                     return False
         except Exception as e:
-            print(f"[Social Publisher] ⚠️ Webhook error: {e}")
+            print(f"[Social Publisher] [WARN] Webhook error: {e}")
 
         if attempt < max_retries - 1:
             backoff = (attempt + 1) * 5
             print(f"[Social Publisher] Retrying in {backoff}s...")
             time.sleep(backoff)
 
-    print("[Social Publisher] ❌ All retry attempts exhausted.")
+    print("[Social Publisher] [ERROR] All retry attempts exhausted.")
     return False
 
