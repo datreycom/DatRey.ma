@@ -870,5 +870,26 @@
             renderCourses();
         });
     </script>
+
+<!-- DatRey Global Demo Interactivity Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Intercept all empty '#' links to prevent jumping or dead clicks
+    document.querySelectorAll('a[href="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const text = this.innerText.trim() || this.getAttribute('title') || 'Action';
+            if (typeof triggerToast === 'function') {
+                triggerToast('Option "' + text + '" activée dans cette démo !');
+            } else if (typeof showToast === 'function') {
+                showToast('Option "' + text + '" activée !');
+            } else {
+                alert('✨ Démo Interactive DatRey : "' + text + '" est fonctionnel !');
+            }
+        });
+    });
+});
+</script>
+
 </body>
 </html>
