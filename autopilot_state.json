@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 58,
+  "total_generated": 60,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -349,6 +349,18 @@
       "title": "SEO au Maroc : Les 7 Erreurs d'Investissement Qui Vous Font Perdre 50 000 MAD par Mois (Et Comment les Éviter)",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/seo-maroc-erreurs-investissement-pieges-couteux.html",
       "timestamp": "2026-08-08T19:25:05.322893"
+    },
+    {
+      "slug": "optimisation-taux-conversion-cro-maroc-strategie-etude-cas",
+      "title": "Doublez votre Taux de Conversion au Maroc : La Méthode CRO Révolutionnaire qui Transforme vos Clics en Clients (Étude de Cas DatRey)",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/optimisation-taux-conversion-cro-maroc-strategie-etude-cas.html",
+      "timestamp": "2026-08-09T08:33:53.759088"
+    },
+    {
+      "slug": "emailing-automation-maroc-comparatif-strategique-2026",
+      "title": "Emailing & Automation au Maroc : Le Comparatif Stratégique 2026 pour des Campagnes Rentables et un ROI Maximisé",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/emailing-automation-maroc-comparatif-strategique-2026.html",
+      "timestamp": "2026-08-09T08:35:38.288382"
     }
   ]
 }
