@@ -9,6 +9,7 @@ from autopilot.config import MAKE_WEBHOOK_URL, BASE_DIR
 from autopilot.pollinations_image_service import UNSPLASH_CURATED_STOCKS
 
 PENDING_WEBHOOKS_FILE = os.path.join(BASE_DIR, "pending_webhooks.json")
+PUBLISHED_IMAGES_HISTORY_FILE = os.path.join(BASE_DIR, "published_images_history.json")
 
 # Delay between each webhook dispatch (seconds) — prevents LinkedIn 422 duplicate
 INTER_WEBHOOK_DELAY = 30
@@ -24,12 +25,34 @@ DATREY_CONTACT_BLOCK = """---
 📍 Adresse : 5, rue de Dixmude, 1er étage, appt 2, Benjdia — Casablanca, Maroc
 🚀 Demandez votre Audit Digital Gratuit : https://datrey.ma/contact.html"""
 
+def _get_published_images_history():
+    """Loads previously published image URLs to guarantee zero repetition across posts."""
+    if os.path.exists(PUBLISHED_IMAGES_HISTORY_FILE):
+        try:
+            with open(PUBLISHED_IMAGES_HISTORY_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return []
+    return []
+
+def _record_published_image_url(url):
+    """Records a published image URL to history to prevent reuse in future posts."""
+    history = _get_published_images_history()
+    if url not in history:
+        history.append(url)
+        # Keep last 200 images in history
+        if len(history) > 200:
+            history = history[-200:]
+        with open(PUBLISHED_IMAGES_HISTORY_FILE, "w", encoding="utf-8") as f:
+            json.dump(history, f, ensure_ascii=False, indent=2)
+
 def generate_social_posts(article_data):
     """
     Formats multi-channel social media posts (LinkedIn, Instagram, Facebook) with a rich 250-300 word executive summary,
     guaranteed live CDN cover photo URL, and official DatRey agency contact info tailored for lead generation.
     Guarantees article_url is embedded in ALL payload keys (summary, description, message, posts).
     Includes unique ref hash to prevent LinkedIn 422 duplicate content errors.
+    Rotates candidate images to guarantee unique image selection per post.
     """
     title = article_data["title"]
     slug = article_data["slug"]
@@ -45,12 +68,19 @@ def generate_social_posts(article_data):
         social_summary_with_url = social_summary
 
     # Primary image: datrey.ma hosted (will be live after deploy)
-    # Fallback: guaranteed Unsplash CDN URL
     datrey_image_url = f"https://datrey.ma/assets/blog/{slug}-1.webp"
-    slug_hash = int(hashlib.md5(slug.encode()).hexdigest()[:8], 16)
-    fallback_image_url = UNSPLASH_CURATED_STOCKS[slug_hash % len(UNSPLASH_CURATED_STOCKS)]
 
-    # Store both so dispatch can verify and pick the right one
+    # Unique fallback selection from Unsplash stock pool
+    history = _get_published_images_history()
+    slug_hash = int(hashlib.md5(slug.encode()).hexdigest()[:8], 16)
+    
+    fallback_image_url = UNSPLASH_CURATED_STOCKS[slug_hash % len(UNSPLASH_CURATED_STOCKS)]
+    for offset in range(len(UNSPLASH_CURATED_STOCKS)):
+        candidate = UNSPLASH_CURATED_STOCKS[(slug_hash + offset) % len(UNSPLASH_CURATED_STOCKS)]
+        if candidate not in history:
+            fallback_image_url = candidate
+            break
+
     hero_image_url = datrey_image_url
 
     # Unique reference tag to prevent LinkedIn 422 Duplicate Content error
@@ -189,22 +219,26 @@ def _verify_image_url(url, max_retries=3):
 def _resolve_image_url(payload):
     """
     Tries the primary datrey.ma image URL. If it returns 404, falls back to Unsplash CDN.
-    Updates the payload in-place with the verified URL.
+    Updates the payload in-place with the verified URL and records it in history to guarantee uniqueness.
     """
     primary_url = payload.get("hero_image_url", "")
     fallback_url = payload.get("_fallback_image_url", "")
 
+    chosen_url = None
     if primary_url and _verify_image_url(primary_url):
-        return primary_url
-
-    print(f"[Image Resolve] Primary image unavailable. Using Unsplash fallback.")
-    if fallback_url:
+        chosen_url = primary_url
+    elif fallback_url:
+        print(f"[Image Resolve] Primary image unavailable. Using Unsplash fallback.")
+        chosen_url = fallback_url
         # Update all image fields in payload
         for key in ("hero_image_url", "picture", "image_url"):
             payload[key] = fallback_url
-        return fallback_url
 
-    return primary_url
+    if chosen_url:
+        _record_published_image_url(chosen_url)
+        print(f"[Image History] Recorded published image to history -> {chosen_url}")
+
+    return chosen_url or primary_url
 
 
 def dispatch_pending_webhooks():
