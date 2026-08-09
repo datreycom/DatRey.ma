@@ -28,6 +28,7 @@ def generate_social_posts(article_data):
     """
     Formats multi-channel social media posts (LinkedIn, Instagram, Facebook) with a rich 250-300 word executive summary,
     guaranteed live CDN cover photo URL, and official DatRey agency contact info tailored for lead generation.
+    Guarantees article_url is embedded in ALL payload keys (summary, description, message, posts).
     Includes unique ref hash to prevent LinkedIn 422 duplicate content errors.
     """
     title = article_data["title"]
@@ -36,6 +37,12 @@ def generate_social_posts(article_data):
     category = article_data["category"]
     social_summary = article_data.get("social_summary", desc)
     article_url = f"https://datrey.ma/blog/{slug}.html"
+
+    # Ensure article_url is ALWAYS embedded in social_summary if missing
+    if article_url not in social_summary:
+        social_summary_with_url = f"{social_summary}\n\n👉 Lisez l'article complet sur notre site :\n🔗 {article_url}"
+    else:
+        social_summary_with_url = social_summary
 
     # Primary image: datrey.ma hosted (will be live after deploy)
     # Fallback: guaranteed Unsplash CDN URL
@@ -60,7 +67,7 @@ def generate_social_posts(article_data):
 {social_summary}
 
 👉 Lisez l'analyse intégrale et nos recommandations sur notre site :
-{article_url}
+🔗 {article_url}
 
 {DATREY_CONTACT_BLOCK}
 
@@ -74,7 +81,7 @@ def generate_social_posts(article_data):
 
 💡 POUR ALLER PLUS LOIN :
 Retrouvez notre étude complète avec tous les chiffres, infographies et cas pratiques sur notre blog officiel :
-👉 {article_url}
+👉 🔗 {article_url}
 
 {DATREY_CONTACT_BLOCK}
 
@@ -86,7 +93,8 @@ Retrouvez notre étude complète avec tous les chiffres, infographies et cas pra
 
 {social_summary}
 
-🔗 Cliquez sur le lien dans notre bio pour lire l'article complet ou rendez-vous sur : {article_url}
+🔗 Cliquez sur le lien dans notre bio pour lire l'article complet ou rendez-vous sur :
+👉 {article_url}
 
 {DATREY_CONTACT_BLOCK}
 
@@ -98,11 +106,12 @@ Retrouvez notre étude complète avec tous les chiffres, infographies et cas pra
         "title": title,
         "slug": slug,
         "category": category,
-        "description": desc,
-        "social_summary": social_summary,
-        "summary": social_summary,
+        "description": f"{desc}\n\n👉 🔗 {article_url}",
+        "social_summary": social_summary_with_url,
+        "summary": social_summary_with_url,
         "url": article_url,
         "link": article_url,
+        "article_url": article_url,
         "hero_image_url": hero_image_url,
         "picture": hero_image_url,
         "image_url": hero_image_url,
@@ -111,6 +120,8 @@ Retrouvez notre étude complète avec tous les chiffres, infographies et cas pra
         "post": facebook_post,
         "text": facebook_post,
         "facebook_post": facebook_post,
+        "linkedin_post": linkedin_post,
+        "instagram_post": instagram_post,
         "content": facebook_post,
         "caption": facebook_post,
         "social": {
