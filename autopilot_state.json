@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 64,
+  "total_generated": 66,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -385,6 +385,18 @@
       "title": "Design & Impression au Maroc : L'Entonnoir de Vente B2B qui Transforme vos Devis en Contrats Rentables (Stratégie ROI 2026)",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/design-impression-maroc-entonnoir-vente-b2b-rentable.html",
       "timestamp": "2026-08-09T19:29:08.283501"
+    },
+    {
+      "slug": "developpement-web-mobile-maroc-guide-roi-2026",
+      "title": "Développement Web & Mobile au Maroc : Le Guide du ROI Rentable en 2026 pour PME et Grands Groupes",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/developpement-web-mobile-maroc-guide-roi-2026.html",
+      "timestamp": "2026-08-10T09:10:41.360029"
+    },
+    {
+      "slug": "formations-master-classes-maroc-erreurs-investissement-pieges-couteux",
+      "title": "Formations & Master Classes au Maroc : Les 7 Erreurs Qui Vous Font Perdre 200 000 MAD (Et Comment les Éviter en 2026)",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/formations-master-classes-maroc-erreurs-investissement-pieges-couteux.html",
+      "timestamp": "2026-08-10T09:11:44.878635"
     }
   ]
 }
