@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 70,
+  "total_generated": 73,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -421,6 +421,24 @@
       "title": "CRO au Maroc : Le Plan d'Action 90 Jours Qui Transforme vos Visiteurs en Clients (Casablanca, Rabat)",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/cro-maroc-plan-action-90-jours-casablanca-rabat.html",
       "timestamp": "2026-08-10T19:51:32.693518"
+    },
+    {
+      "slug": "emailing-automation-maroc-reduire-cac-augmenter-ltv",
+      "title": "Emailing & Automation au Maroc : Réduisez votre CAC de 60% et Explosez votre LTV en 2026",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/emailing-automation-maroc-reduire-cac-augmenter-ltv.html",
+      "timestamp": "2026-08-11T08:45:52.914822"
+    },
+    {
+      "slug": "strategie-digitale-maroc-entonnoir-vente-b2b-rentable",
+      "title": "Stratégie Digitale au Maroc : L'Entonnoir de Vente B2B Rentable qui Révolutionne vos Résultats en 2026",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/strategie-digitale-maroc-entonnoir-vente-b2b-rentable.html",
+      "timestamp": "2026-08-11T08:47:09.254801"
+    },
+    {
+      "slug": "affichage-dynamique-maroc-guide-roi-acquisition-client-2026",
+      "title": "Affichage Dynamique au Maroc : Le Guide Ultime pour un ROI d'Acquisition Client Explosif en 2026",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/affichage-dynamique-maroc-guide-roi-acquisition-client-2026.html",
+      "timestamp": "2026-08-11T08:47:53.047232"
     }
   ]
 }
