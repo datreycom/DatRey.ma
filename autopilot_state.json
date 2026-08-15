@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 112,
+  "total_generated": 115,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -673,6 +673,24 @@
       "title": "Meta Ads & Social Ads au Maroc : L'Entonnoir B2B Rentable et Prévisible qui Révolutionne Votre ROI en 2026",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/meta-ads-social-ads-maroc-entonnoir-vente-b2b-rentable-previsible.html",
       "timestamp": "2026-08-15T11:17:39.580997"
+    },
+    {
+      "slug": "guide-seo-maroc-acquisition-client-roi-2026",
+      "title": "SEO au Maroc 2026 : Le Guide Ultime pour une Acquisition Client à Fort ROI (PME & Grands Groupes)",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/guide-seo-maroc-acquisition-client-roi-2026.html",
+      "timestamp": "2026-08-15T19:17:24.669319"
+    },
+    {
+      "slug": "cro-maroc-erreurs-investissement-pieges-couteux",
+      "title": "CRO au Maroc en 2026 : Les 7 Erreurs d'Investissement Qui Brûlent Votre Budget et Comment les Éviter",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/cro-maroc-erreurs-investissement-pieges-couteux.html",
+      "timestamp": "2026-08-15T19:18:58.476833"
+    },
+    {
+      "slug": "emailing-automation-maroc-doubler-taux-conversion-strategie",
+      "title": "Emailing & Automation au Maroc : Doublez votre Taux de Conversion avec cette Stratégie Pas à Pas (Étude de Cas DatRey)",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/emailing-automation-maroc-doubler-taux-conversion-strategie.html",
+      "timestamp": "2026-08-15T19:20:34.110503"
     }
   ]
 }
