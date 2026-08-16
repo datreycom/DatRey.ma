@@ -170,7 +170,8 @@ def generate_article_content(service_slug=None, topic_hint=None):
         "4. CONTEXTE BUSINESS & MAROC : Exemples concrets axés sur les PME/Multinationales au Maroc (Casablanca, Rabat, Tanger, Marrakech) et à l'international, avec métriques de ROI, budgets MAD/EUR, et KPIs d'acquisition.\n"
         "5. CONVERSION & CALL-TO-ACTION DATREY : Démontre subtilement l'expertise inégalée de l'agence DatRey et inclut des appels à l'action stratégiques invitant le lecteur à demander son Audit Digital Gratuit.\n"
         "6. ANTI-IA (HUMANIZER) : Style vif, percutant, humain, d'expert terrain. Pas de mots banals d'IA ('delve', 'testament', 'vibrant', 'crucial').\n"
-        "7. IMAGES : 5 prompts visuels détaillés en anglais pour l'IA d'image, STRICTEMENT SANS TEXTE DANS L'IMAGE."
+        "7. IMAGES : 5 prompts visuels détaillés en anglais pour l'IA d'image, STRICTEMENT SANS TEXTE DANS L'IMAGE.\\n"
+        "8. IMAGES - REGLES ANTI-ANOMALIES (CRITIQUE) : Pour chaque prompt d'image, PRIVILÉGIE les scènes SANS visage humain (bureaux, ordinateurs, graphiques, dashboards, produits, architecture, mains travaillant sur un clavier, équipes vues de dos ou de loin). Si une personne doit être visible : décris TOUJOURS explicitement et de façon COHÉRENTE le genre ('une femme', 'un homme'), la tenue (ex: 'tailleur moderne sans couvre-chef', 'chemise et cravate'), et JAMAIS de combinaisons impossibles. INTERDICTION ABSOLUE : femme avec barbe ou moustache, homme avec hijab/voile, hijab ET barbe sur la même personne, visages déformés, doigts/mains anormaux, plus de 2 yeux, têtes multiples. Si le sujet de l'article est le marketing digital, préfère des visuels d'écrans, graphiques de croissance, tableaux de bord, bureaux modernes sans personnes nettes. Chaque prompt d'image doit contenir les mots 'photorealistic, consistent anatomy, no deformed features'."
     )
 
     user_prompt = f"""

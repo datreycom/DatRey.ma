@@ -111,6 +111,7 @@ def generate_single_image(prompt, dest_filepath, idx=0, slug=""):
 
     enhanced_prompt = (
         f"Professional commercial studio photography, {clean_prompt}, "
+        f"photorealistic, consistent human anatomy, no deformed features, no facial anomalies, "
         f"bright natural daylight, modern luxury glass office, crisp sharp focus, 8k resolution, Hasselblad 35mm, "
         f"ABSOLUTELY NO TEXT, NO LOGO, NO WORDS, NO WATERMARK"
     )
