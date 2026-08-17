@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 130,
+  "total_generated": 133,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -781,6 +781,24 @@
       "title": "Design & Impression au Maroc : 7 Erreurs d'Investissement Qui Ruinent Votre ROI (et Comment les Éviter en 2026)",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/design-impression-maroc-erreurs-investissement-roi.html",
       "timestamp": "2026-08-17T11:22:41.147067"
+    },
+    {
+      "slug": "developpement-guide-acquisition-roi-118",
+      "title": "Développement Web & Mobile au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/developpement-guide-acquisition-roi-118.html",
+      "timestamp": "2026-08-17T19:22:01.712876"
+    },
+    {
+      "slug": "formations-guide-acquisition-roi-143",
+      "title": "Formations & Master Classes au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/formations-guide-acquisition-roi-143.html",
+      "timestamp": "2026-08-17T19:22:54.581386"
+    },
+    {
+      "slug": "google-ads-guide-acquisition-roi-539",
+      "title": "Google Ads & SEA au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/google-ads-guide-acquisition-roi-539.html",
+      "timestamp": "2026-08-17T19:23:41.655807"
     }
   ]
 }
