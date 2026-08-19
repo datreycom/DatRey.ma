@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 142,
+  "total_generated": 145,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -853,6 +853,24 @@
       "title": "Développement Web & Mobile au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/developpement-guide-acquisition-roi-177.html",
       "timestamp": "2026-08-18T19:24:19.004142"
+    },
+    {
+      "slug": "formations-guide-acquisition-roi-820",
+      "title": "Formations & Master Classes au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/formations-guide-acquisition-roi-820.html",
+      "timestamp": "2026-08-19T08:27:13.084132"
+    },
+    {
+      "slug": "google-ads-guide-acquisition-roi-814",
+      "title": "Google Ads & SEA au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/google-ads-guide-acquisition-roi-814.html",
+      "timestamp": "2026-08-19T08:27:57.204628"
+    },
+    {
+      "slug": "meta-ads-guide-acquisition-roi-185",
+      "title": "Meta Ads & Social Ads au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/meta-ads-guide-acquisition-roi-185.html",
+      "timestamp": "2026-08-19T08:28:41.544690"
     }
   ]
 }
