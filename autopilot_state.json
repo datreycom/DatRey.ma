@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 172,
+  "total_generated": 175,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -1033,6 +1033,24 @@
       "title": "Affichage Dynamique au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/affichage-guide-acquisition-roi-914.html",
       "timestamp": "2026-08-22T08:21:16.736573"
+    },
+    {
+      "slug": "audit-guide-acquisition-roi-952",
+      "title": "Audit Digital au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/audit-guide-acquisition-roi-952.html",
+      "timestamp": "2026-08-22T11:14:49.112982"
+    },
+    {
+      "slug": "design-guide-acquisition-roi-147",
+      "title": "Design & Impression au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/design-guide-acquisition-roi-147.html",
+      "timestamp": "2026-08-22T11:15:36.069498"
+    },
+    {
+      "slug": "developpement-guide-acquisition-roi-513",
+      "title": "Développement Web & Mobile au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/developpement-guide-acquisition-roi-513.html",
+      "timestamp": "2026-08-22T11:16:23.834534"
     }
   ]
 }
