@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 178,
+  "total_generated": 181,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -1069,6 +1069,24 @@
       "title": "Meta Ads & Social Ads au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/meta-ads-guide-acquisition-roi-374.html",
       "timestamp": "2026-08-22T19:19:03.825893"
+    },
+    {
+      "slug": "seo-guide-acquisition-roi-459",
+      "title": "Référencement Naturel (SEO) au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/seo-guide-acquisition-roi-459.html",
+      "timestamp": "2026-08-23T08:20:36.689605"
+    },
+    {
+      "slug": "cro-guide-acquisition-roi-343",
+      "title": "Optimisation des Conversions (CRO) au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/cro-guide-acquisition-roi-343.html",
+      "timestamp": "2026-08-23T08:21:27.266198"
+    },
+    {
+      "slug": "emailing-guide-acquisition-roi-644",
+      "title": "Emailing & Automation au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/emailing-guide-acquisition-roi-644.html",
+      "timestamp": "2026-08-23T08:22:14.787182"
     }
   ]
 }
