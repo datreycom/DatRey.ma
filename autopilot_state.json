@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 184,
+  "total_generated": 187,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -1105,6 +1105,24 @@
       "title": "Audit Digital au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/audit-guide-acquisition-roi-424.html",
       "timestamp": "2026-08-23T11:15:31.674877"
+    },
+    {
+      "slug": "design-guide-acquisition-roi-908",
+      "title": "Design & Impression au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/design-guide-acquisition-roi-908.html",
+      "timestamp": "2026-08-23T19:17:39.271392"
+    },
+    {
+      "slug": "developpement-guide-acquisition-roi-189",
+      "title": "Développement Web & Mobile au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/developpement-guide-acquisition-roi-189.html",
+      "timestamp": "2026-08-23T19:18:33.214629"
+    },
+    {
+      "slug": "formations-guide-acquisition-roi-754",
+      "title": "Formations & Master Classes au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/formations-guide-acquisition-roi-754.html",
+      "timestamp": "2026-08-23T19:19:13.653798"
     }
   ]
 }
