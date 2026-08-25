@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 202,
+  "total_generated": 205,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -1213,6 +1213,24 @@
       "title": "Optimisation des Conversions (CRO) au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/cro-guide-acquisition-roi-943.html",
       "timestamp": "2026-08-25T11:22:04.567934"
+    },
+    {
+      "slug": "emailing-guide-acquisition-roi-951",
+      "title": "Emailing & Automation au Maroc : Étude de cas et stratégie pas à pas pour doubler son taux de conversion au Maroc",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/emailing-guide-acquisition-roi-951.html",
+      "timestamp": "2026-08-25T19:25:36.498360"
+    },
+    {
+      "slug": "strategie-guide-acquisition-roi-922",
+      "title": "Stratégie Digitale au Maroc : Comparatif décisionnel et guide d'optimisation budgétaire pour dirigeants",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/strategie-guide-acquisition-roi-922.html",
+      "timestamp": "2026-08-25T19:26:24.081536"
+    },
+    {
+      "slug": "affichage-guide-acquisition-roi-479",
+      "title": "Affichage Dynamique au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/affichage-guide-acquisition-roi-479.html",
+      "timestamp": "2026-08-25T19:27:10.204045"
     }
   ]
 }
