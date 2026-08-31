@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 238,
+  "total_generated": 241,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -1429,6 +1429,24 @@
       "title": "Affichage Dynamique au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/affichage-guide-acquisition-roi-530.html",
       "timestamp": "2026-08-31T15:46:11.080623"
+    },
+    {
+      "slug": "audit-guide-acquisition-roi-539",
+      "title": "Audit Digital au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/audit-guide-acquisition-roi-539.html",
+      "timestamp": "2026-08-31T23:05:07.376528"
+    },
+    {
+      "slug": "design-guide-acquisition-roi-865",
+      "title": "Design & Impression au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/design-guide-acquisition-roi-865.html",
+      "timestamp": "2026-08-31T23:05:51.306032"
+    },
+    {
+      "slug": "developpement-guide-acquisition-roi-905",
+      "title": "Développement Web & Mobile au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/developpement-guide-acquisition-roi-905.html",
+      "timestamp": "2026-08-31T23:06:36.122928"
     }
   ]
 }
