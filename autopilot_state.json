@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 247,
+  "total_generated": 250,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -1483,6 +1483,24 @@
       "title": "Emailing & Automation au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/emailing-guide-acquisition-roi-677.html",
       "timestamp": "2026-09-01T21:33:29.361939"
+    },
+    {
+      "slug": "strategie-guide-acquisition-roi-100",
+      "title": "Stratégie Digitale au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/strategie-guide-acquisition-roi-100.html",
+      "timestamp": "2026-09-02T12:26:05.568457"
+    },
+    {
+      "slug": "affichage-guide-acquisition-roi-618",
+      "title": "Affichage Dynamique au Maroc : Guide ultime d'acquisition client à fort ROI pour PME et grands groupes au Maroc (2026)",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/affichage-guide-acquisition-roi-618.html",
+      "timestamp": "2026-09-02T12:26:52.899022"
+    },
+    {
+      "slug": "audit-guide-acquisition-roi-127",
+      "title": "Audit Digital au Maroc : Erreurs d'investissement et pièges coûteux à éviter absolument au Maroc",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/audit-guide-acquisition-roi-127.html",
+      "timestamp": "2026-09-02T12:27:39.731204"
     }
   ]
 }
