@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 253,
+  "total_generated": 256,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -1519,6 +1519,24 @@
       "title": "Formations & Master Classes au Maroc : Optimisation GEO et domination Google AI, ChatGPT et Perplexity au Maroc",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/formations-guide-acquisition-roi-924.html",
       "timestamp": "2026-09-02T21:30:25.253868"
+    },
+    {
+      "slug": "google-ads-guide-acquisition-roi-106",
+      "title": "Google Ads & SEA au Maroc : Plan d'action 90 jours pour accélérer sa croissance à Casablanca et Rabat",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/google-ads-guide-acquisition-roi-106.html",
+      "timestamp": "2026-09-03T12:24:47.691231"
+    },
+    {
+      "slug": "meta-ads-guide-acquisition-roi-293",
+      "title": "Meta Ads & Social Ads au Maroc : Innocenter son coût d'acquisition client (CAC) et maximiser la valeur vie client (LTV)",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/meta-ads-guide-acquisition-roi-293.html",
+      "timestamp": "2026-09-03T12:25:40.132459"
+    },
+    {
+      "slug": "seo-guide-acquisition-roi-441",
+      "title": "Référencement Naturel (SEO) au Maroc : Comment structurer un entonnoir de vente B2B rentable et prévisible au Maroc",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/seo-guide-acquisition-roi-441.html",
+      "timestamp": "2026-09-03T12:26:27.080147"
     }
   ]
 }
