@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 541,
+  "total_generated": 544,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -3247,6 +3247,24 @@
       "title": "Meta Ads & Social Ads au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/meta-ads-guide-acquisition-roi-765.html",
       "timestamp": "2026-10-20T22:01:06.252033"
+    },
+    {
+      "slug": "seo-guide-acquisition-roi-727",
+      "title": "Référencement Naturel (SEO) au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/seo-guide-acquisition-roi-727.html",
+      "timestamp": "2026-10-21T13:20:54.154129"
+    },
+    {
+      "slug": "cro-guide-acquisition-roi-182",
+      "title": "Optimisation des Conversions (CRO) au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/cro-guide-acquisition-roi-182.html",
+      "timestamp": "2026-10-21T13:21:47.052217"
+    },
+    {
+      "slug": "emailing-guide-acquisition-roi-907",
+      "title": "Emailing & Automation au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/emailing-guide-acquisition-roi-907.html",
+      "timestamp": "2026-10-21T13:22:17.088181"
     }
   ]
 }
