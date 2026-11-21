@@ -1,6 +1,6 @@
 {
   "start_date": "2026-07-28",
-  "total_generated": 724,
+  "total_generated": 727,
   "history": [
     {
       "slug": "google-ads-maroc-guide-roi-2026",
@@ -4345,6 +4345,24 @@
       "title": "Design & Impression au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026",
       "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/design-guide-acquisition-roi-192.html",
       "timestamp": "2026-11-20T16:32:46.556977"
+    },
+    {
+      "slug": "developpement-guide-acquisition-roi-460",
+      "title": "Développement Web & Mobile au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/developpement-guide-acquisition-roi-460.html",
+      "timestamp": "2026-11-21T00:32:09.982852"
+    },
+    {
+      "slug": "formations-guide-acquisition-roi-417",
+      "title": "Formations & Master Classes au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/formations-guide-acquisition-roi-417.html",
+      "timestamp": "2026-11-21T00:32:27.025323"
+    },
+    {
+      "slug": "google-ads-guide-acquisition-roi-201",
+      "title": "Google Ads & SEA au Maroc : Stratégies d'Acquisition Client & Maximisation du ROI en 2026",
+      "html_path": "/home/runner/work/DatRey.ma/DatRey.ma/blog/google-ads-guide-acquisition-roi-201.html",
+      "timestamp": "2026-11-21T00:32:44.073449"
     }
   ]
 }
